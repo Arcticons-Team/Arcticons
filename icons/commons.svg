@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.1" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <clipPath id="c">
+            <circle r="298"/>
+        </clipPath>
+    </defs>
+    <g transform="matrix(.054121 0 0 .054121 24 29.872)">
+        <circle r="100" fill="#fff"/>
+        <g fill="#069">
+            <g id="arrow" clip-path="url(#c)">
+                <path d="m-11 180v118h22v-118" fill="#fff"/>
+                <path d="m-43 185 43-75 43 75" fill="#fff"/>
+            </g>
+            <g id="arrows3">
+                <use transform="rotate(45)" width="100%" height="100%" fill="#ffffff" xlink:href="#arrow"/>
+                <use transform="rotate(90)" width="100%" height="100%" fill="#ffffff" xlink:href="#arrow"/>
+                <use transform="rotate(135)" width="100%" height="100%" fill="#ffffff" xlink:href="#arrow"/>
+            </g>
+            <use transform="scale(-1,1)" width="100%" height="100%" fill="#ffffff" xlink:href="#arrows3"/>
+            <path transform="rotate(-45)" d="m0-256a256 256 0 1 0 256 256c0-100-101-150-6-275" fill="none" stroke="#fff" stroke-width="84"/>
+            <path d="m-23-515s-36 135-80 185 116-62 170-5-90-180-90-180z" fill="#fff"/>
+        </g>
+    </g>
+</svg>
