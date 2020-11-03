@@ -2,7 +2,7 @@
 
 SIZES="48 72 96 144 192"
 EXPORT="../app/src/main/res"
-ICON="../other"
+ICON="../icons"
 
 for DIR in $(find -name "*.svg")
 do
