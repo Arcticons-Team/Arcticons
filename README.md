@@ -7,7 +7,7 @@ An icon pack forked from [Frost](https://github.com/dkanada/frost) with the goal
 Frost includes support for Trebuchet, KISS, Nova, Apex, Holo, ZenUI, ADW, and many more launchers.
 There are over **900 icons**. Submitting icon requests helps a lot, but maintaining the project (as you may imagine) takes a lot of time and effort, so please be patient about adding new icons. Contributions for new icons are always welcome, and no experience with programming is necessary.
 
-<img src='https://raw.githubusercontent.com/dkanada/frost/master/metadata/en-US/screenshots.png'>
+<img src='https://raw.githubusercontent.com/Donnnno/frost-lines/main/metadata/en-US/header-background.png'>
 
 ## Icon Requests
 
