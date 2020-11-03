@@ -45,4 +45,4 @@ Quick Guide:
 
 ## Illustration
 
-<img src='https://raw.githubusercontent.com/dkanada/frost/master/metadata/en-US/complete-background.png'/>
+<img src='https://raw.githubusercontent.com/Donnnno/frost-lines/main/metadata/en-US/complete-background.png'/>
