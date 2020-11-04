@@ -1,4 +1,4 @@
-package com.donnnno.icecons.activities;
+package com.donnnno.arcticons.activities;
 
 import android.content.Intent;
 import android.graphics.drawable.BitmapDrawable;
@@ -11,9 +11,9 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.donnnno.icecons.R;
-import com.donnnno.icecons.utils.ImageUtils;
-import com.donnnno.icecons.utils.ScreenUtils;
+import com.donnnno.arcticons.R;
+import com.donnnno.arcticons.utils.ImageUtils;
+import com.donnnno.arcticons.utils.ScreenUtils;
 
 public class MainActivity extends BaseActivity {
 

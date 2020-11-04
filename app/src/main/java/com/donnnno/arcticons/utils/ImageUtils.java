@@ -1,4 +1,4 @@
-package com.donnnno.icecons.utils;
+package com.donnnno.arcticons.utils;
 
 import android.content.res.Resources;
 import android.graphics.Bitmap;
@@ -6,7 +6,7 @@ import android.graphics.BitmapFactory;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.donnnno.icecons.async.BitmapLoadTask;
+import com.donnnno.arcticons.async.BitmapLoadTask;
 
 public class ImageUtils {
 

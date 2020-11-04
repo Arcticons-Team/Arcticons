@@ -1,4 +1,4 @@
-package com.donnnno.icecons.activities;
+package com.donnnno.arcticons.activities;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -8,10 +8,10 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.donnnno.icecons.R;
-import com.donnnno.icecons.utils.ScreenUtils;
+import com.donnnno.arcticons.R;
+import com.donnnno.arcticons.utils.ScreenUtils;
 
-public class LicenseActivity extends BaseActivity {
+public class LicenseActivity extends com.donnnno.arcticons.activities.BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

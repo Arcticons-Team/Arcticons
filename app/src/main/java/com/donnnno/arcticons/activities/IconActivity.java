@@ -1,4 +1,4 @@
-package com.donnnno.icecons.activities;
+package com.donnnno.arcticons.activities;
 
 import android.graphics.Rect;
 import android.os.Bundle;
@@ -8,13 +8,13 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 
-import com.donnnno.icecons.R;
-import com.donnnno.icecons.utils.ImageUtils;
-import com.donnnno.icecons.utils.ScreenUtils;
+import com.donnnno.arcticons.R;
+import com.donnnno.arcticons.utils.ImageUtils;
+import com.donnnno.arcticons.utils.ScreenUtils;
 
 import java.util.ArrayList;
 
-public class IconActivity extends BaseActivity {
+public class IconActivity extends com.donnnno.arcticons.activities.BaseActivity {
     private ArrayList<LinearLayout> layoutList = new ArrayList<>();
     private ArrayList<ImageView> imageList = new ArrayList<>();
 
