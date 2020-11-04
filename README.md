@@ -1,12 +1,10 @@
-WORK IN PROGRESS
-
 <img src='https://raw.githubusercontent.com/Donnnno/frost-lines/main/metadata/en-US/header-background.png'>
 
-**[name]** is a line-based icon pack forked from Frost but rebuild with consistent sizing and adjustments specifically for lines in mind. [name] is FOSS and provides mostly icons for open-source apps on F-Droid (but there are many other apps in this pack too). The design is simple and clean with minimal lines that give you a nice see-trough effect
+Arcticons (Arctic icons) is a line-based icon pack forked from Frost but rebuild with consistent sizing and adjustments specifically for lines in mind. Arcticons is FOSS and provides mostly icons for open-source apps on F-Droid (but there are many other apps in this pack too). The design is simple and clean with minimal lines that give you a nice see-trough effect
 
 [<img src="https://f-droid.org/badge/get-it-on.png" alt="Get it on F-Droid" height="90">](https://f-droid.org/packages/com.dkanada.icecons)
 
-**[name]**  includes support for Trebuchet, KISS, Nova, Apex, Holo, ZenUI, ADW, and many more launchers. **There are over 900 icons.**
+Arcticons includes support for Trebuchet, KISS, Nova, Apex, Holo, ZenUI, ADW, and many more launchers. **There are over 900 icons.**
 
 Submitting icon requests helps a lot, but maintaining the project (as you may imagine) takes a lot of time and effort, so please be patient about adding new icons. Contributions for new icons are always welcome, and no experience with programming is necessary.
 
@@ -26,7 +24,7 @@ If Turtl is not working on your device, you can also use [Applications Info](htt
 
 Help with any aspect of the app is much appreciated! **You don't have to know how to code!** If you know how to work with vectors in a program that supports the SVG format. [Inkscape](https://inkscape.org/en/) is recommended but not necessary. Please read the [guide on contributing](CONTRIBUTING.md) before making big changes! It also includes some personal preferences on how to work with Inkscape. If you don't use Inkscape you can just ignore them.
 
-When you bring an icon to **[name]** try to make it minimal. The easiest and most noticeable way to do so is to set an icon free of its background. Twitter is a good example! There are two parts: a bird and a circle surrounding it. The bird is the center of the icon and the part associated with Twitter while the circle is not unique to the platform and can be removed. Don't take this as a ground rule because there are cases when a background shape is necessary. Adobe products are much more recognizable in a square and GitHub uses the background shape as a meaningful part of their icon.
+When you bring an icon to Arcticons try to make it minimal. The easiest and most noticeable way to do so is to set an icon free of its background. Twitter is a good example! There are two parts: a bird and a circle surrounding it. The bird is the center of the icon and the part associated with Twitter while the circle is not unique to the platform and can be removed. Don't take this as a ground rule because there are cases when a background shape is necessary. Adobe products are much more recognizable in a square and GitHub uses the background shape as a meaningful part of their icon.
 
 **Note:** I want to accept as many contributions as possible, but will only merge icons that have been manually created using shapes and paths in a vector editing program. I don't think the quality is high enough from tools that automatically generate vector images.
 
@@ -36,7 +34,7 @@ Quick Guide:
 3. Upload the SVG icons to your repository's **/other** folder
 4. Create a pull request and explain your changes
 5. Provide the activity names of the new apps
-   - These should look something like `com.dkanada.icecons/com.dkanada.icecons.MainActivity`
+   - These should look something like `com.donnnno.arcticons/com.donnnno.arcticons.MainActivity`
    - If you want to help even more you can add your new icons to the appfilter.xml file
 
 ## The icons
