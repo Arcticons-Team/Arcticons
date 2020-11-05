@@ -1,4 +1,4 @@
-<img src='https://raw.githubusercontent.com/Donnnno/frost-lines/main/metadata/en-US/header-background.png'>
+<img src='https://raw.githubusercontent.com/Donnnno/frost-lines/main/metadata/en-US/images/header-background.png'>
 
 Arcticons (Arctic icons) is a line-based icon pack forked from [Frost](https://github.com/dkanada/frost) but rebuild with consistent sizing and adjustments specifically for lines in mind. Arcticons is FOSS and provides mostly icons for open-source apps on F-Droid (but there are many other apps in this pack too). The design is simple and clean with minimal lines that give you a nice see-trough effect
 
@@ -8,7 +8,7 @@ Arcticons includes support for Trebuchet, KISS, Nova, Apex, Holo, ZenUI, ADW, an
 
 Submitting icon requests helps a lot, but maintaining the project (as you may imagine) takes a lot of time and effort, so please be patient about adding new icons. Contributions for new icons are always welcome, and no experience with programming is necessary.
 
-<img src='https://raw.githubusercontent.com/Donnnno/frost-lines/main/metadata/en-US/screenshots.png'>
+<img src='https://raw.githubusercontent.com/Donnnno/frost-lines/main/metadata/en-US/images/screenshots.png'>
 
 ## Icon Requests
 
@@ -39,4 +39,4 @@ Quick Guide:
 
 ## The icons
 
-<img src='https://raw.githubusercontent.com/Donnnno/frost-lines/main/metadata/en-US/complete-background.png'/>
+<img src='https://raw.githubusercontent.com/Donnnno/frost-lines/main/metadata/en-US/images/complete-background.png'/>
