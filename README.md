@@ -1,3 +1,5 @@
+<img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/Donnnno/Arcticons"> <img alt="F-Droid" src="https://img.shields.io/f-droid/v/com.donnnno.arcticons">
+
 <img src='https://raw.githubusercontent.com/Donnnno/frost-lines/main/metadata/en-US/images/header-background.png'>
 
 Arcticons (Arctic icons) is a line-based icon pack forked from [Frost](https://github.com/dkanada/frost) but rebuild with consistent sizing and adjustments specifically for lines in mind. Arcticons is FOSS and provides mostly icons for open-source apps on F-Droid (but there are many other apps in this pack too). The design is simple and clean with minimal lines that give you a nice see-trough effect
@@ -36,6 +38,11 @@ Quick Guide:
 5. Provide the activity names of the new apps
    - These should look something like `com.donnnno.arcticons/com.donnnno.arcticons.MainActivity`
    - If you want to help even more you can add your new icons to the appfilter.xml file
+
+## Donate
+|Paypal|Librapay|
+|---|---|
+|<a href="https://www.paypal.com/paypalme/onnovdd"><img alt="Donate using Paypal" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif"></a>|<a href="https://liberapay.com/Donno/donate"><img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg"></a>|
 
 ## The icons
 
