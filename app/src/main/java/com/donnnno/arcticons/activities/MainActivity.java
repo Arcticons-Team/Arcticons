@@ -2,7 +2,6 @@ package com.donnnno.arcticons.activities;
 
 import android.content.Intent;
 import android.graphics.drawable.BitmapDrawable;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
@@ -13,6 +12,7 @@ import android.widget.TextView;
 
 import com.donnnno.arcticons.R;
 import com.donnnno.arcticons.utils.ImageUtils;
+import com.donnnno.arcticons.utils.IntentUtils;
 import com.donnnno.arcticons.utils.ScreenUtils;
 
 public class MainActivity extends BaseActivity {
@@ -52,7 +52,7 @@ public class MainActivity extends BaseActivity {
         iconClickLayout.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
         iconClickLayout.setGravity(Gravity.CENTER);
         iconLayout.addView(iconClickLayout);
-        iconClickLayout.setOnClickListener(this::iconActivity);
+        iconClickLayout.setOnClickListener((v) -> IntentUtils.openActivity(this, IconActivity.class));
 
         Button iconButton = new Button(this);
         iconButton.setLayoutParams(buttonParams);
@@ -79,7 +79,7 @@ public class MainActivity extends BaseActivity {
         sourceClickLayout.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
         sourceClickLayout.setGravity(Gravity.CENTER);
         sourceLayout.addView(sourceClickLayout);
-        sourceClickLayout.setOnClickListener(this::gitLink);
+        sourceClickLayout.setOnClickListener((v) -> IntentUtils.openActivity(this, SourceActivity.class));
 
         Button sourceButton = new Button(this);
         sourceButton.setLayoutParams(buttonParams);
@@ -106,7 +106,7 @@ public class MainActivity extends BaseActivity {
         aboutClickLayout.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
         aboutClickLayout.setGravity(Gravity.CENTER);
         aboutLayout.addView(aboutClickLayout);
-        aboutClickLayout.setOnClickListener(this::licenseActivity);
+        aboutClickLayout.setOnClickListener((v) -> IntentUtils.openActivity(this, LicenseActivity.class));
 
         Button aboutButton = new Button(this);
         aboutButton.setLayoutParams(buttonParams);
@@ -120,21 +120,5 @@ public class MainActivity extends BaseActivity {
         aboutText.setTextColor(getResources().getColor(R.color.textDark));
         aboutText.setPadding(64, 64, 64, 64);
         aboutClickLayout.addView(aboutText);
-    }
-
-    public void gitLink(View v) {
-        Uri uri = Uri.parse(getResources().getString(R.string.url_repository));
-        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-        startActivity(intent);
-    }
-
-    public void iconActivity(View v) {
-        Intent intent = new Intent(this, IconActivity.class);
-        startActivity(intent);
-    }
-
-    public void licenseActivity(View v) {
-        Intent intent = new Intent(this, LicenseActivity.class);
-        startActivity(intent);
     }
 }
