@@ -1,7 +1,7 @@
 ### Basic rules
 
 - use 48x48 icons to match the rest of the files
-- lines have a thickness of **1pt**
+- lines have a thickness of **1px (Inkscape), 1pt (Illustrator)**
 - use the templates from `/templates` if your icon will have a common shape
 - no shape other than circles should be wider or higher than **39px**
 - upload the SVG files into the `/other` directory
