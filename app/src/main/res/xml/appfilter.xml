@@ -143,6 +143,9 @@
     <!-- andOTP -->
     <item component="ComponentInfo{org.shadowice.flocke.andotp/org.shadowice.flocke.andotp.Activities.MainActivity}" drawable="andotp" />
 
+    <!-- Android Auto -->
+    <item component="ComponentInfo{com.google.android.projection.gearhead/com.google.android.gearhead.vanagon.VnLaunchPadActivity}" drawable="androidauto"/>
+
     <!-- Android Keyboard -->
     <item component="ComponentInfo{com.android.inputmethod.latin/com.android.inputmethod.latin.setup.SetupActivity}" drawable="keyboard" />
 
@@ -1078,7 +1081,7 @@
 
     <!-- Flym -->
     <item component="ComponentInfo{net.frju.flym/net.frju.flym.ui.main.MainActivity}" drawable="flym" />
-
+    
     <!-- FM Radio -->
     <item component="ComponentInfo{com.android.fmradio/com.android.fmradio.FmMainActivity}" drawable="radio" />
     <item component="ComponentInfo{com.caf.fmradio/com.caf.fmradio.FMRadio}" drawable="radio" />
@@ -1156,6 +1159,9 @@
     <item component="ComponentInfo{com.sonyericsson.album/com.sonyericsson.album.MainActivity}" drawable="gallery" />
     <item component="ComponentInfo{com.oneplus.gallery/com.oneplus.gallery.OPGalleryActivity}" drawable="gallery" />
     <item component="ComponentInfo{com.alensw.PicFolder/com.alensw.PicFolder.GalleryActivity}" drawable="gallery" />
+
+    <!-- Galleria -->
+    <item component="ComponentInfo{com.miui.gallery/com.miui.gallery.activity.HomePageActivity}" drawable="gallery"/>
 
     <!-- GApps Browser -->
     <item component="ComponentInfo{com.tobykurien.google_news/com.tobykurien.google_news.GoogleNewsActivity}" drawable="browser" />
@@ -3696,6 +3702,9 @@
 
     <!-- UnCiv -->
     <item component="ComponentInfo{com.unciv.app/com.unciv.app.AndroidLauncher}" drawable="unciv" />
+
+    <!-- Ungoogled Chromium Extensions -->
+    <item component="ComponentInfo{org.ungoogled.chromium.extensions.stable/com.google.android.apps.chrome.Main}" drawable="chrome"/>
 
     <!-- Unified Nlp -->
     <item component="ComponentInfo{com.google.android.gms/org.microg.nlp.ui.SettingsLauncherActivity}" drawable="unifiednlp" />
