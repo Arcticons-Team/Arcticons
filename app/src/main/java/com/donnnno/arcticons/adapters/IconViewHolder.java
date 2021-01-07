@@ -1,12 +1,19 @@
 package com.donnnno.arcticons.adapters;
 
+import android.content.Context;
+import android.graphics.drawable.Drawable;
+import android.os.AsyncTask;
 import android.view.View;
 import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.res.ResourcesCompat;
+
+import java.lang.ref.WeakReference;
 
 public class IconViewHolder extends ViewHolderAdapter.ViewHolder<String> {
     private final ImageView icon;
+    private AsyncLoad asyncLoad = null;
 
     public IconViewHolder(View view) {
         super(view);
@@ -16,13 +23,45 @@ public class IconViewHolder extends ViewHolderAdapter.ViewHolder<String> {
     @Override
     protected void setContent(String content, int position, @NonNull ViewHolderAdapter<String, ? extends ViewHolderAdapter.ViewHolder<String>> adapter) {
         //IconAdapter iconAdapter = (IconAdapter) adapter;
-        final int resId = icon.getResources().getIdentifier(content, "drawable", icon.getContext().getPackageName());
-        icon.setImageResource(resId);
+        if (asyncLoad != null)
+            asyncLoad.cancel(true);
+
         icon.setAlpha(0f);
-        icon.setVisibility(View.VISIBLE);
-        icon.animate()
-                .alpha(1f)
-                .setDuration(1000)
-                .setListener(null);
+
+        asyncLoad = new AsyncLoad(this);
+        asyncLoad.execute(content);
+    }
+
+    private static class AsyncLoad extends AsyncTask<String, Void, Drawable> {
+        private final WeakReference<IconViewHolder> weakHolder;
+
+        public AsyncLoad(IconViewHolder holder) {
+            super();
+            weakHolder = new WeakReference<>(holder);
+        }
+
+        @Override
+        protected Drawable doInBackground(String... strings) {
+            IconViewHolder holder = weakHolder.get();
+            if (holder == null || strings.length == 0)
+                return null;
+            String resIdName = strings[0];
+            Context ctx = holder.icon.getContext();
+            final int resId = ctx.getResources().getIdentifier(resIdName, "drawable", ctx.getPackageName());
+            if (isCancelled())
+                return null;
+            return ResourcesCompat.getDrawable(ctx.getResources(), resId, null);
+        }
+
+        @Override
+        protected void onPostExecute(Drawable drawable) {
+            IconViewHolder holder = weakHolder.get();
+            if (holder != null) {
+                holder.icon.setImageDrawable(drawable);
+                holder.icon.animate()
+                        .alpha(1f)
+                        .setDuration(1000);
+            }
+        }
     }
 }
