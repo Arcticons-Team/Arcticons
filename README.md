@@ -1,4 +1,4 @@
-<img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/Donnnno/Arcticons"> <img alt="F-Droid" src="https://img.shields.io/f-droid/v/com.donnnno.arcticons">
+<img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/Donnnno/Arcticons"> [<img alt="F-Droid" src="https://img.shields.io/f-droid/v/com.donnnno.arcticons">](https://f-droid.org/packages/com.donnnno.arcticons)
 
 <img src='https://raw.githubusercontent.com/Donnnno/frost-lines/main/metadata/en-US/images/header-background.png'>
 
