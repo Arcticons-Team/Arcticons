@@ -1,8 +1,10 @@
 package com.donnnno.arcticons.adapters;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -13,6 +15,8 @@ import androidx.core.content.res.ResourcesCompat;
 import java.lang.ref.WeakReference;
 
 public class IconViewHolder extends ViewHolderAdapter.ViewHolder<String> {
+    private static final String TAG = "IVH";
+
     private final ImageView icon;
     private AsyncTask<String, Void, Drawable> asyncLoad = null;
     private final static View.OnLongClickListener longClickListener = v -> {
@@ -59,7 +63,12 @@ public class IconViewHolder extends ViewHolderAdapter.ViewHolder<String> {
             String resIdName = strings[0];
             Context ctx = holder.icon.getContext();
             final int resId = ctx.getResources().getIdentifier(resIdName, "drawable", ctx.getPackageName());
-            return ResourcesCompat.getDrawable(ctx.getResources(), resId, null);
+            try {
+                return ResourcesCompat.getDrawable(ctx.getResources(), resId, null);
+            } catch (Resources.NotFoundException e) {
+                Log.e(TAG, "`" + resIdName + "` not found", e);
+            }
+            return null;
         }
 
         @Override
