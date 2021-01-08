@@ -1147,6 +1147,9 @@
     
     <!-- FX -->
     <item component="ComponentInfo{nextapp.fx/nextapp.fx.ui.ExplorerActivity}" drawable="fx"/>
+    
+    <!-- FX TextEdit -->
+    <item component="ComponentInfo{nextapp.fx/nextapp.fx.ui.textedit.TextEditorActivity}" drawable="fxtextedit"/>
 
     <!-- GadgetBridge -->
     <item component="ComponentInfo{nodomain.freeyourgadget.gadgetbridge/nodomain.freeyourgadget.gadgetbridge.activities.ControlCenter}" drawable="gadgetbridge" />
@@ -3497,6 +3500,12 @@
 
     <!-- Tachiyomi -->
     <item component="ComponentInfo{eu.kanade.tachiyomi/eu.kanade.tachiyomi.ui.main.MainActivity}" drawable="tachiyomi" />
+    
+    <!-- TagInfo -->
+    <item component="ComponentInfo{com.nxp.taginfolite/com.nxp.taginfo.activities.MainView}" drawable="taginfo"/>
+    
+    <!-- TagWriter -->
+    <item component="ComponentInfo{com.nxp.nfc.tagwriter/com.nxp.nfc.tagwriter.activities.WelcomeScreen}" drawable="tagwriter"/>
 
     <!-- Talalarmo -->
     <item component="ComponentInfo{trikita.talalarmo/trikita.talalarmo.MainActivity}" drawable="talalarmo" />
@@ -3773,6 +3782,9 @@
     <!-- VLC -->
     <item component="ComponentInfo{org.videolan.vlc/org.videolan.vlc.gui.MainActivity}" drawable="vlc" />
     <item component="ComponentInfo{org.videolan.vlc/org.videolan.vlc.StartActivity}" drawable="vlc" />
+    
+    <!-- VNC Viewer -->
+    <item component="ComponentInfo{com.realvnc.viewer.android/com.realvnc.viewer.android.app.ConnectionChooserActivity}" drawable="vncviewer"/>
 
     <!-- Voice -->
     <item component="ComponentInfo{de.ph1b.audiobook/de.ph1b.audiobook.features.MainActivity}" drawable="voice" />
