@@ -63,6 +63,10 @@ public class IconViewHolder extends ViewHolderAdapter.ViewHolder<String> {
             String resIdName = strings[0];
             Context ctx = holder.icon.getContext();
             final int resId = ctx.getResources().getIdentifier(resIdName, "drawable", ctx.getPackageName());
+            if (resId == Resources.ID_NULL) {
+                Log.e(TAG, "`" + resIdName + "` not found");
+                return null;
+            }
             try {
                 return ResourcesCompat.getDrawable(ctx.getResources(), resId, null);
             } catch (Resources.NotFoundException e) {
