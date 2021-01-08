@@ -3,6 +3,7 @@ package com.donnnno.arcticons.utils;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -11,8 +12,13 @@ import com.donnnno.arcticons.async.BitmapLoadTask;
 public class ImageUtils {
 
     public static void bitmapLoadAsync(final ImageView imageView, final Resources resources, int resId, int width, int height) {
+        String type = resources.getResourceTypeName(resId);
+        Log.i("ImageUtils", "type " + type + " id " + resId);
         BitmapLoadTask task = new BitmapLoadTask(resources, resId, width, height, bitmap -> {
-            imageView.setImageBitmap(bitmap);
+            if (bitmap != null)
+                imageView.setImageBitmap(bitmap);
+            else
+                imageView.setImageResource(resId);
             imageView.setAlpha(0f);
             imageView.setVisibility(View.VISIBLE);
             imageView.animate()
@@ -50,7 +56,7 @@ public class ImageUtils {
 
         Bitmap rawBitmap = BitmapFactory.decodeResource(resources, resId, resOptions);
         if (rawBitmap == null) {
-            rawBitmap = Bitmap.createBitmap(100, 100, Bitmap.Config.ARGB_8888);
+            rawBitmap = Bitmap.createBitmap(resWidth, resHeight, Bitmap.Config.ARGB_8888);
         }
 
         // scale to desired size
