@@ -40,6 +40,14 @@ Quick Guide:
    - These should look something like `com.donnnno.arcticons/com.donnnno.arcticons.MainActivity`
    - If you want to help even more you can add your new icons to the appfilter.xml file
 
+## Building
+
+Before building the app you will need to convert the vector (SVG) files to rasterized (PNG) files. This can be done automatically by running `make`. If you have a multi-core CPU then you can speed this up by running for example `make -j5` to run 5 processes in parallel.
+
+This will also clean the SVG files, if needed recolor them, and generate the XML files needed for the app to compile. To change the color of the icons, change the corresponding variable in the Makefile. Separate make targets are available: `make raster`, `make cleanall`, `make xml`. Finally, `make clean` removes all generated files.
+
+After this you can compile the app as normal. For example, by importing it into Android Studio and building it.
+
 ## Donate
 |Paypal|Librapay|
 |---|---|
