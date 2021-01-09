@@ -1150,6 +1150,7 @@
     
     <!-- FX TextEdit -->
     <item component="ComponentInfo{nextapp.fx/nextapp.fx.ui.textedit.TextEditorActivity}" drawable="fxtextedit"/>
+    <item component="ComponentInfo{nextapp.fx/nextapp.fx.ui.textedit.EditorActivity}" drawable="fx"/>
 
     <!-- GadgetBridge -->
     <item component="ComponentInfo{nodomain.freeyourgadget.gadgetbridge/nodomain.freeyourgadget.gadgetbridge.activities.ControlCenter}" drawable="gadgetbridge" />
@@ -1331,6 +1332,9 @@
 
     <!-- GPS Status -->
     <item component="ComponentInfo{com.eclipsim.gpsstatus2/com.eclipsim.gpsstatus2.GPSStatus}" drawable="gpsstatus" />
+    
+    <!-- GPSTest -->
+    <item component="ComponentInfo{com.android.gpstest.osmdroid/com.android.gpstest.GpsTestActivity}" drawable="gpstest"/>
 
     <!-- gReader Pro -->
     <item component="ComponentInfo{com.noinnion.android.greader.readerpro/com.noinnion.android.greader.ui.login.LoginActivity}" drawable="greader" />
@@ -1896,6 +1900,9 @@
 
     <!-- MOD Pizza -->
     <item component="ComponentInfo{com.punchh.mod/com.punchh.mod.MainActivity}" drawable="modpizza" />
+    
+    <!-- monerujo -->
+    <item component="ComponentInfo{com.m2049r.xmrwallet/com.m2049r.xmrwallet.MainActivity}" drawable="monerujo"/>
 
     <!-- Money Balance -->
     <item component="ComponentInfo{ivl.android.moneybalance/ivl.android.moneybalance.CalculationListActivity}" drawable="money" />
@@ -2732,6 +2739,9 @@
     <!-- Signal -->
     <item component="ComponentInfo{org.libresignal/org.thoughtcrime.securesms.RoutingActivity}" drawable="signal" />
     <item component="ComponentInfo{org.thoughtcrime.securesms/org.thoughtcrime.securesms.RoutingActivity}" drawable="signal" />
+    
+    <!-- Signal Generator -->
+    <item component="ComponentInfo{org.billthefarmer.siggen/org.billthefarmer.siggen.Main}" drawable="signalgenerator"/>
 
     <!-- Silence -->
     <item component="ComponentInfo{org.smssecure.smssecure/org.smssecure.smssecure.RoutingActivity}" drawable="silence" />
@@ -3789,6 +3799,9 @@
     <!-- Voice -->
     <item component="ComponentInfo{de.ph1b.audiobook/de.ph1b.audiobook.features.MainActivity}" drawable="voice" />
     <item component="ComponentInfo{de.ph1b.audiobook/de.phib.audiobook.features.MainActivity}" drawable="voice" />
+    
+    <!-- VPN Hotspot -->
+    <item component="ComponentInfo{be.mygod.vpnhotspot/be.mygod.vpnhotspot.MainActivity}" drawable="vpnhotspot"/>
 
     <!-- VRN eTarif -->
     <item component="ComponentInfo{com.sevenre.linear/com.sevenre.linear.MainActivity}" drawable="vrnetarif" />
