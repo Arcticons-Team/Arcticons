@@ -421,7 +421,8 @@
 
     <!-- Browser -->
     <item component="ComponentInfo{org.lineageos.jelly/org.lineageos.jelly.MainActivity}" drawable="jelly" />
-
+    <item component="ComponentInfo{foundation.e.browser/com.google.android.apps.chrome.Main}" drawable="browser"/>  
+    
     <!-- BSPB -->
     <item component="ComponentInfo{ru.bspb/ru.bspb.MainActivity}" drawable="bspb" />
 
@@ -815,7 +816,8 @@
 
     <!-- Download Navi -->
     <item component="ComponentInfo{com.tachibana.downloader/com.tachibana.downloader.MainActivity}" drawable="downloadnavi" />
-
+    <item component="ComponentInfo{com.tachibana.downloader/com.tachibana.downloader.ui.main.MainActivity}" drawable="downloadnavi"/>
+    
     <!-- Downloads -->
     <item component="ComponentInfo{com.android.providers.downloads.ui/com.android.providers.downloads.ui.DownloadList}" drawable="downloads" />
 
@@ -2123,6 +2125,9 @@
     <!-- NewPipe -->
     <item component="ComponentInfo{org.schabi.newpipe/org.schabi.newpipe.VideoItemListActivity}" drawable="newpipe" />
     <item component="ComponentInfo{org.schabi.newpipe/org.schabi.newpipe.MainActivity}" drawable="newpipe" />
+
+    <!-- NewPipe Legacy -->
+    <item component="ComponentInfo{org.schabi.newpipelegacy/org.schabi.newpipelegacy.MainActivity}" drawable="newpipe"/>
 
     <!-- News -->
     <item component="ComponentInfo{de.luhmer.owncloudnewsreader/de.luhmer.owncloudnewsreader.NewsReaderListActivity}" drawable="news" />
