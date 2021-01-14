@@ -1,3 +1,9 @@
+### 1.2.5
+###### Released: Jan 14, 2021
+* Improved search function
+* 61 new icons & revisited some old ones (thanks to aaronhatesregex, 0slav, livmackintosh, TBg) 
+* 1033 icons in total!
+
 ### 1.2.0
 ###### Released: Jan 6, 2021
 * Search, you can now search for icons in the app!
