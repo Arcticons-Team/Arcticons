@@ -1,7 +1,7 @@
 ### 1.2.5
 ###### Released: Jan 14, 2021
 * Improved search function
-* 61 new icons & revisited some old ones (thanks to aaronhatesregex, 0slav, livmackintosh, TBg) 
+* 61 new icons & revisited some old ones (thanks to aaronhatesregex, 0slav, livmackintosh, TBog) 
 * 1033 icons in total!
 
 ### 1.2.0
