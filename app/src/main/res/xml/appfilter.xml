@@ -585,8 +585,8 @@
     <item component="ComponentInfo{com.dkanada.chip/com.dkanada.chip.activities.MainActivity}" drawable="chip" />
 
     <!-- Chromium -->
-    <item component="ComponentInfo{org.notphenom.swe.browser/org.notphenom.swe.browser.Main}" drawable="chrome" />
-    <item component="ComponentInfo{org.chromium.chrome/com.google.android.apps.chrome.Main}" drawable="chrome" />
+    <item component="ComponentInfo{org.notphenom.swe.browser/org.notphenom.swe.browser.Main}" drawable="googlechrome" />
+    <item component="ComponentInfo{org.chromium.chrome/com.google.android.apps.chrome.Main}" drawable="googlechrome" />
 
     <!-- Chubby Click -->
     <item component="ComponentInfo{agrigolo.chubbyclick/agrigolo.chubbyclick.MainActivity}" drawable="chubbyclick" />
@@ -867,6 +867,9 @@
     <!-- Drinks -->
     <item component="ComponentInfo{fr.masciulli.drinks/fr.masciulli.drinks.ui.activity.MainActivity}" drawable="drinks" />
 
+    <!-- DroidFish -->
+    <item component="ComponentInfo{org.petero.droidfish/org.petero.droidfish.DroidFish}" drawable="droidfish"/>
+
     <!-- DroidShows -->
     <item component="ComponentInfo{nl.asymmetrics.droidshows/nl.asymmetrics.droidshows.DroidShows}" drawable="droidshows" />
 
@@ -898,8 +901,8 @@
     <item component="ComponentInfo{com.duckduckgo.mobile.android/com.duckduckgo.app.launch.LauncherSilhoutte}" drawable="duckduckgo"/>
 
     <!-- Duo -->
-    <item component="ComponentInfo{com.google.android.apps.tachyon/com.google.android.apps.tachyon.MainActivity}" drawable="duo" />
-
+    <item component="ComponentInfo{com.google.android.apps.tachyon/com.google.android.apps.tachyon.MainActivity}" drawable="duomobile" />
+    
     <!-- Duolingo -->
     <item component="ComponentInfo{com.duolingo/com.duolingo.app.LoginActivity}" drawable="duolingo" />
 
@@ -1315,9 +1318,9 @@
     <item component="ComponentInfo{com.google.android.CameraRedmi5Plus/com.android.camera.CameraLauncher}" drawable="googlecamera" />
 
     <!-- Google Chrome -->
-    <item component="ComponentInfo{com.android.chrome/com.google.android.apps.chrome.Main}" drawable="chrome" />
-    <item component="ComponentInfo{com.chrome.beta/com.google.android.apps.chrome.Main}" drawable="chrome" />
-    <item component="ComponentInfo{com.chrome.dev/com.google.android.apps.chrome.Main}" drawable="chrome" />
+    <item component="ComponentInfo{com.android.chrome/com.google.android.apps.chrome.Main}" drawable="googlechrome"/>
+    <item component="ComponentInfo{com.chrome.beta/com.google.android.apps.chrome.Main}" drawable="googlechrome" />
+    <item component="ComponentInfo{com.chrome.dev/com.google.android.apps.chrome.Main}" drawable="googlechrome" />
 
     <!-- Google Clock -->
     <item component="ComponentInfo{com.google.android.deskclock/com.android.deskclock.DeskClock}" drawable="clock" />
@@ -1925,6 +1928,7 @@
     <item component="ComponentInfo{com.sonyericsson.conversations/com.sonyericsson.conversations.ui.ConversationListActivity}" drawable="messages" />
     <item component="ComponentInfo{com.oneplus.mms/com.android.mms.ui.ConversationList}" drawable="messages" />
     <item component="ComponentInfo{foundation.e.message/com.moez.QKSMS.feature.main.MainActivity}" drawable="messages"/>
+    <item component="ComponentInfo{com.android.mms/com.android.mms.ui.MmsTabActivity}"  drawable="messages"/>
 
     <!-- Messaging -->
     <item component="ComponentInfo{com.android.messaging/com.android.messaging.ui.conversationlist.ConversationListActivity}" drawable="messaging" />
@@ -2560,6 +2564,7 @@
     <item component="ComponentInfo{com.google.android.dialer/com.google.android.dialer.extensions.GoogleDialtactsActivity}" drawable="phone" />
     <item component="ComponentInfo{org.dnaq.dialer2/org.dnaq.dialer2.DialerActivity}" drawable="phone" />
     <item component="ComponentInfo{com.oneplus.dialer/com.android.dialer.oneplus.activity.OPDialtactsActivity}" drawable="phone" />
+    <item component="ComponentInfo{com.android.contacts/com.android.contacts.activities.TwelveKeyDialer}" drawable="phone"/>
 
     <!-- Phone Manager -->
     <item component="ComponentInfo{com.huawei.systemmanager/com.huawei.systemmanager.mainscreen.MainScreenActivity}" drawable="huaweisystemmanager" />
@@ -3990,7 +3995,7 @@
     <item component="ComponentInfo{com.unciv.app/com.unciv.app.AndroidLauncher}" drawable="unciv" />
 
     <!-- Ungoogled Chromium Extensions -->
-    <item component="ComponentInfo{org.ungoogled.chromium.extensions.stable/com.google.android.apps.chrome.Main}" drawable="chrome"/>
+    <item component="ComponentInfo{org.ungoogled.chromium.extensions.stable/com.google.android.apps.chrome.Main}" drawable="googlechrome"/>
 
     <!-- Unified Nlp -->
     <item component="ComponentInfo{com.google.android.gms/org.microg.nlp.ui.SettingsLauncherActivity}" drawable="unifiednlp" />
