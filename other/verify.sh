@@ -25,7 +25,7 @@ then
 else
   grep_switches='li'
 fi
-  
+
 if ! \
   grep \
     -"$grep_switches" \
@@ -37,8 +37,8 @@ else
   if ! $batch
   then
     echo 'FAIL: The listed icons do not pass *.svg -> *.avd verification.'
-    echo '       For info on how to fix this, please see:'
-    echo "       $URL"
+    echo '	 For info on how to fix this, please see:'
+    echo "	 $URL"
   fi
   exit 1
 fi

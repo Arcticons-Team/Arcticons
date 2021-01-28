@@ -17,17 +17,17 @@ do
     TYPE=$(echo ${line} | cut -c 1-4)
     case ${TYPE} in
       "<!--")
-        printf "\n$line" >> twofilter.xml
-        ;;
+	printf "\n$line" >> twofilter.xml
+	;;
       "<ite")
-        printf " $line" >> twofilter.xml
-        ;;
+	printf " $line" >> twofilter.xml
+	;;
       "<sca")
-        printf " $line" >> twofilter.xml
-        ;;
+	printf " $line" >> twofilter.xml
+	;;
       "")
-        # do nothing
-        ;;
+	# do nothing
+	;;
     esac
 done < onefilter.xml
 
@@ -41,7 +41,7 @@ sed -ri 's: ([^ ]*)$:&\n:g' onefilter.xml
 tr ' ' '\n' < onefilter.xml > twofilter.xml
 
 # add indentation
-sed -ri 's:.+:    &:g' twofilter.xml
+sed -ri 's:.+:	  &:g' twofilter.xml
 # replace bar character with space in items
 sed -ri 's:\|: :g' twofilter.xml
 # add space at the end

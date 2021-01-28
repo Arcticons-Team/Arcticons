@@ -17,20 +17,20 @@ do
     inkscape --export-filename=${NAME}.png --export-width=${SIZE} --export-height=${SIZE} ${NAME}.svg
     case ${SIZE} in
       48)
-        mv ${NAME}.png ${EXPORT}/drawable-mdpi/
-        ;;
+	mv ${NAME}.png ${EXPORT}/drawable-mdpi/
+	;;
       72)
-        mv ${NAME}.png ${EXPORT}/drawable-hdpi/
-        ;;
+	mv ${NAME}.png ${EXPORT}/drawable-hdpi/
+	;;
       96)
-        mv ${NAME}.png ${EXPORT}/drawable-xhdpi/
-        ;;
+	mv ${NAME}.png ${EXPORT}/drawable-xhdpi/
+	;;
       144)
-        mv ${NAME}.png ${EXPORT}/drawable-xxhdpi/
-        ;;
+	mv ${NAME}.png ${EXPORT}/drawable-xxhdpi/
+	;;
       192)
-        mv ${NAME}.png ${EXPORT}/drawable-xxxhdpi/
-        ;;
+	mv ${NAME}.png ${EXPORT}/drawable-xxxhdpi/
+	;;
     esac
   done
   rm ${FILE}
