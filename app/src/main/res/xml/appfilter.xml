@@ -4,7 +4,7 @@
     <item component="ComponentInfo{io.github.lonamiwebs.klooni/io.github.lonamiwebs.klooni.AndroidLauncher}" drawable="tentenklooni" />
 
     <!-- 10-bit Clock Widget -->
-    <item component="ComponentInfo{com.github.ashutoshgngwr.tenbitclockwidget/com.github.ashutoshgngwr.tenbitclockwidget.ClockWidgetPreferenceActivity}" drawable="10-bitclockwidget" />
+    <item component="ComponentInfo{com.github.ashutoshgngwr.tenbitclockwidget/com.github.ashutoshgngwr.tenbitclockwidget.ClockWidgetPreferenceActivity}" drawable="tenbitclockwidget" />
 
     <!-- 1List -->
     <item component="ComponentInfo{com.lolo.io.onelist/com.lolo.io.onelist.MainActivity}" drawable="onelist" />
@@ -16,10 +16,10 @@
     <item component="ComponentInfo{org.mattvchandler.a2050/org.mattvchandler.a2050.MainActivity}" drawable="a2050" />
 
     <!-- 3D Model Viewer -->
-    <item component="ComponentInfo{org.andresoviedo.dddmodel2/org.andresoviedo.app.model3D.MainActivity}" drawable="3dmodelviewer" />
+    <item component="ComponentInfo{org.andresoviedo.dddmodel2/org.andresoviedo.app.model3D.MainActivity}" drawable="model3d" />
 
     <!-- 48sx -->
-    <item component="ComponentInfo{org.czo.droid48sx/org.czo.droid48sx.X48}" drawable="48sx" />
+    <item component="ComponentInfo{org.czo.droid48sx/org.czo.droid48sx.X48}" drawable="droid48sx" />
 
     <!-- 5th Edition Spellbook -->
     <item component="ComponentInfo{com.spellsdd5/com.spelldd5.MainActivity}" drawable="spellbook" />
@@ -322,9 +322,6 @@
     <!-- Authenticate -->
     <item component="ComponentInfo{secureauth.android.token/secureauth.android.token.TokenList}" drawable="authenticate" />
 
-    <!-- Authenticator -->
-    <item component="ComponentInfo{me.jmh.authenticatorpro/crc646be539cf0a2d8609.MainActivity}" drawable="authenticator" />
-
     <!-- Authenticator (LastPass) -->
     <item component="ComponentInfo{com.lastpass.authenticator/com.lastpass.authenticator.activities.SplashActivity}" drawable="lastpassauthenticator" />
 
@@ -411,7 +408,7 @@
     <item component="ComponentInfo{com.blackboard.android.bbstudent/com.blackboard.android.bbstudent.launch.LaunchActivityImpl}" drawable="blackboard" />
 
     <!-- BLE-Monitor -->
-    <item component="ComponentInfo{com.huc.android_ble_monitor/com.huc.android_ble_monitor.activities.MainActivity}" drawable="ble-monitor" />
+    <item component="ComponentInfo{com.huc.android_ble_monitor/com.huc.android_ble_monitor.activities.MainActivity}" drawable="ble_monitor" />
 
     <!-- Blocker -->
     <item component="ComponentInfo{com.merxury.blocker/com.merxury.blocker.ui.home.HomeActivity}" drawable="blocker" />
@@ -668,15 +665,12 @@
     <item component="ComponentInfo{com.indymobileapp.document.scanner/com.notebloc.app.activity.MainActivity}" drawable="clearscan" />
 
     <!-- Clock -->
-    <item component="ComponentInfo{com.android.deskclock/com.android.deskclock.DeskClock}" drawable="clock" />
-
-    <!-- Clock -->
-    <item component="ComponentInfo{com.android.deskclock/com.android.deskclock.DeskClock}" drawable="clock" />
-    <item component="ComponentInfo{com.android.deskclock.bb/com.android.deskclock.DeskClock}" drawable="clock" />
-    <item component="ComponentInfo{com.sec.android.app.clockpackage/com.sec.android.app.clockpackage.ClockPackage}" drawable="clock" />
-    <item component="ComponentInfo{com.android.deskclock/com.android.deskclock.AlarmsMainActivity}" drawable="clock" />
-    <item component="ComponentInfo{com.sonyericsson.organizer/com.sonyericsson.organizer.Organizer}" drawable="clock" />
-    <item component="ComponentInfo{com.oneplus.deskclock/com.oneplus.deskclock.DeskClock}" drawable="clock" />
+    <item component="ComponentInfo{com.android.deskclock/com.android.deskclock.DeskClock}" drawable="deskclock" />
+    <item component="ComponentInfo{com.android.deskclock.bb/com.android.deskclock.DeskClock}" drawable="deskclock" />
+    <item component="ComponentInfo{com.sec.android.app.clockpackage/com.sec.android.app.clockpackage.ClockPackage}" drawable="deskclock" />
+    <item component="ComponentInfo{com.android.deskclock/com.android.deskclock.AlarmsMainActivity}" drawable="deskclock" />
+    <item component="ComponentInfo{com.sonyericsson.organizer/com.sonyericsson.organizer.Organizer}" drawable="deskclock" />
+    <item component="ComponentInfo{com.oneplus.deskclock/com.oneplus.deskclock.DeskClock}" drawable="deskclock" />
 
     <!-- Clock+ -->
     <item component="ComponentInfo{com.philliphsu.clock2/com.philliphsu.clock2.MainActivity}" drawable="clock2" />
@@ -1320,9 +1314,6 @@
     <item component="ComponentInfo{nodomain.freeyourgadget.gadgetbridge/nodomain.freeyourgadget.gadgetbridge.activities.ControlCenter}" drawable="gadgetbridge" />
     <item component="ComponentInfo{nodomain.freeyourgadget.gadgetbridge/nodomain.freeyourgadget.gadgetbridge.activities.ControlCenterv2}" drawable="gadgetbridge" />
 
-    <!-- Galleria -->
-    <item component="ComponentInfo{com.miui.gallery/com.miui.gallery.activity.HomePageActivity}" drawable="gallery" />
-
     <!-- Gallery -->
     <item component="ComponentInfo{com.android.gallery3d/com.android.gallery3d.app.GalleryActivity}" drawable="gallery" />
     <item component="ComponentInfo{com.android.gallery3d/com.huawei.gallery.app.GalleryMain}" drawable="gallery" />
@@ -1611,9 +1602,6 @@
     <!-- iFood -->
     <item component="ComponentInfo{br.com.brainweb.ifood/br.com.brainweb.ifood.mvp.splash.view.SplashScreenActivity}" drawable="ifood" />
 
-    <!-- Il Meteo -->
-    <item component="ComponentInfo{com.ilmeteo.android.ilmeteo/com.ilmeteo.android.ilmeteo.SplashActivity}" drawable="meteo" />
-
     <!-- I Love Hue -->
     <item component="ComponentInfo{com.zutgames.ilovehue/com.ansca.corona.CoronaActivity}" drawable="hearth" />
 
@@ -1655,7 +1643,7 @@
     <item component="ComponentInfo{ru.ivi.client/ru.ivi.client.activity.MainActivity}" drawable="ivi" />
 
     <!-- iVMS-4500 -->
-    <item component="ComponentInfo{com.mcu.iVMS/com.mcu.iVMS.ui.control.loading.LoadingActivity}" drawable="ivms-4500" />
+    <item component="ComponentInfo{com.mcu.iVMS/com.mcu.iVMS.ui.control.loading.LoadingActivity}" drawable="ivms_4500" />
 
     <!-- Jakdojade -->
     <item component="ComponentInfo{com.citynav.jakdojade.pl.android/com.citynav.jakdojade.pl.android.MainActivity}" drawable="jakdojade" />
@@ -1837,9 +1825,6 @@
 
     <!-- Lemuroid -->
     <item component="ComponentInfo{com.swordfish.lemuroid/com.swordfish.lemuroid.app.mobile.feature.main.MainActivity}" drawable="lemuroid" />
-
-    <!-- Lemuroid -->
-    <item component="ComponentInfo{com.swordfish.lemuroid/com.swordfish.lemuroid.app.mobile.feature.main.MainActivity}" drawable="letter_l" />
 
     <!-- Lens -->
     <item component="ComponentInfo{com.google.ar.lens/com.google.vr.apps.ornament.app.lens.LensLauncherActivity}" drawable="lens" />
@@ -2553,9 +2538,6 @@
     <item component="ComponentInfo{org.openfoodfacts.scanner/openfoodfacts.github.scrachx.openfood.views.MainActivity}" drawable="openfoodfacts" />
     <item component="ComponentInfo{org.openfoodfacts.scanner/openfoodfacts.github.scrachx.openfood.views.splash.SplashActivity}" drawable="openfoodfacts" />
 
-    <!-- openHAB Beta -->
-    <item component="ComponentInfo{org.openhab.habdroid.beta/org.openhab.habdroid.ui.MainActivity}" drawable="openhab" />
-
     <!-- openHAB -->
     <item component="ComponentInfo{org.openhab.habdroid/org.openhab.habdroid.ui.MainActivity}" drawable="openhab" />
 
@@ -2925,9 +2907,6 @@
 
     <!-- ReadEra -->
     <item component="ComponentInfo{org.readera/com.readera.MainActivity}" drawable="readera" />
-
-    <!-- Reader for Selfoss -->
-    <item component="ComponentInfo{apps.amine.bou.readerforselfoss/apps.amine.bou.readerforselfoss.MainActivity}" drawable="readerforselfoss" />
 
     <!-- Readrops -->
     <item component="ComponentInfo{com.readrops.app/com.readrops.app.activities.SplashActivity}" drawable="readrops"/>
@@ -3859,9 +3838,6 @@
     <!-- Speedtest -->
     <item component="ComponentInfo{org.zwanoo.android.speedtest/com.ookla.mobile4.screens.main.MainActivity}" drawable="speedtest" />
     <item component="ComponentInfo{org.zwanoo.android.speedtest/com.ookla.speedtest.softfacade.MainActivity}" drawable="speedtest" />
-
-    <!-- Splitser -->
-    <item component="ComponentInfo{nl.wiebetaaltwat.webapp/com.wbw.main.InitActivity}" drawable="splitser" />
 
     <!-- Spotify -->
     <item component="ComponentInfo{com.spotify.music/com.spotify.music.MainActivity}" drawable="spotify" />
