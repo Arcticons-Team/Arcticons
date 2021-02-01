@@ -6,7 +6,7 @@ Arcticons (Arctic icons) is a line-based icon pack forked from [Frost](https://g
 
 [<img src="https://f-droid.org/badge/get-it-on.png" alt="Get it on F-Droid" height="90">](https://f-droid.org/packages/com.donnnno.arcticons)
 
-Arcticons includes support for Trebuchet, KISS, Nova, Apex, Holo, ZenUI, ADW, and many more launchers. **There are over 1000 icons.**
+Arcticons includes support for a lot of lauchers like Trebuchet, KISS, Nova, Apex, Holo, ZenUI, ADW, and many more. The installation depends on your launcher, it's probably somewhere in the settings. **There are over 1100 icons.**
 
 Submitting icon requests helps a lot, but maintaining the project (as you may imagine) takes a lot of time and effort, so please be patient about adding new icons. Contributions for new icons are always welcome, and no experience with programming is necessary.
 
