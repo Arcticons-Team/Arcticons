@@ -1,11 +1,11 @@
 ### Basic rules
 
-- use 48x48 icons to match the rest of the files
+- use the template files as a reference, the document size should be *48px*
 - lines have a thickness of **1px (Inkscape), 1pt (Illustrator)**
-- use the templates from `/templates` if your icon will have a common shape
-- no shape other than circles should be wider or higher than **39px**
+- try to be consisten with sizing your icons, make sure it's not to big or small (use the templates as a reference)
+- we don't accept files that are directly image traced, theye are a mess to work with and look sloppy
+- if you use any letters or numbers make sure to use the font document from the templates folder.
 - upload the SVG files into the `/other` directory
-
 
 Before contributing SVG icons, open them inside a text editor and check for the following features. If your icon contains **any** of these SVG features, please replace them before submitting a pull request!
 
