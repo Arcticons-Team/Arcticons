@@ -1,5 +1,5 @@
 ### 1.3.0
-###### Released: Jan 1, 2021
+###### Released: Feb 1, 2021
 * 108 new icons (thanks to aaronhatesregex, RuffaWuffa, csmnn, austenadler, fanfu & 0slav!)
 * 1140 icons in total!
 
