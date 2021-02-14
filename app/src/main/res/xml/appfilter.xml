@@ -358,6 +358,7 @@
 
     <!-- Banque -->
     <item component="ComponentInfo{com.caisseepargne.android.mobilebanking/com.caisseepargne.android.mobilebanking.activities.ADashBoard}" drawable="banque" />
+    <item component="ComponentInfo{com.caisseepargne.android.mobilebanking/com.caisseepargne.android.mobilebanking.features.main.MainActivity}" drawable="banque"/>
 
     <!-- Barcode Scanner -->
     <item component="ComponentInfo{com.google.zxing.client.android/com.google.zxing.client.android.CaptureActivity}" drawable="barcode" />
@@ -1120,8 +1121,6 @@
 
     <!-- FastHub -->
     <item component="ComponentInfo{com.fastaccess.github/com.fastaccess.ui.modules.main.MainActivity}" drawable="fasthub" />
-
-    <!-- FastHub-Libre -->
     <item component="ComponentInfo{com.fastaccess.github.libre/com.fastaccess.ui.modules.main.MainActivity}" drawable="fasthub" />
 
     <!-- Fast Reset -->
@@ -2030,6 +2029,9 @@
 
     <!-- Mediafire -->
     <item component="ComponentInfo{com.mediafire.android/com.mediafire.android.ui.authentication.AuthenticationActivity}" drawable="mediafire" />
+
+    <!-- Mediapart -->
+    <item component="ComponentInfo{com.mediapart.app/com.mediapartmobileapp.MainActivity}" drawable="mediapart"/>
 
     <!-- Meditation Assistant -->
     <item component="ComponentInfo{sh.ftp.rocketninelabs.meditationassistant.opensource/sh.ftp.rocketninelabs.meditationassistant.MainActivity}" drawable="meditationassistant" />
@@ -4230,6 +4232,7 @@
 
     <!-- Twidere -->
     <item component="ComponentInfo{org.mariotaku.twidere/org.mariotaku.twidere.activity.MainActivity}" drawable="twidere" />
+    <item component="ComponentInfo{com.twidere.twiderex/com.twidere.twiderex.TwidereXActivity}" drawable="twiderex"/>
 
     <!-- Twire -->
     <item component="ComponentInfo{com.perflyst.twire/com.perflyst.twire.activities.StartUpActivity}" drawable="twire" />
@@ -4563,6 +4566,9 @@
 
     <!-- Zoom -->
     <item component="ComponentInfo{us.zoom.videomeetings/com.zipow.videobox.LauncherActivity}" drawable="zoom" />
+
+    <!-- Zoo for Zotero -->
+    <item component="ComponentInfo{com.mickstarify.zooforzotero/com.mickstarify.zooforzotero.MainActivity}" drawable="zooforzotero"/>   
 
     <!-- Zoysii -->
     <item component="ComponentInfo{xyz.deepdaikon.zoysii/xyz.deepdaikon.zoysii.MainActivity}" drawable="zoysii" />
