@@ -301,6 +301,9 @@
     <!-- Audio Technica Connect -->
     <item component="ComponentInfo{jp.co.audiotechnica.connect/com.audiotechnica.SplashActivity}" drawable="audiotechnicaconnect" />
 
+    <!-- Audio Video Manager -->
+    <item component="ComponentInfo{com.inverseai.audio_video_manager/com.inverseai.audio_video_manager.activity.WelcomeActivity}" drawable="audiovideomanager"/>
+
     <!-- Aurora Droid -->
     <item component="ComponentInfo{com.aurora.adroid/com.aurora.adroid.activity.AuroraActivity}" drawable="auroradroid" />
     <item component="ComponentInfo{com.aurora.adroid/com.aurora.adroid.ui.activity.AuroraActivity}" drawable="auroradroid" />
@@ -627,6 +630,9 @@
 
     <!-- Chess -->
     <item component="ComponentInfo{jwtc.android.chess/jwtc.android.chess.start}" drawable="chess"/>
+
+    <!-- Chief Follow -->
+    <item component="ComponentInfo{chiefchief.app/com.followersmanager.activities.publicpage.SplashActivity}" drawable="chieffollow"/>
 
     <!-- Chip8 -->
     <item component="ComponentInfo{com.dkanada.chip/com.dkanada.emu.activities.MainActivity}" drawable="chip" />
@@ -992,8 +998,12 @@
     <item component="ComponentInfo{com.ebay.mobile/com.ebay.mobile.activities.MainActivity}" drawable="ebay" />
 
     <!-- Ebay Kleinanzeigen -->
-    <item component="ComponentInfo{com.ebay.kleinanzeigen/ebk.SplashActivity}" drawable="ebaykleinanzeigen" />
-
+    <item component="ComponentInfo{com.ebay.kleinanzeigen/ebk.SplashActivity}" drawable="ebay" />
+    <item component="ComponentInfo{com.ebay.kleinanzeigen/ebk.ui.splash.SplashActivity}" drawable="ebay"/>
+    
+    <!-- EboBirthday -->
+    <item component="ComponentInfo{com.ebomike.ebobirthday/com.ebomike.ebobirthday.EboBirthday}" drawable="ebobirthday"/>
+    
     <!-- EBookDroid -->
     <item component="ComponentInfo{org.ebookdroid/org.ebookdroid.ui.MainActivity}" drawable="ebookdroid"/>
 
@@ -1056,6 +1066,9 @@
 
     <!-- EtherPad -->
     <item component="ComponentInfo{com.zebproj.etherpad/com.zebproj.etherpad.MainActivity}" drawable="etherpad" />
+
+    <!-- Etsy -->
+    <item component="ComponentInfo{com.etsy.android/com.etsy.android.ui.homescreen.HomescreenTabsActivity}" drawable="etsy"/>
 
     <!-- Eventyay Attendee -->
     <item component="ComponentInfo{com.eventyay.attendee/org.fossasia.openevent.general.MainActivity}" drawable="eventyayattendee" />
@@ -1384,6 +1397,10 @@
 
     <!-- Google Authenticator -->
     <item component="ComponentInfo{com.google.android.apps.authenticator2/com.google.android.apps.authenticator.AuthenticatorActivity}" drawable="googleauthenticator" />
+
+    
+    <!-- Google Assistant -->
+    <item component="ComponentInfo{com.google.android.apps.googleassistant/com.google.android.apps.googleassistant.AssistantActivity}" drawable="googleassistant"/>
 
     <!-- Google Calculator -->
     <item component="ComponentInfo{com.google.android.calculator/com.android.calculator2.Calculator}" drawable="calculator" />
@@ -1718,6 +1735,7 @@
     <!-- KeePass DX -->
     <item component="ComponentInfo{com.kunzisoft.keepass.libre/com.kunzisoft.keepass.fileselect.FileSelectActivity}" drawable="keepassdx" />
     <item component="ComponentInfo{com.kunzisoft.keepass.libre/com.kunzisoft.keepass.activities.FileDatabaseSelectActivity}" drawable="keepassdx" />
+    <item component="ComponentInfo{com.kunzisoft.keepass.free/com.kunzisoft.keepass.activities.FileDatabaseSelectActivity}" drawable="keepassdx"/>
 
     <!-- Keep -->
     <item component="ComponentInfo{com.gotokeep.keep/com.gotokeep.keep.splash.SplashActivity}" drawable="keep" />
@@ -1980,6 +1998,9 @@
     <!-- Markor -->
     <item component="ComponentInfo{net.gsantner.markor/net.gsantner.markor.activity.MainActivity}" drawable="markor" />
 
+    <!-- markt.de Kleinanzeigen -->
+    <item component="ComponentInfo{de.markt.android.classifieds.df/de.markt.android.classifieds.ui.StartActivity}" drawable="marktde"/>
+
     <!-- Master Password -->
     <item component="ComponentInfo{com.lyndir.masterpassword/com.lyndir.masterpassword.EmergencyActivity}" drawable="masterpassword" />
 
@@ -2082,6 +2103,9 @@
 
     <!-- Microsoft Launcher -->
     <item component="ComponentInfo{com.microsoft.launcher/com.microsoft.launcher.Launcher}" drawable="microsoftlauncher"/>
+
+    <!-- Microsoft Lens -->
+    <item component="ComponentInfo{com.microsoft.office.officelens/com.microsoft.office.officelens.MainActivity}" drawable="microsoftlens"/>
 
     <!-- Microsoft Office -->
     <item component="ComponentInfo{com.microsoft.office.officehubrow/com.microsoft.office.officesuite.OfficeSuiteActivity}" drawable="microsoftoffice"/>
@@ -2421,6 +2445,9 @@
     <!-- NordVPN -->
     <item component="ComponentInfo{com.nordvpn.android/com.nordvpn.android.MainActivity}" drawable="nordvpn" />
 
+    <!-- Norton Clean -->
+    <item component="ComponentInfo{com.symantec.cleansweep/com.symantec.cleansweep.app.SplashScreenActivity}" drawable="nortonclean"/>  
+
     <!-- NOS -->
     <item component="ComponentInfo{nl.nos.app/nl.nos.app.activity.SplashActivity}" drawable="nos" />
     <item component="ComponentInfo{nl.nos.app/nl.nos.app.activity.RedirectActivity}" drawable="nos" />
@@ -2712,6 +2739,9 @@
     <!-- Personal stickers for Whatsapp -->
     <item component="ComponentInfo{com.dstukalov.walocalstoragestickers/com.dstukalov.walocalstoragestickers.StickerPacksActivity}" drawable="stickermaker" />
 
+    <!-- PewPew -->
+    <item component="ComponentInfo{com.jyaif.pewpew/com.jyaif.pewpew.BaseActivity}" drawable="pewpew"/>
+
     <!-- Phone -->
     <item component="ComponentInfo{com.android.contacts/com.android.contacts.activities.DialtactsActivity}" drawable="phone"/>
     <item component="ComponentInfo{com.android.incallui/com.android.incallui.DialerLauncher}" drawable="phone" />
@@ -2865,6 +2895,9 @@
 
     <!-- QR & Barcode Scanner -->
     <item component="ComponentInfo{com.example.barcodescanner/com.example.barcodescanner.feature.tabs.BottomTabsActivity}" drawable="qrbarcodescanner" />
+
+    <!-- QR - Kode -->
+    <item component="ComponentInfo{com.hopej.android.go/com.go.bacord.myapplication.MainActivity}" drawable="qr"/>
 
     <!-- QR Plugin for Keepass2android -->
     <item component="ComponentInfo{keepass2android.plugin.qr/keepass2android.plugin.qr.MainActivity}" drawable="qrforkeepass" />
@@ -3815,6 +3848,7 @@
 
     <!-- Soundcloud -->
     <item component="ComponentInfo{com.soundcloud.android/com.soundcloud.android.main.MainActivity}" drawable="soundcloud" />
+    <item component="ComponentInfo{com.soundcloud.android/com.soundcloud.android.main.LauncherActivity}" drawable="soundcloud"/>
 
     <!-- Sound Recorder -->
     <item component="ComponentInfo{com.android.soundrecorder/com.android.soundrecorder.SoundRecorder}" drawable="recorder" />
@@ -4039,6 +4073,9 @@
     <!-- TIDAL -->
     <item component="ComponentInfo{com.aspiro.tidal/com.aspiro.wamp.LoginFragmentActivity}" drawable="tidal" />
 
+    <!-- TIER -->
+    <item component="ComponentInfo{com.tier.app/com.tier.app.ui.splash.SplashActivity}" drawable="tier"/>
+
     <!-- Timber -->
     <item component="ComponentInfo{naman14.timber/com.naman14.timber.activities.MainActivity}" drawable="timber" />
     <item component="ComponentInfo{it.fossoft.timberfoss/com.naman14.timber.activities.MainActivity}" drawable="timber" />
@@ -4215,6 +4252,9 @@
     <!-- Uber -->
     <item component="ComponentInfo{com.ubercab/com.ubercab.presidio.app.core.root.RootActivity}" drawable="uber" />
 
+    <!-- ULTRAFLOW 2 -->
+    <item component="ComponentInfo{com.ULTRATEAM.ULTRAFLOW2/com.unity3d.player.UnityPlayerActivity}" drawable="number2"/>
+
     <!-- UnCiv -->
     <item component="ComponentInfo{com.unciv.app/com.unciv.app.AndroidLauncher}" drawable="unciv" />
 
@@ -4254,6 +4294,12 @@
     <!-- UUID 0xFD6F Scanner -->
     <item component="ComponentInfo{com.emacberry.uuid0xfd6fscan/com.emacberry.uuid0xfd6fscan.ScannerActivity}" drawable="uuid0xfd6fscanner"/>
 
+    <!-- Vanced Manager -->
+    <item component="ComponentInfo{com.vanced.manager/com.vanced.manager.ui.core.SplashScreenActivity}" drawable="vancedmanager"/>
+
+    <!-- Vanced microG Settings -->
+    <item component="ComponentInfo{com.mgoogle.android.gms/org.microg.gms.ui.SettingsActivity}" drawable="vancedmicrogsettings"/>
+
     <!-- Vanilla Music -->
     <item component="ComponentInfo{ch.blinkenlights.android.vanilla/ch.blinkenlights.android.vanilla.LibraryActivity}" drawable="vanillamusic" />
 
@@ -4271,6 +4317,9 @@
 
     <!-- Viber -->
     <item component="ComponentInfo{com.viber.voip/com.viber.voip.WelcomeActivity}" drawable="viber" />
+
+    <!-- Vibrations-Test -->
+    <item component="ComponentInfo{org.janniswiehart.vibrator/org.janniswiehart.vibrator.MainActivity}" drawable="vibrationstest"/>
 
     <!-- Vinyl Music Player -->
     <item component="ComponentInfo{com.poupa.vinylmusicplayer/com.poupa.vinylmusicplayer.ui.activities.MainActivity}" drawable="vinyl" />
@@ -4293,6 +4342,9 @@
     <item component="ComponentInfo{de.ph1b.audiobook/de.ph1b.audiobook.features.MainActivity}" drawable="voice" />
     <item component="ComponentInfo{de.ph1b.audiobook/de.phib.audiobook.features.MainActivity}" drawable="voice" />
     
+    <!-- Voice Search -->
+    <item component="ComponentInfo{com.google.android.googlequicksearchbox/com.google.android.googlequicksearchbox.VoiceSearchActivity}" drawable="soundrecorder"/>
+
     <!-- VPN Hotspot -->
     <item component="ComponentInfo{be.mygod.vpnhotspot/be.mygod.vpnhotspot.MainActivity}" drawable="vpnhotspot"/>
 
@@ -4334,6 +4386,9 @@
     <!-- Weather -->
     <item component="ComponentInfo{de.baumann.weather/de.baumann.weather.MainActivity}" drawable="weather" />
     <item component="ComponentInfo{de.baumann.weather/de.baumann.weather.helper.SplashActivity}" drawable="weather" />
+
+    <!-- weawow -->
+    <item component="ComponentInfo{com.weawow/com.weawow.MainActivity}" drawable="weawow"/>
 
     <!-- WebApps -->
     <item component="ComponentInfo{com.tobykurien.webapps/com.tobykurien.webapps.activity.MainActivity}" drawable="webapps" />
@@ -4420,6 +4475,9 @@
     <!-- XDA Labs -->
     <item component="ComponentInfo{com.xda.labs/com.xda.labs.LabsLauncher}" drawable="xdalabsr" />
 
+    <!-- Xodo Docs -->
+    <item component="ComponentInfo{com.xodo.pdf.reader/viewer.CompleteReaderMainActivity}" drawable="xododocs"/>
+
     <!-- Xposed Installer -->
     <item component="ComponentInfo{de.robv.android.xposed.installer/de.robv.android.xposed.installer.WelcomeActivity}" drawable="xposedinstaller" />
 
@@ -4428,6 +4486,7 @@
 
     <!-- XScreenSaver -->
     <item component="ComponentInfo{org.jwz.xscreensaver/org.jwz.xscreensaver.Activity}" drawable="xscreensaver" />
+    <item component="ComponentInfo{org.jwz.android.xscreensaver/org.jwz.xscreensaver.Activity}" drawable="xscreensaver"/>
 
     <!-- YAAB -->
     <item component="ComponentInfo{biz.gyrus.yaab/biz.gyrus.yaab.MainActivity}" drawable="torch" />
@@ -4478,7 +4537,7 @@
     <item component="ComponentInfo{com.google.android.youtube/com.google.android.youtube.app.honeycomb.Shell$HomeActivity}" drawable="youtube" />
 
     <!-- YouTube Vanced -->
-    <item component="ComponentInfo{com.vanced.android.youtube/com.google.android.youtube.app.honeycomb.Shell$HomeActivity}" drawable="youtube" />
+    <item component="ComponentInfo{com.vanced.android.youtube/com.google.android.youtube.app.honeycomb.Shell$HomeActivity}" drawable="youtubevanced"/>
 
     <!-- Y.Taxi -->
     <item component="ComponentInfo{ru.yandex.taxi/ru.yandex.taxi.activity.StartActivity}" drawable="ytaxi" />
@@ -4507,6 +4566,9 @@
 
     <!-- Zoysii -->
     <item component="ComponentInfo{xyz.deepdaikon.zoysii/xyz.deepdaikon.zoysii.MainActivity}" drawable="zoysii" />
+
+    <!-- ZXTune -->
+    <item component="ComponentInfo{app.zxtune/app.zxtune.MainActivity}" drawable="zxtune"/>
 
     <!-- μlogger -->
     <item component="ComponentInfo{net.fabiszewski.ulogger/net.fabiszewski.ulogger.MainActivity}" drawable="ulogger" />
