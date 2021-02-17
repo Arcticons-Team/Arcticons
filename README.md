@@ -41,6 +41,9 @@ Quick Guide:
    - If you want to help even more you can add your new icons to the appfilter.xml file
 
 ## Donate
+
+Maintaining this icon-pack costs a lot of time, besides making icons I'm curating every single icon if it has the right sizing and other design rules. So if you like the icons and want to support the development consider supporting :)
+
 |Paypal|Librapay|
 |---|---|
 |<a href="https://www.paypal.com/paypalme/onnovdd"><img alt="Donate using Paypal" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif"></a>|<a href="https://liberapay.com/Donno/donate"><img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg"></a>|
