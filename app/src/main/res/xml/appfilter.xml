@@ -9,6 +9,9 @@
     <!-- 1List -->
     <item component="ComponentInfo{com.lolo.io.onelist/com.lolo.io.onelist.MainActivity}" drawable="onelist" />
 
+    <!-- 1Weather -->
+    <item component="ComponentInfo{com.handmark.expressweather/com.handmark.expressweather.ui.activities.SplashActivity}" drawable="simpleweather"/>
+
     <!-- 2048 -->
     <item component="ComponentInfo{com.uberspot.a2048/com.uberspot.a2048.MainActivity}" drawable="a2048" />
 
@@ -32,6 +35,9 @@
 
     <!-- Aard 2 -->
     <item component="ComponentInfo{itkach.aard2/itkach.aard2.MainActivity}" drawable="aard" />
+
+    <!-- AccuBattery -->
+    <item component="ComponentInfo{com.digibites.accubattery/com.digibites.abatterysaver.BatterySaverActivity}" drawable="accubattery"/>
 
     <!-- AcDisplay -->
     <item component="ComponentInfo{com.achep.acdisplay/com.achep.acdisplay.ui.activities.MainActivity}" drawable="acdisplay" />
@@ -184,6 +190,9 @@
 
     <!-- AnExplorer Pro -->
     <item component="ComponentInfo{dev.dworks.apps.anexplorer.pro/dev.dworks.apps.anexplorer.DocumentsActivity}" drawable="anexplorer" />
+
+    <!-- AnimeZone -->
+    <item component="ComponentInfo{com.bksapps.animezone/com.bksapps.animezone.MainActivity}" drawable="animezone"/
 
     <!-- AnkiDroid -->
     <item component="ComponentInfo{com.ichi2.anki/com.ichi2.anki.IntentHandler}" drawable="ankidroid" />
@@ -473,6 +482,9 @@
     <!-- Book Reader -->
     <item component="ComponentInfo{com.github.axet.bookreader/com.github.axet.bookreader.activities.MainActivity}" drawable="bookreader" />
 
+    <!-- Boost -->
+    <item component="ComponentInfo{com.rubenmayayo.reddit/com.rubenmayayo.reddit.ui.submissions.subreddit.MainActivity}" drawable="boost"/>
+
     <!-- Brave Browser -->
     <item component="ComponentInfo{com.brave.browser/com.google.android.apps.chrome.Main}" drawable="brave" />
     
@@ -526,7 +538,9 @@
 
     <!-- Calculator++ -->
     <item component="ComponentInfo{org.solovyev.android.calculator/org.solovyev.android.calculator.CalculatorActivity}" drawable="calculatorplusplus" />
-    <item component="ComponentInfo{org.solovyev.android.calculator/org.solovyev.android.calculator.floating.FloatingCalculatorActivity}" drawable="calculatorplusplus"/>
+
+    <!-- Calculator++ (Window mode) -->
+    <item component="ComponentInfo{org.solovyev.android.calculator/org.solovyev.android.calculator.floating.FloatingCalculatorActivity}" drawable="calculatorpluspluswindowed"/>
 
     <!-- Calendar Color -->
     <item component="ComponentInfo{ch.ihdg.calendarcolor/ch.ihdg.calendarcolor.CalendarListActivity}" drawable="calendarcolor" />
@@ -569,6 +583,7 @@
     <item component="ComponentInfo{com.oneplus.camera/com.oneplus.camera.OPCameraActivity}" drawable="camera" />
     <item component="ComponentInfo{com.hmdglobal.app.camera/com.hmdglobal.app.camera.CameraActivity}" drawable="camera" />
     <item component="ComponentInfo{foundation.e.camera/net.sourceforge.opencamera.MainActivity}" drawable="camera" />
+    <item component="ComponentInfo{com.journeyui.camera/com.android.camera.CameraLauncher}" drawable="camera"/>
 
     <!-- Camera -->
     <item component="ComponentInfo{com.mediatek.camera/com.mediatek.camera.CameraLauncher}" drawable="mediatekcamera" />
@@ -657,6 +672,10 @@
     <!-- Cinelog -->
     <item component="ComponentInfo{com.ulicae.cinelog/com.ulicae.cinelog.android.activities.MainActivity}" drawable="cinelog" />
 
+    <!-- Citra -->
+    <item component="ComponentInfo{org.citra.citra_emu/org.citra.citra_emu.ui.main.MainActivity}" drawable="citra"/>
+    <item component="ComponentInfo{org.citra.emu/org.citra.emu.ui.MainActivity}" drawable="citra"/>
+
     <!-- Citymapper -->
     <item component="ComponentInfo{com.citymapper.app.release/com.citymapper.app.MainActivity}" drawable="citymapper" />
 
@@ -738,6 +757,7 @@
     <item component="ComponentInfo{com.sonyericsson.android.socialphonebook/com.sonyericsson.android.socialphonebook.LaunchActivity}" drawable="contacts" />
     <item component="ComponentInfo{com.sonyericsson.android.socialphonebook/com.sonyericsson.android.socialphonebook.DialerEntryActivity}" drawable="contacts" />
     <item component="ComponentInfo{com.android.contacts/com.oneplus.contacts.activities.OPPeopleActivity}" drawable="contacts" />
+    <item component="ComponentInfo{com.oneplus.contacts/com.oneplus.contacts.activities.OPPeopleActivity}" drawable="contacts" />
 
     <!-- Content Transfer -->
     <item component="ComponentInfo{com.mediamushroom.easymigrate/com.mediamushroom.easymigrate.UI.EasyMigrateActivityCompat}" drawable="contenttransfer" />
@@ -1177,6 +1197,9 @@
     <!-- FFUpdater -->
     <item component="ComponentInfo{de.marmaro.krt.ffupdater/de.marmaro.krt.ffupdater.MainActivity}" drawable="ffupdater" />
 
+        <!-- Fifth Edition Character Sheet -->
+    <item component="ComponentInfo{com.wgkammerer.testgui.basiccharactersheet.app/com.wgkammerer.testgui.basiccharactersheet.app.MainActivity}" drawable="fiftheditioncharactersheet"/>
+
     <!-- Files -->
     <item component="ComponentInfo{com.cyanogenmod.filemanager/com.cyanogenmod.filemanager.activities.NavigationActivity}" drawable="files" />
     <item component="ComponentInfo{com.jrdcom.filemanager.bb/com.jrdcom.filemanager.activity.FileBrowserActivity}" drawable="files" />
@@ -1287,6 +1310,7 @@
 
     <!-- Fortuneo -->
     <item component="ComponentInfo{com.fortuneo.android/com.fortuneo.android.activities.SplashScreenActivity}" drawable="fortuneo " />
+    <item component="ComponentInfo{com.fortuneo.android/com.fortuneo.android.activities.EntryActivity}" drawable="fortuneo " /> 
 
     <!-- Fortunes -->
     <item component="ComponentInfo{org.legtux.m_316k.fortune/org.legtux.m_316k.fortune.MainActivity}" drawable="fortunes" />
@@ -2219,12 +2243,16 @@
 
     <!-- MiXplorer -->
     <item component="ComponentInfo{com.mixplorer/com.mixplorer.activities.BrowseActivity}" drawable="mixplorer" />
+    <item component="ComponentInfo{com.mixplorer.beta/com.mixplorer.activities.BrowseActivity}" drawable="mixplorer"/>
 
     <!-- ML Manager -->
     <item component="ComponentInfo{com.javiersantos.mlmanager/com.javiersantos.mlmanager.activities.MainActivity}" drawable="mlmanager" />
 
     <!-- MobilePay -->
     <item component="ComponentInfo{dk.danskebank.mobilepay/dk.danskebank.p2p.ui.login.LoginActivity}" drawable="mobilepay" />
+
+    <!-- Mobilism -->
+    <item component="ComponentInfo{demigos.com.mobilism/demigos.com.mobilism.UI.SplashActivity}" drawable="letterm"/>
 
     <!-- Mobilizon -->
     <item component="ComponentInfo{app.fedilab.mobilizon/app.fedilab.mobilizon.MainActivity}" drawable="mobilizon"/>
@@ -3049,6 +3077,9 @@
     <!-- RemoteFiles -->
     <item component="ComponentInfo{com.niklas8.remotefiles/com.example.remote_files.MainActivity}" drawable="remotefiles" />
 
+    <!-- [removed] -->
+    <item component="ComponentInfo{com.humzaman.removed/com.humzaman.removed.activity.MainActivity}" drawable="removed"/>
+
     <!-- RepeaterBook -->
     <item component="ComponentInfo{com.zbm2.repeaterbook/io.flutter.embedding.android.FlutterActivity}" drawable="repeaterbook" />
 
@@ -3852,6 +3883,9 @@
     <!-- Simple Weather -->
     <item component="ComponentInfo{com.a5corp.weather/com.a5corp.weather.GlobalActivity}" drawable="simpleweather" />
 
+    <!-- Simple Keyboard -->
+    <item component="ComponentInfo{rkr.simplekeyboard.inputmethod/rkr.simplekeyboard.inputmethod.latin.settings.SettingsActivity}" drawable="keyboard"/>
+
     <!-- Sim Toolkit -->
     <item component="ComponentInfo{com.android.stk/com.android.stk.StkMain}" drawable="sim" />
     <item component="ComponentInfo{com.android.stk/com.android.stk.StkLauncherActivity2}" drawable="sim" />
@@ -3973,6 +4007,9 @@
     
     <!-- Steam Link -->
     <item component="ComponentInfo{com.valvesoftware.steamlink/com.valvesoftware.steamlink.SteamShellActivity}" drawable="steamlink"/> 
+
+    <!-- Steam Tracker -->
+    <item component="ComponentInfo{com.gamerguide.android.trackerforsteamachivements/com.gamerguide.android.trackerforsteamachivements.MainActivity}" drawable="steamtracker"/>
 
     <!-- Stellarium -->
     <item component="ComponentInfo{com.noctuasoftware.stellarium_free/com.noctuasoftware.stellarium_free.Stellarium}" drawable="stellariumfree"/>
@@ -4462,6 +4499,9 @@
     <!-- Weather -->
     <item component="ComponentInfo{de.baumann.weather/de.baumann.weather.MainActivity}" drawable="weather" />
     <item component="ComponentInfo{de.baumann.weather/de.baumann.weather.helper.SplashActivity}" drawable="weather" />
+
+    <!-- WeatherCAN -->
+    <item component="ComponentInfo{ca.gc.ec.weather_app_android.ops/ca.gc.ec.weather_app_android.fragments.MainActivity}" drawable="weathercan"/>
 
     <!-- Geometric Weather -->
     <item component="ComponentInfo{com.mbestavros.geometricweather/com.mbestavros.geometricweather.main.MainActivity}" drawable="geometricweather"/>
