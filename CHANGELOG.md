@@ -1,6 +1,6 @@
 ### 1.4.0
 ###### Released: Feb 23, 2021
-* 91 new icons (thanks to Dunexus, fanfu & myself)
+* 91 new icons (thanks to Dunexus, fanfu & me)
 * 1277 icons in total!
 
 ### 1.3.5
