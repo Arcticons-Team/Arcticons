@@ -212,6 +212,9 @@
     <!-- AnkiDroid -->
     <item component="ComponentInfo{com.ichi2.anki/com.ichi2.anki.IntentHandler}" drawable="ankidroid" />
 
+    <!-- AnonAddy -->
+    <item component="ComponentInfo{host.stjin.anonaddy/host.stjin.anonaddy.ui.SplashActivity}" drawable="anonaddy"/>
+    
     <!-- AntennaPod -->
     <item component="ComponentInfo{de.danoeh.antennapod/de.danoeh.antennapod.activity.SplashActivity}" drawable="antennapod" />
 
@@ -265,6 +268,9 @@
 
     <!-- App Manager -->
     <item component="ComponentInfo{io.github.muntashirakon.AppManager/io.github.muntashirakon.AppManager.main.MainActivity}" drawable="appmanager" />
+    
+    <!-- App Ops -->
+    <item component="ComponentInfo{rikka.appops/rikka.appops.home.HomeActivity}" drawable="appops"/>
 
     <!-- Apps2Org -->
     <item component="ComponentInfo{com.google.code.apps2org/com.google.code.apps2org.SplashScreenActivity}" drawable="apps2org" />
@@ -545,6 +551,9 @@
     <!-- Brave Browser -->
     <item component="ComponentInfo{com.brave.browser/com.google.android.apps.chrome.Main}" drawable="brave" />
     
+    <!-- Brevent -->
+    <item component="ComponentInfo{me.piebridge.brevent/me.piebridge.brevent.ui.BreventActivity}" drawable="brevent"/>
+
     <!-- Breviary -->
     <item component="ComponentInfo{sk.breviar.android/sk.breviar.android.Breviar}" drawable="breviary"/>
 
@@ -575,6 +584,9 @@
 
     <!-- Bumble -->
     <item component="ComponentInfo{com.bumble.app/com.bumble.app.ui.launcher.BumbleLauncherActivity}" drawable="bumble"/>
+
+    <!-- Bundled Notes -->
+    <item component="ComponentInfo{com.xaviertobin.noted/com.xaviertobin.noted.Activities.ActivitySignIn}" drawable="bundlednotes"/>
 
     <!-- Burger King -->
     <item component="ComponentInfo{com.emn8.mobilem8.nativeapp.bk/rbi.android.app.MainActivity}" drawable="burgerking"/>
@@ -1369,6 +1381,9 @@
 
     <!-- Flickr -->
     <item component="ComponentInfo{com.yahoo.mobile.client.android.flickr/com.yahoo.mobile.client.android.flickr.ui.misc.LoginActivity}" drawable="flickr" />
+    
+    <!-- FlightStats -->
+    <item component="ComponentInfo{com.conducivetech.android.traveler/com.conducivetech.android.traveler.app.SplashScreenActivity}" drawable="flightstats"/>
 
     <!-- Flinkster -->
     <item component="ComponentInfo{de.bahn.flinkster/de.bahn.flinkster.StartupActivity}" drawable="flinkster" />
@@ -1425,6 +1440,7 @@
 
     <!-- Forest -->
     <item component="ComponentInfo{cc.forestapp/cc.forestapp.activities.PlantView.PlantViewController}" drawable="forest" />
+    <item component="ComponentInfo{cc.forestapp/cc.forestapp.applications.SplashActivity}" drawable="forest"/>
 
     <!-- ForgetMeNot -->
     <item component="ComponentInfo{com.odnovolov.forgetmenot/com.odnovolov.forgetmenot.presentation.common.mainactivity.MainActivity}" drawable="forgetmenot"/>
@@ -1718,12 +1734,21 @@
 
     <!-- GreenBits -->
     <item component="ComponentInfo{com.greenaddress.greenbits_android_wallet/com.greenaddress.greenbits.ui.PinActivity}" drawable="greenbits" />
+    
+    <!-- Grofers -->
+    <item component="ComponentInfo{com.grofers.customerapp/com.grofers.customerapp.activities.ActivitySplashScreen}" drawable="grofers"/>
 
     <!-- GrowTracker -->
     <item component="ComponentInfo{me.anon.grow/me.anon.grow.BootActivity}" drawable="growtracker" />
 
+    <!-- Groww -->
+    <item component="ComponentInfo{com.nextbillion.groww/com.nextbillion.groww.genesys.loginsignup.activities.LoginActivity}" drawable="groww"/>
+
     <!-- Guide du tri : recycling info-->
     <item component="ComponentInfo{fr.ecoemballage.guidedutri/fr.ecoemballage.guidedutri.activities.SplashActivity}" drawable="recyclelocation" />
+
+    <!-- Gyan Fresh -->
+    <item component="ComponentInfo{com.gyandairy/com.app.gyandiarycustomer.register.ui.SplashActivity}" drawable="gyanfresh"/>
 
     <!-- Habitica -->
     <item component="ComponentInfo{com.habitrpg.android.habitica/com.habitrpg.android.habitica.ui.activities.MainActivity}" drawable="habitica"/>
@@ -2660,7 +2685,8 @@
     <!-- NCalcLibre / NCalc+ -->
     <item component="ComponentInfo{eu.laderchi.ncalc/com.duy.ncalc.calculator.BasicCalculatorActivity}" drawable="ncalc"/>
     <item component="ComponentInfo{com.duy.calculator.free/com.duy.calculator.activities.ActivitySplashScreen}" drawable="ncalc"/>
-    
+    <item component="ComponentInfo{com.duy.calculator.free/com.duy.ncalc.calculator.ScientificCalculatorActivity}" drawable="ncalc"/>
+
     <!-- Neato -->
     <item component="ComponentInfo{com.neatorobotics.android/com.neatorobotics.android.app.splashscreen.SplashScreenActivity}" drawable="neato"/>
 
@@ -2767,6 +2793,9 @@
 
     <!-- Notable -->
     <item component="ComponentInfo{com.blackberry.jot/com.blackberry.jot.MainActivity}" drawable="notable" />
+
+    <!-- Notally -->
+    <item component="ComponentInfo{com.omgodse.notally/com.omgodse.notally.activities.MainActivity}" drawable="notally"/>
 
     <!-- Note -->
     <item component="ComponentInfo{com.android.notepads/com.android.notepad.note.view.NotePadActivity}" drawable="note" />
@@ -3275,6 +3304,9 @@
     <!-- Quickly quit -->
     <item component="ComponentInfo{quickly.quit/quickly.quit.MainActivity}" drawable="quicklyquit" />
 
+    <!-- QuickTiles -->
+    <item component="ComponentInfo{com.asdoi.quicktiles/com.asdoi.quicksettings.SettingsActivity}" drawable="quicktiles"/>
+
     <!-- Quizlet -->
     <item component="ComponentInfo{com.quizlet.quizletandroid/com.quizlet.quizletandroid.activities.RootActivity}" drawable="quizlet" />
 
@@ -3453,6 +3485,9 @@
     <!-- SAI -->
     <item component="ComponentInfo{com.aefyr.sai.fdroid/com.aefyr.sai.ui.activities.MainActivity}" drawable="sai" />
 
+    <!-- Save to… -->
+    <item component="ComponentInfo{xyz.myachin.saveto/xyz.myachin.saveto.ui.MainActivity}" drawable="saveto"/>
+
     <!-- SatStat -->
     <item component="ComponentInfo{com.vonglasow.michael.satstat/com.vonglasow.michael.satstat.ui.MainActivity}" drawable="satstat" />
 
@@ -3585,6 +3620,9 @@
 
     <!-- SHIELD TV -->
     <item component="ComponentInfo{com.nvidia.shield.remote/com.nvidia.shield.remote.MainActivity}" drawable="nvidia" />
+
+    <!-- Shizuku -->
+    <item component="ComponentInfo{moe.shizuku.privileged.api/moe.shizuku.manager.MainActivity}" drawable="shizuku"/>
 
     <!-- Shopping List -->
     <item component="ComponentInfo{com.woefe.shoppinglist/com.woefe.shoppinglist.activity.MainActivity}" drawable="shoppinglist" />
@@ -4197,6 +4235,9 @@
     <item component="ComponentInfo{com.android.stk/com.android.stk.StkLauncherActivity2}" drawable="sim" />
     <item component="ComponentInfo{com.android.stk/com.android.stk.StkLauncherActivity}" drawable="sim" />
     
+    <!-- Skit -->
+    <item component="ComponentInfo{com.pavelrekun.skit/com.pavelrekun.skit.containers.PrimaryContainerActivity}" drawable="skit"/>
+
     <!-- Sky Map -->
     <item component="ComponentInfo{com.google.android.stardroid/com.google.android.stardroid.activities.SplashScreenActivity}" drawable="skymap"/>
 
