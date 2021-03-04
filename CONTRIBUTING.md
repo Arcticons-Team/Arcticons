@@ -6,6 +6,7 @@
 - try to be consistent with sizing your icons, make sure it's not to big or small (use the templates as a reference)
 - we don't accept files that are directly image traced, they are a mess to work with and look sloppy
 - if you use any letters or numbers make sure to use the font document from the templates folder.
+- make sure that your SVG file names do not contain any special characters like +-.,!
 - upload the SVG files into the `/other` directory
 
 Before contributing SVG icons, open them inside a text editor and check for the following features. If your icon contains **any** of these SVG features, please replace them before submitting a pull request!
