@@ -15,6 +15,7 @@
     <!-- 2048 -->
     <item component="ComponentInfo{com.uberspot.a2048/com.uberspot.a2048.MainActivity}" drawable="a2048" />
     <item component="ComponentInfo{org.secuso.privacyfriendly2048/org.secuso.privacyfriendly2048.activities.SplashActivity}" drawable="a2048" />
+    <item component="ComponentInfo{org.andstatus.game2048/org.andstatus.game2048.MainActivity}" drawable="a2048"/>
 
     <!-- 2050 -->
     <item component="ComponentInfo{org.mattvchandler.a2050/org.mattvchandler.a2050.MainActivity}" drawable="a2050" />
@@ -597,6 +598,9 @@
     <!-- Box -->
     <item component="ComponentInfo{com.box.android/com.box.android.activities.login.SplashScreenActivity}" drawable="box" />
 
+    <!-- Brackeys IDE -->
+    <item component="ComponentInfo{com.brackeys.ui/com.brackeys.ui.feature.main.activities.MainActivity}" drawable="brackeyside"/>
+
     <!-- Brave Browser -->
     <item component="ComponentInfo{com.brave.browser/com.google.android.apps.chrome.Main}" drawable="brave" />
     
@@ -688,14 +692,14 @@
     <item component="ComponentInfo{com.google.android.calendar/com.android.calendar.AllInOneActivity}" drawable="calendar31" />
     <item component="ComponentInfo{ws.xsoh.etar/com.android.calendar.AllInOneActivity}" drawable="calendar31" />
     
-    <!-- Calendar dyamic icons -->
-    <calendar component="ComponentInfo{com.android.calendar/com.android.calendar.AllInOneActivity}" drawable="calendar" />
-    <calendar component="ComponentInfo{com.blackberry.calendar/com.blackberry.calendar.AllInOneActivity}" drawable="calendar" />
-    <calendar component="ComponentInfo{com.samsung.android.calendar/com.android.calendar.AllInOneActivity}" drawable="calendar" />
-    <calendar component="ComponentInfo{com.samsung.android.calendar/com.samsung.android.app.calendar.activity.MainActivity}" drawable="calendar" />
-    <calendar component="ComponentInfo{org.sufficientlysecure.localcalendar/org.sufficientlysecure.localcalendar.ui.MainActivity}" drawable="calendar" />
-    <calendar component="ComponentInfo{org.lineageos.etar/com.android.calendar.AllInOneActivity}" drawable="calendar" />
-    <calendar component="ComponentInfo{com.google.android.calendar/com.android.calendar.AllInOneActivity}" drawable="calendar" />
+    <!-- Calendar dynamic icons -->
+    <calendar component="ComponentInfo{com.android.calendar/com.android.calendar.AllInOneActivity}" prefix="calendar" />
+    <calendar component="ComponentInfo{com.blackberry.calendar/com.blackberry.calendar.AllInOneActivity}" prefix="calendar" />
+    <calendar component="ComponentInfo{com.samsung.android.calendar/com.android.calendar.AllInOneActivity}" prefix="calendar" />
+    <calendar component="ComponentInfo{com.samsung.android.calendar/com.samsung.android.app.calendar.activity.MainActivity}" prefix="calendar" />
+    <calendar component="ComponentInfo{org.sufficientlysecure.localcalendar/org.sufficientlysecure.localcalendar.ui.MainActivity}" prefix="calendar" />
+    <calendar component="ComponentInfo{org.lineageos.etar/com.android.calendar.AllInOneActivity}" prefix="calendar" />
+    <calendar component="ComponentInfo{com.google.android.calendar/com.android.calendar.AllInOneActivity}" prefix="calendar" />
     <calendar component="ComponentInfo{ws.xsoh.etar/com.android.calendar.AllInOneActivity}" prefix="calendar" />
 
     <!-- Callabike -->
@@ -1262,6 +1266,9 @@
 
     <!-- Eduroam CAT -->
     <item component="ComponentInfo{uk.ac.swansea.eduroamcat/uk.ac.swansea.eduroamcat.eduroamCAT}" drawable="eduroamcat" />
+
+    <!-- EKA2L1 -->
+    <item component="ComponentInfo{com.github.eka2l1/com.github.eka2l1.MainActivity}" drawable="eka2l1"/>
 
     <!-- Element -->
     <item component="ComponentInfo{im.vector.app/im.vector.riotx.features.Alias}" drawable="element" />
@@ -2043,6 +2050,9 @@
 
     <!-- iVMS-4500 -->
     <item component="ComponentInfo{com.mcu.iVMS/com.mcu.iVMS.ui.control.loading.LoadingActivity}" drawable="ivms" />
+
+    <!-- J2ME Loader -->
+    <item component="ComponentInfo{ru.playsoftware.j2meloader/ru.playsoftware.j2meloader.MainActivity}" drawable="j2meloader"/>
 
     <!-- Jakdojade -->
     <item component="ComponentInfo{com.citynav.jakdojade.pl.android/com.citynav.jakdojade.pl.android.MainActivity}" drawable="jakdojade" />
@@ -3105,6 +3115,9 @@
     <!-- OONI Probe -->
     <item component="ComponentInfo{org.openobservatory.ooniprobe/org.openobservatory.ooniprobe.activity.MainActivity}" drawable="ooniprobe"/>
 
+    <!-- #open -->
+    <item component="ComponentInfo{com.hashtagopen/com.hashtagopen.app.ui.DefaultActivity}" drawable="open"/>
+
     <!-- OpenAPK -->
     <item component="ComponentInfo{com.dkanada.openapk/com.dkanada.openapk.activities.MainActivity}" drawable="openapk" />
 
@@ -3382,6 +3395,9 @@
     <!-- PlantNet -->
     <item component="ComponentInfo{org.plantnet/org.plantnet.MainActivity}" drawable="plantnet" />
 
+    <!-- Play Suisse -->
+    <item component="ComponentInfo{ch.srgssr.playsuisse.tv/ch.srgssr.playsuisse.tv.MainActivity}" drawable="playsuisse"/>
+
     <!-- Plees Tracker -->
     <item component="ComponentInfo{hu.vmiklos.plees_tracker/hu.vmiklos.plees_tracker.MainActivity}" drawable="pleestracker" />
 
@@ -3455,6 +3471,9 @@
 
     <!-- Prezzi Benzina -->
     <item component="ComponentInfo{org.vernazza.androidfuel/it.prezzibenzina.pb3.activities.MainActivity}" drawable="pb" />
+
+    <!-- Price Per Unit -->
+    <item component="ComponentInfo{net.nitratine.priceperunit/net.nitratine.priceperunit.MainActivity}" drawable="priceperunit"/>
 
     <!-- Prime Video -->
     <item component="ComponentInfo{com.amazon.avod.thirdpartyclient/com.amazon.avod.thirdpartyclient.LauncherActivity}" drawable="primevideo"/>
@@ -3898,6 +3917,9 @@
 
     <!-- Sieben -->
     <item component="ComponentInfo{de.baumann.sieben/de.baumann.sieben.MainActivity}" drawable="sieben" />
+
+    <!-- SIGMA LINK -->
+    <item component="ComponentInfo{air.com.sigmasport.SIGMALink/air.com.sigmasport.SIGMALink.AppEntry}" drawable="sigmalink"/>
 
     <!-- Signal -->
     <item component="ComponentInfo{org.libresignal/org.thoughtcrime.securesms.RoutingActivity}" drawable="signal" />
@@ -5476,6 +5498,9 @@
     <!-- Zoysii -->
     <item component="ComponentInfo{xyz.deepdaikon.zoysii/xyz.deepdaikon.zoysii.MainActivity}" drawable="zoysii" />
     
+    <!-- ZVV-Fahrplan -->
+    <item component="ComponentInfo{de.hafas.android.zvv/de.hafas.main.HafasApp}" drawable="zvvfahrplan"/>
+
     <!-- ZXTune -->
     <item component="ComponentInfo{app.zxtune/app.zxtune.MainActivity}" drawable="zxtune"/>
 
