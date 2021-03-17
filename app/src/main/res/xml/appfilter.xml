@@ -1005,6 +1005,7 @@
 
     <!-- Das Erste -->
     <item component="ComponentInfo{com.daserste.daserste/com.daserste.daserste.DasErste}" drawable="daserste" />
+    <item component="ComponentInfo{com.daserste.daserste.views.activities.StartActivity}" drawable="daserste"/>
 
     <!-- DATA WING -->
     <item component="ComponentInfo{com.DanVogt.DATAWING/com.unity3d.player.UnityPlayerActivity}" drawable="datawing" />
@@ -1730,7 +1731,6 @@
     <item component="ComponentInfo{com.chrome.beta/com.google.android.apps.chrome.Main}" drawable="googlechrome" />
     <item component="ComponentInfo{com.chrome.dev/com.google.android.apps.chrome.Main}" drawable="googlechrome" />
 
-
     <!-- Google Clock -->
     <item component="ComponentInfo{com.google.android.deskclock/com.android.deskclock.DeskClock}" drawable="clock" />
 
@@ -1788,6 +1788,9 @@
 
     <!-- Google Now Launcher -->
     <item component="ComponentInfo{com.google.android.launcher/com.google.android.launcher.StubApp}" drawable="google" />
+
+    <!-- Google One -->
+    <item component="ComponentInfo{com.google.android.apps.subscriptions.red.LauncherActivity}" drawable="googleone"/>
 
     <!-- Google Pay -->
     <item component="ComponentInfo{com.google.android.apps.walletnfcrel/com.google.commerce.tapandpay.android.cardlist.CardListActivity}" drawable="googlepay"/>
@@ -4534,6 +4537,9 @@
     <item component="ComponentInfo{com.android.stk/com.android.stk.StkLauncherActivity2}" drawable="sim" />
     <item component="ComponentInfo{com.android.stk/com.android.stk.StkLauncherActivity}" drawable="sim" />
     
+    <!-- SJ -->
+    <item component="ComponentInfo{se.sj.android.activity.SjNavigationDrawer}" drawable="sj"/>
+
     <!-- Skit -->
     <item component="ComponentInfo{com.pavelrekun.skit/com.pavelrekun.skit.containers.PrimaryContainerActivity}" drawable="skit"/>
 
@@ -4546,6 +4552,9 @@
     <!-- SkyTube -->
     <item component="ComponentInfo{free.rm.skytube.oss/free.rm.skytube.gui.activities.MainActivity}" drawable="skytube" />
     <item component="ComponentInfo{free.rm.skytube.extra/free.rm.skytube.gui.activities.MainActivity}" drawable="skytube" />
+
+    <!-- SL -->
+    <item component="ComponentInfo{com.sl.slbiljetter.StartActivity}" drawable="sl"/>
 
     <!-- Slack -->
     <item component="ComponentInfo{com.Slack/com.Slack.ui.HomeActivity}" drawable="slack" />
@@ -5160,6 +5169,9 @@
 
     <!-- Via -->
     <item component="ComponentInfo{mark.via.gp/mark.via.ui.activity.BrowserActivity}" drawable="via" />
+
+    <!-- Viaplay -->
+    <item component="ComponentInfo{com.viaplay.android.vc2.activity.VPSlashScreenActivity}" drawable="viaplay"/>
 
     <!-- Viber -->
     <item component="ComponentInfo{com.viber.voip/com.viber.voip.WelcomeActivity}" drawable="viber" />
