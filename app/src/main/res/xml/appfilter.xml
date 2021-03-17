@@ -374,6 +374,9 @@
     <!-- Auditor -->
     <item component="ComponentInfo{app.attestation.auditor/app.attestation.auditor.AttestationActivity}" drawable="auditor"/>
 
+    <!-- AURdroid -->
+    <item component="ComponentInfo{com.rascarlo.aurdroid/com.rascarlo.aurdroid.MainActivity}" drawable="aurdroid"/>
+
     <!-- Aurora Droid -->
     <item component="ComponentInfo{com.aurora.adroid/com.aurora.adroid.activity.AuroraActivity}" drawable="auroradroid" />
     <item component="ComponentInfo{com.aurora.adroid/com.aurora.adroid.ui.activity.AuroraActivity}" drawable="auroradroid" />
@@ -1158,6 +1161,9 @@
     <!-- Downloads -->
     <item component="ComponentInfo{com.android.providers.downloads.ui/com.android.providers.downloads.ui.DownloadList}" drawable="downloads" />
 
+    <!-- DriveDroid -->
+    <item component="ComponentInfo{com.softwarebakery.drivedroid/com.softwarebakery.drivedroid.MainActivity}" drawable="drivedroid"/>
+
     <!-- Drinks -->
     <item component="ComponentInfo{fr.masciulli.drinks/fr.masciulli.drinks.ui.activity.MainActivity}" drawable="drinks" />
 
@@ -1291,6 +1297,9 @@
 
     <!-- ES File Explorer -->
     <item component="ComponentInfo{com.estrongs.android.pop/com.estrongs.android.pop.view.FileExplorerActivity}" drawable="es" />
+
+    <!-- ESIS -->
+    <item component="ComponentInfo{de.julianmh.esisandroid/de.julianmh.esisandroid.SchoolsActivity}" drawable="esis"/>
 
     <!-- EteSync -->
     <item component="ComponentInfo{com.etesync.syncadapter/com.etesync.syncadapter.ui.AccountsActivity}" drawable="etesync" />
@@ -1462,6 +1471,9 @@
 
     <!-- Firefox Send -->
     <item component="ComponentInfo{org.mozilla.firefoxsend/org.mozilla.firefoxsend.MainActivity}" drawable="firefoxsend" />
+
+    <!-- Fire TV -->
+    <item component="ComponentInfo{com.amazon.storm.lightning.client.aosp/com.amazon.bison.SplashScreen}" drawable="firetv"/>
 
     <!-- FitoTrack -->
     <item component="ComponentInfo{de.tadris.fitness/de.tadris.fitness.activity.LauncherActivity}" drawable="fitotrack" />
@@ -1650,6 +1662,9 @@
 
     <!-- GeoGebra Graphing Calculator -->
     <item component="ComponentInfo{org.geogebra.android/org.geogebra.android.privatelibrary.splashscreen.SplashScreenActivity}" drawable="geogebragraphingcalculator" />
+
+    <!-- Geometry Dash -->
+    <item component="ComponentInfo{com.robtopx.geometryjump/com.robtopx.geometryjump.GeometryJump}" drawable="geometrydash"/>
 
     <!-- Geovelo -->
     <item component="ComponentInfo{fr.geovelo/fr.geovelo.views.MainActivity_}" drawable="geovelo"/>
@@ -1995,7 +2010,7 @@
 
     <!-- Insular -->
     <item component="ComponentInfo{com.oasisfeng.island.fdroid/com.oasisfeng.island.MainActivity}" drawable="insular"/>
-
+    
     <!-- Instacart -->
     <item component="ComponentInfo{com.instacart.client/com.instacart.client.browse.ICBrowseActivity}" drawable="instacart" />
 
@@ -2013,6 +2028,9 @@
 
     <!-- Iron Will -->
     <item component="ComponentInfo{com.emeraldislestudio.fapcounter/com.emeraldislestudio.fapcounter.MainActivity}" drawable="ironwill"/>
+
+    <!-- IPVanish -->
+    <item component="ComponentInfo{com.ixolit.ipvanish/com.vpnclient.LoadingActivity}" drawable="ipvanish"/>
 
     <!-- Island -->
     <item component="ComponentInfo{com.oasisfeng.island/com.oasisfeng.island.MainActivity}" drawable="island" />
@@ -2793,8 +2811,14 @@
     <!-- myCricKet -->
     <item component="ComponentInfo{com.mizmowireless.acctmgt/com.streamezzo}" drawable="mycricket"/>
 
+    <!-- mydealz -->
+    <item component="ComponentInfo{com.tippingcanoe.mydealz/com.pepper.apps.android.app.activity.MainActivity}" drawable="mydealz"/>
+
     <!-- My Expenses -->
     <item component="ComponentInfo{org.totschnig.myexpenses/org.totschnig.myexpenses.activity.SplashActivity}" drawable="myexpenses" />
+
+    <!-- MyFRITZ! -->
+    <item component="ComponentInfo{de.avm.android.myfritz2/de.avm.android.one.activities.StartActivity}" drawable="myfritz"/>
 
     <!-- myMail -->
     <item component="ComponentInfo{com.my.mail/ru.mail.mailapp.SplashScreenActivity}" drawable="mymail" />
@@ -2963,6 +2987,9 @@
 
     <!-- Notally -->
     <item component="ComponentInfo{com.omgodse.notally/com.omgodse.notally.activities.MainActivity}" drawable="notally"/>
+
+    <!-- Notify for Mi Band -->
+    <item component="ComponentInfo{com.mc.miband1/com.mc.miband1.ui.MainActivityNight}" drawable="notifyformiband"/>
 
     <!-- Note -->
     <item component="ComponentInfo{com.android.notepads/com.android.notepad.note.view.NotePadActivity}" drawable="note" />
@@ -3379,6 +3406,9 @@
     <!-- Podverse -->
     <item component="ComponentInfo{com.podverse.fdroid/com.podverse.fdroid.MainActivity}" drawable="podverse"/>
 
+    <!-- PojavLauncher -->
+    <item component="ComponentInfo{net.kdt.pojavlaunch/net.kdt.pojavlaunch.PojavLoginActivity}" drawable="pojavlauncher"/>
+
     <!-- Pokémon GO -->
     <item component="ComponentInfo{com.nianticlabs.pokemongo/com.nianticproject.holoholo.libholoholo.unity.UnityMainActivity}" drawable="pokemongo" />
 
@@ -3422,6 +3452,9 @@
 
     <!-- Prezzi Benzina -->
     <item component="ComponentInfo{org.vernazza.androidfuel/it.prezzibenzina.pb3.activities.MainActivity}" drawable="pb" />
+
+    <!-- Prime Video -->
+    <item component="ComponentInfo{com.amazon.avod.thirdpartyclient/com.amazon.avod.thirdpartyclient.LauncherActivity}" drawable="primevideo"/>
 
     <!-- primitive ftpd -->
     <item component="ComponentInfo{org.primftpd/org.primftpd.PrimitiveFtpdActivity}" drawable="primitiveftpd" />
@@ -3498,7 +3531,7 @@
 
     <!-- QuickTiles -->
     <item component="ComponentInfo{com.asdoi.quicktiles/com.asdoi.quicksettings.SettingsActivity}" drawable="quicktiles"/>
-
+    
     <!-- Quizlet -->
     <item component="ComponentInfo{com.quizlet.quizletandroid/com.quizlet.quizletandroid.activities.RootActivity}" drawable="quizlet" />
 
@@ -3567,7 +3600,8 @@
 
     <!-- Reddit -->
     <item component="ComponentInfo{com.reddit.frontpage/com.reddit.frontpage.StartActivity}" drawable="reddit" />
-
+    <item component="ComponentInfo{com.reddit.frontpage/launcher.default}" drawable="reddit"/>
+    
     <!-- Reddit Sync -->
     <item component="ComponentInfo{com.laurencedawson.reddit_sync/com.laurencedawson.reddit_sync.ui.activities.HomeActivity}" drawable="redditsync" />
 
@@ -4799,6 +4833,7 @@
 
     <!-- Terminal Emulator -->
     <item component="ComponentInfo{jackpal.androidterm/jackpal.androidterm.Term}" drawable="androidterm" />
+    <item component="ComponentInfo{com.termoneplus/com.termoneplus.TermActivity}" drawable="androidterm"/>
 
     <!-- Terminal -->
     <item component="ComponentInfo{com.android.terminal/com.android.terminal.TerminalActivity}" drawable="terminal" />
@@ -5048,6 +5083,9 @@
     <!-- ULTRAFLOW 2 -->
     <item component="ComponentInfo{com.ULTRATEAM.ULTRAFLOW2/com.unity3d.player.UnityPlayerActivity}" drawable="number2"/>
 
+    <!-- Ultrasonic -->
+    <item component="ComponentInfo{org.moire.ultrasonic/org.moire.ultrasonic.activity.MainActivity}" drawable="simplemusicplayer"/>
+
     <!-- UnCiv -->
     <item component="ComponentInfo{com.unciv.app/com.unciv.app.AndroidLauncher}" drawable="unciv" />
 
@@ -5081,12 +5119,18 @@
     <item component="ComponentInfo{godau.fynn.usagedirect/godau.fynn.usagedirect.AppUsageStatisticsActivity}" drawable="usagedirect" />
     <item component="ComponentInfo{godau.fynn.usagedirect/godau.fynn.usagedirect.activity.SourceAppUsageStatisticsActivity}" drawable="usagedirect" />
 
+    <!-- USB Gadget Tool -->
+    <item component="ComponentInfo{net.tjado.usbgadget/net.tjado.usbgadget.MainActivity}" drawable="android"/>
+
     <!-- USB VEN/DEV Database -->
     <item component="ComponentInfo{aws.apps.usbVenDevDb/aws.apps.usbVenDevDb.Main}" drawable="usbvendevdatabase" />
 
     <!-- user js updater -->
     <item component="ComponentInfo{de.reckendrees.systems.userjsupdater/de.reckendrees.systems.userjsupdater.MainActivity}" drawable="jsupdater" />
     
+    <!-- USB Keyboard -->
+    <item component="ComponentInfo{remote.hid.keyboard.client/remote.hid.keyboard.client.MainActivity}" drawable="usbkeyboard"/>
+
     <!-- UUID 0xFD6F Scanner -->
     <item component="ComponentInfo{com.emacberry.uuid0xfd6fscan/com.emacberry.uuid0xfd6fscan.ScannerActivity}" drawable="uuid0xfd6fscanner"/>
 
@@ -5196,6 +5240,9 @@
 
     <!-- Water Drink Reminder -->
     <item component="ComponentInfo{com.northpark.drinkwater/com.northpark.drinkwater.SplashActivity}" drawable="waterdrinkreminder"/>
+
+    <!-- Watomatic -->
+    <item component="ComponentInfo{com.parishod.watomatic/com.parishod.watomatic.activity.main.MainActivity}" drawable="watomatic"/>
 
     <!-- Wave Lines Wallpaper -->
     <item component="ComponentInfo{de.markusfisch.android.wavelines/de.markusfisch.android.wavelines.activity.SplashActivity}" drawable="waves" />
@@ -5328,6 +5375,9 @@
 
     <!-- YAAB -->
     <item component="ComponentInfo{biz.gyrus.yaab/biz.gyrus.yaab.MainActivity}" drawable="torch" />
+
+    <!-- Yaga -->
+    <item component="ComponentInfo{com.github.vauvenal5.yaga/com.github.vauvenal5.yaga.MainActivity}" drawable="simplegallery"/>
 
     <!-- Yalp Store -->
     <item component="ComponentInfo{com.github.yeriomin.yalpstore/com.github.yeriomin.yalpstore.UpdatableAppsActivity}" drawable="yalp" />
