@@ -1,11 +1,5 @@
 <resources>
 
-    <!-- Bankin' -->
-    <item component="ComponentInfo{com.bankeen/com.bankeen.common.activities.core.LauncherActivity_}" drawable="bankin"/>
-
-    <!-- Web Video Caster -->
-    <item component="ComponentInfo{com.instantbits.cast.webvideo/com.instantbits.cast.webvideo.SplashActivity}" drawable="webvideocaster"/>
-
     <!-- 1010! Klooni -->
     <item component="ComponentInfo{io.github.lonamiwebs.klooni/io.github.lonamiwebs.klooni.AndroidLauncher}" drawable="tentenklooni" />
 
@@ -411,7 +405,8 @@
     <item component="ComponentInfo{com.aurora.store/com.aurora.store.activity.AuroraActivity}" drawable="aurorastore" />
     <item component="ComponentInfo{com.aurora.store/com.aurora.store.ui.single.activity.SplashActivity}" drawable="aurorastore" />
     <item component="ComponentInfo{com.aurora.store4/com.aurora.store.view.ui.splash.SplashActivity}" drawable="aurorastore"/>
-
+    <item component="ComponentInfo{com.aurora.store/com.aurora.store.view.ui.onboarding.OnboardingActivity}" drawable="aurorastore"/>
+    
     <!-- Authenticate -->
     <item component="ComponentInfo{secureauth.android.token/secureauth.android.token.TokenList}" drawable="authenticate" />
 
@@ -420,7 +415,7 @@
 
     <!-- Authenticator -->
     <item component="ComponentInfo{me.jmh.authenticatorpro/crc646be539cf0a2d8609.MainActivity}" drawable="authenticator"/>
-
+    
     <!-- Authenticator -->
     <item component="ComponentInfo{com.blizzard.bma/com.blizzard.bma.ui.welcome.SplashActivity}" drawable="blizzardauthenticator"/>
 
@@ -457,6 +452,9 @@
 
     <!-- BankID -->
     <item component="ComponentInfo{com.bankid.bus/com.bankid.bus.activities.InitActivity}" drawable="bankid" />
+
+    <!-- Bankin' -->
+    <item component="ComponentInfo{com.bankeen/com.bankeen.common.activities.core.LauncherActivity_}" drawable="bankin"/>
 
     <!-- Banque -->
     <item component="ComponentInfo{com.caisseepargne.android.mobilebanking/com.caisseepargne.android.mobilebanking.activities.ADashBoard}" drawable="banque" />
@@ -709,7 +707,8 @@
     <item component="ComponentInfo{org.lineageos.etar/com.android.calendar.AllInOneActivity}" drawable="calendar31" />
     <item component="ComponentInfo{com.google.android.calendar/com.android.calendar.AllInOneActivity}" drawable="calendar31" />
     <item component="ComponentInfo{ws.xsoh.etar/com.android.calendar.AllInOneActivity}" drawable="calendar31" />
-    
+    <item component="ComponentInfo{foundation.e.calendar/com.android.calendar.AllInOneActivity}" drawable="calendar31"/>   
+
     <!-- Calendar dynamic icons -->
     <calendar component="ComponentInfo{com.android.calendar/com.android.calendar.AllInOneActivity}" prefix="calendar" />
     <calendar component="ComponentInfo{com.blackberry.calendar/com.blackberry.calendar.AllInOneActivity}" prefix="calendar" />
@@ -719,6 +718,7 @@
     <calendar component="ComponentInfo{org.lineageos.etar/com.android.calendar.AllInOneActivity}" prefix="calendar" />
     <calendar component="ComponentInfo{com.google.android.calendar/com.android.calendar.AllInOneActivity}" prefix="calendar" />
     <calendar component="ComponentInfo{ws.xsoh.etar/com.android.calendar.AllInOneActivity}" prefix="calendar" />
+    <calendar component="ComponentInfo{foundation.e.calendar/com.android.calendar.AllInOneActivity}" prefix="calendar"/>
 
     <!-- Callabike -->
     <item component="ComponentInfo{de.bahn.callabike/com.andience.core.ui.StartupActivity}" drawable="callabike" />
@@ -1085,6 +1085,9 @@
     <!-- Deluge -->
     <item component="ComponentInfo{org.deluge.trireme/org.deluge.trireme.MainActivity}" drawable="deluge" />
 
+    <!-- Desmos -->
+    <item component="ComponentInfo{com.desmos.calculator/com.desmos.calculator.MainActivity}" drawable="desmos"/>
+
     <!-- Detexify -->
     <item component="ComponentInfo{website.marty.detexify/website.marty.detexify.MainActivity}" drawable="detexify" />
 
@@ -1314,7 +1317,8 @@
     <!-- Email -->
     <item component="ComponentInfo{com.android.email/com.android.email.activity.Welcome}" drawable="mail" />
     <item component="ComponentInfo{org.dystopia.email/org.dystopia.email.ActivityMain}" drawable="mail" />
-
+    <item component="ComponentInfo{foundation.e.mail/foundation.e.mail.activity.Accounts}" drawable="mail"/>
+    
     <!-- Emby -->
     <item component="ComponentInfo{com.mb.android/com.mb.android.MainActivity}" drawable="emby" />
 
@@ -1967,6 +1971,9 @@
 
     <!-- HiEdu Scientific Calculator -->
     <item component="ComponentInfo{com.buta.caculator/com.buta.caculator.ui.MainActivity}" drawable="hieduscientificcalculator"/>
+
+    <!-- HIIT Timer -->
+    <item component="ComponentInfo{org.hiittimer.hiittimer/org.hiittimer.MainActivity}" drawable="fitotrack"/>
 
     <!-- Holo Launcher -->
     <item component="ComponentInfo{com.mobint.hololauncher/com.mobint.hololauncher.Launcher}" drawable="holo" />
@@ -4220,6 +4227,7 @@
 
     <!-- Simple Dialer -->
     <item component="ComponentInfo{com.simplemobiletools.dialer/com.simplemobiletools.dialer.activities.SplashActivity.Orange}" drawable="phone" />
+    <item component="ComponentInfo{com.simplemobiletools.dialer/com.simplemobiletools.dialer.activities.SplashActivity.Grey_black}" drawable="phone"/>
 
     <!-- Simple Draw -->
     <item component="ComponentInfo{com.simplemobiletools.draw/com.simplemobiletools.draw.activities.SplashActivity.Pink}" drawable="simpledraw" />
@@ -4518,6 +4526,7 @@
 
     <!-- Simple SMS Messenger -->
     <item component="ComponentInfo{com.simplemobiletools.smsmessenger/com.simplemobiletools.smsmessenger.activities.SplashActivity.Orange}" drawable="messages" />
+    <item component="ComponentInfo{com.simplemobiletools.smsmessenger/com.simplemobiletools.smsmessenger.activities.SplashActivity.Grey_black}" drawable="messages"/>
 
     <!-- Simple Solitaire Collection -->
     <item component="ComponentInfo{de.tobiasbielefeld.solitaire/de.tobiasbielefeld.solitaire.ui.GameSelector}" drawable="solitaire" />
@@ -4787,6 +4796,9 @@
     <!-- Stremio -->
     <item component="ComponentInfo{com.stremio.one/com.stremio.MainActivity}" drawable="stremio" />
 
+    <!-- Studyplus -->
+    <item component="ComponentInfo{jp.studyplus.android.app/jp.studyplus.android.app.ui.splash.SplashActivity}" drawable="studyplus"/>
+
     <!-- Stumbler -->
     <item component="org.mozilla.mozstumbler/org.mozilla.mozstumbler.client.navdrawer.MainDrawerActivity" drawable="stumbler" />
 
@@ -4865,6 +4877,7 @@
 
     <!-- SystemUI Tuner -->
     <item component="ComponentInfo{com.zacharee1.systemuituner/com.zacharee1.systemuituner.LauncherActivity}" drawable="systemuituner" />
+    <item component="ComponentInfo{com.zacharee1.systemuituner/com.zacharee1.systemuituner.MainActivity}" drawable="systemuituner"/>
 
     <!-- System usage stats -->
     <item component="ComponentInfo{godau.fynn.usagedirect.system/godau.fynn.usagedirect.activity.SourceAppUsageStatisticsActivity}" drawable="usagedirect" />
@@ -4896,12 +4909,14 @@
     <!-- Tasks -->
     <item component="ComponentInfo{com.blackberry.tasks/com.blackberry.tasks.ui.list.TasksListActivity}" drawable="tasks" />
     <item component="ComponentInfo{org.tasks/com.todoroo.astrid.activity.TaskListActivity}" drawable="tasks" />
+    <item component="ComponentInfo{foundation.e.tasks/org.dmfs.tasks.TaskListActivity}" drawable="tasks"/>
 
     <!-- Taskwarrior -->
     <item component="ComponentInfo{kvj.taskw/kvj.taskw.ui.MainActivity}" drawable="taskwarrior" />
 
     <!-- Telegram -->
     <item component="ComponentInfo{org.telegram.messenger/org.telegram.ui.LaunchActivity}" drawable="telegram" />
+    <item component="ComponentInfo{org.thunderdog.challegram/org.thunderdog.challegram.MainActivity}" drawable="telegram"/>
 
     <!-- Temp. monitor -->
     <item component="ComponentInfo{com.gmail.jiwopene.temperature/com.gmail.jiwopene.temperature.TemperaturesActivity}" drawable="tempmonitor" />
@@ -5248,6 +5263,9 @@
     <!-- Video Transcoder -->
     <item component="ComponentInfo{protect.videoeditor/protect.videotranscoder.activity.MainActivity}" drawable="videotranscoder"/>
 
+    <!-- Video & TV SideView -->
+    <item component="ComponentInfo{com.sony.tvsideview.phone/com.sony.tvsideview.MainActivity}" drawable="videotvsideview"/>
+
     <!-- VidyoConnect -->
     <item component="ComponentInfo{com.vidyo.neomobile/com.vidyo.neomobile.MainActivity}" drawable="vidyoconnect"/>
 
@@ -5334,13 +5352,15 @@
     <!-- Weather -->
     <item component="ComponentInfo{de.baumann.weather/de.baumann.weather.MainActivity}" drawable="weather" />
     <item component="ComponentInfo{de.baumann.weather/de.baumann.weather.helper.SplashActivity}" drawable="weather" />
+    <item component="ComponentInfo{foundation.e.weather/foundation.e.weather.MainActivity}" drawable="weather"/>
 
     <!-- WeatherCAN -->
     <item component="ComponentInfo{ca.gc.ec.weather_app_android.ops/ca.gc.ec.weather_app_android.fragments.MainActivity}" drawable="weathercan"/>
 
     <!-- Geometric Weather -->
     <item component="ComponentInfo{com.mbestavros.geometricweather/com.mbestavros.geometricweather.main.MainActivity}" drawable="geometricweather"/>
-    
+    <item component="ComponentInfo{wangdaye.com.geometricweather/wangdaye.com.geometricweather.main.MainActivity}" drawable="geometricweather"/>
+
     <!-- weawow -->
     <item component="ComponentInfo{com.weawow/com.weawow.MainActivity}" drawable="weawow"/>
 
@@ -5355,6 +5375,9 @@
 
     <!-- WebTube -->
     <item component="ComponentInfo{cz.martykan.webtube/cz.martykan.webtube.MainActivity}" drawable="youtube" />
+
+    <!-- Web Video Caster -->
+    <item component="ComponentInfo{com.instantbits.cast.webvideo/com.instantbits.cast.webvideo.SplashActivity}" drawable="webvideocaster"/>
 
     <!-- WeChat -->
     <item component="ComponentInfo{com.tencent.mm/com.tencent.mm.ui.LauncherUI}" drawable="wechat" />
@@ -5408,6 +5431,9 @@
     <!-- WLANScanner -->
     <item component="ComponentInfo{org.bitbatzen.wlanscanner/org.bitbatzen.wlanscanner.MainActivity}" drawable="wlanscanner" />
 
+    <!-- Wolfram Alpha -->
+    <item component="ComponentInfo{com.wolfram.android.alpha/com.wolfram.android.alpha.activity.SplashScreenActivity}" drawable="wolframalpha"/>
+    
     <!-- Workplace -->
     <item component="ComponentInfo{com.xerox.mobileprint/com.xerox.mobileprint.HomeAct}" drawable="workplace" />
 
