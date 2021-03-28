@@ -1,3 +1,8 @@
+### 1.5.0
+###### Released: Mar 28, 2021
+* 78 new icons (thanks to Lelio-Brun, ModdedGamers, Hal47, Saijin-Naib, lomanotte, klaviatur & fanfu)
+* 1500 icons in total!
+
 ### 1.4.5
 ###### Released: Mar 3, 2021
 * Dynamic calendar suport, the calendar icon now changes automaticly every day if your launcher supports it!
