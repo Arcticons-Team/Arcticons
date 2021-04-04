@@ -1,7 +1,7 @@
 #!/bin/bash
 
 SVGDIR="../icons/"
-EXPORT="../app/src/main/res"
+EXPORT="../app/src/main/"
 ICPACK_PRE='	    <item>'
 ICPACK_SUF='</item>\n'
 DRAWABLE_PRE='	  <item drawable="'
@@ -28,5 +28,5 @@ printf '    };' >> code.xml
 
 rm -rf code.xml
 
-mv -f iconpack.xml ${EXPORT}/values/
-mv -f drawable.xml ${EXPORT}/xml/
+mv -f iconpack.xml ${EXPORT}/res/values/
+mv -f drawable.xml ${EXPORT}/res/xml/
