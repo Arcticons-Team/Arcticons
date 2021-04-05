@@ -1,3 +1,9 @@
+### 1.5.2
+###### Released: Apr 5, 2021
+* Laucher support for a lot more different ones!
+* 58 new & updated icons (thanks to ChadFacs & Fakegamer666) 
+* 1537 icons in total!
+
 ### 1.5.0
 ###### Released: Mar 28, 2021
 * 78 new icons (thanks to Lelio-Brun, ModdedGamers, Hal47, Saijin-Naib, lomanotte, klaviatur & fanfu)
