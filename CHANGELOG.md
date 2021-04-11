@@ -1,3 +1,9 @@
+### 1.5.5
+###### Released: Apr 11, 2021
+* Part two of my ongoing redesign crusade, with this time 100(!) redesigned icons!
+* 26 new icons (thanks to Renesat)
+* 1563 icons in total!
+
 ### 1.5.2
 ###### Released: Apr 5, 2021
 * Laucher support for a lot more different ones!
