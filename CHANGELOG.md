@@ -4,6 +4,9 @@
 * 26 new icons (thanks to Renesat)
 * 1563 icons in total!
 
+![changelog155](https://user-images.githubusercontent.com/31142286/114383817-4201af00-9b8e-11eb-9bf2-9e4ed9684128.jpg)
+
+
 ### 1.5.2
 ###### Released: Apr 5, 2021
 * Laucher support for a lot more different ones!
