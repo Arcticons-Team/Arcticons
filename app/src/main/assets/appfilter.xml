@@ -1503,6 +1503,7 @@
     <!-- Feedback -->
     <item component="ComponentInfo{com.miui.bugreport/com.miui.bugreport.ui.MainTabActivity}" drawable="feedback" />
     <item component="ComponentInfo{com.miui.miservice/com.miui.miservice.main.MainActivity}" drawable="feedback"/>
+    <item component="ComponentInfo{com.huawei.phoneservice/com.huawei.phoneservice.LaunchActivity}" drawable="feedback"/> 
 
     <!-- Feeder -->
     <item component="ComponentInfo{com.nononsenseapps.feeder/com.nononsenseapps.feeder.ui.FeedActivity}" drawable="feeder" />
@@ -1921,6 +1922,7 @@
 
     <!-- Google Play Music -->
     <item component="ComponentInfo{com.google.android.music/com.android.music.activitymanagement.TopLevelActivity}" drawable="googlemusic" />
+    <item component="ComponentInfo{com.google.android.music/com.google.android.music.tombstone.LauncherActivity}" drawable="googlemusic"/> 
 
     <!-- Google Play Store -->
     <item component="ComponentInfo{com.android.vending/com.android.vending.AssetBrowserActivity}" drawable="googleplaystore" />
@@ -3182,6 +3184,7 @@
     <item component="ComponentInfo{com.oneplus.note/com.oneplus.note.ui.MainActivity}" drawable="notes" />
     <item component="ComponentInfo{foundation.e.notes/foundation.e.notes.android.activity.SplashscreenActivity}" drawable="notes"/>
     <item component="ComponentInfo{com.miui.notes/com.miui.notes.ui.NotesListActivity}" drawable="notes"/>
+    <item component="ComponentInfo{com.example.android.notepad/com.example.android.notepad.NotePadActivity}" drawable="notes"/> 
 
     <!-- Notes -->
     <item component="ComponentInfo{jl.musicalnotes/jl.musicalnotes.activity.MainActivity}" drawable="letterl" />
@@ -3772,7 +3775,7 @@
 
     <!-- RAR -->
     <item component="ComponentInfo{com.rarlab.rar/com.rarlab.rar.MainActivity}" drawable="rar"/>
-
+    
     <!-- RBC Mobile -->
     <item component="ComponentInfo{com.rbc.mobile.android/com.rbc.mobile.bud.pre_auth.common.activity.SplashActivity}" drawable="rbcmobile"/>
 
@@ -3796,6 +3799,7 @@
 
     <!-- Recorder -->
     <item component="ComponentInfo{org.lineageos.recorder/org.lineageos.recorder.RecorderActivity}" drawable="lineagerec" />
+    <item component="ComponentInfo{com.android.soundrecorder/com.android.soundrecorder.RecordListActivity}" drawable="lineagerec"/> 
 
     <!-- Recurrence -->
     <item component="ComponentInfo{com.bleyl.recurrence/com.bleyl.recurrence.activities.MainActivity}" drawable="recurrence" />
@@ -5128,6 +5132,7 @@
     <item component="ComponentInfo{org.cyanogenmod.theme.chooser/org.cyanogenmod.theme.chooser.ChooserActivity}" drawable="themes" />
     <item component="ComponentInfo{com.huawei.android.thememanager/com.huawei.android.thememanager.HwThemeManagerActivity}" drawable="themes" />
     <item component="ComponentInfo{com.android.thememanager/com.android.thememanager.ThemeResourceTabActivity}" drawable="themes"/>
+    <item component="ComponentInfo{com.huawei.android.thememanager/com.huawei.android.thememanager.mvp.view.activity.onlinebase.PageActivity}" drawable="themes"/> 
 
     <!-- Thinkfree Office viewer -->
     <item component="ComponentInfo{com.tf.thinkdroid.viewer.global/com.tf.thinkdroid.manager.StartActivity}" drawable="thinkfree" />
@@ -5561,7 +5566,8 @@
     <item component="ComponentInfo{foundation.e.weather/foundation.e.weather.MainActivity}" drawable="weather"/>
     <item component="ComponentInfo{com.sonymobile.xperiaweather/com.sonymobile.xperiaweather.MainActivity}" drawable="weather"/>
     <item component="ComponentInfo{com.miui.weather2/com.miui.weather2.ActivityWeatherMain}" drawable="weather"/>
-
+    <item component="ComponentInfo{com.huawei.android.totemweather/com.huawei.android.totemweather.WeatherHome}" drawable="weather"/> 
+    
     <!-- WeatherCAN -->
     <item component="ComponentInfo{ca.gc.ec.weather_app_android.ops/ca.gc.ec.weather_app_android.fragments.MainActivity}" drawable="weathercan"/>
 
