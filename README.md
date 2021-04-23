@@ -21,15 +21,6 @@ This app doesn't have an icon request feature, so you'll have to do the followin
 3. **Open Turtl** and follow the process to save the new zip file to your phone.
 4. **[Make an issue](https://github.com/Donnnno/frost-lines/issues/new)** titled "Icon Request" and attach the zip file.
 
-If Turtl is not working on your device, you can also use [Applications Info](https://f-droid.org/packages/com.majeur.applicationsinfo) or any equivalent app to collect the **package name** of the app ($PACKAGE_NAME) and the **main activity name** of the app ($ACTIVITY_NAME) launchable in Applications Info with no errors. Work is being done to simplify this process.
-
-## Contributing
-
-Making icons is fun and **you don't even have to know how to code**. Just install a vector graphic program like [Inkscape](https://inkscape.org/en/). 
-Here's a quick guide to get you started, read the full details here: [Contributing](CONTRIBUTING.md)
-
-![guide](https://user-images.githubusercontent.com/31142286/115920627-bd127180-a47a-11eb-98a7-2c902e4fc961.jpg) 
-
 ## Donate
 
 Maintaining this icon-pack costs a lot of time, besides making icons I'm curating every single icon if it has the right sizing and other design rules. So if you like the icons and want to support the development consider supporting :)
@@ -37,6 +28,13 @@ Maintaining this icon-pack costs a lot of time, besides making icons I'm curatin
 |Paypal|Librapay|
 |---|---|
 |<a href="https://www.paypal.com/paypalme/onnovdd"><img alt="Donate using Paypal" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif"></a>|<a href="https://liberapay.com/Donno/donate"><img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg"></a>|
+
+## Contributing
+
+Making icons is fun and **you don't even have to know how to code**. Just install a vector graphic program like [Inkscape](https://inkscape.org/en/). 
+Here's a quick guide to get you started, read the full details here: [Contributing](CONTRIBUTING.md)
+
+![guide](https://user-images.githubusercontent.com/31142286/115920627-bd127180-a47a-11eb-98a7-2c902e4fc961.jpg) 
 
 ## The icons
 
