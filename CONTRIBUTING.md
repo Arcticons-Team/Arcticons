@@ -4,6 +4,17 @@
 
 # Text version
 
+### Quick Guide:
+
+1. Fork the repository to your GitHub account
+2. Download the templates provided [here](templates) and design the new icons
+3. Upload the SVG icons to your repository's **/other** folder
+4. Create a pull request and explain your changes
+5. Provide the activity names of the new apps
+   - These should look something like `com.donnnno.arcticons/com.donnnno.arcticons.MainActivity`
+   - If you want to help even more you can add your new icons to the appfilter.xml file
+
+
 ### Basic rules
 
 - use the template files as a reference, the document size should be *48px*
