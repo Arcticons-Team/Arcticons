@@ -1,3 +1,9 @@
+# Super cool graphic guide
+
+![guide](https://user-images.githubusercontent.com/31142286/115920627-bd127180-a47a-11eb-98a7-2c902e4fc961.jpg)
+
+# Text version
+
 ### Basic rules
 
 - use the template files as a reference, the document size should be *48px*
