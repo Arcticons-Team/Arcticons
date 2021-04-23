@@ -25,20 +25,10 @@ If Turtl is not working on your device, you can also use [Applications Info](htt
 
 ## Contributing
 
-Help with any aspect of the app is much appreciated! **You don't have to know how to code!** If you know how to work with vectors in a program that supports the SVG format. [Inkscape](https://inkscape.org/en/) is recommended but not necessary. Please read the [guide on contributing](CONTRIBUTING.md) before making big changes! It also includes some personal preferences on how to work with Inkscape. If you don't use Inkscape you can just ignore them.
+Making icons is fun and **you don't even have to know how to code**. Just install a vector graphic program like [Inkscape](https://inkscape.org/en/). 
+Here's a quick guide to get you started, read the full details here: [Contributing](CONTRIBUTING.md)
 
-When you bring an icon to Arcticons try to make it minimal. The easiest and most noticeable way to do so is to set an icon free of its background. Twitter is a good example! There are two parts: a bird and a circle surrounding it. The bird is the center of the icon and the part associated with Twitter while the circle is not unique to the platform and can be removed. Don't take this as a ground rule because there are cases when a background shape is necessary. Adobe products are much more recognizable in a square and GitHub uses the background shape as a meaningful part of their icon.
-
-**Note:** I want to accept as many contributions as possible, but will only merge icons that have been manually created using shapes and paths in a vector editing program. I don't think the quality is high enough from tools that automatically generate vector images.
-
-Quick Guide:
-1. Fork the repository to your GitHub account
-2. Download the templates provided [here](templates) and design the new icons
-3. Upload the SVG icons to your repository's **/other** folder
-4. Create a pull request and explain your changes
-5. Provide the activity names of the new apps
-   - These should look something like `com.donnnno.arcticons/com.donnnno.arcticons.MainActivity`
-   - If you want to help even more you can add your new icons to the appfilter.xml file
+![guide](https://user-images.githubusercontent.com/31142286/115920627-bd127180-a47a-11eb-98a7-2c902e4fc961.jpg) 
 
 ## Donate
 
