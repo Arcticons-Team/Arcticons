@@ -382,8 +382,8 @@
     <item component="ComponentInfo{org.lineageos.audiofx/org.lineageos.audiofx.activity.ActivityMusic}" drawable="audiofx" />
 
     <!-- Audio Recorder -->
-    <item component="ComponentInfo{com.github.axet.audiorecorder/com.github.axet.audiorecorder.activities.MainActivity}" drawable="soundrecorder" />
-    <item component="ComponentInfo{com.dimowner.audiorecorder/com.dimowner.audiorecorder.app.main.MainActivity}" drawable="soundrecorder"/>
+    <item component="ComponentInfo{com.github.axet.audiorecorder/com.github.axet.audiorecorder.activities.MainActivity}" drawable="recorder" />
+    <item component="ComponentInfo{com.dimowner.audiorecorder/com.dimowner.audiorecorder.app.main.MainActivity}" drawable="recorder"/>
 
     <!-- Audio Technica Connect -->
     <item component="ComponentInfo{jp.co.audiotechnica.connect/com.audiotechnica.SplashActivity}" drawable="audiotechnicaconnect" />
@@ -626,7 +626,7 @@
     <item component="ComponentInfo{com.booking/com.booking.startup.HomeActivity}" drawable="booking" />
 
     <!-- Book Reader -->
-    <item component="ComponentInfo{com.github.axet.bookreader/com.github.axet.bookreader.activities.MainActivity}" drawable="bookreader" />
+    <item component="ComponentInfo{com.github.axet.bookreader/com.github.axet.bookreader.activities.MainActivity}" drawable="letterb" />
 
     <!-- Boost -->
     <item component="ComponentInfo{com.rubenmayayo.reddit/com.rubenmayayo.reddit.ui.submissions.subreddit.MainActivity}" drawable="boost"/>
@@ -815,7 +815,7 @@
     <item component="ComponentInfo{com.Caseys.finder/com.caseys.commerce.activity.MainActivity}" drawable="caseys"/>
 
     <!-- Cash App -->
-    <item component="ComponentInfo{com.squareup.cash/com.squareup.cash.ui.MainActivity}" drawable="cashapp" />
+    <item component="ComponentInfo{com.squareup.cash/com.squareup.cash.ui.MainActivity}" drawable="symboldollar" />
 
     <!-- Casper -->
     <item component="ComponentInfo{io.casper.android/io.casper.android.activity.LaunchActivity}" drawable="casper" />
@@ -985,6 +985,7 @@
     <item component="ComponentInfo{com.android.contacts/com.oneplus.contacts.activities.OPPeopleActivity}" drawable="contacts" />
     <item component="ComponentInfo{com.oneplus.contacts/com.oneplus.contacts.activities.OPPeopleActivity}" drawable="contacts" />
     <item component="ComponentInfo{com.sonymobile.android.contacts/com.android.contacts.activities.PeopleActivity}" drawable="contacts"/>
+    <item component="ComponentInfo{com.oneplus.contacts/com.oneplus.contacts.activities.OPPeopleActivity}" drawable="contacts" />
 
     <!-- Content Transfer -->
     <item component="ComponentInfo{com.mediamushroom.easymigrate/com.mediamushroom.easymigrate.UI.EasyMigrateActivityCompat}" drawable="contenttransfer" />
@@ -1444,9 +1445,7 @@
 
     <!-- Facebook -->
     <item component="ComponentInfo{com.facebook.katana/com.facebook.katana.LoginActivity}" drawable="facebook" />
-
-    <!-- Facebook Lite -->
-    <item component="ComponentInfo{com.facebook.lite/com.facebook.lite.MainActivity}" drawable="facebooklite" />
+    <item component="ComponentInfo{com.facebook.lite/com.facebook.lite.MainActivity}" drawable="facebook" />
 
     <!-- Facebook Messenger -->
     <item component="ComponentInfo{com.facebook.orca/com.facebook.orca.auth.StartScreenActivity}" drawable="messenger" />
@@ -1539,6 +1538,7 @@
     <item component="ComponentInfo{com.oneplus.filemanager/com.oneplus.filemanager.HomePageActivity}" drawable="files" />
     <item component="ComponentInfo{com.oneplus.filemanager/com.oneplus.filemanager.HomePageActivity}" drawable="files"/>
     <item component="ComponentInfo{com.mi.android.globalFileexplorer/com.android.fileexplorer.FileExplorerTabActivity}" drawable="files"/>
+    <item component="ComponentInfo{com.oneplus.filemanager/com.oneplus.filemanager.HomePageActivity}" drawable="files" />
 
     <!-- Financeguru -->
     <item component="ComponentInfo{de.dwins.financeguru/de.dwins.financeguru.SplashActivity}" drawable="financeguru"/>
@@ -2058,7 +2058,7 @@
     <item component="ComponentInfo{org.hiittimer.hiittimer/org.hiittimer.MainActivity}" drawable="fitotrack"/>
 
     <!-- Holo Launcher -->
-    <item component="ComponentInfo{com.mobint.hololauncher/com.mobint.hololauncher.Launcher}" drawable="holo" />
+    <item component="ComponentInfo{com.mobint.hololauncher/com.mobint.hololauncher.Launcher}" drawable="letterh" />
 
     <!-- Home -->
     <item component="ComponentInfo{io.github.domi04151309.home/io.github.domi04151309.home.activities.SplashActivity}" drawable="letterh" />
@@ -2161,6 +2161,9 @@
 
     <!-- Inventory -->
     <item component="ComponentInfo{net.twisterrob.inventory/net.twisterrob.inventory.android.activity.MainActivity}" drawable="inventory"/>
+
+    <!-- Investing -->
+    <item component="ComponentInfo{com.fusionmedia.investing/com.fusionmedia.investing.ui.activities.SplashSplitter}" drawable="investing"/>
 
     <!-- InviZible Pro -->
     <item component="ComponentInfo{pan.alexander.tordnscrypt/pan.alexander.tordnscrypt.MainActivity}" drawable="inviziblepro"/>
@@ -2572,7 +2575,7 @@
     <item component="ComponentInfo{app.mapillary/app.mapillary.android.activity.TabbedMainActivity}" drawable="mapillary" />
 
     <!-- Maps -->
-    <item component="ComponentInfo{com.github.axet.maps/com.mapswithme.maps.DownloadResourcesActivity}" drawable="maps" />
+    <item component="ComponentInfo{com.github.axet.maps/com.mapswithme.maps.DownloadResourcesActivity}" drawable="letterm" />
 
     <!-- Maps Go -->
     <item component="ComponentInfo{com.google.android.apps.mapslite/org.chromium.webapk.shell_apk.MainActivity}" drawable="mapsgo"/>
@@ -2626,6 +2629,9 @@
     <item component="ComponentInfo{com.mattermost.rnbeta/com.mattermost.rnbeta.MainActivity}" drawable="mattermost" />
     <item component="ComponentInfo{com.mattermost.mattermost/com.mattermost.mattermost.SplashScreenActivity}" drawable="mattermost" />
 
+    <!-- mBank -->
+    <item component="ComponentInfo{pl.mbank/pl.mbank.core.activity.StartActivity}" drawable="mbank"/>
+
     <!-- McDonald's -->
     <item component="ComponentInfo{com.mcdonalds.app/com.mcdonalds.mcdcoreapp.common.activity.SplashActivity}" drawable="mcdonalds"/>
 
@@ -2646,8 +2652,8 @@
     <item component="ComponentInfo{ru.megafon.mlk/ru.megafon.mlk.ui.activities.ActivityMain}" drawable="megafon" />
 
     <!-- Mega -->
-    <item component="ComponentInfo{mega.privacy.android.app/mega.privacy.android.app.LauncherActivity}" drawable="mega" />
-    <item component="ComponentInfo{mega.privacy.android.app/mega.privacy.android.app.lollipop.ManagerActivityLollipop}" drawable="mega" />
+    <item component="ComponentInfo{mega.privacy.android.app/mega.privacy.android.app.LauncherActivity}" drawable="letterm" />
+    <item component="ComponentInfo{mega.privacy.android.app/mega.privacy.android.app.lollipop.ManagerActivityLollipop}" drawable="letterm" />
 
     <!-- Mein Vodafone -->
     <item component="ComponentInfo{com.appseleration.android.selfcare/com.vis.meinvodafone.view.activity.launch.VfLaunchBaseActivity}" drawable="meinvodafone" />
@@ -2841,7 +2847,7 @@
     <item component="ComponentInfo{com.m2049r.xmrwallet/com.m2049r.xmrwallet.MainActivity}" drawable="monerujo"/>
 
     <!-- Money Balance -->
-    <item component="ComponentInfo{ivl.android.moneybalance/ivl.android.moneybalance.CalculationListActivity}" drawable="money" />
+    <item component="ComponentInfo{ivl.android.moneybalance/ivl.android.moneybalance.CalculationListActivity}" drawable="symboleuro" />
 
     <!-- MoneyBuster -->
     <item component="ComponentInfo{net.eneiluj.moneybuster/net.eneiluj.moneybuster.android.activity.BillsListViewActivity}" drawable="moneybuster"/>
@@ -2853,7 +2859,7 @@
     <item component="ComponentInfo{uk.co.richyhbm.monochromatic/uk.co.richyhbm.monochromatic.Activities.MainActivity}" drawable="monochromatic"/>
 
     <!-- Monster -->
-    <item component="ComponentInfo{com.jobrapp.jobr/com.jobrapp.jobr.presentation.ui.activity.SplashScreenActivity}" drawable="monster" />
+    <item component="ComponentInfo{com.jobrapp.jobr/com.jobrapp.jobr.presentation.ui.activity.SplashScreenActivity}" drawable="letterm" />
 
     <!-- Monzo -->
     <item component="ComponentInfo{co.uk.getmondo/co.uk.getmondo.splash.SplashActivity}" drawable="monzo" />
@@ -2874,7 +2880,7 @@
     <item component="ComponentInfo{com.developerfromjokela.motioneyeclient/com.developerfromjokela.motioneyeclient.ui.activities.MainActivity}" drawable="motioneye" />
 
     <!-- Moto Help -->
-    <item component="ComponentInfo{com.motorola.genie/com.motorola.genie.main.start.LaunchActivity}" drawable="motohelp" />
+    <item component="ComponentInfo{com.motorola.genie/com.motorola.genie.main.start.LaunchActivity}" drawable="feedback" />
 
     <!-- Moto -->
     <item component="ComponentInfo{com.motorola.moto/com.motorola.assist.ui.screens.MainActivity}" drawable="moto" />
@@ -3001,6 +3007,9 @@
     <!-- My NEOMA BS -->
     <item component="ComponentInfo{com.appscho.appschov2.neoma/com.appscho.appscho.MainActivity}" drawable="myneomabs" />
 
+    <!-- MyPhoneExplorer Client -->
+    <item component="ComponentInfo{com.fjsoft.myphoneexplorer.client/com.fjsoft.myphoneexplorer.client.MainActivity}" drawable="myphoneexplorerclient"/>
+
     <!-- MySosh -->
     <item component="ComponentInfo{com.orange.mysosh/com.orange.mysosh.MySoshActivity}" drawable="mysosh"/>
 
@@ -3096,6 +3105,9 @@
 
     <!-- News -->
     <item component="ComponentInfo{de.luhmer.owncloudnewsreader/de.luhmer.owncloudnewsreader.NewsReaderListActivity}" drawable="news" />
+
+    <!-- nextbike -->
+    <item component="ComponentInfo{de.nextbike/net.nextbike.v3.presentation.ui.main.view.MapActivity}" drawable="nextbike"/>
 
     <!-- Nextcloud Bookmarks -->
     <item component="ComponentInfo{org.schabi.nxbookmarks/org.schabi.nxbookmarks.MainActivity}" drawable="nextcloudbookmarks" />
@@ -3246,7 +3258,7 @@
     <item component="ComponentInfo{de.schildbach.oeffi/de.schildbach.oeffi.plans.PlansPickerActivity}" drawable="oeffiplans" />
 
     <!-- Oeffi Stations -->
-    <item component="ComponentInfo{de.schildbach.oeffi/de.schildbach.oeffi.stations.StationsActivity}" drawable="oeffistations" />
+    <item component="ComponentInfo{de.schildbach.oeffi/de.schildbach.oeffi.stations.StationsActivity}" drawable="letterh" />
 
     <!-- Office -->
     <item component="ComponentInfo{com.microsoft.office.officehubrow/com.microsoft.office.officesuite.OfficeSuiteActivity}" drawable="office" />
@@ -3274,12 +3286,6 @@
 
     <!-- one -->
     <item component="ComponentInfo{ch.viseca.visecaone/com.netcetera.visecaone.android.feature.branding.alias_activities.VisecaBrandAliasActivity}" drawable="visecaone" />
-
-    <!-- OnePlus Contacts-->
-    <item component="ComponentInfo{com.oneplus.contacts/com.oneplus.contacts.activities.OPPeopleActivity}" drawable="onepluscontacts" />
-
-    <!-- OnePlus File Manager -->
-    <item component="ComponentInfo{com.oneplus.filemanager/com.oneplus.filemanager.HomePageActivity}" drawable="oneplusfilemanager" />
 
     <!-- Onleihe -->
     <item component="ComponentInfo{de.etecture.ekz.onleihe/de.etecture.ekz.onleihe.activity.SplashScreenActivity}" drawable="onleihe"/>
@@ -3662,7 +3668,7 @@
     <item component="ComponentInfo{org.primftpd/org.primftpd.PrimitiveFtpdActivity}" drawable="primitiveftpd" />
     
     <!-- Privacy -->
-    <item component="ComponentInfo{com.privacy.pay/com.privacy.pay.MainActivity}" drawable="privacy"/>
+    <item component="ComponentInfo{com.privacy.pay/com.privacy.pay.MainActivity}" drawable="letterp"/>
 
     <!-- Privacy Browser -->
     <item component="ComponentInfo{com.stoutner.privacybrowser.standard/com.stoutner.privacybrowser.standard.MainWebViewActivity}" drawable="privacybrowser" />
@@ -3744,7 +3750,7 @@
     <item component="ComponentInfo{com.asdoi.quicktiles/com.asdoi.quicksettings.SettingsActivity}" drawable="quicktiles"/>
     
     <!-- Quizlet -->
-    <item component="ComponentInfo{com.quizlet.quizletandroid/com.quizlet.quizletandroid.activities.RootActivity}" drawable="quizlet" />
+    <item component="ComponentInfo{com.quizlet.quizletandroid/com.quizlet.quizletandroid.activities.RootActivity}" drawable="letterq" />
 
     <!-- Quran -->
     <item component="ComponentInfo{com.quran.labs.androidquran/com.quran.labs.androidquran.QuranDataActivity}" drawable="quran" />
@@ -3804,8 +3810,8 @@
     <item component="ComponentInfo{org.receipt_manager/org.receipt_manager.MainActivity}" drawable="receiptmanager" />
 
     <!-- Recorder -->
-    <item component="ComponentInfo{org.lineageos.recorder/org.lineageos.recorder.RecorderActivity}" drawable="lineagerec" />
-    <item component="ComponentInfo{com.android.soundrecorder/com.android.soundrecorder.RecordListActivity}" drawable="lineagerec"/> 
+    <item component="ComponentInfo{org.lineageos.recorder/org.lineageos.recorder.RecorderActivity}" drawable="recorder" />
+    <item component="ComponentInfo{com.android.soundrecorder/com.android.soundrecorder.RecordListActivity}" drawable="recorder"/> 
 
     <!-- Recurrence -->
     <item component="ComponentInfo{com.bleyl.recurrence/com.bleyl.recurrence.activities.MainActivity}" drawable="recurrence" />
@@ -3826,7 +3832,7 @@
     <item component="ComponentInfo{com.jmstudios.redmoon/com.jmstudios.redmoon.activity.MainActivity}" drawable="redmoon" />
 
     <!-- RedReader -->
-    <item component="ComponentInfo{org.quantumbadger.redreader/org.quantumbadger.redreader.activities.MainActivity}" drawable="redreader" />
+    <item component="ComponentInfo{org.quantumbadger.redreader/org.quantumbadger.redreader.activities.MainActivity}" drawable="letterr" />
 
     <!-- RegenRadar -->
     <item component="ComponentInfo{de.wetteronline.regenradar/de.wetteronline.regenradar.MainActivity}" drawable="regenradar"/>
@@ -4067,7 +4073,7 @@
     <item component="ComponentInfo{com.android.settings/com.android.settings.MainSettings}" drawable="settings"/>
 
     <!-- Seven Time -->
-    <item component="ComponentInfo{com.codescape.seventime/com.codescape.seventime.MainActivity}" drawable="seventime" />
+    <item component="ComponentInfo{com.codescape.seventime/com.codescape.seventime.MainActivity}" drawable="number7" />
 
     <!-- Sgit -->
     <item component="ComponentInfo{me.sheimi.sgit/me.sheimi.sgit.RepoListActivity}" drawable="git" />
@@ -4122,7 +4128,7 @@
     <item component="ComponentInfo{com.codebutler.shrug/com.codebutler.shrug.MainActivity}" drawable="shrug" />
 
     <!-- Sieben -->
-    <item component="ComponentInfo{de.baumann.sieben/de.baumann.sieben.MainActivity}" drawable="sieben" />
+    <item component="ComponentInfo{de.baumann.sieben/de.baumann.sieben.MainActivity}" drawable="number7" />
 
     <!-- SIGMA LINK -->
     <item component="ComponentInfo{air.com.sigmasport.SIGMALink/air.com.sigmasport.SIGMALink.AppEntry}" drawable="sigmalink"/>
@@ -4144,84 +4150,84 @@
     <item component="ComponentInfo{com.emmanuelmess.simpleaccounting/com.emmanuelmess.simpleaccounting.MainActivity}" drawable="simpleaccounting" />
 
     <!-- Simple Calculator -->
-    <item component="ComponentInfo{com.simplemobiletools.calculator/com.simplemobiletools.calculator.activities.SplashActivity.Pink}" drawable="simplecalculator" />
-    <item component="ComponentInfo{com.simplemobiletools.calculator/com.simplemobiletools.calculator.activities.SplashActivity.Purple}" drawable="simplecalculator" />
-    <item component="ComponentInfo{com.simplemobiletools.calculator/com.simplemobiletools.calculator.activities.SplashActivity.Deep_purple}" drawable="simplecalculator" />
-    <item component="ComponentInfo{com.simplemobiletools.calculator/com.simplemobiletools.calculator.activities.SplashActivity.Indigo}" drawable="simplecalculator" />
-    <item component="ComponentInfo{com.simplemobiletools.calculator/com.simplemobiletools.calculator.activities.SplashActivity.Blue}" drawable="simplecalculator" />
-    <item component="ComponentInfo{com.simplemobiletools.calculator/com.simplemobiletools.calculator.activities.SplashActivity.Light_blue}" drawable="simplecalculator" />
-    <item component="ComponentInfo{com.simplemobiletools.calculator/com.simplemobiletools.calculator.activities.SplashActivity.Cyan}" drawable="simplecalculator" />
-    <item component="ComponentInfo{com.simplemobiletools.calculator/com.simplemobiletools.calculator.activities.SplashActivity.Teal}" drawable="simplecalculator" />
-    <item component="ComponentInfo{com.simplemobiletools.calculator/com.simplemobiletools.calculator.activities.SplashActivity.Green}" drawable="simplecalculator" />
-    <item component="ComponentInfo{com.simplemobiletools.calculator/com.simplemobiletools.calculator.activities.SplashActivity.Light_green}" drawable="simplecalculator" />
-    <item component="ComponentInfo{com.simplemobiletools.calculator/com.simplemobiletools.calculator.activities.SplashActivity.Lime}" drawable="simplecalculator" />
-    <item component="ComponentInfo{com.simplemobiletools.calculator/com.simplemobiletools.calculator.activities.SplashActivity.Yellow}" drawable="simplecalculator" />
-    <item component="ComponentInfo{com.simplemobiletools.calculator/com.simplemobiletools.calculator.activities.SplashActivity.Amber}" drawable="simplecalculator" />
-    <item component="ComponentInfo{com.simplemobiletools.calculator/com.simplemobiletools.calculator.activities.SplashActivity.Orange}" drawable="simplecalculator" />
-    <item component="ComponentInfo{com.simplemobiletools.calculator/com.simplemobiletools.calculator.activities.SplashActivity.Deep_orange}" drawable="simplecalculator" />
-    <item component="ComponentInfo{com.simplemobiletools.calculator/com.simplemobiletools.calculator.activities.SplashActivity.Brown}" drawable="simplecalculator" />
-    <item component="ComponentInfo{com.simplemobiletools.calculator/com.simplemobiletools.calculator.activities.SplashActivity.Blue_grey}" drawable="simplecalculator" />
-    <item component="ComponentInfo{com.simplemobiletools.calculator/com.simplemobiletools.calculator.activities.SplashActivity.Grey_black}" drawable="simplecalculator" />
+    <item component="ComponentInfo{com.simplemobiletools.calculator/com.simplemobiletools.calculator.activities.SplashActivity.Pink}" drawable="calculator" />
+    <item component="ComponentInfo{com.simplemobiletools.calculator/com.simplemobiletools.calculator.activities.SplashActivity.Purple}" drawable="calculator" />
+    <item component="ComponentInfo{com.simplemobiletools.calculator/com.simplemobiletools.calculator.activities.SplashActivity.Deep_purple}" drawable="calculator" />
+    <item component="ComponentInfo{com.simplemobiletools.calculator/com.simplemobiletools.calculator.activities.SplashActivity.Indigo}" drawable="calculator" />
+    <item component="ComponentInfo{com.simplemobiletools.calculator/com.simplemobiletools.calculator.activities.SplashActivity.Blue}" drawable="calculator" />
+    <item component="ComponentInfo{com.simplemobiletools.calculator/com.simplemobiletools.calculator.activities.SplashActivity.Light_blue}" drawable="calculator" />
+    <item component="ComponentInfo{com.simplemobiletools.calculator/com.simplemobiletools.calculator.activities.SplashActivity.Cyan}" drawable="calculator" />
+    <item component="ComponentInfo{com.simplemobiletools.calculator/com.simplemobiletools.calculator.activities.SplashActivity.Teal}" drawable="calculator" />
+    <item component="ComponentInfo{com.simplemobiletools.calculator/com.simplemobiletools.calculator.activities.SplashActivity.Green}" drawable="calculator" />
+    <item component="ComponentInfo{com.simplemobiletools.calculator/com.simplemobiletools.calculator.activities.SplashActivity.Light_green}" drawable="calculator" />
+    <item component="ComponentInfo{com.simplemobiletools.calculator/com.simplemobiletools.calculator.activities.SplashActivity.Lime}" drawable="calculator" />
+    <item component="ComponentInfo{com.simplemobiletools.calculator/com.simplemobiletools.calculator.activities.SplashActivity.Yellow}" drawable="calculator" />
+    <item component="ComponentInfo{com.simplemobiletools.calculator/com.simplemobiletools.calculator.activities.SplashActivity.Amber}" drawable="calculator" />
+    <item component="ComponentInfo{com.simplemobiletools.calculator/com.simplemobiletools.calculator.activities.SplashActivity.Orange}" drawable="calculator" />
+    <item component="ComponentInfo{com.simplemobiletools.calculator/com.simplemobiletools.calculator.activities.SplashActivity.Deep_orange}" drawable="calculator" />
+    <item component="ComponentInfo{com.simplemobiletools.calculator/com.simplemobiletools.calculator.activities.SplashActivity.Brown}" drawable="calculator" />
+    <item component="ComponentInfo{com.simplemobiletools.calculator/com.simplemobiletools.calculator.activities.SplashActivity.Blue_grey}" drawable="calculator" />
+    <item component="ComponentInfo{com.simplemobiletools.calculator/com.simplemobiletools.calculator.activities.SplashActivity.Grey_black}" drawable="calculator" />
 
     <!-- Simple Calculator Pro -->
-    <item component="ComponentInfo{com.simplemobiletools.calculcator.pro/com.simplemobiletools.calculcator.pro.activities.SplashActivity.Pink}" drawable="simplecalculator" />
-    <item component="ComponentInfo{com.simplemobiletools.calculcator.pro/com.simplemobiletools.calculcator.pro.activities.SplashActivity.Purple}" drawable="simplecalculator" />
-    <item component="ComponentInfo{com.simplemobiletools.calculcator.pro/com.simplemobiletools.calculcator.pro.activities.SplashActivity.Deep_purple}" drawable="simplecalculator" />
-    <item component="ComponentInfo{com.simplemobiletools.calculcator.pro/com.simplemobiletools.calculcator.pro.activities.SplashActivity.Indigo}" drawable="simplecalculator" />
-    <item component="ComponentInfo{com.simplemobiletools.calculcator.pro/com.simplemobiletools.calculcator.pro.activities.SplashActivity.Blue}" drawable="simplecalculator" />
-    <item component="ComponentInfo{com.simplemobiletools.calculcator.pro/com.simplemobiletools.calculcator.pro.activities.SplashActivity.Light_blue}" drawable="simplecalculator" />
-    <item component="ComponentInfo{com.simplemobiletools.calculcator.pro/com.simplemobiletools.calculcator.pro.activities.SplashActivity.Cyan}" drawable="simplecalculator" />
-    <item component="ComponentInfo{com.simplemobiletools.calculcator.pro/com.simplemobiletools.calculcator.pro.activities.SplashActivity.Teal}" drawable="simplecalculator" />
-    <item component="ComponentInfo{com.simplemobiletools.calculcator.pro/com.simplemobiletools.calculcator.pro.activities.SplashActivity.Green}" drawable="simplecalculator" />
-    <item component="ComponentInfo{com.simplemobiletools.calculcator.pro/com.simplemobiletools.calculcator.pro.activities.SplashActivity.Light_green}" drawable="simplecalculator" />
-    <item component="ComponentInfo{com.simplemobiletools.calculcator.pro/com.simplemobiletools.calculcator.pro.activities.SplashActivity.Lime}" drawable="simplecalculator" />
-    <item component="ComponentInfo{com.simplemobiletools.calculcator.pro/com.simplemobiletools.calculcator.pro.activities.SplashActivity.Yellow}" drawable="simplecalculator" />
-    <item component="ComponentInfo{com.simplemobiletools.calculcator.pro/com.simplemobiletools.calculcator.pro.activities.SplashActivity.Amber}" drawable="simplecalculator" />
-    <item component="ComponentInfo{com.simplemobiletools.calculcator.pro/com.simplemobiletools.calculcator.pro.activities.SplashActivity.Orange}" drawable="simplecalculator" />
-    <item component="ComponentInfo{com.simplemobiletools.calculcator.pro/com.simplemobiletools.calculcator.pro.activities.SplashActivity.Deep_orange}" drawable="simplecalculator" />
-    <item component="ComponentInfo{com.simplemobiletools.calculcator.pro/com.simplemobiletools.calculcator.pro.activities.SplashActivity.Brown}" drawable="simplecalculator" />
-    <item component="ComponentInfo{com.simplemobiletools.calculcator.pro/com.simplemobiletools.calculcator.pro.activities.SplashActivity.Blue_grey}" drawable="simplecalculator" />
-    <item component="ComponentInfo{com.simplemobiletools.calculcator.pro/com.simplemobiletools.calculcator.pro.activities.SplashActivity.Grey_black}" drawable="simplecalculator" />
+    <item component="ComponentInfo{com.simplemobiletools.calculcator.pro/com.simplemobiletools.calculcator.pro.activities.SplashActivity.Pink}" drawable="calculator" />
+    <item component="ComponentInfo{com.simplemobiletools.calculcator.pro/com.simplemobiletools.calculcator.pro.activities.SplashActivity.Purple}" drawable="calculator" />
+    <item component="ComponentInfo{com.simplemobiletools.calculcator.pro/com.simplemobiletools.calculcator.pro.activities.SplashActivity.Deep_purple}" drawable="calculator" />
+    <item component="ComponentInfo{com.simplemobiletools.calculcator.pro/com.simplemobiletools.calculcator.pro.activities.SplashActivity.Indigo}" drawable="calculator" />
+    <item component="ComponentInfo{com.simplemobiletools.calculcator.pro/com.simplemobiletools.calculcator.pro.activities.SplashActivity.Blue}" drawable="calculator" />
+    <item component="ComponentInfo{com.simplemobiletools.calculcator.pro/com.simplemobiletools.calculcator.pro.activities.SplashActivity.Light_blue}" drawable="calculator" />
+    <item component="ComponentInfo{com.simplemobiletools.calculcator.pro/com.simplemobiletools.calculcator.pro.activities.SplashActivity.Cyan}" drawable="calculator" />
+    <item component="ComponentInfo{com.simplemobiletools.calculcator.pro/com.simplemobiletools.calculcator.pro.activities.SplashActivity.Teal}" drawable="calculator" />
+    <item component="ComponentInfo{com.simplemobiletools.calculcator.pro/com.simplemobiletools.calculcator.pro.activities.SplashActivity.Green}" drawable="calculator" />
+    <item component="ComponentInfo{com.simplemobiletools.calculcator.pro/com.simplemobiletools.calculcator.pro.activities.SplashActivity.Light_green}" drawable="calculator" />
+    <item component="ComponentInfo{com.simplemobiletools.calculcator.pro/com.simplemobiletools.calculcator.pro.activities.SplashActivity.Lime}" drawable="calculator" />
+    <item component="ComponentInfo{com.simplemobiletools.calculcator.pro/com.simplemobiletools.calculcator.pro.activities.SplashActivity.Yellow}" drawable="calculator" />
+    <item component="ComponentInfo{com.simplemobiletools.calculcator.pro/com.simplemobiletools.calculcator.pro.activities.SplashActivity.Amber}" drawable="calculator" />
+    <item component="ComponentInfo{com.simplemobiletools.calculcator.pro/com.simplemobiletools.calculcator.pro.activities.SplashActivity.Orange}" drawable="calculator" />
+    <item component="ComponentInfo{com.simplemobiletools.calculcator.pro/com.simplemobiletools.calculcator.pro.activities.SplashActivity.Deep_orange}" drawable="calculator" />
+    <item component="ComponentInfo{com.simplemobiletools.calculcator.pro/com.simplemobiletools.calculcator.pro.activities.SplashActivity.Brown}" drawable="calculator" />
+    <item component="ComponentInfo{com.simplemobiletools.calculcator.pro/com.simplemobiletools.calculcator.pro.activities.SplashActivity.Blue_grey}" drawable="calculator" />
+    <item component="ComponentInfo{com.simplemobiletools.calculcator.pro/com.simplemobiletools.calculcator.pro.activities.SplashActivity.Grey_black}" drawable="calculator" />
 
     <!-- Simple Calendar -->
-    <item component="ComponentInfo{com.simplemobiletools.calendar/com.simplemobiletools.calendar.activities.SplashActivity.Pink}" drawable="simplecalendar" />
-    <item component="ComponentInfo{com.simplemobiletools.calendar/com.simplemobiletools.calendar.activities.SplashActivity.Purple}" drawable="simplecalendar" />
-    <item component="ComponentInfo{com.simplemobiletools.calendar/com.simplemobiletools.calendar.activities.SplashActivity.Deep_purple}" drawable="simplecalendar" />
-    <item component="ComponentInfo{com.simplemobiletools.calendar/com.simplemobiletools.calendar.activities.SplashActivity.Indigo}" drawable="simplecalendar" />
-    <item component="ComponentInfo{com.simplemobiletools.calendar/com.simplemobiletools.calendar.activities.SplashActivity.Blue}" drawable="simplecalendar" />
-    <item component="ComponentInfo{com.simplemobiletools.calendar/com.simplemobiletools.calendar.activities.SplashActivity.Light_blue}" drawable="simplecalendar" />
-    <item component="ComponentInfo{com.simplemobiletools.calendar/com.simplemobiletools.calendar.activities.SplashActivity.Cyan}" drawable="simplecalendar" />
-    <item component="ComponentInfo{com.simplemobiletools.calendar/com.simplemobiletools.calendar.activities.SplashActivity.Teal}" drawable="simplecalendar" />
-    <item component="ComponentInfo{com.simplemobiletools.calendar/com.simplemobiletools.calendar.activities.SplashActivity.Green}" drawable="simplecalendar" />
-    <item component="ComponentInfo{com.simplemobiletools.calendar/com.simplemobiletools.calendar.activities.SplashActivity.Light_green}" drawable="simplecalendar" />
-    <item component="ComponentInfo{com.simplemobiletools.calendar/com.simplemobiletools.calendar.activities.SplashActivity.Lime}" drawable="simplecalendar" />
-    <item component="ComponentInfo{com.simplemobiletools.calendar/com.simplemobiletools.calendar.activities.SplashActivity.Yellow}" drawable="simplecalendar" />
-    <item component="ComponentInfo{com.simplemobiletools.calendar/com.simplemobiletools.calendar.activities.SplashActivity.Amber}" drawable="simplecalendar" />
-    <item component="ComponentInfo{com.simplemobiletools.calendar/com.simplemobiletools.calendar.activities.SplashActivity.Orange}" drawable="simplecalendar" />
-    <item component="ComponentInfo{com.simplemobiletools.calendar/com.simplemobiletools.calendar.activities.SplashActivity.Deep_orange}" drawable="simplecalendar" />
-    <item component="ComponentInfo{com.simplemobiletools.calendar/com.simplemobiletools.calendar.activities.SplashActivity.Brown}" drawable="simplecalendar" />
-    <item component="ComponentInfo{com.simplemobiletools.calendar/com.simplemobiletools.calendar.activities.SplashActivity.Blue_grey}" drawable="simplecalendar" />
-    <item component="ComponentInfo{com.simplemobiletools.calendar/com.simplemobiletools.calendar.activities.SplashActivity.Grey_black}" drawable="simplecalendar" />
+    <item component="ComponentInfo{com.simplemobiletools.calendar/com.simplemobiletools.calendar.activities.SplashActivity.Pink}" drawable="calendar31" />
+    <item component="ComponentInfo{com.simplemobiletools.calendar/com.simplemobiletools.calendar.activities.SplashActivity.Purple}" drawable="calendar31" />
+    <item component="ComponentInfo{com.simplemobiletools.calendar/com.simplemobiletools.calendar.activities.SplashActivity.Deep_purple}" drawable="calendar31" />
+    <item component="ComponentInfo{com.simplemobiletools.calendar/com.simplemobiletools.calendar.activities.SplashActivity.Indigo}" drawable="calendar31" />
+    <item component="ComponentInfo{com.simplemobiletools.calendar/com.simplemobiletools.calendar.activities.SplashActivity.Blue}" drawable="calendar31" />
+    <item component="ComponentInfo{com.simplemobiletools.calendar/com.simplemobiletools.calendar.activities.SplashActivity.Light_blue}" drawable="calendar31" />
+    <item component="ComponentInfo{com.simplemobiletools.calendar/com.simplemobiletools.calendar.activities.SplashActivity.Cyan}" drawable="calendar31" />
+    <item component="ComponentInfo{com.simplemobiletools.calendar/com.simplemobiletools.calendar.activities.SplashActivity.Teal}" drawable="calendar31" />
+    <item component="ComponentInfo{com.simplemobiletools.calendar/com.simplemobiletools.calendar.activities.SplashActivity.Green}" drawable="calendar31" />
+    <item component="ComponentInfo{com.simplemobiletools.calendar/com.simplemobiletools.calendar.activities.SplashActivity.Light_green}" drawable="calendar31" />
+    <item component="ComponentInfo{com.simplemobiletools.calendar/com.simplemobiletools.calendar.activities.SplashActivity.Lime}" drawable="calendar31" />
+    <item component="ComponentInfo{com.simplemobiletools.calendar/com.simplemobiletools.calendar.activities.SplashActivity.Yellow}" drawable="calendar31" />
+    <item component="ComponentInfo{com.simplemobiletools.calendar/com.simplemobiletools.calendar.activities.SplashActivity.Amber}" drawable="calendar31" />
+    <item component="ComponentInfo{com.simplemobiletools.calendar/com.simplemobiletools.calendar.activities.SplashActivity.Orange}" drawable="calendar31" />
+    <item component="ComponentInfo{com.simplemobiletools.calendar/com.simplemobiletools.calendar.activities.SplashActivity.Deep_orange}" drawable="calendar31" />
+    <item component="ComponentInfo{com.simplemobiletools.calendar/com.simplemobiletools.calendar.activities.SplashActivity.Brown}" drawable="calendar31" />
+    <item component="ComponentInfo{com.simplemobiletools.calendar/com.simplemobiletools.calendar.activities.SplashActivity.Blue_grey}" drawable="calendar31" />
+    <item component="ComponentInfo{com.simplemobiletools.calendar/com.simplemobiletools.calendar.activities.SplashActivity.Grey_black}" drawable="calendar31" />
 
     <!-- Simple Calendar Pro -->
-    <item component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Pink}" drawable="simplecalendar" />
-    <item component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Purple}" drawable="simplecalendar" />
-    <item component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Deep_purple}" drawable="simplecalendar" />
-    <item component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Indigo}" drawable="simplecalendar" />
-    <item component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Blue}" drawable="simplecalendar" />
-    <item component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Light_blue}" drawable="simplecalendar" />
-    <item component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Cyan}" drawable="simplecalendar" />
-    <item component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Teal}" drawable="simplecalendar" />
-    <item component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Green}" drawable="simplecalendar" />
-    <item component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Light_green}" drawable="simplecalendar" />
-    <item component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Lime}" drawable="simplecalendar" />
-    <item component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Yellow}" drawable="simplecalendar" />
-    <item component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Amber}" drawable="simplecalendar" />
-    <item component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Orange}" drawable="simplecalendar" />
-    <item component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Deep_orange}" drawable="simplecalendar" />
-    <item component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Brown}" drawable="simplecalendar" />
-    <item component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Blue_grey}" drawable="simplecalendar" />
-    <item component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Grey_black}" drawable="simplecalendar" />
+    <item component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Pink}" drawable="calendar31" />
+    <item component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Purple}" drawable="calendar31" />
+    <item component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Deep_purple}" drawable="calendar31" />
+    <item component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Indigo}" drawable="calendar31" />
+    <item component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Blue}" drawable="calendar31" />
+    <item component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Light_blue}" drawable="calendar31" />
+    <item component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Cyan}" drawable="calendar31" />
+    <item component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Teal}" drawable="calendar31" />
+    <item component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Green}" drawable="calendar31" />
+    <item component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Light_green}" drawable="calendar31" />
+    <item component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Lime}" drawable="calendar31" />
+    <item component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Yellow}" drawable="calendar31" />
+    <item component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Amber}" drawable="calendar31" />
+    <item component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Orange}" drawable="calendar31" />
+    <item component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Deep_orange}" drawable="calendar31" />
+    <item component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Brown}" drawable="calendar31" />
+    <item component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Blue_grey}" drawable="calendar31" />
+    <item component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Grey_black}" drawable="calendar31" />
 
     <!-- Simple Calendar Dynamic icon -->
     <calendar component="ComponentInfo{com.simplemobiletools.calendar/com.simplemobiletools.calendar.activities.SplashActivity.Pink}" prefix="calendar" />
@@ -4304,85 +4310,85 @@
     <item component="ComponentInfo{com.simplemobiletools.camera.pro/com.simplemobiletools.camera.pro.activities.SplashActivity.Grey_black}" drawable="simplecamera" />
 
     <!-- Simple Clock -->
-    <item component="ComponentInfo{com.simplemobiletools.clock/com.simplemobiletools.clock.activities.SplashActivity.Pink}" drawable="simpleclock" />
-    <item component="ComponentInfo{com.simplemobiletools.clock/com.simplemobiletools.clock.activities.SplashActivity.Purple}" drawable="simpleclock" />
-    <item component="ComponentInfo{com.simplemobiletools.clock/com.simplemobiletools.clock.activities.SplashActivity.Deep_purple}" drawable="simpleclock" />
-    <item component="ComponentInfo{com.simplemobiletools.clock/com.simplemobiletools.clock.activities.SplashActivity.Indigo}" drawable="simpleclock" />
-    <item component="ComponentInfo{com.simplemobiletools.clock/com.simplemobiletools.clock.activities.SplashActivity.Blue}" drawable="simpleclock" />
-    <item component="ComponentInfo{com.simplemobiletools.clock/com.simplemobiletools.clock.activities.SplashActivity.Light_blue}" drawable="simpleclock" />
-    <item component="ComponentInfo{com.simplemobiletools.clock/com.simplemobiletools.clock.activities.SplashActivity.Cyan}" drawable="simpleclock" />
-    <item component="ComponentInfo{com.simplemobiletools.clock/com.simplemobiletools.clock.activities.SplashActivity.Teal}" drawable="simpleclock" />
-    <item component="ComponentInfo{com.simplemobiletools.clock/com.simplemobiletools.clock.activities.SplashActivity.Green}" drawable="simpleclock" />
-    <item component="ComponentInfo{com.simplemobiletools.clock/com.simplemobiletools.clock.activities.SplashActivity.Light_green}" drawable="simpleclock" />
-    <item component="ComponentInfo{com.simplemobiletools.clock/com.simplemobiletools.clock.activities.SplashActivity.Lime}" drawable="simpleclock" />
-    <item component="ComponentInfo{com.simplemobiletools.clock/com.simplemobiletools.clock.activities.SplashActivity.Yellow}" drawable="simpleclock" />
-    <item component="ComponentInfo{com.simplemobiletools.clock/com.simplemobiletools.clock.activities.SplashActivity.Amber}" drawable="simpleclock" />
-    <item component="ComponentInfo{com.simplemobiletools.clock/com.simplemobiletools.clock.activities.SplashActivity.Orange}" drawable="simpleclock" />
-    <item component="ComponentInfo{com.simplemobiletools.clock/com.simplemobiletools.clock.activities.SplashActivity.Deep_orange}" drawable="simpleclock" />
-    <item component="ComponentInfo{com.simplemobiletools.clock/com.simplemobiletools.clock.activities.SplashActivity.Brown}" drawable="simpleclock" />
-    <item component="ComponentInfo{com.simplemobiletools.clock/com.simplemobiletools.clock.activities.SplashActivity.Blue_grey}" drawable="simpleclock" />
-    <item component="ComponentInfo{com.simplemobiletools.clock/com.simplemobiletools.clock.activities.SplashActivity.Grey_black}" drawable="simpleclock" />
+    <item component="ComponentInfo{com.simplemobiletools.clock/com.simplemobiletools.clock.activities.SplashActivity.Pink}" drawable="clock" />
+    <item component="ComponentInfo{com.simplemobiletools.clock/com.simplemobiletools.clock.activities.SplashActivity.Purple}" drawable="clock" />
+    <item component="ComponentInfo{com.simplemobiletools.clock/com.simplemobiletools.clock.activities.SplashActivity.Deep_purple}" drawable="clock" />
+    <item component="ComponentInfo{com.simplemobiletools.clock/com.simplemobiletools.clock.activities.SplashActivity.Indigo}" drawable="clock" />
+    <item component="ComponentInfo{com.simplemobiletools.clock/com.simplemobiletools.clock.activities.SplashActivity.Blue}" drawable="clock" />
+    <item component="ComponentInfo{com.simplemobiletools.clock/com.simplemobiletools.clock.activities.SplashActivity.Light_blue}" drawable="clock" />
+    <item component="ComponentInfo{com.simplemobiletools.clock/com.simplemobiletools.clock.activities.SplashActivity.Cyan}" drawable="clock" />
+    <item component="ComponentInfo{com.simplemobiletools.clock/com.simplemobiletools.clock.activities.SplashActivity.Teal}" drawable="clock" />
+    <item component="ComponentInfo{com.simplemobiletools.clock/com.simplemobiletools.clock.activities.SplashActivity.Green}" drawable="clock" />
+    <item component="ComponentInfo{com.simplemobiletools.clock/com.simplemobiletools.clock.activities.SplashActivity.Light_green}" drawable="clock" />
+    <item component="ComponentInfo{com.simplemobiletools.clock/com.simplemobiletools.clock.activities.SplashActivity.Lime}" drawable="clock" />
+    <item component="ComponentInfo{com.simplemobiletools.clock/com.simplemobiletools.clock.activities.SplashActivity.Yellow}" drawable="clock" />
+    <item component="ComponentInfo{com.simplemobiletools.clock/com.simplemobiletools.clock.activities.SplashActivity.Amber}" drawable="clock" />
+    <item component="ComponentInfo{com.simplemobiletools.clock/com.simplemobiletools.clock.activities.SplashActivity.Orange}" drawable="clock" />
+    <item component="ComponentInfo{com.simplemobiletools.clock/com.simplemobiletools.clock.activities.SplashActivity.Deep_orange}" drawable="clock" />
+    <item component="ComponentInfo{com.simplemobiletools.clock/com.simplemobiletools.clock.activities.SplashActivity.Brown}" drawable="clock" />
+    <item component="ComponentInfo{com.simplemobiletools.clock/com.simplemobiletools.clock.activities.SplashActivity.Blue_grey}" drawable="clock" />
+    <item component="ComponentInfo{com.simplemobiletools.clock/com.simplemobiletools.clock.activities.SplashActivity.Grey_black}" drawable="clock" />
 
     <!-- Simple Clock Pro -->
-    <item component="ComponentInfo{com.simplemobiletools.clock.pro/com.simplemobiletools.clock.pro.activities.SplashActivity.Pink}" drawable="simpleclock" />
-    <item component="ComponentInfo{com.simplemobiletools.clock.pro/com.simplemobiletools.clock.pro.activities.SplashActivity.Purple}" drawable="simpleclock" />
-    <item component="ComponentInfo{com.simplemobiletools.clock.pro/com.simplemobiletools.clock.pro.activities.SplashActivity.Deep_purple}" drawable="simpleclock" />
-    <item component="ComponentInfo{com.simplemobiletools.clock.pro/com.simplemobiletools.clock.pro.activities.SplashActivity.Indigo}" drawable="simpleclock" />
-    <item component="ComponentInfo{com.simplemobiletools.clock.pro/com.simplemobiletools.clock.pro.activities.SplashActivity.Blue}" drawable="simpleclock" />
-    <item component="ComponentInfo{com.simplemobiletools.clock.pro/com.simplemobiletools.clock.pro.activities.SplashActivity.Light_blue}" drawable="simpleclock" />
-    <item component="ComponentInfo{com.simplemobiletools.clock.pro/com.simplemobiletools.clock.pro.activities.SplashActivity.Cyan}" drawable="simpleclock" />
-    <item component="ComponentInfo{com.simplemobiletools.clock.pro/com.simplemobiletools.clock.pro.activities.SplashActivity.Teal}" drawable="simpleclock" />
-    <item component="ComponentInfo{com.simplemobiletools.clock.pro/com.simplemobiletools.clock.pro.activities.SplashActivity.Green}" drawable="simpleclock" />
-    <item component="ComponentInfo{com.simplemobiletools.clock.pro/com.simplemobiletools.clock.pro.activities.SplashActivity.Light_green}" drawable="simpleclock" />
-    <item component="ComponentInfo{com.simplemobiletools.clock.pro/com.simplemobiletools.clock.pro.activities.SplashActivity.Lime}" drawable="simpleclock" />
-    <item component="ComponentInfo{com.simplemobiletools.clock.pro/com.simplemobiletools.clock.pro.activities.SplashActivity.Yellow}" drawable="simpleclock" />
-    <item component="ComponentInfo{com.simplemobiletools.clock.pro/com.simplemobiletools.clock.pro.activities.SplashActivity.Amber}" drawable="simpleclock" />
-    <item component="ComponentInfo{com.simplemobiletools.clock.pro/com.simplemobiletools.clock.pro.activities.SplashActivity.Orange}" drawable="simpleclock" />
-    <item component="ComponentInfo{com.simplemobiletools.clock.pro/com.simplemobiletools.clock.pro.activities.SplashActivity.Deep_orange}" drawable="simpleclock" />
-    <item component="ComponentInfo{com.simplemobiletools.clock.pro/com.simplemobiletools.clock.pro.activities.SplashActivity.Brown}" drawable="simpleclock" />
-    <item component="ComponentInfo{com.simplemobiletools.clock.pro/com.simplemobiletools.clock.pro.activities.SplashActivity.Blue_grey}" drawable="simpleclock" />
-    <item component="ComponentInfo{com.simplemobiletools.clock.pro/com.simplemobiletools.clock.pro.activities.SplashActivity.Grey_black}" drawable="simpleclock" />
+    <item component="ComponentInfo{com.simplemobiletools.clock.pro/com.simplemobiletools.clock.pro.activities.SplashActivity.Pink}" drawable="clock" />
+    <item component="ComponentInfo{com.simplemobiletools.clock.pro/com.simplemobiletools.clock.pro.activities.SplashActivity.Purple}" drawable="clock" />
+    <item component="ComponentInfo{com.simplemobiletools.clock.pro/com.simplemobiletools.clock.pro.activities.SplashActivity.Deep_purple}" drawable="clock" />
+    <item component="ComponentInfo{com.simplemobiletools.clock.pro/com.simplemobiletools.clock.pro.activities.SplashActivity.Indigo}" drawable="clock" />
+    <item component="ComponentInfo{com.simplemobiletools.clock.pro/com.simplemobiletools.clock.pro.activities.SplashActivity.Blue}" drawable="clock" />
+    <item component="ComponentInfo{com.simplemobiletools.clock.pro/com.simplemobiletools.clock.pro.activities.SplashActivity.Light_blue}" drawable="clock" />
+    <item component="ComponentInfo{com.simplemobiletools.clock.pro/com.simplemobiletools.clock.pro.activities.SplashActivity.Cyan}" drawable="clock" />
+    <item component="ComponentInfo{com.simplemobiletools.clock.pro/com.simplemobiletools.clock.pro.activities.SplashActivity.Teal}" drawable="clock" />
+    <item component="ComponentInfo{com.simplemobiletools.clock.pro/com.simplemobiletools.clock.pro.activities.SplashActivity.Green}" drawable="clock" />
+    <item component="ComponentInfo{com.simplemobiletools.clock.pro/com.simplemobiletools.clock.pro.activities.SplashActivity.Light_green}" drawable="clock" />
+    <item component="ComponentInfo{com.simplemobiletools.clock.pro/com.simplemobiletools.clock.pro.activities.SplashActivity.Lime}" drawable="clock" />
+    <item component="ComponentInfo{com.simplemobiletools.clock.pro/com.simplemobiletools.clock.pro.activities.SplashActivity.Yellow}" drawable="clock" />
+    <item component="ComponentInfo{com.simplemobiletools.clock.pro/com.simplemobiletools.clock.pro.activities.SplashActivity.Amber}" drawable="clock" />
+    <item component="ComponentInfo{com.simplemobiletools.clock.pro/com.simplemobiletools.clock.pro.activities.SplashActivity.Orange}" drawable="clock" />
+    <item component="ComponentInfo{com.simplemobiletools.clock.pro/com.simplemobiletools.clock.pro.activities.SplashActivity.Deep_orange}" drawable="clock" />
+    <item component="ComponentInfo{com.simplemobiletools.clock.pro/com.simplemobiletools.clock.pro.activities.SplashActivity.Brown}" drawable="clock" />
+    <item component="ComponentInfo{com.simplemobiletools.clock.pro/com.simplemobiletools.clock.pro.activities.SplashActivity.Blue_grey}" drawable="clock" />
+    <item component="ComponentInfo{com.simplemobiletools.clock.pro/com.simplemobiletools.clock.pro.activities.SplashActivity.Grey_black}" drawable="clock" />
 
     <!-- Simple Contacts -->
-    <item component="ComponentInfo{com.simplemobiletools.contacts/com.simplemobiletools.contacts.activities.SplashActivity.Pink}" drawable="simplecontacts" />
-    <item component="ComponentInfo{com.simplemobiletools.contacts/com.simplemobiletools.contacts.activities.SplashActivity.Purple}" drawable="simplecontacts" />
-    <item component="ComponentInfo{com.simplemobiletools.contacts/com.simplemobiletools.contacts.activities.SplashActivity.Deep_purple}" drawable="simplecontacts" />
-    <item component="ComponentInfo{com.simplemobiletools.contacts/com.simplemobiletools.contacts.activities.SplashActivity.Indigo}" drawable="simplecontacts" />
-    <item component="ComponentInfo{com.simplemobiletools.contacts/com.simplemobiletools.contacts.activities.SplashActivity.Blue}" drawable="simplecontacts" />
-    <item component="ComponentInfo{com.simplemobiletools.contacts/com.simplemobiletools.contacts.activities.SplashActivity.Light_blue}" drawable="simplecontacts" />
-    <item component="ComponentInfo{com.simplemobiletools.contacts/com.simplemobiletools.contacts.activities.SplashActivity.Cyan}" drawable="simplecontacts" />
-    <item component="ComponentInfo{com.simplemobiletools.contacts/com.simplemobiletools.contacts.activities.SplashActivity.Teal}" drawable="simplecontacts" />
-    <item component="ComponentInfo{com.simplemobiletools.contacts/com.simplemobiletools.contacts.activities.SplashActivity.Green}" drawable="simplecontacts" />
-    <item component="ComponentInfo{com.simplemobiletools.contacts/com.simplemobiletools.contacts.activities.SplashActivity.Light_green}" drawable="simplecontacts" />
-    <item component="ComponentInfo{com.simplemobiletools.contacts/com.simplemobiletools.contacts.activities.SplashActivity.Lime}" drawable="simplecontacts" />
-    <item component="ComponentInfo{com.simplemobiletools.contacts/com.simplemobiletools.contacts.activities.SplashActivity.Yellow}" drawable="simplecontacts" />
-    <item component="ComponentInfo{com.simplemobiletools.contacts/com.simplemobiletools.contacts.activities.SplashActivity.Amber}" drawable="simplecontacts" />
-    <item component="ComponentInfo{com.simplemobiletools.contacts/com.simplemobiletools.contacts.activities.SplashActivity.Orange}" drawable="simplecontacts" />
-    <item component="ComponentInfo{com.simplemobiletools.contacts/com.simplemobiletools.contacts.activities.SplashActivity.Deep_orange}" drawable="simplecontacts" />
-    <item component="ComponentInfo{com.simplemobiletools.contacts/com.simplemobiletools.contacts.activities.SplashActivity.Brown}" drawable="simplecontacts" />
-    <item component="ComponentInfo{com.simplemobiletools.contacts/com.simplemobiletools.contacts.activities.SplashActivity.Blue_grey}" drawable="simplecontacts" />
-    <item component="ComponentInfo{com.simplemobiletools.contacts/com.simplemobiletools.contacts.activities.SplashActivity.Grey_black}" drawable="simplecontacts" />
+    <item component="ComponentInfo{com.simplemobiletools.contacts/com.simplemobiletools.contacts.activities.SplashActivity.Pink}" drawable="contacts" />
+    <item component="ComponentInfo{com.simplemobiletools.contacts/com.simplemobiletools.contacts.activities.SplashActivity.Purple}" drawable="contacts" />
+    <item component="ComponentInfo{com.simplemobiletools.contacts/com.simplemobiletools.contacts.activities.SplashActivity.Deep_purple}" drawable="contacts" />
+    <item component="ComponentInfo{com.simplemobiletools.contacts/com.simplemobiletools.contacts.activities.SplashActivity.Indigo}" drawable="contacts" />
+    <item component="ComponentInfo{com.simplemobiletools.contacts/com.simplemobiletools.contacts.activities.SplashActivity.Blue}" drawable="contacts" />
+    <item component="ComponentInfo{com.simplemobiletools.contacts/com.simplemobiletools.contacts.activities.SplashActivity.Light_blue}" drawable="contacts" />
+    <item component="ComponentInfo{com.simplemobiletools.contacts/com.simplemobiletools.contacts.activities.SplashActivity.Cyan}" drawable="contacts" />
+    <item component="ComponentInfo{com.simplemobiletools.contacts/com.simplemobiletools.contacts.activities.SplashActivity.Teal}" drawable="contacts" />
+    <item component="ComponentInfo{com.simplemobiletools.contacts/com.simplemobiletools.contacts.activities.SplashActivity.Green}" drawable="contacts" />
+    <item component="ComponentInfo{com.simplemobiletools.contacts/com.simplemobiletools.contacts.activities.SplashActivity.Light_green}" drawable="contacts" />
+    <item component="ComponentInfo{com.simplemobiletools.contacts/com.simplemobiletools.contacts.activities.SplashActivity.Lime}" drawable="contacts" />
+    <item component="ComponentInfo{com.simplemobiletools.contacts/com.simplemobiletools.contacts.activities.SplashActivity.Yellow}" drawable="contacts" />
+    <item component="ComponentInfo{com.simplemobiletools.contacts/com.simplemobiletools.contacts.activities.SplashActivity.Amber}" drawable="contacts" />
+    <item component="ComponentInfo{com.simplemobiletools.contacts/com.simplemobiletools.contacts.activities.SplashActivity.Orange}" drawable="contacts" />
+    <item component="ComponentInfo{com.simplemobiletools.contacts/com.simplemobiletools.contacts.activities.SplashActivity.Deep_orange}" drawable="contacts" />
+    <item component="ComponentInfo{com.simplemobiletools.contacts/com.simplemobiletools.contacts.activities.SplashActivity.Brown}" drawable="contacts" />
+    <item component="ComponentInfo{com.simplemobiletools.contacts/com.simplemobiletools.contacts.activities.SplashActivity.Blue_grey}" drawable="contacts" />
+    <item component="ComponentInfo{com.simplemobiletools.contacts/com.simplemobiletools.contacts.activities.SplashActivity.Grey_black}" drawable="contacts" />
 
     <!-- Simple Contacts Pro -->
-    <item component="ComponentInfo{com.simplemobiletools.contacts.pro/com.simplemobiletools.contacts.pro.activities.SplashActivity.Pink}" drawable="simplecontacts" />
-    <item component="ComponentInfo{com.simplemobiletools.contacts.pro/com.simplemobiletools.contacts.pro.activities.SplashActivity.Purple}" drawable="simplecontacts" />
-    <item component="ComponentInfo{com.simplemobiletools.contacts.pro/com.simplemobiletools.contacts.pro.activities.SplashActivity.Deep_purple}" drawable="simplecontacts" />
-    <item component="ComponentInfo{com.simplemobiletools.contacts.pro/com.simplemobiletools.contacts.pro.activities.SplashActivity.Indigo}" drawable="simplecontacts" />
-    <item component="ComponentInfo{com.simplemobiletools.contacts.pro/com.simplemobiletools.contacts.pro.activities.SplashActivity.Blue}" drawable="simplecontacts" />
-    <item component="ComponentInfo{com.simplemobiletools.contacts.pro/com.simplemobiletools.contacts.pro.activities.SplashActivity.Light_blue}" drawable="simplecontacts" />
-    <item component="ComponentInfo{com.simplemobiletools.contacts.pro/com.simplemobiletools.contacts.pro.activities.SplashActivity.Cyan}" drawable="simplecontacts" />
-    <item component="ComponentInfo{com.simplemobiletools.contacts.pro/com.simplemobiletools.contacts.pro.activities.SplashActivity.Teal}" drawable="simplecontacts" />
-    <item component="ComponentInfo{com.simplemobiletools.contacts.pro/com.simplemobiletools.contacts.pro.activities.SplashActivity.Green}" drawable="simplecontacts" />
-    <item component="ComponentInfo{com.simplemobiletools.contacts.pro/com.simplemobiletools.contacts.pro.activities.SplashActivity.Light_green}" drawable="simplecontacts" />
-    <item component="ComponentInfo{com.simplemobiletools.contacts.pro/com.simplemobiletools.contacts.pro.activities.SplashActivity.Lime}" drawable="simplecontacts" />
-    <item component="ComponentInfo{com.simplemobiletools.contacts.pro/com.simplemobiletools.contacts.pro.activities.SplashActivity.Yellow}" drawable="simplecontacts" />
-    <item component="ComponentInfo{com.simplemobiletools.contacts.pro/com.simplemobiletools.contacts.pro.activities.SplashActivity.Amber}" drawable="simplecontacts" />
-    <item component="ComponentInfo{com.simplemobiletools.contacts.pro/com.simplemobiletools.contacts.pro.activities.SplashActivity.Orange}" drawable="simplecontacts" />
-    <item component="ComponentInfo{com.simplemobiletools.contacts.pro/com.simplemobiletools.contacts.pro.activities.SplashActivity.Deep_orange}" drawable="simplecontacts" />
-    <item component="ComponentInfo{com.simplemobiletools.contacts.pro/com.simplemobiletools.contacts.pro.activities.SplashActivity.Brown}" drawable="simplecontacts" />
-    <item component="ComponentInfo{com.simplemobiletools.contacts.pro/com.simplemobiletools.contacts.pro.activities.SplashActivity.Blue_grey}" drawable="simplecontacts" />
-    <item component="ComponentInfo{com.simplemobiletools.contacts.pro/com.simplemobiletools.contacts.pro.activities.SplashActivity.Grey_black}" drawable="simplecontacts" />
-    <item component="ComponentInfo{com.simplemobiletools.contacts.pro/com.simplemobiletools.contacts.pro.activities.SplashActivity.Red}" drawable="simplecontacts" />
+    <item component="ComponentInfo{com.simplemobiletools.contacts.pro/com.simplemobiletools.contacts.pro.activities.SplashActivity.Pink}" drawable="contacts" />
+    <item component="ComponentInfo{com.simplemobiletools.contacts.pro/com.simplemobiletools.contacts.pro.activities.SplashActivity.Purple}" drawable="contacts" />
+    <item component="ComponentInfo{com.simplemobiletools.contacts.pro/com.simplemobiletools.contacts.pro.activities.SplashActivity.Deep_purple}" drawable="contacts" />
+    <item component="ComponentInfo{com.simplemobiletools.contacts.pro/com.simplemobiletools.contacts.pro.activities.SplashActivity.Indigo}" drawable="contacts" />
+    <item component="ComponentInfo{com.simplemobiletools.contacts.pro/com.simplemobiletools.contacts.pro.activities.SplashActivity.Blue}" drawable="contacts" />
+    <item component="ComponentInfo{com.simplemobiletools.contacts.pro/com.simplemobiletools.contacts.pro.activities.SplashActivity.Light_blue}" drawable="contacts" />
+    <item component="ComponentInfo{com.simplemobiletools.contacts.pro/com.simplemobiletools.contacts.pro.activities.SplashActivity.Cyan}" drawable="contacts" />
+    <item component="ComponentInfo{com.simplemobiletools.contacts.pro/com.simplemobiletools.contacts.pro.activities.SplashActivity.Teal}" drawable="contacts" />
+    <item component="ComponentInfo{com.simplemobiletools.contacts.pro/com.simplemobiletools.contacts.pro.activities.SplashActivity.Green}" drawable="contacts" />
+    <item component="ComponentInfo{com.simplemobiletools.contacts.pro/com.simplemobiletools.contacts.pro.activities.SplashActivity.Light_green}" drawable="contacts" />
+    <item component="ComponentInfo{com.simplemobiletools.contacts.pro/com.simplemobiletools.contacts.pro.activities.SplashActivity.Lime}" drawable="contacts" />
+    <item component="ComponentInfo{com.simplemobiletools.contacts.pro/com.simplemobiletools.contacts.pro.activities.SplashActivity.Yellow}" drawable="contacts" />
+    <item component="ComponentInfo{com.simplemobiletools.contacts.pro/com.simplemobiletools.contacts.pro.activities.SplashActivity.Amber}" drawable="contacts" />
+    <item component="ComponentInfo{com.simplemobiletools.contacts.pro/com.simplemobiletools.contacts.pro.activities.SplashActivity.Orange}" drawable="contacts" />
+    <item component="ComponentInfo{com.simplemobiletools.contacts.pro/com.simplemobiletools.contacts.pro.activities.SplashActivity.Deep_orange}" drawable="contacts" />
+    <item component="ComponentInfo{com.simplemobiletools.contacts.pro/com.simplemobiletools.contacts.pro.activities.SplashActivity.Brown}" drawable="contacts" />
+    <item component="ComponentInfo{com.simplemobiletools.contacts.pro/com.simplemobiletools.contacts.pro.activities.SplashActivity.Blue_grey}" drawable="contacts" />
+    <item component="ComponentInfo{com.simplemobiletools.contacts.pro/com.simplemobiletools.contacts.pro.activities.SplashActivity.Grey_black}" drawable="contacts" />
+    <item component="ComponentInfo{com.simplemobiletools.contacts.pro/com.simplemobiletools.contacts.pro.activities.SplashActivity.Red}" drawable="contacts" />
 
     <!-- Simple Dialer -->
     <item component="ComponentInfo{com.simplemobiletools.dialer/com.simplemobiletools.dialer.activities.SplashActivity.Pink}" drawable="phone" />
@@ -4448,44 +4454,44 @@
     <item component="ComponentInfo{com.dnielfe.manager/com.dnielfe.manager.activities.BrowserActivity}" drawable="simexplorer" />
 
     <!-- Simple File Manager -->
-    <item component="ComponentInfo{com.simplemobiletools.filemanager/com.simplemobiletools.filemanager.activities.SplashActivity.Pink}" drawable="simplefilemanager" />
-    <item component="ComponentInfo{com.simplemobiletools.filemanager/com.simplemobiletools.filemanager.activities.SplashActivity.Purple}" drawable="simplefilemanager" />
-    <item component="ComponentInfo{com.simplemobiletools.filemanager/com.simplemobiletools.filemanager.activities.SplashActivity.Deep_purple}" drawable="simplefilemanager" />
-    <item component="ComponentInfo{com.simplemobiletools.filemanager/com.simplemobiletools.filemanager.activities.SplashActivity.Indigo}" drawable="simplefilemanager" />
-    <item component="ComponentInfo{com.simplemobiletools.filemanager/com.simplemobiletools.filemanager.activities.SplashActivity.Blue}" drawable="simplefilemanager" />
-    <item component="ComponentInfo{com.simplemobiletools.filemanager/com.simplemobiletools.filemanager.activities.SplashActivity.Light_blue}" drawable="simplefilemanager" />
-    <item component="ComponentInfo{com.simplemobiletools.filemanager/com.simplemobiletools.filemanager.activities.SplashActivity.Cyan}" drawable="simplefilemanager" />
-    <item component="ComponentInfo{com.simplemobiletools.filemanager/com.simplemobiletools.filemanager.activities.SplashActivity.Teal}" drawable="simplefilemanager" />
-    <item component="ComponentInfo{com.simplemobiletools.filemanager/com.simplemobiletools.filemanager.activities.SplashActivity.Green}" drawable="simplefilemanager" />
-    <item component="ComponentInfo{com.simplemobiletools.filemanager/com.simplemobiletools.filemanager.activities.SplashActivity.Light_green}" drawable="simplefilemanager" />
-    <item component="ComponentInfo{com.simplemobiletools.filemanager/com.simplemobiletools.filemanager.activities.SplashActivity.Lime}" drawable="simplefilemanager" />
-    <item component="ComponentInfo{com.simplemobiletools.filemanager/com.simplemobiletools.filemanager.activities.SplashActivity.Yellow}" drawable="simplefilemanager" />
-    <item component="ComponentInfo{com.simplemobiletools.filemanager/com.simplemobiletools.filemanager.activities.SplashActivity.Amber}" drawable="simplefilemanager" />
-    <item component="ComponentInfo{com.simplemobiletools.filemanager/com.simplemobiletools.filemanager.activities.SplashActivity.Orange}" drawable="simplefilemanager" />
-    <item component="ComponentInfo{com.simplemobiletools.filemanager/com.simplemobiletools.filemanager.activities.SplashActivity.Deep_orange}" drawable="simplefilemanager" />
-    <item component="ComponentInfo{com.simplemobiletools.filemanager/com.simplemobiletools.filemanager.activities.SplashActivity.Brown}" drawable="simplefilemanager" />
-    <item component="ComponentInfo{com.simplemobiletools.filemanager/com.simplemobiletools.filemanager.activities.SplashActivity.Blue_grey}" drawable="simplefilemanager" />
-    <item component="ComponentInfo{com.simplemobiletools.filemanager/com.simplemobiletools.filemanager.activities.SplashActivity.Grey_black}" drawable="simplefilemanager" />
+    <item component="ComponentInfo{com.simplemobiletools.filemanager/com.simplemobiletools.filemanager.activities.SplashActivity.Pink}" drawable="files" />
+    <item component="ComponentInfo{com.simplemobiletools.filemanager/com.simplemobiletools.filemanager.activities.SplashActivity.Purple}" drawable="files" />
+    <item component="ComponentInfo{com.simplemobiletools.filemanager/com.simplemobiletools.filemanager.activities.SplashActivity.Deep_purple}" drawable="files" />
+    <item component="ComponentInfo{com.simplemobiletools.filemanager/com.simplemobiletools.filemanager.activities.SplashActivity.Indigo}" drawable="files" />
+    <item component="ComponentInfo{com.simplemobiletools.filemanager/com.simplemobiletools.filemanager.activities.SplashActivity.Blue}" drawable="files" />
+    <item component="ComponentInfo{com.simplemobiletools.filemanager/com.simplemobiletools.filemanager.activities.SplashActivity.Light_blue}" drawable="files" />
+    <item component="ComponentInfo{com.simplemobiletools.filemanager/com.simplemobiletools.filemanager.activities.SplashActivity.Cyan}" drawable="files" />
+    <item component="ComponentInfo{com.simplemobiletools.filemanager/com.simplemobiletools.filemanager.activities.SplashActivity.Teal}" drawable="files" />
+    <item component="ComponentInfo{com.simplemobiletools.filemanager/com.simplemobiletools.filemanager.activities.SplashActivity.Green}" drawable="files" />
+    <item component="ComponentInfo{com.simplemobiletools.filemanager/com.simplemobiletools.filemanager.activities.SplashActivity.Light_green}" drawable="files" />
+    <item component="ComponentInfo{com.simplemobiletools.filemanager/com.simplemobiletools.filemanager.activities.SplashActivity.Lime}" drawable="files" />
+    <item component="ComponentInfo{com.simplemobiletools.filemanager/com.simplemobiletools.filemanager.activities.SplashActivity.Yellow}" drawable="files" />
+    <item component="ComponentInfo{com.simplemobiletools.filemanager/com.simplemobiletools.filemanager.activities.SplashActivity.Amber}" drawable="files" />
+    <item component="ComponentInfo{com.simplemobiletools.filemanager/com.simplemobiletools.filemanager.activities.SplashActivity.Orange}" drawable="files" />
+    <item component="ComponentInfo{com.simplemobiletools.filemanager/com.simplemobiletools.filemanager.activities.SplashActivity.Deep_orange}" drawable="files" />
+    <item component="ComponentInfo{com.simplemobiletools.filemanager/com.simplemobiletools.filemanager.activities.SplashActivity.Brown}" drawable="files" />
+    <item component="ComponentInfo{com.simplemobiletools.filemanager/com.simplemobiletools.filemanager.activities.SplashActivity.Blue_grey}" drawable="files" />
+    <item component="ComponentInfo{com.simplemobiletools.filemanager/com.simplemobiletools.filemanager.activities.SplashActivity.Grey_black}" drawable="files" />
 
     <!-- Simple File Manager Pro -->
-    <item component="ComponentInfo{com.simplemobiletools.filemanager.pro/com.simplemobiletools.filemanager.pro.activities.SplashActivity.Pink}" drawable="simplefilemanager" />
-    <item component="ComponentInfo{com.simplemobiletools.filemanager.pro/com.simplemobiletools.filemanager.pro.activities.SplashActivity.Purple}" drawable="simplefilemanager" />
-    <item component="ComponentInfo{com.simplemobiletools.filemanager.pro/com.simplemobiletools.filemanager.pro.activities.SplashActivity.Deep_purple}" drawable="simplefilemanager" />
-    <item component="ComponentInfo{com.simplemobiletools.filemanager.pro/com.simplemobiletools.filemanager.pro.activities.SplashActivity.Indigo}" drawable="simplefilemanager" />
-    <item component="ComponentInfo{com.simplemobiletools.filemanager.pro/com.simplemobiletools.filemanager.pro.activities.SplashActivity.Blue}" drawable="simplefilemanager" />
-    <item component="ComponentInfo{com.simplemobiletools.filemanager.pro/com.simplemobiletools.filemanager.pro.activities.SplashActivity.Light_blue}" drawable="simplefilemanager" />
-    <item component="ComponentInfo{com.simplemobiletools.filemanager.pro/com.simplemobiletools.filemanager.pro.activities.SplashActivity.Cyan}" drawable="simplefilemanager" />
-    <item component="ComponentInfo{com.simplemobiletools.filemanager.pro/com.simplemobiletools.filemanager.pro.activities.SplashActivity.Teal}" drawable="simplefilemanager" />
-    <item component="ComponentInfo{com.simplemobiletools.filemanager.pro/com.simplemobiletools.filemanager.pro.activities.SplashActivity.Green}" drawable="simplefilemanager" />
-    <item component="ComponentInfo{com.simplemobiletools.filemanager.pro/com.simplemobiletools.filemanager.pro.activities.SplashActivity.Light_green}" drawable="simplefilemanager" />
-    <item component="ComponentInfo{com.simplemobiletools.filemanager.pro/com.simplemobiletools.filemanager.pro.activities.SplashActivity.Lime}" drawable="simplefilemanager" />
-    <item component="ComponentInfo{com.simplemobiletools.filemanager.pro/com.simplemobiletools.filemanager.pro.activities.SplashActivity.Yellow}" drawable="simplefilemanager" />
-    <item component="ComponentInfo{com.simplemobiletools.filemanager.pro/com.simplemobiletools.filemanager.pro.activities.SplashActivity.Amber}" drawable="simplefilemanager" />
-    <item component="ComponentInfo{com.simplemobiletools.filemanager.pro/com.simplemobiletools.filemanager.pro.activities.SplashActivity.Orange}" drawable="simplefilemanager" />
-    <item component="ComponentInfo{com.simplemobiletools.filemanager.pro/com.simplemobiletools.filemanager.pro.activities.SplashActivity.Deep_orange}" drawable="simplefilemanager" />
-    <item component="ComponentInfo{com.simplemobiletools.filemanager.pro/com.simplemobiletools.filemanager.pro.activities.SplashActivity.Brown}" drawable="simplefilemanager" />
-    <item component="ComponentInfo{com.simplemobiletools.filemanager.pro/com.simplemobiletools.filemanager.pro.activities.SplashActivity.Blue_grey}" drawable="simplefilemanager" />
-    <item component="ComponentInfo{com.simplemobiletools.filemanager.pro/com.simplemobiletools.filemanager.pro.activities.SplashActivity.Grey_black}" drawable="simplefilemanager" />
+    <item component="ComponentInfo{com.simplemobiletools.filemanager.pro/com.simplemobiletools.filemanager.pro.activities.SplashActivity.Pink}" drawable="files" />
+    <item component="ComponentInfo{com.simplemobiletools.filemanager.pro/com.simplemobiletools.filemanager.pro.activities.SplashActivity.Purple}" drawable="files" />
+    <item component="ComponentInfo{com.simplemobiletools.filemanager.pro/com.simplemobiletools.filemanager.pro.activities.SplashActivity.Deep_purple}" drawable="files" />
+    <item component="ComponentInfo{com.simplemobiletools.filemanager.pro/com.simplemobiletools.filemanager.pro.activities.SplashActivity.Indigo}" drawable="files" />
+    <item component="ComponentInfo{com.simplemobiletools.filemanager.pro/com.simplemobiletools.filemanager.pro.activities.SplashActivity.Blue}" drawable="files" />
+    <item component="ComponentInfo{com.simplemobiletools.filemanager.pro/com.simplemobiletools.filemanager.pro.activities.SplashActivity.Light_blue}" drawable="files" />
+    <item component="ComponentInfo{com.simplemobiletools.filemanager.pro/com.simplemobiletools.filemanager.pro.activities.SplashActivity.Cyan}" drawable="files" />
+    <item component="ComponentInfo{com.simplemobiletools.filemanager.pro/com.simplemobiletools.filemanager.pro.activities.SplashActivity.Teal}" drawable="files" />
+    <item component="ComponentInfo{com.simplemobiletools.filemanager.pro/com.simplemobiletools.filemanager.pro.activities.SplashActivity.Green}" drawable="files" />
+    <item component="ComponentInfo{com.simplemobiletools.filemanager.pro/com.simplemobiletools.filemanager.pro.activities.SplashActivity.Light_green}" drawable="files" />
+    <item component="ComponentInfo{com.simplemobiletools.filemanager.pro/com.simplemobiletools.filemanager.pro.activities.SplashActivity.Lime}" drawable="files" />
+    <item component="ComponentInfo{com.simplemobiletools.filemanager.pro/com.simplemobiletools.filemanager.pro.activities.SplashActivity.Yellow}" drawable="files" />
+    <item component="ComponentInfo{com.simplemobiletools.filemanager.pro/com.simplemobiletools.filemanager.pro.activities.SplashActivity.Amber}" drawable="files" />
+    <item component="ComponentInfo{com.simplemobiletools.filemanager.pro/com.simplemobiletools.filemanager.pro.activities.SplashActivity.Orange}" drawable="files" />
+    <item component="ComponentInfo{com.simplemobiletools.filemanager.pro/com.simplemobiletools.filemanager.pro.activities.SplashActivity.Deep_orange}" drawable="files" />
+    <item component="ComponentInfo{com.simplemobiletools.filemanager.pro/com.simplemobiletools.filemanager.pro.activities.SplashActivity.Brown}" drawable="files" />
+    <item component="ComponentInfo{com.simplemobiletools.filemanager.pro/com.simplemobiletools.filemanager.pro.activities.SplashActivity.Blue_grey}" drawable="files" />
+    <item component="ComponentInfo{com.simplemobiletools.filemanager.pro/com.simplemobiletools.filemanager.pro.activities.SplashActivity.Grey_black}" drawable="files" />
 
     <!-- Simple Flashlight -->
     <item component="ComponentInfo{com.simplemobiletools.flashlight/com.simplemobiletools.flashlight.activities.SplashActivity.Pink}" drawable="simpleflashlight" />
@@ -4528,44 +4534,44 @@
     <item component="ComponentInfo{com.simplemobiletools.flashlight.pro/com.simplemobiletools.flashlight.pro.activities.SplashActivity.Grey_black}" drawable="simpleflashlight" />
 
     <!-- Simple Gallery -->
-    <item component="ComponentInfo{com.simplemobiletools.gallery/com.simplemobiletools.gallery.activities.SplashActivity.Pink}" drawable="simplegallery" />
-    <item component="ComponentInfo{com.simplemobiletools.gallery/com.simplemobiletools.gallery.activities.SplashActivity.Purple}" drawable="simplegallery" />
-    <item component="ComponentInfo{com.simplemobiletools.gallery/com.simplemobiletools.gallery.activities.SplashActivity.Deep_purple}" drawable="simplegallery" />
-    <item component="ComponentInfo{com.simplemobiletools.gallery/com.simplemobiletools.gallery.activities.SplashActivity.Indigo}" drawable="simplegallery" />
-    <item component="ComponentInfo{com.simplemobiletools.gallery/com.simplemobiletools.gallery.activities.SplashActivity.Blue}" drawable="simplegallery" />
-    <item component="ComponentInfo{com.simplemobiletools.gallery/com.simplemobiletools.gallery.activities.SplashActivity.Light_blue}" drawable="simplegallery" />
-    <item component="ComponentInfo{com.simplemobiletools.gallery/com.simplemobiletools.gallery.activities.SplashActivity.Cyan}" drawable="simplegallery" />
-    <item component="ComponentInfo{com.simplemobiletools.gallery/com.simplemobiletools.gallery.activities.SplashActivity.Teal}" drawable="simplegallery" />
-    <item component="ComponentInfo{com.simplemobiletools.gallery/com.simplemobiletools.gallery.activities.SplashActivity.Green}" drawable="simplegallery" />
-    <item component="ComponentInfo{com.simplemobiletools.gallery/com.simplemobiletools.gallery.activities.SplashActivity.Light_green}" drawable="simplegallery" />
-    <item component="ComponentInfo{com.simplemobiletools.gallery/com.simplemobiletools.gallery.activities.SplashActivity.Lime}" drawable="simplegallery" />
-    <item component="ComponentInfo{com.simplemobiletools.gallery/com.simplemobiletools.gallery.activities.SplashActivity.Yellow}" drawable="simplegallery" />
-    <item component="ComponentInfo{com.simplemobiletools.gallery/com.simplemobiletools.gallery.activities.SplashActivity.Amber}" drawable="simplegallery" />
-    <item component="ComponentInfo{com.simplemobiletools.gallery/com.simplemobiletools.gallery.activities.SplashActivity.Orange}" drawable="simplegallery" />
-    <item component="ComponentInfo{com.simplemobiletools.gallery/com.simplemobiletools.gallery.activities.SplashActivity.Deep_orange}" drawable="simplegallery" />
-    <item component="ComponentInfo{com.simplemobiletools.gallery/com.simplemobiletools.gallery.activities.SplashActivity.Brown}" drawable="simplegallery" />
-    <item component="ComponentInfo{com.simplemobiletools.gallery/com.simplemobiletools.gallery.activities.SplashActivity.Blue_grey}" drawable="simplegallery" />
-    <item component="ComponentInfo{com.simplemobiletools.gallery/com.simplemobiletools.gallery.activities.SplashActivity.Grey_black}" drawable="simplegallery" />
+    <item component="ComponentInfo{com.simplemobiletools.gallery/com.simplemobiletools.gallery.activities.SplashActivity.Pink}" drawable="gallery" />
+    <item component="ComponentInfo{com.simplemobiletools.gallery/com.simplemobiletools.gallery.activities.SplashActivity.Purple}" drawable="gallery" />
+    <item component="ComponentInfo{com.simplemobiletools.gallery/com.simplemobiletools.gallery.activities.SplashActivity.Deep_purple}" drawable="gallery" />
+    <item component="ComponentInfo{com.simplemobiletools.gallery/com.simplemobiletools.gallery.activities.SplashActivity.Indigo}" drawable="gallery" />
+    <item component="ComponentInfo{com.simplemobiletools.gallery/com.simplemobiletools.gallery.activities.SplashActivity.Blue}" drawable="gallery" />
+    <item component="ComponentInfo{com.simplemobiletools.gallery/com.simplemobiletools.gallery.activities.SplashActivity.Light_blue}" drawable="gallery" />
+    <item component="ComponentInfo{com.simplemobiletools.gallery/com.simplemobiletools.gallery.activities.SplashActivity.Cyan}" drawable="gallery" />
+    <item component="ComponentInfo{com.simplemobiletools.gallery/com.simplemobiletools.gallery.activities.SplashActivity.Teal}" drawable="gallery" />
+    <item component="ComponentInfo{com.simplemobiletools.gallery/com.simplemobiletools.gallery.activities.SplashActivity.Green}" drawable="gallery" />
+    <item component="ComponentInfo{com.simplemobiletools.gallery/com.simplemobiletools.gallery.activities.SplashActivity.Light_green}" drawable="gallery" />
+    <item component="ComponentInfo{com.simplemobiletools.gallery/com.simplemobiletools.gallery.activities.SplashActivity.Lime}" drawable="gallery" />
+    <item component="ComponentInfo{com.simplemobiletools.gallery/com.simplemobiletools.gallery.activities.SplashActivity.Yellow}" drawable="gallery" />
+    <item component="ComponentInfo{com.simplemobiletools.gallery/com.simplemobiletools.gallery.activities.SplashActivity.Amber}" drawable="gallery" />
+    <item component="ComponentInfo{com.simplemobiletools.gallery/com.simplemobiletools.gallery.activities.SplashActivity.Orange}" drawable="gallery" />
+    <item component="ComponentInfo{com.simplemobiletools.gallery/com.simplemobiletools.gallery.activities.SplashActivity.Deep_orange}" drawable="gallery" />
+    <item component="ComponentInfo{com.simplemobiletools.gallery/com.simplemobiletools.gallery.activities.SplashActivity.Brown}" drawable="gallery" />
+    <item component="ComponentInfo{com.simplemobiletools.gallery/com.simplemobiletools.gallery.activities.SplashActivity.Blue_grey}" drawable="gallery" />
+    <item component="ComponentInfo{com.simplemobiletools.gallery/com.simplemobiletools.gallery.activities.SplashActivity.Grey_black}" drawable="gallery" />
 
     <!-- Simple Gallery Pro -->
-    <item component="ComponentInfo{com.simplemobiletools.gallery.pro/com.simplemobiletools.gallery.pro.activities.SplashActivity.Pink}" drawable="simplegallery" />
-    <item component="ComponentInfo{com.simplemobiletools.gallery.pro/com.simplemobiletools.gallery.pro.activities.SplashActivity.Purple}" drawable="simplegallery" />
-    <item component="ComponentInfo{com.simplemobiletools.gallery.pro/com.simplemobiletools.gallery.pro.activities.SplashActivity.Deep_purple}" drawable="simplegallery" />
-    <item component="ComponentInfo{com.simplemobiletools.gallery.pro/com.simplemobiletools.gallery.pro.activities.SplashActivity.Indigo}" drawable="simplegallery" />
-    <item component="ComponentInfo{com.simplemobiletools.gallery.pro/com.simplemobiletools.gallery.pro.activities.SplashActivity.Blue}" drawable="simplegallery" />
-    <item component="ComponentInfo{com.simplemobiletools.gallery.pro/com.simplemobiletools.gallery.pro.activities.SplashActivity.Light_blue}" drawable="simplegallery" />
-    <item component="ComponentInfo{com.simplemobiletools.gallery.pro/com.simplemobiletools.gallery.pro.activities.SplashActivity.Cyan}" drawable="simplegallery" />
-    <item component="ComponentInfo{com.simplemobiletools.gallery.pro/com.simplemobiletools.gallery.pro.activities.SplashActivity.Teal}" drawable="simplegallery" />
-    <item component="ComponentInfo{com.simplemobiletools.gallery.pro/com.simplemobiletools.gallery.pro.activities.SplashActivity.Green}" drawable="simplegallery" />
-    <item component="ComponentInfo{com.simplemobiletools.gallery.pro/com.simplemobiletools.gallery.pro.activities.SplashActivity.Light_green}" drawable="simplegallery" />
-    <item component="ComponentInfo{com.simplemobiletools.gallery.pro/com.simplemobiletools.gallery.pro.activities.SplashActivity.Lime}" drawable="simplegallery" />
-    <item component="ComponentInfo{com.simplemobiletools.gallery.pro/com.simplemobiletools.gallery.pro.activities.SplashActivity.Yellow}" drawable="simplegallery" />
-    <item component="ComponentInfo{com.simplemobiletools.gallery.pro/com.simplemobiletools.gallery.pro.activities.SplashActivity.Amber}" drawable="simplegallery" />
-    <item component="ComponentInfo{com.simplemobiletools.gallery.pro/com.simplemobiletools.gallery.pro.activities.SplashActivity.Orange}" drawable="simplegallery" />
-    <item component="ComponentInfo{com.simplemobiletools.gallery.pro/com.simplemobiletools.gallery.pro.activities.SplashActivity.Deep_orange}" drawable="simplegallery" />
-    <item component="ComponentInfo{com.simplemobiletools.gallery.pro/com.simplemobiletools.gallery.pro.activities.SplashActivity.Brown}" drawable="simplegallery" />
-    <item component="ComponentInfo{com.simplemobiletools.gallery.pro/com.simplemobiletools.gallery.pro.activities.SplashActivity.Blue_grey}" drawable="simplegallery" />
-    <item component="ComponentInfo{com.simplemobiletools.gallery.pro/com.simplemobiletools.gallery.pro.activities.SplashActivity.Grey_black}" drawable="simplegallery" />
+    <item component="ComponentInfo{com.simplemobiletools.gallery.pro/com.simplemobiletools.gallery.pro.activities.SplashActivity.Pink}" drawable="gallery" />
+    <item component="ComponentInfo{com.simplemobiletools.gallery.pro/com.simplemobiletools.gallery.pro.activities.SplashActivity.Purple}" drawable="gallery" />
+    <item component="ComponentInfo{com.simplemobiletools.gallery.pro/com.simplemobiletools.gallery.pro.activities.SplashActivity.Deep_purple}" drawable="gallery" />
+    <item component="ComponentInfo{com.simplemobiletools.gallery.pro/com.simplemobiletools.gallery.pro.activities.SplashActivity.Indigo}" drawable="gallery" />
+    <item component="ComponentInfo{com.simplemobiletools.gallery.pro/com.simplemobiletools.gallery.pro.activities.SplashActivity.Blue}" drawable="gallery" />
+    <item component="ComponentInfo{com.simplemobiletools.gallery.pro/com.simplemobiletools.gallery.pro.activities.SplashActivity.Light_blue}" drawable="gallery" />
+    <item component="ComponentInfo{com.simplemobiletools.gallery.pro/com.simplemobiletools.gallery.pro.activities.SplashActivity.Cyan}" drawable="gallery" />
+    <item component="ComponentInfo{com.simplemobiletools.gallery.pro/com.simplemobiletools.gallery.pro.activities.SplashActivity.Teal}" drawable="gallery" />
+    <item component="ComponentInfo{com.simplemobiletools.gallery.pro/com.simplemobiletools.gallery.pro.activities.SplashActivity.Green}" drawable="gallery" />
+    <item component="ComponentInfo{com.simplemobiletools.gallery.pro/com.simplemobiletools.gallery.pro.activities.SplashActivity.Light_green}" drawable="gallery" />
+    <item component="ComponentInfo{com.simplemobiletools.gallery.pro/com.simplemobiletools.gallery.pro.activities.SplashActivity.Lime}" drawable="gallery" />
+    <item component="ComponentInfo{com.simplemobiletools.gallery.pro/com.simplemobiletools.gallery.pro.activities.SplashActivity.Yellow}" drawable="gallery" />
+    <item component="ComponentInfo{com.simplemobiletools.gallery.pro/com.simplemobiletools.gallery.pro.activities.SplashActivity.Amber}" drawable="gallery" />
+    <item component="ComponentInfo{com.simplemobiletools.gallery.pro/com.simplemobiletools.gallery.pro.activities.SplashActivity.Orange}" drawable="gallery" />
+    <item component="ComponentInfo{com.simplemobiletools.gallery.pro/com.simplemobiletools.gallery.pro.activities.SplashActivity.Deep_orange}" drawable="gallery" />
+    <item component="ComponentInfo{com.simplemobiletools.gallery.pro/com.simplemobiletools.gallery.pro.activities.SplashActivity.Brown}" drawable="gallery" />
+    <item component="ComponentInfo{com.simplemobiletools.gallery.pro/com.simplemobiletools.gallery.pro.activities.SplashActivity.Blue_grey}" drawable="gallery" />
+    <item component="ComponentInfo{com.simplemobiletools.gallery.pro/com.simplemobiletools.gallery.pro.activities.SplashActivity.Grey_black}" drawable="gallery" />
 
     <!-- Simple Last.fm Scrobbler -->
     <item component="ComponentInfo{com.adam.aslfms/com.adam.aslfms.SettingsActivity}" drawable="lastfmscrobbler" />
@@ -4730,44 +4736,44 @@
     <item component="ComponentInfo{com.simplemobiletools.thankyou/com.simplemobiletools.thankyou.activities.SplashActivity.Grey_black}" drawable="simplethankyou" />
 
     <!-- Simple Voicerecorder -->
-    <item component="ComponentInfo{com.simplemobiletools.voicerecorder/com.simplemobiletools.voicerecorder.activities.SplashActivity.Pink}" drawable="simplevoicerecorder" />
-    <item component="ComponentInfo{com.simplemobiletools.voicerecorder/com.simplemobiletools.voicerecorder.activities.SplashActivity.Purple}" drawable="simplevoicerecorder" />
-    <item component="ComponentInfo{com.simplemobiletools.voicerecorder/com.simplemobiletools.voicerecorder.activities.SplashActivity.Deep_purple}" drawable="simplevoicerecorder" />
-    <item component="ComponentInfo{com.simplemobiletools.voicerecorder/com.simplemobiletools.voicerecorder.activities.SplashActivity.Indigo}" drawable="simplevoicerecorder" />
-    <item component="ComponentInfo{com.simplemobiletools.voicerecorder/com.simplemobiletools.voicerecorder.activities.SplashActivity.Blue}" drawable="simplevoicerecorder" />
-    <item component="ComponentInfo{com.simplemobiletools.voicerecorder/com.simplemobiletools.voicerecorder.activities.SplashActivity.Light_blue}" drawable="simplevoicerecorder" />
-    <item component="ComponentInfo{com.simplemobiletools.voicerecorder/com.simplemobiletools.voicerecorder.activities.SplashActivity.Cyan}" drawable="simplevoicerecorder" />
-    <item component="ComponentInfo{com.simplemobiletools.voicerecorder/com.simplemobiletools.voicerecorder.activities.SplashActivity.Teal}" drawable="simplevoicerecorder" />
-    <item component="ComponentInfo{com.simplemobiletools.voicerecorder/com.simplemobiletools.voicerecorder.activities.SplashActivity.Green}" drawable="simplevoicerecorder" />
-    <item component="ComponentInfo{com.simplemobiletools.voicerecorder/com.simplemobiletools.voicerecorder.activities.SplashActivity.Light_green}" drawable="simplevoicerecorder" />
-    <item component="ComponentInfo{com.simplemobiletools.voicerecorder/com.simplemobiletools.voicerecorder.activities.SplashActivity.Lime}" drawable="simplevoicerecorder" />
-    <item component="ComponentInfo{com.simplemobiletools.voicerecorder/com.simplemobiletools.voicerecorder.activities.SplashActivity.Yellow}" drawable="simplevoicerecorder" />
-    <item component="ComponentInfo{com.simplemobiletools.voicerecorder/com.simplemobiletools.voicerecorder.activities.SplashActivity.Amber}" drawable="simplevoicerecorder" />
-    <item component="ComponentInfo{com.simplemobiletools.voicerecorder/com.simplemobiletools.voicerecorder.activities.SplashActivity.Orange}" drawable="simplevoicerecorder" />
-    <item component="ComponentInfo{com.simplemobiletools.voicerecorder/com.simplemobiletools.voicerecorder.activities.SplashActivity.Deep_orange}" drawable="simplevoicerecorder" />
-    <item component="ComponentInfo{com.simplemobiletools.voicerecorder/com.simplemobiletools.voicerecorder.activities.SplashActivity.Brown}" drawable="simplevoicerecorder" />
-    <item component="ComponentInfo{com.simplemobiletools.voicerecorder/com.simplemobiletools.voicerecorder.activities.SplashActivity.Blue_grey}" drawable="simplevoicerecorder" />
-    <item component="ComponentInfo{com.simplemobiletools.voicerecorder/com.simplemobiletools.voicerecorder.activities.SplashActivity.Grey_black}" drawable="simplevoicerecorder" />
+    <item component="ComponentInfo{com.simplemobiletools.voicerecorder/com.simplemobiletools.voicerecorder.activities.SplashActivity.Pink}" drawable="recorder" />
+    <item component="ComponentInfo{com.simplemobiletools.voicerecorder/com.simplemobiletools.voicerecorder.activities.SplashActivity.Purple}" drawable="recorder" />
+    <item component="ComponentInfo{com.simplemobiletools.voicerecorder/com.simplemobiletools.voicerecorder.activities.SplashActivity.Deep_purple}" drawable="recorder" />
+    <item component="ComponentInfo{com.simplemobiletools.voicerecorder/com.simplemobiletools.voicerecorder.activities.SplashActivity.Indigo}" drawable="recorder" />
+    <item component="ComponentInfo{com.simplemobiletools.voicerecorder/com.simplemobiletools.voicerecorder.activities.SplashActivity.Blue}" drawable="recorder" />
+    <item component="ComponentInfo{com.simplemobiletools.voicerecorder/com.simplemobiletools.voicerecorder.activities.SplashActivity.Light_blue}" drawable="recorder" />
+    <item component="ComponentInfo{com.simplemobiletools.voicerecorder/com.simplemobiletools.voicerecorder.activities.SplashActivity.Cyan}" drawable="recorder" />
+    <item component="ComponentInfo{com.simplemobiletools.voicerecorder/com.simplemobiletools.voicerecorder.activities.SplashActivity.Teal}" drawable="recorder" />
+    <item component="ComponentInfo{com.simplemobiletools.voicerecorder/com.simplemobiletools.voicerecorder.activities.SplashActivity.Green}" drawable="recorder" />
+    <item component="ComponentInfo{com.simplemobiletools.voicerecorder/com.simplemobiletools.voicerecorder.activities.SplashActivity.Light_green}" drawable="recorder" />
+    <item component="ComponentInfo{com.simplemobiletools.voicerecorder/com.simplemobiletools.voicerecorder.activities.SplashActivity.Lime}" drawable="recorder" />
+    <item component="ComponentInfo{com.simplemobiletools.voicerecorder/com.simplemobiletools.voicerecorder.activities.SplashActivity.Yellow}" drawable="recorder" />
+    <item component="ComponentInfo{com.simplemobiletools.voicerecorder/com.simplemobiletools.voicerecorder.activities.SplashActivity.Amber}" drawable="recorder" />
+    <item component="ComponentInfo{com.simplemobiletools.voicerecorder/com.simplemobiletools.voicerecorder.activities.SplashActivity.Orange}" drawable="recorder" />
+    <item component="ComponentInfo{com.simplemobiletools.voicerecorder/com.simplemobiletools.voicerecorder.activities.SplashActivity.Deep_orange}" drawable="recorder" />
+    <item component="ComponentInfo{com.simplemobiletools.voicerecorder/com.simplemobiletools.voicerecorder.activities.SplashActivity.Brown}" drawable="recorder" />
+    <item component="ComponentInfo{com.simplemobiletools.voicerecorder/com.simplemobiletools.voicerecorder.activities.SplashActivity.Blue_grey}" drawable="recorder" />
+    <item component="ComponentInfo{com.simplemobiletools.voicerecorder/com.simplemobiletools.voicerecorder.activities.SplashActivity.Grey_black}" drawable="recorder" />
 
     <!-- Simple Voicerecorder Pro -->
-    <item component="ComponentInfo{com.simplemobiletools.voicerecorder.pro/com.simplemobiletools.voicerecorder.pro.activities.SplashActivity.Pink}" drawable="simplevoicerecorder" />
-    <item component="ComponentInfo{com.simplemobiletools.voicerecorder.pro/com.simplemobiletools.voicerecorder.pro.activities.SplashActivity.Purple}" drawable="simplevoicerecorder" />
-    <item component="ComponentInfo{com.simplemobiletools.voicerecorder.pro/com.simplemobiletools.voicerecorder.pro.activities.SplashActivity.Deep_purple}" drawable="simplevoicerecorder" />
-    <item component="ComponentInfo{com.simplemobiletools.voicerecorder.pro/com.simplemobiletools.voicerecorder.pro.activities.SplashActivity.Indigo}" drawable="simplevoicerecorder" />
-    <item component="ComponentInfo{com.simplemobiletools.voicerecorder.pro/com.simplemobiletools.voicerecorder.pro.activities.SplashActivity.Blue}" drawable="simplevoicerecorder" />
-    <item component="ComponentInfo{com.simplemobiletools.voicerecorder.pro/com.simplemobiletools.voicerecorder.pro.activities.SplashActivity.Light_blue}" drawable="simplevoicerecorder" />
-    <item component="ComponentInfo{com.simplemobiletools.voicerecorder.pro/com.simplemobiletools.voicerecorder.pro.activities.SplashActivity.Cyan}" drawable="simplevoicerecorder" />
-    <item component="ComponentInfo{com.simplemobiletools.voicerecorder.pro/com.simplemobiletools.voicerecorder.pro.activities.SplashActivity.Teal}" drawable="simplevoicerecorder" />
-    <item component="ComponentInfo{com.simplemobiletools.voicerecorder.pro/com.simplemobiletools.voicerecorder.pro.activities.SplashActivity.Green}" drawable="simplevoicerecorder" />
-    <item component="ComponentInfo{com.simplemobiletools.voicerecorder.pro/com.simplemobiletools.voicerecorder.pro.activities.SplashActivity.Light_green}" drawable="simplecalculator" />
-    <item component="ComponentInfo{com.simplemobiletools.voicerecorder.pro/com.simplemobiletools.voicerecorder.pro.activities.SplashActivity.Lime}" drawable="simplevoicerecorder" />
-    <item component="ComponentInfo{com.simplemobiletools.voicerecorder.pro/com.simplemobiletools.voicerecorder.pro.activities.SplashActivity.Yellow}" drawable="simplevoicerecorder" />
-    <item component="ComponentInfo{com.simplemobiletools.voicerecorder.pro/com.simplemobiletools.voicerecorder.pro.activities.SplashActivity.Amber}" drawable="simplevoicerecorder" />
-    <item component="ComponentInfo{com.simplemobiletools.voicerecorder.pro/com.simplemobiletools.voicerecorder.pro.activities.SplashActivity.Orange}" drawable="simplevoicerecorder" />
-    <item component="ComponentInfo{com.simplemobiletools.voicerecorder.pro/com.simplemobiletools.voicerecorder.pro.activities.SplashActivity.Deep_orange}" drawable="simplevoicerecorder" />
-    <item component="ComponentInfo{com.simplemobiletools.voicerecorder.pro/com.simplemobiletools.voicerecorder.pro.activities.SplashActivity.Brown}" drawable="simplevoicerecorder" />
-    <item component="ComponentInfo{com.simplemobiletools.voicerecorder.pro/com.simplemobiletools.voicerecorder.pro.activities.SplashActivity.Blue_grey}" drawable="simplevoicerecorder" />
-    <item component="ComponentInfo{com.simplemobiletools.voicerecorder.pro/com.simplemobiletools.voicerecorder.pro.activities.SplashActivity.Grey_black}" drawable="simplevoicerecorder" />
+    <item component="ComponentInfo{com.simplemobiletools.voicerecorder.pro/com.simplemobiletools.voicerecorder.pro.activities.SplashActivity.Pink}" drawable="recorder" />
+    <item component="ComponentInfo{com.simplemobiletools.voicerecorder.pro/com.simplemobiletools.voicerecorder.pro.activities.SplashActivity.Purple}" drawable="recorder" />
+    <item component="ComponentInfo{com.simplemobiletools.voicerecorder.pro/com.simplemobiletools.voicerecorder.pro.activities.SplashActivity.Deep_purple}" drawable="recorder" />
+    <item component="ComponentInfo{com.simplemobiletools.voicerecorder.pro/com.simplemobiletools.voicerecorder.pro.activities.SplashActivity.Indigo}" drawable="recorder" />
+    <item component="ComponentInfo{com.simplemobiletools.voicerecorder.pro/com.simplemobiletools.voicerecorder.pro.activities.SplashActivity.Blue}" drawable="recorder" />
+    <item component="ComponentInfo{com.simplemobiletools.voicerecorder.pro/com.simplemobiletools.voicerecorder.pro.activities.SplashActivity.Light_blue}" drawable="recorder" />
+    <item component="ComponentInfo{com.simplemobiletools.voicerecorder.pro/com.simplemobiletools.voicerecorder.pro.activities.SplashActivity.Cyan}" drawable="recorder" />
+    <item component="ComponentInfo{com.simplemobiletools.voicerecorder.pro/com.simplemobiletools.voicerecorder.pro.activities.SplashActivity.Teal}" drawable="recorder" />
+    <item component="ComponentInfo{com.simplemobiletools.voicerecorder.pro/com.simplemobiletools.voicerecorder.pro.activities.SplashActivity.Green}" drawable="recorder" />
+    <item component="ComponentInfo{com.simplemobiletools.voicerecorder.pro/com.simplemobiletools.voicerecorder.pro.activities.SplashActivity.Light_green}" drawable="recorder" />
+    <item component="ComponentInfo{com.simplemobiletools.voicerecorder.pro/com.simplemobiletools.voicerecorder.pro.activities.SplashActivity.Lime}" drawable="recorder" />
+    <item component="ComponentInfo{com.simplemobiletools.voicerecorder.pro/com.simplemobiletools.voicerecorder.pro.activities.SplashActivity.Yellow}" drawable="recorder" />
+    <item component="ComponentInfo{com.simplemobiletools.voicerecorder.pro/com.simplemobiletools.voicerecorder.pro.activities.SplashActivity.Amber}" drawable="recorder" />
+    <item component="ComponentInfo{com.simplemobiletools.voicerecorder.pro/com.simplemobiletools.voicerecorder.pro.activities.SplashActivity.Orange}" drawable="recorder" />
+    <item component="ComponentInfo{com.simplemobiletools.voicerecorder.pro/com.simplemobiletools.voicerecorder.pro.activities.SplashActivity.Deep_orange}" drawable="recorder" />
+    <item component="ComponentInfo{com.simplemobiletools.voicerecorder.pro/com.simplemobiletools.voicerecorder.pro.activities.SplashActivity.Brown}" drawable="recorder" />
+    <item component="ComponentInfo{com.simplemobiletools.voicerecorder.pro/com.simplemobiletools.voicerecorder.pro.activities.SplashActivity.Blue_grey}" drawable="recorder" />
+    <item component="ComponentInfo{com.simplemobiletools.voicerecorder.pro/com.simplemobiletools.voicerecorder.pro.activities.SplashActivity.Grey_black}" drawable="recorder" />
 
     <!-- Simple Weather -->
     <item component="ComponentInfo{com.a5corp.weather/com.a5corp.weather.GlobalActivity}" drawable="simpleweather" />
@@ -4882,8 +4888,8 @@
 
     <!-- Sound Recorder -->
     <item component="ComponentInfo{com.android.soundrecorder/com.android.soundrecorder.SoundRecorder}" drawable="recorder" />
-    <item component="ComponentInfo{com.danielkim.soundrecorder/com.danielkim.soundrecorder.activities.MainActivity}" drawable="soundrecorder" />
-    <item component="ComponentInfo{com.tct.soundrecorder.bb/com.tct.soundrecorder.SoundRecorder}" drawable="soundrecorder" />
+    <item component="ComponentInfo{com.danielkim.soundrecorder/com.danielkim.soundrecorder.activities.MainActivity}" drawable="recorder" />
+    <item component="ComponentInfo{com.tct.soundrecorder.bb/com.tct.soundrecorder.SoundRecorder}" drawable="recorder" />
     <item component="ComponentInfo{com.oneplus.soundrecorder/com.oneplus.soundrecorder.SoundRecorder}" drawable="recorder" />
 
     <!-- Sovcombank -->
@@ -5025,11 +5031,14 @@
     <!-- SuperFreezZ -->
     <item component="ComponentInfo{superfreeze.tool.android/superfreeze.tool.android.userInterface.mainActivity.MainActivity}" drawable="superfreezz"/>
 
+    <!-- SuperMemo -->
+    <item component="ComponentInfo{com.supermemo/com.supermemo.uiContainer.ui.splash.SplashActivity}" drawable="supermemo"/>
+
     <!-- Supersu -->
     <item component="ComponentInfo{eu.chainfire.supersu/eu.chainfire.supersu.MainActivity-Material}" drawable="su" />
 
     <!-- Superuser -->
-    <item component="ComponentInfo{me.phh.superuser/com.koushikdutta.superuser.MainActivity}" drawable="superuser" />
+    <item component="ComponentInfo{me.phh.superuser/com.koushikdutta.superuser.MainActivity}" drawable="atomic" />
 
     <!-- Support -->
     <item component="ComponentInfo{com.sonymobile.support/com.sonymobile.support.InAppSupportLauncher}" drawable="feedback"/>
@@ -5227,7 +5236,7 @@
     <item component="ComponentInfo{com.android.systemui/com.android.systemui.flashlight.FlashlightActivity}" drawable="torch" />
 
     <!-- Torrent Client -->
-    <item component="ComponentInfo{com.github.axet.torrentclient/com.github.axet.torrentclient.activities.MainActivity}" drawable="torrentclient" />
+    <item component="ComponentInfo{com.github.axet.torrentclient/com.github.axet.torrentclient.activities.MainActivity}" drawable="lettert" />
 
     <!-- Total Commander -->
     <item component="ComponentInfo{com.ghisler.android.TotalCommander/com.ghisler.android.TotalCommander.TotalCommander}" drawable="totalcommander" />
@@ -5297,6 +5306,9 @@
 
     <!-- Trenord -->
     <item component="ComponentInfo{it.nordcom.app/it.nordcom.app.ui.activity.TNEntryPointActivity}" drawable="trenord" />
+
+    <!-- Tresorit -->
+    <item component="ComponentInfo{com.tresorit.mobile/com.tresorit.android.activity.RootTresoritActivity}" drawable="tresorit"/>
 
     <!-- Trex Runner -->
     <item component="ComponentInfo{com.nellyfish.trexrunner/com.nellyfish.trexrunner.MainActivity}" drawable="trexrunner" />
@@ -5517,7 +5529,7 @@
     <item component="ComponentInfo{de.ph1b.audiobook/de.phib.audiobook.features.MainActivity}" drawable="voice" />
     
     <!-- Voice Search -->
-    <item component="ComponentInfo{com.google.android.googlequicksearchbox/com.google.android.googlequicksearchbox.VoiceSearchActivity}" drawable="soundrecorder"/>
+    <item component="ComponentInfo{com.google.android.googlequicksearchbox/com.google.android.googlequicksearchbox.VoiceSearchActivity}" drawable="recorder"/>
 
     <!-- VPN Hotspot -->
     <item component="ComponentInfo{be.mygod.vpnhotspot/be.mygod.vpnhotspot.MainActivity}" drawable="vpnhotspot"/>
@@ -5648,6 +5660,9 @@
     <item component="ComponentInfo{com.windscribe.vpn/com.windscribe.vpn.ui.activities.EntryPointActivity}" drawable="windscribevpn" />
     <item component="ComponentInfo{com.windscribe.vpn/com.windscribe.vpn.splash.SplashActivity}" drawable="windscribevpn" />
 
+    <!-- Windy -->
+    <item component="ComponentInfo{com.windyty.android/com.windyty.android.MainActivity}" drawable="windy"/>
+
     <!-- WireGuard -->
     <item component="ComponentInfo{com.wireguard.android/com.wireguard.android.activity.MainActivity}" drawable="wireguard" />
 
@@ -5725,7 +5740,7 @@
     <item component="ComponentInfo{biz.gyrus.yaab/biz.gyrus.yaab.MainActivity}" drawable="torch" />
 
     <!-- Yaga -->
-    <item component="ComponentInfo{com.github.vauvenal5.yaga/com.github.vauvenal5.yaga.MainActivity}" drawable="simplegallery"/>
+    <item component="ComponentInfo{com.github.vauvenal5.yaga/com.github.vauvenal5.yaga.MainActivity}" drawable="gallery"/>
 
     <!-- Yalp Store -->
     <item component="ComponentInfo{com.github.yeriomin.yalpstore/com.github.yeriomin.yalpstore.UpdatableAppsActivity}" drawable="yalp" />
