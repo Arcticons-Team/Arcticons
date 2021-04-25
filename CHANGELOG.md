@@ -4,7 +4,7 @@
 * 28 new icons
 * Some double icons are removed and replaced with existing ones
 * 1558 icons in total!
-
+* Adaptive icon & some new bright colors
 
 ### 1.5.5
 ###### Released: Apr 11, 2021
