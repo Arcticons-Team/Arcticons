@@ -1,10 +1,13 @@
 ### 1.6.0
 ###### Released: Apr 25, 2021
-* The final part of the redesign crusade, there are now 282(!) icons that look a lot cleaner!
-* 28 new icons
+* The final part of the redesign crusade, there are now 241(!) icons that look a lot cleaner!
+* 24 new icons
 * Some double icons are removed and replaced with existing ones
 * 1558 icons in total!
 * Adaptive icon & some new bright colors
+
+![changelogfile](https://user-images.githubusercontent.com/31142286/116004376-c890a480-a602-11eb-8874-bb0058532b5d.jpg)
+![changelogfile2](https://user-images.githubusercontent.com/31142286/116004379-caf2fe80-a602-11eb-97dc-ef95f56676f7.jpg)
 
 ### 1.5.5
 ###### Released: Apr 11, 2021
