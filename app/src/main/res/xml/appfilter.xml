@@ -26,6 +26,9 @@
     <!-- 48sx -->
     <item component="ComponentInfo{org.czo.droid48sx/org.czo.droid48sx.X48}" drawable="droid48sx" />
 
+    <!-- 4PDA -->
+    <item component="ComponentInfo{ru.fourpda.client/ru.fourpda.client.MainActivity}" drawable="number4"/>
+
     <!-- 5th Edition Spellbook -->
     <item component="ComponentInfo{com.spellsdd5/com.spelldd5.MainActivity}" drawable="spellbook" />
 
@@ -1857,6 +1860,8 @@
     <!-- Google Camera -->
     <item component="ComponentInfo{com.google.android.GoogleCamera/com.android.camera.CameraLauncher}" drawable="googlecamera" />
     <item component="ComponentInfo{com.google.android.CameraRedmi5Plus/com.android.camera.CameraLauncher}" drawable="googlecamera" />
+    <item component="ComponentInfo{com.google.android.GoogleCameraEng/com.android.camera.CameraLauncher}" drawable="camera"/>
+    <item component="ComponentInfo{org.codeaurora.snapcam/com.android.camera.CameraLauncher}" drawable="camera"/>
 
     <!-- Google Chrome -->
     <item component="ComponentInfo{com.android.chrome/com.google.android.apps.chrome.Main}" drawable="googlechrome"/>
@@ -2118,8 +2123,11 @@
     <!-- Icecat -->
     <item component="ComponentInfo{org.gnu.icecat/org.gnu.icecat.App}" drawable="icecat" />
 
-    <!-- ICEcons -->
+    <!-- Frost -->
     <item component="ComponentInfo{com.dkanada.icecons/com.dkanada.icecons.MainActivity}" drawable="frost" />
+
+    <!-- Iceraven -->
+    <item component="ComponentInfo{io.github.forkmaintainers.iceraven/io.github.forkmaintainers.iceraven.App}" drawable="iceraven"/>
 
     <!-- ICSdroid -->
     <item component="ComponentInfo{at.bitfire.icsdroid/at.bitfire.icsdroid.ui.CalendarListActivity}" drawable="icsdroid" />
@@ -4137,6 +4145,7 @@
 
     <!-- Shazam -->
     <item component="ComponentInfo{com.shazam.android/com.shazam.android.activities.SplashActivity}" drawable="shazam" />
+    <item component="ComponentInfo{com.shazam.encore.android/com.shazam.android.activities.SplashActivity}" drawable="shazam"/>
 
     <!-- Shelter -->
     <item component="ComponentInfo{net.typeblog.shelter/net.typeblog.shelter.ui.MainActivity}" drawable="shelter" />
@@ -4884,6 +4893,9 @@
     <!-- SNCF -->
     <item component="ComponentInfo{com.sncf.fusion/com.sncf.fusion.feature.splashscreen.ui.SplashScreenActivity}" drawable="sncf"/>
 
+    <!-- sndcpy -->
+    <item component="ComponentInfo{com.rom1v.sndcpy/com.rom1v.sndcpy.MainActivity}" drawable="android"/>
+
     <!-- SnooperStopper -->
     <item component="ComponentInfo{cz.eutopia.snooperstopper/cz.eutopia.snooperstopper.MainActivity}" drawable="snooperstopper" />
 
@@ -5250,6 +5262,9 @@
 
     <!-- Tisséo -->
     <item component="ComponentInfo{fr.tisseo.android/fr.tisseo.android.activity.SplashScreenActivity}" drawable="tisseo" />
+
+    <!-- Titanium Backup -->
+    <item component="ComponentInfo{com.keramidas.TitaniumBackup/com.keramidas.TitaniumBackup.MainActivity}" drawable="tibackup"/>
 
     <!-- Thuisbezorgd -->
     <item component="ComponentInfo{com.takeaway.android/com.takeaway.android.activity.Splash}" drawable="thuisbezorgd"/>
