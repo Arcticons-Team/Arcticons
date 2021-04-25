@@ -10,7 +10,7 @@ Arcticons includes support for a lot of lauchers like Trebuchet, KISS, Nova, Ape
 
 Submitting icon requests helps a lot, but maintaining the project (as you may imagine) takes a lot of time and effort, so please be patient about adding new icons. Contributions for new icons are always welcome, and no experience with programming is necessary.
 
-<img src='https://raw.githubusercontent.com/Donnnno/frost-lines/main/metadata/en-US/images/screenshots.png'>
+<img src='https://raw.githubusercontent.com/Donnnno/frost-lines/main/metadata/en-US/images/screenshots.jpg'>
 
 ## Icon Requests
 
