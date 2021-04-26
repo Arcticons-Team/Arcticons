@@ -1,6 +1,6 @@
 <img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/Donnnno/Arcticons"> [<img alt="F-Droid" src="https://img.shields.io/f-droid/v/com.donnnno.arcticons">](https://f-droid.org/packages/com.donnnno.arcticons)
 
-<img src='https://raw.githubusercontent.com/Donnnno/frost-lines/main/metadata/en-US/images/header-background.png'>
+<img src='https://raw.githubusercontent.com/Donnnno/Arcticons/main/metadata/en-US/images/header-background.png'>
 
 Arcticons (Arctic icons) is a line-based icon pack forked from [Frost](https://github.com/dkanada/frost) but rebuild with consistent sizing and adjustments specifically for lines in mind. Arcticons is FOSS and provides mostly icons for open-source apps on F-Droid (but there are many other apps in this pack too). The design is simple and clean with minimal lines that give you a nice see-trough effect.
 
@@ -10,7 +10,7 @@ Arcticons includes support for a lot of lauchers like Trebuchet, KISS, Nova, Ape
 
 Submitting icon requests helps a lot, but maintaining the project (as you may imagine) takes a lot of time and effort, so please be patient about adding new icons. Contributions for new icons are always welcome, and no experience with programming is necessary.
 
-<img src='https://raw.githubusercontent.com/Donnnno/frost-lines/main/metadata/en-US/images/screenshots.jpg'>
+<img src='https://raw.githubusercontent.com/Donnnno/Arcticons/main/metadata/en-US/images/screenshots.jpg'>
 
 ## Icon Requests
 
@@ -19,7 +19,7 @@ This app doesn't have an icon request feature, so you'll have to do the followin
 1. **Install [Turtl](https://f-droid.org/packages/org.xphnx.iconsubmit)** which can extract the icons and class names of your apps.
 2. **Grant the storage access permission to Turtl** in your system settings, this will allow it to save the zip file (Only required in Android 6 "Marshmallow" or newer, older versions grant this permission on installation).
 3. **Open Turtl** and follow the process to save the new zip file to your phone.
-4. **[Make an issue](https://github.com/Donnnno/frost-lines/issues/new)** titled "Icon Request" and attach the zip file.
+4. **[Make an issue](https://github.com/Donnnno/Arcticons/issues/new)** titled "Icon Request" and attach the zip file.
 
 ## Donate
 
@@ -38,4 +38,4 @@ Here's a quick guide to get you started, read the full details here: [Contributi
 
 ## The icons
 
-<img src='https://raw.githubusercontent.com/Donnnno/frost-lines/main/metadata/en-US/images/complete-background.png'/>
+<img src='https://raw.githubusercontent.com/Donnnno/Arcticons/main/metadata/en-US/images/complete-background.png'/>
