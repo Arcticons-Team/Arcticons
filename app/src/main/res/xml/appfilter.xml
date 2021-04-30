@@ -262,6 +262,7 @@
 
     <!-- Antox -->
     <item component="ComponentInfo{chat.tox.antox/chat.tox.antox.SplashActivity}" drawable="antox" />
+    <item component="ComponentInfo{ltd.evilcorp.atox/ltd.evilcorp.atox.MainActivity}" drawable="antox"/>
 
     <!-- Anuto TD -->
     <item component="ComponentInfo{ch.logixisland.anuto/ch.logixisland.anuto.view.game.GameActivity}" drawable="anutotd" />
@@ -929,7 +930,8 @@
     <item component="ComponentInfo{com.sonyericsson.organizer/com.sonyericsson.organizer.Organizer}" drawable="clock" />
     <item component="ComponentInfo{com.oneplus.deskclock/com.oneplus.deskclock.DeskClock}" drawable="clock" />
     <item component="ComponentInfo{com.android.deskclock/com.android.deskclock.DeskClockTabActivity}" drawable="clock"/>
-
+    <item component="ComponentInfo{com.chen.deskclock/com.chen.deskclock.DeskClock}" drawable="clock"/>
+    
     <!-- Clock+ -->
     <item component="ComponentInfo{com.philliphsu.clock2/com.philliphsu.clock2.MainActivity}" drawable="clock2" />
 
@@ -1535,6 +1537,7 @@
     <item component="ComponentInfo{com.miui.bugreport/com.miui.bugreport.ui.MainTabActivity}" drawable="feedback" />
     <item component="ComponentInfo{com.miui.miservice/com.miui.miservice.main.MainActivity}" drawable="feedback"/>
     <item component="ComponentInfo{com.huawei.phoneservice/com.huawei.phoneservice.LaunchActivity}" drawable="feedback"/> 
+    <item component="ComponentInfo{com.motorola.genie/com.motorola.genie.app.DashboardActivity}" drawable="feedback"/>
 
     <!-- Feeder -->
     <item component="ComponentInfo{com.nononsenseapps.feeder/com.nononsenseapps.feeder.ui.FeedActivity}" drawable="feeder" />
@@ -3753,6 +3756,9 @@
     <!-- Private Location -->
     <item component="ComponentInfo{com.wesaphzt.privatelocation/com.wesaphzt.privatelocation.MainActivity}" drawable="privatelocation" />
 
+    <!-- Private Lock -->
+    <item component="ComponentInfo{com.wesaphzt.privatelock/com.wesaphzt.privatelock.MainActivity}" drawable="privatelock"/>
+
     <!-- Pro Expense -->
     <item component="ComponentInfo{com.arduia.expense/com.arduia.expense.ui.MainActivity}" drawable="proexpense"/>
     
@@ -4212,6 +4218,7 @@
     <!-- Signal -->
     <item component="ComponentInfo{org.libresignal/org.thoughtcrime.securesms.RoutingActivity}" drawable="signal" />
     <item component="ComponentInfo{org.thoughtcrime.securesms/org.thoughtcrime.securesms.RoutingActivity}" drawable="signal" />
+    <item component="ComponentInfo{im.molly.app/org.thoughtcrime.securesms.RoutingActivity}" drawable="signal"/>
     
     <!-- Signal Generator -->
     <item component="ComponentInfo{org.billthefarmer.siggen/org.billthefarmer.siggen.Main}" drawable="signalgenerator"/>
@@ -5544,7 +5551,8 @@
 
     <!-- Vanced Manager -->
     <item component="ComponentInfo{com.vanced.manager/com.vanced.manager.ui.core.SplashScreenActivity}" drawable="vancedmanager"/>
-
+    <item component="ComponentInfo{com.vanced.manager/com.vanced.manager.ui.SplashScreenActivity}" drawable="vancedmanager"/>
+   
     <!-- Vanced microG Settings -->
     <item component="ComponentInfo{com.mgoogle.android.gms/org.microg.gms.ui.SettingsActivity}" drawable="vancedmicrogsettings"/>
 
@@ -5893,7 +5901,7 @@
 
     <!-- YouTube Vanced -->
     <item component="ComponentInfo{com.vanced.android.youtube/com.google.android.youtube.app.honeycomb.Shell$HomeActivity}" drawable="youtubevanced"/>
-
+       
     <!-- Y.Taxi -->
     <item component="ComponentInfo{ru.yandex.taxi/ru.yandex.taxi.activity.StartActivity}" drawable="ytaxi" />
 
