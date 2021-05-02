@@ -1,3 +1,10 @@
+### 1.6.1
+###### Released: May 2, 2021
+* 50 new icons (thanks to Greenpete!)
+
+![changelogfile161](https://user-images.githubusercontent.com/31142286/116827744-ecbc2a80-ab9a-11eb-8521-f3369cbf310a.jpg)
+
+
 ### 1.6.0
 ###### Released: Apr 25, 2021
 * The final part of the redesign crusade, there are now 241(!) icons that look a lot cleaner!
