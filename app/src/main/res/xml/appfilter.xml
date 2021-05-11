@@ -227,6 +227,9 @@
     <!-- Amazon Shopping -->
     <item component="ComponentInfo{com.amazon.mShop.android.shopping/com.amazon.mShop.home.HomeActivity}" drawable="amazonshopping" />
 
+    <!-- AM Debug -->
+    <item component="ComponentInfo{io.github.muntashirakon.AppManager.debug/io.github.muntashirakon.AppManager.main.MainActivity}" drawable="settings"/>
+
     <!-- Ameixa -->
     <item component="ComponentInfo{org.xphnx.ameixa/org.xphnx.ameixa.activities.MainActivity}" drawable="themes" />
 
@@ -860,6 +863,7 @@
     <item component="ComponentInfo{com.hmdglobal.app.camera/com.hmdglobal.app.camera.CameraActivity}" drawable="camera" />
     <item component="ComponentInfo{foundation.e.camera/net.sourceforge.opencamera.MainActivity}" drawable="camera" />
     <item component="ComponentInfo{com.journeyui.camera/com.android.camera.CameraLauncher}" drawable="camera" />
+    <item component="ComponentInfo{com.google.android.apps.cameralite/com.google.android.apps.cameralite.capture.CaptureActivity}" drawable="camera"/>
 
     <!-- Camera -->
     <item component="ComponentInfo{com.mediatek.camera/com.mediatek.camera.CameraLauncher}" drawable="mediatekcamera" />
@@ -1538,12 +1542,6 @@
     <!-- Export Contacts -->
     <item component="ComponentInfo{am.ed.exportcontacts/am.ed.exportcontacts.Intro}" drawable="exportcontacts" />
 
-    <!-- F-Droid Build Status -->
-    <item component="ComponentInfo{de.storchp.fdroidbuildstatus/de.storchp.fdroidbuildstatus.MainActivity}" drawable="fdroidbuildstatus" />
-
-    <!-- F-Droid kDI -->
-    <item component="ComponentInfo{com.oF2pks.kalturadeviceinfos/com.oF2pks.applicationsinfo.MainActivity}" drawable="fdroidkdi" />
-
     <!-- F.lux -->
     <item component="ComponentInfo{com.justgetflux.flux/com.justgetflux.flux.FluxActivity}" drawable="flux" />
 
@@ -1621,10 +1619,19 @@
     <!-- Fast like a Fox -->
     <item component="ComponentInfo{com.waybefore.fastlikeafox/com.waybefore.fastlikeafox.AndroidLauncher}" drawable="fastlikeafox" />
 
-    <!-- Fdroid -->
+    <!-- F-droid -->
     <item component="ComponentInfo{org.fdroid.fdroid/org.fdroid.fdroid.FDroid}" drawable="fdroid" />
     <item component="ComponentInfo{org.fdroid.fdroid/org.fdroid.fdroid.views.main.MainActivity}" drawable="fdroid" />
     <item component="ComponentInfo{org.fdroid.fdroid.debug/org.fdroid.fdroid.views.main.MainActivity}" drawable="fdroid" />
+
+    <!-- F-Droid Classic -->
+    <item component="ComponentInfo{eu.bubu1.fdroidclassic/org.fdroid.fdroid.FDroid}" drawable="fdroidclassic"/>
+
+    <!-- F-Droid Build Status -->
+    <item component="ComponentInfo{de.storchp.fdroidbuildstatus/de.storchp.fdroidbuildstatus.MainActivity}" drawable="fdroidbuildstatus" />
+
+    <!-- F-Droid kDI -->
+    <item component="ComponentInfo{com.oF2pks.kalturadeviceinfos/com.oF2pks.applicationsinfo.MainActivity}" drawable="fdroidkdi" />
 
     <!-- Fedilab -->
     <item component="ComponentInfo{fr.gouv.etalab.mastodon/app.fedilab.android.activities.MainActivity}" drawable="fedilab" />
@@ -1912,6 +1919,7 @@
     <item component="ComponentInfo{com.sonyericsson.album/com.sonyericsson.album.MainActivity}" drawable="gallery" />
     <item component="ComponentInfo{com.oneplus.gallery/com.oneplus.gallery.OPGalleryActivity}" drawable="gallery" />
     <item component="ComponentInfo{com.alensw.PicFolder/com.alensw.PicFolder.GalleryActivity}" drawable="gallery" />
+    <item component="ComponentInfo{com.google.android.apps.photosgo/com.google.android.apps.photosgo.home.HomeActivity}" drawable="gallery"/>
 
     <!-- Games -->
     <item component="ComponentInfo{com.oneplus.gamespace/com.oneplus.gamespace.ui.main.MainActivity}" drawable="games" />
@@ -3451,6 +3459,9 @@
     <!-- Nubank -->
     <item component="ComponentInfo{com.nu.production/com.nu.activity.main.InitialActivity}" drawable="nubank" />
 
+    <!-- NYTimes -->
+    <item component="ComponentInfo{com.nytimes.android/com.nytimes.android.MainActivity}" drawable="nytimes"/>
+
     <!-- OCR -->
     <item component="ComponentInfo{io.github.subhamtyagi.ocr/io.github.subhamtyagi.ocr.MainActivity}" drawable="ocr" />
 
@@ -3944,6 +3955,9 @@
     <!-- ProtonVPN -->
     <item component="ComponentInfo{com.protonvpn.android/com.protonvpn.android.ui.onboarding.SplashActivity}" drawable="protonvpn" />
     <item component="ComponentInfo{ch.protonvpn.android/com.protonvpn.android.ui.onboarding.SplashActivity}" drawable="protonvpn" />
+
+    <!-- Proxy Master -->
+    <item component="ComponentInfo{com.free.vpn.proxy.master.app/com.free.vpn.proxy.master.app.splash.SplashActivity}" drawable="tinykeepass"/>
 
     <!-- Pro Expense -->
     <item component="ComponentInfo{com.arduia.expense/com.arduia.expense.ui.MainActivity}" drawable="proexpense" />
@@ -5148,6 +5162,9 @@
     <!-- Sokoban -->
     <item component="ComponentInfo{com.mobilepearls.sokoban/com.mobilepearls.sokoban.SokobanMenuActivity}" drawable="sokoban" />
 
+    <!-- Solgard -->
+    <item component="ComponentInfo{com.king.solgard/com.unity3d.player.UnityPlayerActivity}" drawable="letters"/>
+
     <!-- Solid Explorer -->
     <item component="ComponentInfo{pl.solidexplorer2/pl.solidexplorer.SolidExplorer}" drawable="solidexplorer" />
 
@@ -5462,6 +5479,9 @@
     <item component="ComponentInfo{com.huawei.android.thememanager/com.huawei.android.thememanager.HwThemeManagerActivity}" drawable="themes" />
     <item component="ComponentInfo{com.android.thememanager/com.android.thememanager.ThemeResourceTabActivity}" drawable="themes" />
     <item component="ComponentInfo{com.huawei.android.thememanager/com.huawei.android.thememanager.mvp.view.activity.onlinebase.PageActivity}" drawable="themes" />
+
+    <!-- The Ants -->
+    <item component="ComponentInfo{com.star.union.planetant/com.star.union.planetant.MainActivity}" drawable="theants"/>
 
     <!-- Thinkfree Office viewer -->
     <item component="ComponentInfo{com.tf.thinkdroid.viewer.global/com.tf.thinkdroid.manager.StartActivity}" drawable="thinkfree" />
@@ -5872,6 +5892,9 @@
 
     <!-- Vivint -->
     <item component="ComponentInfo{com.vivint.vivintsky/com.vivint.vivintsky.ui.SplashActivity}" drawable="vivint" />
+
+    <!-- VLN -->
+    <item component="ComponentInfo{eu.bandainamcoent.verylittlenightmares/com.unity3d.player.UnityPlayerActivity}" drawable="vln"/>
 
     <!-- Voice -->
     <item component="ComponentInfo{de.ph1b.audiobook/de.ph1b.audiobook.features.MainActivity}" drawable="voice" />
