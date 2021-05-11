@@ -14,6 +14,7 @@ import com.donnnno.arcticons.R;
 import com.donnnno.arcticons.utils.ImageUtils;
 import com.donnnno.arcticons.utils.IntentUtils;
 import com.donnnno.arcticons.utils.ScreenUtils;
+import com.donnnno.arcticons.views.CenterButton;
 
 public class MainActivity extends BaseActivity {
 
@@ -24,101 +25,39 @@ public class MainActivity extends BaseActivity {
     }
 
     private void createLayout() {
-        LinearLayout.LayoutParams smallLayoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT, 1f);
-        float scale = ScreenUtils.densityScale(getApplicationContext());
-        ViewGroup.LayoutParams buttonParams = new ViewGroup.LayoutParams(Math.round(48 * scale), Math.round(48 * scale));
-
-        LinearLayout frameLayout = new LinearLayout(this);
-        frameLayout.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT));
-        frameLayout.setBackgroundColor(getResources().getColor(R.color.colorDark));
-        frameLayout.setGravity(Gravity.CENTER);
-        setContentView(frameLayout);
 
         LinearLayout baseLayout = new LinearLayout(this);
         baseLayout.setOrientation(LinearLayout.VERTICAL);
-        baseLayout.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.MATCH_PARENT));
-        baseLayout.setGravity(Gravity.START);
-        frameLayout.addView(baseLayout);
+        baseLayout.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT));
+        baseLayout.setGravity(Gravity.CENTER);
+        baseLayout.setBackgroundColor(getResources().getColor(R.color.colorLight));
+        setContentView(baseLayout);
 
-        // icons
-        LinearLayout iconLayout = new LinearLayout(this);
-        iconLayout.setOrientation(LinearLayout.HORIZONTAL);
-        iconLayout.setLayoutParams(smallLayoutParams);
-        iconLayout.setGravity(Gravity.CENTER_VERTICAL);
-        baseLayout.addView(iconLayout);
+        //Icons
+        CenterButton icons = new CenterButton(this);
+        icons.setForeground(R.color.textDark);
+        icons.setBackground(R.color.colorDark);
+        icons.setText(R.string.icons);
+        icons.setIcon(R.drawable.ic_icon_button);
+        icons.setOnClickListener((v) -> IntentUtils.openActivity(this, IconActivity.class));
+        baseLayout.addView(icons);
 
-        LinearLayout iconClickLayout = new LinearLayout(this);
-        iconClickLayout.setOrientation(LinearLayout.HORIZONTAL);
-        iconClickLayout.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
-        iconClickLayout.setGravity(Gravity.CENTER);
-        iconLayout.addView(iconClickLayout);
-        iconClickLayout.setOnClickListener((v) -> IntentUtils.openActivity(this, IconActivity.class));
+        //Source
+        CenterButton source = new CenterButton(this);
+        source.setForeground(R.color.textDark);
+        source.setBackground(R.color.colorDark);
+        source.setText(R.string.source);
+        source.setIcon(R.drawable.ic_source_button);
+        source.setOnClickListener((v) -> IntentUtils.openActivity(this, SourceActivity.class));
+        baseLayout.addView(source);
 
-        Button iconButton = new Button(this);
-        iconButton.setLayoutParams(buttonParams);
-        iconButton.setBackground(new BitmapDrawable(getResources(), ImageUtils.bitmapLoad(getApplicationContext().getResources(), R.drawable.ic_icon_button, Math.round(48 * scale), Math.round(48 * scale))));
-        iconButton.setClickable(false);
-        iconClickLayout.addView(iconButton);
-
-        TextView iconText = new TextView(this);
-        iconText.setText(getResources().getString(R.string.icons));
-        iconText.setTextSize(24);
-        iconText.setTextColor(getResources().getColor(R.color.textDark));
-        iconText.setPadding(64, 64, 64, 64);
-        iconClickLayout.addView(iconText);
-
-        // source
-        LinearLayout sourceLayout = new LinearLayout(this);
-        sourceLayout.setOrientation(LinearLayout.HORIZONTAL);
-        sourceLayout.setLayoutParams(smallLayoutParams);
-        sourceLayout.setGravity(Gravity.CENTER_VERTICAL);
-        baseLayout.addView(sourceLayout);
-
-        LinearLayout sourceClickLayout = new LinearLayout(this);
-        sourceClickLayout.setOrientation(LinearLayout.HORIZONTAL);
-        sourceClickLayout.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
-        sourceClickLayout.setGravity(Gravity.CENTER);
-        sourceLayout.addView(sourceClickLayout);
-        sourceClickLayout.setOnClickListener((v) -> IntentUtils.openActivity(this, SourceActivity.class));
-
-        Button sourceButton = new Button(this);
-        sourceButton.setLayoutParams(buttonParams);
-        sourceButton.setBackground(new BitmapDrawable(getResources(), ImageUtils.bitmapLoad(getApplicationContext().getResources(), R.drawable.ic_source_button, Math.round(48 * scale), Math.round(48 * scale))));
-        sourceButton.setClickable(false);
-        sourceClickLayout.addView(sourceButton);
-
-        TextView sourceText = new TextView(this);
-        sourceText.setText(getResources().getString(R.string.source));
-        sourceText.setTextSize(24);
-        sourceText.setTextColor(getResources().getColor(R.color.textDark));
-        sourceText.setPadding(64, 64, 64, 64);
-        sourceClickLayout.addView(sourceText);
-
-        // license button
-        LinearLayout aboutLayout = new LinearLayout(this);
-        aboutLayout.setOrientation(LinearLayout.HORIZONTAL);
-        aboutLayout.setLayoutParams(smallLayoutParams);
-        aboutLayout.setGravity(Gravity.CENTER_VERTICAL);
-        baseLayout.addView(aboutLayout);
-
-        LinearLayout aboutClickLayout = new LinearLayout(this);
-        aboutClickLayout.setOrientation(LinearLayout.HORIZONTAL);
-        aboutClickLayout.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
-        aboutClickLayout.setGravity(Gravity.CENTER);
-        aboutLayout.addView(aboutClickLayout);
-        aboutClickLayout.setOnClickListener((v) -> IntentUtils.openActivity(this, LicenseActivity.class));
-
-        Button aboutButton = new Button(this);
-        aboutButton.setLayoutParams(buttonParams);
-        aboutButton.setBackground(new BitmapDrawable(getResources(), ImageUtils.bitmapLoad(getApplicationContext().getResources(), R.drawable.ic_license_button, Math.round(48 * scale), Math.round(48 * scale))));
-        aboutButton.setClickable(false);
-        aboutClickLayout.addView(aboutButton);
-
-        TextView aboutText = new TextView(this);
-        aboutText.setText(getResources().getString(R.string.license));
-        aboutText.setTextSize(24);
-        aboutText.setTextColor(getResources().getColor(R.color.textDark));
-        aboutText.setPadding(64, 64, 64, 64);
-        aboutClickLayout.addView(aboutText);
+        //Support
+        CenterButton support = new CenterButton(this);
+        support.setForeground(R.color.textDark);
+        support.setBackground(R.color.colorDark);
+        support.setText(R.string.support);
+        support.setIcon(R.drawable.ic_support_button);
+        support.setOnClickListener((v) -> IntentUtils.openUrl(this, R.string.url_support));
+        baseLayout.addView(support);
     }
 }

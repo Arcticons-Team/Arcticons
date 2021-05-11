@@ -25,6 +25,8 @@ public class LicenseActivity extends BaseActivity {
         setContentView(baseLayout);
 
         CenterButton code = new CenterButton(this);
+        code.setForeground(R.color.textDark);
+        code.setBackground(R.color.colorDark);
         code.setText(R.string.description_code);
         code.disableIcon();
         code.setOnClickListener((v) -> IntentUtils.openUrl(this, R.string.url_gplv3));
