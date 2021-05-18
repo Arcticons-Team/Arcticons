@@ -14,6 +14,8 @@ Submitting icon requests helps a lot, but maintaining the project (as you may im
 
 ## Icon Requests
 
+**Disclaimer: You can always submit a request, but that doesn't guarantee that it actually will be made. Creating icons can cost a lot of time.**
+
 This app doesn't have an icon request feature, so you'll have to do the following steps.
 
 1. **Install [Turtl](https://f-droid.org/packages/org.xphnx.iconsubmit)** which can extract the icons and class names of your apps.
