@@ -3,6 +3,7 @@
 * 33 new icons (5 thanks to GreenPete)
 * 3 updated icons
 
+![changelogfile163](https://user-images.githubusercontent.com/31142286/119359774-3e436b00-bcaa-11eb-92ca-f4fc30b730a4.jpg)
 
 ### 1.6.2
 ###### Released: May 12, 2021
