@@ -1,3 +1,9 @@
+### 1.6.3
+###### Released: May 23, 2021
+* 33 new icons (5 thanks to GreenPete)
+* 3 updated icons
+
+
 ### 1.6.2
 ###### Released: May 12, 2021
 * 43 new icons (4 thanks to Gd4pL4E)
