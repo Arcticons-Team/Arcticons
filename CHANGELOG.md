@@ -1,3 +1,9 @@
+### 1.6.4
+###### Released: May 23, 2021
+* 33 new icons (thanks GreenPete, Arnavpurani, Bydariogamer & ThomasTraineau!)* 1 updated icons
+* 1 updated icon
+* 1715 icons in total
+
 ### 1.6.3
 ###### Released: May 23, 2021
 * 33 new icons (5 thanks to GreenPete)
