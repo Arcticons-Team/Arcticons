@@ -4,6 +4,8 @@
 * 1 updated icon
 * 1715 icons in total
 
+![changelogfile164](https://user-images.githubusercontent.com/31142286/120105395-f795bb00-c158-11eb-8035-9d1ba871b943.jpg)
+
 ### 1.6.3
 ###### Released: May 23, 2021
 * 33 new icons (5 thanks to GreenPete)
