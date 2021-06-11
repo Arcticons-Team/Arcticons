@@ -1,3 +1,11 @@
+### 1.6.5
+###### Released: May 23, 2021
+* 🎉 47 new icons (thanks JoelChrono12, Renesat, Batcastle & GreenPete!)
+* ✨ 1 updated icon
+* 🔥 1762 icons in total
+
+![changelogfile164](https://user-images.githubusercontent.com/31142286/120105395-f795bb00-c158-11eb-8035-9d1ba871b943.jpg)
+
 ### 1.6.4
 ###### Released: May 23, 2021
 * 33 new icons (thanks GreenPete, Arnavpurani, Bydariogamer & ThomasTraineau!)* 1 updated icons
