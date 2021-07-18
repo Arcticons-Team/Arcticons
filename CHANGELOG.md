@@ -1,3 +1,9 @@
+### 1.7.1
+###### Released: Jul 18, 2021
+* 🎉 38 new icons (thanks GreenPete, Ail1020, Chaptergy, EinoHR & JoelChrono12!)
+* 🔥 1900(!) icons in total
+
+
 ### 1.7.0
 ###### Released: Jun 30, 2021
 * 🎉 49 new icons (thanks GreenPete & JoelChrono12!)
