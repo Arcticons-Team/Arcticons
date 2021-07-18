@@ -3,6 +3,7 @@
 * 🎉 38 new icons (thanks GreenPete, Ail1020, Chaptergy, EinoHR & JoelChrono12!)
 * 🔥 1900(!) icons in total
 
+![changelogfile171](https://user-images.githubusercontent.com/31142286/126081476-c0e2010c-cb3f-4a78-9257-f38448b2b829.jpg)
 
 ### 1.7.0
 ###### Released: Jun 30, 2021
