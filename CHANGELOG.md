@@ -1,3 +1,12 @@
+### 1.8.0
+###### Released: Aug 3, 2021
+* 🎉 51 new icons (thanks JoelChrono12, Ail1020, Quantenzitrone & chaptergy!)
+* 📁 10 new folder icons for your sorting needs
+* ❌ Deleted one double icon
+* 🔥 1950 icons in total
+
+
+
 ### 1.7.1
 ###### Released: Jul 18, 2021
 * 🎉 38 new icons (thanks GreenPete, Ail1020, Chaptergy, EinoHR & JoelChrono12!)
