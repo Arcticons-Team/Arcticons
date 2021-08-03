@@ -5,7 +5,7 @@
 * ❌ Deleted one double icon
 * 🔥 1950 icons in total
 
-
+![changelogfile180](https://user-images.githubusercontent.com/31142286/128012239-ce56ab0b-83b8-4042-b90a-001113723590.jpg)
 
 ### 1.7.1
 ###### Released: Jul 18, 2021
