@@ -1,10 +1,10 @@
-package com.donnnno.arcticons.activities;
+package com.donnnno.arcticonsdark.activities;
 
 import android.os.Build;
 import android.os.Bundle;
 import android.view.WindowManager;
 
-import com.donnnno.arcticons.R;
+import com.donnnno.arcticonsdark.R;
 
 import androidx.appcompat.app.AppCompatActivity;
 

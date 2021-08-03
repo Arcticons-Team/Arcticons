@@ -1,4 +1,4 @@
-package com.donnnno.arcticons.views;
+package com.donnnno.arcticonsdark.views;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
@@ -10,8 +10,8 @@ import android.widget.TextView;
 import androidx.appcompat.widget.LinearLayoutCompat;
 import androidx.core.content.res.ResourcesCompat;
 
-import com.donnnno.arcticons.R;
-import com.donnnno.arcticons.utils.ScreenUtils;
+import com.donnnno.arcticonsdark.R;
+import com.donnnno.arcticonsdark.utils.ScreenUtils;
 
 public class CenterButton extends LinearLayoutCompat {
     public Context context;

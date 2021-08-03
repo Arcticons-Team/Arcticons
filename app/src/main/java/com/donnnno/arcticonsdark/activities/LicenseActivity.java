@@ -1,12 +1,12 @@
-package com.donnnno.arcticons.activities;
+package com.donnnno.arcticonsdark.activities;
 
 import android.os.Bundle;
 import android.view.Gravity;
 import android.widget.LinearLayout;
 
-import com.donnnno.arcticons.R;
-import com.donnnno.arcticons.utils.IntentUtils;
-import com.donnnno.arcticons.views.CenterButton;
+import com.donnnno.arcticonsdark.R;
+import com.donnnno.arcticonsdark.utils.IntentUtils;
+import com.donnnno.arcticonsdark.views.CenterButton;
 
 public class LicenseActivity extends BaseActivity {
 

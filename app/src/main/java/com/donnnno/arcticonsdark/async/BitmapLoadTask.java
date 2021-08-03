@@ -1,11 +1,11 @@
-package com.donnnno.arcticons.async;
+package com.donnnno.arcticonsdark.async;
 
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.os.AsyncTask;
 
-import com.donnnno.arcticons.interfaces.BitmapListener;
-import com.donnnno.arcticons.utils.ImageUtils;
+import com.donnnno.arcticonsdark.interfaces.BitmapListener;
+import com.donnnno.arcticonsdark.utils.ImageUtils;
 
 public class BitmapLoadTask extends AsyncTask<Integer, Void, Bitmap> {
 

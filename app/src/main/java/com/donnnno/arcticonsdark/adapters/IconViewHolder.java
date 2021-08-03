@@ -1,4 +1,4 @@
-package com.donnnno.arcticons.adapters;
+package com.donnnno.arcticonsdark.adapters;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
