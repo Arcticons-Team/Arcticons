@@ -7,13 +7,13 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_launcher_foreground"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name="com.donnnno.arcticonsdark.activities.MainActivity">
+        <activity android:name="com.donno.arcticonsdark.activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -125,9 +125,9 @@
             </intent-filter>
         </activity>
         
-        <activity android:name="com.donnnno.arcticonsdark.activities.LicenseActivity" />
-        <activity android:name="com.donnnno.arcticonsdark.activities.IconActivity" />
-        <activity android:name="com.donnnno.arcticonsdark.activities.SourceActivity" />
+        <activity android:name="com.donno.arcticonsdark.activities.LicenseActivity" />
+        <activity android:name="com.donno.arcticonsdark.activities.IconActivity" />
+        <activity android:name="com.donno.arcticonsdark.activities.SourceActivity" />
 
     </application>
 
