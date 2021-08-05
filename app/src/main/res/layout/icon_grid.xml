@@ -14,7 +14,10 @@
         android:importantForAutofill="no"
         android:inputType="text"
         android:lines="1"
-        android:maxLines="1" />
+        android:maxLines="1"
+        android:textColorHint="@color/textDark"
+        android:backgroundTint="@color/textDark"
+        android:textColor="@color/textDark"/>
 
     <GridView
         android:id="@+id/iconGrid"

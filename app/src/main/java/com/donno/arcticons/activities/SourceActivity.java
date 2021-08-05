@@ -1,16 +1,11 @@
 package com.donno.arcticons.activities;
 
-
-import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.view.Gravity;
-import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 
-import com.donno.arcticons.utils.ImageUtils;
 import com.donno.arcticons.utils.IntentUtils;
-import com.donno.arcticons.utils.ScreenUtils;
+
 import com.donno.arcticons.views.CenterButton;
 import com.donno.arcticons.R;
 

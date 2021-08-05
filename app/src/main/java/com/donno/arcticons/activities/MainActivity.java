@@ -1,19 +1,12 @@
 package com.donno.arcticons.activities;
 
-import android.content.Intent;
-import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.view.Gravity;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import com.donno.arcticons.R;
-import com.donno.arcticons.utils.ImageUtils;
 import com.donno.arcticons.utils.IntentUtils;
-import com.donno.arcticons.utils.ScreenUtils;
+
 import com.donno.arcticons.views.CenterButton;
 
 public class MainActivity extends BaseActivity {

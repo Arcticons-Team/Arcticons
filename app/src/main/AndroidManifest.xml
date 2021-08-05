@@ -13,7 +13,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name="com.donno.arcticons.activities.MainActivity">
+        <activity android:name=".activities.MainActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -23,7 +24,7 @@
             <intent-filter>
                 <action android:name="org.adw.launcher.THEMES" />
                 <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
+             </intent-filter>
             <!-- ADW Launcher Custom Icon Picker -->
             <intent-filter>
                 <action android:name="org.adw.launcher.icons.ACTION_PICK_ICON" />
@@ -125,9 +126,9 @@
             </intent-filter>
         </activity>
         
-        <activity android:name="com.donno.arcticons.activities.LicenseActivity" />
-        <activity android:name="com.donno.arcticons.activities.IconActivity" />
-        <activity android:name="com.donno.arcticons.activities.SourceActivity" />
+        <activity android:name=".activities.LicenseActivity" />
+        <activity android:name=".activities.IconActivity" />
+        <activity android:name=".activities.SourceActivity" />
 
     </application>
 

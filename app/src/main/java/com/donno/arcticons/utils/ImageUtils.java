@@ -7,7 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.donnnno.arcticons.async.BitmapLoadTask;
+import com.donno.arcticons.async.BitmapLoadTask;
 
 public class ImageUtils {
 
