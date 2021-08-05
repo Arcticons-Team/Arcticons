@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.donno.arcticonsdark">
+    package="com.donno.arcticons">
 
 
 
@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name="com.donno.arcticonsdark.activities.MainActivity">
+        <activity android:name=".activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -125,9 +125,9 @@
             </intent-filter>
         </activity>
         
-        <activity android:name="com.donno.arcticonsdark.activities.LicenseActivity" />
-        <activity android:name="com.donno.arcticonsdark.activities.IconActivity" />
-        <activity android:name="com.donno.arcticonsdark.activities.SourceActivity" />
+        <activity android:name=".activities.LicenseActivity" />
+        <activity android:name=".activities.IconActivity" />
+        <activity android:name=".activities.SourceActivity" />
 
     </application>
 

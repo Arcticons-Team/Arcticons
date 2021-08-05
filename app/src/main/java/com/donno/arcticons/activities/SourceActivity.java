@@ -1,13 +1,13 @@
-package com.donno.arcticonsdark.activities;
+package com.donno.arcticons.activities;
 
 
 import android.os.Bundle;
 import android.view.Gravity;
 import android.widget.LinearLayout;
 
-import com.donno.arcticonsdark.utils.IntentUtils;
-import com.donno.arcticonsdark.views.CenterButton;
-import com.donno.arcticonsdark.R;
+import com.donno.arcticons.utils.IntentUtils;
+import com.donno.arcticons.views.CenterButton;
+import com.donno.arcticons.R;
 
 public class SourceActivity extends BaseActivity {
     @Override

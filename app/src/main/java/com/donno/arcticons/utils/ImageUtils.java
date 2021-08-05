@@ -1,4 +1,4 @@
-package com.donno.arcticonsdark.utils;
+package com.donno.arcticons.utils;
 
 import android.content.res.Resources;
 import android.graphics.Bitmap;
@@ -7,7 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.donno.arcticonsdark.async.BitmapLoadTask;
+import com.donno.arcticons.async.BitmapLoadTask;
 
 public class ImageUtils {
 

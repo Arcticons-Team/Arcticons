@@ -1,4 +1,4 @@
-package com.donno.arcticonsdark.activities;
+package com.donno.arcticons.activities;
 
 import android.os.Bundle;
 import android.text.Editable;
@@ -6,13 +6,13 @@ import android.text.TextWatcher;
 import android.widget.EditText;
 import android.widget.GridView;
 
-import com.donno.arcticonsdark.R;
-import com.donno.arcticonsdark.adapters.IconAdapter;
+import com.donno.arcticons.R;
+import com.donno.arcticons.adapters.IconAdapter;
 
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class IconActivity extends com.donno.arcticonsdark.activities.BaseActivity {
+public class IconActivity extends com.donno.arcticons.activities.BaseActivity {
     private final IconAdapter mAdapter = new IconAdapter(R.layout.grid_item);
     private String[] mImages;
 

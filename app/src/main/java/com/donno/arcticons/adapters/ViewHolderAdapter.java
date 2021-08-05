@@ -1,4 +1,4 @@
-package com.donno.arcticonsdark.adapters;
+package com.donno.arcticons.adapters;
 
 import android.os.AsyncTask;
 import android.util.Log;
@@ -11,7 +11,7 @@ import androidx.annotation.LayoutRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.donno.arcticonsdark.BuildConfig;
+import com.donno.arcticons.BuildConfig;
 
 import java.util.Collection;
 
