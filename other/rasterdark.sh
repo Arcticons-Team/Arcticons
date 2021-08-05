@@ -1,7 +1,7 @@
 #!/bin/bash
 
 SIZES="48 72 96 144 192"
-EXPORT="../app/src/main/res"
+EXPORT="../app/src/dark/res"
 ICON="../icons/white"
 
 for DIR in $(find -name "*.svg")
