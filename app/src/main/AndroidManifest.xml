@@ -14,6 +14,7 @@
         android:theme="@style/AppTheme">
 
         <activity android:name=".activities.MainActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -23,7 +24,7 @@
             <intent-filter>
                 <action android:name="org.adw.launcher.THEMES" />
                 <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
+             </intent-filter>
             <!-- ADW Launcher Custom Icon Picker -->
             <intent-filter>
                 <action android:name="org.adw.launcher.icons.ACTION_PICK_ICON" />

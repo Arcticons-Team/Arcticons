@@ -36,7 +36,3 @@ Maintaining this icon-pack costs a lot of time, besides making icons I'm curatin
 
 Making icons is fun and **you don't even have to know how to code**. Just install a vector graphic program like [Inkscape](https://inkscape.org/en/). 
 Read the full details here: [Contributing](CONTRIBUTING.md)
-
-## The icons
-
-<img src='https://raw.githubusercontent.com/Donnnno/Arcticons/main/metadata/en-US/images/complete-background.png'/>

@@ -6,6 +6,7 @@ import android.widget.LinearLayout;
 
 import com.donno.arcticons.R;
 import com.donno.arcticons.utils.IntentUtils;
+
 import com.donno.arcticons.views.CenterButton;
 
 public class MainActivity extends BaseActivity {
