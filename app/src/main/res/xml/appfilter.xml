@@ -111,6 +111,9 @@
     <!-- Aard 2 -->
     <item component="ComponentInfo{itkach.aard2/itkach.aard2.MainActivity}" drawable="aard" />
 
+    <!-- Acastus Photon -->
+    <item component="ComponentInfo{name.gdr.acastus_photon/name.gdr.acastus_photon.MainActivity}" drawable="acastusphoton"/>
+
     <!-- AcDisplay -->
     <item component="ComponentInfo{com.achep.acdisplay/com.achep.acdisplay.ui.activities.MainActivity}" drawable="acdisplay" />
 
@@ -413,15 +416,18 @@
     <!-- Arch Wiki Vierwer -->
     <item component="ComponentInfo{com.jtmcn.archwiki.viewer/com.jtmcn.archwiki.viewer.MainActivity}" drawable="archwikiviewer" />
 
-    <!-- Arcticons Light -->
+    <!-- Arcticons -->
     <item component="ComponentInfo{com.donnnno.arcticons/com.donnnno.arcticons.activities.MainActivity}" drawable="arcticons" />
     <item component="ComponentInfo{com.donnnno.arcticons.debug/com.donnnno.arcticons.activities.MainActivity}" drawable="arcticons" />
-    <item component="ComponentInfo{com.donno.arcticonslight/com.donno.arcticonslight.activities.MainActivity}" drawable="arcticonslight" />
-    <item component="ComponentInfo{com.donno.arcticonslight.debug/com.donno.arcticonslight.activities.MainActivity}" drawable="arcticonslight" />
 
     <!-- Arcticons Dark -->
-    <item component="ComponentInfo{com.donno.arcticonsdark/com.donno.arcticons.activities.MainActivity}" drawable="arcticonsdark" />
-    <item component="ComponentInfo{com.donno.arcticons.debug/com.donno.arcticons.activities.MainActivity}" drawable="arcticonsdark" />
+    <item component="ComponentInfo{com.donno.arcticons.dark/com.donno.arcticons.activities.MainActivity}" drawable="arcticonsdark"/>
+    <item component="ComponentInfo{com.donno.arcticons.dark.debug/com.donno.arcticons.activities.MainActivity}" drawable="arcticonsdark"/>
+
+    <!-- Arcticons Light -->
+    <item component="ComponentInfo{com.donno.arcticons.light/com.donno.arcticons.activities.MainActivity}" drawable="arcticonslight"/>
+    <item component="ComponentInfo{com.donno.arcticons.light.debug/com.donno.arcticons.activities.MainActivity}" drawable="arcticonslight"/>
+
 
     <!-- ArduinoDroid -->
     <item component="ComponentInfo{name.antonsmirnov.android.arduinodroid2/name.antonsmirnov.android.arduinodroid.ui.OnboardingActivity}" drawable="arduinodroid" />
@@ -621,6 +627,9 @@
 
     <!-- Battery Charge Limit -->
     <item component="ComponentInfo{com.slash.batterychargelimit/com.slash.batterychargelimit.activities.MainActivity}" drawable="batterychargelimit" />
+
+    <!-- Battery Tool -->
+    <item component="ComponentInfo{io.github.domi04151309.batterytool/io.github.domi04151309.batterytool.activities.SplashActivity}" drawable="batterytool"/>
 
     <!-- Battleheart -->
     <item component="ComponentInfo{com.MikaMobile.Battleheart/com.unity3d.player.UnityPlayerNativeActivity}" drawable="battleheart" />
@@ -844,6 +853,9 @@
 
     <!-- Burger King -->
     <item component="ComponentInfo{com.emn8.mobilem8.nativeapp.bk/rbi.android.app.MainActivity}" drawable="burgerking" />
+
+    <!-- BusTO -->
+    <item component="ComponentInfo{it.reyboz.bustorino/it.reyboz.bustorino.ActivityPrincipal}" drawable="busto"/>
 
     <!-- Busybox -->
     <item component="ComponentInfo{ru.meefik.busybox/ru.meefik.busybox.MainActivity}" drawable="busybox" />
@@ -1225,6 +1237,9 @@
 
 	<!-- Converter NOW -->
 	<item component="ComponentInfo{com.ferrarid.converterpro/com.ferrarid.converterpro.MainActivity}" drawable="converternow"/>
+
+    <!-- CoronaCheck -->
+    <item component="ComponentInfo{nl.rijksoverheid.ctr.holder/nl.rijksoverheid.ctr.holder.HolderMainActivity}" drawable="coronacheck"/>
 
     <!-- Corona Melder -->
     <item component="ComponentInfo{nl.rijksoverheid.en/nl.rijksoverheid.en.MainActivity}" drawable="coronamelder" />
@@ -2664,6 +2679,9 @@
     <item component="ComponentInfo{ml.docilealligator.infinityforreddit/ml.docilealligator.infinityforreddit.Activity.MainActivity}" drawable="infinity" />
     <item component="ComponentInfo{ml.docilealligator.infinityforreddit/ml.docilealligator.infinityforreddit.activities.MainActivity}" drawable="infinity" />
 
+    <!-- Ingress -->
+    <item component="ComponentInfo{com.nianticproject.ingress/com.nianticproject.ingress.IngressActivity}" drawable="ingress"/>
+
     <!-- Inoreader -->
     <item component="ComponentInfo{com.innologica.inoreader/com.innologica.inoreader.activities.BootstrapActivity}" drawable="inoreader"/>
 
@@ -3154,11 +3172,20 @@
     <!-- Loyalty Card Keychain -->
     <item component="ComponentInfo{protect.card_locker/protect.card_locker.MainActivity}" drawable="loyaltycardkeychain" />
 
+    <!-- Luca -->
+    <item component="ComponentInfo{de.culture4life.luca/de.culture4life.luca.ui.splash.SplashActivity}" drawable="luca"/>
+    
+    <!-- Lucia -->
+    <item component="ComponentInfo{digital.selfdefense.lucia/digital.selfdefense.lucia.MainActivity}" drawable="lucia"/>
+
     <!-- LuckyPatcher -->
     <item component="ComponentInfo{ru.sxbuIDfx.pFSOyagrF/ru.sxbuIDfx.pFSOyagrF.MainActivity5}" drawable="luypatcher"/>
 
     <!-- LuisterBieb -->
     <item component="ComponentInfo{nl.bibliotheek.android.luisterboeken/nl.bibliotheek.android.luisterboeken.activities.SplashActivity}" drawable="luisterbieb" />
+
+    <!-- LSPosed -->
+    <item component="ComponentInfo{org.lsposed.manager/org.lsposed.manager.ui.activity.MainActivity}" drawable="lsposed"/>
 
     <!-- Lydia -->
     <item component="ComponentInfo{com.lydia/com.lydia.feature.splash.SplashActivity}" drawable="lydia" />
@@ -3243,7 +3270,8 @@
 
     <!-- Mapillary -->
     <item component="ComponentInfo{app.mapillary/app.mapillary.android.activity.TabbedMainActivity}" drawable="mapillary" />
-
+    <item component="ComponentInfo{com.mapillary.app/app.mapillary.android.activity.SplashActivity}" drawable="mapillary"/>
+    
     <!-- Maps -->
     <item component="ComponentInfo{com.github.axet.maps/com.mapswithme.maps.DownloadResourcesActivity}" drawable="letterm" />
 
@@ -3256,6 +3284,9 @@
 
     <!-- Map Assist -->
     <item component="ComponentInfo{amirz.assistmapper/amirz.assistmapper.PickerActivity}" drawable="mapassist" />
+
+    <!-- MarinDiver Beta -->
+    <item component="ComponentInfo{online.hisubway.marindiver/io.kodular.shenyusoftware.marindiver.Screen1}" drawable="marindiverbeta"/>
 
     <!-- Markers -->
     <item component="ComponentInfo{org.dsandler.apps.markers/com.google.android.apps.markers.MarkersActivity}" drawable="markers" />
@@ -3475,6 +3506,9 @@
     <!-- Mileage -->
     <item component="ComponentInfo{com.evancharlton.mileage/com.evancharlton.mileage.Mileage}" drawable="mileage" />
 
+    <!-- Milktea -->
+    <item component="ComponentInfo{jp.panta.misskeyandroidclient/jp.panta.misskeyandroidclient.MainActivity}" drawable="milktea"/>
+
     <!-- Milkytracker -->
     <item component="ComponentInfo{org.milkytracker.sdl/org.milkytracker.sdl.MainActivity}" drawable="milkytracker" />
 
@@ -3508,6 +3542,9 @@
 
     <!-- Mirry -->
     <item component="ComponentInfo{rocks.poopjournal.mirry/rocks.poopjournal.mirry.MainActivity}" drawable="mirry" />
+
+    <!-- Misskey -->
+    <item component="ComponentInfo{io.misskey/com.google.androidbrowserhelper.trusted.LauncherActivity}" drawable="misskey"/>
 
     <!-- Mitch -->
     <item component="ComponentInfo{ua.gardenapple.itchupdater/ua.gardenapple.itchupdater.ui.MainActivity}" drawable="mitch" />
@@ -4034,6 +4071,9 @@
 
     <!-- Offline Calendar -->
     <item component="ComponentInfo{org.sufficientlysecure.localcalendar/org.sufficientlysecure.localcalendar.ui.MainActivity}" drawable="offlinecalendar" />
+
+    <!-- Offline Puzzle Solver -->
+    <item component="ComponentInfo{t20kdc.offlinepuzzlesolver/t20kdc.offlinepuzzlesolver.MainActivity}" drawable="offlinepuzzlesolver"/>
 
     <!-- Ohms Now! -->
     <item component="ComponentInfo{com.ktprograms.ohmsnow/com.ktprograms.ohmsnow.MainActivity}" drawable="ohmsnow" />
@@ -5136,6 +5176,9 @@
     <!-- Signal Generator -->
     <item component="ComponentInfo{org.billthefarmer.siggen/org.billthefarmer.siggen.Main}" drawable="signalgenerator" />
 
+    <!-- Signature Spoofing Checker -->
+    <item component="ComponentInfo{lanchon.sigspoof.checker/lanchon.sigspoof.checker.MainActivity}" drawable="signaturespoofingchecker"/>
+
     <!-- Silence -->
     <item component="ComponentInfo{org.smssecure.smssecure/org.smssecure.smssecure.RoutingActivity}" drawable="silence" />
 
@@ -6173,6 +6216,9 @@
     <!-- Swiftnotes -->
     <item component="ComponentInfo{com.moonpi.swiftnotes/com.moonpi.swiftnotes.MainActivity}" drawable="notes" />
 
+    <!-- Swiss Bankers -->
+    <item component="ComponentInfo{ch.swissbankers.mycard/com.opentecheng.otml.OtmlSplashActivity}" drawable="swissbankers"/>
+
     <!-- Swish Payments -->
     <item component="ComponentInfo{se.bankgirot.swish/se.bankgirot.swish.ui.SplashActivity}" drawable="swish" />
 
@@ -6561,6 +6607,28 @@
     <item component="ComponentInfo{org.mariotaku.twidere/org.mariotaku.twidere.activity.MainActivity}" drawable="twidere" />
     <item component="ComponentInfo{com.twidere.twiderex/com.twidere.twiderex.TwidereXActivity}" drawable="twidere" />
 
+    <!-- Twint -->
+    <item component="ComponentInfo{com.owkb.twint/ch.twint.payment.ui.activities.start.StartActivity}" drawable="twint"/>
+    <item component="ComponentInfo{ch.raiffeisen.twint/ch.twint.payment.ui.activities.start.StartActivity}" drawable="twint"/>
+    <item component="ComponentInfo{ch.postfinance.twint.android/ch.twint.payment.ui.activities.start.StartActivity}" drawable="twint"/>
+    <item component="ComponentInfo{com.ubs.Paymit.android/ch.twint.payment.ui.activities.start.StartActivity}" drawable="twint"/>
+    <item component="ComponentInfo{com.csg.creditsuisse.twint/ch.twint.payment.ui.activities.start.StartActivity}" drawable="twint"/>
+    <item component="ComponentInfo{ch.zkb.twint/ch.twint.payment.ui.activities.start.StartActivity}" drawable="twint"/>
+    <item component="ComponentInfo{ch.migrosbank.twint/ch.twint.payment.ui.activities.start.StartActivity}" drawable="twint"/>
+    <item component="ComponentInfo{ch.tkb.twint/ch.twint.payment.ui.activities.start.StartActivity}" drawable="twint"/>
+    <item component="ComponentInfo{ch.sgkb.twint/ch.twint.payment.ui.activities.start.StartActivity}" drawable="twint"/>
+    <item component="ComponentInfo{ch.vab.twint/ch.twint.payment.ui.activities.start.StartActivity}" drawable="twint"/>
+    <item component="ComponentInfo{ch.bcv.twint/ch.twint.payment.ui.activities.start.StartActivity}" drawable="twint"/>
+    <item component="ComponentInfo{com.gkb.android.twint/ch.twint.payment.ui.activities.start.StartActivity}" drawable="twint"/>
+    <item component="ComponentInfo{ch.bcvs.twint/ch.twint.payment.ui.activities.start.StartActivity}" drawable="twint"/>
+    <item component="ComponentInfo{com.bcge.android.twt/ch.twint.payment.ui.activities.start.StartActivity}" drawable="twint"/>
+    <item component="ComponentInfo{com.zgkb.android.twint/ch.twint.payment.ui.activities.start.StartActivity}" drawable="twint"/>
+    <item component="ComponentInfo{ch.bcf.twint/ch.twint.payment.ui.activities.start.StartActivity}" drawable="twint"/>
+    <item component="ComponentInfo{com.appkb.android.twint/ch.twint.payment.ui.activities.start.StartActivity}" drawable="twint"/>
+    <item component="ComponentInfo{ch.bcj.twint/ch.twint.payment.ui.activities.start.StartActivity}" drawable="twint"/>
+    <item component="ComponentInfo{com.owkb.twint/ch.twint.payment.ui.activities.start.StartActivity}" drawable="twint"/>
+    <item component="ComponentInfo{ch.bcn.twint/ch.twint.payment.ui.activities.start.StartActivity}" drawable="twint"/>
+
     <!-- Twire -->
     <item component="ComponentInfo{com.perflyst.twire/com.perflyst.twire.activities.StartUpActivity}" drawable="twire" />
 
@@ -6918,6 +6986,9 @@
     <!-- WebTube -->
     <item component="ComponentInfo{cz.martykan.webtube/cz.martykan.webtube.MainActivity}" drawable="youtube" />
 
+    <!-- Website Monitor -->
+    <item component="ComponentInfo{com.manimarank.websitemonitor/com.manimarank.websitemonitor.ui.splash.SplashActivity}" drawable="websitemonitor"/>
+
     <!-- Web Media Share -->
     <item component="ComponentInfo{com.tobykurien.webmediashare/com.tobykurien.webmediashare.activity.MainActivity}" drawable="webmediashare" />
 
@@ -6985,6 +7056,9 @@
     <!-- WiseRadar -->
     <item component="ComponentInfo{wiseguys.radar/wiseguys.radar.ui.MainActivity}" drawable="wiseradar" />
 
+    <!-- WiseTimer -->
+    <item component="ComponentInfo{com.foxek.simpletimer/com.foxek.simpletimer.presentation.MainActivity}" drawable="wisetimer"/>
+
     <!-- Wise (formerly TransferWise) -->
     <item component="ComponentInfo{com.transferwise.android/com.transferwise.android.activity.SplashActivity}" drawable="wise" />
 
@@ -7030,6 +7104,9 @@
     <item component="ComponentInfo{com.xabber.androiddev/com.xabber.android.ui.activity.ContactListActivity}" drawable="xabber" />
     <item component="ComponentInfo{com.xabber.androiddev/com.xabber.android.ui.activity.ChatActivity}" drawable="xabber" />
     <item component="ComponentInfo{com.xabber.android/com.xabber.android.ui.activity.ContactList}" drawable="xabber" />
+
+    <!-- XClipper -->
+    <item component="ComponentInfo{com.kpstv.xclipper/com.kpstv.xclipper.ui.activities.Start}" drawable="xclipper"/>
 
     <!-- Xeonjia -->
     <item component="ComponentInfo{xyz.deepdaikon.xeonjia/xyz.deepdaikon.xeonjia.MainActivity}" drawable="xeonjia" />
