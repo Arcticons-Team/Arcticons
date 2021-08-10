@@ -1,13 +1,13 @@
-package com.donno.arcticons.activities;
+package com.donnnno.arcticons.activities;
 
 import android.os.Bundle;
 import android.view.Gravity;
 import android.widget.LinearLayout;
 
-import com.donno.arcticons.R;
-import com.donno.arcticons.utils.IntentUtils;
+import com.donnnno.arcticons.R;
+import com.donnnno.arcticons.utils.IntentUtils;
 
-import com.donno.arcticons.views.CenterButton;
+import com.donnnno.arcticons.views.CenterButton;
 
 public class MainActivity extends BaseActivity {
 

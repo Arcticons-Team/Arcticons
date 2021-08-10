@@ -4,7 +4,7 @@ android {
     compileSdkVersion 29
 
     defaultConfig {
-        applicationId "com.donno.arcticons"
+        applicationId "com.donnnno.arcticons"
         minSdkVersion 16
         targetSdkVersion 29
         versionCode 64
@@ -25,7 +25,6 @@ android {
     productFlavors {
         dark {
             dimension "variant"
-            applicationIdSuffix '.dark'
             resValue "string", "app_name", "Arcticons Dark"
         }
         light {

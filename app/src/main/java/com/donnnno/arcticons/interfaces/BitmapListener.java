@@ -1,4 +1,4 @@
-package com.donno.arcticons.interfaces;
+package com.donnnno.arcticons.interfaces;
 
 import android.graphics.Bitmap;
 

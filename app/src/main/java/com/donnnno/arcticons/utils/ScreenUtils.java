@@ -1,4 +1,4 @@
-package com.donno.arcticons.utils;
+package com.donnnno.arcticons.utils;
 
 import android.content.Context;
 

@@ -1,10 +1,10 @@
-package com.donno.arcticons.activities;
+package com.donnnno.arcticons.activities;
 
 import android.os.Build;
 import android.os.Bundle;
 import android.view.WindowManager;
 
-import com.donno.arcticons.R;
+import com.donnnno.arcticons.R;
 
 import androidx.appcompat.app.AppCompatActivity;
 
