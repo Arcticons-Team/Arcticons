@@ -25,13 +25,13 @@ android {
     productFlavors {
         dark {
             dimension "variant"
-            applicationIdSuffix ".light"
+            applicationIdSuffix '.dark'
             resValue "string", "app_name", "Arcticons Dark"
         }
         light {
             dimension "variant"
             //noinspection GradlePath
-            applicationIdSuffix ".dark"
+            applicationIdSuffix '.light'
             resValue "string", "app_name", "Arcticons Light"
         }
     }
