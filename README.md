@@ -1,6 +1,6 @@
 <img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/Donnnno/Arcticons"> [<img alt="F-Droid" src="https://img.shields.io/f-droid/v/com.donnnno.arcticons">](https://f-droid.org/packages/com.donnnno.arcticons) [<img alt="F-Droid" src="https://img.shields.io/github/downloads/donnnno/arcticons/total?label=github%20downloads">]() 
 
-<img src='https://raw.githubusercontent.com/Donnnno/Arcticons/main/metadata/en-US/images/header-background.png'>
+<img src='https://raw.githubusercontent.com/Donnnno/Arcticons/main/fastlane/metadata/en-US/images/header-background.png'>
 
 Arcticons (Arctic icons) is a line-based icon pack forked from [Frost](https://github.com/dkanada/frost) but rebuild with consistent sizing and adjustments specifically for lines in mind. Arcticons is FOSS and provides mostly icons for open-source apps on F-Droid (but there are many other apps in this pack too). The design is simple and clean with minimal lines that give you a nice see-trough effect.
 
@@ -11,7 +11,7 @@ Arcticons includes support for a lot of lauchers like Trebuchet, KISS, Nova, Ape
 
 Submitting icon requests helps a lot, but maintaining the project (as you may imagine) takes a lot of time and effort, so please be patient about adding new icons. Contributions for new icons are always welcome, and no experience with programming is necessary.
 
-<img src='https://raw.githubusercontent.com/Donnnno/Arcticons/main/metadata/en-US/images/screenshots.jpg'>
+<img src='https://raw.githubusercontent.com/Donnnno/Arcticons/main/fastlane/metadata/en-US/images/screenshots.jpg'>
 
 ## Icon Requests
 
