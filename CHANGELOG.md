@@ -1,3 +1,9 @@
+### 2.0.0
+###### Released: Aug 11, 2021
+* 🆕 Besides the traditional white icons, there's also a new black version available for light mode users!
+* 🎉 55 new & upated icons (thanks JoelChrono12, Ail1020 & Chaptergy!)
+* 🔥 2004 icons in total
+
 ### 1.8.0
 ###### Released: Aug 3, 2021
 * 🎉 51 new icons (thanks JoelChrono12, Ail1020, Quantenzitrone & chaptergy!)
