@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SVGDIR="../icons/"
+SVGDIR="../icons/white/"
 EXPORT="../app/src/main/"
 ICPACK_PRE='	    <item>'
 ICPACK_SUF='</item>\n'
