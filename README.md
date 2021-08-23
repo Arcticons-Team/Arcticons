@@ -34,5 +34,5 @@ Maintaining this icon-pack costs a lot of time, besides making icons I'm curatin
 
 ## Contributing
 
-Making icons is fun and **you don't even have to know how to code**. Just install a vector graphic program like [Inkscape](https://inkscape.org/en/). 
+Making icons is fun and **you don't even have to know how to code**. Just install a vector graphic program like [Inkscape](https://inkscape.org/en/), Illustrator, Affinity Designer, [PenPot](https://penpot.app/) or [Vector Asset Creator](https://play.google.com/store/apps/details?id=com.inglesdivino.vectorassetcreator). 
 Read the full details here: [Contributing](CONTRIBUTING.md)
