@@ -33,6 +33,7 @@ public class CenterButton extends LinearLayoutCompat {
         this.textView = new TextView(context);
 
         textView.setTextSize(24);
+        textView.setAutoSizeTextTypeWithDefaults(TextView.AUTO_SIZE_TEXT_TYPE_UNIFORM);
         textView.setPadding(padding, padding, padding, padding);
 
         button.addView(imageView);
