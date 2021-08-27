@@ -1,3 +1,10 @@
+### 2.0.5
+###### Released: Aug 27, 2021
+* 🎉 50 new & upated icons (thanks JoelChrono12, Aman9das, Yuhuitech & Quantenzitrone!)
+* 🔡 Better font scaling for people that use large fonts
+* 🔥 2054 icons in total
+
+
 ### 2.0.0
 ###### Released: Aug 11, 2021
 * 🆕 Besides the traditional white icons, there's also a new black version available for light mode users!
