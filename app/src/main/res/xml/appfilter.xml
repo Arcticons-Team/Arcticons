@@ -615,7 +615,7 @@
 
     <!-- Barinsta -->
     <item component="ComponentInfo{me.austinhuang.instagrabber/awais.instagrabber.activities.MainActivity}" drawable="barinsta" />
-
+     
     <!-- BatteryBot -->
     <item component="ComponentInfo{com.darshancomputing.BatteryIndicatorPro/com.darshancomputing.BatteryIndicatorPro.BatteryInfoActivity}" drawable="battery"/>
 
@@ -705,6 +705,9 @@
 
     <!-- BlackBerry Launcher -->
     <item component="ComponentInfo{com.blackberry.blackberrylauncher/com.blackberry.blackberrylauncher.HomeIconActivity}" drawable="blackberrylauncher" />
+
+    <!-- BlackHole -->
+    <item component="ComponentInfo{com.shadow.blackhole/com.shadow.blackhole.MainActivity}" drawable="blackhole"/>
 
     <!-- BlackPlayer -->
     <item component="ComponentInfo{com.musicplayer.blackplayerfree/com.kodarkooperativet.blackplayerfree.activities.ViewPagerActivity}" drawable="blackplayer" />
@@ -911,6 +914,8 @@
     <item component="ComponentInfo{com.oneplus.calculator/com.oneplus.calculator.Calculator}" drawable="calculator" />
     <item component="ComponentInfo{com.sec.android.app.popupcalculator/com.sec.android.app.popupcalculator.Calculator}" drawable="calculator" />
     <item component="ComponentInfo{com.miui.calculator/com.miui.calculator.cal.CalculatorActivity}" drawable="calculator" />
+    <item component="ComponentInfo{com.android.bbkcalculator/com.android.bbkcalculator.Calculator}" drawable="calculator"/>
+
 
     <!-- Calendar -->
     <item component="ComponentInfo{com.android.calendar/com.android.calendar.AllInOneActivity}" drawable="calendar31" />
@@ -922,6 +927,7 @@
     <item component="ComponentInfo{com.google.android.calendar/com.android.calendar.AllInOneActivity}" drawable="calendar31" />
     <item component="ComponentInfo{ws.xsoh.etar/com.android.calendar.AllInOneActivity}" drawable="calendar31" />
     <item component="ComponentInfo{foundation.e.calendar/com.android.calendar.AllInOneActivity}" drawable="calendar31" />
+    <item component="ComponentInfo{com.bbk.calendar/com.bbk.calendar.MainActivity}" drawable="calendar31"/>
 
     <!-- Calendar dynamic icons -->
     <calendar component="ComponentInfo{com.android.calendar/com.android.calendar.AllInOneActivity}" prefix="calendar" />
@@ -933,6 +939,7 @@
     <calendar component="ComponentInfo{com.google.android.calendar/com.android.calendar.AllInOneActivity}" prefix="calendar" />
     <calendar component="ComponentInfo{ws.xsoh.etar/com.android.calendar.AllInOneActivity}" prefix="calendar" />
     <calendar component="ComponentInfo{foundation.e.calendar/com.android.calendar.AllInOneActivity}" prefix="calendar" />
+    <calendar component="ComponentInfo{com.bbk.calendar/com.bbk.calendar.MainActivity}" drawable="calendar"/>
 
     <!-- Calendar Color -->
     <item component="ComponentInfo{ch.ihdg.calendarcolor/ch.ihdg.calendarcolor.CalendarListActivity}" drawable="calendarcolor" />
@@ -1154,6 +1161,7 @@
     <item component="ComponentInfo{com.oneplus.deskclock/com.oneplus.deskclock.DeskClock}" drawable="clock" />
     <item component="ComponentInfo{com.android.deskclock/com.android.deskclock.DeskClockTabActivity}" drawable="clock" />
     <item component="ComponentInfo{com.chen.deskclock/com.chen.deskclock.DeskClock}" drawable="clock" />
+    <item component="ComponentInfo{com.android.BBKClock/com.android.BBKClock.Timer}" drawable="clock"/>
 
     <!-- ClockSync -->
     <item component="ComponentInfo{ru.org.amip.ClockSync/ru.org.amip.ClockSync.view.Main}" drawable="clocksync"/>
@@ -1213,6 +1221,7 @@
     <item component="ComponentInfo{com.miui.compass/com.miui.compass.CompassActivity}" drawable="compass" />
     <item component="ComponentInfo{net.androgames.compass/net.androgames.compass.CompassActivity}" drawable="compass" />
     <item component="ComponentInfo{com.bobek.compass/com.bobek.compass.MainActivity}" drawable="compass" />
+    <item component="ComponentInfo{com.vivo.compass/com.vivo.compass.CalibrationActivity}" drawable="compass"/>
 
     <!-- Concentric Clock -->
     <item component="ComponentInfo{org.gringene.concentricclock/org.gringene.concentricclock.ClockActivity}" drawable="concentricclock" />
@@ -1237,6 +1246,8 @@
     <item component="ComponentInfo{com.oneplus.contacts/com.oneplus.contacts.activities.OPPeopleActivity}" drawable="contacts" />
     <item component="ComponentInfo{com.sonymobile.android.contacts/com.android.contacts.activities.PeopleActivity}" drawable="contacts" />
     <item component="ComponentInfo{com.oneplus.contacts/com.oneplus.contacts.activities.OPPeopleActivity}" drawable="contacts" />
+    <item component="ComponentInfo{com.android.contacts/com.android.contacts.DialtactsContactsEntryActivity}" drawable="contacts"/>
+
 
     <!-- Contact Diary -->
     <item component="ComponentInfo{com.apozas.contactdiary/com.apozas.contactdiary.MainActivity}" drawable="contactdiary" />
@@ -1312,7 +1323,7 @@
 
     <!-- CTemplar -->
     <item component="ComponentInfo{com.ctemplar.app.fdroid/com.ctemplar.app.fdroid.splash.SplashActivity}" drawable="ctemplar"/>
-
+    
     <!-- Cuppa -->
     <item component="ComponentInfo{com.nathanatos.Cuppa/com.nathanatos.Cuppa.MainActivity}" drawable="cuppa"/>
 
@@ -1591,6 +1602,9 @@
     <!-- Drinks -->
     <item component="ComponentInfo{fr.masciulli.drinks/fr.masciulli.drinks.ui.activity.MainActivity}" drawable="drinks" />
 
+    <!-- Drip -->
+    <item component="ComponentInfo{com.drip/com.drip.MainActivity}" drawable="drip"/>
+
     <!-- DroidFS -->
     <item component="ComponentInfo{sushi.hardcore.droidfs/sushi.hardcore.droidfs.MainActivity}" drawable="droidfs"/>
 
@@ -1741,6 +1755,7 @@
     <item component="ComponentInfo{org.dystopia.email/org.dystopia.email.ActivityMain}" drawable="mail" />
     <item component="ComponentInfo{foundation.e.mail/foundation.e.mail.activity.Accounts}" drawable="mail" />
     <item component="ComponentInfo{com.sonymobile.email/com.sonymobile.email.activity.Welcome}" drawable="mail" />
+    <item component="ComponentInfo{com.vivo.email/com.vivo.email.activity.Welcome}" drawable="mail"/>
 
     <!-- Emby -->
     <item component="ComponentInfo{com.mb.android/com.mb.android.MainActivity}" drawable="emby" />
@@ -1947,6 +1962,7 @@
     <item component="ComponentInfo{com.oneplus.filemanager/com.oneplus.filemanager.HomePageActivity}" drawable="files" />
     <item component="ComponentInfo{com.mi.android.globalFileexplorer/com.android.fileexplorer.FileExplorerTabActivity}" drawable="files" />
     <item component="ComponentInfo{com.oneplus.filemanager/com.oneplus.filemanager.HomePageActivity}" drawable="files" />
+    <item component="ComponentInfo{com.android.filemanager/com.android.filemanager.FileManagerActivity}" drawable="files"/>
 
     <!-- Finamp -->
     <item component="ComponentInfo{com.unicornsonlsd.finamp/com.unicornsonlsd.finamp.MainActivity}" drawable="finamp"/>
@@ -2260,6 +2276,8 @@
     <item component="ComponentInfo{com.oneplus.gallery/com.oneplus.gallery.OPGalleryActivity}" drawable="gallery" />
     <item component="ComponentInfo{com.alensw.PicFolder/com.alensw.PicFolder.GalleryActivity}" drawable="gallery" />
     <item component="ComponentInfo{com.google.android.apps.photosgo/com.google.android.apps.photosgo.home.HomeActivity}" drawable="gallery"/>
+    <item component="ComponentInfo{com.vivo.gallery/com.android.gallery3d.vivo.GalleryTabActivity}" drawable="gallery"/>
+
 
     <!-- Game Launcher -->
     <item component="ComponentInfo{com.samsung.android.game.gamehome/com.samsung.android.game.gamehome.activity.StartActivity}" drawable="gamelauncher"/>
@@ -2738,9 +2756,6 @@
     <!-- Inoreader -->
     <item component="ComponentInfo{com.innologica.inoreader/com.innologica.inoreader.activities.BootstrapActivity}" drawable="inoreader"/>
 
-    <!-- InstaGrabber -->
-    <item component="ComponentInfo{me.austinhuang.instagrabber/awais.instagrabber.activities.Main}" drawable="instagrabber" />
-
     <!-- InstaLate Settings -->
     <item component="ComponentInfo{com.concept1tech.instalate/com.concept1tech.instalate.PrefsActivity}" drawable="instalate" />
 
@@ -2825,6 +2840,9 @@
 
     <!-- Jitsi Meet -->
     <item component="ComponentInfo{org.jitsi.meet/org.jitsi.meet.MainActivity}" drawable="jitsimeet" />
+
+    <!-- Join -->
+    <item component="ComponentInfo{com.joaomgcd.join/com.joaomgcd.join.activity.ActivityMain}" drawable="join"/>
 
     <!-- Joplin -->
     <item component="ComponentInfo{net.cozic.joplin/net.cozic.joplin.MainActivity}" drawable="joplin" />
@@ -4224,6 +4242,9 @@
     <!-- OpenVPN Connect -->
     <item component="ComponentInfo{net.openvpn.openvpn/net.openvpn.unified.MainActivity}" drawable="openvpnconnect" />
 
+    <!-- OpenWeather -->
+    <item component="ComponentInfo{uk.co.openweather/uk.co.openweather.SplashActivity}" drawable="openweather"/>
+
     <!-- Open Camera -->
     <item component="ComponentInfo{net.sourceforge.opencamera/net.sourceforge.opencamera.MainActivity}" drawable="opencamera" />
 
@@ -4244,6 +4265,9 @@
 
     <!-- OpenLP -->
     <item component="ComponentInfo{org.openlp.android2/org.openlp.android2.OpenLP}" drawable="openlp"/>
+
+    <!-- Open Link With -->
+    <item component="ComponentInfo{com.tasomaniac.openwith.floss/com.tasomaniac.openwith.settings.SettingsActivity}" drawable="openlinkwith"/>
 
     <!-- Open Mensa -->
     <item component="ComponentInfo{de.uni_potsdam.hpi.openmensa/de.uni_potsdam.hpi.openmensa.MainActivity}" drawable="openmensa" />
@@ -4459,6 +4483,7 @@
     <item component="ComponentInfo{com.android.contacts/com.android.contacts.activities.TwelveKeyDialer}" drawable="phone" />
     <item component="ComponentInfo{com.hb.dialer.free/com.hb.dialer.ui.PhoneActivity}" drawable="phone" />
     <item component="ComponentInfo{com.sonymobile.android.dialer/com.android.dialer.DialtactsActivity}" drawable="phone" />
+    <item component="ComponentInfo{com.android.dialer/com.android.dialer.TwelveKeyDialer}" drawable="phone"/>
 
     <!-- Phone Manager -->
     <item component="ComponentInfo{com.huawei.systemmanager/com.huawei.systemmanager.mainscreen.MainScreenActivity}" drawable="huaweisystemmanager" />
@@ -4786,6 +4811,8 @@
     <!-- Radio -->
     <item component="ComponentInfo{com.tct.fmradio.bb/com.tct.fmradio.utils.BaseActivity}" drawable="radio" />
     <item component="ComponentInfo{com.sec.android.app.fm/com.sec.android.app.fm.MainActivity}" drawable="radio"/>
+    <item component="ComponentInfo{com.vivo.FMRadio/com.vivo.FMRadio.FMRadio}" drawable="fmradio"/>
+
 
     <!-- Radio France -->
     <item component="ComponentInfo{com.radiofrance.radio.radiofrance.android/com.radiofrance.radio.radiofrance.android.screen.splash.SplashActivity}" drawable="radiofrance" />
@@ -4840,6 +4867,7 @@
     <item component="ComponentInfo{com.android.soundrecorder/com.android.soundrecorder.RecordListActivity}" drawable="recorder" />
     <item component="ComponentInfo{org.calyxos.recorder/org.lineageos.recorder.RecorderActivity}" drawable="recorder"/>
     <item component="ComponentInfo{com.google.android.apps.recorder/com.google.android.apps.recorder.ui.recordings.MainActivity}" drawable="recorder"/>
+    <item component="ComponentInfo{com.android.bbksoundrecorder/com.android.activity.ReclistActivity}" drawable="recorder"/>
 
     <!-- Recurrence -->
     <item component="ComponentInfo{com.bleyl.recurrence/com.bleyl.recurrence.activities.MainActivity}" drawable="recurrence" />
@@ -6670,6 +6698,9 @@
     <!-- Trivago -->
     <item component="ComponentInfo{com.trivago/com.trivago.ft.main.frontend.MainActivity}" drawable="trivago"/>
 
+    <!-- Tripvia Tours -->
+    <item component="ComponentInfo{com.mytoursapp.android.app1228/com.mytours.MainActivity}" drawable="tripviatours"/>
+
     <!-- Truecaller -->
     <item component="ComponentInfo{com.truecaller/com.truecaller.ui.TruecallerInit}" drawable="phone"/>
 
@@ -6911,6 +6942,9 @@
     <!-- Vasttrafik To Go -->
     <item component="ComponentInfo{com.vaesttrafik.vaesttrafik/md570e4086799b98a2b624e58e3e3cdb240.SplashScreenActivity}" drawable="vasttrafik" />
 
+    <!-- Vector Asset Creator -->
+    <item component="ComponentInfo{com.inglesdivino.vectorassetcreator/com.inglesdivino.vectorassetcreator.MainActivity}" drawable="vectorassetcreator"/>
+
     <!-- Vector Pinball -->
     <item component="ComponentInfo{com.dozingcatsoftware.bouncy/com.dozingcatsoftware.bouncy.BouncyActivity}" drawable="vectorpinball" />
 
@@ -7086,6 +7120,7 @@
     <item component="ComponentInfo{com.sonymobile.xperiaweather/com.sonymobile.xperiaweather.MainActivity}" drawable="weather" />
     <item component="ComponentInfo{com.miui.weather2/com.miui.weather2.ActivityWeatherMain}" drawable="weather" />
     <item component="ComponentInfo{com.huawei.android.totemweather/com.huawei.android.totemweather.WeatherHome}" drawable="weather" />
+    <item component="ComponentInfo{com.vivo.weather/com.vivo.weather.WeatherMain}" drawable="weather"/>
 
     <!-- Weawow -->
     <item component="ComponentInfo{com.weawow/com.weawow.MainActivity}" drawable="weawow" />
