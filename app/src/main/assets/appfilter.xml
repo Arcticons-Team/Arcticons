@@ -313,6 +313,9 @@
     <!-- AndroidVNC -->
     <item component="ComponentInfo{android.androidVNC/android.androidVNC.androidVNC}" drawable="androidvnc" />
 
+    <!-- Android Version -->
+    <item component="ComponentInfo{com.github.mueller_ma.viewandroidversion/com.github.mueller_ma.viewandroidversion.MainActivity}" drawable="android"/>
+
     <!-- Android Auto -->
     <item component="ComponentInfo{com.google.android.projection.gearhead/com.google.android.gearhead.vanagon.VnLaunchPadActivity}" drawable="androidauto" />
 
@@ -721,6 +724,9 @@
 
     <!-- Bitdefender Security -->
     <item component="ComponentInfo{com.bitdefender.security/com.bitdefender.security.material.MainActivity}" drawable="bitdefender" />
+
+    <!-- Bitmask -->
+    <item component="ComponentInfo{se.leap.bitmaskclient/se.leap.bitmaskclient.base.StartActivity}" drawable="bitmask"/>
 
     <!-- Bitwarden -->
     <item component="ComponentInfo{com.x8bit.bitwarden/md5b95ad25b85f158431f24aa9fc17a1c1e.SplashActivity}" drawable="bitwarden" />
@@ -1182,6 +1188,9 @@
     <!-- Clima -->
     <item component="ComponentInfo{co.prestosole.clima/co.appbrewery.clima.MainActivity}" drawable="clima"/>
 
+    <!-- ClipboardCleaner -->
+    <item component="ComponentInfo{io.github.deweyreed.clipboardcleaner/io.github.deweyreed.clipboardcleaner.MainActivity}" drawable="clipboardcleaner"/>
+
     <!-- Clock+ -->
     <item component="ComponentInfo{com.philliphsu.clock2/com.philliphsu.clock2.MainActivity}" drawable="clock2" />
 
@@ -1536,6 +1545,9 @@
 
     <!-- DeviantArt -->
     <item component="ComponentInfo{com.deviantart.android.damobile/com.deviantart.android.damobile.activity.HomeActivity}" drawable="deviantart"/>
+
+    <!-- Developer Widget -->
+    <item component="ComponentInfo{com.g00fy2.developerwidget/com.g00fy2.developerwidget.activities.widgetconfig.ConfigLauncherActivity}" drawable="developerwidget"/>
 
     <!-- Device Info HW+ -->
     <item component="ComponentInfo{ru.andr7e.deviceinfohw.pro/ru.andr7e.deviceinfohw.MainActivity}" drawable="deviceinfohw"/>
@@ -3247,6 +3259,9 @@
     <item component="ComponentInfo{org.proninyaroslav.libretorrent/org.proninyaroslav.libretorrent.MainActivity}" drawable="libretorrent" />
     <item component="ComponentInfo{org.proninyaroslav.libretorrent/org.proninyaroslav.libretorrent.ui.main.MainActivity}" drawable="libretorrent" />
 
+    <!-- LibreTranslater -->
+    <item component="ComponentInfo{de.beowulf.libretranslater/de.beowulf.libretranslater.MainActivity}" drawable="libretranslater"/>
+
     <!-- Lichess -->
     <item component="ComponentInfo{org.lichess.mobileapp/org.lichess.mobileapp.MainActivity}" drawable="lichess" />
 
@@ -3291,6 +3306,9 @@
     <item component="ComponentInfo{com.facebook.mlite/com.facebook.mlite.coreui.view.MainActivity}" drawable="lite" />
     <item component="ComponentInfo{com.facebook.lite/com.facebook.lite.MainActivity}" drawable="lite" />
     <item component="ComponentInfo{com.facebook.mlite/com.facebook.mlite.coreui.view.MainActivity}" drawable="lite" />
+
+    <!-- LiveBoot -->
+    <item component="ComponentInfo{eu.chainfire.liveboot/eu.chainfire.liveboot.MainActivity}" drawable="liveboot"/>
 
     <!-- Lloyds Bank -->
     <item component="ComponentInfo{com.grppl.android.shell.CMBlloydsTSB73/com.halifax.halifax.GrappleActivity}" drawable="lloydsbank" />
@@ -4296,6 +4314,9 @@
     <!-- Onleihe -->
     <item component="ComponentInfo{de.etecture.ekz.onleihe/de.etecture.ekz.onleihe.activity.SplashScreenActivity}" drawable="onleihe" />
 
+    <!-- Open SSTP Client -->
+    <item component="ComponentInfo{kittoku.opensstpclient/kittoku.opensstpclient.MainActivity}" drawable="opensstpclient"/>
+
     <!-- OpenAPK -->
     <item component="ComponentInfo{com.dkanada.openapk/com.dkanada.openapk.activities.MainActivity}" drawable="openapk" />
 
@@ -4470,6 +4491,9 @@
     <item component="ComponentInfo{it.niedermann.owncloud.notes/it.niedermann.owncloud.notes.android.activity.NotesListViewActivity}" drawable="nextcloudnotes" />
     <item component="ComponentInfo{it.niedermann.owncloud.notes/it.niedermann.owncloud.notes.android.activity.SplashScreenActivity}" drawable="nextcloudnotes" />
     <item component="ComponentInfo{it.niedermann.owncloud.notes/it.niedermann.owncloud.notes.SplashscreenActivity}" drawable="nextcloudnotes" />
+
+    <!-- PCAPdroid -->
+    <item component="ComponentInfo{com.emanuelef.remote_capture/com.emanuelef.remote_capture.activities.MainActivity}" drawable="pcapdroid"/>
 
     <!-- PCI VEN/DEV Database -->
     <item component="ComponentInfo{aws.apps.pciVenDevDb/aws.apps.pciVenDevDb.Main}" drawable="pcivendevdatabase" />
@@ -4663,6 +4687,9 @@
     <!-- Pixel Dungeon -->
     <item component="ComponentInfo{com.watabou.pixeldungeon/com.watabou.pixeldungeon.PixelDungeon}" drawable="pixeldungeon" />
 
+    <!-- Pixel Wheels -->
+    <item component="ComponentInfo{com.agateau.tinywheels.android/com.agateau.pixelwheels.android.AndroidLauncher}" drawable="pixelwheels"/>
+
     <!-- PixEz -->
     <item component="ComponentInfo{com.perol.play.pixez/com.perol.pixez.MainActivity}" drawable="pixez"/>
 
@@ -4800,6 +4827,9 @@
 
     <!-- Privacy Shade -->
     <item component="ComponentInfo{com.blackberry.privacyfilter/com.blackberry.privacyfilter.ToggleActivity}" drawable="privacyshade" />
+
+    <!-- Privacy Indicators -->
+    <item component="ComponentInfo{com.nitish.privacyindicator/com.nitish.privacyindicator.ui.home.HomeActivity}" drawable="privacyindicators"/>
 
     <!-- Private Location -->
     <item component="ComponentInfo{com.wesaphzt.privatelocation/com.wesaphzt.privatelocation.MainActivity}" drawable="privatelocation" />
@@ -7091,7 +7121,8 @@
 
     <!-- VPN Hotspot -->
     <item component="ComponentInfo{be.mygod.vpnhotspot/be.mygod.vpnhotspot.MainActivity}" drawable="vpnhotspot" />
-
+    <item component="ComponentInfo{be.mygod.vpnhotspot.foss/be.mygod.vpnhotspot.MainActivity}" drawable="vpnhotspot"/>
+    
     <!-- VRN eTarif -->
     <item component="ComponentInfo{com.sevenre.linear/com.sevenre.linear.MainActivity}" drawable="vrnetarif" />
 
