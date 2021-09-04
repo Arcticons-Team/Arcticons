@@ -1,3 +1,11 @@
+### 2.1.0
+###### Released: Sep 4, 2021
+* 🎉 53 new & upated icons (thanks Kaiserdragon2, Aman9das, Dgcampbe, Bellaston & Quantenzitrone!)
+* 💸 Redesigned support screen
+* 🔥 2105 icons in total
+
+
+
 ### 2.0.5
 ###### Released: Aug 27, 2021
 * 🎉 50 new & upated icons (thanks JoelChrono12, Aman9das, Yuhuitech & Quantenzitrone!)

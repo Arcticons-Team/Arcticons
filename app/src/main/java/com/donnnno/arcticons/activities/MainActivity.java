@@ -50,7 +50,7 @@ public class MainActivity extends BaseActivity {
         support.setBackground(R.color.colorDark);
         support.setText(R.string.support);
         support.setIcon(R.drawable.ic_support_button);
-        support.setOnClickListener((v) -> IntentUtils.openUrl(this, R.string.url_support));
+        support.setOnClickListener((v) -> IntentUtils.openActivity(this, SupportActivity.class));
         baseLayout.addView(support);
     }
 }
