@@ -1822,6 +1822,7 @@
     <item component="ComponentInfo{foundation.e.mail/foundation.e.mail.activity.Accounts}" drawable="mail" />
     <item component="ComponentInfo{com.sonymobile.email/com.sonymobile.email.activity.Welcome}" drawable="mail" />
     <item component="ComponentInfo{com.vivo.email/com.vivo.email.activity.Welcome}" drawable="mail"/>
+    <item component="ComponentInfo{com.samsung.android.email.provider/com.samsung.android.email.ui.activity.MessageListXL}" drawable="mail"/>
 
     <!-- Emby -->
     <item component="ComponentInfo{com.mb.android/com.mb.android.MainActivity}" drawable="emby" />
@@ -7265,6 +7266,8 @@
 
     <!-- Voicemail -->
     <item component="ComponentInfo{com.coremobility.app.vnotes/com.coremobility.app.vnotes.CM_VnoteInbox}" drawable="voicemail"/>
+    # Is it ok if two apps are under the same label like this? Will this conflict? I added the voicemail app that verizon provided on my phone.
+    <item component="ComponentInfo{com.samsung.vvm/com.samsung.vvm.vvmapp.VVMApplication}" drawable="voicemail"/>
 
     <!-- Voice Search -->
     <item component="ComponentInfo{com.google.android.googlequicksearchbox/com.google.android.googlequicksearchbox.VoiceSearchActivity}" drawable="recorder" />
