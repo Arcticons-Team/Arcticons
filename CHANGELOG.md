@@ -4,7 +4,7 @@
 * 💸 Redesigned support screen
 * 🔥 2105 icons in total
 
-
+![changelogfile210](https://user-images.githubusercontent.com/31142286/132100207-cc9e9852-67c0-4e3d-9b1f-7f1760b09f47.jpg)
 
 ### 2.0.5
 ###### Released: Aug 27, 2021
