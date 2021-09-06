@@ -1,4 +1,4 @@
-<img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/Donnnno/Arcticons"> [<img alt="F-Droid" src="https://img.shields.io/f-droid/v/com.donnnno.arcticons">](https://f-droid.org/packages/com.donnnno.arcticons) [<img alt="F-Droid" src="https://img.shields.io/github/downloads/donnnno/arcticons/total?label=github%20downloads">]() 
+[<img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/Donnnno/Arcticons">](https://github.com/Donnnno/Arcticons/releases/latest) [<img alt="F-Droid" src="https://img.shields.io/f-droid/v/com.donnnno.arcticons">](https://f-droid.org/packages/com.donnnno.arcticons) [<img alt="GitHub" src="https://img.shields.io/github/downloads/donnnno/arcticons/total?label=github%20downloads">](https://github.com/Donnnno/Arcticons/releases/latest) 
 
 <img src='https://raw.githubusercontent.com/Donnnno/Arcticons/main/fastlane/metadata/android/en-US/images/header-background.png'>
 
