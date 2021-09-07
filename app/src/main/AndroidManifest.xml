@@ -5,13 +5,14 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:roundIcon="@mipmap/ic_launcher_round"
         android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
+        <activity
+            android:name=".activities.SupportActivity"
+            android:exported="true" />
         <activity android:name=".activities.MainActivity">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,16 +21,19 @@
             <!-- ADW Launcher -->
             <intent-filter>
                 <action android:name="org.adw.launcher.THEMES" />
+
                 <category android:name="android.intent.category.DEFAULT" />
-             </intent-filter>
+            </intent-filter>
             <!-- ADW Launcher Custom Icon Picker -->
             <intent-filter>
                 <action android:name="org.adw.launcher.icons.ACTION_PICK_ICON" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <!-- Apex Launcher -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="com.anddoes.launcher.THEME" />
             </intent-filter>
             <!-- GO Launcher -->
@@ -46,21 +50,25 @@
             <!-- Turbo Launcher Custom Icon Picker -->
             <intent-filter>
                 <action android:name="com.phonemetra.turbo.launcher.icons.ACTION_PICK_ICON" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <!-- Nine Launcher -->
             <intent-filter>
                 <action android:name="com.gridappsinc.launcher.theme.apk_action" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <!-- Lawnchair -->
             <intent-filter>
                 <action android:name="ch.deletescape.lawnchair.ICONPACK" />
+
                 <category android:name="ch.deletescape.lawnchair.PICK_ICON" />
             </intent-filter>
             <!-- Nova Launcher Custom Icon Picker -->
             <intent-filter>
                 <action android:name="com.novalauncher.THEME" />
+
                 <category android:name="com.novalauncher.category.CUSTOM_ICON_PICKER" />
             </intent-filter>
             <!-- Solo Launcher -->
@@ -79,24 +87,28 @@
             <!-- OnePlus Launcher -->
             <intent-filter>
                 <action android:name="net.oneplus.launcher.icons.ACTION_PICK_ICON" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <!-- TSF Shell -->
             <intent-filter>
                 <action android:name="com.tsf.shell.themes" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <!-- Smart Launcher -->
             <intent-filter>
                 <action android:name="ginlemon.smartlauncher.THEMES" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <!-- Sony Launcher -->
             <intent-filter>
                 <action android:name="com.sonymobile.home.ICON_PACK" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-            <!-- GO Launcher & Zero Launcher-->
+            <!-- GO Launcher & Zero Launcher -->
             <intent-filter>
                 <action android:name="com.gau.go.launcherex.theme" />
                 <action android:name="com.zeroteam.zerolauncher.theme" />
@@ -105,6 +117,7 @@
             <!-- +HOME Icon Picker -->
             <intent-filter>
                 <action android:name="jp.co.a_tm.android.launcher.icons.ACTION_PICK_ICON" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <!-- V Launcher -->
@@ -122,11 +135,9 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        
         <activity android:name=".activities.LicenseActivity" />
         <activity android:name=".activities.IconActivity" />
         <activity android:name=".activities.SourceActivity" />
-
     </application>
 
 </manifest>

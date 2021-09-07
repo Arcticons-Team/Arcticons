@@ -1,8 +1,26 @@
+### 2.1.0
+###### Released: Sep 4, 2021
+* 🎉 53 new & upated icons (thanks Kaiserdragon2, Aman9das, Dgcampbe, Bellaston & Quantenzitrone!)
+* 💸 Redesigned support screen
+* 🔥 2105 icons in total
+
+![changelogfile210](https://user-images.githubusercontent.com/31142286/132100207-cc9e9852-67c0-4e3d-9b1f-7f1760b09f47.jpg)
+
+### 2.0.5
+###### Released: Aug 27, 2021
+* 🎉 50 new & upated icons (thanks JoelChrono12, Aman9das, Yuhuitech & Quantenzitrone!)
+* 🔡 Better font scaling for people that use large fonts
+* 🔥 2054 icons in total
+
+![changelogfile205](https://user-images.githubusercontent.com/31142286/131180186-c36ea4a2-0d19-46f7-aadd-d57b34dceb6e.jpg)
+
 ### 2.0.0
 ###### Released: Aug 11, 2021
 * 🆕 Besides the traditional white icons, there's also a new black version available for light mode users!
 * 🎉 55 new & upated icons (thanks JoelChrono12, Ail1020 & Chaptergy!)
 * 🔥 2004 icons in total
+
+![changelogfile200](https://user-images.githubusercontent.com/31142286/129092642-594acd63-0c59-472a-90ff-495bdc4774b1.jpg)
 
 ### 1.8.0
 ###### Released: Aug 3, 2021
