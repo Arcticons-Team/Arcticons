@@ -206,7 +206,7 @@
     <!-- Email to use when sending icon requests.
         Regular request email address will be used to send bug reports.
         You can leave "premium_request_email" empty to use the regular request's email to send premium icon requests. -->
-    <string name="regular_request_email">youremail@example.com</string>
+    <string name="regular_request_email">arcticons@onnno.nl</string>
     <string name="premium_request_email"></string>
 
     <!-- Icon request email subjects. Leave empty to use default Subject. -->
@@ -279,7 +279,7 @@
         ex: `<![CDATA[ There are - <b>Bold</b> <i>Italic</i> <u>Underline</u> <a href="url">Link</a> ]]>` -->
     <string name="about_desc">
         <![CDATA[
-            The icons are great!
+            A monotone line-based icon pack
         ]]>
     </string>
 
@@ -297,7 +297,7 @@
     <!-- Contributors dialog
         If you want to show contributors dialog unable this, if not then disable this.
         Take a look inside res/xml/contributors.xml to add contributors -->
-    <bool name="show_contributors_dialog">false</bool>
+    <bool name="show_contributors_dialog">true</bool>
 
     <!-- Privacy policy link.
         Leave empty to disable this.
@@ -315,7 +315,7 @@
     -->
     <!-- Enable/disable donation
         Show support development option in the home page. -->
-    <bool name="enable_donation">false</bool>
+    <bool name="enable_donation">true</bool>
 
     <!-- Take a look inside License.java for donation product -->
 
@@ -332,6 +332,6 @@
     <string name="config_json"></string>
 
     <!-- Show intro guides on first run -->
-    <bool name="show_intro">true</bool>
+    <bool name="show_intro">false</bool>
 
 </resources>
