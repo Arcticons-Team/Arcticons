@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Desk Version="1.0" VersionCode="1" Wallpaper="wall0" ScollWallpaper="false" WallpaperFill="0">
+
+    <Dock Source="dock.xml">
+        <DockSetting RowCount="2" IsBackground="true" Background="dock" BackgroundFill="1" />
+        <Notifys>
+            <NotifyItem Value="true" Key="SMS" KeyWord=".SMS" />
+            <NotifyItem Value="true" Key="CALL" KeyWord=".CALL" />
+            <NotifyItem Value="true" Key="GMAIL" KeyWord=".GMAIL" />
+        </Notifys>
+        <DockStyles Height="" Width="" Color="#FFFF9710" LineItemCount="5">
+            <DockIconStyle Height="" Width="" Valign="" Halign="" Margins="{0,1,0,0}" />
+            <SymtemDefualt>
+                <SymtemDockItem Index="0" GestureIntent="">
+                    <Wallpaper Image="phone" Identity="" Margins="" Color="" Fill="1" Border="1"
+                        BorderColor="" BorderLine="" />
+                </SymtemDockItem>
+                <SymtemDockItem Index="1" GestureIntent="">
+                    <Wallpaper Image="contacts" Identity="" Margins="" Color="" Fill="1" Border="1"
+                        BorderColor="" BorderLine="" />
+                </SymtemDockItem>
+                <SymtemDockItem Index="2" GestureIntent="">
+                    <Wallpaper Image="app_drawer" Identity="" Margins="" Color="" Fill="1"
+                        Border="1" BorderColor="" BorderLine="" />
+                </SymtemDockItem>
+                <SymtemDockItem Index="3" GestureIntent="">
+                    <Wallpaper Image="message" Identity="" Margins="" Color="" Fill="1" Border="1"
+                        BorderColor="" BorderLine="" />
+                </SymtemDockItem>
+                <SymtemDockItem Index="4" GestureIntent="">
+                    <Wallpaper Image="browser" Identity="" Margins="" Color="" Fill="1" Border="1"
+                        BorderColor="" BorderLine="" />
+                </SymtemDockItem>
+            </SymtemDefualt>
+            <NoApplicationIcon GestureIntent="">
+                <Wallpaper Image="" Identity="" Margins="" Color="" Fill="1" Border="1"
+                    BorderColor="" BorderLine="" />
+            </NoApplicationIcon>
+            <NullIcon GestureIntent="">
+                <Wallpaper Image="" Identity="" Margins="" Color="" Fill="1" Border="1"
+                    BorderColor="" BorderLine="" />
+            </NullIcon>
+            <NotifyStyle Valign="" Halign="" Margins="{1,1,0,0}" TextValign="" TextHalign="">
+                <Wallpaper Image="" Identity="" Margins="" Color="" Fill="1" Border="1"
+                    BorderColor="" BorderLine="" />
+            </NotifyStyle>
+        </DockStyles>
+    </Dock>
+
+</Desk>
