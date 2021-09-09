@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Leave empty if you don't want to show changelog date -->
+    <string name="changelog_date">August 04, 2019</string>
+
+    <!-- Changelog support html formatting
+    * <b> for Bold
+    * <i> for Italic
+    * <u> for Underline
+    * <a href="linkUrl">Link Text</a> for links -->
+    <string-array name="changelog">
+        <item>First Changelog</item>
+        <item>Second Changelog</item>
+        <item>
+            <![CDATA[
+            Formatted Changelog with <u>Underline</u>, <b>Bold</b>, <i>Italic</i> and <a href="https://your.link.here">Link</a>.
+            ]]>
+        </item>
+    </string-array>
+
+</resources>
