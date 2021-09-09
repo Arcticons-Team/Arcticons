@@ -188,7 +188,7 @@
     <!-- Enable non-mailing app to be able to send icon requests.
         By default, you can only send request using mailing apps like Gmail, Outlook etc.
         If you enable this option, your users will be able to send requests using almost any app, not just mailing apps. -->
-    <bool name="enable_non_mail_app_request">false</bool>
+    <bool name="enable_non_mail_app_request">true</bool>
 
     <!-- Hide missing app count
         In home page there is a card that shows information about how many icons are missing and covered by your icon pack app.
@@ -207,7 +207,7 @@
         Regular request email address will be used to send bug reports.
         You can leave "premium_request_email" empty to use the regular request's email to send premium icon requests. -->
     <string name="regular_request_email">arcticons@onnno.nl</string>
-    <string name="premium_request_email"></string>
+    <string name="premium_request_email">arcticons@onnno.nl</string>
 
     <!-- Icon request email subjects. Leave empty to use default Subject. -->
     <string name="regular_request_email_subject"></string>
@@ -293,16 +293,9 @@
         ex: <string-array name="about_social_links"></string-array>
         -->
     <string-array name="about_social_links">
-        <item>your@email.com</item>
-        <item>https://behance.net/yourusername</item>
-        <item>https://dribbble.com/yourusername</item>
-        <item>https://facebook.com/yourusername</item>
-        <item>https://github.com/yourusername</item>
-        <item>https://instagram.com/yourusername</item>
-        <item>https://pinterest.com/yourusername</item>
-        <item>https://twitter.com/yourusername</item>
-        <item>https://telegram.me/yourusername</item>
-        <item>https://your.webpage.com</item>
+        <item>info@onnno.nl</item>
+        <item>https://github.com/donnnno</item>
+        <item>https://instagram.com/onno_onno_onno</item>
     </string-array>
 
     <!-- Contributors dialog
