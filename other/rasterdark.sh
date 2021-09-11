@@ -4,6 +4,8 @@ SIZES="256"
 EXPORT="../app/src/dark/res"
 ICON="../icons/white"
 
+sh white.sh
+
 for DIR in $(find -name "*.svg")
 do
   FILE=${DIR##*/}
@@ -20,5 +22,4 @@ do
 	;;
     esac
   done
-  rm ${FILE}
 done
