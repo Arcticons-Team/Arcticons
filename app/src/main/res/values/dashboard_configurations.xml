@@ -73,7 +73,7 @@
         -->
     <string name="home_description">
         <![CDATA[
-            <b>Arcticons is a Line based icon-pack</b>
+            <b>Arcticons is a Line based <a href="https://github.com/Donnnno/Arcticons/">open-source</a> icon-pack</b>
         ]]>
     </string>
 
@@ -85,7 +85,7 @@
     <!-- Link to your app's main page. It will be used when your user shares your app using "Share" button.
         Leave this empty to disable the "Share" button.
         You can use special keyword `{{packageName}}`, `{{packageName}}` will be replaced with your app's package name -->
-    <string name="share_link"></string>
+    <string name="share_link">https://f-droid.org/packages/com.donnnno.arcticons</string>
 
     <!-- Enable "Check for update" button.
         It needs the option "config_json" to be configured in order to work -->
@@ -131,10 +131,10 @@
     -->
     <!-- Enable/disable icons sorting
         Disabling this will improve performance and icons will load faster (because there is no sorting to do) -->
-    <bool name="enable_icons_sort">true</bool>
+    <bool name="enable_icons_sort">false</bool>
 
     <!-- Shows icon's name below the icon, in "Icons" section -->
-    <bool name="show_icon_name">true</bool>
+    <bool name="show_icon_name">false</bool>
 
     <!-- Enable if your icon pack includes adaptive icons.
         When enabled, the dashboard shows an Icon Shape changer button -->
@@ -259,7 +259,7 @@
 
         If you want to use a solid color, you can put the hex color code here
         ex: <string name="about_image">#000000</string> -->
-    <string name="about_image">#404040</string>
+    <string name="about_image">graphic</string>
 
     <!-- About profile image
         If you want to use an image from url, just put the url here
@@ -275,7 +275,10 @@
         ex: `<![CDATA[ There are - <b>Bold</b> <i>Italic</i> <u>Underline</u> <a href="url">Link</a> ]]>` -->
     <string name="about_desc">
         <![CDATA[
-            A monotone line-based icon pack
+                <p>A monotone line based icon pack.</p>
+                <p>Based on Frost icon pack.</p>
+                <p>The icons are provided by community endeavour and curated by Donno.</p>
+                <p>You are highly encouraged to try and <a href="https://github.com/Donnnno/Arcticons#contributing">contribute</a>. Its fun!</p>
         ]]>
     </string>
 

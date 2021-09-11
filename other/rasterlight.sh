@@ -4,6 +4,8 @@ SIZES="256"
 EXPORT="../app/src/light/res"
 ICON="../icons/black"
 
+sh black.sh
+
 for DIR in $(find -name "*.svg")
 do
   FILE=${DIR##*/}
@@ -16,9 +18,8 @@ do
     inkscape --export-filename=${NAME}.png --export-width=${SIZE} --export-height=${SIZE} ${NAME}.svg
     case ${SIZE} in
       256)
-	mv ${NAME}.png ${EXPORT}/drawable-mdpi/
+	mv ${NAME}.png ${EXPORT}/drawable-nodpi/
 	;;
     esac
   done
-  rm ${FILE}
 done
