@@ -28,5 +28,7 @@ printf '    };' >> code.xml
 
 rm -rf code.xml
 
+cp -f iconpack.xml ${EXPORT}/res/xml/
 mv -f iconpack.xml ${EXPORT}/res/values/
+cp -f drawable.xml ${EXPORT}/res/xml/
 mv -f drawable.xml ${EXPORT}/assets/
