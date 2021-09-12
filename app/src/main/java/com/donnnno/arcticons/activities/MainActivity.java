@@ -4,8 +4,6 @@ import androidx.annotation.NonNull;
 
 import candybar.lib.activities.CandyBarMainActivity;
 
-import com.donnnno.arcticons.licenses.License;
-
 public class MainActivity extends CandyBarMainActivity {
 
     @NonNull
