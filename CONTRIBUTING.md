@@ -38,5 +38,6 @@ Before contributing SVG icons, open them inside a text editor and check for the 
   - delete all transform attributes
   - combine one of the transform objects with another one
   - un-group the objects
+  - (for Affinity Designer: Export -> SVG -> More... -> [x] Flatten transforms)  
 - **fill-rule:evenodd**: these can just be deleted
 - **scientific e-notation**: replace them with the normal notation
