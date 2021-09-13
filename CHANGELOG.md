@@ -1,3 +1,16 @@
+### 2.1.8
+###### Released: Sep 14, 2021
+* A Brand new dashboard with great new features like: 
+	Build in icon-requests
+	Choosing a launcher to apply the icons to
+	Better about pages
+	Two clock widgets: Analogue & Digital
+	An in app icon count
+	Higher resolution icons than ever before (256px)
+	(Made possible with a huge thanks to Aman Das!)
+* 🎉 80 new & upated icons (thanks Kaiserdragon2, JoelChrono12, Eninkey, Dgcampbe, Fanfu & Aman9Das)
+* 🔥 2183 icons in total!
+
 ### 2.1.0
 ###### Released: Sep 4, 2021
 * 🎉 53 new & upated icons (thanks Kaiserdragon2, Aman9das, Dgcampbe, Bellaston & Quantenzitrone!)

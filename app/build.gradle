@@ -7,8 +7,8 @@ android {
         applicationId "com.donnnno.arcticons"
         minSdkVersion rootProject.ext.MinSdk
         targetSdkVersion rootProject.ext.TargetSdk
-        versionCode 66
-        versionName '2.1.0'
+        versionCode 67
+        versionName '2.1.8'
         multiDexEnabled true
 
         // Naming app bundles
@@ -67,6 +67,4 @@ dependencies {
     implementation 'com.github.zixpo:candybar:3.12.1'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 
-    // TODO: Remove `//` below to enable OneSignal
-    //implementation 'com.onesignal:OneSignal:[4.0.0, 4.99.99]'
 }
