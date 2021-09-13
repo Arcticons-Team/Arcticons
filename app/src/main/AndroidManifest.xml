@@ -1,26 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:installLocation="auto"
-    package="com.donnnno.arcticons">
+    package="com.donnnno.arcticons"
+    android:installLocation="auto">
 
     <supports-screens
-        android:smallScreens="true"
-        android:normalScreens="true"
         android:largeScreens="true"
+        android:normalScreens="true"
+        android:smallScreens="true"
         android:xlargeScreens="true" />
 
     <application
-        tools:ignore="GoogleAppIndexingWarning,GoogleAppIndexingUrlError"
         android:name=".applications.CandyBar"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:networkSecurityConfig="@xml/network_config"
         android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_config"
         android:supportsRtl="true"
         android:theme="@style/CandyBar.Theme.App"
+        tools:ignore="GoogleAppIndexingWarning,GoogleAppIndexingUrlError"
         tools:replace="android:icon"
         tools:targetApi="n">
+        <receiver
+            android:name=".DigitalClockWidget"
+            android:label="Digital Clock Widget"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/digital_clock_widget_info" />
+        </receiver>
 
         <activity
             android:name=".activities.SplashActivity"
@@ -30,18 +42,19 @@
             android:theme="@style/CandyBar.Theme.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
             <meta-data
                 android:name="android.app.shortcuts"
                 android:resource="@xml/shortcuts" />
         </activity>
-
         <activity
             android:name=".activities.MainActivity"
+            android:configChanges="uiMode|orientation|keyboardHidden|screenSize"
             android:launchMode="singleTop"
-            android:theme="@style/CandyBar.Theme.App"
-            android:configChanges="uiMode|orientation|keyboardHidden|screenSize">
+            android:theme="@style/CandyBar.Theme.App">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
@@ -53,6 +66,7 @@
             </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.GET_CONTENT" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.OPENABLE" />
 
@@ -60,11 +74,14 @@
             </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.SET_WALLPAPER" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.PICK" />
+
                 <category android:name="android.intent.category.DEFAULT" />
+
                 <data android:mimeType="image/*" />
             </intent-filter>
             <intent-filter>
@@ -75,22 +92,27 @@
             </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.PICK" />
+
                 <category android:name="android.intent.category.DEFAULT" />
+
                 <data android:mimeType="image/*" />
             </intent-filter>
             <!-- ADW Launcher -->
             <intent-filter>
                 <action android:name="org.adw.launcher.THEMES" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <!-- ADW Launcher Custom Icon Picker -->
             <intent-filter>
                 <action android:name="org.adw.launcher.icons.ACTION_PICK_ICON" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <!-- Apex Launcher -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="com.anddoes.launcher.THEME" />
             </intent-filter>
             <!-- GO Launcher -->
@@ -107,21 +129,25 @@
             <!-- Turbo Launcher Custom Icon Picker -->
             <intent-filter>
                 <action android:name="com.phonemetra.turbo.launcher.icons.ACTION_PICK_ICON" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <!-- Nine Launcher -->
             <intent-filter>
                 <action android:name="com.gridappsinc.launcher.theme.apk_action" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <!-- Lawnchair -->
             <intent-filter>
                 <action android:name="ch.deletescape.lawnchair.ICONPACK" />
+
                 <category android:name="ch.deletescape.lawnchair.PICK_ICON" />
             </intent-filter>
             <!-- Nova Launcher Custom Icon Picker -->
             <intent-filter>
                 <action android:name="com.novalauncher.THEME" />
+
                 <category android:name="com.novalauncher.category.CUSTOM_ICON_PICKER" />
             </intent-filter>
             <!-- Solo Launcher -->
@@ -140,24 +166,28 @@
             <!-- OnePlus Launcher -->
             <intent-filter>
                 <action android:name="net.oneplus.launcher.icons.ACTION_PICK_ICON" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <!-- TSF Shell -->
             <intent-filter>
                 <action android:name="com.tsf.shell.themes" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <!-- Smart Launcher -->
             <intent-filter>
                 <action android:name="ginlemon.smartlauncher.THEMES" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <!-- Sony Launcher -->
             <intent-filter>
                 <action android:name="com.sonymobile.home.ICON_PACK" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-            <!-- GO Launcher & Zero Launcher-->
+            <!-- GO Launcher & Zero Launcher -->
             <intent-filter>
                 <action android:name="com.gau.go.launcherex.theme" />
                 <action android:name="com.zeroteam.zerolauncher.theme" />
@@ -166,6 +196,7 @@
             <!-- +HOME Icon Picker -->
             <intent-filter>
                 <action android:name="jp.co.a_tm.android.launcher.icons.ACTION_PICK_ICON" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <!-- V Launcher -->
@@ -180,30 +211,36 @@
         <provider
             android:name=".services.MuzeiService"
             android:authorities="${applicationId}.ArtProvider"
-            android:label="@string/muzei_art_source_name"
             android:description="@string/muzei_art_source_desc"
             android:exported="true"
+            android:label="@string/muzei_art_source_name"
             android:permission="com.google.android.apps.muzei.api.ACCESS_PROVIDER">
             <intent-filter>
                 <action android:name="com.google.android.apps.muzei.api.MuzeiArtProvider" />
             </intent-filter>
+
             <meta-data
                 android:name="color"
                 android:value="@color/muzei_color" />
         </provider>
 
-        <receiver android:name=".services.ClockWidget" android:label="Clock Widget">
+        <receiver
+            android:name=".services.ClockWidget"
+            android:label="Clock Widget">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
-            <meta-data android:name="android.appwidget.provider" android:resource="@xml/analog_clock" />
-        </receiver>
 
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/analog_clock" />
+        </receiver>
         <!--
             Uncomment the following code to enable Kustom.
             Also remove the `<action ... />`s that you don't want.
         -->
-        <!--<provider
+        <!--
+<provider
             android:name="org.kustom.api.Provider"
             android:authorities="${applicationId}.kustom.provider"
             android:exported="false">
@@ -213,8 +250,8 @@
                 <action android:name="org.kustom.provider.LOCKSCREENS" />
                 <action android:name="org.kustom.provider.KOMPONENTS" />
             </intent-filter>
-        </provider>-->
-
+        </provider>
+        -->
         <!-- This is important -->
         <provider
             android:name="androidx.core.content.FileProvider"
@@ -225,7 +262,6 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_provider_paths" />
         </provider>
-
     </application>
 
 </manifest>
