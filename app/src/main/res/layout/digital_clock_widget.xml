@@ -1,0 +1,22 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/Widget.Arcticons.AppWidget.Container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:theme="@style/Theme.Arcticons.AppWidgetContainer"
+    android:background="#00000000">
+
+    <TextClock
+        android:id="@+id/appwidget_text"
+        style="@style/Widget.Arcticons.AppWidget.InnerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_margin="8dp"
+        android:gravity="center"
+        android:fontFamily="@font/nunito_extralight"
+        android:autoSizeTextType="uniform"
+        android:autoSizeMaxTextSize="1000sp"
+        android:background="#00000000"
+        android:textStyle="normal" />
+</RelativeLayout>
