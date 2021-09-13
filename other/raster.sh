@@ -1,6 +1,5 @@
 #!/bin/bash
 
-sh verify.sh
 sh rasterdark.sh
 sh rasterlight.sh
 
