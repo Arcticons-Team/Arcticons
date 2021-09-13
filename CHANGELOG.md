@@ -1,5 +1,6 @@
 ### 2.1.8
-###### Released: Sep 14, 2021
+###### Released: Sep 13, 2021
+
 * A Brand new dashboard with great new features like: 
 	Build in icon-requests
 	Choosing a launcher to apply the icons to
