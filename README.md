@@ -11,6 +11,8 @@ Arcticons includes support for a lot of launchers like Trebuchet, KISS, Nova, Ap
 
 Submitting icon requests helps a lot, but maintaining the project (as you may imagine) takes a lot of time and effort, so please be patient about adding new icons. Contributions for new icons are always welcome, and no experience with programming is necessary.
 
+## Screenshots
+
 <img src='https://raw.githubusercontent.com/Donnnno/Arcticons/main/github/phonescreenshotsdark.jpg'>
 <img src='https://raw.githubusercontent.com/Donnnno/Arcticons/main/github/phonescreenshotslight.jpg'>
 
