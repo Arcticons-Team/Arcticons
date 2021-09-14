@@ -26,9 +26,20 @@
         tools:replace="android:icon"
         tools:targetApi="n">
         <receiver
-            android:name=".DigitalClockWidget"
-            android:label="Digital Clock Widget"
+            android:name=".DateWidget"
             android:exported="true">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/date_widget_info" />
+        </receiver>
+        <receiver
+            android:name=".DigitalClockWidget"
+            android:exported="true"
+            android:label="Digital Clock Widget">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>

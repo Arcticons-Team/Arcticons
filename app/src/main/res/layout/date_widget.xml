@@ -2,25 +2,25 @@
     style="@style/Widget.Arcticons.AppWidget.Container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:theme="@style/Theme.Arcticons.AppWidgetContainer"
-    android:background="#00000000">
+    android:theme="@style/CandyBar.Theme.App.AppWidgetContainer"
+    android:background="#00000000"
+    >
 
     <TextClock
         android:id="@+id/appwidget_text"
         style="@style/Widget.Arcticons.AppWidget.InnerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_centerInParent="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginEnd="0dp"
-        android:layout_marginBottom="0dp"
-        android:autoSizeMaxTextSize="1000sp"
-        android:autoSizeTextType="uniform"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
         android:background="#00000000"
+        android:layout_margin="0dp"
+        android:autoSizeTextType="uniform"
+        android:autoSizeMaxTextSize="1000sp"
         android:fontFamily="@font/nunito_extralight"
         android:gravity="center"
-        android:textColor="@color/colorAccent"
         android:textStyle="normal"
+        android:format12Hour="E, MMM dd"
+        android:format24Hour="E, MMM dd"
         />
 </RelativeLayout>
