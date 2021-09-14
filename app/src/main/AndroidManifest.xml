@@ -27,6 +27,7 @@
         tools:targetApi="n">
         <receiver
             android:name=".DateWidget"
+            android:label="Date Widget"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />

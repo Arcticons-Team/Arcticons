@@ -259,13 +259,13 @@
 
         If you want to use a solid color, you can put the hex color code here
         ex: <string name="about_image">#000000</string> -->
-    <string name="about_image">graphic</string>
+    <string name="about_image">graphic_about</string>
 
     <!-- About profile image
         If you want to use an image from url, just put the url here
         If you want to use an image stored in the project ("drawable" folder)
         just put the image's name here without the extension (ex: about_profile_image.png -> about_profile_image) -->
-    <string name="about_profile_image">#008040</string>
+    <string name="about_profile_image">ic_launcher_playstore</string>
 
     <!-- The BIG text which is shown above the description and below the about profile image -->
     <string name="about_title">Arcticons</string>
@@ -275,8 +275,7 @@
         ex: `<![CDATA[ There are - <b>Bold</b> <i>Italic</i> <u>Underline</u> <a href="url">Link</a> ]]>` -->
     <string name="about_desc">
         <![CDATA[
-                <p>A monotone line based icon pack.</p>
-                <p>Based on Frost icon pack.</p>
+                <p>A monotone line based icon pack based on <a href="https://github.com/dkanada/frost">Frost</a> icon pack.</p>
                 <p>The icons are provided by community endeavour and curated by Donno.</p>
                 <p>You are highly encouraged to try and <a href="https://github.com/Donnnno/Arcticons#contributing">contribute</a>. Its fun!</p>
         ]]>
