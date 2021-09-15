@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:theme="@style/RippleStyle">
+
+    <LinearLayout
+        android:id="@+id/check_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="end">
+
+        <FrameLayout
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_margin="6dp">
+
+            <ImageView
+                android:id="@+id/checkmark"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/inner_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/icon_thumbnail_padding"
+        android:layout_marginBottom="@dimen/icon_thumbnail_padding">
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/icon_thumbnail_padding"
+            android:layout_marginStart="@dimen/icon_thumbnail_padding"
+            android:layout_marginRight="@dimen/icon_thumbnail_padding"
+            android:layout_marginEnd="@dimen/icon_thumbnail_padding">
+
+            <candybar.lib.utils.views.HeaderView
+                android:id="@+id/icon"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:heightRatio="1"
+                app:widthRatio="1" />
+
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_content_small"
+            android:gravity="center"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:paddingLeft="@dimen/button_margin"
+            android:paddingStart="@dimen/button_margin"
+            android:paddingRight="@dimen/button_margin"
+            android:paddingEnd="@dimen/button_margin"
+            android:layout_marginTop="@dimen/button_margin"
+            android:textColor="?android:attr/textColorPrimary"
+            app:fontFamily="@font/regular" />
+
+    </LinearLayout>
+
+</FrameLayout>

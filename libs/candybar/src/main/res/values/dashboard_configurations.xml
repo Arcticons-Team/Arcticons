@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+
+    <!-- ======================================================================================= -->
+    <!-- ============================== DASHBOARD CONFIGURATIONS =============================== -->
+    <!-- ======================================================================================= -->
+
+    <!--
+        CONFIG: DEFAULT THEME
+    -->
+    <!-- Set the default theme
+        Available choices:
+        - auto
+        - light
+        - dark
+    -->
+    <string name="default_theme">auto</string>
+
+
+    <!--
+        CONFIG: MUZEI
+    -->
+    <!-- Muzei art source name -->
+    <string name="muzei_art_source_name">Your Art Source Name</string>
+
+    <!-- Muzei art source description -->
+    <string name="muzei_art_source_desc">Your Art Source Description</string>
+
+    <!-- Muzei base color -->
+    <color name="muzei_color">#0082B4</color>
+
+    <!--
+        CONFIG: KUSTOM
+    -->
+    <!-- Kustom Pack title. Defaults to the app's name -->
+    <string name="kustom_pack_title">@string/app_name</string>
+
+    <!-- Description that would be shown in Kustom apps -->
+    <string name="kustom_pack_description">Cool Kustom presets</string>
+
+    <!--
+        CONFIG: HOME
+    -->
+    <!-- Home title. This will be shown in the home page -->
+    <string name="home_title">CandyBar</string>
+
+    <!-- Home image
+        If you want to use an image from url, just put the url here
+        If you want to use an image stored in the project ("drawable" folder)
+        just put the image's name here without the extension (ex: home_image.png -> home_image)
+
+        If you want to use a solid color, you can put the hex color code here
+        ex: <string name="home_image">#000000</string>
+        -->
+    <string name="home_image">https://drive.google.com/uc?id=0B0f4ypHfNKm5bVo5aHFOLVZpNlE</string>
+
+    <!-- Home image style
+        Available choices:
+        - card_square
+        - card_landscape
+        - landscape
+        - square
+    -->
+    <string name="home_image_style">card_landscape</string>
+
+    <!-- Description which will be shown in the home page.
+        Put your markup/text inside of `<![CDATA[` and `]]>`
+        ex: `<![CDATA[ There are - <b>Bold</b> <i>Italic</i> <u>Underline</u> <a href="url">Link</a> ]]>`
+
+        If you don't want to show any description, just leave this empty
+        ex: <string name="home_description"></string>
+        -->
+    <string name="home_description">Some Desc</string>
+
+    <!-- Link to your app's Rate and Review page.
+        Leave this empty to disable the "Rate and Review" button.
+        You can use special keyword `{{packageName}}`, `{{packageName}}` will be replaced with your app's package name -->
+    <string name="rate_and_review_link">https://play.google.com/store/apps/details?id={{packageName}}</string>
+
+    <!-- Link to your app's main page. It will be used when your user shares your app using "Share" button.
+        Leave this empty to disable the "Share" button.
+        You can use special keyword `{{packageName}}`, `{{packageName}}` will be replaced with your app's package name -->
+    <string name="share_link">https://play.google.com/store/apps/details?id={{packageName}}</string>
+
+    <!-- Enable "Check for update" button.
+        It needs the option "config_json" to be configured in order to work -->
+    <bool name="enable_check_update">false</bool>
+
+    <!-- More apps at Google Play Store
+        Link to Google Play Store developer page.
+        If you don't want to show this, just leave this empty -->
+    <string name="google_play_dev">https://play.google.com/store/apps/dev?id=your_developer_id</string>
+
+    <!-- Enables the new flat and outline styled cards everywhere -->
+    <bool name="use_flat_card">false</bool>
+
+
+    <!--
+        CONFIG: NAVIGATION VIEW HEADER
+    -->
+    <!-- Navigation view header image
+        If you want to use an image from url, just put the url here
+        If you want to use an image stored in the project ("drawable" folder)
+        just put the image's name here without the extension
+        (ex: navigation_view_header.png -> navigation_view_header)
+
+        If you want to use a solid color, you can put the hex color code here
+        ex: <string name="navigation_view_header">#000000</string>
+        -->
+    <string name="navigation_view_header">https://drive.google.com/uc?id=0B0f4ypHfNKm5VXlwejdaZ3ZRYVE</string>
+
+    <!-- Navigation view header text
+        Leave empty if you don't want to show any text -->
+    <string name="navigation_view_header_title">CandyBar</string>
+
+
+    <!--
+        CONFIG: APPLY
+    -->
+    <!-- Enable/disable apply section -->
+    <bool name="enable_apply">true</bool>
+
+
+    <!--
+        CONFIG: ICONS
+    -->
+    <!-- Enable/disable icons sorting
+        Disabling this will improve performance and icons will load faster (because there is no sorting to do) -->
+    <bool name="enable_icons_sort">true</bool>
+
+    <!-- Shows icon's name below the icon, in "Icons" section -->
+    <bool name="show_icon_name">true</bool>
+
+    <!-- Enable if your icon pack includes adaptive icons.
+        When enabled, the dashboard shows an Icon Shape changer button -->
+    <bool name="includes_adaptive_icons">false</bool>
+
+    <!-- Icons section will read icons from drawable.xml same as Nova Launcher
+        Put drawable.xml inside the "xml" folder -->
+
+
+    <!--
+        CONFIG: ICON REQUEST
+    -->
+    <!-- Enable or disable regular icon request -->
+    <bool name="enable_icon_request">true</bool>
+
+    <!-- Enable regular icon request limit
+        When enabled users will be able to request only the specified number of icons.
+        The number of icon a user can request should be specified in the "icon_request_limit" section -->
+    <bool name="enable_icon_request_limit">false</bool>
+
+    <!-- Limit the numbers of icon a user can request
+        IGNORE if "enable_icon_request_limit" option is disabled
+        ex: If you set icon request limit to 10, a user will able to request only 10 icons in total
+        After making 10 icon request the user will not be able to request again.
+
+        See "reset_icon_request_limit" option to learn how to reset the limit. -->
+    <integer name="icon_request_limit">10</integer>
+
+    <!-- Reset regular icon request limit every update
+        IGNORE if "enable_icon_request_limit" option is disabled
+        ex: If you want to limit the number of icons a user can request to 10, set "icon_request_limit" option (above) to 10,
+        but you also want users able to make 10 request again after update, then enable this option -->
+    <bool name="reset_icon_request_limit">false</bool>
+
+    <!-- Enable JSON check before Requesting Icons -->
+    <bool name="json_check_before_request">false</bool>
+
+    <!-- Enable or disable premium icon request
+        In premium request, your users will purchase a premium request product (which you specify in the "License.java" file)
+        Later they can use the premium request product to do premium icon request.
+        It's something like, paying a sum of money for getting requested icons faster. -->
+    <bool name="enable_premium_request">false</bool>
+
+    <!-- Take a look inside "License.java" for premium request product -->
+
+    <!-- Enable non-mailing app to be able to send icon requests.
+        By default, you can only send request using mailing apps like Gmail, Outlook etc.
+        If you enable this option, your users will be able to send requests using almost any app, not just mailing apps. -->
+    <bool name="enable_non_mail_app_request">false</bool>
+
+    <!-- Hide missing app count
+        In home page there is a card that shows information about how many icons are missing and covered by your icon pack app.
+        If you want to hide the information then you should enable this -->
+    <bool name="hide_missing_app_count">false</bool>
+
+    <!-- Method to use for icon request. Value can be "email" or "arctic".
+        `email` -> Sends icon requests using email
+        `arctic` -> Sends icon requests using Arctic Manager
+
+        You can leave "premium_request_method" empty to use the regular request's method to send premium icon requests. -->
+    <string name="regular_request_method"></string>
+    <string name="premium_request_method"></string>
+
+    <!-- Email to use when sending icon requests.
+        Regular request email address will be used to send bug reports.
+        You can leave "premium_request_email" empty to use the regular request's email to send premium icon requests. -->
+    <string name="regular_request_email"></string>
+    <string name="premium_request_email"></string>
+
+    <!-- Icon request email subjects. Leave empty to use default Subject. -->
+    <string name="regular_request_email_subject"></string>
+    <string name="premium_request_email_subject"></string>
+
+    <!-- API keys for Arctic Manager.
+        You can leave "premium_request_arctic_api_key" empty to use the regular request's arctic api key to send premium icon requests. -->
+    <string name="regular_request_arctic_api_key"></string>
+    <string name="premium_request_arctic_api_key"></string>
+
+
+    <!--
+        CONFIG: CLOUD WALLPAPERS
+    -->
+    <!-- Wallpaper JSON link
+        If your icon pack doesn't contain any wallpaper, just leave this empty
+        <string name="wallpaper_json"></string>
+
+        If you want to separate wallpaper app from icon pack and keep wallpapers section shown in navigation drawer,
+        just put your wallpaper app's package name here
+        ex: com.dm.wallpaper.board.demo
+        <string name="wallpaper_json">com.dm.wallpaper.board.demo</string>
+        Now when "Wallpaper" section is selected in your icon pack app's navigation drawer,
+        your wallpaper app will be launched if it's installed. If it's not installed, then the Play Store page
+        will be opened to install your wallpaper app. -->
+    <string name="wallpaper_json"></string>
+
+    <!-- Enable wallpaper downloading
+        If disabled, your users will only be able to apply wallpapers from the dashboard.
+        They will not be able to to download wallpapers.  -->
+    <bool name="enable_wallpaper_download">true</bool>
+
+    <!-- Show name and author below wallpapers
+        If you don't want to show name and author below wallpapers, just disable it (set it to `false`) -->
+    <bool name="wallpaper_show_name_author">true</bool>
+
+    <!-- Wallpapers grid preview style
+        Available choices:
+        - square
+        - landscape
+        - portrait
+    -->
+    <string name="wallpaper_grid_preview_style">square</string>
+
+
+    <!--
+        CONFIG: ABOUT
+    -->
+    <!-- About header image
+        If you want to use an image from url, just put the url here
+        If you want to use an image stored in the project ("drawable" folder)
+        just put the image's name here without the extension (ex: about_image.png -> about_image)
+
+        If you want to use a solid color, you can put the hex color code here
+        ex: <string name="about_image">#000000</string> -->
+    <string name="about_image">https://drive.google.com/uc?id=0B0f4ypHfNKm5WV9JOG9Fb2h2Qms</string>
+
+    <!-- About profile image
+        If you want to use an image from url, just put the url here
+        If you want to use an image stored in the project ("drawable" folder)
+        just put the image's name here without the extension (ex: about_profile_image.png -> about_profile_image) -->
+    <string name="about_profile_image">https://lh3.googleusercontent.com/-KBI2HdgNtN0/AAAAAAAAAAI/AAAAAAAABpc/icnuAgrjOT4/s256-p-rw-no/photo.jpg</string>
+
+    <!-- The BIG text which is shown above the description and below the about profile image -->
+    <string name="about_title">CandyBar Material Dashboard</string>
+
+    <!-- The description which is shown below the about title.
+        Put your markup/text inside of `<![CDATA[` and `]]>`
+        ex: `<![CDATA[ There are - <b>Bold</b> <i>Italic</i> <u>Underline</u> <a href="url">Link</a> ]]>` -->
+    <string name="about_desc">Some Desc</string>
+
+    <!-- Social links which will be shown in the about section.
+
+        Supported links:
+        Email, Behance, Dribbble, Facebook, Github, Instagram, Pinterest, Twitter and Telegram
+        The link will be marked as regular website if doesn't listed above
+
+        If you don't want to show social link, just set about_social_links to empty
+        ex: <string-array name="about_social_links"></string-array>
+        -->
+    <string-array name="about_social_links"></string-array>
+
+    <!-- Contributors dialog
+        If you want to show contributors dialog unable this, if not then disable this.
+        Take a look inside res/xml/contributors.xml to add contributors -->
+    <bool name="show_contributors_dialog">false</bool>
+
+    <!-- Privacy policy link.
+        Leave empty to disable this.
+        You can generate one from https://app-privacy-policy-generator.firebaseapp.com/ -->
+    <string name="privacy_policy_link"></string>
+
+    <!-- Terms and Conditions link.
+        Leave empty to disable this.
+        You can generate one from https://app-privacy-policy-generator.firebaseapp.com/ -->
+    <string name="terms_and_conditions_link"></string>
+
+
+    <!--
+        CONFIG: DONATE
+    -->
+    <!-- Enable/disable donation
+        Show support development option in the home page. -->
+    <bool name="enable_donation">false</bool>
+
+    <!-- Take a look inside License.java for donation product -->
+
+    <!--
+        CONFIG: MISC
+    -->
+    <!-- Closes app if the app is installed outside of Play store -->
+    <bool name="playstore_check_enabled">false</bool>
+
+    <!-- Link to CandyBar config JSON
+        You can use this to control your dashboard remotely.
+        Learn more at https://github.com/zixpo/candybar-sample/wiki/Setting-up-Config-JSON -->
+    <string name="config_json"></string>
+
+    <!-- Show intro guides on first run -->
+    <bool name="show_intro">false</bool>
+
+    <!-- These are not documented. As you can guess, these are not for general use -->
+    <string name="version_from_playstore">{{appVersion}} R</string>
+    <string name="version_outside_playstore">{{appVersion}}</string>
+    <string name="appfilter_item"><![CDATA[<item component=\"ComponentInfo{{{component}}}\" drawable=\"{{drawable}}\" />]]></string>
+
+    <!-- These are deprecated and replaced with other items. These are only here so that things don't break. -->
+    <!-- TODO: Remove them in v3.10.0 -->
+    <!-- TODO: Add default values to request options when removing these options -->
+    <string name="dev_email">your@email.com</string>
+    <string name="request_email_subject"></string>
+    <string name="arctic_manager_api_key"></string>
+
+</resources>

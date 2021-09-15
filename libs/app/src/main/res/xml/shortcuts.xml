@@ -1,0 +1,78 @@
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:targetApi="25">
+
+
+    <!-- Shortcut For Apply -->
+    <shortcut
+        android:enabled="true"
+        android:icon="@drawable/ic_shortcut_apply"
+        android:shortcutId="nav_apply"
+        android:shortcutShortLabel="@string/navigation_view_apply">
+
+        <!-- Make sure to check targetPackage and targetClass (below) it match to your app package name
+        * If one of them doesn't match with your app package name, shortcut will not works -->
+
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="com.candybar.dev"
+            android:targetClass="com.candybar.dev.activities.MainActivity">
+
+            <extra
+                android:name="position"
+                android:value="1" />
+
+        </intent>
+
+        <categories android:name="android.shortcut.conversation" />
+    </shortcut>
+
+
+    <!-- Shortcut For Icon Request -->
+    <shortcut
+        android:enabled="true"
+        android:icon="@drawable/ic_shortcut_request"
+        android:shortcutId="nav_request"
+        android:shortcutShortLabel="@string/navigation_view_request">
+
+        <!-- Make sure to check targetPackage and targetClass (below) it match to your app package name
+        * If one of them doesn't match with your app package name, shortcut will not works -->
+
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="com.candybar.dev"
+            android:targetClass="com.candybar.dev.activities.MainActivity">
+
+            <extra
+                android:name="position"
+                android:value="3" />
+
+        </intent>
+
+        <categories android:name="android.shortcut.conversation" />
+    </shortcut>
+
+    <!-- Shortcut For Wallpapers -->
+    <shortcut
+        android:enabled="true"
+        android:icon="@drawable/ic_shortcut_wallpapers"
+        android:shortcutId="nav_wallpapers"
+        android:shortcutShortLabel="@string/navigation_view_wallpapers">
+
+        <!-- Make sure to check targetPackage and targetClass (below) it match to your app package name
+        * If one of them doesn't match with your app package name, shortcut will not works -->
+
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="com.candybar.dev"
+            android:targetClass="com.candybar.dev.activities.MainActivity">
+
+            <extra
+                android:name="position"
+                android:value="4" />
+
+        </intent>
+
+        <categories android:name="android.shortcut.conversation" />
+    </shortcut>
+</shortcuts>

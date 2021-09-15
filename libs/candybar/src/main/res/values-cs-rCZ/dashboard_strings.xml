@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="splash_screen_title">CandyBar Material Dashboard</string>
+    <!-- Navigation View -->
+    <string name="navigation_view_home">Přehled</string>
+    <string name="navigation_view_apply">Použít</string>
+    <string name="navigation_view_icons">Ikony</string>
+    <string name="navigation_view_request">Žádost o ikony</string>
+    <string name="navigation_view_wallpapers">Tapety</string>
+    <string name="navigation_view_settings">Nastavení</string>
+    <string name="navigation_view_faqs">FAQ</string>
+    <string name="navigation_view_about">O aplikaci</string>
+    <string name="navigation_view_donate">Podpora vývojáře</string>
+    <!-- Muzei -->
+    <string name="muzei_settings">Nastavení Muzei</string>
+    <string name="minute">Minuta</string>
+    <string name="hour">Hodina</string>
+    <string name="save_setting">Uložit</string>
+    <string name="muzei_refresh_duration">Rychlost aktualizace</string>
+    <string name="muzei_wifi_only">Aktualizovat pouze na WiFi</string>
+    <string name="muzei_downloaded_only">Načíst pouze stažené tapety</string>
+    <string name="muzei_settings_ignored">Balíček ikon neobsahuje tapety, nastavení ignorováno.</string>
+    <string name="muzei_settings_saved">Nastavení uložena</string>
+    <!-- Menu -->
+    <string name="menu_search">Hledat</string>
+    <string name="menu_save">Uložit do zařízení</string>
+    <string name="menu_select_all">Vybrat vše</string>
+    <string name="menu_wallpaper_crop">Oříznout tapetu</string>
+    <string name="menu_apply_homescreen">Domovská obrazovka</string>
+    <string name="menu_apply_lockscreen">Zamykací obrazovka</string>
+    <string name="menu_apply_homescreen_lockscreen">Domovská a zamykací obrazovka</string>
+    <!-- Dialog -->
+    <string name="open">Otevřít</string>
+    <string name="close">Zavřít</string>
+    <string name="clear">Vyčistit</string>
+    <string name="ok">OK</string>
+    <string name="install">Instalovat</string>
+    <string name="donate">Přispět</string>
+    <string name="update">Aktualizovat</string>
+    <string name="search_noresult">Nebyly nalezeny žádné výsledky pro \"%s\"</string>
+    <string name="search_faqs">Otázky nebo odpovědi</string>
+    <string name="search_icon">Název ikony</string>
+    <!-- Update -->
+    <string name="checking_for_update">Kontrola aktualizací…</string>
+    <string name="update_available">Aktualizace k dispozici!</string>
+    <string name="no_update_available">Používáte nejnovější verzi!</string>
+    <!-- Changelog -->
+    <string name="changelog_version">Verze</string>
+    <!-- InAppBilling -->
+    <string name="billing_load_product_failed">Nelze načíst produkty s nákupem v aplikaci</string>
+    <!-- License -->
+    <string name="license_checking">Kontrolování licence…</string>
+    <string name="license_check">Kontrola licence</string>
+    <string name="license_check_success">Kontrola licence byla úspěšná, děkujeme za stažení aplikace z Obchodu Play.</string>
+    <string name="license_check_failed">Kontrola licence selhala, tuto aplikaci jste nestáhli z Obchodu Play.
+        Aplikaci nebude možné používat.</string>
+    <string name="license_check_retry">Nelze zkontrolovat licenci, zkuste to znovu za chvíli.</string>
+    <!-- Play Store Installation Check -->
+    <string name="playstore_check">Kontrola Obchodu Play</string>
+    <string name="playstore_check_success">Děkujeme za instalaci aplikace z Obchodu Play. Užijte si to. Užívejte si.</string>
+    <string name="playstore_check_failed">Vypadá to, že jste nainstalovali tento balíček ikon mimo Obchod Play.
+        Nebudete jej moci používat.</string>
+    <!-- Share -->
+    <string name="share_app_title">Jo! Podívejte se na %s</string>
+    <string name="share_app_body">Podívejte se na %1$s, tento balíček ikon je opravdu skvělý! %2$s</string>
+    <!-- Tap Intro -->
+    <string name="tap_intro_home_navigation">Navigační panel</string>
+    <string name="tap_intro_home_navigation_desc">Klepnutím sem nebo přejetím z levého okraje obrazovky otevřete navigační panel</string>
+    <string name="tap_intro_home_apply">Použít balíček ikon</string>
+    <string name="tap_intro_home_apply_desc">Klepnutím sem použijete %s</string>
+    <string name="tap_intro_icons_search">Hledat</string>
+    <string name="tap_intro_icons_search_desc">Klepnutím sem vyhledejte ikony</string>
+    <string name="tap_intro_request_select">Vybrat chybějící aplikace</string>
+    <string name="tap_intro_request_select_desc">Klepnutím sem vyberete chybějící aplikace pro požadavek na další ikony</string>
+    <string name="tap_intro_request_select_all">Vybrat všechny chybějící aplikace</string>
+    <string name="tap_intro_request_select_all_desc">Klepnutím sem vyberete všechny chybějící aplikace pro požadavek na další ikony</string>
+    <string name="tap_intro_request_send">Poslat požadavek na ikonu</string>
+    <string name="tap_intro_request_send_desc">Klepnutím sem odešlete chybějící aplikace</string>
+    <string name="tap_intro_request_premium">Prémiový požadavek na ikony</string>
+    <string name="tap_intro_request_premium_desc">Klepnutím sem zakoupíte balíček prémiových ikon,
+        to znamená že můžete rychleji získat ikony pro požadované aplikace.</string>
+    <string name="tap_intro_wallpapers_option">Možnosti tapety</string>
+    <string name="tap_intro_wallpapers_option_desc">Klepnutím a podržením zobrazíte možnosti pro tapetu %s.</string>
+    <string name="tap_intro_wallpapers_option_desc_download">stáhnout nebo</string>
+    <string name="tap_intro_wallpapers_preview">Náhled tapety</string>
+    <string name="tap_intro_wallpapers_preview_desc">Klepnutím sem zobrazíte plnou velikost tapety</string>
+    <string name="tap_intro_wallpaper_preview_save">Uložit tapetu</string>
+    <string name="tap_intro_wallpaper_preview_save_desc">Klepnutím sem stáhněte a uložte tapetu do zařízení, takže ji můžete použít později</string>
+    <string name="tap_intro_wallpaper_preview_apply">Použití tapetu</string>
+    <string name="tap_intro_wallpaper_preview_apply_desc">Klepnutím sem nastavíte tapetu jako pozadí domovské obrazovky</string>
+    <!-- Home -->
+    <string name="home_more_apps_header">Další aplikace</string>
+    <string name="home_more_apps">Zkontrolovat ostatní aplikace zveřejněné v Obchodu Play</string>
+    <string name="home_rate_and_review">Ohodnotit</string>
+    <string name="home_apply_icon_pack">Použít %s</string>
+    <string name="home_donate">Přispět</string>
+    <string name="home_donate_desc">Podpořte vývoj pro tento balíček ikon</string>
+    <string name="home_icons">Vlastní ikony</string>
+    <string name="home_icon_dimension">Rozměr ikony: %s pixelů</string>
+    <string name="home_loud_wallpapers">Tapety v cloudu: %d</string>
+    <string name="home_muzei">Živé tapety Muzei</string>
+    <string name="home_icon_request_installed_apps">Celkem nainstalovaných aplikací: %d</string>
+    <string name="home_icon_request_themed_apps">Aktivní ikony: %d</string>
+    <string name="home_icon_request_missed_apps">Chybějící aplikace: %d</string>
+    <!-- Apply -->
+    <string name="apply_installed">Nainstalovaný spouštěč</string>
+    <string name="apply_supported">Podporované spouštěče</string>
+    <string name="apply_manual">Spouštěč %1$s nepodporuje přímé aktivování, ale můžete aktualizovat %2$s ručně v nastavení spouštěče.</string>
+    <string name="apply_manual_evie">Podržte prst na domovské obrazovce –⁠ Nastavení –⁠ Balíček ikon –⁠ vyberte %s.</string>
+    <string name="apply_launch_failed">Nelze otevřít nastavení %s</string>
+    <string name="apply_launcher_not_installed">Spouštěč %s není nainstalován. Chcete otevřít
+        Obchod Play pro jeho stažení a instalaci?</string>
+    <string name="apply_launcher_not_installable">Spouštěč %s není nainstalován. Zkuste to prosím znovu po instalaci spouštěče.</string>
+    <string name="apply_cmtheme_not_available">CM Theme Manager není na tomto zařízení k dispozici</string>
+    <string name="apply_cmtheme_failed">Nelze spustit CM Theme Manager, můžete zkusit ručně použít balíček ikon v nastavení.</string>
+    <string name="apply_lg_home">Pro použití tohoto balíčku ikon otevřete: Nastavení –⁠ Obrazovka –⁠ Domovská obrazovka –⁠ Motivy</string>
+    <string name="apply_lg_home_not_available">LG Home není k dispozici</string>
+    <string name="apply_lg_home_failed">Nelze otevřít nastavení LG Home, můžete zkusit ručně použít balíček ikon v nastavení.</string>
+    <string name="apply_lg_home_nougat">LG Home s Android Nougat již nepodporuje vlastní ikony. K použití balíčku ikon potřebujete vlastní spouštěč.</string>
+    <string name="apply_launcher_incompatible">Spouštěč %s nepodporuje žádný balíček ikon, takže tento balíček ikon nemůžete s tímto spouštěčem použít. Můžete zkusit aplikaci třetí strany použít tento balíček ikon ve spouštěči %2$s. Chcete nainstalovat?</string>
+    <!-- Icons -->
+    <string name="icons_load_failed">Ikony nelze načíst</string>
+    <string name="icon_shape">Tvar ikon</string>
+    <!-- Request -->
+    <string name="request_title">Žádost o ikony</string>
+    <string name="request_not_selected">Vyberte aplikace, o které chcete požádat</string>
+    <string name="request_not_requested">Nepožádáno</string>
+    <string name="request_already_requested">Již požádáno</string>
+    <string name="request_building">Připravuji požadavek…</string>
+    <string name="request_arctic_sending">Odesílání požadavku do Artic Manager...</string>
+    <string name="request_arctic_error">Při odesílání požadavku do Artic Manager došlo k chybě. Chyba je %s</string>
+    <string name="request_arctic_success">Požadavek byl úspěšně odeslán do Arctic Manager</string>
+    <string name="request_fetching_data">Načítání nejnovějších dat…</string>
+    <string name="request_build_failed">Nelze sestavit požadavek</string>
+    <string name="request_appfilter_failed">Nelze načíst appfilter.xml</string>
+    <string name="request_requested">Zkontrolujte prosím znovu svůj požadavek.
+        Protože se pokoušíte požádat o aplikaci, která již byla vyžádána.</string>
+    <string name="request_email_client">Vyberte aplikaci, kterou chcete použít k odeslání žádosti o ikonu</string>
+    <string name="request_app_disabled">Používáte starší verzi tohoto balíčku ikon. Požadované ikony mohou být obsaženy v nejnovější verzi. Pro vyžádání ikon aktualizujte aplikaci na nejnovější verzi.</string>
+    <string name="connection_error_long">Nelze načíst data ze serveru. Zkontrolujte prosím své síťové připojení.</string>
+    <string name="unable_to_load_config">Při načítání/čtení dat ze serveru došlo k chybě.</string>
+    <string name="request_limit">Počet ikon, o které můžete zdarma požádat: %d.</string>
+    <string name="request_used">Počet ikon, o které jste již požádali: %d.</string>
+    <string name="request_limit_buy">Pro více požadavků na ikony si můžete zakoupit prémiový požadavek.</string>
+    <string name="request_limit_reset">Limit požadavku na ikonu bude resetován při každé aktualizaci.</string>
+    <!-- Regular Request -->
+    <string name="regular_request">Standardní požadavek na ikony</string>
+    <string name="regular_request_desc">Vývojář se pokusí zahrnout vaše požadavky v nadcházejících aktualizacích.</string>
+    <string name="regular_request_count">Celkem požadavků: %d</string>
+    <string name="regular_request_used">Nárokováno požadavků: %d</string>
+    <string name="regular_request_available">Dostupných požadavků: %d</string>
+    <!-- Premium Request -->
+    <string name="premium_request">Prémiový požadavek na ikony</string>
+    <string name="premium_request_no_internet">Před odesláním prémiového požadavku se ujistěte, že je váš telefon připojen k Internetu</string>
+    <string name="premium_request_desc">Prémiové požadavky jsou zpoplatněny, využitím této možnosti můžete získat požadavek dříve, jak u standardních požadavků.</string>
+    <string name="premium_request_buy">Koupit</string>
+    <string name="premium_request_count">Celkem požadavků: %d</string>
+    <string name="premium_request_used">Nárokováno požadavků: %d</string>
+    <string name="premium_request_available">Dostupných požadavků: %d</string>
+    <string name="premium_request_already_purchased">Stále máte %d prémiových požadavků.
+        Před nákupem balíčku s prémiovým požadavkem musíte všechny použít.</string>
+    <string name="premium_request_limit">Zbývající počet prémiových požadavků je %d,</string>
+    <string name="premium_request_limit1">ale vybrali jste %d aplikací.
+        \n\nJe třeba použít všechny své prémiové požadavky, než budete znovu používat pravidelný požadavek zdarma.</string>
+    <string name="premium_request_consume_failed">Nelze použít prémiový požadavek, ujistěte se, že máte stabilní připojení k Internetu a zkuste to znovu.
+        Přejděte do Nastavení pro obnovení prémiových požadavků.</string>
+    <string name="premium_request_rebuilding">Obnova prémiového požadavku…</string>
+    <string name="premium_request_rebuilding_empty">Nevytvořili jste prémiový požadavek</string>
+    <string name="premium_request_exist">Stále máte prémiový požadavek na balíček ikon.
+        Otevřete nastavení, vyberte \"Obnovit nákupy\" pro jeho obnovení.</string>
+    <string name="premium_request_required">Pro požadavky na ikonu je třeba zakoupit prémiový požadavek na ikony</string>
+    <!-- Wallpapers -->
+    <string name="wallpaper_new_added">Nová tapeta</string>
+    <string name="wallpaper_already_downloaded">Tapeta je již stažena</string>
+    <string name="wallpaper_downloading">Stahování tapety …</string>
+    <string name="wallpaper_download_failed">Nelze stáhnout tapetu</string>
+    <string name="wallpaper_loading">Načítání tapety …</string>
+    <string name="wallpaper_applying">Použití tapety …</string>
+    <string name="wallpaper_applied">Tapeta byla použita</string>
+    <string name="wallpaper_apply_failed">Nelze použít tapetu</string>
+    <string name="wallpaper_apply_cancelled">Použití tapety bylo zrušeno</string>
+    <string name="connection_failed">Nelze načíst data ze serveru</string>
+    <string name="wallpaper_apply">Použití tapetu</string>
+    <string name="wallpaper_save_to_device">Uložit tapetu</string>
+    <!-- Preferences -->
+    <string name="pref_data_header">Data a mezipaměť</string>
+    <string name="pref_data_cache">Vymazat mezipaměť</string>
+    <string name="pref_data_cache_desc">Odstranit mezipaměť obrázků z úložiště, které bylo vytvořeno při výběru obrázku
+	    z této aplikace, požadavku o chybějící aplikace a po načtení miniatur tapet z cloudu.</string>
+    <string name="pref_data_cache_size">Velikost mezipaměti: %s</string>
+    <string name="pref_data_cache_clear_dialog">Opravdu chcete vymazat mezipaměť?</string>
+    <string name="pref_data_cache_cleared">Mezipaměť vymazána</string>
+    <string name="pref_data_request">Vymazat data požadavků na ikony</string>
+    <string name="pref_data_request_desc">Odebrat data ikon, která byla použita pro vytvoření požadavku
+        chybějících aplikací.</string>
+    <string name="pref_data_request_clear_dialog">Opravdu chcete smazat data již požadovaných ikon?</string>
+    <string name="pref_data_request_cleared">Data požadavků vymazána</string>
+    <string name="pref_premium_request_header">Prémiový požadavek na ikony</string>
+    <string name="pref_premium_request_restore">Obnovit nákupy</string>
+    <string name="pref_premium_request_restore_desc">Obnovit balíček prémiových požadavků po přeinstalaci balíčku ikon</string>
+    <string name="pref_premium_request_restore_success">Prémiový požadavek obnoven</string>
+    <string name="pref_premium_request_restore_empty">Nemáte žádné zakoupené balíčky</string>
+    <string name="pref_premium_request_rebuild">Znovu sestavit prémiový požadavek na ikony</string>
+    <string name="pref_premium_request_rebuild_desc">Získat všechna potřebná data k odeslání prémiového požadavku</string>
+    <string name="pref_theme_header">Motiv</string>
+    <string name="pref_theme_dark">Tmavý motiv</string>
+    <string name="pref_theme_dark_desc">Pro motiv aplikace použít tmavou barvu</string>
+    <string name="pref_wallpaper_header">Tapeta</string>
+    <string name="pref_wallpaper_location">Umístění uložení tapety</string>
+    <string name="pref_language_header">Jazyk</string>
+    <string name="pref_others_header">Ostatní</string>
+    <string name="pref_others_report_bugs">Nahlásit chybu</string>
+    <string name="pref_others_changelog">Seznam změn</string>
+    <string name="pref_others_reset_tutorial">Resetovat návody</string>
+    <string name="pref_others_reset_tutorial_reset">Reset návodů</string>
+    <!-- Themes -->
+    <string name="theme_name_auto">Automaticky</string>
+    <string name="theme_name_light">Světlý</string>
+    <string name="theme_name_dark">Tmavý</string>
+    <!-- Permission -->
+    <string name="permission_storage_denied">Pro uložení tapety je třeba udělit oprávnění k úložišti</string>
+    <!-- Intent -->
+    <string name="app_client">Vybrat aplikaci</string>
+    <string name="no_email_app">Nebyla nalezena aplikace umožňující zaslání e-mailu</string>
+    <string name="no_browser">Nebyla nalezena aplikace umožňující otevřít URL</string>
+    <string name="intent_email_failed">Nelze zobrazit e-mailovou aplikaci</string>
+    <string name="intent_email_supported">Podporováno</string>
+    <string name="intent_email_recommended">Doporučeno</string>
+    <string name="intent_email_not_supported">Nepodporováno</string>
+    <string name="intent_email_not_supported_message">Vybrali jste nepodporovaného e-mailového klienta, vyberte jiného e-mailového klienta</string>
+    <!-- About -->
+    <string name="about_contributors_title">Přispěvatelé</string>
+    <string name="about_privacy_policy_title">Ochrana osobních údajů</string>
+    <string name="about_terms_and_conditions_title">Pravidla a podmínky</string>
+    <!-- Report Bugs -->
+    <string name="report_bugs_desc">Uveďte, jaký druh problému chcete nahlásit</string>
+    <string name="report_bugs_desc_hint">Popis</string>
+    <string name="report_bugs_desc_empty">Uveďte prosím popis</string>
+    <string name="report_bugs_building">Vytváření seznamu aktivit …</string>
+    <string name="report_bugs_failed">Nelze vytvořit seznam aktivit</string>
+    <string name="report_bugs_send">Odeslat hlášení</string>
+    <!-- Support Development -->
+    <string name="donation_success">Děkujeme vám za poskytnutí daru. Používám ho pro dobrou věc.</string>
+    <!-- Crash Report -->
+    <string name="crash_report">Zpráva o selhání</string>
+    <string name="crash_report_message">Bohužel %s neodpovídá. Pokud chcete, aby vývojář vyřešil problém, odešlete níže uvedenou zprávu.</string>
+    <string name="crash_report_send">Odeslat hlášení</string>
+    <!-- Please don't modify this, Just Translate -->
+    <string name="about_dashboard">CandyBar</string>
+    <string name="about_dashboard_dev">CandyBar je vyvíjen jako open source projekt pro Android, který je licencován pod Apache License 2.0. Je k dispozici na GitHub pro volné použití, autor Dani Mahardhika.</string>
+    <string name="about_open_source_licenses">Open Source licence</string>
+    <string name="about_dashboard_contributors">Přispěvatelé CandyBar</string>
+    <string name="about_dashboard_translator">Překladatelé CandyBar</string>
+    <!-- DrawerToggle -->
+    <string name="txt_open">Otevřít</string>
+    <string name="txt_close">Zavřít</string>
+    <string name="txt_new">Nový</string>
+</resources>

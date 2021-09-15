@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menu_search"
+        android:icon="@drawable/ic_toolbar_search"
+        android:title="@string/menu_search"
+        app:showAsAction="always|collapseActionView"
+        app:actionLayout="@layout/search_bar" />
+
+    <item
+        android:id="@+id/menu_icon_shape"
+        android:icon="@drawable/ic_toolbar_icon_shape"
+        android:title="@string/icon_shape"
+        app:showAsAction="always" />
+
+</menu>
