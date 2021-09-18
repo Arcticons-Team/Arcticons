@@ -22,7 +22,6 @@ public class DigitalClockWidget extends AppWidgetProvider {
         DateFormat currentTimeFormat;
         currentTimeFormat = DateFormat.getTimeInstance();
         String currentTimeString = currentTimeFormat.format(new Date());
-        views.setTextViewText(R.id.digital_clock_view, currentTimeString);
 
         // Instruct the widget manager to update the widget
         appWidgetManager.updateAppWidget(appWidgetId, views);
