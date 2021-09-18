@@ -2,9 +2,13 @@ package com.donnnno.arcticons;
 
 import static android.app.PendingIntent.getActivity;
 
+import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
 import android.content.Context;
+import android.content.Intent;
+import android.os.Build;
+import android.provider.AlarmClock;
 import android.widget.RemoteViews;
 import java.util.Date;
 import java.text.DateFormat;
@@ -13,6 +17,19 @@ import java.text.DateFormat;
  * Implementation of App Widget functionality.
  */
 public class DigitalClockWidget extends AppWidgetProvider {
+
+    public void onReceive(Context context, Intent intent) {
+        String act = intent.getAction();
+        if (AppWidgetManager.ACTION_APPWIDGET_UPDATE.equals(act)) {
+            RemoteViews clockView = new RemoteViews(context.getPackageName(), R.layout.digital_clock_widget);
+
+            Intent clockIntent = new Intent(AlarmClock.ACTION_SHOW_ALARMS);
+            clockIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            clockView.setOnClickPendingIntent(R.id.digital_clock_view, PendingIntent.getActivity(context, 0, clockIntent, 0));
+
+            AppWidgetManager.getInstance(context).updateAppWidget(intent.getIntArrayExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS), clockView);
+        }
+    }
 
     static void updateAppWidget(Context context, AppWidgetManager appWidgetManager,
                                 int appWidgetId) {
