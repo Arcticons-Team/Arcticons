@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Leave empty if you don't want to show changelog date -->
+    <string name="changelog_date">October 7, 2016</string>
+
+    <!-- Changelog support html formatting
+    * <b> for Bold
+    * <i> for Italic
+    * <u> for Underline -->
+    <string-array name="changelog">
+        <item>Fixed many bugs</item>
+        <item>More easy to customize dashboard</item>
+        <item>Improved premium request feature</item>
+        <item>Support Android N</item>
+        <item>Support Zooper Widget</item>
+        <item>And many more …</item>
+        <item><![CDATA[
+        This is an example changelog with html formatting
+        <b>Bold</b>, <i>Italic</i>, and <u>Underline</u>
+        ]]></item>
+    </string-array>
+
+</resources>
