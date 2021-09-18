@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/cardBackground">
+
+    <TextView
+        android:id="@+id/question"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="?android:attr/textColorPrimary"
+        android:textSize="@dimen/text_content_title"
+        android:paddingTop="@dimen/content_margin"
+        android:paddingLeft="@dimen/content_margin"
+        android:paddingStart="@dimen/content_margin"
+        android:paddingRight="@dimen/content_margin"
+        android:paddingEnd="@dimen/content_margin"
+        app:fontFamily="@font/medium" />
+
+    <TextView
+        android:id="@+id/answer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="?android:attr/textColorSecondary"
+        android:textSize="@dimen/text_content"
+        android:paddingTop="@dimen/content_padding"
+        android:paddingBottom="@dimen/content_margin"
+        android:paddingLeft="@dimen/content_margin"
+        android:paddingStart="@dimen/content_margin"
+        android:paddingRight="@dimen/content_margin"
+        android:paddingEnd="@dimen/content_margin"
+        app:fontFamily="@font/regular" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider" />
+
+</LinearLayout>

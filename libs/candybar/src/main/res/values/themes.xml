@@ -1,0 +1,49 @@
+<resources>
+
+    <style name="CandyBar.Theme.Base" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:windowAnimationStyle">@null</item>
+    </style>
+
+    <style name="CandyBar.Theme.App" parent="CandyBar.Theme.Base">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryVariant">@color/colorPrimaryDark</item>
+        <item name="colorSecondary">@color/colorAccent</item>
+        <item name="colorControlNormal">@color/toolbarIcon</item>
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowActionModeOverlay">true</item>
+        <item name="android:windowBackground">@color/mainBackground</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:textColorPrimary">@color/primaryText</item>
+        <item name="android:textColorSecondary">@color/secondaryText</item>
+        <item name="android:listDivider">@color/dividerList</item>
+        <item name="fontFamily">@font/medium</item>
+        <item name="toolbarStyle">@style/ToolbarStyle</item>
+        <item name="actionModeStyle">@style/ActionModeStyle</item>
+        <item name="actionBarTheme">@style/ActionBarOverlay</item>
+
+        <item name="md_background_color">@color/cardBackground</item>
+        <item name="md_positive_color">@color/colorAccent</item>
+        <item name="md_neutral_color">@color/primaryText</item>
+        <item name="md_negative_color">@color/primaryText</item>
+        <item name="md_content_color">@color/primaryText</item>
+        <item name="md_link_color">@color/colorAccent</item>
+        <item name="md_widget_color">@color/colorAccent</item>
+        <item name="md_item_color">@color/primaryText</item>
+    </style>
+
+    <style name="CandyBar.Theme.Splash" parent="Theme.MaterialComponents.DayNight">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowBackground">@drawable/splash_screen</item>
+    </style>
+
+    <style name="CandyBar.Theme.Wallpaper" parent="CandyBar.Theme.App">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+</resources>

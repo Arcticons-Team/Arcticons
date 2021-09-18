@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <!-- Navigation View -->
+    <string name="navigation_view_home">ホーム</string>
+    <string name="navigation_view_apply">適用</string>
+    <string name="navigation_view_icons">アイコン</string>
+    <string name="navigation_view_request">アイコンリクエスト</string>
+    <string name="navigation_view_wallpapers">壁紙</string>
+    <string name="navigation_view_settings">設定</string>
+    <string name="navigation_view_faqs">よくある質問</string>
+    <string name="navigation_view_about">概要</string>
+    <string name="navigation_view_donate">開発を支援</string>
+    <!-- Muzei -->
+    <string name="muzei_settings">Muzeiの設定</string>
+    <string name="minute">分</string>
+    <string name="hour">時間</string>
+    <string name="save_setting">保存</string>
+    <string name="muzei_refresh_duration">更新の間隔</string>
+    <string name="muzei_wifi_only">Wifi経由でのみ更新</string>
+    <string name="muzei_downloaded_only">ダウンロード済みの壁紙のみ読み込む</string>
+    <string name="muzei_settings_ignored">アイコンパックには壁紙は含まれていません。設定は無視されます。</string>
+    <string name="muzei_settings_saved">設定を保存しました</string>
+    <!-- Menu -->
+    <string name="menu_search">検索</string>
+    <string name="menu_save">端末に保存</string>
+    <string name="menu_select_all">すべて選択</string>
+    <string name="menu_wallpaper_crop">壁紙を切り抜く</string>
+    <string name="menu_apply_homescreen">ホーム画面</string>
+    <string name="menu_apply_lockscreen">ロック画面</string>
+    <!-- Dialog -->
+    <string name="open">開く</string>
+    <string name="close">閉じる</string>
+    <string name="clear">クリア</string>
+    <string name="install">インストール</string>
+    <string name="donate">寄付</string>
+    <string name="search_noresult">「%s」の結果が見つかりませんでした</string>
+    <string name="search_faqs">質問または回答</string>
+    <string name="search_icon">アイコン名</string>
+    <!-- Update -->
+    <!-- Changelog -->
+    <string name="changelog_version">バージョン</string>
+    <!-- InAppBilling -->
+    <string name="billing_load_product_failed">アプリ内購入製品を読み込めません</string>
+    <!-- License -->
+    <string name="license_checking">ライセンスをチェックしています…</string>
+    <string name="license_check">ライセンスのチェック</string>
+    <string name="license_check_success">ライセンスのチェックが成功しました。Playストアからアプリをダウンロードしていただきありがとうございます。</string>
+    <string name="license_check_failed">ライセンスのチェックに失敗しました。あなたはこのアプリをPlayストアからダウンロードしていません。 
+あなたはこのアプリを利用することはできません。</string>
+    <string name="license_check_retry">ライセンスをチェックできません。しばらくしてからもう一度やり直してください。</string>
+    <!-- Play Store Installation Check -->
+    <!-- Share -->
+    <string name="share_app_title">%sをチェック！</string>
+    <string name="share_app_body">%1$sをチェックしよう、このアイコンパックはかなりクール！ %2$s</string>
+    <!-- Tap Intro -->
+    <string name="tap_intro_home_navigation">ナビゲーションドロワー</string>
+    <string name="tap_intro_home_navigation_desc">ナビゲーションドロワーを開くにはここをタップするか左端からスワイプします</string>
+    <string name="tap_intro_home_apply">アイコンパックを適用</string>
+    <string name="tap_intro_home_apply_desc">%sを適用するにはここをタップします</string>
+    <string name="tap_intro_icons_search">検索</string>
+    <string name="tap_intro_icons_search_desc">アイコンを検索するにはここをタップします</string>
+    <string name="tap_intro_request_select">不足しているアプリを選択</string>
+    <string name="tap_intro_request_select_desc">アイコンリクエストのために不足しているアプリを選択するにはここをタップします</string>
+    <string name="tap_intro_request_select_all">すべての不足しているアプリを選択</string>
+    <string name="tap_intro_request_select_all_desc">アイコンリクエストのためにすべての不足しているアプリを選択するにはここをタップします</string>
+    <string name="tap_intro_request_send">アイコンリクエストを送信</string>
+    <string name="tap_intro_request_send_desc">選択した不足しているアプリを送信するにはここをタップします</string>
+    <string name="tap_intro_request_premium">プレミアムアイコンリクエスト</string>
+    <string name="tap_intro_request_premium_desc">プレミアムアイコンリクエストパッケージを購入するにはここをタップします。
+プレミアムアイコンリクエストではあなたがリクエストしたアイコンを早く手に入れることができます。</string>
+    <string name="tap_intro_wallpapers_option">壁紙オプション</string>
+    <string name="tap_intro_wallpapers_option_desc">壁紙オプションを開き、壁紙を%s適用するにはタップして長押しします</string>
+    <string name="tap_intro_wallpapers_option_desc_download">ダウンロードまたは</string>
+    <string name="tap_intro_wallpapers_preview">壁紙をプレビュー</string>
+    <string name="tap_intro_wallpapers_preview_desc">フルサイズの壁紙をプレビューするにはここをタップします</string>
+    <string name="tap_intro_wallpaper_preview_save">壁紙を保存</string>
+    <string name="tap_intro_wallpaper_preview_save_desc">後で使用するために壁紙をダウンロードして端末に保存するにはここをタップします</string>
+    <string name="tap_intro_wallpaper_preview_apply">壁紙を適用</string>
+    <string name="tap_intro_wallpaper_preview_apply_desc">壁紙をホーム画面の背景に設定するにはここをタップします</string>
+    <!-- Home -->
+    <string name="home_more_apps_header">更なるアプリ</string>
+    <string name="home_more_apps">Google Playストアで公開されているその他のアプリをチェックしましょう</string>
+    <string name="home_rate_and_review">評価 &amp; レビュー</string>
+    <string name="home_apply_icon_pack">%sを適用</string>
+    <string name="home_donate">寄付</string>
+    <string name="home_donate_desc">アイコンパックの開発を支援します</string>
+    <string name="home_icons">個のカスタムアイコン</string>
+    <string name="home_icon_dimension">アイコンの寸法：%s</string>
+    <string name="home_loud_wallpapers">%d枚のクラウドの壁紙</string>
+    <string name="home_muzei">Muzeiライブ壁紙</string>
+    <string name="home_icon_request_installed_apps">合計\n%d個のインストールされたアプリ</string>
+    <string name="home_icon_request_themed_apps">テーマ化された\n%d個のアプリ</string>
+    <string name="home_icon_request_missed_apps">不足している\n%d個のアプリ</string>
+    <!-- Apply -->
+    <string name="apply_installed">インストールされたランチャー</string>
+    <string name="apply_supported">対応しているランチャー</string>
+    <string name="apply_manual_evie">ホーム画面でタップして長押し - 設定 - アイコンパック - %sを選択。</string>
+    <string name="apply_launch_failed">%sの設定を起動できません</string>
+    <string name="apply_launcher_not_installed">%sはインストールされていません。
+Google Playストアを開きダウンロードしてインストールしますか？</string>
+    <string name="apply_cmtheme_not_available">CMテーママネージャーはお使いの端末で利用できません</string>
+    <string name="apply_cmtheme_failed">CMテーママネージャーを起動できません。設定から手動でアイコンパックを適用してみてください。</string>
+    <string name="apply_lg_home">このアイコンパックを適用するには設定 - ディスプレイ - ホーム画面 - テーマを開きます</string>
+    <string name="apply_lg_home_not_available">LGホームはお使いの端末で利用できません</string>
+    <string name="apply_lg_home_failed">LGホームの設定を起動できません。設定から手動でアイコンパックを適用してみてください。</string>
+    <string name="apply_lg_home_nougat">Android NougatでのLGホームではアイコンパックの対応を廃止しました。アイコンパックを使用するにはカスタムランチャーが必要です。</string>
+    <!-- Icons -->
+    <string name="icons_load_failed">アイコンを読み込めません</string>
+    <!-- Request -->
+    <string name="request_title">アイコンリクエスト</string>
+    <string name="request_not_selected">リクエストするアプリを選択</string>
+    <string name="request_not_requested">リクエストしていません</string>
+    <string name="request_already_requested">既にリクエストしています</string>
+    <string name="request_building">リクエストを構築しています…</string>
+    <string name="request_build_failed">アイコンリクエストを構築できません</string>
+    <string name="request_appfilter_failed">appfilter.xmlを読み取れません</string>
+    <string name="request_requested">リクエストをもう一度確認してください。
+既にリクエストされているアプリをリクエストしようとしています。</string>
+    <string name="request_email_client">アイコンリクエストを送信したいメールクライアントを選択してください</string>
+    <string name="request_limit">普通のリクエストでは%d件のリクエストのみ作成できます。</string>
+    <string name="request_used">あなたは%d個のアイコンをリクエストしています。</string>
+    <string name="request_limit_buy">プレミアムリクエストを購入することでさらにアイコンをリクエストすることができます。</string>
+    <string name="request_limit_reset">アイコンリクエストの制限数はアップデート毎にリセットされます。</string>
+    <!-- Regular Request -->
+    <!-- Premium Request -->
+    <string name="premium_request">プレミアムアイコンリクエスト</string>
+    <string name="premium_request_no_internet">プレミアムリクエストを送信する前に端末がインターネットに接続されていることを確認してください</string>
+    <string name="premium_request_desc">プレミアムリクエストは有料のリクエストです。プレミアムリクエストでリクエストしたアイコンを早く手に入れることができます。</string>
+    <string name="premium_request_buy">購入</string>
+    <string name="premium_request_already_purchased">まだ%d件のプレミアムリクエストが残っています。
+プレミアムリクエストを再度購入する前に使い切る必要があります。</string>
+    <string name="premium_request_limit">プレミアムリクエストは%d件しか残っていません。</string>
+    <string name="premium_request_limit1">しかし%d個のアプリが選択されています。
+\n\n普通のリクエストを再度行う前にプレミアムリクエストを使い切る必要があります。</string>
+    <string name="premium_request_consume_failed">プレミアムリクエストを使用できません。安定したインターネット接続があるか確認してもう一度やり直してください。
+プレミアムリクエストを再構築するには設定を開いてください。</string>
+    <string name="premium_request_rebuilding">プレミアムリクエストを再構築しています…</string>
+    <string name="premium_request_rebuilding_empty">プレミアムリクエストは作成されていません</string>
+    <string name="premium_request_exist">プレミアムアイコンリクエストパッケージがまだ残っています。
+設定を開き、「注文を復元」を選択して復元してください。</string>
+    <string name="premium_request_required">アイコンリクエストを作成するにはプレミアムアイコンリクエストパッケージを購入する必要があります。</string>
+    <!-- Wallpapers -->
+    <string name="wallpaper_new_added">新しい壁紙</string>
+    <string name="wallpaper_already_downloaded">壁紙は既にダウンロード済みです</string>
+    <string name="wallpaper_downloading">壁紙をダウンロードしています…</string>
+    <string name="wallpaper_download_failed">壁紙をダウンロードできません</string>
+    <string name="wallpaper_loading">壁紙を読み込んでいます…</string>
+    <string name="wallpaper_applying">壁紙を適用しています…</string>
+    <string name="wallpaper_applied">壁紙を適用しました</string>
+    <string name="wallpaper_apply_failed">壁紙を適用できません</string>
+    <string name="wallpaper_apply_cancelled">壁紙の適用はキャンセルされました</string>
+    <string name="connection_failed">サーバーからデータを取得できません</string>
+    <string name="wallpaper_apply">壁紙を適用</string>
+    <string name="wallpaper_save_to_device">壁紙を保存</string>
+    <!-- Preferences -->
+    <string name="pref_data_header">データ &amp; キャッシュ</string>
+    <string name="pref_data_cache">キャッシュを消去</string>
+    <string name="pref_data_cache_desc">アプリから画像を選択したり、不足しているアプリをリクエストしたり、
+クラウドの壁紙のサムネイルを読み込んだ後に作成された キャッシュをストレージから削除します</string>
+    <string name="pref_data_cache_size">キャッシュのサイズ：%s</string>
+    <string name="pref_data_cache_clear_dialog">キャッシュを消去してよろしいですか？</string>
+    <string name="pref_data_cache_cleared">キャッシュを消去しました</string>
+    <string name="pref_data_request">アイコンリクエストのデータを消去</string>
+    <string name="pref_data_request_desc">アイコンリクエストから不足しているアプリをリクエストした後に
+作成されるアイコンリクエストデータを削除します。</string>
+    <string name="pref_data_request_clear_dialog">アイコンリクエストデータを消去してよろしいですか？</string>
+    <string name="pref_data_request_cleared">アイコンリクエストデータを消去しました</string>
+    <string name="pref_premium_request_header">プレミアムアイコンリクエスト</string>
+    <string name="pref_premium_request_restore">注文を復元</string>
+    <string name="pref_premium_request_restore_desc">アイコンパックを再インストールした後にプレミアムアイコンリクエストパッケージを復元します</string>
+    <string name="pref_premium_request_restore_success">プレミアムリクエストを復元しました</string>
+    <string name="pref_premium_request_restore_empty">注文したパッケージがありません</string>
+    <string name="pref_premium_request_rebuild">プレミアムアイコンリクエストを再構築</string>
+    <string name="pref_premium_request_rebuild_desc">すべてのプレミアムアイコンリクエストデータを再送信するために収集します。</string>
+    <string name="pref_theme_header">テーマ</string>
+    <string name="pref_theme_dark">ダークテーマ</string>
+    <string name="pref_theme_dark_desc">アプリケーションのテーマでダークカラーを使用します</string>
+    <string name="pref_wallpaper_header">壁紙</string>
+    <string name="pref_wallpaper_location">壁紙の保存場所</string>
+    <string name="pref_language_header">言語</string>
+    <string name="pref_others_header">その他</string>
+    <string name="pref_others_report_bugs">バグを報告</string>
+    <string name="pref_others_changelog">更新履歴</string>
+    <string name="pref_others_reset_tutorial">チュートリアルをリセット</string>
+    <string name="pref_others_reset_tutorial_reset">チュートリアルのリセット</string>
+    <!-- Themes -->
+    <!-- Permission -->
+    <string name="permission_storage_denied">壁紙を保存するにはストレージの権限が必要です</string>
+    <!-- Intent -->
+    <string name="app_client">メールクライアントを選択</string>
+    <string name="no_email_app">メールを送信するアプリケーションがありません</string>
+    <string name="no_browser">URLを開くアプリがありません</string>
+    <string name="intent_email_failed">メールアプリケーションを表示できません</string>
+    <string name="intent_email_supported">対応しています</string>
+    <string name="intent_email_recommended">推奨</string>
+    <string name="intent_email_not_supported">対応していません</string>
+    <string name="intent_email_not_supported_message">非対応のメールクライアントが選択されました。他のメールクライアントを選択してください</string>
+    <!-- About -->
+    <string name="about_contributors_title">貢献者</string>
+    <!-- Report Bugs -->
+    <string name="report_bugs_desc">報告したい問題についての説明を記入してください</string>
+    <string name="report_bugs_desc_hint">説明</string>
+    <string name="report_bugs_desc_empty">説明を入力してください</string>
+    <string name="report_bugs_building">アクティビティリストを構築しています…</string>
+    <string name="report_bugs_failed">アクティビティリストを構築できません</string>
+    <string name="report_bugs_send">レポートを送信</string>
+    <!-- Support Development -->
+    <string name="donation_success">寄付していただきありがとうございます。より良くするために使わせていただきます。</string>
+    <!-- Crash Report -->
+    <string name="crash_report">クラッシュ報告</string>
+    <string name="crash_report_message">問題が発生したため、%sが終了しました。問題の修正を手助けするには「レポートを送信」を選択してください。</string>
+    <string name="crash_report_send">レポートを送信</string>
+    <!-- Please don't modify this, Just Translate -->
+    <string name="about_dashboard_dev">CandyBarはDani Mahardhikaによって開発され、GitHubで入手可能で自由に利用できる、
+ Apache License 2.0に基づきライセンスされたAndroid用のオープンソースのアイコンパックダッシュボードです。</string>
+    <string name="about_open_source_licenses">オープンソースライセンス</string>
+    <string name="about_dashboard_contributors">CandyBarの貢献者</string>
+    <string name="about_dashboard_translator">CandyBarの翻訳者</string>
+    <!-- DrawerToggle -->
+    <string name="txt_open">開く</string>
+    <string name="txt_close">閉じる</string>
+</resources>
