@@ -6,7 +6,8 @@ import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
 import android.content.Context;
 import android.widget.RemoteViews;
-import android.widget.TextClock;
+import java.util.Date;
+import java.text.DateFormat;
 
 /**
  * Implementation of App Widget functionality.
@@ -16,10 +17,12 @@ public class DigitalClockWidget extends AppWidgetProvider {
     static void updateAppWidget(Context context, AppWidgetManager appWidgetManager,
                                 int appWidgetId) {
 
-        CharSequence widgetText = context.getString(R.string.digital_clock_text);
         // Construct the RemoteViews object
         RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.digital_clock_widget);
-        views.setTextViewText(R.id.digital_clock_view, widgetText);
+        DateFormat currentTimeFormat;
+        currentTimeFormat = DateFormat.getTimeInstance();
+        String currentTimeString = currentTimeFormat.format(new Date());
+        views.setTextViewText(R.id.digital_clock_view, currentTimeString);
 
         // Instruct the widget manager to update the widget
         appWidgetManager.updateAppWidget(appWidgetId, views);
