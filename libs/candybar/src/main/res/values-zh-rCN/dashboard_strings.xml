@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <!-- Navigation View -->
+    <string name="navigation_view_home">主页</string>
+    <string name="navigation_view_apply">应用图标</string>
+    <string name="navigation_view_icons">图标</string>
+    <string name="navigation_view_request">申请图标</string>
+    <string name="navigation_view_wallpapers">壁纸</string>
+    <string name="navigation_view_settings">设置</string>
+    <string name="navigation_view_faqs">常见问题</string>
+    <string name="navigation_view_about">关于</string>
+    <string name="navigation_view_donate">支持开发工作</string>
+    <!-- Muzei -->
+    <string name="muzei_settings">Muzei 设置</string>
+    <string name="minute">分钟</string>
+    <string name="hour">小时</string>
+    <string name="save_setting">保存</string>
+    <string name="muzei_refresh_duration">刷新时间间隔</string>
+    <string name="muzei_wifi_only">仅在 Wifi 下刷新</string>
+    <string name="muzei_downloaded_only">只使用已下载的壁纸</string>
+    <string name="muzei_settings_ignored">图标包不包含任何壁纸，设置将被忽略。</string>
+    <string name="muzei_settings_saved">设置已保存</string>
+    <!-- Menu -->
+    <string name="menu_search">搜索</string>
+    <string name="menu_save">保存到设备</string>
+    <string name="menu_select_all">全选</string>
+    <string name="menu_wallpaper_crop">裁剪壁纸</string>
+    <string name="menu_apply_homescreen">主屏幕</string>
+    <string name="menu_apply_lockscreen">锁屏</string>
+    <string name="menu_apply_homescreen_lockscreen">主屏幕与锁屏界面</string>
+    <!-- Dialog -->
+    <string name="open">打开</string>
+    <string name="close">关闭</string>
+    <string name="clear">清除</string>
+    <string name="ok">确认</string>
+    <string name="install">安装</string>
+    <string name="donate">捐赠</string>
+    <string name="update">更新</string>
+    <string name="search_noresult">未找到 “%s”</string>
+    <string name="search_faqs">问题或回答</string>
+    <string name="search_icon">图标名称</string>
+    <!-- Update -->
+    <string name="checking_for_update">正在检查更新…</string>
+    <string name="update_available">有可用的更新！</string>
+    <!-- Changelog -->
+    <string name="changelog_version">版本</string>
+    <!-- InAppBilling -->
+    <string name="billing_load_product_failed">无法加载应用内购买内容。</string>
+    <!-- License -->
+    <string name="license_checking">检查许可中……</string>
+    <string name="license_check">许可证检查</string>
+    <string name="license_check_success">许可证检查通过，感谢您从 Play 商店中下载本程序。</string>
+    <string name="license_check_failed">许可证检查未通过，您不是从 Play 商店中下载的本程序。
+您无法使用本程序。</string>
+    <string name="license_check_retry">无法检查许可证，请稍后重试。</string>
+    <!-- Play Store Installation Check -->
+    <string name="playstore_check">Play商店检查</string>
+    <string name="playstore_check_success">感谢您从Google Play商店安装应用。祝您愉快！</string>
+    <!-- Share -->
+    <string name="share_app_title">哟！来看看 %s</string>
+    <string name="share_app_body">来看看 %1$s，这个图标包超酷的！%2$s</string>
+    <!-- Tap Intro -->
+    <string name="tap_intro_home_navigation">导航抽屉</string>
+    <string name="tap_intro_home_navigation_desc">点击这里或者从屏幕左边缘滑动来打开导航抽屉</string>
+    <string name="tap_intro_home_apply">应用图标包</string>
+    <string name="tap_intro_home_apply_desc">点此应用 %s</string>
+    <string name="tap_intro_icons_search">搜索</string>
+    <string name="tap_intro_icons_search_desc">点此搜索图标</string>
+    <string name="tap_intro_request_select">选择未适配程序</string>
+    <string name="tap_intro_request_select_desc">点此选择未适配程序来申请图标</string>
+    <string name="tap_intro_request_select_all">全选未适配程序</string>
+    <string name="tap_intro_request_select_all_desc">点此全选未适配程序用来申请图标</string>
+    <string name="tap_intro_request_send">提交图标申请</string>
+    <string name="tap_intro_request_send_desc">点此提交未适配程序</string>
+    <string name="tap_intro_request_premium">高级图标申请权</string>
+    <string name="tap_intro_request_premium_desc">点此购买高级图标申请权，拥有它你所申请的程序将享有图标适配更高的优先权。</string>
+    <string name="tap_intro_wallpapers_option">壁纸选项</string>
+    <string name="tap_intro_wallpapers_option_desc">按住这里显示壁纸选项，%s 应用壁纸。</string>
+    <string name="tap_intro_wallpapers_option_desc_download">下载或者</string>
+    <string name="tap_intro_wallpapers_preview">预览壁纸</string>
+    <string name="tap_intro_wallpapers_preview_desc">点此预览壁纸原图</string>
+    <string name="tap_intro_wallpaper_preview_save">保存壁纸</string>
+    <string name="tap_intro_wallpaper_preview_save_desc">点此下载壁纸并保存到设备以便之后使用</string>
+    <string name="tap_intro_wallpaper_preview_apply">应用壁纸</string>
+    <string name="tap_intro_wallpaper_preview_apply_desc">点此将壁纸设定为主屏幕背景</string>
+    <!-- Home -->
+    <string name="home_more_apps_header">更多应用</string>
+    <string name="home_more_apps">查看我在 Google Play 商店中发布的其它程序</string>
+    <string name="home_rate_and_review">评分 &amp; 评论</string>
+    <string name="home_apply_icon_pack">应用 %s</string>
+    <string name="home_donate">捐赠</string>
+    <string name="home_donate_desc">支援图标包的开发工作</string>
+    <string name="home_icons">自定图标</string>
+    <string name="home_icon_dimension">%s 图标分辨率</string>
+    <string name="home_loud_wallpapers">%d 云端壁纸</string>
+    <string name="home_muzei">Muzei 动态壁纸</string>
+    <string name="home_icon_request_installed_apps">总计\n%d 个已安装程序</string>
+    <string name="home_icon_request_themed_apps">已适配\n%d 个程序</string>
+    <string name="home_icon_request_missed_apps">未适配\n%d 个程序</string>
+    <!-- Apply -->
+    <string name="apply_installed">已安装的启动器</string>
+    <string name="apply_supported">受支持的启动器</string>
+    <string name="apply_manual_evie">在主屏幕上长按 - 设置 - 图标包 - 选择 %s。</string>
+    <string name="apply_launch_failed">无法启动 %s 设置</string>
+    <string name="apply_launcher_not_installed">%s 尚未安装。你想跳转到 Google Play 商店去下载安装它吗？</string>
+    <string name="apply_cmtheme_not_available">CM 主题管理器在此设备上不可用。</string>
+    <string name="apply_cmtheme_failed">无法启动 CM 主题管理器，你可以尝试从设置中你手动应用图标包。</string>
+    <string name="apply_lg_home">打开设置 - 显示 - 主屏幕 - 主题  来应用本图标包</string>
+    <string name="apply_lg_home_not_available">LG Home 在此设备上不可用。</string>
+    <string name="apply_lg_home_failed">无法启动 LG Home 设置，你可以尝试从设置中手动应用图标包。</string>
+    <string name="apply_lg_home_nougat">Android Nougat 版本的 LG Home 不再支持图标包了。你需要一个第三方启动器来使用图标包。</string>
+    <!-- Icons -->
+    <string name="icons_load_failed">无法载入图标</string>
+    <!-- Request -->
+    <string name="request_title">申请图标</string>
+    <string name="request_not_selected">选择用来申请适配的程序</string>
+    <string name="request_not_requested">未申请</string>
+    <string name="request_already_requested">已申请</string>
+    <string name="request_building">构建申请文件中……</string>
+    <string name="request_build_failed">无法构建申请文件</string>
+    <string name="request_appfilter_failed">无法读取 appfilter.xml</string>
+    <string name="request_requested">请重新检查您的申请。
+因为您试图申请的图标已被您申请了。</string>
+    <string name="request_email_client">选择您想用来提交图标申请的邮件客户端</string>
+    <string name="request_limit">您在常规图标申请权状态下仅能提交 %d 个适配申请。</string>
+    <string name="request_used">您已申请适配 %d 个图标。</string>
+    <string name="request_limit_buy">您可以购买高级图标申请权来提交更多个图标申请。</string>
+    <string name="request_limit_reset">图标申请限制将在每次更新后重置。</string>
+    <!-- Regular Request -->
+    <!-- Premium Request -->
+    <string name="premium_request">高级图标申请</string>
+    <string name="premium_request_no_internet">在提交高级图标申请前请确保您的手机已连接到网络</string>
+    <string name="premium_request_desc">高级图标申请是付费申请。您可以通过高级图标申请来更快的得到您所申请的图标。</string>
+    <string name="premium_request_buy">购买</string>
+    <string name="premium_request_already_purchased">您仍剩余 %d 个高级申请数。
+在再次购买高级图标申请权之前，您需要用光当前剩余的高级申请次数。</string>
+    <string name="premium_request_limit">您只拥有 %d 个高级图标申请数，</string>
+    <string name="premium_request_limit1">但您选择了 %d 个程序。
+\n\n您需要在用完所有剩余的高级图标申请数后才可以使用常规申请。</string>
+    <string name="premium_request_consume_failed">无法使用高级图标申请，请确保您的网络环境稳定并重试。
+去设置里重建高级图标申请数。</string>
+    <string name="premium_request_rebuilding">重建高级如表申请中……</string>
+    <string name="premium_request_rebuilding_empty">您尚未提交过高级图标申请</string>
+    <string name="premium_request_exist">您仍有一个高级图标申请的安装包。
+前往设置，选择 “恢复已购买内容” 来恢复它。</string>
+    <string name="premium_request_required">您需要购买高级图标申请包来提交图标申请。</string>
+    <!-- Wallpapers -->
+    <string name="wallpaper_new_added">新壁纸</string>
+    <string name="wallpaper_already_downloaded">壁纸已下载</string>
+    <string name="wallpaper_downloading">下载壁纸中……</string>
+    <string name="wallpaper_download_failed">无法下载壁纸</string>
+    <string name="wallpaper_loading">加载壁纸中……</string>
+    <string name="wallpaper_applying">应用壁纸中……</string>
+    <string name="wallpaper_applied">已应用壁纸</string>
+    <string name="wallpaper_apply_failed">无法应用壁纸</string>
+    <string name="wallpaper_apply_cancelled">已取消应用壁纸</string>
+    <string name="connection_failed">无法从服务器获取数据</string>
+    <string name="wallpaper_apply">应用壁纸</string>
+    <string name="wallpaper_save_to_device">保存壁纸</string>
+    <!-- Preferences -->
+    <string name="pref_data_header">数据 &amp; 缓存</string>
+    <string name="pref_data_cache">清除缓存</string>
+    <string name="pref_data_cache_desc">从您的存储器中清除图片缓存，它们是在从本程序中选择一张图片、申请未适配程序以及加载云端壁纸缩略图的时候产生的。</string>
+    <string name="pref_data_cache_size">缓存大小: %s</string>
+    <string name="pref_data_cache_clear_dialog">您确认要清除缓存吗？</string>
+    <string name="pref_data_cache_cleared">缓存已清除</string>
+    <string name="pref_data_request">清除图标申请数据</string>
+    <string name="pref_data_request_desc">删除图标申请数据，它们是在申请未适配程序的是偶产生的。</string>
+    <string name="pref_data_request_clear_dialog">您确认要清除图标申请数据吗？</string>
+    <string name="pref_data_request_cleared">图标申请数据已清除</string>
+    <string name="pref_premium_request_header">高级图标申请</string>
+    <string name="pref_premium_request_restore">恢复已购买内容</string>
+    <string name="pref_premium_request_restore_desc">在重新安装图标包后恢复高级图标申请</string>
+    <string name="pref_premium_request_restore_success">高级图标申请权已恢复</string>
+    <string name="pref_premium_request_restore_empty">您没有任何已购买内容</string>
+    <string name="pref_premium_request_rebuild">重建高级图标申请数据</string>
+    <string name="pref_premium_request_rebuild_desc">收集全部高级图标申请数据重新提交</string>
+    <string name="pref_theme_header">主题</string>
+    <string name="pref_theme_dark">暗色主题</string>
+    <string name="pref_theme_dark_desc">使用暗色程序主题</string>
+    <string name="pref_wallpaper_header">壁纸</string>
+    <string name="pref_wallpaper_location">壁纸保存位置</string>
+    <string name="pref_language_header">语言</string>
+    <string name="pref_others_header">其它</string>
+    <string name="pref_others_report_bugs">反馈问题</string>
+    <string name="pref_others_changelog">更新日志</string>
+    <string name="pref_others_reset_tutorial">重置教程</string>
+    <string name="pref_others_reset_tutorial_reset">教程已重置</string>
+    <!-- Themes -->
+    <!-- Permission -->
+    <string name="permission_storage_denied">需要存储权限以保存壁纸</string>
+    <!-- Intent -->
+    <string name="app_client">选择邮件客户端</string>
+    <string name="no_email_app">没有程序可以发送邮件</string>
+    <string name="no_browser">没有程序可以打开 url 地址</string>
+    <string name="intent_email_failed">无法显示邮件程序</string>
+    <string name="intent_email_supported">支持</string>
+    <string name="intent_email_recommended">推荐</string>
+    <string name="intent_email_not_supported">不支持</string>
+    <string name="intent_email_not_supported_message">选择了一个不支持的邮件客户端，请更换另一个邮件客户端</string>
+    <!-- About -->
+    <string name="about_contributors_title">贡献者</string>
+    <!-- Report Bugs -->
+    <string name="report_bugs_desc">请给予我一些关于你想要报告的问题种类的描述</string>
+    <string name="report_bugs_desc_hint">描述</string>
+    <string name="report_bugs_desc_empty">请给予一些描述</string>
+    <string name="report_bugs_building">构建 activity 列表中……</string>
+    <string name="report_bugs_failed">无法构建 activity 列表</string>
+    <string name="report_bugs_send">发送报告</string>
+    <!-- Support Development -->
+    <string name="donation_success">感谢您的捐赠。我会好好利用它的。</string>
+    <!-- Crash Report -->
+    <string name="crash_report">崩溃报告</string>
+    <string name="crash_report_message">很抱歉 %s 已停止运行。选择下方的 发送报告 来帮助开发者修复这个问题。</string>
+    <string name="crash_report_send">发送报告</string>
+    <!-- Please don't modify this, Just Translate -->
+    <string name="about_dashboard_dev">CandyBar 是 GitHub 上一个受 Apache License 2.0 保护的开源 Android 图标包仪表盘，免费使用，由 Dani Mahardhika 开发。</string>
+    <string name="about_open_source_licenses">开源许可证</string>
+    <string name="about_dashboard_contributors">CandyBar 贡献者</string>
+    <string name="about_dashboard_translator">CandyBar 翻译者</string>
+    <!-- DrawerToggle -->
+    <string name="txt_open">打开</string>
+    <string name="txt_close">关闭</string>
+</resources>
