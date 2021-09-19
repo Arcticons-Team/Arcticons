@@ -1,5 +1,6 @@
 #!/bin/bash
 
+sh whiteold.sh
 sh rasterdark.sh
 sh rasterlight.sh
 
