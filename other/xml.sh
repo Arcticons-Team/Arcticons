@@ -32,3 +32,6 @@ cp -f iconpack.xml ${EXPORT}/res/xml/
 mv -f iconpack.xml ${EXPORT}/res/values/
 cp -f drawable.xml ${EXPORT}/res/xml/
 mv -f drawable.xml ${EXPORT}/assets/
+
+cp -f appfilter.xml ${EXPORT}/assets/
+cp -f appfilter.xml ${EXPORT}/res/xml/

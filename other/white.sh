@@ -1,15 +1,16 @@
-#!/bin/bash
+#!/usr/bin/env bash
+# batch_invert_color.sh
 
-for DIR in $(find -name "*.svg")
-do
-  FILE=${DIR##*/}
-  sed -r -i 's:stroke="#\w{3,6}":fill="#ffffff":' ${FILE}
+white="stroke\s*:\s*\(#fff\|#ffffff\|white\)"
 
-  if [ $(grep -o stroke= ${FILE} | wc -l) -ge 1 ]
-  then
-    sed -r -i 's/style="[^"]*"//' ${FILE}
-  else
-    sed -r -i 's/style="[^"]*"/fill="#ffffff"/' ${FILE}
-  fi
-  sed -r -i 's:opacity="[^"]*"::' ${FILE}
+replace="stroke:#fff"
+for x in *.svg; do
+	sed -i "s/${white}/${replace}/Ig" "${x}"
+done
+
+white="fill\s*:\s*\(#fff\|#ffffff\|white\)"
+
+replace="fill:#fff"
+for x in *.svg; do
+	sed -i "s/${white}/${replace}/Ig" "${x}"
 done
