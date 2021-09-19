@@ -42,7 +42,6 @@ import com.danimahardhika.android.helpers.core.DrawableHelper;
 import com.danimahardhika.android.helpers.core.FileHelper;
 import com.danimahardhika.android.helpers.core.SoftKeyboardHelper;
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
-import com.danimahardhika.android.helpers.license.LicenseHelper;
 import com.danimahardhika.android.helpers.permission.PermissionCode;
 import com.google.android.material.navigation.NavigationView;
 
@@ -74,7 +73,6 @@ import candybar.lib.fragments.dialog.IntentChooserFragment;
 import candybar.lib.helpers.ConfigurationHelper;
 import candybar.lib.helpers.IntentHelper;
 import candybar.lib.helpers.JsonHelper;
-import candybar.lib.helpers.LicenseCallbackHelper;
 import candybar.lib.helpers.LocaleHelper;
 import candybar.lib.helpers.NavigationViewHelper;
 import candybar.lib.helpers.PlayStoreCheckHelper;
@@ -126,7 +124,6 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
     private int mPosition, mLastPosition;
     private ActionBarDrawerToggle mDrawerToggle;
     private FragmentManager mFragManager;
-    private LicenseHelper mLicenseHelper;
 
     private boolean mIsMenuVisible = true;
     private boolean prevIsDarkTheme;
@@ -264,13 +261,7 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
                     onNewVersion.run();
                 };
 
-                if (mConfig.isLicenseCheckerEnabled()) {
-                    mLicenseHelper = new LicenseHelper(this);
-                    mLicenseHelper.run(mConfig.getLicenseKey(), mConfig.getRandomString(),
-                            new LicenseCallbackHelper(this, onAllChecksCompleted));
-                } else {
                     onAllChecksCompleted.run();
-                }
             };
 
             if (Preferences.get(this).isPlayStoreCheckEnabled()) {
