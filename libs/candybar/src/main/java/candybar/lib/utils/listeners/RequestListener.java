@@ -22,11 +22,7 @@ import android.content.Intent;
 
 public interface RequestListener {
 
-    void onPiracyAppChecked(boolean isPiracyAppInstalled);
-
     void onRequestSelected(int count);
-
-    void onBuyPremiumRequest();
 
     void onRequestBuilt(Intent intent, int type);
 }

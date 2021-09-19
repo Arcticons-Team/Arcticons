@@ -35,11 +35,6 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.afollestad.materialdialogs.MaterialDialog;
-import com.android.billingclient.api.AcknowledgePurchaseParams;
-import com.android.billingclient.api.BillingClient;
-import com.android.billingclient.api.BillingFlowParams;
-import com.android.billingclient.api.ConsumeParams;
-import com.android.billingclient.api.Purchase;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.danimahardhika.android.helpers.core.ColorHelper;
@@ -75,7 +70,6 @@ import candybar.lib.fragments.RequestFragment;
 import candybar.lib.fragments.SettingsFragment;
 import candybar.lib.fragments.WallpapersFragment;
 import candybar.lib.fragments.dialog.ChangelogFragment;
-import candybar.lib.fragments.dialog.InAppBillingFragment;
 import candybar.lib.fragments.dialog.IntentChooserFragment;
 import candybar.lib.helpers.ConfigurationHelper;
 import candybar.lib.helpers.IntentHelper;
@@ -90,7 +84,6 @@ import candybar.lib.helpers.TypefaceHelper;
 import candybar.lib.helpers.WallpaperHelper;
 import candybar.lib.items.Home;
 import candybar.lib.items.Icon;
-import candybar.lib.items.InAppBilling;
 import candybar.lib.items.Request;
 import candybar.lib.items.Wallpaper;
 import candybar.lib.preferences.Preferences;
@@ -98,8 +91,6 @@ import candybar.lib.services.CandyBarService;
 import candybar.lib.tasks.IconRequestTask;
 import candybar.lib.tasks.IconsLoaderTask;
 import candybar.lib.utils.Extras;
-import candybar.lib.utils.InAppBillingClient;
-import candybar.lib.utils.listeners.InAppBillingListener;
 import candybar.lib.utils.listeners.RequestListener;
 import candybar.lib.utils.listeners.SearchListener;
 import candybar.lib.utils.listeners.WallpapersListener;
@@ -124,7 +115,7 @@ import candybar.lib.utils.views.HeaderView;
  */
 
 public abstract class CandyBarMainActivity extends AppCompatActivity implements
-        ActivityCompat.OnRequestPermissionsResultCallback, RequestListener, InAppBillingListener,
+        ActivityCompat.OnRequestPermissionsResultCallback, RequestListener,
         SearchListener, WallpapersListener {
 
     private TextView mToolbarTitle;
@@ -216,7 +207,6 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
         }
 
         mConfig = onInit();
-        InAppBillingClient.get(this).init();
 
         mPosition = mLastPosition = 0;
         if (savedInstanceState != null) {
@@ -328,29 +318,6 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
     }
 
     @Override
-    protected void onResume() {
-        RequestHelper.checkPiracyApp(this);
-        IntentHelper.sAction = IntentHelper.getAction(getIntent());
-        super.onResume();
-        InAppBillingClient.get(this).checkForUnprocessedPurchases();
-    }
-
-    @Override
-    protected void onDestroy() {
-        InAppBillingClient.get(this).destroy();
-
-        if (mLicenseHelper != null) {
-            mLicenseHelper.destroy();
-        }
-
-        CandyBarMainActivity.sMissedApps = null;
-        CandyBarMainActivity.sHomeIcon = null;
-        stopService(new Intent(this, CandyBarService.class));
-        Database.get(this.getApplicationContext()).closeDatabase();
-        super.onDestroy();
-    }
-
-    @Override
     protected void onSaveInstanceState(Bundle outState) {
         outState.putInt(Extras.EXTRA_POSITION, mPosition);
         Database.get(this.getApplicationContext()).closeDatabase();
@@ -391,14 +358,6 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
         }
     }
 
-    @Override
-    public void onPiracyAppChecked(boolean isPiracyAppInstalled) {
-        MenuItem menuItem = mNavigationView.getMenu().findItem(R.id.navigation_view_request);
-        if (menuItem != null) {
-            menuItem.setVisible(getResources().getBoolean(
-                    R.bool.enable_icon_request) || !isPiracyAppInstalled);
-        }
-    }
 
     @Override
     public void onRequestSelected(int count) {
@@ -409,50 +368,6 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
         }
     }
 
-    @Override
-    public void onBuyPremiumRequest() {
-        if (Preferences.get(this).isPremiumRequest()) {
-            RequestHelper.showPremiumRequestStillAvailable(this);
-            return;
-        }
-
-        CountDownLatch doneSignal = new CountDownLatch(1);
-        AtomicBoolean doesProductIdExist = new AtomicBoolean(false);
-        InAppBillingClient.get(this.getApplicationContext()).getClient()
-                .queryPurchasesAsync(BillingClient.SkuType.INAPP, (billingResult, purchases) -> {
-                    if (billingResult.getResponseCode() == BillingClient.BillingResponseCode.OK) {
-                        for (Purchase purchase : purchases) {
-                            for (String premiumRequestProductId : mConfig.getPremiumRequestProductsId()) {
-                                if (purchase.getSkus().contains(premiumRequestProductId)) {
-                                    doesProductIdExist.set(true);
-                                    break;
-                                }
-                            }
-                        }
-                    } else {
-                        LogUtil.e("Failed to query purchases. Response Code: " + billingResult.getResponseCode());
-                    }
-
-                    doneSignal.countDown();
-                });
-
-        try {
-            doneSignal.await();
-        } catch (InterruptedException e) {
-            LogUtil.e(Log.getStackTraceString(e));
-        }
-
-        if (doesProductIdExist.get()) {
-            RequestHelper.showPremiumRequestExist(this);
-            return;
-        }
-
-        InAppBillingFragment.showInAppBillingDialog(getSupportFragmentManager(),
-                InAppBilling.PREMIUM_REQUEST,
-                mConfig.getLicenseKey(),
-                mConfig.getPremiumRequestProductsId(),
-                mConfig.getPremiumRequestProductsCount());
-    }
 
     @Override
     public void onRequestBuilt(Intent intent, int type) {
@@ -464,61 +379,6 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
                 int count = Preferences.get(this).getPremiumRequestCount() - RequestFragment.sSelectedRequests.size();
                 Preferences.get(this).setPremiumRequestCount(count);
                 if (count == 0) {
-                    AtomicReference<List<Purchase>> purchases = new AtomicReference<>();
-                    CountDownLatch queryDoneSignal = new CountDownLatch(1);
-
-                    InAppBillingClient.get(this).getClient()
-                            .queryPurchasesAsync(BillingClient.SkuType.INAPP, (billingResult, aPurchases) -> {
-                                if (billingResult.getResponseCode() == BillingClient.BillingResponseCode.OK) {
-                                    purchases.set(aPurchases);
-                                } else {
-                                    LogUtil.e("Failed to load purchase data. Response Code: " + billingResult.getResponseCode());
-                                }
-                                queryDoneSignal.countDown();
-                            });
-
-                    try {
-                        queryDoneSignal.await();
-                    } catch (InterruptedException e) {
-                        LogUtil.e(Log.getStackTraceString(e));
-                    }
-
-                    AtomicBoolean isConsumeSuccess = new AtomicBoolean(false);
-                    if (purchases.get() != null) {
-                        String premiumRequestProductId = Preferences.get(this).getPremiumRequestProductId();
-                        for (Purchase purchase : purchases.get()) {
-                            if (purchase.getSkus().contains(premiumRequestProductId)) {
-                                CountDownLatch consumeDoneSignal = new CountDownLatch(1);
-                                InAppBillingClient.get(this).getClient().consumeAsync(
-                                        ConsumeParams.newBuilder()
-                                                .setPurchaseToken(purchase.getPurchaseToken())
-                                                .build(),
-                                        (billingResult, s) -> {
-                                            if (billingResult.getResponseCode() == BillingClient.BillingResponseCode.OK) {
-                                                isConsumeSuccess.set(true);
-                                            } else {
-                                                LogUtil.e("Failed to consume premium request product. Response Code: " + billingResult.getResponseCode());
-                                            }
-                                            consumeDoneSignal.countDown();
-                                        }
-                                );
-                                try {
-                                    consumeDoneSignal.await();
-                                } catch (InterruptedException e) {
-                                    LogUtil.e(Log.getStackTraceString(e));
-                                }
-                                break;
-                            }
-                        }
-                    }
-
-                    if (isConsumeSuccess.get()) {
-                        Preferences.get(this).setPremiumRequest(false);
-                        Preferences.get(this).setPremiumRequestProductId("");
-                    } else {
-                        RequestHelper.showPremiumRequestConsumeFailed(this);
-                        return;
-                    }
                 }
             } else {
                 if (getResources().getBoolean(R.bool.enable_icon_request_limit)) {
@@ -546,99 +406,6 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
         CandyBarApplication.sZipPath = null;
     }
 
-    @Override
-    public void onRestorePurchases() {
-        InAppBillingClient.get(this).getClient()
-                .queryPurchasesAsync(BillingClient.SkuType.INAPP, (billingResult, purchases) -> {
-                    if (billingResult.getResponseCode() == BillingClient.BillingResponseCode.OK) {
-                        List<String> productIds = new ArrayList<>();
-                        for (Purchase purchase : purchases) {
-                            productIds.add(purchase.getSkus().get(0));
-                        }
-                        this.runOnUiThread(() -> {
-                            SettingsFragment fragment = (SettingsFragment) mFragManager.findFragmentByTag(Extras.Tag.SETTINGS.value);
-                            if (fragment != null) fragment.restorePurchases(productIds,
-                                    mConfig.getPremiumRequestProductsId(), mConfig.getPremiumRequestProductsCount());
-                        });
-                    } else {
-                        LogUtil.e("Failed to load purchase data. Response Code: " + billingResult.getResponseCode());
-                    }
-                });
-    }
-
-    @Override
-    public void onProcessPurchase(Purchase purchase) {
-        if (purchase.getPurchaseState() != Purchase.PurchaseState.PURCHASED) {
-            return;
-        }
-
-        if (Preferences.get(this).getInAppBillingType() == InAppBilling.DONATE) {
-            InAppBillingClient.get(this).getClient().consumeAsync(
-                    ConsumeParams.newBuilder()
-                            .setPurchaseToken(purchase.getPurchaseToken())
-                            .build(),
-                    (billingResult, s) -> {
-                        if (billingResult.getResponseCode() == BillingClient.BillingResponseCode.OK) {
-                            Preferences.get(this).setInAppBillingType(-1);
-                            runOnUiThread(() -> new MaterialDialog.Builder(this)
-                                    .typeface(TypefaceHelper.getMedium(this), TypefaceHelper.getRegular(this))
-                                    .title(R.string.navigation_view_donate)
-                                    .content(R.string.donation_success)
-                                    .positiveText(R.string.close)
-                                    .show());
-                        } else {
-                            LogUtil.e("Failed to consume donation product. Response Code: " + billingResult.getResponseCode());
-                        }
-                    }
-            );
-        } else if (Preferences.get(this).getInAppBillingType() == InAppBilling.PREMIUM_REQUEST) {
-            if (!purchase.isAcknowledged()) {
-                InAppBillingClient.get(this).getClient().acknowledgePurchase(
-                        AcknowledgePurchaseParams.newBuilder()
-                                .setPurchaseToken(purchase.getPurchaseToken())
-                                .build(),
-                        (billingResult) -> {
-                            if (billingResult.getResponseCode() == BillingClient.BillingResponseCode.OK) {
-                                Preferences.get(this).setPremiumRequest(true);
-                                Preferences.get(this).setPremiumRequestProductId(purchase.getSkus().get(0));
-                                Preferences.get(this).setInAppBillingType(-1);
-
-                                this.runOnUiThread(() -> {
-                                    if (mFragmentTag == Extras.Tag.REQUEST) {
-                                        RequestFragment fragment = (RequestFragment) mFragManager.findFragmentByTag(Extras.Tag.REQUEST.value);
-                                        if (fragment != null) fragment.refreshIconRequest();
-                                    }
-                                });
-                            } else {
-                                LogUtil.e("Failed to acknowledge purchase. Response Code: " + billingResult.getResponseCode());
-                            }
-                        }
-                );
-            }
-        }
-    }
-
-    @Override
-    public void onInAppBillingSelected(int type, InAppBilling product) {
-        Preferences.get(this).setInAppBillingType(type);
-        if (type == InAppBilling.PREMIUM_REQUEST) {
-            Preferences.get(this).setPremiumRequestCount(product.getProductCount());
-            Preferences.get(this).setPremiumRequestTotal(product.getProductCount());
-        }
-
-        InAppBillingClient.get(this).getClient().launchBillingFlow(this,
-                BillingFlowParams.newBuilder()
-                        .setSkuDetails(product.getSkuDetails())
-                        .build());
-    }
-
-    @Override
-    public void onInAppBillingRequest() {
-        if (mFragmentTag == Extras.Tag.REQUEST) {
-            RequestFragment fragment = (RequestFragment) mFragManager.findFragmentByTag(Extras.Tag.REQUEST.value);
-            if (fragment != null) fragment.prepareRequest();
-        }
-    }
 
     @Override
     public void onWallpapersChecked(int wallpaperCount) {
@@ -679,13 +446,6 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
         supportInvalidateOptionsMenu();
     }
 
-    public void showSupportDevelopmentDialog() {
-        InAppBillingFragment.showInAppBillingDialog(mFragManager,
-                InAppBilling.DONATE,
-                mConfig.getLicenseKey(),
-                mConfig.getDonationProductsId(),
-                null);
-    }
 
     private void initNavigationView(Toolbar toolbar) {
         mDrawerToggle = new ActionBarDrawerToggle(
@@ -860,12 +620,6 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
                 if (!Preferences.get(this).isPremiumRequestEnabled())
                     return;
 
-                if (!Preferences.get(this).isPremiumRequest()) {
-                    mPosition = mLastPosition;
-                    mNavigationView.getMenu().getItem(mPosition).setChecked(true);
-                    onBuyPremiumRequest();
-                    return;
-                }
             }
         }
 

@@ -653,7 +653,6 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                     case DONATE:
                         if (mContext instanceof CandyBarMainActivity) {
                             CandyBarMainActivity mainActivity = (CandyBarMainActivity) mContext;
-                            mainActivity.showSupportDevelopmentDialog();
                         }
                         break;
                     case ICONS:

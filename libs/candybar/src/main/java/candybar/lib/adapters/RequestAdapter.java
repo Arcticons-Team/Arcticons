@@ -327,7 +327,6 @@ public class RequestAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             int id = view.getId();
             if (id == R.id.buy) {
                 RequestListener listener = (RequestListener) mContext;
-                listener.onBuyPremiumRequest();
             }
         }
     }

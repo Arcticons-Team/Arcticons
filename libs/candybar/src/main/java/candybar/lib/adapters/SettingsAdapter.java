@@ -38,7 +38,6 @@ import candybar.lib.helpers.TypefaceHelper;
 import candybar.lib.items.Setting;
 import candybar.lib.preferences.Preferences;
 import candybar.lib.tasks.IconRequestTask;
-import candybar.lib.utils.listeners.InAppBillingListener;
 
 /*
  * CandyBar - Material Dashboard
@@ -218,8 +217,6 @@ public class SettingsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                         break;
                     case RESTORE:
                         try {
-                            InAppBillingListener listener = (InAppBillingListener) mContext;
-                            listener.onRestorePurchases();
                         } catch (Exception ignored) {
                         }
                         break;
