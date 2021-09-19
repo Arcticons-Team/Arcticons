@@ -1,3 +1,10 @@
+### 2.2.5
+###### Released: Sep 19, 2021
+* ✔️ The F-Droid build works again
+* 🔮 A new date widget (thanks Aman9Das)
+* 🎉 70 new icons (thanks JoelChrono12, Eninkey, Quantenzitrone & Aman9Das)
+* 🔥 2252 icons in total!
+
 ### 2.1.8
 ###### Released: Sep 13, 2021
 
