@@ -5,6 +5,8 @@
 * 🎉 70 new icons (thanks JoelChrono12, Eninkey, Quantenzitrone & Aman9Das)
 * 🔥 2252 icons in total!
 
+![changelogfile225 (Large)](https://user-images.githubusercontent.com/31142286/133931401-651e4f90-8e84-4ff6-87cc-cc8a376ec6b9.jpg)
+
 ### 2.1.8
 ###### Released: Sep 13, 2021
 
