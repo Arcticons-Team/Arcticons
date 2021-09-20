@@ -13,6 +13,7 @@ do
   cp ${FILE} ${FILE}.tmp
   rm ${FILE}.tmp
   cp -f ${FILE} ${ICON}/${FILE}
+  echo "Working on" ${FILE} "Light Mode"
   for SIZE in ${SIZES}
   do
     inkscape --export-filename=${NAME}.png --export-width=${SIZE} --export-height=${SIZE} ${NAME}.svg
