@@ -20,55 +20,7 @@ package candybar.lib.items;
 
 import androidx.annotation.NonNull;
 
-import com.android.billingclient.api.SkuDetails;
 
 public class InAppBilling {
 
-    private final String mProductId;
-    private int mProductCount;
-    private SkuDetails mSkuDetails;
-
-    public static final int DONATE = 0;
-    public static final int PREMIUM_REQUEST = 1;
-
-    public InAppBilling(String productId) {
-        mProductId = productId;
-    }
-
-    public InAppBilling(@NonNull SkuDetails skuDetails, String productId) {
-        mProductId = productId;
-        mSkuDetails = skuDetails;
-    }
-
-    public InAppBilling(@NonNull SkuDetails skuDetails, String productId, int productCount) {
-        mProductId = productId;
-        mProductCount = productCount;
-        mSkuDetails = skuDetails;
-    }
-
-    public InAppBilling(String productId, int productCount) {
-        mProductId = productId;
-        mProductCount = productCount;
-    }
-
-    public String getPrice() {
-        return mSkuDetails.getPrice();
-    }
-
-    public String getProductId() {
-        return mProductId;
-    }
-
-    public String getProductName() {
-        String title = mSkuDetails.getTitle();
-        return title.substring(0, title.lastIndexOf("(")).trim();
-    }
-
-    public int getProductCount() {
-        return mProductCount;
-    }
-
-    public SkuDetails getSkuDetails() {
-        return mSkuDetails;
-    }
 }

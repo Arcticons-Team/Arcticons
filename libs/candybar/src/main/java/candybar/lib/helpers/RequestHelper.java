@@ -451,7 +451,6 @@ public class RequestHelper {
         if (!premiumRequest) {
             Preferences.get(context).setPremiumRequestEnabled(false);
             RequestListener listener = (RequestListener) context;
-            listener.onPiracyAppChecked(true);
             return;
         }
 
@@ -486,7 +485,6 @@ public class RequestHelper {
         Preferences.get(context).setPremiumRequestEnabled(!isPiracyAppInstalled);
 
         RequestListener listener = (RequestListener) context;
-        listener.onPiracyAppChecked(isPiracyAppInstalled);
     }
 
     public enum XmlType {

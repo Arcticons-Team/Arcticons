@@ -7,8 +7,8 @@ android {
         applicationId "com.donnnno.arcticons"
         minSdkVersion rootProject.ext.MinSdk
         targetSdkVersion rootProject.ext.TargetSdk
-        versionCode 67
-        versionName '2.1.8'
+        versionCode 68
+        versionName '2.2.5'
         multiDexEnabled true
 
         // Naming app bundles
@@ -19,7 +19,6 @@ android {
     buildTypes {
         release {
             minifyEnabled true
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             debug {
                 applicationIdSuffix '.debug'
             }

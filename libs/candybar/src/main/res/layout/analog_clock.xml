@@ -7,8 +7,8 @@
 
     <AnalogClock
         android:id="@+id/analog_clock"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:hand_hour="@drawable/clock_hour"
         android:hand_minute="@drawable/clock_minute"
         android:dial="@drawable/clock_bg" />
