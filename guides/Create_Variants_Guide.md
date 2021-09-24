@@ -6,6 +6,8 @@ The guide will use the colour #4080ff as an example
 
 - install git bash
 
+- install inkscape
+
 - install android studio
 
 ## Creating local repository
@@ -16,7 +18,7 @@ The guide will use the colour #4080ff as an example
 
 - `git init`
 
-- `git remote add upstream <https://github.com/Donnnno/Arcticons/>"
+- `git remote add upstream https://github.com/Donnnno/Arcticons/`
 
 - `git pull upstream main`
 
