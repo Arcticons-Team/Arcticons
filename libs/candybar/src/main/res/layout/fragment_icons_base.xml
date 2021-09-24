@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:visibility="invisible"
+        android:paddingLeft="@dimen/content_padding"
+        android:paddingStart="@dimen/content_padding"
+        android:paddingRight="@dimen/content_padding"
+        android:paddingEnd="@dimen/content_padding"
+        android:clipToPadding="false"
+        app:tabIndicator="@drawable/tab_indicator"
+        app:tabIndicatorColor="@color/tabIndicator"
+        app:tabSelectedTextColor="@color/tabTextSelected"
+        app:tabTextColor="@color/tabText"
+        app:tabIconTint="@color/tab_icon"
+        app:tabIndicatorHeight="3dp"
+        app:tabPadding="@dimen/content_padding"
+        app:tabMode="scrollable"
+        app:tabRippleColor="?colorSecondary" />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tab" />
+
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        style="?android:attr/progressBarStyle" />
+
+    <View
+        android:id="@+id/shadow"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbar_shadow"
+        android:layout_below="@+id/tab"
+        android:visibility="invisible"
+        android:background="@drawable/toolbar_shadow" />
+
+</RelativeLayout>

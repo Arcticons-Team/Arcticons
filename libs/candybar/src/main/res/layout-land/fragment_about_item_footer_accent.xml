@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginRight="@dimen/content_padding"
+    android:layout_marginEnd="@dimen/content_padding"
+    android:layout_marginBottom="@dimen/content_padding"
+    app:cardBackgroundColor="@color/cardBackground"
+    app:cardElevation="@dimen/card_elevation"
+    app:cardUseCompatPadding="@bool/card_use_compat_padding"
+    app:cardCornerRadius="@dimen/card_corner_radius"
+    app:strokeColor="@color/cardStroke">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/cardBackground">
+
+        <TextView
+            android:id="@+id/about_dashboard_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/content_margin"
+            android:layout_marginLeft="@dimen/content_margin"
+            android:layout_marginStart="@dimen/content_margin"
+            android:layout_marginRight="@dimen/content_margin"
+            android:layout_marginEnd="@dimen/content_margin"
+            android:drawablePadding="@dimen/content_margin"
+            android:gravity="center_vertical"
+            android:text="@string/about_dashboard"
+            android:textSize="@dimen/text_content_header"
+            android:textColor="?android:attr/textColorPrimary"
+            app:fontFamily="@font/medium" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/content_padding"
+            android:layout_marginLeft="@dimen/content_margin"
+            android:layout_marginStart="@dimen/content_margin"
+            android:layout_marginRight="@dimen/content_margin"
+            android:layout_marginEnd="@dimen/content_margin"
+            android:paddingLeft="@dimen/content_item_list_margin_start"
+            android:paddingStart="@dimen/content_item_list_margin_start"
+            android:text="@string/about_dashboard_dev"
+            android:textSize="@dimen/text_content"
+            android:textColor="?android:attr/textColorPrimary"
+            app:fontFamily="@font/regular" />
+
+        <TextView
+            android:id="@+id/about_dashboard_licenses"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/content_margin"
+            android:paddingBottom="@dimen/content_margin"
+            android:paddingLeft="@dimen/content_item_list_padding_start"
+            android:paddingStart="@dimen/content_item_list_padding_start"
+            android:paddingEnd="@dimen/content_margin"
+            android:paddingRight="@dimen/content_margin"
+            android:gravity="center_vertical"
+            android:text="@string/about_open_source_licenses"
+            android:textSize="@dimen/text_content_title"
+            android:textColor="?android:attr/textColorPrimary"
+            android:background="?attr/selectableItemBackground"
+            android:theme="@style/RippleStyle"
+            app:fontFamily="@font/regular" />
+
+        <TextView
+            android:id="@+id/about_dashboard_contributors"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/content_margin"
+            android:paddingBottom="@dimen/content_margin"
+            android:paddingLeft="@dimen/content_item_list_padding_start"
+            android:paddingStart="@dimen/content_item_list_padding_start"
+            android:paddingEnd="@dimen/content_margin"
+            android:paddingRight="@dimen/content_margin"
+            android:gravity="center_vertical"
+            android:text="@string/about_dashboard_contributors"
+            android:textSize="@dimen/text_content_title"
+            android:textColor="?android:attr/textColorPrimary"
+            android:background="?attr/selectableItemBackground"
+            android:theme="@style/RippleStyle"
+            app:fontFamily="@font/regular" />
+
+        <TextView
+            android:id="@+id/about_dashboard_translator"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/content_margin"
+            android:paddingBottom="@dimen/content_margin"
+            android:paddingLeft="@dimen/content_item_list_padding_start"
+            android:paddingStart="@dimen/content_item_list_padding_start"
+            android:paddingEnd="@dimen/content_margin"
+            android:paddingRight="@dimen/content_margin"
+            android:gravity="center_vertical"
+            android:text="@string/about_dashboard_translator"
+            android:textSize="@dimen/text_content_title"
+            android:textColor="?android:attr/textColorPrimary"
+            android:background="?attr/selectableItemBackground"
+            android:theme="@style/RippleStyle"
+            app:fontFamily="@font/regular" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="end"
+            android:paddingBottom="@dimen/content_margin"
+            android:paddingRight="@dimen/content_margin"
+            android:paddingEnd="@dimen/content_margin"
+            android:paddingLeft="@dimen/content_margin"
+            android:paddingStart="@dimen/content_margin">
+
+            <ImageView
+                android:id="@+id/about_dashboard_github"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/content_padding"
+                android:scaleType="fitCenter"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:theme="@style/RippleAccentStyle" />
+
+            <ImageView
+                android:id="@+id/about_dev_instagram"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/content_padding"
+                android:scaleType="fitCenter"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:theme="@style/RippleAccentStyle" />
+        </LinearLayout>
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

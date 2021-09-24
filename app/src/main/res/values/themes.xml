@@ -1,0 +1,18 @@
+<resources>
+
+    <style name="Theme.Arcticons.AppWidgetContainerParent" parent="@android:style/Theme.DeviceDefault">
+        <item name="appWidgetRadius">8dp</item>
+        <item name="appWidgetPadding">4dp</item>
+        <item name="appWidgetInnerRadius">4dp</item>
+    </style>
+
+    <style name="Theme.Arcticons.AppWidgetContainer" parent="Theme.Arcticons.AppWidgetContainerParent" />
+
+    <style name="CandyBar.Theme.App.AppWidgetContainerParent" parent="@android:style/Theme.DeviceDefault">
+        <item name="appWidgetRadius">8dp</item>
+        <item name="appWidgetPadding">4dp</item>
+        <item name="appWidgetInnerRadius">4dp</item>
+    </style>
+
+    <style name="CandyBar.Theme.App.AppWidgetContainer" parent="CandyBar.Theme.App.AppWidgetContainerParent" />
+</resources>

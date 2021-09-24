@@ -1,25 +1,30 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 29
+    compileSdkVersion 30
 
     defaultConfig {
         applicationId "com.donnnno.arcticons"
-        minSdkVersion 16
-        targetSdkVersion 29
-        versionCode 65
-        versionName '2.0.5'
+        minSdkVersion rootProject.ext.MinSdk
+        targetSdkVersion rootProject.ext.TargetSdk
+        versionCode 68
+        versionName '2.2.5'
+        multiDexEnabled true
+
+        // Naming app bundles
+        setArchivesBaseName("${parent.name}-v${versionCode}")
+
     }
 
     buildTypes {
         release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
-        debug {
-            applicationIdSuffix '.debug'
+            minifyEnabled true
+            debug {
+                applicationIdSuffix '.debug'
+            }
         }
     }
+
 
     flavorDimensions "variant"
     productFlavors {
@@ -38,17 +43,37 @@ android {
 
     compileOptions {
         encoding = 'UTF-8'
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
     }
 
     lintOptions {
         checkReleaseBuilds false
         abortOnError false
     }
+    buildFeatures {
+        viewBinding true
+    }
 }
 
 dependencies {
+    /*
+     * CandyBar Material Dashboard Library
+     *
+     * TODO: How to update the dashboard?!
+     * Check this update guide for every version
+     *      - https://github.com/zixpo/candybar-sample/wiki/Updating-the-dashboard
+     * If you've missed some versions you've to also follow update guide for those versions
+     */
+
+
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
     implementation 'androidx.appcompat:appcompat:1.3.1'
-    implementation 'androidx.core:core:1.6.0'
+
+    implementation project(':libs:candybar')
+    implementation project(':libs:extLibs:PreLollipopTransitions')
+
 }
