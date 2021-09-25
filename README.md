@@ -34,7 +34,7 @@ Maintaining this icon-pack costs a lot of time, besides making icons I'm curatin
 
 |Paypal|Liberapay|
 |---|---|
-|<a href="https://www.paypal.com/paypalme/onnovdd"><img alt="Donate using Paypal" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif"></a>|<a href="https://liberapay.com/Donno/donate"><img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg"></a>|
+|<a href="https://www.paypal.com/paypalme/onnovdd"><img height="40" alt="Donate using Paypal" src="https://github.com/Donnnno/Arcticons/blob/main/github/pp_button.svg"></a>|<a href="https://liberapay.com/Donno/donate"><img height="40" alt="Donate using Liberapay" src="https://github.com/Donnnno/Arcticons/blob/main/github/lp_button.svg"></a>|
 
 ## Contributing
 
@@ -43,3 +43,7 @@ Read the full details here:
 - [Contributing](CONTRIBUTING.md)
 - [Inkscape Guide](Inkscape_Guide.md)
 - [Vector Asset Creator guide](Vector_Asset_Creator.md)
+
+**Come chat with us on Matrix:**
+
+<a href="https://app.element.io/#/room/#arcticons:matrix.org"><img height="40" alt="Donate using Paypal" src="https://github.com/Donnnno/Arcticons/blob/main/github/matrix_button.svg"></a>
