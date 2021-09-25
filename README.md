@@ -17,17 +17,6 @@ Submitting icon requests helps a lot, but maintaining the project (as you may im
 <img src='https://raw.githubusercontent.com/Donnnno/Arcticons/main/github/phonescreenshotsdark.jpg'>
 <img src='https://raw.githubusercontent.com/Donnnno/Arcticons/main/github/phonescreenshotslight.jpg'>
 
-## Icon Requests
-
-**Disclaimer: You can always submit a request, but that doesn't guarantee that it actually will be made. Creating icons can cost a lot of time.**
-
-This app doesn't have an icon request feature, so you'll have to do the following steps.
-
-1. **Install [Turtl](https://f-droid.org/packages/org.xphnx.iconsubmit)** which can extract the icons and class names of your apps.
-2. **Grant the storage access permission to Turtl** in your system settings, this will allow it to save the zip file (Only required in Android 6 "Marshmallow" or newer, older versions grant this permission on installation).
-3. **Open Turtl** and follow the process to save the new zip file to your phone.
-4. **[Make an issue](https://github.com/Donnnno/Arcticons/issues/new)** titled "Icon Request" and attach the zip file.
-
 ## Donate
 
 Maintaining this icon-pack costs a lot of time, besides making icons I'm curating every single icon if it has the right sizing and other design rules. So if you like the icons and want to support the development consider supporting. :)
