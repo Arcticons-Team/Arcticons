@@ -73,7 +73,8 @@
         -->
     <string name="home_description">
         <![CDATA[
-            <b>Arcticons is a Line based <a href="https://github.com/Donnnno/Arcticons/">open-source</a> icon-pack</b>
+            <p><b>Arcticons is a Line based <a href="https://github.com/Donnnno/Arcticons/">open-source</a> icon-pack</b></p>
+            <p>It's community driven, and <b>you</b> are encouraged to help!</p>
         ]]>
     </string>
 
@@ -184,7 +185,7 @@
     <!-- Enable non-mailing app to be able to send icon requests.
         By default, you can only send request using mailing apps like Gmail, Outlook etc.
         If you enable this option, your users will be able to send requests using almost any app, not just mailing apps. -->
-    <bool name="enable_non_mail_app_request">true</bool>
+    <bool name="enable_non_mail_app_request">false</bool>
 
     <!-- Hide missing app count
         In home page there is a card that shows information about how many icons are missing and covered by your icon pack app.
