@@ -1,3 +1,10 @@
+### 2.3.6
+###### Released: Sep 27, 2021
+* 🎉 109 new icons (thanks JoelChrono12, Kaiserdragon2, Quantenzitrone, Eninkey, Dmoonfire, Fanfu, Bragefuglseth, Dgcampbe & Aman9Das)
+* 🔥 2367 icons in total!
+
+
+
 ### 2.2.5
 ###### Released: Sep 19, 2021
 * ✔️ The F-Droid build works again
