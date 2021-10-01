@@ -3,7 +3,7 @@
 * 🎉 109 new icons (thanks JoelChrono12, Kaiserdragon2, Quantenzitrone, Eninkey, Dmoonfire, Fanfu, Bragefuglseth, Dgcampbe & Aman9Das)
 * 🔥 2367 icons in total!
 
-
+![changelogfile236 (Large)](https://user-images.githubusercontent.com/31142286/134936950-54496fe9-032d-45d9-a1bc-807359faa111.jpg)
 
 ### 2.2.5
 ###### Released: Sep 19, 2021
