@@ -42,7 +42,7 @@ public class LauncherHelper {
         UNKNOWN, ACTION, ADW, APEX, ATOM, AVIATE, CMTHEME, GO, HOLO, HOLOHD, LAWNCHAIR,
         LGHOME, LGHOME3, LUCID, MINI, NEXT, NOVA, PIXEL, SMART, SOLO, ZENUI, NOUGAT, M,
         ZERO, V, ABC, EVIE, POCO, POSIDON, MICROSOFT, FLICK, BLACKBERRY, SQUARE, NIAGARA,
-        HYPERION
+        HYPERION, OMEGA
     }
 
     private static Launcher getLauncher(String packageName) {
@@ -126,6 +126,8 @@ public class LauncherHelper {
                 return Launcher.HYPERION;
             default:
                 return Launcher.UNKNOWN;
+            case "com.saggitt.omega":
+                return Launcher.OMEGA;
         }
     }
 
@@ -389,6 +391,16 @@ public class LauncherHelper {
                     square.setComponent(ComponentName.unflattenFromString("com.ss.squarehome2/.ApplyThemeActivity"));
                     square.putExtra("com.ss.squarehome2.EXTRA_ICONPACK", context.getPackageName());
                     context.startActivity(square);
+                } catch (ActivityNotFoundException | NullPointerException e) {
+                    openGooglePlay(context, launcherPackage, launcherName);
+                }
+                break;
+            case OMEGA:
+                try {
+                    final Intent omega = new Intent("com.saggitt.omega.APPLY_ICONS");
+                    omega.setComponent(ComponentName.unflattenFromString("com.saggitt.omega.iconpack.ApplyIconPackActivity"));
+                    omega.putExtra("packageName", context.getPackageName());
+                    context.startActivity(omega);
                 } catch (ActivityNotFoundException | NullPointerException e) {
                     openGooglePlay(context, launcherPackage, launcherName);
                 }
