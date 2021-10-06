@@ -33,21 +33,12 @@ Open the build variant tab:
 
 ![image](https://user-images.githubusercontent.com/31142286/136232108-1aca4e49-3b9c-4306-b403-212e6084f541.png)
 
-## Changing the activity name:
+Select your flavor and use the debug button to run it on a virtual or plugged device.
 
+## Optional: Changing the application ID
 
-## Changing the app name:
-
-Arcticons currently supports two different flavors (dark & light), but they're quite easy to change to another color.
-
-
-## Chaning the build flavor:
-
-You'll need to change the app name and the build 
-
-## Testing your flavor:
-
-
+To fully make the app more of your own, you can change the application ID, by default it's `com.donnnno.arcticons`. You can change those first parts to anything you like by refactoring the project.
 
 ## Genetrating a signed APK:
 
+https://developer.android.com/studio/publish/app-signing
