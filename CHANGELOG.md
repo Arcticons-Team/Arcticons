@@ -1,3 +1,10 @@
+### 2.5.0
+###### Released: Okt 7, 2021
+* ♾️ Support for Omega Launcher
+* 🌐 A new fancy website for Arcticons
+* 🎉 151 new or updated icons
+* 🔥 2500 icons in total! (thanks JoelChrono12, Kaiserdragon2, Eninkey, Dmoonfire, Fanfu, Bragefuglseth, Dgcampbe, Aman9Das, Suburbanno, Hassancreative, Aa0-fyi, Mdb571 & DreadedLama & Quantenzitrone)
+
 ### 2.3.6
 ###### Released: Sep 27, 2021
 * 🎉 109 new icons (thanks JoelChrono12, Kaiserdragon2, Quantenzitrone, Eninkey, Dmoonfire, Fanfu, Bragefuglseth, Dgcampbe & Aman9Das)
