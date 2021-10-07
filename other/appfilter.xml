@@ -637,6 +637,7 @@
 
     <!-- Authenticator (LastPass) -->
     <item component="ComponentInfo{com.lastpass.authenticator/com.lastpass.authenticator.activities.SplashActivity}" drawable="lastpassauthenticator" />
+    <item component="ComponentInfo{com.lastpass.authenticator/com.lastpass.mfa.ui.MainActivity}" drawable="lastpassauthenticator" />
 
     <!-- Authenticator -->
     <item component="ComponentInfo{com.blizzard.bma/com.blizzard.bma.ui.welcome.SplashActivity}" drawable="blizzardauthenticator" />
@@ -2944,6 +2945,9 @@
 
     <!-- Grofers -->
     <item component="ComponentInfo{com.grofers.customerapp/com.grofers.customerapp.activities.ActivitySplashScreen}" drawable="grofers" />
+
+    <!-- GroupMe -->
+    <item component="ComponentInfo{com.groupme.android/com.groupme.android.HomeActivity}" drawable="groupme" />
 
     <!-- GrowTracker -->
     <item component="ComponentInfo{me.anon.grow/me.anon.grow.BootActivity}" drawable="growtracker" />
@@ -5665,7 +5669,8 @@
     <item component="ComponentInfo{io.quire.app/io.quire.app.activity.MainActivity}" drawable="quire"/>
 
     <!-- Quizlet -->
-    <item component="ComponentInfo{com.quizlet.quizletandroid/com.quizlet.quizletandroid.activities.RootActivity}" drawable="letterq" />
+    <item component="ComponentInfo{com.quizlet.quizletandroid/com.quizlet.quizletandroid.activities.RootActivity}" drawable="quizlet" />
+    <item component="ComponentInfo{com.quizlet.quizletandroid/com.quizlet.quizletandroid.ui.RootActivity}" drawable="quizlet" />
 
     <!-- Quran -->
     <item component="ComponentInfo{com.quran.labs.androidquran/com.quran.labs.androidquran.QuranDataActivity}" drawable="quran" />
@@ -5702,6 +5707,9 @@
 
     <!-- RadarScope -->
     <item component="ComponentInfo{com.basevelocity.radarscope/com.basevelocity.radarscope.map.RsMapActivity}" drawable="radarscope" />
+
+    <!-- Radar X -->
+    <item component="ComponentInfo{com.appdlab.radarexpress/com.appdlab.radarexpress.MainActivity}" drawable="letterx" />
 
     <!-- Radiodroid -->
     <item component="ComponentInfo{net.programmierecke.radiodroid2/net.programmierecke.radiodroid2.ActivityMain}" drawable="radiodroid" />
