@@ -509,6 +509,7 @@
 
     <!-- App Cloner -->
     <item component="ComponentInfo{com.applisto.appcloner/com.applisto.appcloner.activity.StartActivity}" drawable="appcloner" />
+    <item component="ComponentInfo{com.coloros.backuprestore/com.coloros.phoneclone.PhoneCloneMainActivity}" drawable="clone_phone"/>
 
     <!-- App Tester -->
     <item component="ComponentInfo{dev.firebase.appdistribution/dev.firebase.appdistribution.main.MainActivity}" drawable="apptester"/>
@@ -1129,8 +1130,8 @@
     <item component="ComponentInfo{com.sec.android.app.popupcalculator/com.sec.android.app.popupcalculator.Calculator}" drawable="calculator" />
     <item component="ComponentInfo{com.miui.calculator/com.miui.calculator.cal.CalculatorActivity}" drawable="calculator" />
     <item component="ComponentInfo{com.android.bbkcalculator/com.android.bbkcalculator.Calculator}" drawable="calculator"/>
+    <item component="ComponentInfo{com.coloros.calculator/com.android.calculator2.Calculator}" drawable="calculator"/>
     <item component="ComponentInfo{com.cyb3rg0d.calculator/com.cyb3rg0d.calculator.MainActivity}" drawable="calculator" />
-
 
     <!-- Calendar -->
     <item component="ComponentInfo{com.android.calendar/com.android.calendar.AllInOneActivity}" drawable="calendar31" />
@@ -1216,6 +1217,7 @@
     <item component="ComponentInfo{com.android.camera/com.android.camera.CameraActivity}" drawable="camera"/>
     <item component="ComponentInfo{com.mediatek.camera/com.mediatek.camera.CameraLauncher}" drawable="mediatekcamera" />
     <item component="ComponentInfo{com.android.MGC/com.android.camera.CameraLauncher}" drawable="camera" />
+    <item component="ComponentInfo{com.oppo.camera/com.oppo.camera.Camera}" drawable="camera"/>
 
     <!-- Camera Remote -->
     <item component="ComponentInfo{com.fujifilm_dsc.app.remoteshooter/com.fujifilm_dsc.app.remoteshooter.InitializeActivity}" drawable="cameraremote" />
@@ -1493,6 +1495,7 @@
     <item component="ComponentInfo{com.bobek.compass/com.bobek.compass.MainActivity}" drawable="compass" />
     <item component="ComponentInfo{com.vivo.compass/com.vivo.compass.CalibrationActivity}" drawable="compass"/>
     <item component="ComponentInfo{apps.r.compass/apps.r.compass.StartTheme.Black}" drawable="compass" />
+    <item component="ComponentInfo{com.coloros.compass2/com.coloros.compass.flat.FlatCompass}" drawable="compass"/>
 
     <!-- Concentric Clock -->
     <item component="ComponentInfo{org.gringene.concentricclock/org.gringene.concentricclock.ClockActivity}" drawable="concentricclock" />
@@ -2376,6 +2379,7 @@
     <item component="ComponentInfo{com.mi.android.globalFileexplorer/com.android.fileexplorer.FileExplorerTabActivity}" drawable="files" />
     <item component="ComponentInfo{com.oneplus.filemanager/com.oneplus.filemanager.HomePageActivity}" drawable="files" />
     <item component="ComponentInfo{com.android.filemanager/com.android.filemanager.FileManagerActivity}" drawable="files"/>
+    <item component="ComponentInfo{com.coloros.filemanager/com.coloros.filemanager.filerefactor.ui.main.MainActivity}" drawable="file_manager"/>
 
     <!-- Finamp -->
     <item component="ComponentInfo{com.unicornsonlsd.finamp/com.unicornsonlsd.finamp.MainActivity}" drawable="finamp"/>
@@ -4777,6 +4781,8 @@
 
 	<!-- Network Speed -->
 	<item component="ComponentInfo{com.evozi.network/com.evozi.network.view.MainActivity}" drawable="network_speed" />
+	<item component="ComponentInfo{com.dsi.bsnlpro/com.dsi.bsnlpro.MainActivity}" drawable="bsnl_pro"/>
+
 
     <!-- Network Survey -->
     <item component="ComponentInfo{com.craxiom.networksurvey/com.craxiom.networksurvey.NetworkSurveyActivity}" drawable="networksurvey"/>
@@ -4821,6 +4827,7 @@
 
     <!-- Nextcloud -->
     <item component="ComponentInfo{com.nextcloud.client/com.owncloud.android.ui.activity.FileDisplayActivity}" drawable="nextcloud" />
+    <item component="ComponentInfo{com.nextcloud.android.beta/com.owncloud.android.ui.activity.FileDisplayActivity}" drawable="nextcloud_dev"/>
 
     <!-- Nextcloud Bookmarks -->
     <item component="ComponentInfo{org.schabi.nxbookmarks/org.schabi.nxbookmarks.MainActivity}" drawable="nextcloudbookmarks" />
@@ -4899,6 +4906,8 @@
 
 	<!-- Note It! -->
 	<item component="ComponentInfo{com.abhi.noteIt/com.abhi.noteIt.Home.splashscreen}" drawable="note_it" />
+	<item component="ComponentInfo{in.etuwa.app/in.etuwa.app.ui.login.LoginActivity}" drawable="etlab"/>
+
 
     <!-- Notepad -->
     <item component="ComponentInfo{com.farmerbb.notepad/com.farmerbb.notepad.MainActivity}" drawable="notepad" />
@@ -5393,6 +5402,9 @@
 
     <!-- Phimp.me -->
     <item component="ComponentInfo{org.fossasia.phimpme/org.fossasia.phimpme.gallery.activities.SplashScreen}" drawable="phimpme" />
+	
+    <!--PhonePe -->
+    <item component="ComponentInfo{com.phonepe.app/com.phonepe.app.v4.nativeapps.splash.Navigator_SplashActivity}" drawable="phonepe"/>
 
     <!-- PhoneTrack -->
     <item component="ComponentInfo{net.eneiluj.nextcloud.phonetrack/net.eneiluj.nextcloud.phonetrack.android.activity.LogjobsListViewActivity}" drawable="phonetrack" />
@@ -7129,6 +7141,8 @@
     <item component="ComponentInfo{com.android.stk/com.android.stk.StkMain}" drawable="sim" />
     <item component="ComponentInfo{com.android.stk/com.android.stk.StkLauncherActivity2}" drawable="sim" />
     <item component="ComponentInfo{com.android.stk/com.android.stk.StkLauncherActivity}" drawable="sim" />
+    <item component="ComponentInfo{com.android.stk/com.android.stk.OppoStkLauncherActivity1}" drawable="sim_1_apps"/>
+
 
 	<!-- Sgame -->
 	<item component="ComponentInfo{com.tencent.tmgp.sgame/com.tencent.tmgp.sgame.SGameActivity}" drawable="sgame" />
@@ -7139,6 +7153,9 @@
     <!-- Sketchbook -->
     <item component="ComponentInfo{com.adsk.sketchbook/com.adsk.sketchbook.SketchBook}" drawable="sketchbook"/>
 
+    <!--  Skilter  -->
+    <item component="ComponentInfo{com.mobil80.skilter/com.mobil80.skilter.activities.SplashScreen}" drawable="skilter"/>
+	
     <!-- Skit -->
     <item component="ComponentInfo{com.pavelrekun.skit/com.pavelrekun.skit.containers.PrimaryContainerActivity}" drawable="skit" />
 
@@ -8323,6 +8340,8 @@
 
     <!-- Vivo Tips -->
 	<item component="ComponentInfo{com.vivo.Tips/com.vivo.Tips.MainActivity}" drawable="vivo_tips" />
+	<item component="ComponentInfo{com.coloros.operationtips/com.coloros.operationtips.activities.WelcomeActivity}" drawable="tips"/>
+
 
     <!-- Vivo Cloud -->
 	<item component="ComponentInfo{com.bbk.cloud/com.bbk.cloud.ui.BBKCloudHomeScreen}" drawable="vivocloud" />
@@ -8335,6 +8354,8 @@
 
 	<!-- Vivo Themes -->
 	<item component="ComponentInfo{com.bbk.theme/com.bbk.theme.Theme}" drawable="vivo_themes" />
+	<item component="ComponentInfo{com.heytap.themestore/com.nearme.themespace.activities.ThemeActivity}" drawable="theme_store"/>
+
 
     <!-- VLN -->
     <item component="ComponentInfo{eu.bandainamcoent.verylittlenightmares/com.unity3d.player.UnityPlayerActivity}" drawable="vln"/>
@@ -8460,6 +8481,7 @@
     <item component="ComponentInfo{com.miui.weather2/com.miui.weather2.ActivityWeatherMain}" drawable="weather" />
     <item component="ComponentInfo{com.huawei.android.totemweather/com.huawei.android.totemweather.WeatherHome}" drawable="weather" />
     <item component="ComponentInfo{com.vivo.weather/com.vivo.weather.WeatherMain}" drawable="weather"/>
+    <item component="ComponentInfo{com.coloros.weather2/com.coloros.weather.main.view.WeatherMainActivity}" drawable="weather"/>
 
     <!-- Weawow -->
     <item component="ComponentInfo{com.weawow/com.weawow.MainActivity}" drawable="weawow" />
