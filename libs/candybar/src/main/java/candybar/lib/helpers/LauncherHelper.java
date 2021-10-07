@@ -42,7 +42,7 @@ public class LauncherHelper {
         UNKNOWN, ACTION, ADW, APEX, ATOM, AVIATE, CMTHEME, GO, HOLO, HOLOHD, LAWNCHAIR,
         LGHOME, LGHOME3, LUCID, MINI, NEXT, NOVA, PIXEL, SMART, SOLO, ZENUI, NOUGAT, M,
         ZERO, V, ABC, EVIE, POCO, POSIDON, MICROSOFT, FLICK, BLACKBERRY, SQUARE, NIAGARA,
-        HYPERION, OMEGA, KISS
+        HYPERION, OMEGA
     }
 
     private static Launcher getLauncher(String packageName) {
@@ -127,9 +127,6 @@ public class LauncherHelper {
             case "com.saggitt.omega":
             case "com.saggitt.omega.OmegaLauncher":
                 return Launcher.OMEGA;
-            case "fr.neamar.kiss":
-            case "fr.neamar.kiss.MainActivity":
-                return Launcher.KISS;
             default:
                 return Launcher.UNKNOWN;
         }
@@ -495,17 +492,6 @@ public class LauncherHelper {
                     v.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     context.sendBroadcast(v1);
                     context.startActivity(v);
-                    ((AppCompatActivity) context).finish();
-                } catch (ActivityNotFoundException | NullPointerException e) {
-                    openGooglePlay(context, launcherPackage, launcherName);
-                }
-                break;
-            case KISS:
-                try {
-                    final Intent kiss = new Intent("fr.neamar.kiss.SET_THEME");
-                    kiss.putExtra("fr.neamar.kiss.theme.NAME", context.getPackageName());
-                    kiss.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    context.startActivity(kiss);
                     ((AppCompatActivity) context).finish();
                 } catch (ActivityNotFoundException | NullPointerException e) {
                     openGooglePlay(context, launcherPackage, launcherName);
