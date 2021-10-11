@@ -571,6 +571,9 @@
     <!-- AsteroidOS Sync -->
     <item component="ComponentInfo{org.asteroidos.sync/org.asteroidos.sync.PermissionsActivity}" drawable="asteroidossync" />
 
+	<!-- aTalk -->
+	<item component="ComponentInfo{org.atalk.android/org.atalk.android.plugin.permissions.PermissionsActivity}" drawable="atalk" />
+	
     <!-- AtmosphereLogger -->
     <item component="ComponentInfo{org.tamanegi.atmosphere/org.tamanegi.atmosphere.AtmosphereActivity}" drawable="atmospherelogger" />
 
@@ -6255,15 +6258,22 @@
 
 	<!-- Samsung Health -->
 	<item component="ComponentInfo{com.sec.android.app.shealth/com.samsung.android.app.shealth.home.HomeMainActivity}" drawable="samsung_health" />
+	
+	<!-- Samsung Max -->
+	<item component="ComponentInfo{com.opera.max.oem/com.opera.max.ui.v2.MainActivity}" drawable="samsung_max" />
 
     <!-- Samsung Music -->
     <item component="ComponentInfo{com.sec.android.app.music/com.sec.android.app.music.common.activity.MusicMainActivity}" drawable="samsung_music" />
+	
+	<!-- Samsung Shop -->
+	<item component="ComponentInfo{com.samsung.ecomm.global.in/com.samsung.ecomm.MainActivity}" drawable="samsung_shop" />
 
     <!-- Samsung Pass -->
     <item component="ComponentInfo{com.samsung.android.samsungpass/com.samsung.android.samsungpass.launcher.EntryLauncher}" drawable="samsungpass"/>
 
     <!-- Samsung Pay Mini -->
     <item component="ComponentInfo{com.samsung.android.brdigitalaccount/com.samsung.android.brdigitalaccount.ui.spayminiwelcome.SPayMiniWelcomeActivity}" drawable="samsungpaymini"/>
+	<item component="ComponentInfo{com.samsung.android.spaymini/com.samsung.android.spay.ui.SpayMainActivity}" drawable="samsungpaymini" />
 
     <!-- Santander -->
     <item component="ComponentInfo{com.santander.app/com.santander.app.splash.SplashScreenActivity}" drawable="santander"/>
