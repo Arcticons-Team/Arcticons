@@ -739,6 +739,9 @@
     <!-- Baby Dots -->
     <item component="ComponentInfo{com.serwylo.babydots/com.serwylo.babydots.MainActivity}" drawable="babydots"/>
 
+    <!-- Backdrops -->
+    <item component="ComponentInfo{com.backdrops.wallpapers/com.backdrops.wallpapers.WelcomeActivity}" drawable="backdrops"/>
+
     <!-- Backup -->
     <item component="ComponentInfo{com.stevesoltys.seedvault/com.stevesoltys.seedvault.settings.SettingsLink}" drawable="backup"/>
 
@@ -1137,6 +1140,7 @@
     <item component="ComponentInfo{com.android.bbkcalculator/com.android.bbkcalculator.Calculator}" drawable="calculator"/>
     <item component="ComponentInfo{com.coloros.calculator/com.android.calculator2.Calculator}" drawable="calculator"/>
     <item component="ComponentInfo{com.cyb3rg0d.calculator/com.cyb3rg0d.calculator.MainActivity}" drawable="calculator" />
+    <item component="ComponentInfo{com.coloros.calculator/com.android.calculator2.Calculator}" drawable="calculator"/>
 
     <!-- Calendar -->
     <item component="ComponentInfo{com.android.calendar/com.android.calendar.AllInOneActivity}" drawable="calendar31" />
@@ -1424,6 +1428,7 @@
     <item component="ComponentInfo{com.android.deskclock/com.android.deskclock.DeskClockTabActivity}" drawable="clock" />
     <item component="ComponentInfo{com.chen.deskclock/com.chen.deskclock.DeskClock}" drawable="clock" />
     <item component="ComponentInfo{com.android.BBKClock/com.android.BBKClock.Timer}" drawable="clock"/>
+    <item component="ComponentInfo{com.coloros.alarmclock/com.coloros.alarmclock.AlarmClock}" drawable="clock"/>
 
     <!-- ClockSync -->
     <item component="ComponentInfo{ru.org.amip.ClockSync/ru.org.amip.ClockSync.view.Main}" drawable="clocksync"/>
@@ -1531,6 +1536,7 @@
     <item component="ComponentInfo{com.oneplus.contacts/com.oneplus.contacts.activities.OPPeopleActivity}" drawable="contacts" />
     <item component="ComponentInfo{com.android.contacts/com.android.contacts.DialtactsContactsEntryActivity}" drawable="contacts"/>
     <item component="ComponentInfo{com.samsung.android.app.contacts/com.samsung.android.contacts.contactslist.PeopleActivity}" drawable="contacts" />
+    <item component="ComponentInfo{com.android.contacts/com.android.contacts.PeopleActivityAlias}" drawable="contacts"/>
 
     <!-- Contact Diary -->
     <item component="ComponentInfo{com.apozas.contactdiary/com.apozas.contactdiary.MainActivity}" drawable="contactdiary" />
@@ -2402,7 +2408,8 @@
     <item component="ComponentInfo{com.mi.android.globalFileexplorer/com.android.fileexplorer.FileExplorerTabActivity}" drawable="files" />
     <item component="ComponentInfo{com.oneplus.filemanager/com.oneplus.filemanager.HomePageActivity}" drawable="files" />
     <item component="ComponentInfo{com.android.filemanager/com.android.filemanager.FileManagerActivity}" drawable="files"/>
-    <item component="ComponentInfo{com.coloros.filemanager/com.coloros.filemanager.filerefactor.ui.main.MainActivity}" drawable="file_manager"/>
+    <item component="ComponentInfo{com.coloros.filemanager/com.coloros.filemanager.filerefactor.ui.main.MainActivity}" drawable="files"/>
+    <item component="ComponentInfo{com.coloros.filemanager/com.oplus.filemanager.main.ui.MainActivity}" drawable="files"/>
 
     <!-- Finamp -->
     <item component="ComponentInfo{com.unicornsonlsd.finamp/com.unicornsonlsd.finamp.MainActivity}" drawable="finamp"/>
@@ -2771,6 +2778,7 @@
     <item component="ComponentInfo{com.alensw.PicFolder/com.alensw.PicFolder.GalleryActivity}" drawable="gallery" />
     <item component="ComponentInfo{com.google.android.apps.photosgo/com.google.android.apps.photosgo.home.HomeActivity}" drawable="gallery"/>
     <item component="ComponentInfo{com.vivo.gallery/com.android.gallery3d.vivo.GalleryTabActivity}" drawable="gallery"/>
+    <item component="ComponentInfo{com.coloros.gallery3d/com.coloros.gallery3d.app.MainActivity}" drawable="gallery"/>
 
     <!-- Game Launcher -->
     <item component="ComponentInfo{com.samsung.android.game.gamehome/com.samsung.android.game.gamehome.activity.StartActivity}" drawable="gamelauncher"/>
@@ -2972,6 +2980,7 @@
 
     <!-- Google One -->
     <item component="ComponentInfo{com.google.android.apps.subscriptions.red.LauncherActivity}" drawable="googleone" />
+    <item component="ComponentInfo{com.google.android.apps.subscriptions.red/com.google.android.apps.subscriptions.red.LauncherActivity}" drawable="googleone"/>
 
     <!-- Google Pay -->
     <item component="ComponentInfo{com.google.android.apps.walletnfcrel/com.google.commerce.tapandpay.android.cardlist.CardListActivity}" drawable="googlepay" />
@@ -3360,6 +3369,7 @@
 
     <!-- Instagram -->
     <item component="ComponentInfo{com.instagram.android/com.instagram.android.activity.MainTabActivity}" drawable="instagram" />
+    <item component="ComponentInfo{com.instander.android/com.instander.android.activity.MainTabActivity}" drawable="instagram"/>
 
     <!-- Insular -->
     <item component="ComponentInfo{com.oasisfeng.island.fdroid/com.oasisfeng.island.MainActivity}" drawable="insular" />
@@ -5479,21 +5489,22 @@
     <item component="ComponentInfo{net.eneiluj.nextcloud.phonetrack/net.eneiluj.nextcloud.phonetrack.android.activity.LogjobsListViewActivity}" drawable="phonetrack" />
 
     <!-- Phone -->
+    <item component="ComponentInfo{com.android.contacts/com.android.contacts.DialtactsActivityAlias}" drawable="phone"/>
     <item component="ComponentInfo{com.android.contacts/com.android.contacts.activities.DialtactsActivity}" drawable="phone" />
-    <item component="ComponentInfo{com.android.incallui/com.android.incallui.DialerLauncher}" drawable="phone" />
-    <item component="ComponentInfo{com.samsung.android.contacts/com.android.dialer.DialtactsActivity}" drawable="phone" />
-    <item component="ComponentInfo{com.samsung.android.dialer/com.samsung.android.dialer.DialtactsActivity}" drawable="phone" />
+    <item component="ComponentInfo{com.android.contacts/com.android.contacts.activities.TwelveKeyDialer}" drawable="phone" />
+    <item component="ComponentInfo{com.android.dialer/com.android.dialer.DialtactsActivity}" drawable="phone" />
+    <item component="ComponentInfo{com.android.dialer/com.android.dialer.TwelveKeyDialer}" drawable="phone"/>
     <item component="ComponentInfo{com.android.dialer/com.android.dialer.app.DialtactsActivity}" drawable="phone" />
     <item component="ComponentInfo{com.android.dialer/com.android.dialer.main.impl.MainActivity}" drawable="phone" />
     <item component="ComponentInfo{com.android.dialer/com.oneplus.contacts.activities.OPDialtactsActivity}" drawable="phone" />
-    <item component="ComponentInfo{com.android.dialer/com.android.dialer.DialtactsActivity}" drawable="phone" />
+    <item component="ComponentInfo{com.android.incallui/com.android.incallui.DialerLauncher}" drawable="phone" />
     <item component="ComponentInfo{com.google.android.dialer/com.google.android.dialer.extensions.GoogleDialtactsActivity}" drawable="phone" />
-    <item component="ComponentInfo{org.dnaq.dialer2/org.dnaq.dialer2.DialerActivity}" drawable="phone" />
-    <item component="ComponentInfo{com.oneplus.dialer/com.android.dialer.oneplus.activity.OPDialtactsActivity}" drawable="phone" />
-    <item component="ComponentInfo{com.android.contacts/com.android.contacts.activities.TwelveKeyDialer}" drawable="phone" />
     <item component="ComponentInfo{com.hb.dialer.free/com.hb.dialer.ui.PhoneActivity}" drawable="phone" />
+    <item component="ComponentInfo{com.oneplus.dialer/com.android.dialer.oneplus.activity.OPDialtactsActivity}" drawable="phone" />
+    <item component="ComponentInfo{com.samsung.android.contacts/com.android.dialer.DialtactsActivity}" drawable="phone" />
+    <item component="ComponentInfo{com.samsung.android.dialer/com.samsung.android.dialer.DialtactsActivity}" drawable="phone" />
     <item component="ComponentInfo{com.sonymobile.android.dialer/com.android.dialer.DialtactsActivity}" drawable="phone" />
-    <item component="ComponentInfo{com.android.dialer/com.android.dialer.TwelveKeyDialer}" drawable="phone"/>
+    <item component="ComponentInfo{org.dnaq.dialer2/org.dnaq.dialer2.DialerActivity}" drawable="phone" />
 
     <!-- Phone Manager -->
     <item component="ComponentInfo{com.huawei.systemmanager/com.huawei.systemmanager.mainscreen.MainScreenActivity}" drawable="huaweisystemmanager" />
@@ -8603,6 +8614,7 @@
     <item component="ComponentInfo{com.huawei.android.totemweather/com.huawei.android.totemweather.WeatherHome}" drawable="weather" />
     <item component="ComponentInfo{com.vivo.weather/com.vivo.weather.WeatherMain}" drawable="weather"/>
     <item component="ComponentInfo{com.coloros.weather2/com.coloros.weather.main.view.WeatherMainActivity}" drawable="weather"/>
+    <item component="ComponentInfo{com.samruston.weather/com.samruston.weather.ui.MainActivity}" drawable="weather"/>
 
     <!-- Weawow -->
     <item component="ComponentInfo{com.weawow/com.weawow.MainActivity}" drawable="weawow" />
