@@ -11,4 +11,5 @@ do
   rm ${FILE}
 done
 
+sh sort.sh
 sh xml.sh
