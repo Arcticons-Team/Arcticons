@@ -1,3 +1,9 @@
+### 2.5.5
+###### Released: Okt 17, 2021
+* ✨ Support for Android 7 is back!
+* 🎉 50 new or updated icons (thanks JoelChrono12, Kaiserdragon2, HassanCreative, Aa0-fyi)
+* 🔥 2550 icons in total!
+
 ### 2.5.0
 ###### Released: Okt 7, 2021
 * ♾️ Support for Omega Launcher
