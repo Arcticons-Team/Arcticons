@@ -1,6 +1,6 @@
 #!/bin/bash
 
-APP="../app/src/main/res/xml/appfilter.xml"
+APP="appfilter.xml"
 
 # remove whitespace at beginning of line
 sed -r 's:^[ \t]*::g' ${APP} > onefilter.xml
