@@ -1137,6 +1137,7 @@
     <item component="ComponentInfo{com.android.bbkcalculator/com.android.bbkcalculator.Calculator}" drawable="calculator"/>
     <item component="ComponentInfo{com.coloros.calculator/com.android.calculator2.Calculator}" drawable="calculator"/>
     <item component="ComponentInfo{com.cyb3rg0d.calculator/com.cyb3rg0d.calculator.MainActivity}" drawable="calculator" />
+    <item component="ComponentInfo{com.sonymobile.exactcalculator/com.sonymobile.exactcalculator.Calculator}" drawable="calculator" />
 
     <!-- Calendar -->
     <item component="ComponentInfo{com.android.calendar/com.android.calendar.AllInOneActivity}" drawable="calendar31" />
@@ -1172,6 +1173,9 @@
 
     <!-- Calendar Widget -->
     <item component="ComponentInfo{com.itbenefit.android.calendar/com.itbenefit.android.calendar.ui.WelcomeActivity}" drawable="shiftcal"/>
+
+    <!-- aCalendar -->
+    <item component="ComponentInfo{org.withouthat.acalendar/org.withouthat.acalendar.ACalendar}" drawable="calendara"/>
 
     <!-- Calibre Companion -->
     <item component="ComponentInfo{com.multipie.calibreandroid/com.multipie.cclibrary.SplashScreen}" drawable="calibrecompanion"/>
@@ -2796,6 +2800,9 @@
     <!-- Geekttrss -->
     <item component="ComponentInfo{com.geekorum.ttrss.free/com.geekorum.ttrss.MainActivity}" drawable="geekttrss" />
 
+    <!-- Geizhals -->
+    <item component="ComponentInfo{at.geizhals.pv/at.geizhals.pv.GeizhalsSplashScreen}" drawable="geizhals" />
+
     <!-- Gelli -->
     <item component="ComponentInfo{com.dkanada.gramophone/com.dkanada.gramophone.ui.activities.SplashActivity}" drawable="gelli" />
     <item component="ComponentInfo{com.dkanada.gramophone.debug/com.dkanada.gramophone.ui.activities.SplashActivity}" drawable="gelli" />
@@ -2936,6 +2943,9 @@
     <!-- Google Hangouts -->
     <item component="ComponentInfo{com.google.android.talk/com.google.android.talk.SigningInActivity}" drawable="googlehangouts" />
 
+    <!-- Google Voice -->
+    <item component="ComponentInfo{com.google.android.apps.googlevoice/com.google.android.apps.googlevoice.SplashActivity}" drawable="googlevoice" />
+
 	<!-- Google Home -->
 	<item component="ComponentInfo{com.google.android.apps.chromecast.app/com.google.android.apps.chromecast.app.DiscoveryActivity}" drawable="googlehome" />
 
@@ -2948,6 +2958,7 @@
     <!-- Google Keyboard -->
     <item component="ComponentInfo{com.google.android.inputmethod.latin/com.android.inputmethod.latin.setup.SetupActivity}" drawable="keyboard" />
     <item component="ComponentInfo{com.google.android.inputmethod.latin/com.google.android.apps.inputmethod.libs.framework.core.LauncherActivity}" drawable="keyboard" />
+    <item component="ComponentInfo{com.google.android.inputmethod.pinyin/com.google.android.apps.inputmethod.libs.framework.core.LauncherActivity}" drawable="keyboard" />
 
     <!-- Google Maps -->
     <item component="ComponentInfo{com.google.android.apps.maps/com.google.android.maps.MapsActivity}" drawable="googlemaps" />
@@ -3592,6 +3603,9 @@
 
     <!-- Khan Academy -->
     <item component="ComponentInfo{org.khanacademy.android/org.khanacademy.android.ui.library.MainActivity}" drawable="khanacademy" />
+
+    <!-- Kickstarter -->
+    <item component="ComponentInfo{com.kickstarter.kickstarter/com.kickstarter.ui.activities.DiscoveryActivity}" drawable="kickstarter" />
 
     <!-- Kik -->
     <item component="ComponentInfo{kik.android/kik.android.chat.activity.IntroActivity}" drawable="kik" />
@@ -4611,6 +4625,9 @@
     <item component="ComponentInfo{com.iven.musicplayergo/com.iven.musicplayergo.MainActivity}" drawable="musicplayergo" />
     <item component="ComponentInfo{com.iven.musicplayergo/com.iven.musicplayergo.ui.MainActivity}" drawable="musicplayergo" />
 
+    <!-- Music Folder Player Full -->
+    <item component="ComponentInfo{de.zorillasoft.musicfolderplayer.donate/de.zorillasoft.musicfolderplayer.donate.FolderBrowser}" drawable="foldermusic" />
+
     <!-- Musik -->
     <item component="ComponentInfo{com.maxfour.music/com.maxfour.music.ui.activities.MainActivity}" drawable="musik" />
 
@@ -4885,6 +4902,7 @@
     <!-- Nextcloud -->
     <item component="ComponentInfo{com.nextcloud.client/com.owncloud.android.ui.activity.FileDisplayActivity}" drawable="nextcloud" />
     <item component="ComponentInfo{com.nextcloud.android.beta/com.owncloud.android.ui.activity.FileDisplayActivity}" drawable="nextcloud_dev"/>
+    <item component="ComponentInfo{com.polar.nextcloudservices/com.polar.nextcloudservices.SettingsActivity}" drawable="nextcloud_dev"/>
 
     <!-- Nextcloud Bookmarks -->
     <item component="ComponentInfo{org.schabi.nxbookmarks/org.schabi.nxbookmarks.MainActivity}" drawable="nextcloudbookmarks" />
@@ -5488,6 +5506,8 @@
     <item component="ComponentInfo{com.hb.dialer.free/com.hb.dialer.ui.PhoneActivity}" drawable="phone" />
     <item component="ComponentInfo{com.sonymobile.android.dialer/com.android.dialer.DialtactsActivity}" drawable="phone" />
     <item component="ComponentInfo{com.android.dialer/com.android.dialer.TwelveKeyDialer}" drawable="phone"/>
+    <item component="ComponentInfo{ru.henridellal.dialer/ru.henridellal.dialer.DialerActivity}" drawable="phone"/>
+    <item component="ComponentInfo{com.sonymobile.android.dialer/com.android.dialer.app.DialtactsActivity}" drawable="phone"/>
 
     <!-- Phone Manager -->
     <item component="ComponentInfo{com.huawei.systemmanager/com.huawei.systemmanager.mainscreen.MainScreenActivity}" drawable="huaweisystemmanager" />
@@ -7222,6 +7242,7 @@
 
     <!-- Sim Toolkit -->
     <item component="ComponentInfo{com.android.stk/com.android.stk.StkMain}" drawable="sim" />
+    <item component="ComponentInfo{com.android.stk/com.android.stk.StkMainLauncher}" drawable="sim" />
     <item component="ComponentInfo{com.android.stk/com.android.stk.StkLauncherActivity2}" drawable="sim" />
     <item component="ComponentInfo{com.android.stk/com.android.stk.StkLauncherActivity}" drawable="sim" />
     <item component="ComponentInfo{com.android.stk/com.android.stk.OppoStkLauncherActivity1}" drawable="sim_1_apps"/>
@@ -8072,6 +8093,9 @@
     <!-- Trust Manager -->
     <item component="ComponentInfo{com.bluebox.labs.trustmanager/com.bluebox.labs.trustmanager.MainActivity}" drawable="trustmanager"/>
 
+    <!-- Trust Wallet -->
+    <item component="ComponentInfo{com.wallet.crypto.trustapp/com.wallet.crypto.trustapp.ui.start.activity.StartActivity}" drawable="shieldt"/>
+
     <!-- Truss Me! -->
     <item component="ComponentInfo{com.ScientificMonkeyLLC.TrussMe/com.unity3d.player.UnityPlayerActivity}" drawable="trussme" />
 
@@ -8601,6 +8625,9 @@
     <!-- WebApps -->
     <item component="ComponentInfo{com.tobykurien.webapps/com.tobykurien.webapps.activity.MainActivity}" drawable="webapps" />
 
+    <!-- Webank -->
+    <item component="ComponentInfo{com.opentecheng.android.webank/com.bancobpm.views.splash.SplashActivity}" drawable="letterw" />
+
     <!-- WebOPAC -->
     <item component="ComponentInfo{de.geeksfactory.opacclient/de.geeksfactory.opacclient.frontend.MainActivity}" drawable="webopac" />
 
@@ -8740,6 +8767,7 @@
 
 	<!-- Xbox -->
 	<item component="ComponentInfo{com.microsoft.xboxone.smartglass/com.microsoft.xbox.MainActivity}" drawable="xbox" />
+  <item component="ComponentInfo{com.gamepass.beta/com.gamepass.MainActivity}" drawable="xbox" />
 
     <!-- XBrowserSync -->
     <item component="ComponentInfo{com.xBrowserSync.android/com.xBrowserSync.android.MainActivity}" drawable="xbrowsersync" />
