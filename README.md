@@ -29,6 +29,21 @@ Maintaining this icon-pack costs a lot of time, besides making icons I'm curatin
 
 ## Contributing
 
+### Submitting icon requests
+
+Historically [Turtl](https://f-droid.org/en/packages/org.xphnx.iconsubmit/) was used to collect the necessary information for adding missing icons. But now there is an awesome built-in feature to submit icon request right inside the app!  
+
+A simple step-by-step guide:
+1. Open Arcticons
+2. Press the symbol on the upper-left corner and select `Icon Request`
+3. Choose the missing apps you wish to submit, it's also possible to select/deselect all missing apps
+4. Press the plane symbol and choose the app in the pop-up menu to send the icon request
+5. Now you can check the information that will be sent via email, and if everything looks fine, simply send the email and it's done!
+
+In case you accidentally close the app during the process, and want to clean the cache, there is an option named `Clear Icon Request Data` in `Settings` to do that.
+
+### Making icons
+
 Making icons is fun and **you don't even have to know how to code**. Just install a vector graphic program like [Inkscape](https://inkscape.org/en/), Illustrator, Affinity Designer, [PenPot](https://penpot.app/) or [Vector Asset Creator](https://play.google.com/store/apps/details?id=com.inglesdivino.vectorassetcreator). 
 Read the full details here: 
 - [Contributing](CONTRIBUTING.md)
