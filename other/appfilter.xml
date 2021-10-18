@@ -1,10 +1,58 @@
 <resources>
+	<!-- Bitrue -->
+	<item component="ComponentInfo{com.bitrue.currency.exchange/com.bitrue.currency.currency_exchange_flutter.MainActivity}" drawable="bitrue" />
+
+	<!-- CoinDCX Pro -->
+	<item component="ComponentInfo{com.coindcx/com.coindcx.security.ScreenLock}" drawable="coindcx" />
+
+	<!-- CRED -->
+	<item component="ComponentInfo{com.dreamplug.androidapp/com.dreamplug.androidapp.SplashActivity}" drawable="cred" />
+
+	<!-- Paytm -->
+	<item component="ComponentInfo{net.one97.paytm/net.one97.paytm.app.LauncherActivity}" drawable="paytm" />
+
+	<!-- Sodexo-Zeta -->
+	<item component="ComponentInfo{in.zeta.android/in.apollo.android.ui.activity.SplashScreenActivity}" drawable="sodexo" />
+    
+	<!-- Apk Extractor -->
+	<item component="ComponentInfo{axp.tool.apkextractor/axp.tool.apkextractor.MainActivity}" drawable="apk_extractor" />
+
+	<!-- Githo -->
+	<item component="ComponentInfo{com.florianthaler.githo/com.florianthaler.githo.MainActivity}" drawable="githo" />
+
+	<!-- WoT Compendium - Unofficial -->
+	<item component="ComponentInfo{io.silvermast.wotcompendium/io.silvermast.wotcompendium.MainActivity}" drawable="wot_compendium_unofficial" />
+
+	<!-- Yubico Authenticator -->
+	<item component="ComponentInfo{com.yubico.yubioath/com.yubico.yubioath.ui.main.MainActivity}" drawable="yubico_authenticator" />
+
+	<!-- ACR Phone -->
+	<item component="ComponentInfo{com.nll.cb/com.nll.cb.RouterActivity}" drawable="phone" />
+    
+	<!-- Chogue -->
+	<item component="ComponentInfo{com.BarrLessard.Chogue/com.unity3d.player.UnityPlayerActivity}" drawable="chogue" />
+
+	<!-- Cow's Revenge -->
+	<item component="ComponentInfo{org.pipoypipagames.cowsrevenge/org.godotengine.godot.Godot}" drawable="cows_revenge" />
+
+	<!-- Memo Game -->
+	<item component="ComponentInfo{org.secuso.privacyfriendlymemory/org.secuso.privacyfriendlymemory.ui.SplashActivity}" drawable="memo_game" />
+
+	<!-- Score sheets -->
+	<item component="ComponentInfo{de.beisteiners.spieleblock/de.beisteiners.spieleblock.MainActivity}" drawable="score_sheets" />
+    
+	<!-- Mercado Pago -->
+	<item component="ComponentInfo{com.mercadopago.wallet/com.mercadopago.wallet.AccountSummaryActivity}" drawable="mercado_pago" />
+    	
+    <!-- Cardinal Quest 2 -->
+	<item component="ComponentInfo{com.kongregate.mobile.cardinalquest.google/com.kongregate.mobile.cardinalquest.google.MainActivity}" drawable="cardinal_quest_2" />
+
 	<!-- Crossword -->
 	<item component="ComponentInfo{com.nytimes.crossword/com.nytimes.crosswordlib.activity.MainActivity}" drawable="crossword" />
 
 	<!-- Unified Remote -->
 	<item component="ComponentInfo{com.Relmtech.RemotePaid/com.unified.v3.frontend.views.MainActivity}" drawable="unified_remote" />
-    
+
 	<!-- IP Webcam -->
 	<item component="ComponentInfo{com.pas.webcam/com.pas.webcam.Configuration}" drawable="ip_webcam" />
 
@@ -708,6 +756,7 @@
     <!-- Audio Recorder -->
     <item component="ComponentInfo{com.github.axet.audiorecorder/com.github.axet.audiorecorder.activities.MainActivity}" drawable="recorder" />
     <item component="ComponentInfo{com.dimowner.audiorecorder/com.dimowner.audiorecorder.app.main.MainActivity}" drawable="recorder" />
+	<item component="ComponentInfo{com.lge.hifirecorder/com.lge.hifirecorder.LaunchHifiRecorder}" drawable="recorder" />
 
     <!-- Audio Technica Connect -->
     <item component="ComponentInfo{jp.co.audiotechnica.connect/com.audiotechnica.SplashActivity}" drawable="audiotechnicaconnect" />
@@ -952,6 +1001,7 @@
     <!-- Binance -->
     <item component="ComponentInfo{com.binance.dev/com.binance.dev.activities.main.MainActivity}" drawable="binance" />
     <item component="ComponentInfo{com.binance.dev/com.binance.launcher.activities.main.MainActivity}" drawable="binance" />
+	<item component="ComponentInfo{com.binance.dev/com.binance.launcher.activities.main.BnbMainActivity}" drawable="binance" />
 
     <!-- Binary Eye -->
     <item component="ComponentInfo{de.markusfisch.android.binaryeye/de.markusfisch.android.binaryeye.activity.SplashActivity}" drawable="binaryeye" />
@@ -1269,6 +1319,7 @@
     <item component="ComponentInfo{foundation.e.calendar/com.android.calendar.AllInOneActivity}" drawable="calendar31" />
     <item component="ComponentInfo{com.bbk.calendar/com.bbk.calendar.MainActivity}" drawable="calendar31" />
     <item component="ComponentInfo{com.xiaomi.calendar/com.android.calendar.homepage.AllInOneActivity}" drawable="calendar31" />
+    <item component="ComponentInfo{org.calyxos.etar/com.android.calendar.AllInOneActivity}" drawable="calendar31" />
 
     <!-- Calendar Color -->
     <item component="ComponentInfo{ch.ihdg.calendarcolor/ch.ihdg.calendarcolor.CalendarListActivity}" drawable="calendarcolor" />
@@ -1279,7 +1330,7 @@
     <!-- Calendar Widget -->
     <item component="ComponentInfo{com.itbenefit.android.calendar/com.itbenefit.android.calendar.ui.WelcomeActivity}" drawable="shiftcal" />
 
-    <!-- Calendar dynamic icons -->
+    <!-- Calendar Dynamic Icons -->
     <calendar component="ComponentInfo{com.android.calendar/com.android.calendar.AllInOneActivity}" prefix="calendar" />
     <calendar component="ComponentInfo{com.blackberry.calendar/com.blackberry.calendar.AllInOneActivity}" prefix="calendar" />
     <calendar component="ComponentInfo{com.samsung.android.calendar/com.android.calendar.AllInOneActivity}" prefix="calendar" />
@@ -1291,6 +1342,7 @@
     <calendar component="ComponentInfo{foundation.e.calendar/com.android.calendar.AllInOneActivity}" prefix="calendar" />
     <calendar component="ComponentInfo{com.bbk.calendar/com.bbk.calendar.MainActivity}" drawable="calendar" />
     <calendar component="ComponentInfo{com.xiaomi.calendar/com.android.calendar.homepage.AllInOneActivity}" drawable="calendar" />
+    <calendar component="ComponentInfo{org.calyxos.etar/com.android.calendar.AllInOneActivity}" drawable="calendar" />
 
     <!-- Calibre Companion -->
     <item component="ComponentInfo{com.multipie.calibreandroid/com.multipie.cclibrary.SplashScreen}" drawable="calibrecompanion" />
@@ -1342,6 +1394,7 @@
     <item component="ComponentInfo{com.mediatek.camera/com.mediatek.camera.CameraLauncher}" drawable="mediatekcamera" />
     <item component="ComponentInfo{com.android.MGC/com.android.camera.CameraLauncher}" drawable="camera" />
     <item component="ComponentInfo{com.oppo.camera/com.oppo.camera.Camera}" drawable="camera" />
+    <item component="ComponentInfo{com.lge.camera/com.lge.camera.CameraAppLauncher}" drawable="camera" />
 
     <!-- Camera Connect -->
     <item component="ComponentInfo{jp.co.canon.ic.cameraconnect/jp.co.canon.ic.cameraconnect.top.CCTopActivity}" drawable="cameraconnect" />
@@ -1547,6 +1600,7 @@
     <item component="ComponentInfo{com.chen.deskclock/com.chen.deskclock.DeskClock}" drawable="clock" />
     <item component="ComponentInfo{com.android.BBKClock/com.android.BBKClock.Timer}" drawable="clock" />
     <item component="ComponentInfo{com.coloros.alarmclock/com.coloros.alarmclock.AlarmClock}" drawable="clock" />
+	<item component="ComponentInfo{com.lge.clock/com.lge.clock.AlarmClockActivity}" drawable="clock" />
 
     <!-- CloudStream -->
     <item component="ComponentInfo{com.lagradost.cloudstream3/com.lagradost.cloudstream3.MainActivity}" drawable="cloudstream" />
@@ -2286,6 +2340,7 @@
     <item component="ComponentInfo{com.sonymobile.email/com.sonymobile.email.activity.Welcome}" drawable="mail" />
     <item component="ComponentInfo{com.vivo.email/com.vivo.email.activity.Welcome}" drawable="mail" />
     <item component="ComponentInfo{com.samsung.android.email.provider/com.samsung.android.email.ui.activity.MessageListXL}" drawable="mail" />
+	<item component="ComponentInfo{com.lge.email/com.lge.email.ui.setupwizard.Welcome}" drawable="mail" />
 
     <!-- Emby -->
     <item component="ComponentInfo{com.mb.android/com.mb.android.MainActivity}" drawable="emby" />
@@ -2541,6 +2596,7 @@
     <item component="ComponentInfo{com.android.filemanager/com.android.filemanager.FileManagerActivity}" drawable="files" />
     <item component="ComponentInfo{com.coloros.filemanager/com.coloros.filemanager.filerefactor.ui.main.MainActivity}" drawable="files" />
     <item component="ComponentInfo{com.coloros.filemanager/com.oplus.filemanager.main.ui.MainActivity}" drawable="files" />
+	<item component="ComponentInfo{com.lge.filemanager/com.lge.filemanager.view.LaunchActivity}" drawable="files" />
 
     <!-- Finamp -->
     <item component="ComponentInfo{com.unicornsonlsd.finamp/com.unicornsonlsd.finamp.MainActivity}" drawable="finamp" />
@@ -2910,6 +2966,7 @@
     <item component="ComponentInfo{com.google.android.apps.photosgo/com.google.android.apps.photosgo.home.HomeActivity}" drawable="gallery" />
     <item component="ComponentInfo{com.vivo.gallery/com.android.gallery3d.vivo.GalleryTabActivity}" drawable="gallery" />
     <item component="ComponentInfo{com.coloros.gallery3d/com.coloros.gallery3d.app.MainActivity}" drawable="gallery" />
+	<item component="ComponentInfo{com.android.gallery3d/com.android.gallery3d.app.Gallery}" drawable="gallery" />
 
     <!-- Games -->
     <item component="ComponentInfo{com.oneplus.gamespace/com.oneplus.gamespace.ui.main.MainActivity}" drawable="games" />
@@ -4775,6 +4832,7 @@
     <item component="ComponentInfo{com.android.bbkmusic/com.android.bbkmusic.WidgetToTrackActivity}" drawable="music" />
     <item component="ComponentInfo{com.android.music/com.android.music.MusicBrowserActivity}" drawable="music" />
     <item component="ComponentInfo{com.cyanogenmod.eleven/org.lineageos.eleven.ui.activities.HomeActivity}" drawable="music" />
+	<item component="ComponentInfo{com.lge.music/com.lge.music.MusicBrowserActivity}" drawable="music" />
 
     <!-- Music Folder Player Full -->
     <item component="ComponentInfo{de.zorillasoft.musicfolderplayer.donate/de.zorillasoft.musicfolderplayer.donate.FolderBrowser}" drawable="foldermusic" />
