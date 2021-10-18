@@ -1,4 +1,22 @@
 <resources>
+	<!-- DJI Pilot -->
+	<item component="ComponentInfo{com.dji.industry.pilot/com.dji.industry.pilot.SplashActivity}" drawable="dji_pilot" />
+
+	<!-- EUROprog -->
+	<item component="ComponentInfo{com.delan.app.germanybluetooth/com.delan.app.germanybluetooth.bluetooth.WelcomeActivity}" drawable="lettere" />
+
+	<!-- Harmony -->
+	<item component="ComponentInfo{com.logitech.harmonyhub/com.logitech.harmonyhub.ui.SplashActivity}" drawable="harmony" />
+
+	<!-- Nextcloud Services -->
+	<item component="ComponentInfo{com.polar.nextcloudservices/com.polar.nextcloudservices.SettingsActivity}" drawable="nextcloud_services" />
+
+	<!-- Simple System Monitor -->
+	<item component="ComponentInfo{com.dp.sysmonitor.app/com.dp.sysmonitor.app.activities.SplashActivity}" drawable="simple_system_monitor" />
+
+	<!-- Tachometer -->
+	<item component="ComponentInfo{ch.rmy.android.statusbar_tacho/ch.rmy.android.statusbar_tacho.activities.SettingsActivity}" drawable="tachometer" />
+
 	<!-- Bouncer -->
 	<item component="ComponentInfo{com.samruston.permission/com.samruston.permission.ui.home.MainActivity}" drawable="bouncer" />
 
@@ -1055,6 +1073,7 @@
 
     <!-- Brave Browser -->
     <item component="ComponentInfo{com.brave.browser/com.google.android.apps.chrome.Main}" drawable="brave" />
+	<item component="ComponentInfo{com.brave.browser_beta/com.google.android.apps.chrome.Main}" drawable="brave" />
 
     <!-- Brawl Stars -->
     <item component="ComponentInfo{com.supercell.brawlstars/com.supercell.brawlstars.GameApp}" drawable="brawlstars" />
@@ -5629,6 +5648,7 @@
 
     <!-- PhotoTAN -->
     <item component="ComponentInfo{com.comdirect.phototan/de.comdirect.phototan.activity.start.StartActivity}" drawable="phototan" />
+	<item component="ComponentInfo{com.commerzbank.photoTAN/de.commerzbank.phototan.container.ui.ContainerActivity}" drawable="phototan" />
 
     <!-- Photoczip -->
     <item component="ComponentInfo{org.ibeccato.photoczip/org.ibeccato.photoczip.activity.MainActivity}" drawable="photoczip" />
