@@ -1,3 +1,10 @@
+### 2.6.5
+###### Released: Okt 23, 2021
+* ✨ Support for Android 5 is back!
+* 🎉 100 new or updated icons (thanks JoelChrono12, Chaptergy, Ayysmkz)
+* 🔥 2650 icons in total!
+
+
 ### 2.5.5
 ###### Released: Okt 17, 2021
 * ✨ Support for Android 7 is back!
