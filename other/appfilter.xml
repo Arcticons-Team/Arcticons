@@ -1,5 +1,14 @@
 <resources>
 
+  <!-- Fast N Fitness -->
+	<item component="ComponentInfo{com.easyfitness/com.easyfitness.MainActivity}" drawable="fast_n_fitness" />
+
+    <!-- Pixel Filter -->
+	<item component="ComponentInfo{screen.dimmer.pixelfilter/screen.dimmer.pixelfilter.MainActivity}" drawable="pixel_filter" />
+
+	<!-- URLSanitizer -->
+	<item component="ComponentInfo{moe.dic1911.urlsanitizer/moe.dic1911.urlsanitizer.MainActivity}" drawable="urlsanitizer" />
+  
     <!-- ZDFheute -->
     <item component="ComponentInfo{de.heute.mobile/de.heute.mobile.ui.MainActivity}" drawable="zdfheute"/>
 
@@ -29,7 +38,6 @@
 
     <!-- mBank CZ -->
     <item component="ComponentInfo{cz.mbank/pl.mbank.core.activity.StartActivity}" drawable="mbank_cz"/>
-
 
     <!-- Termius -->
     <item component="ComponentInfo{com.server.auditor.ssh.client/com.server.auditor.ssh.client.navigation.SplashScreenActivity}" drawable="termius"/>
