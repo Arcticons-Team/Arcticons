@@ -1,5 +1,25 @@
 <resources>
+	<!-- Flutterhole -->
+	<item component="ComponentInfo{sterrenburg.github.flutterhole/sterrenburg.github.flutterhole.MainActivity}" drawable="flutterhole" />
 
+	<!-- My Location -->
+	<item component="ComponentInfo{com.mirfatif.mylocation/com.mirfatif.mylocation.MainActivity}" drawable="map" />
+
+	<!-- WPGen -->
+	<item component="ComponentInfo{net.glsk.wpgen/net.glsk.wpgen.ColorsActivity}" drawable="wpgen" />
+    
+	<!-- DAZN -->
+	<item component="ComponentInfo{com.dazn/com.dazn.splash.view.SplashScreenActivity}" drawable="dazn" />
+
+	<!-- FotMob -->
+	<item component="ComponentInfo{com.mobilefootie.wc2010/com.mobilefootie.fotmob.gui.v2.MainActivityWrapper}" drawable="fotmob" />
+
+	<!-- ÖBB -->
+	<item component="ComponentInfo{at.oebb.ts/at.oebb.ts.SplashActivity}" drawable="obb" />
+
+	<!-- PeakFinder -->
+	<item component="ComponentInfo{org.peakfinder.area.alps/org.peakfinder.area.alps.activity.MainScreenEarth}" drawable="peakfinder" />
+    
     <!-- 1.1.1.1 -->
     <item component="ComponentInfo{com.cloudflare.onedotonedotonedotone/com.cloudflare.app.presentation.main.SplashActivity}" drawable="_1111" />
 
@@ -725,7 +745,7 @@
 
     <!-- Aves -->
     <item component="ComponentInfo{deckers.thibault.aves/deckers.thibault.aves.MainActivity}" drawable="aves" />
-
+    
     <!-- Aviasales -->
     <item component="ComponentInfo{ru.aviasales/ru.aviasales.ui.activity.MainActivity}" drawable="aviasales" />
 
@@ -4020,7 +4040,7 @@
     <!-- LTE Cleaner -->
     <item component="ComponentInfo{theredspy15.ltecleanerfoss/theredspy15.ltecleanerfoss.MainActivity}" drawable="ltecleaner" />
     <item component="ComponentInfo{theredspy15.ltecleanerfoss/theredspy15.ltecleanerfoss.controllers.MainActivity}" drawable="ltecleaner" />
-
+    
     <!-- La/u/ncher -->
     <item component="ComponentInfo{com.angryburg.uapp/com.angryburg.uapp.activities.MainActivity}" drawable="letterl" />
 
@@ -6489,6 +6509,7 @@
 
     <!-- Relay -->
     <item component="ComponentInfo{free.reddit.news/reddit.news.RedditNavigation}" drawable="relayreddit" />
+	<item component="ComponentInfo{reddit.news/reddit.news.RedditNavigation}" drawable="relayreddit" />
 
     <!-- Reminder -->
     <item component="ComponentInfo{com.samsung.android.app.reminder/com.samsung.android.app.reminder.ui.LaunchMainActivity}" drawable="reminder" />
@@ -8332,6 +8353,7 @@
     <!-- Tasks -->
     <item component="ComponentInfo{com.blackberry.tasks/com.blackberry.tasks.ui.list.TasksListActivity}" drawable="tasks" />
     <item component="ComponentInfo{org.tasks/com.todoroo.astrid.activity.TaskListActivity}" drawable="tasks" />
+	<item component="ComponentInfo{org.tasks/com.todoroo.astrid.activity.TaskListActivity.LightBlue}" drawable="tasks" />
     <item component="ComponentInfo{foundation.e.tasks/org.dmfs.tasks.TaskListActivity}" drawable="tasks" />
 
     <!-- Taskwarrior -->
