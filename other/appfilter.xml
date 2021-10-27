@@ -1,4 +1,73 @@
 <resources>
+	<!-- Hanping Lite -->
+	<item component="ComponentInfo{com.embermitre.hanping.app.lite/com.embermitre.dictroid.ui.SearchActivity}" drawable="hanping_lite" />
+
+	<!-- Pimsleur -->
+	<item component="ComponentInfo{com.simonandschuster.pimsleur.unified.android/com.pimsleur.MainActivity}" drawable="pimsleur" />
+
+	<!-- Nextcloud Simpletask -->
+	<item component="ComponentInfo{nl.mpcjanssen.simpletask.nextcloud/nl.mpcjanssen.simpletask.Simpletask}" drawable="simpletask" />
+
+	<!-- Badreads -->
+	<item component="ComponentInfo{com.timenotclocks.bookcase/com.timenotclocks.bookcase.MainActivity}" drawable="badreads" />
+
+	<!-- BISON -->
+	<item component="ComponentInfo{de.bisonapp/de.bisonapp.MainActivity}" drawable="bison" />
+
+	<!-- Consorsbank SecurePlus -->
+	<item component="ComponentInfo{com.kobil.consors/com.kobil.consors.MainActivity}" drawable="consorsbank_secureplus" />
+
+	<!-- EasyRPG Player -->
+	<item component="ComponentInfo{org.easyrpg.player/org.easyrpg.player.MainActivity}" drawable="easyrpg_player" />
+
+	<!-- Kleine Wettervorschau Deutschland -->
+	<item component="ComponentInfo{de.kaffeemitkoffein.tinyweatherforecastgermany/de.kaffeemitkoffein.tinyweatherforecastgermany.WelcomeActivity}" drawable="circle" />
+
+	<!-- My Fairphone -->
+	<item component="ComponentInfo{com.fairphone.myfairphone/com.fairphone.myfairphone.ui.welcome.SplashActivity}" drawable="my_fairphone" />
+
+	<!-- Google Pinyin Input -->
+	<item component="ComponentInfo{com.google.android.inputmethod.pinyin/com.google.android.apps.inputmethod.libs.framework.core.LauncherActivity}" drawable="google_pinyin_input" />
+
+	<!-- Linux News -->
+	<item component="ComponentInfo{it.pinenuts.linuxnews/it.pinenuts.newsengine.PinenutsRssReaderActivity}" drawable="anlinux" />
+
+	<!-- OrnitO -->
+	<item component="ComponentInfo{ornito.dominicweb.eu/ornito.dominicweb.eu.MainWindow}" drawable="ornito" />
+
+	<!-- Telegraph -->
+	<item component="ComponentInfo{ir.ilmili.telegraph/org.telegram.ui.LaunchActivityIcn0}" drawable="telegraph" />
+
+	<!-- WLAN -->
+	<item component="ComponentInfo{de.avm.android.wlanapp/de.avm.android.wlanapp.permissions.LocationPermissionActivity}" drawable="wifi" />
+
+	<!-- YT Kids -->
+	<item component="ComponentInfo{com.google.android.apps.youtube.kids/com.google.android.apps.youtube.kids.browse.SplashScreenActivity}" drawable="youtube_kids" />
+    
+	<!-- Brubank -->
+	<item component="ComponentInfo{com.brubank/com.brubank.android.ui.activities.LandingActivity}" drawable="brubank" />
+
+	<!-- Cube Escape -->
+	<item component="ComponentInfo{air.com.RustyLake.CubeEscapeCollection/air.com.RustyLake.CubeEscapeCollection.AppEntry}" drawable="cube_escape" />
+
+	<!-- DoL -->
+	<item component="ComponentInfo{com.vrelnir.DegreesOfLewdity/com.vrelnir.DegreesOfLewdity.MainActivity}" drawable="dol" />
+
+	<!-- Droplets -->
+	<item component="ComponentInfo{com.languagedrops.drops.kids.letters.fun.write.words.learn.abc.alphabet.chinese.english.french.droplets/com.languagedrops.drops.international.MainActivityDroplets}" drawable="droplets" />
+
+	<!-- Honeygain -->
+	<item component="ComponentInfo{com.honeygain.make.money/com.honeygain.app.ui.splash.SplashActivity}" drawable="honeygain" />
+
+	<!-- MessagEase Keyboard -->
+	<item component="ComponentInfo{com.exideas.mekb/com.exideas.mekb.StartListActivity}" drawable="messagease_keyboard" />
+
+	<!-- Shade -->
+	<item component="ComponentInfo{amirz.shade/amirz.shade.ShadeLauncher}" drawable="shade" />
+
+	<!-- Teleposter -->
+	<item component="ComponentInfo{telegra.ph/telegra.ph.MainActivity}" drawable="lettert" />
+
 	<!-- Monocles Browser -->
 	<item component="ComponentInfo{de.monocles.browser/de.monocles.browser.activities.MainWebViewActivity}" drawable="monocles_browser" />
 
@@ -918,6 +987,7 @@
 
     <!-- BeowulfWeather -->
     <item component="ComponentInfo{de.beowulf.wetter/de.beowulf.wetter.LaunchActivity}" drawable="beowulfweather" />
+	<item component="ComponentInfo{com.asus.weathertime/com.asus.weathertime.WeatherTimeSettings}" drawable="beowulfweather" />
 
     <!-- BestBuy -->
     <item component="ComponentInfo{com.bestbuy.android/com.bestbuy}" drawable="bestbuy" />
@@ -1276,6 +1346,7 @@
     <item component="ComponentInfo{com.tct.calculator.bb/com.tct.calculator.Calculator}" drawable="calculator" />
     <item component="ComponentInfo{com.android.calculator2/com.android.calculator2.Calculator}" drawable="calculator" />
     <item component="ComponentInfo{com.oneplus.calculator/com.oneplus.calculator.Calculator}" drawable="calculator" />
+	<item component="ComponentInfo{com.asus.calculator/com.asus.calculator.Calculator}" drawable="calculator" />
     <item component="ComponentInfo{com.sec.android.app.popupcalculator/com.sec.android.app.popupcalculator.Calculator}" drawable="calculator" />
     <item component="ComponentInfo{com.miui.calculator/com.miui.calculator.cal.CalculatorActivity}" drawable="calculator" />
     <item component="ComponentInfo{com.android.bbkcalculator/com.android.bbkcalculator.Calculator}" drawable="calculator" />
@@ -1371,6 +1442,7 @@
     <item component="ComponentInfo{com.android.MGC/com.android.camera.CameraLauncher}" drawable="camera" />
     <item component="ComponentInfo{com.oppo.camera/com.oppo.camera.Camera}" drawable="camera" />
     <item component="ComponentInfo{com.lge.camera/com.lge.camera.CameraAppLauncher}" drawable="camera" />
+	<item component="ComponentInfo{com.asus.camera/com.asus.camera.CameraApp}" drawable="camera" />
 
     <!-- Camera Connect -->
     <item component="ComponentInfo{jp.co.canon.ic.cameraconnect/jp.co.canon.ic.cameraconnect.top.CCTopActivity}" drawable="cameraconnect" />
@@ -1598,6 +1670,7 @@
     <item component="ComponentInfo{com.android.BBKClock/com.android.BBKClock.Timer}" drawable="clock" />
     <item component="ComponentInfo{com.coloros.alarmclock/com.coloros.alarmclock.AlarmClock}" drawable="clock" />
     <item component="ComponentInfo{com.lge.clock/com.lge.clock.AlarmClockActivity}" drawable="clock" />
+	<item component="ComponentInfo{com.asus.deskclock/com.asus.deskclock.DeskClock}" drawable="clock" />
 
     <!-- CloudStream -->
     <item component="ComponentInfo{com.lagradost.cloudstream3/com.lagradost.cloudstream3.MainActivity}" drawable="cloudstream" />
@@ -1709,6 +1782,7 @@
     <item component="ComponentInfo{com.android.contacts/com.android.contacts.DialtactsContactsEntryActivity}" drawable="contacts" />
     <item component="ComponentInfo{com.samsung.android.app.contacts/com.samsung.android.contacts.contactslist.PeopleActivity}" drawable="contacts" />
     <item component="ComponentInfo{com.android.contacts/com.android.contacts.PeopleActivityAlias}" drawable="contacts" />
+	<item component="ComponentInfo{com.asus.contacts/com.android.contacts.activities.PeopleActivity}" drawable="contacts" />
 
     <!-- Contact Diary -->
     <item component="ComponentInfo{com.apozas.contactdiary/com.apozas.contactdiary.MainActivity}" drawable="contactdiary" />
@@ -2657,6 +2731,7 @@
     <item component="ComponentInfo{com.coloros.filemanager/com.coloros.filemanager.filerefactor.ui.main.MainActivity}" drawable="files" />
     <item component="ComponentInfo{com.coloros.filemanager/com.oplus.filemanager.main.ui.MainActivity}" drawable="files" />
     <item component="ComponentInfo{com.lge.filemanager/com.lge.filemanager.view.LaunchActivity}" drawable="files" />
+	<item component="ComponentInfo{com.asus.filemanager/com.asus.filemanager.activity.FileManagerActivity}" drawable="files" />
 
     <!-- Finamp -->
     <item component="ComponentInfo{com.unicornsonlsd.finamp/com.unicornsonlsd.finamp.MainActivity}" drawable="finamp" />
@@ -3036,6 +3111,7 @@
     <item component="ComponentInfo{com.vivo.gallery/com.android.gallery3d.vivo.GalleryTabActivity}" drawable="gallery" />
     <item component="ComponentInfo{com.coloros.gallery3d/com.coloros.gallery3d.app.MainActivity}" drawable="gallery" />
     <item component="ComponentInfo{com.android.gallery3d/com.android.gallery3d.app.Gallery}" drawable="gallery" />
+	<item component="ComponentInfo{com.asus.gallery/com.asus.gallery.app.EPhotoActivity}" drawable="gallery" />
 
     <!-- Games -->
     <item component="ComponentInfo{com.oneplus.gamespace/com.oneplus.gamespace.ui.main.MainActivity}" drawable="games" />
@@ -3436,6 +3512,7 @@
 
 	<!-- HeartBeat -->
 	<item component="ComponentInfo{eu.berdosi.app.heartbeat/eu.berdosi.app.heartbeat.MainActivity}" drawable="heartbeat"/>
+	<item component="ComponentInfo{com.huawei.health/com.huawei.health.MainActivity}" drawable="heartbeat"/>
 
     <!-- Hearthstone -->
     <item component="ComponentInfo{com.blizzard.wtcg.hearthstone/com.blizzard.wtcg.hearthstone.HearthstoneActivity}" drawable="hearthstone" />
@@ -5965,6 +6042,7 @@
     <item component="ComponentInfo{org.dnaq.dialer2/org.dnaq.dialer2.DialerActivity}" drawable="phone" />
     <item component="ComponentInfo{ru.henridellal.dialer/ru.henridellal.dialer.DialerActivity}" drawable="phone" />
     <item component="ComponentInfo{com.sonymobile.android.dialer/com.android.dialer.app.DialtactsActivity}" drawable="phone" />
+	<item component="ComponentInfo{com.asus.dialer/com.android.contacts.activities.DialtactsActivity}" drawable="phone" />
 
     <!-- Phone Manager -->
     <item component="ComponentInfo{com.huawei.systemmanager/com.huawei.systemmanager.mainscreen.MainScreenActivity}" drawable="huaweisystemmanager" />
@@ -6498,6 +6576,7 @@
     <item component="ComponentInfo{com.coolncoolapps.easyvoicerecorder/com.coolncoolapps.secretsoundrecorderhd.activities.MainActivity}" drawable="recorder" />
     <item component="ComponentInfo{com.coolncoolapps.easyvoicerecorder/com.coolncoolapps.secretsoundrecorderhd.activities.MainActivity}" drawable="recorder" />
     <item component="ComponentInfo{com.coolncoolapps.easyvoicerecorder/com.coolncoolapps.secretsoundrecorderhd.activities.OneTouchRecordingActivity}" drawable="one_touch_recorder" />
+	<item component="ComponentInfo{com.asus.soundrecorder/com.asus.soundrecorder.AsusRecorder}" drawable="recorder" />
 
     <!-- Recurrence -->
     <item component="ComponentInfo{com.bleyl.recurrence/com.bleyl.recurrence.activities.MainActivity}" drawable="recurrence" />
