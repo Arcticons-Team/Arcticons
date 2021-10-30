@@ -1,10 +1,18 @@
 ---
 name: Icon request
 about: Icon request for Arcticons
-title: ''
+title: Icon request
 labels: icon-request, small request
 assignees: ''
 
 ---
 
-[^1]: Zip file:
+*Info*
+
+
+
+
+
+
+---
+*Zip file here*
