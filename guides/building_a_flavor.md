@@ -40,5 +40,13 @@ Select your flavor and use the debug button to run it on a virtual or plugged de
 To fully make the app more of your own, you can change the application ID, by default it's `com.donnnno.arcticons`. You can change those first parts to anything you like by refactoring the project.
 
 ## Genetrating a signed APK:
+In short, 
+1. go to `Build > Generate Signed App Bundle / APK`
+2. `Select APK`
+3. Fill in the details, you can create a signing key here, and use it for all your releases.
+![image](https://user-images.githubusercontent.com/31142286/138870912-8d1c71a3-e7bb-485f-84cd-73ee24c69ba8.png)
+4. Select the flavors you want to build and you're done!
 
+
+You can view a more detailed instruction about app signing here:
 https://developer.android.com/studio/publish/app-signing
