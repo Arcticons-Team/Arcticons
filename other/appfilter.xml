@@ -1,4 +1,34 @@
 <resources>
+	<!-- WordPress -->
+	<item component="ComponentInfo{org.wordpress.android/org.wordpress.android.ui.WPLaunchActivity}" drawable="wordpress" />
+    
+	<!-- City Transit -->
+	<item component="ComponentInfo{com.swash.traveller.main/com.swash.traveller.main.SplashScreen}" drawable="city_transit" />
+
+	<!-- FAST -->
+	<item component="ComponentInfo{com.netflix.Speedtest/com.netflix.Speedtest.MainActivity}" drawable="fast" />
+
+	<!-- Fing -->
+	<item component="ComponentInfo{com.overlook.android.fing/com.overlook.android.fing.ui.main.SplashActivity}" drawable="fing" />
+
+	<!-- Fondos interactivos -->
+	<item component="ComponentInfo{com.motorola.livewallpaper3/com.motorola.livewallpaper3.ui.menu.WallpaperMenuActivity}" drawable="fondos_interactivos" />
+
+	<!-- Juegos -->
+	<item component="ComponentInfo{com.motorola.gamemode/com.motorola.gamemode.ui.launcher.main.GameCenterActivity}" drawable="juegos" />
+    
+	<!-- CoinStats -->
+	<item component="ComponentInfo{com.coinstats.crypto.portfolio/com.coinstats.crypto.activities.SplashScreenActivity}" drawable="coinstats" />
+
+	<!-- Mycelium -->
+	<item component="ComponentInfo{com.mycelium.wallet/com.mycelium.wallet.activity.StartupActivity}" drawable="mycelium" />
+
+	<!-- Opensignal -->
+	<item component="ComponentInfo{com.staircase3.opensignal/com.staircase3.opensignal.goldstar.loadingconfig.LoadConfigActivity}" drawable="opensignal" />
+
+	<!-- Stoic -->
+	<item component="ComponentInfo{com.cindicator.stoic_android/com.cindicator.stoic_android.view.activities.SplashScreen}" drawable="stoic" />
+
 	<!-- Hanping Lite -->
 	<item component="ComponentInfo{com.embermitre.hanping.app.lite/com.embermitre.dictroid.ui.SearchActivity}" drawable="hanping_lite" />
 
@@ -1120,6 +1150,7 @@
     <item component="ComponentInfo{org.blokada.alarm/core.PanelActivity}" drawable="blokada" />
     <item component="ComponentInfo{org.blokada.origin.alarm/core.PanelActivity}" drawable="blokada" />
     <item component="ComponentInfo{org.blokada.fem.fdroid/ui.MainActivity}" drawable="blokada" />
+	<item component="ComponentInfo{org.blokada.origin.alarm/ui.MainActivity}" drawable="blokada" />
 
     <!-- Bloons TD 6 -->
     <item component="ComponentInfo{com.ninjakiwi.bloonstd6/com.unity3d.player.UnityPlayerActivity}" drawable="bloonstd6" />
@@ -1443,6 +1474,7 @@
     <item component="ComponentInfo{com.oppo.camera/com.oppo.camera.Camera}" drawable="camera" />
     <item component="ComponentInfo{com.lge.camera/com.lge.camera.CameraAppLauncher}" drawable="camera" />
 	<item component="ComponentInfo{com.asus.camera/com.asus.camera.CameraApp}" drawable="camera" />
+    <item component="ComponentInfo{com.motorola.camera3/com.motorola.camera.Camera}" drawable="camera" /
 
     <!-- Camera Connect -->
     <item component="ComponentInfo{jp.co.canon.ic.cameraconnect/jp.co.canon.ic.cameraconnect.top.CCTopActivity}" drawable="cameraconnect" />
@@ -3364,6 +3396,7 @@
     <!-- Google TV -->
     <item component="ComponentInfo{com.google.android.videos/com.google.android.youtube.videos.EntryPointGtv}" drawable="googletv" />
     <item component="ComponentInfo{com.google.android.videos/com.google.android.youtube.videos.EntryPointGtv/com.google.android.videos.GoogleTvEntryPoint}" drawable="googletv" />
+	<item component="ComponentInfo{com.google.android.videos/com.google.android.videos.GoogleTvEntryPoint}" drawable="googletv" />
 
     <!-- Google Tasks -->
     <item component="ComponentInfo{com.google.android.apps.tasks/com.google.android.apps.tasks.ui.TaskListsActivity}" drawable="googletasks" />
