@@ -1,4 +1,34 @@
 <resources>
+	<!-- WordPress -->
+	<item component="ComponentInfo{org.wordpress.android/org.wordpress.android.ui.WPLaunchActivity}" drawable="wordpress" />
+    
+	<!-- City Transit -->
+	<item component="ComponentInfo{com.swash.traveller.main/com.swash.traveller.main.SplashScreen}" drawable="city_transit" />
+
+	<!-- FAST -->
+	<item component="ComponentInfo{com.netflix.Speedtest/com.netflix.Speedtest.MainActivity}" drawable="fast" />
+
+	<!-- Fing -->
+	<item component="ComponentInfo{com.overlook.android.fing/com.overlook.android.fing.ui.main.SplashActivity}" drawable="fing" />
+
+	<!-- Fondos interactivos -->
+	<item component="ComponentInfo{com.motorola.livewallpaper3/com.motorola.livewallpaper3.ui.menu.WallpaperMenuActivity}" drawable="fondos_interactivos" />
+
+	<!-- Juegos -->
+	<item component="ComponentInfo{com.motorola.gamemode/com.motorola.gamemode.ui.launcher.main.GameCenterActivity}" drawable="juegos" />
+    
+	<!-- CoinStats -->
+	<item component="ComponentInfo{com.coinstats.crypto.portfolio/com.coinstats.crypto.activities.SplashScreenActivity}" drawable="coinstats" />
+
+	<!-- Mycelium -->
+	<item component="ComponentInfo{com.mycelium.wallet/com.mycelium.wallet.activity.StartupActivity}" drawable="mycelium" />
+
+	<!-- Opensignal -->
+	<item component="ComponentInfo{com.staircase3.opensignal/com.staircase3.opensignal.goldstar.loadingconfig.LoadConfigActivity}" drawable="opensignal" />
+
+	<!-- Stoic -->
+	<item component="ComponentInfo{com.cindicator.stoic_android/com.cindicator.stoic_android.view.activities.SplashScreen}" drawable="stoic" />
+
 	<!-- Hanping Lite -->
 	<item component="ComponentInfo{com.embermitre.hanping.app.lite/com.embermitre.dictroid.ui.SearchActivity}" drawable="hanping_lite" />
 
@@ -1120,6 +1150,7 @@
     <item component="ComponentInfo{org.blokada.alarm/core.PanelActivity}" drawable="blokada" />
     <item component="ComponentInfo{org.blokada.origin.alarm/core.PanelActivity}" drawable="blokada" />
     <item component="ComponentInfo{org.blokada.fem.fdroid/ui.MainActivity}" drawable="blokada" />
+	<item component="ComponentInfo{org.blokada.origin.alarm/ui.MainActivity}" drawable="blokada" />
 
     <!-- Bloons TD 6 -->
     <item component="ComponentInfo{com.ninjakiwi.bloonstd6/com.unity3d.player.UnityPlayerActivity}" drawable="bloonstd6" />
@@ -1193,6 +1224,9 @@
 
     <!-- Brainly -->
     <item component="ComponentInfo{co.brainly/com.brainly.StartActivity}" drawable="brainly" />
+
+    <!-- Brakar Billett -->
+    <item component="ComponentInfo{no.brakar.brakarbillett/no.ruter.mobile.activity.SplashActivity}" drawable="brakarbillett" />
 
     <!-- Brave Browser -->
     <item component="ComponentInfo{com.brave.browser/com.google.android.apps.chrome.Main}" drawable="brave" />
@@ -1443,6 +1477,7 @@
     <item component="ComponentInfo{com.oppo.camera/com.oppo.camera.Camera}" drawable="camera" />
     <item component="ComponentInfo{com.lge.camera/com.lge.camera.CameraAppLauncher}" drawable="camera" />
 	<item component="ComponentInfo{com.asus.camera/com.asus.camera.CameraApp}" drawable="camera" />
+    <item component="ComponentInfo{com.motorola.camera3/com.motorola.camera.Camera}" drawable="camera" /
 
     <!-- Camera Connect -->
     <item component="ComponentInfo{jp.co.canon.ic.cameraconnect/jp.co.canon.ic.cameraconnect.top.CCTopActivity}" drawable="cameraconnect" />
@@ -2808,6 +2843,9 @@
     <!-- Fiverr -->
     <item component="ComponentInfo{com.fiverr.fiverr/com.fiverr.fiverr.activityandfragments.entrypoints.FVREntryPoint}" drawable="fiverr" />
 
+    <!-- Flaming Durtles -->
+    <item component="ComponentInfo{com.the_tinkering.wk/com.the_tinkering.wk.activities.MainActivity}" drawable="flamingdurtles" />
+
     <!-- Flamingo -->
     <item component="ComponentInfo{com.samruston.twitter/com.samruston.twitter.Launcher1}" drawable="flamingo" />
 
@@ -3364,6 +3402,7 @@
     <!-- Google TV -->
     <item component="ComponentInfo{com.google.android.videos/com.google.android.youtube.videos.EntryPointGtv}" drawable="googletv" />
     <item component="ComponentInfo{com.google.android.videos/com.google.android.youtube.videos.EntryPointGtv/com.google.android.videos.GoogleTvEntryPoint}" drawable="googletv" />
+	<item component="ComponentInfo{com.google.android.videos/com.google.android.videos.GoogleTvEntryPoint}" drawable="googletv" />
 
     <!-- Google Tasks -->
     <item component="ComponentInfo{com.google.android.apps.tasks/com.google.android.apps.tasks.ui.TaskListsActivity}" drawable="googletasks" />
@@ -5489,6 +5528,7 @@
     <item component="ComponentInfo{com.android.notes/com.android.notes.Notes}" drawable="notes" />
     <item component="ComponentInfo{com.samsung.android.app.notes/com.samsung.android.app.notes.memolist.MemoListActivity}" drawable="notes" />
     <item component="ComponentInfo{com.maltaisn.notes.sync/com.maltaisn.notes.ui.main.MainActivity}" drawable="notes" />
+    <item component="ComponentInfo{org.secuso.privacyfriendlynotes/org.secuso.privacyfriendlynotes.ui.SplashActivity}" drawable="notes" />
 
     <!-- Notes -->
     <item component="ComponentInfo{jl.musicalnotes/jl.musicalnotes.activity.MainActivity}" drawable="letterl" />
@@ -8082,6 +8122,9 @@
     <!-- SpanishDict -->
     <item component="ComponentInfo{com.spanishdict.spanishdict/com.spanishdict.spanishdict.MainActivity}" drawable="spanishdict" />
 
+    <!-- Sparebanken Øst -->
+    <item component="ComponentInfo{com.evry.mobile.android.smartbankmobile.sparebankenost/com.evry.mobile.android.samlibrary.StartupActivity}" drawable="sparebankenost" />
+
     <!-- Sparkasse -->
     <item component="ComponentInfo{com.starfinanz.smob.android.sfinanzstatus/com.starfinanz.smob.android.sfinanzstatus.SFinanzstatus}" drawable="sparkasse" />
     <item component="ComponentInfo{com.starfinanz.mobile.android.pushtan/com.starfinanz.mobile.android.spushtan.SPushTan}" drawable="sparkasse" />
@@ -8463,6 +8506,7 @@
     <item component="ComponentInfo{com.blackberry.tasks/com.blackberry.tasks.ui.list.TasksListActivity}" drawable="tasks" />
     <item component="ComponentInfo{org.tasks/com.todoroo.astrid.activity.TaskListActivity}" drawable="tasks" />
 	<item component="ComponentInfo{org.tasks/com.todoroo.astrid.activity.TaskListActivity.LightBlue}" drawable="tasks" />
+    <item component="ComponentInfo{org.tasks/com.todoroo.astrid.activity.TaskListActivity.Purple}" drawable="tasks" />
     <item component="ComponentInfo{foundation.e.tasks/org.dmfs.tasks.TaskListActivity}" drawable="tasks" />
 
     <!-- Taskwarrior -->
@@ -8494,6 +8538,9 @@
 
     <!-- Tenshi -->
     <item component="ComponentInfo{io.github.shadow578.tenshi/io.github.shadow578.tenshi.ui.MainActivity}" drawable="tenshi" />
+
+    <!-- Teoritentamen -->
+    <item component="ComponentInfo{com.limegreen.app/com.limegreen.app.v2.ui.LoginActivity}" drawable="teoritentamen" />
 
     <!-- Terminal -->
     <item component="ComponentInfo{com.android.terminal/com.android.terminal.TerminalActivity}" drawable="terminal" />
