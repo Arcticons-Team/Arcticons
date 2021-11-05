@@ -1,3 +1,11 @@
+### 2.8.6 - Anniversary edition
+###### Released: Nov 5, 2021
+* 🎈 With this release, Arcticons is a year old (First version was released 5 Nov 2020)
+* ⚠️ Arcticons is growing faster than ever before, but were also getting numerous icon requests from you! Managing this costs a lot of time, so please be patient with your requests (there are ~200 requests open right now). 
+* 🎉 210 new or updated icons (thanks Quantenzitrone, JoelChrono12, Kaiserdragon2, Dgcampbe, Hassanncreative, Ali1020, Conny3496, Petlyh, Jostmorgenstern)
+* 🔥 2860 icons in total!
+
+
 ### 2.6.5
 ###### Released: Okt 23, 2021
 * ✨ Support for Android 5 is back!
