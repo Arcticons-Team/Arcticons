@@ -1,5 +1,14 @@
 <resources>
 
+    <!-- Device Unlock -->
+    <item component="ComponentInfo{com.tmobile.simlock/com.tmobile.simlock.WelcomeActivity}" drawable="device_unlock"/>
+
+    <!-- Samsung Browser -->
+    <item component="ComponentInfo{com.sec.android.app.sbrowser/com.sec.android.app.sbrowser.SBrowserMainActivity}" drawable="samsung_browser"/>
+
+    <!-- T-Mobile -->
+    <item component="ComponentInfo{com.tmobile.pr.mytmobile/com.tmobile.pr.mytmobile.MyTMobileActivity}" drawable="t_mobile"/>
+
     <!-- Sweech -->
     <item component="ComponentInfo{com.sweech/com.sweech.MainActivity}" drawable="sweech"/>
 
@@ -930,6 +939,7 @@
 
     <!-- BetterBatteryStats -->
     <item component="ComponentInfo{com.asksven.betterbatterystats_xdaedition/com.asksven.betterbatterystats.StatsActivity}" drawable="betterbatterystats" />
+    <item component="ComponentInfo{com.asksven.betterbatterystats/com.asksven.betterbatterystats.StatsActivity}" drawable="betterbatterystats"/>
 
     <!-- BetterUntis -->
     <item component="ComponentInfo{com.sapuseven.untis/com.sapuseven.untis.activities.MainActivity}" drawable="betteruntis" />
