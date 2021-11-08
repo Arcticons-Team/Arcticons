@@ -1,4 +1,13 @@
 <resources>
+	<!-- de Volkskrant -->
+	<item component="ComponentInfo{be.persgroep.red.mobile.android.vkn/com.visiolink.reader.SplashScreenActivity}" drawable="de_volkskrant" />
+
+	<!-- NetIQ Advanced Authentication -->
+	<item component="ComponentInfo{com.netiq.oathtoken/com.authasas.oathtoken.RootActivity}" drawable="netiq_advanced_authentication" />
+
+	<!-- TopLogger -->
+	<item component="ComponentInfo{nu.toplogger.app/nu.toplogger.app.MainActivity}" drawable="toplogger" />
+    
 	<!-- CoolApk -->
 	<item component="ComponentInfo{com.coolapk.market/com.coolapk.market.view.main.MainActivity}" drawable="coolapk" />
 
@@ -1125,6 +1134,7 @@
 
     <!-- Bol -->
     <item component="ComponentInfo{com.bol.shop/com.bol.shop.gui.main.MainActivity}" drawable="bol" />
+	<item component="ComponentInfo{com.bol.shop/com.bol.shop.launch.LaunchActivity}" drawable="bol" />
 
     <!-- Booking.com -->
     <item component="ComponentInfo{com.booking/com.booking.startup.HomeActivity}" drawable="booking" />
@@ -1216,6 +1226,7 @@
 
     <!-- Buienradar -->
     <item component="ComponentInfo{com.supportware.Buienradar/nl.rtl.buienradar.ui.splash.SplashActivity}" drawable="buienradar" />
+    <item component="ComponentInfo{com.supportware.Buienradar/nl.rtl.buienradar.main.MainActivity}" drawable="buienradar" />
 
     <!-- Bumble -->
     <item component="ComponentInfo{com.bumble.app/com.bumble.app.ui.launcher.BumbleLauncherActivity}" drawable="bumble" />
