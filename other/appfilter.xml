@@ -1,4 +1,75 @@
 <resources>
+	<!-- de Volkskrant -->
+	<item component="ComponentInfo{be.persgroep.red.mobile.android.vkn/com.visiolink.reader.SplashScreenActivity}" drawable="de_volkskrant" />
+
+	<!-- NetIQ Advanced Authentication -->
+	<item component="ComponentInfo{com.netiq.oathtoken/com.authasas.oathtoken.RootActivity}" drawable="netiq_advanced_authentication" />
+
+	<!-- TopLogger -->
+	<item component="ComponentInfo{nu.toplogger.app/nu.toplogger.app.MainActivity}" drawable="toplogger" />
+    
+	<!-- CoolApk -->
+	<item component="ComponentInfo{com.coolapk.market/com.coolapk.market.view.main.MainActivity}" drawable="coolapk" />
+
+	<!-- Slowly -->
+	<item component="ComponentInfo{com.slowlyapp/com.slowlyapp.MainActivity}" drawable="slowly" />
+
+	<!-- Tap & Go -->
+	<item component="ComponentInfo{com.hktpayment.tapngo/com.pccwmobile.tapandgo.activity.startpage.StartPageActivity}" drawable="tap_and_go" />
+
+	<!-- Ultimate Software -->
+	<item component="ComponentInfo{com.abitdo.advance/com.abitdo.advance.Activity.SearchActivity}" drawable="ultimate_software" />
+    
+	<!-- Native Alpha -->
+	<item component="ComponentInfo{com.cylonid.nativealpha/com.cylonid.nativealpha.MainActivity}" drawable="native_alpha" />
+
+	<!-- Weather notification -->
+	<item component="ComponentInfo{ru.gelin.android.weather.notification/ru.gelin.android.weather.notification.app.MainActivity}" drawable="simpleweather" />
+
+	<!-- Amazon Photos -->
+	<item component="ComponentInfo{com.amazon.clouddrive.photos/com.amazon.clouddrive.photos.display.LauncherActivity}" drawable="amazon_photos" />
+
+	<!-- BofA -->
+	<item component="ComponentInfo{com.infonow.bofa/com.infonow.bofa.Launcher}" drawable="bofa" />
+
+	<!-- HBO Max -->
+	<item component="ComponentInfo{com.hbo.hbonow/com.hbo.go.LaunchActivity}" drawable="hbo_max" />
+
+	<!-- Shadow -->
+	<item component="ComponentInfo{com.blade.shadowcloudgaming/com.blade.shadow.DispatcherActivity}" drawable="shadow" />
+
+	<!-- SmugMug -->
+	<item component="ComponentInfo{com.snapwood.smugfolio/com.smugmug.android.activities.SmugMainActivity}" drawable="smugmug" />
+
+	<!-- Glitch Lab -->
+	<item component="ComponentInfo{com.ilixa.glitch/com.ilixa.glitch.GlitchActivity}" drawable="glitch_lab" />
+    
+    <!-- Neutron Player -->
+	<item component="ComponentInfo{com.neutroncode.mp/com.neutroncode.mp.NeutronMPCore}" drawable="mediaplayer" />
+
+	<!-- Naranja X -->
+	<item component="ComponentInfo{com.tarjetanaranja.ncuenta/com.naranja.ncuenta.app.ui.StartupActivity}" drawable="naranja_x" />
+
+	<!-- ExifEraser -->
+	<item component="ComponentInfo{com.none.tom.exiferaser/com.none.tom.exiferaser.ExifEraserActivity}" drawable="exiferaser" />
+
+	<!-- Paperless -->
+	<item component="ComponentInfo{eu.bauerj.paperless_app/eu.bauerj.paperless_app.MainActivity}" drawable="paperless" />
+
+	<!-- PilferShush Jammer -->
+	<item component="ComponentInfo{cityfreqs.com.pilfershushjammer/cityfreqs.com.pilfershushjammer.MainActivity}" drawable="pilfershush_jammer" />
+
+	<!-- Obsidian -->
+	<item component="ComponentInfo{md.obsidian/md.obsidian.MainActivity}" drawable="obsidian" />
+    
+	<!-- Rust+ -->
+	<item component="ComponentInfo{com.facepunch.rust.companion/host.exp.exponent.MainActivity}" drawable="rust" />
+
+	<!-- LINE MUSIC -->
+	<item component="ComponentInfo{jp.linecorp.linemusic.android/com.naver.vibe.SplashActivity}" drawable="line_music" />
+
+	<!-- Another Widget -->
+	<item component="ComponentInfo{com.tommasoberlose.anotherwidget/com.tommasoberlose.anotherwidget.ui.activities.MainActivity}" drawable="another_widget" />
 
     <!-- Dicio -->
     <item component="ComponentInfo{org.dicio.dicio_android/org.dicio.dicio_android.MainActivity}" drawable="dicio"/>
@@ -1113,6 +1184,7 @@
 
     <!-- Bol -->
     <item component="ComponentInfo{com.bol.shop/com.bol.shop.gui.main.MainActivity}" drawable="bol" />
+	<item component="ComponentInfo{com.bol.shop/com.bol.shop.launch.LaunchActivity}" drawable="bol" />
 
     <!-- Booking.com -->
     <item component="ComponentInfo{com.booking/com.booking.startup.HomeActivity}" drawable="booking" />
@@ -1204,6 +1276,7 @@
 
     <!-- Buienradar -->
     <item component="ComponentInfo{com.supportware.Buienradar/nl.rtl.buienradar.ui.splash.SplashActivity}" drawable="buienradar" />
+    <item component="ComponentInfo{com.supportware.Buienradar/nl.rtl.buienradar.main.MainActivity}" drawable="buienradar" />
 
     <!-- Bumble -->
     <item component="ComponentInfo{com.bumble.app/com.bumble.app.ui.launcher.BumbleLauncherActivity}" drawable="bumble" />
@@ -1406,7 +1479,8 @@
     <item component="ComponentInfo{com.lge.camera/com.lge.camera.CameraAppLauncher}" drawable="camera" />
     <item component="ComponentInfo{com.asus.camera/com.asus.camera.CameraApp}" drawable="camera" />
     <item component="ComponentInfo{com.motorola.camera3/com.motorola.camera.Camera}" drawable="camera" />
-    <item component="ComponentInfo{com.motorola.camera3/com.motorola.camera.Camera}" drawable="camera"/>
+    <item component="ComponentInfo{app.grapheneos.camera/app.grapheneos.camera.ui.activities.MainActivity}" drawable="camera" />
+
 
     <!-- Camera Connect -->
     <item component="ComponentInfo{jp.co.canon.ic.cameraconnect/jp.co.canon.ic.cameraconnect.top.CCTopActivity}" drawable="cameraconnect" />
@@ -2681,6 +2755,7 @@
 
     <!-- Family Link -->
     <item component="ComponentInfo{com.google.android.apps.kids.familylinkhelper/com.google.android.apps.kids.familylinkhelper.home.HomeActivity}" drawable="familylink" />
+	<item component="ComponentInfo{com.google.android.apps.kids.familylink/com.google.android.apps.kids.familylink.home.HomeActivity}" drawable="familylink" />
 
     <!-- FastHub -->
     <item component="ComponentInfo{com.fastaccess.github/com.fastaccess.ui.modules.main.MainActivity}" drawable="fasthub" />
@@ -5722,6 +5797,7 @@
 
     <!-- Notion -->
     <item component="ComponentInfo{com.getnotion.android/com.getnotion.android.activities.LaunchActivity}" drawable="notion" />
+	<item component="ComponentInfo{notion.id/notion.local.id.MainActivity}" drawable="notion" />
 
     <!-- Notizen -->
     <item component="ComponentInfo{it.niedermann.owncloud.notes/it.niedermann.owncloud.notes.android.activity.SplashscreenActivity}" drawable="nextcloudnotes" />
@@ -8727,6 +8803,7 @@
     <item component="ComponentInfo{org.tasks/com.todoroo.astrid.activity.TaskListActivity.LightBlue}" drawable="tasks" />
     <item component="ComponentInfo{org.tasks/com.todoroo.astrid.activity.TaskListActivity.Purple}" drawable="tasks" />
     <item component="ComponentInfo{foundation.e.tasks/org.dmfs.tasks.TaskListActivity}" drawable="tasks" />
+	<item component="ComponentInfo{org.tasks/com.todoroo.astrid.activity.TaskListActivity.Yellow}" drawable="tasks" />
 
     <!-- Taskwarrior -->
     <item component="ComponentInfo{kvj.taskw/kvj.taskw.ui.MainActivity}" drawable="taskwarrior" />
@@ -10124,5 +10201,26 @@
 
     <!-- μlogger -->
     <item component="ComponentInfo{net.fabiszewski.ulogger/net.fabiszewski.ulogger.MainActivity}" drawable="ulogger" />
+		
+		<!-- BGG Catalog -->
+    <item component="ComponentInfo{com.gadestudios.boardgame/com.gadestudios.boardgame.MainActivity}" drawable="bggcatalog" />
+		
+		<!-- Sefaria -->
+    <item component="ComponentInfo{org.sefaria.sefaria/org.sefaria.sefaria.MainActivity}" drawable="sefaria" />
+		
+		<!-- Aleph Beta -->
+    <item component="ComponentInfo{org.alephbeta.android/org.alephbeta.android.view.HomeActivity}" drawable="alephbeta" />
+		
+		<!-- Deep Space D6 -->
+    <item component="ComponentInfo{com.alexvn.deepspaced6/com.unity3d.player.UnityPlayerActivity}" drawable="dsd6" />
+		
+		<!-- Fastient -->
+    <item component="ComponentInfo{com.fastient.app/com.fastient.app.MainActivity}" drawable="fastient" />
+		
+		<!-- Kid3 -->
+    <item component="ComponentInfo{net.sourceforge.kid3/net.sourceforge.kid3.Kid3Activity}" drawable="kid3" />
+		
+		<!-- Lona -->
+    <item component="ComponentInfo{io.github.lufte.lona/io.github.lufte.lona.MainActivity}" drawable="lona" />
 
 </resources>
