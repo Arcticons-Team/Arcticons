@@ -1,3 +1,9 @@
+### 2.9.1
+###### Released: Nov 12, 2021
+🎉 60 new or updated icons (thanks JoelChrono12, Ddavidd!)
+🔥 2910 icons in total!
+
+
 ### 2.8.6 - Anniversary edition
 ###### Released: Nov 5, 2021
 * 🎈 With this release, Arcticons is a year old (First version was released 5 Nov 2020)
