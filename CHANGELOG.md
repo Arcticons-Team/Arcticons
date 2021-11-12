@@ -1,6 +1,6 @@
 ### 2.9.1
 ###### Released: Nov 12, 2021
-🎉 60 new or updated icons (thanks JoelChrono12, Ddavidd!)
+🎉 52 new or updated icons (thanks JoelChrono12, Ddavidd!)
 🔥 2910 icons in total!
 
 
