@@ -1,5 +1,18 @@
 <resources>
-	<!-- de Volkskrant -->
+    
+	<!-- Reddit is fun / RIF -->
+	<item component="a{com.andrewshu.android.reddit/com.andrewshu.android.reddit.MainActivity}" drawable="reddit_is_fun" />
+
+	<!-- Dict.cc -->
+	<item component="ComponentInfo{cc.dict.dictcc/cc.dict.dictcc.MainActivity}" drawable="dictcc" />
+
+	<!-- PianOli -->
+	<item component="ComponentInfo{com.nicobrailo.pianoli/com.nicobrailo.pianoli.MainActivity}" drawable="pianoli" />
+
+	<!-- TonUINO NFC Tools -->
+	<item component="ComponentInfo{de.mw136.tonuino/de.mw136.tonuino.ui.MainActivity}" drawable="tonuino_nfc_tools" />
+
+	<!-- De Volkskrant -->
 	<item component="ComponentInfo{be.persgroep.red.mobile.android.vkn/com.visiolink.reader.SplashScreenActivity}" drawable="de_volkskrant" />
 
 	<!-- NetIQ Advanced Authentication -->
@@ -2302,7 +2315,8 @@
     <item component="ComponentInfo{com.onlyoffice.documents/app.editors.manager.ui.activities.login.SplashActivity}" drawable="documents" />
 
     <!-- Document Viewer -->
-    <item component="ComponentInfo{org.sufficientlysecure.viewer/org.ebookdroid.ui.library.RecentActivity}" drawable="book" />
+    <item component="ComponentInfo{org.sufficientlysecure.viewer/org.ebookdroid.ui.library.RecentActivity}" drawable="document_viewer" />
+	<item component="ComponentInfo{org.sufficientlysecure.viewer/org.ebookdroid.ui.library.RequestPermissionsActivity}" drawable="document_viewer" />
 
     <!-- Docus -->
     <item component="ComponentInfo{com.bretahajek.docus/com.bretahajek.docus.MainActivity}" drawable="docus" />
