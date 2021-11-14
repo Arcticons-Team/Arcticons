@@ -1,4 +1,43 @@
-<resources>
+<resources>	
+	<!-- APKMirror -->
+	<item component="ComponentInfo{taco.apkmirror/taco.apkmirror.activities.MainActivity}" drawable="downloads" />
+
+	<!-- Cineaste -->
+	<item component="ComponentInfo{de.cineaste.android/de.cineaste.android.MainActivity}" drawable="cineaste" />
+
+	<!-- Classical Music Tagger -->
+	<item component="ComponentInfo{de.kromke.andreas.musictagger/de.kromke.andreas.musictagger.MainActivity}" drawable="classical_music_tagger" />
+
+	<!-- Easy WaterMark -->
+	<item component="ComponentInfo{me.rosuh.easywatermark/me.rosuh.easywatermark.ui.MainActivity}" drawable="easy_watermark" />
+
+	<!-- Freedoom -->
+	<item component="ComponentInfo{net.nullsum.freedoom/net.nullsum.freedoom.EntryActivity}" drawable="doom" />
+    
+	<!-- Telepizza -->
+	<item component="ComponentInfo{com.telepizza/com.telepizza.MainActivity}" drawable="telepizza" />
+
+	<!-- Uplive -->
+	<item component="ComponentInfo{com.asiainno.uplive/com.asiainno.uplive.init.splash.SplashActivity}" drawable="uplive" />
+    
+	<!-- InDriver -->
+	<item component="ComponentInfo{sinet.startup.inDriver/sinet.startup.inDriver.ui.splash.SplashActivity}" drawable="indriver" />
+
+	<!-- Zapya Go -->
+	<item component="ComponentInfo{com.dewmobile.zapyago/com.omniashare.minishare.ui.activity.splash.LaunchActivity}" drawable="zapya_go" />
+    
+    <!-- 1xBit -->
+	<item component="ComponentInfo{org.xbet.client.bitcoin/org.xbet.client1.new_arch.presentation.ui.starter.StarterActivity}" drawable="a1xbit" />
+
+	<!-- Ameli -->
+	<item component="ComponentInfo{fr.cnamts.it.activity/fr.cnamts.it.activity.LoginActivity}" drawable="ameli" />
+
+	<!-- Lark Player -->
+	<item component="ComponentInfo{com.dywx.larkplayer/com.dywx.larkplayer.main.MainActivity}" drawable="lark_player" />
+
+	<!-- Skrill -->
+	<item component="ComponentInfo{com.moneybookers.skrillpayments/com.moneybookers.skrillpayments.v2.ui.launcher.LauncherActivity}" drawable="skrill" />
+
 	<!-- English -->
 	<item component="ComponentInfo{livio.pack.lang.en_US/livio.pack.lang.en_US.DictionaryView}" drawable="english" />
 
@@ -919,6 +958,7 @@
     <!-- Banque / Banxo -->
     <item component="ComponentInfo{com.caisseepargne.android.mobilebanking/com.caisseepargne.android.mobilebanking.activities.ADashBoard}" drawable="banque" />
     <item component="ComponentInfo{com.caisseepargne.android.mobilebanking/com.caisseepargne.android.mobilebanking.features.main.MainActivity}" drawable="banque" />
+	<item component="ComponentInfo{com.caisseepargne.android.mobilebanking/fr.bpce.pulsar.app.ui.startup.StartUpActivity}" drawable="banque" />
 
     <!-- Barclays -->
     <item component="ComponentInfo{com.barclaycard.germany/com.veripark.barclaycard.screen.main.activities.MainActivity}" drawable="barclays" />
@@ -1262,6 +1302,7 @@
 
     <!-- Burger King -->
     <item component="ComponentInfo{com.emn8.mobilem8.nativeapp.bk/rbi.android.app.MainActivity}" drawable="burgerking" />
+	<item component="ComponentInfo{com.bk.pt/es.burgerking.android.presentation.walkthrough.WalkthroughIntroActivity}" drawable="burgerking" />
 
     <!-- BusTO -->
     <item component="ComponentInfo{it.reyboz.bustorino/it.reyboz.bustorino.ActivityPrincipal}" drawable="busto" />
@@ -1688,6 +1729,7 @@
 
     <!-- CloudStream -->
     <item component="ComponentInfo{com.lagradost.cloudstream3/com.lagradost.cloudstream3.MainActivity}" drawable="cloudstream" />
+	<item component="ComponentInfo{com.lagradost.cloudstream3.prerelease/com.lagradost.cloudstream3.MainActivity}" drawable="cloudstream" />
 
     <!-- CloudTV Remote -->
     <item component="ComponentInfo{com.cloudwalker.cshare/com.ecloud.eshare.MainActivity}" drawable="cloudtv_remote" />
@@ -8723,6 +8765,7 @@
 
     <!-- SwiftKey -->
     <item component="ComponentInfo{com.touchtype.swiftkey/com.touchtype.LauncherActivityIcon}" drawable="swiftkey" />
+	<item component="ComponentInfo{com.touchtype.swiftkey.beta/com.touchtype.LauncherActivityIcon}" drawable="swiftkey" />
 
     <!-- Swiftnotes -->
     <item component="ComponentInfo{com.moonpi.swiftnotes/com.moonpi.swiftnotes.MainActivity}" drawable="notes" />
