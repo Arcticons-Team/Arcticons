@@ -1,4 +1,37 @@
 <resources>	
+	<!-- Schwab -->
+	<item component="ComponentInfo{com.schwab.mobile/com.schwab.mobile.activity.SplashScreenActivity}" drawable="schwab" />
+
+	<!-- SomaFM -->
+	<item component="ComponentInfo{com.dgmltn.radiomg.somafm/com.dgmltn.radiomg.ui.main.MainActivity}" drawable="somafm" />
+    
+	<!-- GeForce NOW -->
+	<item component="ComponentInfo{com.nvidia.geforcenow/com.nvidia.tegrazone.MainActivity}" drawable="nvidia" />
+
+	<!-- eKonto -->
+	<item component="ComponentInfo{cz.rb.app.smartphonebanking/com.zentity.rbcz.activity.RootActivity}" drawable="ekonto" />
+
+	<!-- IPMIView -->
+	<item component="ComponentInfo{com.smc.smcipmitool/com.smc.smcipmitool.IPMIWelcomeActivity}" drawable="ipmiview" />
+
+	<!-- Termius -->
+	<item component="ComponentInfo{com.server.auditor.ssh.client/com.server.auditor.ssh.client.navigation.SplashScreenActivity}" drawable="termius" />
+
+	<!-- Locus Map Pro -->
+	<item component="ComponentInfo{menion.android.locus.pro/com.asamm.locus.core.LauncherActivity}" drawable="locus_map_pro" />
+
+	<!-- Lufthansa -->
+	<item component="ComponentInfo{com.lufthansa.android.lufthansa/com.lufthansa.android.lufthansa.ui.activity.HomeActivity}" drawable="lufthansa" />
+
+	<!-- Miles & More -->
+	<item component="ComponentInfo{com.plannet.milesandmoreapp/com.milesandmore.android.MainActivity}" drawable="miles_and_more" />
+
+	<!-- Raumfeld -->
+	<item component="ComponentInfo{com.raumfeld.android.controller/com.raumfeld.android.controller.clean.external.ui.root.RootActivity}" drawable="raumfeld" />
+
+	<!-- Smart Home -->
+	<item component="ComponentInfo{com.bosch.sh.ui.android/com.bosch.sh.ui.android.ux.launcher.LauncherActivity}" drawable="smart_home" />
+
 	<!-- APKMirror -->
 	<item component="ComponentInfo{taco.apkmirror/taco.apkmirror.activities.MainActivity}" drawable="downloads" />
 
@@ -4359,6 +4392,7 @@
 
     <!-- Koreader -->
     <item component="ComponentInfo{org.koreader.launcher/org.koreader.launcher.MainActivity}" drawable="koreader" />
+    <item component="ComponentInfo{org.koreader.launcher.fdroid/org.koreader.launcher.MainActivity}" drawable="koreader" />
 
     <!-- Kore -->
     <item component="ComponentInfo{org.xbmc.kore/org.xbmc.kore.ui.RemoteActivity}" drawable="kore" />
