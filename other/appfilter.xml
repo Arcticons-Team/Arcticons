@@ -1,10 +1,55 @@
 <resources>	
+	<!-- Universal Tuner -->
+	<item component="ComponentInfo{ru.aterlux.guitartuner/ru.aterlux.guitartuner.MainActivity}" drawable="universal_tuner" />
+
+	<!-- WTMP -->
+	<item component="ComponentInfo{com.wtmp.svdsoftware/com.wtmp.svdsoftware.ui.HostActivity}" drawable="wtmp" />
+
+	<!-- Yandex Keyboard -->
+	<item component="ComponentInfo{ru.yandex.androidkeyboard/com.android.inputmethod.latin.setup.SetupYandexKeyboardActivity}" drawable="yandex_keyboard" />
+
+	<!-- Godville -->
+	<item component="ComponentInfo{ru.godville.android/ru.godville.android4.base.activities.LaunchActivity}" drawable="godville" />
+
+	<!-- IVPN -->
+	<item component="ComponentInfo{net.ivpn.client/net.ivpn.core.v2.MainActivity}" drawable="ivpn" />
+
+	<!-- Memrise -->
+	<item component="ComponentInfo{com.memrise.android.memrisecompanion/com.memrise.android.memrisecompanion.ui.activity.LauncherActivity}" drawable="memrise" />
+
+	<!-- NetBenefits -->
+	<item component="ComponentInfo{com.fidelity.wi.activity/com.fidelity.wi.activity.MainActivity}" drawable="netbenefits" />
+
+	<!-- spaRSS DecSync -->
+	<item component="ComponentInfo{org.decsync.sparss.floss/org.decsync.sparss.activity.HomeActivity}" drawable="sparss_decsync" />
+
+	<!-- August -->
+	<item component="ComponentInfo{com.august.luna/com.august.luna.ui.startup.LandingPage}" drawable="letter_a_lowercase" />
+
+	<!-- Ecobee -->
+	<item component="ComponentInfo{com.ecobee.athenamobile/com.ecobee.athenamobile.launcher.LauncherActivity}" drawable="letter_e_lowercase" />
+
+	<!-- Labyrinthos -->
+	<item component="ComponentInfo{com.labyrinthos.app/com.labyrinthos.app.MainActivity}" drawable="labyrinthos" />
+
+	<!-- One -->
+	<item component="ComponentInfo{com.onefinance.one/com.onefinance.one.presentation.auth.AuthActivity}" drawable="one" />
+
+	<!-- Raindrop -->
+	<item component="ComponentInfo{io.raindrop.raindropio/com.zoontek.rnbootsplash.RNBootSplashActivity}" drawable="raindrop" />
+
+	<!-- Zlib -->
+	<item component="ComponentInfo{com.positron_it.zlib/com.positron_it.zlib.ui.splash.SplashActivity}" drawable="zlib" />
+
+	<!-- MDict -->
+	<item component="ComponentInfo{cn.mdict/cn.mdict.SplashScreen}" drawable="mdict" />
+
 	<!-- Schwab -->
 	<item component="ComponentInfo{com.schwab.mobile/com.schwab.mobile.activity.SplashScreenActivity}" drawable="schwab" />
 
 	<!-- SomaFM -->
 	<item component="ComponentInfo{com.dgmltn.radiomg.somafm/com.dgmltn.radiomg.ui.main.MainActivity}" drawable="somafm" />
-    
+
 	<!-- GeForce NOW -->
 	<item component="ComponentInfo{com.nvidia.geforcenow/com.nvidia.tegrazone.MainActivity}" drawable="nvidia" />
 
@@ -1301,6 +1346,7 @@
     <item component="ComponentInfo{foundation.e.browser/com.google.android.apps.chrome.Main}" drawable="browser" />
     <item component="ComponentInfo{com.mi.globalbrowser/com.mi.globalbrowser.Main}" drawable="browser" />
     <item component="ComponentInfo{com.vivo.browser/com.vivo.browser.BrowserActivity}" drawable="browser" />
+    <item component="ComponentInfo{com.heytap.browser/com.android.browser.BrowserActivity}" drawable="browser" />
 
     <!-- Brubank -->
     <item component="ComponentInfo{com.brubank/com.brubank.android.ui.activities.LandingActivity}" drawable="brubank" />
@@ -5429,6 +5475,7 @@
     <item component="ComponentInfo{com.cyanogenmod.eleven/org.lineageos.eleven.ui.activities.HomeActivity}" drawable="music" />
     <item component="ComponentInfo{com.lge.music/com.lge.music.MusicBrowserActivity}" drawable="music" />
     <item component="ComponentInfo{org.calyxos.eleven/org.lineageos.eleven.ui.activities.HomeActivity}" drawable="music" />
+    <item component="ComponentInfo{com.heytap.music/com.nearme.music.splash.SplashActivity}" drawable="music" />
 
     <!-- Music Folder Player Full -->
     <item component="ComponentInfo{de.zorillasoft.musicfolderplayer.donate/de.zorillasoft.musicfolderplayer.donate.FolderBrowser}" drawable="foldermusic" />
@@ -8966,6 +9013,7 @@
     <item component="ComponentInfo{org.tasks/com.todoroo.astrid.activity.TaskListActivity.Purple}" drawable="tasks" />
     <item component="ComponentInfo{foundation.e.tasks/org.dmfs.tasks.TaskListActivity}" drawable="tasks" />
     <item component="ComponentInfo{org.tasks/com.todoroo.astrid.activity.TaskListActivity.Yellow}" drawable="tasks" />
+    <item component="ComponentInfo{org.tasks/com.todoroo.astrid.activity.TaskListActivity.DeepPurple}" drawable="tasks" />
 
     <!-- Taskwarrior -->
     <item component="ComponentInfo{kvj.taskw/kvj.taskw.ui.MainActivity}" drawable="taskwarrior" />
