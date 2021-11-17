@@ -10,7 +10,7 @@ CODE_PRE='	  R.drawable.nodpi_'
 CODE_SUF=',\n'
 
 printf '<?xml version="1.0" encoding="utf-8"?>\n<resources>\n	 <string-array name="icon_pack" translatable="false">\n' > iconpack.xml
-printf '<?xml version="1.0" encoding="utf-8"?>\n<resources>\n	 <version>1</version>\n' > drawable.xml
+printf '<?xml version="1.0" encoding="utf-8"?>\n<resources>\n	 <version>1</version>\n	  <category title="New" />\n' > drawable.xml
 printf '    private Integer[] mImages = {\n' > code.xml
 
 for DIR in $(find ${SVGDIR} -name "*.svg" | sort -V)
