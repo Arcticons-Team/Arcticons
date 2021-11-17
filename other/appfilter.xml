@@ -1,5 +1,17 @@
 <resources>
 
+    <!-- Flic -->
+    <item component="ComponentInfo{io.flic.app/io.flic.ui.ui.activities.main.MainActivity}" drawable="flic"/>
+
+    <!-- paysafecard -->
+    <item component="ComponentInfo{at.paysafecard.android/at.paysafecard.android.LauncherActivity}" drawable="paysafecard"/>
+
+    <!-- Renpho -->
+    <item component="ComponentInfo{com.qingniu.renpho/com.renpho.app.main.view.activity.LauncherActivity}" drawable="renpho"/>
+
+    <!-- Untis Mobile -->
+    <item component="ComponentInfo{com.grupet.web.app/com.untis.mobile.ui.activities.launcher.LauncherActivity}" drawable="untis_mobile"/>
+
     <!-- ScanMediaPlz -->
     <item component="ComponentInfo{net.zhuoweizhang.scanmediaplz/net.zhuoweizhang.scanmediaplz.ScanMediaPlzActivity}" drawable="scanmediaplz"/>
 
@@ -7229,6 +7241,7 @@
     <item component="ComponentInfo{com.reddit.frontpage/com.reddit.frontpage.StartActivity}" drawable="reddit" />
     <item component="ComponentInfo{com.reddit.frontpage/launcher.default}" drawable="reddit" />
     <item component="ComponentInfo{com.reddit.frontpage/launcher.wallstreet}" drawable="reddit" />
+    <item component="ComponentInfo{com.reddit.frontpage/launcher.classic}" drawable="reddit"/>
 
     <!-- Reddit Sync -->
     <item component="ComponentInfo{com.laurencedawson.reddit_sync/com.laurencedawson.reddit_sync.ui.activities.HomeActivity}" drawable="redditsync" />
