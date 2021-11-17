@@ -1,4 +1,50 @@
-<resources>	
+<resources>
+	<!-- QuickSwitch -->
+	<item component="ComponentInfo{xyz.paphonb.quickstepswitcher/xyz.paphonb.quickstepswitcher.MainActivity}" drawable="quickswitch" />
+	
+	<!-- Mi O2 -->
+	<item component="ComponentInfo{es.o2.mio2/com.movistar.android.mimovistar.es.presentation.MainActivity}" drawable="mi_o2" />
+	<item component="ComponentInfo{uk.co.o2.android.myo2/com.tuenti.messenger.ui.activity.MainActivity}" drawable="mi_o2" />
+	
+	<!-- Goodreads -->
+	<item component="ComponentInfo{com.goodreads/com.goodreads.kindle.ui.activity.SplashActivity}" drawable="letter_g_lowercase" />
+	
+	<!-- Credit Karma -->
+	<item component="ComponentInfo{com.creditkarma.mobile/com.creditkarma.mobile.welcome.ui.WelcomeActivity}" drawable="credit_karma" />
+	
+	<!-- EasyPark -->
+	<item component="ComponentInfo{net.easypark.android/net.easypark.android.mvp.splash.SplashActivity}" drawable="easypark" />
+	
+	<!-- Amazon Alexa -->
+	<item component="ComponentInfo{com.amazon.dee.app/com.amazon.dee.app.Launcher}" drawable="amazon_alexa" />
+	
+	<!-- KuCoin -->
+	<item component="ComponentInfo{com.kubi.kucoin/com.kubi.kucoin.feature.SplashActivity}" drawable="kucoin" />
+	
+	<!-- DiDi Greater China -->
+	<item component="ComponentInfo{com.sdu.didi.psnger/com.didi.sdk.app.launch.splash.SplashActivity}" drawable="didi_greater_china" />
+	
+	<!-- Huawei Mirror -->
+	<item component="ComponentInfo{com.huawei.mirror/com.huawei.mirror.main.MainActivity}" drawable="huawei_mirror" />
+	
+	<!-- Huawei Deskclock -->
+	<item component="ComponentInfo{com.huawei.deskclock/com.android.deskclock.AlarmsMainActivity}" drawable="huawei_deskclock" />
+	
+	<!-- Huawei Phone Clone -->
+	<item component="ComponentInfo{com.hicloud.android.clone/com.huawei.android.clone.activity.sender.ChooseReceiveSendActivity}" drawable="huawei_phone_clone" />
+	
+	<!-- Huawei Calendar -->
+	<item component="ComponentInfo{com.huawei.calendar/com.android.calendar.AllInOneActivity}" drawable="huawei_calendar" />
+
+	<!-- Huawei Assistant -->
+	<item component="ComponentInfo{com.huawei.vassistant/com.huawei.vassistant.ui.main.VAssistantActivity}" drawable="huawei_assistant" />
+	
+	<!-- Huawei Remotecontroller -->
+	<item component="ComponentInfo{com.huawei.android.remotecontroller/com.huawei.android.remotecontroller.app.RemoteControllerActivity}" drawable="huawei_remotecontroller" />
+
+	<!-- de Volkskrant -->
+	<item component="ComponentInfo{be.persgroep.red.mobile.android.vkn/com.visiolink.reader.SplashScreenActivity}" drawable="de_volkskrant" />
+
 	<!-- Libro.fm -->
 	<item component="ComponentInfo{fm.libro.librofm/fm.libro.ui.screens.launch.LaunchActivity}" drawable="librofm" />
 
@@ -1554,6 +1600,7 @@
     <calendar component="ComponentInfo{com.bbk.calendar/com.bbk.calendar.MainActivity}" drawable="calendar_" />
     <calendar component="ComponentInfo{com.xiaomi.calendar/com.android.calendar.homepage.AllInOneActivity}" drawable="calendar_" />
     <calendar component="ComponentInfo{org.calyxos.etar/com.android.calendar.AllInOneActivity}" drawable="calendar_" />
+    <calendar component="ComponentInfo{com.huawei.calendar/com.android.calendar.AllInOneActivity}" drawable="calendar_" />
 
     <!-- Calendar Import-Export -->
     <item component="ComponentInfo{org.sufficientlysecure.ical/org.sufficientlysecure.ical.ui.MainActivity}" drawable="calendarimportexport" />
@@ -8650,6 +8697,7 @@
     <!-- Sparkasse -->
     <item component="ComponentInfo{com.starfinanz.smob.android.sfinanzstatus/com.starfinanz.smob.android.sfinanzstatus.SFinanzstatus}" drawable="sparkasse" />
     <item component="ComponentInfo{com.starfinanz.mobile.android.pushtan/com.starfinanz.mobile.android.spushtan.SPushTan}" drawable="sparkasse" />
+	<item component="ComponentInfo{com.starfinanz.smob.android.sfinanzstatus/com.starfinanz.smob.android.sfinanzstatus.LauncherActivity}" drawable="sparkasse" />
 
     <!-- Spark -->
     <item component="ComponentInfo{com.readdle.spark/com.readdle.spark.ui.MainActivity}" drawable="spark" />
