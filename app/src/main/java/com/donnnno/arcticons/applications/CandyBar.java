@@ -52,6 +52,9 @@ public class CandyBar extends CandyBarApplication {
             return emailBody.toString();
         });
 
+        configuration.setCategoryForTabAllIcons(new String[] {
+                "Folders", "Calendar", "Icons"
+        });
         return configuration;
     }
 }
