@@ -53,3 +53,11 @@ Read the full details here:
 **Come chat with us on Matrix:**
 
 <a href="https://app.element.io/#/room/#arcticons:matrix.org"><img height="40" alt="Donate using Paypal" src="https://github.com/Donnnno/Arcticons/blob/main/github/matrix_button.svg"></a>
+
+## License
+
+The current version (2.1.8 and higher) of Arcticons is built with with the CandyBar Dashboard, licensed under [Apache License, Version 2.0](https://www.apache.org/licenses/LICENSE-2.0)
+
+Before on a modified version of [Frost](https://github.com/dkanada/frost)'s custom dasboard, licensed under [GNU General Public License, Version 3.0](https://www.gnu.org/licenses/gpl-3.0.en.html).
+
+All icons are licensed under [Creative Commonns Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) ](https://creativecommons.org/licenses/by-sa/4.0/), with around 900 of the first icons based on [Frost](https://github.com/dkanada/frost)'s icons.
