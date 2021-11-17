@@ -1,4 +1,49 @@
-<resources>
+
+<resources>	
+	<!-- Library Mobile -->
+	<item component="ComponentInfo{com.ombiel.campusm.librarymobile/com.ombiel.campusm.startup.Main}" drawable="library_mobile" />
+
+	<!-- Shiftmanager Pro -->
+	<item component="ComponentInfo{com.shooble.app/com.shooble.app.MainActivity}" drawable="shiftmanager_pro" />
+
+	<!-- aLogcat -->
+	<item component="ComponentInfo{org.jtb.alogcat/org.jtb.alogcat.LogActivity}" drawable="alogcat"/>
+
+	<!-- ALTTP - Tracker -->
+	<item component="ComponentInfo{com.codeflayer.alttptracker/com.tns.NativeScriptActivity}" drawable="alttp_tracker" />
+
+	<!-- Bubble -->
+	<item component="ComponentInfo{org.woheller69.level/org.woheller69.level.Level}" drawable="bubble" />
+
+	<!-- Keto-Mojo -->
+	<item component="ComponentInfo{com.ketomojo.app/com.ketomojo.app.SplashActivity}" drawable="keto-mojo"/>
+
+	<!-- RoMote -->
+	<item component="ComponentInfo{wseemann.media.romote/wseemann.media.romote.activity.MainActivity}" drawable="romote"/>
+
+	<!-- Royal Sort Ball Puzzle -->
+	<item component="ComponentInfo{com.royal.sort.ball.puzzle/com.unity3d.player.UnityPlayerActivity}" drawable="royalsortballpuzzle"/>
+
+	<!-- Urinox -->
+	<item component="ComponentInfo{diagnox.com.urinox/com.diagnoxhealth.urinox.app.MainActivity}" drawable="urinox"/>
+
+	<!-- Rosetta Stone -->
+	<item component="ComponentInfo{air.com.rosettastone.mobile.CoursePlayer/com.rosettastone.MainActivity}" drawable="rosettastone"/>
+	
+	<!-- MusicBrainz -->
+	<item component="ComponentInfo{org.metabrainz.android/org.metabrainz.mobile.presentation.features.splash_screen.SplashActivity}" drawable="musicbrainz"/>
+
+	<!-- Simple Text Editor -->
+	<item component="ComponentInfo{com.maxistar.textpad/com.maxistar.textpad.activities.EditorActivity}" drawable="simpletexteditor"/>
+	
+	<!-- AutoShare -->
+	<item component="ComponentInfo{com.joaomgcd.autoshare/com.joaomgcd.autoapps.ActivityLaunchApp}" drawable="autoshare" />
+
+	<!-- BetterCounter -->
+	<item component="ComponentInfo{org.kde.bettercounter/org.kde.bettercounter.ui.MainActivity}" drawable="bettercounter" />
+
+	<!-- UCHealth -->
+	<item component="ComponentInfo{com.uchealth.mobile/com.uchealth.mobile.activities.SplashActivity}" drawable="uchealth" />
 
     <!-- Flic -->
     <item component="ComponentInfo{io.flic.app/io.flic.ui.ui.activities.main.MainActivity}" drawable="flic"/>
@@ -2710,6 +2755,7 @@
 
     <!-- Drops -->
     <item component="ComponentInfo{com.languagedrops.drops.international/com.languagedrops.drops.international.MainActivity}" drawable="drops" />
+	<item component="ComponentInfo{com.languagedrops.drops.learn.learning.speak.language.hebrew.words/com.languagedrops.drops.international.MainActivity}" drawable="drops"/>
 
     <!-- Drum On! -->
     <item component="ComponentInfo{se.tube42.drum.android/se.tube42.drum.android.MainActivity}" drawable="drumon" />
@@ -3641,6 +3687,9 @@
 
     <!-- GetFlow -->
     <item component="ComponentInfo{org.wentura.getflow/org.wentura.getflow.MainActivity}" drawable="getflow" />
+
+		<!-- GHG Mobile Webclock -->
+		<item component="ComponentInfo{com.ghg.android/com.ghg.android.MainActivity}" drawable="timeclock" />
 
     <!-- Ghost -->
     <item component="ComponentInfo{org.ghost.android/me.vickychijwani.spectre.view.PostListActivity}" drawable="ghost" />
@@ -10040,6 +10089,7 @@
 
     <!-- WLANScanner -->
     <item component="ComponentInfo{org.bitbatzen.wlanscanner/org.bitbatzen.wlanscanner.MainActivity}" drawable="wlanscanner" />
+		<item component="ComponentInfo{de.avm.android.wlanapp/de.avm.android.wlanapp.permissions.LocationPermissionActivity}" drawable="wlanscanner"/>
 
     <!-- WLAN -->
     <item component="ComponentInfo{de.avm.android.wlanapp/de.avm.android.wlanapp.permissions.LocationPermissionActivity}" drawable="wifi" />
