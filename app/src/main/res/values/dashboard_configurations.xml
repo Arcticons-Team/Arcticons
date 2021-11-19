@@ -148,7 +148,7 @@
         CONFIG: ICON REQUEST
     -->
     <!-- Enable or disable regular icon request -->
-    <bool name="enable_icon_request">true</bool>
+    <bool name="enable_icon_request">false</bool>
 
     <!-- Enable regular icon request limit
         When enabled users will be able to request only the specified number of icons.
@@ -161,7 +161,7 @@
         After making 10 icon request the user will not be able to request again.
 
         See "reset_icon_request_limit" option to learn how to reset the limit. -->
-    <integer name="icon_request_limit">6</integer>
+    <integer name="icon_request_limit">4</integer>
 
     <!-- Reset regular icon request limit every update
         IGNORE if "enable_icon_request_limit" option is disabled

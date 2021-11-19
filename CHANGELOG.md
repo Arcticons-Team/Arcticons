@@ -1,7 +1,16 @@
+### 3.0.7
+###### Released: Nov 19, 2021
+* 📁 Category tabs! In the app, you can now scroll through some neat categories like: folders, calendars, letters & numbers.
+* 🎉 164 new or updated icons (thanks Kaiserdragon2, JoelChrono12, Ddavidd!)
+* 💡 Some additional fixes by: ail1020, DannyGJdeJong & Aman9das.
+* 🔥 3071 icons in total! 
+* ⚠️ Due to the many icon requests we're getting, we've decided to pause this feature temporarily. That gives us some time to clear the current queue, thanks for your patience and support!
+
+
 ### 2.9.1
 ###### Released: Nov 12, 2021
-🎉 52 new or updated icons (thanks JoelChrono12, Ddavidd!)
-🔥 2910 icons in total!
+* 🎉 52 new or updated icons (thanks JoelChrono12, Ddavidd!)
+* 🔥 2910 icons in total!
 
 
 ### 2.8.6 - Anniversary edition
