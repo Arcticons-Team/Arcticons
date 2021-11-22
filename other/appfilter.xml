@@ -1,4 +1,28 @@
 <resources>
+	<!-- CutTheCord -->
+	<item component="ComponentInfo{com.cutthecord.dusk/com.discord.app.AppActivityMain}" drawable="cutthecord" />
+
+	<!-- Linux Deploy -->
+	<item component="ComponentInfo{ru.meefik.linuxdeploy/ru.meefik.linuxdeploy.Launcher}" drawable="linux_deploy" />
+
+	<!-- UserLAnd -->
+	<item component="ComponentInfo{tech.ula/tech.ula.MainActivity}" drawable="userland" />
+
+	<!-- X Server -->
+	<item component="ComponentInfo{au.com.darkside.xdemo/au.com.darkside.xdemo.XServerActivity}" drawable="x_server" />
+
+	<!-- Hidden Settings -->
+	<item component="ComponentInfo{com.netvor.hiddensettings/com.netvor.hiddensettings.SplashScreenActivity}" drawable="hidden_settings" />
+
+	<!-- L Speed -->
+	<item component="ComponentInfo{com.paget96.lsandroid/com.paget96.lsandroid.activities.SplashScreenActivity}" drawable="l_speed" />
+
+	<!-- Rotation Control -->
+	<item component="ComponentInfo{org.crape.rotationcontrol/org.crape.rotationcontrol.RotationControlActivity}" drawable="auto_auto_rotate" />
+
+	<!-- Noten lernen -->
+	<item component="ComponentInfo{de.melvil.noten/de.melvil.noten.MainActivity}" drawable="music" />
+    
 	<!-- Pixel Tips -->
 	<item component="ComponentInfo{com.google.android.apps.tips/com.google.android.apps.tips.TipsMain}" drawable="pixel_tips" />
 
@@ -233,6 +257,7 @@
 
     <!-- APKPure -->
     <item component="ComponentInfo{com.apkpure.aegon/com.apkpure.aegon.main.activity.SplashActivity}" drawable="apkpure" />
+	<item component="ComponentInfo{org.chromium.webapk.ab797de63509766e0_v2/org.chromium.webapk.shell_apk.h2o.H2OOpaqueMainActivity}" drawable="apkpure" />
 
     <!-- APKUpdater -->
     <item component="ComponentInfo{com.apkupdater/com.apkupdater.activity.MainActivity}" drawable="apkupdater" />
@@ -6208,9 +6233,6 @@
     <!-- Obsidian -->
     <item component="ComponentInfo{md.obsidian/md.obsidian.MainActivity}" drawable="obsidian" />
 
-    <!-- Obsidian -->
-    <item component="ComponentInfo{md.obsidian/md.obsidian.MainActivity}" drawable="obsidian" />
-
     <!-- OctoDroid -->
     <item component="ComponentInfo{com.gh4a/com.gh4a.activities.Github4AndroidActivity}" drawable="octodroid" />
 
@@ -6631,6 +6653,7 @@
     <!-- Pdf Viewer Plus -->
     <item component="ComponentInfo{com.gsnathan.pdfviewer/com.gsnathan.pdfviewer.MainActivity_}" drawable="pdfviewerplus" />
     <item component="ComponentInfo{com.gsnathan.pdfviewer/com.gsnathan.pdfviewer.LauncherAlias}" drawable="pdfviewerplus" />
+	<item component="ComponentInfo{foundation.e.pdfviewer/com.gsnathan.pdfviewer.MainActivity_}" drawable="pdfviewerplus" />
 
     <!-- PeakFinder -->
     <item component="ComponentInfo{org.peakfinder.area.alps/org.peakfinder.area.alps.activity.MainScreenEarth}" drawable="peakfinder" />
@@ -9449,6 +9472,7 @@
 
     <!-- Thuisbezorgd -->
     <item component="ComponentInfo{com.takeaway.android/com.takeaway.android.activity.Splash}" drawable="thuisbezorgd" />
+	<item component="ComponentInfo{com.yopeso.lieferando/com.takeaway.android.activity.Splash}" drawable="thuisbezorgd" />
 
     <!-- Thunder VPN -->
     <item component="ComponentInfo{com.fast.free.unblock.thunder.vpn/com.signallab.thunder.activity.MainActivity}" drawable="thunder_vpn" />
