@@ -1,4 +1,25 @@
 <resources>
+	<!-- Ledger Live -->
+	<item component="ComponentInfo{com.ledger.live/com.ledger.live.MainActivity}" drawable="ledger_live" />
+    
+	<!-- MiniReview -->
+	<item component="ComponentInfo{minireview.best.android.games.reviews/br.com.minireview.SplashController}" drawable="minireview" />
+
+	<!-- RethinkDNS -->
+	<item component="ComponentInfo{com.celzero.bravedns/com.celzero.bravedns.ui.HomeScreenActivity}" drawable="rethinkdns" />
+
+	<!-- bxActions -->
+	<item component="ComponentInfo{com.jamworks.bxactions/com.jamworks.bxactions.SettingsHome}" drawable="bxactions" />
+
+	<!-- Namecheap -->
+	<item component="ComponentInfo{com.namecheap.android/com.namecheap.android.app.MainActivity}" drawable="namecheap" />
+
+	<!-- Pong -->
+	<item component="ComponentInfo{com.codamasters.pong/com.codamasters.pong.android.AndroidLauncher}" drawable="pong" />
+
+	<!-- Wyze -->
+	<item component="ComponentInfo{com.hualai/com.hualai.home.StartActivity}" drawable="wyze" />
+
 	<!-- CutTheCord -->
 	<item component="ComponentInfo{com.cutthecord.dusk/com.discord.app.AppActivityMain}" drawable="cutthecord" />
 
@@ -2447,7 +2468,8 @@
 
     <!-- Domino's -->
     <item component="ComponentInfo{com.dominospizza/com.dominos.activities.InitialLaunchActivity}" drawable="dominos" />
-
+    <item component="ComponentInfo{com.dominospizza/com.dominos.loadingscreen.InitialLaunchActivity}" drawable="dominos" />
+    
     <!-- Doodle -->
     <item component="ComponentInfo{com.doodle.android/com.doodle.activities.SplashActivity}" drawable="doodle" />
 
