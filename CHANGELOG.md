@@ -1,3 +1,18 @@
+### 3.2.1
+###### Released: Nov 30, 2021
+* ℹ️ There's a new privacy policy because we didn't have one before.
+* 🎉 115 new or updated icons (thanks Kaiserdragon2, JoelChrono12, Ddavidd, Fanfu!)
+* 🔥 3214 icons in total! 
+* ⚠️ Icon requests are still disabled.
+
+### 3.1.0
+###### Released: Nov 22, 2021
+* Calendars should be working again
+* New dynamic proton calendar icons
+* Realigned lowercase letter icons
+* Renamed some icons
+
+
 ### 3.0.7
 ###### Released: Nov 19, 2021
 * 📁 Category tabs! In the app, you can now scroll through some neat categories like: folders, calendars, letters & numbers.
