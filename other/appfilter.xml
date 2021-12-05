@@ -1454,6 +1454,7 @@
 
     <!-- Calendar -->
     <item component="ComponentInfo{com.android.calendar/com.android.calendar.AllInOneActivity}" drawable="calendar_31" />
+    <item component="ComponentInfo{com.google.android.calendar/com.android.calendar.AllInOneActivity}" drawable="calendar_31"/>
     <item component="ComponentInfo{com.blackberry.calendar/com.blackberry.calendar.AllInOneActivity}" drawable="calendar_31" />
     <item component="ComponentInfo{com.samsung.android.calendar/com.android.calendar.AllInOneActivity}" drawable="calendar_31" />
     <item component="ComponentInfo{com.samsung.android.calendar/com.samsung.android.app.calendar.activity.MainActivity}" drawable="calendar_31" />
@@ -1551,6 +1552,7 @@
     <item component="ComponentInfo{com.asus.camera/com.asus.camera.CameraApp}" drawable="camera" />
     <item component="ComponentInfo{com.motorola.camera3/com.motorola.camera.Camera}" drawable="camera" />
     <item component="ComponentInfo{app.grapheneos.camera/app.grapheneos.camera.ui.activities.MainActivity}" drawable="camera" />
+    <item component="ComponentInfo{com.fp.camera/com.android.camera.CameraLauncher}" drawable="camera"/>
 
     <!-- Camera Connect -->
     <item component="ComponentInfo{jp.co.canon.ic.cameraconnect/jp.co.canon.ic.cameraconnect.top.CCTopActivity}" drawable="cameraconnect" />
@@ -2600,6 +2602,9 @@
     <!-- EBookDroid -->
     <item component="ComponentInfo{org.ebookdroid/org.ebookdroid.ui.MainActivity}" drawable="ebookdroid" />
 
+    <!-- EBT art -->
+    <item component="ComponentInfo{com.reactiveebt/com.reactiveebt.MainActivity}" drawable="symboleuro"/>
+
     <!-- EDP Zero -->
     <item component="ComponentInfo{wit.edp.edpmobile/wit.edp.edpmobile.MainActivity}" drawable="edpzero" />
 
@@ -3250,8 +3255,8 @@
     <item component="ComponentInfo{m4.enginary/m4.enginary.MainActivity}" drawable="formulia" />
 
     <!-- Fortuneo -->
-    <item component="ComponentInfo{com.fortuneo.android/com.fortuneo.android.activities.SplashScreenActivity}" drawable="fortuneo " />
-    <item component="ComponentInfo{com.fortuneo.android/com.fortuneo.android.activities.EntryActivity}" drawable="fortuneo " />
+    <item component="ComponentInfo{com.fortuneo.android/com.fortuneo.android.activities.SplashScreenActivity}" drawable="fortuneo" />
+    <item component="ComponentInfo{com.fortuneo.android/com.fortuneo.android.activities.EntryActivity}" drawable="fortuneo" />
 
     <!-- Fortunes -->
     <item component="ComponentInfo{org.legtux.m_316k.fortune/org.legtux.m_316k.fortune.MainActivity}" drawable="fortunes" />
@@ -6386,7 +6391,8 @@
     <item component="ComponentInfo{net.pfiers.osmfocus/net.pfiers.osmfocus.view.MainActivity}" drawable="map" />
 
     <!-- OSM Dashboard für OpenTracks -->
-    <item component="ComponentInfo{de.storchp.opentracks.osmplugin/de.storchp.opentracks.osmplugin.MainActivity}" drawable="osmdashboardfropentracks" />
+    <item component="ComponentInfo{de.storchp.opentracks.osmplugin/de.storchp.opentracks.osmplugin.MainActivity}" drawable="osmdashboardforopentracks"/>
+    <item component="ComponentInfo{de.storchp.opentracks.osmplugin.offline/de.storchp.opentracks.osmplugin.MainActivity}" drawable="osmdashboardforopentracks"/>
 
     <!-- OS Monitor -->
     <item component="ComponentInfo{com.eolwral.osmonitor/com.eolwral.osmonitor.OSMonitor}" drawable="osmonitor" />
@@ -7341,6 +7347,7 @@
     <item component="ComponentInfo{com.secuso.privacyFriendlyCodeScanner/com.secuso.privacyfriendlycodescanner.qrscanner.SplashActivity}" drawable="qr" />
     <item component="ComponentInfo{com.secuso.privacyFriendlyCodeScanner/com.secuso.privacyfriendlycodescanner.qrscanner.ui.activities.SplashActivity}" drawable="qr" />
     <item component="ComponentInfo{com.teacapps.barcodescanner/net.qrbot.ui.main.MainActivity}" drawable="qr" />
+    <item component="ComponentInfo{com.github.andremiras.qrscan/org.kivy.android.PythonActivity}" drawable="qr"/>
 
     <!-- QTranslate -->
     <item component="ComponentInfo{eu.ctwoon.qtranslate/eu.ctwoon.qtranslate.MainActivity}" drawable="qtranslate" />
