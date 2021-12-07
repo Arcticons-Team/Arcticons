@@ -56,9 +56,7 @@ Read the full details here:
 
 ## License
 
-The current version (2.1.8 and higher) of Arcticons is built with with the CandyBar Dashboard, licensed under [Apache License, Version 2.0](https://www.apache.org/licenses/LICENSE-2.0)
-
-Before version 2.1.8 the app was based on a modified version of [Frost](https://github.com/dkanada/frost)'s custom dashboard, licensed under [GNU General Public License, Version 3.0](https://www.gnu.org/licenses/gpl-3.0.en.html).
+The current version (2.1.8 and higher) of Arcticons is built with with the CandyBar Dashboard, licensed under [Apache License, Version 2.0](https://www.apache.org/licenses/LICENSE-2.0)  which is compatible with the [GNU General Public License, Version 3.0](https://www.gnu.org/licenses/gpl-3.0.en.html) that we use.
 
 All icons are licensed under [Creative Commonns Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) ](https://creativecommons.org/licenses/by-sa/4.0/), with around 900 of the first icons based on [Frost](https://github.com/dkanada/frost)'s icons.
 
