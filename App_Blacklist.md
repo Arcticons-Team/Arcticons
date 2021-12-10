@@ -5,6 +5,7 @@ We have a small list of apps that we don't allow in this icon pack for ethical r
 - Gab
 - Parler
 - Lucky Patcher
+- Loli Snatcher
 
 Last modified:
-**30 November 2021**
+**10 December 2021**
