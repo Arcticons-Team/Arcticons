@@ -1,3 +1,9 @@
+### 3.3.7
+###### Released: Nov 11, 2021
+* 🎉 164 new or updated icons (thanks Kaiserdragon2, JoelChrono12, Ddavidd, Fanfu, Quantenzitrone, Totoroot, Aloxe, Vitordematos!)
+* 🔥 3372 icons in total! 
+
+
 ### 3.2.1
 ###### Released: Nov 30, 2021
 * ℹ️ There's a new privacy policy because we didn't have one before.
