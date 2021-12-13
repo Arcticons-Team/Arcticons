@@ -82,6 +82,7 @@ import candybar.lib.helpers.TypefaceHelper;
 import candybar.lib.helpers.WallpaperHelper;
 import candybar.lib.items.Home;
 import candybar.lib.items.Icon;
+import candybar.lib.items.InAppBilling;
 import candybar.lib.items.Request;
 import candybar.lib.items.Wallpaper;
 import candybar.lib.preferences.Preferences;
@@ -755,4 +756,5 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
             return mPremiumRequestProductsCount;
         }
     }
+
 }
