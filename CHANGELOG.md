@@ -1,5 +1,10 @@
+### 3.4.5
+###### Released: Dec 18, 2021
+* 🎉 80 new or updated icons (thanks JoelChrono12, Kaiserdragon2, Aloxe, Quantenzitrone, Otemachi, Juvss, Totoroot!)
+* 🔥 3453 icons in total! 
+
 ### 3.3.7
-###### Released: Nov 11, 2021
+###### Released: Dec 11, 2021
 * 🎉 164 new or updated icons (thanks Kaiserdragon2, JoelChrono12, Ddavidd, Fanfu, Quantenzitrone, Totoroot, Aloxe, Vitordematos!)
 * 🔥 3372 icons in total! 
 
