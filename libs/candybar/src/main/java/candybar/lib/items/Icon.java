@@ -84,6 +84,10 @@ public class Icon {
         mIcons = icons;
     }
 
+    public void setPackageName(String packageName) {
+        mPackageName = packageName;
+    }
+
     @Override
     public boolean equals(Object object) {
         boolean res = false;

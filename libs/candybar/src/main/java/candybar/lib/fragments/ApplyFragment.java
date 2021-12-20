@@ -105,11 +105,11 @@ public class ApplyFragment extends Fragment {
         }
     }
 
-    private boolean isLauncherInstalled(String pkg1, String pkg2, String pkg3) {
-        return isPackageInstalled(pkg1) | isPackageInstalled(pkg2) | isPackageInstalled(pkg3);
+    private String getInstalledPackage(String pkg1, String pkg2, String pkg3) {
+        return isPackageInstalled(pkg1) ? pkg1 : isPackageInstalled(pkg2) ? pkg2 : isPackageInstalled(pkg3) ? pkg3 : null;
     }
 
-    private boolean isLauncherShouldBeAdded(String packageName) {
+    private boolean shouldLauncherBeAdded(String packageName) {
         assert getActivity() != null;
         if (("com.dlto.atom.launcher").equals(packageName)) {
             int id = getResources().getIdentifier("appmap", "xml", getActivity().getPackageName());
@@ -167,7 +167,7 @@ public class ApplyFragment extends Fragment {
                             continue;
                         }
 
-                        boolean isInstalled = isLauncherInstalled(
+                        String installedPackage = getInstalledPackage(
                                 launcherPackages1[i],
                                 launcherPackages2[i],
                                 launcherPackages3[i]);
@@ -183,9 +183,11 @@ public class ApplyFragment extends Fragment {
                         }
 
                         Icon launcher = new Icon(launcherNames[i], icon, launcherPackage);
-                        if (isLauncherShouldBeAdded(launcherPackage)) {
-                            if (isInstalled) installed.add(launcher);
-                            else supported.add(launcher);
+                        if (shouldLauncherBeAdded(launcherPackage)) {
+                            if (installedPackage != null) {
+                                installed.add(launcher);
+                                launcher.setPackageName(installedPackage);
+                            } else supported.add(launcher);
                         }
                     }
 

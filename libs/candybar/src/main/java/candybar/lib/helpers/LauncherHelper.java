@@ -13,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.afollestad.materialdialogs.MaterialDialog;
+import com.danimahardhika.android.helpers.core.utils.LogUtil;
 
 import candybar.lib.R;
 
@@ -75,6 +76,7 @@ public class LauncherHelper {
                 return Launcher.LGHOME3;
             case "ch.deletescape.lawnchair.ci":
             case "ch.deletescape.lawnchair.plah":
+            case "app.lawnchair":
                 return Launcher.LAWNCHAIR;
             case "com.powerpoint45.launcher":
                 return Launcher.LUCID;
@@ -273,6 +275,12 @@ public class LauncherHelper {
                 break;
             case LAWNCHAIR:
                 try {
+                    LogUtil.d("@@@@@@@@@@@@@@@@@@@@@@: " + launcherPackage);
+                    if (launcherPackage.startsWith("app.")) {
+                        // Lawnchair 12 does not support direct apply yet
+                        applyManual(context, launcherPackage, launcherName, "app.lawnchair.ui.preferences.PreferenceActivity");
+                        break;
+                    }
                     final Intent lawnchair = new Intent("ch.deletescape.lawnchair.APPLY_ICONS", null);
                     lawnchair.putExtra("packageName", context.getPackageName());
                     context.startActivity(lawnchair);
