@@ -63,6 +63,7 @@ import candybar.lib.R;
 import candybar.lib.activities.CandyBarMainActivity;
 import candybar.lib.adapters.dialog.ChangelogAdapter;
 import candybar.lib.applications.CandyBarApplication;
+import candybar.lib.fragments.dialog.DonationLinksFragment;
 import candybar.lib.fragments.dialog.IconPreviewFragment;
 import candybar.lib.fragments.dialog.OtherAppsFragment;
 import candybar.lib.helpers.TypefaceHelper;
@@ -652,7 +653,10 @@ public class HomeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                         break;
                     case DONATE:
                         if (mContext instanceof CandyBarMainActivity) {
-                            CandyBarMainActivity mainActivity = (CandyBarMainActivity) mContext;
+                            if (CandyBarApplication.getConfiguration().getDonationLinks() != null) {
+                                DonationLinksFragment.showDonationLinksDialog(((AppCompatActivity) mContext).getSupportFragmentManager());
+                                break;
+                            }
                         }
                         break;
                     case ICONS:

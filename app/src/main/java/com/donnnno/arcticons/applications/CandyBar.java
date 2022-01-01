@@ -32,7 +32,8 @@ public class CandyBar extends CandyBarApplication {
                     first = false;
                 }
 
-                emailBody.append(request.getName())
+                emailBody.append("- [ ] ")
+                        .append(request.getName())
                         .append("\r\n")
                         .append(request.getActivity())
                         .append("\r\n");
@@ -50,6 +51,28 @@ public class CandyBar extends CandyBarApplication {
 
             return emailBody.toString();
         });
+
+        configuration.setShowTabAllIcons(true);
+        configuration.setCategoryForTabAllIcons(new String[]{
+                "Folders", "Calendar", "Letters", "Numbers", "A", "B", "C", "D", "E", "F", "G", "H", "I",
+                "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"
+        });
+
+        DonationLink[] donationLinks = new DonationLink[]{
+                new DonationLink(
+                        // You can use png file (without extension) inside drawable-nodpi folder or url
+                        "paypal",
+                        "PayPal",
+                        "Support me on Paypal",
+                        "https://www.paypal.me/onnovdd"),
+                new DonationLink(
+                        // You can use png file (without extension) inside drawable-nodpi folder or url
+                        "liberapay",
+                        "Liberapay",
+                        "Support me on Liberapay",
+                        "https://liberapay.com/Donno/")
+                        };
+        configuration.setDonationLinks(donationLinks);
 
         return configuration;
     }

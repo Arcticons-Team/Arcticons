@@ -49,9 +49,9 @@ public class OtherAppsAdapter extends BaseAdapter {
     private final Context mContext;
     private final List<CandyBarApplication.OtherApp> mOtherApps;
 
-    public OtherAppsAdapter(@NonNull Context context, @NonNull List<CandyBarApplication.OtherApp> otherApps) {
+    public OtherAppsAdapter(@NonNull Context context, @NonNull List<? extends CandyBarApplication.OtherApp> otherApps) {
         mContext = context;
-        mOtherApps = otherApps;
+        mOtherApps = (List<CandyBarApplication.OtherApp>) otherApps;
     }
 
     @Override

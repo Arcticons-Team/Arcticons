@@ -13,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.afollestad.materialdialogs.MaterialDialog;
+import com.danimahardhika.android.helpers.core.utils.LogUtil;
 
 import candybar.lib.R;
 
@@ -42,7 +43,7 @@ public class LauncherHelper {
         UNKNOWN, ACTION, ADW, APEX, ATOM, AVIATE, CMTHEME, GO, HOLO, HOLOHD, LAWNCHAIR,
         LGHOME, LGHOME3, LUCID, MINI, NEXT, NOVA, PIXEL, SMART, SOLO, ZENUI, NOUGAT, M,
         ZERO, V, ABC, EVIE, POCO, POSIDON, MICROSOFT, FLICK, BLACKBERRY, SQUARE, NIAGARA,
-        HYPERION
+        HYPERION, OMEGA
     }
 
     private static Launcher getLauncher(String packageName) {
@@ -75,6 +76,7 @@ public class LauncherHelper {
                 return Launcher.LGHOME3;
             case "ch.deletescape.lawnchair.ci":
             case "ch.deletescape.lawnchair.plah":
+            case "app.lawnchair":
                 return Launcher.LAWNCHAIR;
             case "com.powerpoint45.launcher":
                 return Launcher.LUCID;
@@ -124,6 +126,9 @@ public class LauncherHelper {
                 return Launcher.BLACKBERRY;
             case "projekt.launcher":
                 return Launcher.HYPERION;
+            case "com.saggitt.omega":
+            case "com.saggitt.omega.OmegaLauncher":
+                return Launcher.OMEGA;
             default:
                 return Launcher.UNKNOWN;
         }
@@ -270,6 +275,12 @@ public class LauncherHelper {
                 break;
             case LAWNCHAIR:
                 try {
+                    LogUtil.d("@@@@@@@@@@@@@@@@@@@@@@: " + launcherPackage);
+                    if (launcherPackage.startsWith("app.")) {
+                        // Lawnchair 12 does not support direct apply yet
+                        applyManual(context, launcherPackage, launcherName, "app.lawnchair.ui.preferences.PreferenceActivity");
+                        break;
+                    }
                     final Intent lawnchair = new Intent("ch.deletescape.lawnchair.APPLY_ICONS", null);
                     lawnchair.putExtra("packageName", context.getPackageName());
                     context.startActivity(lawnchair);
@@ -389,6 +400,16 @@ public class LauncherHelper {
                     square.setComponent(ComponentName.unflattenFromString("com.ss.squarehome2/.ApplyThemeActivity"));
                     square.putExtra("com.ss.squarehome2.EXTRA_ICONPACK", context.getPackageName());
                     context.startActivity(square);
+                } catch (ActivityNotFoundException | NullPointerException e) {
+                    openGooglePlay(context, launcherPackage, launcherName);
+                }
+                break;
+            case OMEGA:
+                try {
+                    final Intent omega = new Intent("com.saggitt.omega.APPLY_ICONS", null);
+                    omega.putExtra("packageName", context.getPackageName());
+                    context.startActivity(omega);
+                    ((AppCompatActivity) context).finish();
                 } catch (ActivityNotFoundException | NullPointerException e) {
                     openGooglePlay(context, launcherPackage, launcherName);
                 }

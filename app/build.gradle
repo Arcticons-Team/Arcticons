@@ -7,12 +7,12 @@ android {
         applicationId "com.donnnno.arcticons"
         minSdkVersion rootProject.ext.MinSdk
         targetSdkVersion rootProject.ext.TargetSdk
-        versionCode 69
-        versionName '2.3.6'
+        versionCode 79
+        versionName '3.4.5'
         multiDexEnabled true
 
         // Naming app bundles
-        setArchivesBaseName("${parent.name}-v${versionCode}")
+        setArchivesBaseName("${parent.name}-v${versionName}")
 
     }
 

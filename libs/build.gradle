@@ -5,7 +5,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.0.2'
+        classpath 'com.android.tools.build:gradle:7.0.4'
     }
 }
 
@@ -20,7 +20,7 @@ allprojects {
     rootProject.ext {
         def major = 3
         def minor = 13
-        def patch = 0
+        def patch = 3
 
         VersionCode = major * 10000 + minor * 100 + patch
         VersionName = "$major.$minor.$patch"

@@ -1,3 +1,72 @@
+### 3.4.5
+###### Released: Dec 18, 2021
+* 🎉 80 new or updated icons (thanks JoelChrono12, Kaiserdragon2, Aloxe, Quantenzitrone, Otemachi, Juvss, Totoroot!)
+* 🔥 3453 icons in total! 
+
+### 3.3.7
+###### Released: Dec 11, 2021
+* 🎉 164 new or updated icons (thanks Kaiserdragon2, JoelChrono12, Ddavidd, Fanfu, Quantenzitrone, Totoroot, Aloxe, Vitordematos!)
+* 🔥 3372 icons in total! 
+
+
+### 3.2.1
+###### Released: Nov 30, 2021
+* ℹ️ There's a new privacy policy because we didn't have one before.
+* 🎉 115 new or updated icons (thanks Kaiserdragon2, JoelChrono12, Ddavidd, Fanfu!)
+* 🔥 3214 icons in total! 
+* ⚠️ Icon requests are still disabled.
+
+### 3.1.0
+###### Released: Nov 22, 2021
+* Calendars should be working again
+* New dynamic proton calendar icons
+* Realigned lowercase letter icons
+* Renamed some icons
+
+
+### 3.0.7
+###### Released: Nov 19, 2021
+* 📁 Category tabs! In the app, you can now scroll through some neat categories like: folders, calendars, letters & numbers.
+* 🎉 164 new or updated icons (thanks Kaiserdragon2, JoelChrono12, Ddavidd!)
+* 💡 Some additional fixes by: ail1020, DannyGJdeJong & Aman9das.
+* 🔥 3071 icons in total! 
+* ⚠️ Due to the many icon requests we're getting, we've decided to pause this feature temporarily. That gives us some time to clear the current queue, thanks for your patience and support!
+
+
+### 2.9.1
+###### Released: Nov 12, 2021
+* 🎉 52 new or updated icons (thanks JoelChrono12, Ddavidd!)
+* 🔥 2910 icons in total!
+
+
+### 2.8.6 - Anniversary edition
+###### Released: Nov 5, 2021
+* 🎈 With this release, Arcticons is a year old (First version was released 5 Nov 2020)
+* ⚠️ Arcticons is growing faster than ever before, but were also getting numerous icon requests from you! Managing this costs a lot of time, so please be patient with your requests (there are ~200 requests open right now). 
+* 🎉 210 new or updated icons (thanks Quantenzitrone, JoelChrono12, Kaiserdragon2, Dgcampbe, Hassanncreative, Ali1020, Conny3496, Petlyh, Jostmorgenstern)
+* 🔥 2860 icons in total!
+
+
+### 2.6.5
+###### Released: Okt 23, 2021
+* ✨ Support for Android 5 is back!
+* 🎉 100 new or updated icons (thanks JoelChrono12, Chaptergy, Ayysmkz)
+* 🔥 2650 icons in total!
+
+
+### 2.5.5
+###### Released: Okt 17, 2021
+* ✨ Support for Android 7 is back!
+* 🎉 50 new or updated icons (thanks JoelChrono12, Kaiserdragon2, HassanCreative, Aa0-fyi)
+* 🔥 2550 icons in total!
+
+### 2.5.0
+###### Released: Okt 7, 2021
+* ♾️ Support for Omega Launcher
+* 🌐 A new fancy website for Arcticons
+* 🎉 151 new or updated icons
+* 🔥 2500 icons in total! (thanks JoelChrono12, Kaiserdragon2, Eninkey, Dmoonfire, Fanfu, Bragefuglseth, Dgcampbe, Aman9Das, Suburbanno, Hassancreative, Aa0-fyi, Mdb571 & DreadedLama & Quantenzitrone)
+
 ### 2.3.6
 ###### Released: Sep 27, 2021
 * 🎉 109 new icons (thanks JoelChrono12, Kaiserdragon2, Quantenzitrone, Eninkey, Dmoonfire, Fanfu, Bragefuglseth, Dgcampbe & Aman9Das)

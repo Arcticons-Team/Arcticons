@@ -1,6 +1,6 @@
 #!/bin/bash
 
-APP="../app/src/main/res/xml/appfilter.xml"
+APP="appfilter.xml"
 
 # remove whitespace at beginning of line
 sed -r 's:^[ \t]*::g' ${APP} > onefilter.xml
@@ -25,6 +25,9 @@ do
       "<sca")
         printf " $line" >> twofilter.xml
         ;;
+      "<cal")
+        printf " $line" >> twofilter.xml
+        ;;
       "")
         # do nothing
         ;;
@@ -32,7 +35,10 @@ do
 done < onefilter.xml
 
 # sort by label
-sort -k 1 -n twofilter.xml > onefilter.xml
+#   -k 1 is the key field to use
+#   -f is case-insensitive
+#   -n is numeric sort
+sort -k 1 -f -n twofilter.xml > onefilter.xml
 
 # separate each item group
 sed -ri 's: ([^ ]*)$:&\n:g' onefilter.xml

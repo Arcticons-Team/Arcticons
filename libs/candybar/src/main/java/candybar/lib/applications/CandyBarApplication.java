@@ -115,6 +115,7 @@ public abstract class CandyBarApplication extends MultiDexApplication {
     }
 
     public static class Configuration {
+
         public interface EmailBodyGenerator {
             String generate(List<Request> requests);
         }
@@ -131,6 +132,7 @@ public abstract class CandyBarApplication extends MultiDexApplication {
         private Style mAboutStyle = Style.PORTRAIT_FLAT_LANDSCAPE_CARD;
         private IconColor mIconColor = IconColor.PRIMARY_TEXT;
         private List<OtherApp> mOtherApps = null;
+        private List<DonationLink> mDonationLinks = null;
 
         private boolean mIsHighQualityPreviewEnabled = false;
         private boolean mIsColoredApplyCard = true;
@@ -155,6 +157,11 @@ public abstract class CandyBarApplication extends MultiDexApplication {
 
         public Configuration setEmailBodyGenerator(EmailBodyGenerator emailBodyGenerator) {
             mEmailBodyGenerator = emailBodyGenerator;
+            return this;
+        }
+
+        public Configuration setDonationLinks(@NonNull DonationLink[] donationLinks) {
+            mDonationLinks = Arrays.asList(donationLinks);
             return this;
         }
 
@@ -296,6 +303,10 @@ public abstract class CandyBarApplication extends MultiDexApplication {
 
         public EmailBodyGenerator getEmailBodyGenerator() {
             return mEmailBodyGenerator;
+        }
+
+        public List<DonationLink> getDonationLinks() {
+            return mDonationLinks;
         }
 
         public NavigationIcon getNavigationIcon() {
@@ -512,4 +523,11 @@ public abstract class CandyBarApplication extends MultiDexApplication {
             return mUrl;
         }
     }
+
+    public static class DonationLink extends OtherApp {
+        public DonationLink(String icon, String title, String description, String url) {
+            super(icon, title, description, url);
+        }
+    }
+
 }

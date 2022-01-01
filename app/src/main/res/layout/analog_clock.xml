@@ -9,8 +9,8 @@
         android:id="@+id/analog_clock"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:dial="@drawable/clock_bg"
         android:hand_hour="@drawable/clock_hour"
-        android:hand_minute="@drawable/clock_minute"
-        android:dial="@drawable/clock_bg" />
+        android:hand_minute="@drawable/clock_minute" />
 
 </RelativeLayout>
