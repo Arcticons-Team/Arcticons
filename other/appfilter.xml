@@ -1,4 +1,9 @@
 <resources>
+	<!-- Clone Phone -->
+	<item component="ComponentInfo{com.oneplus.backuprestore/com.oplus.phoneclone.PhoneCloneMainActivity}" drawable="clonephone"/>
+	
+	<!-- PowerTunnel -->
+	<item component="ComponentInfo{io.github.krlvm.powertunnel.android/io.github.krlvm.powertunnel.android.activities.SplashActivity}" drawable="powertunnel"/>
 
     <!-- $HELL -->
     <item component="ComponentInfo{in.ac.dducollegedu.shell/in.ac.dducollegedu.shell.MainActivity}" drawable="shell" />
@@ -4993,7 +4998,8 @@
 
     <!-- Kanji Study -->
     <item component="ComponentInfo{com.porolingo.kanji/com.porolingo.kanji.activity.frame.SplashActivity}" drawable="kanji_study" />
-
+	<item component="ComponentInfo{com.porolingo.kanji/com.porolingo.kanji.MainActivity}" drawable="kanji_study"/>
+	
     <!-- Kanji Tree -->
     <item component="ComponentInfo{com.asji.kanjitree.pro/com.asji.kanjitree.GameActivity}" drawable="kanjitree" />
 
