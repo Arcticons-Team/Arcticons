@@ -29,6 +29,18 @@ Maintaining this icon-pack costs a lot of time, besides making icons I'm curatin
 
 ## Contributing
 
+### Making icons
+
+Making icons is fun and **you don't even have to know how to code**. Just install a vector graphic program like [Inkscape](https://inkscape.org/en/), Illustrator, Affinity Designer, [PenPot](https://penpot.app/) or [Vector Asset Creator](https://play.google.com/store/apps/details?id=com.inglesdivino.vectorassetcreator). 
+Read the full details here: 
+- [Contributing](CONTRIBUTING.md)
+- [Inkscape Guide](guides/Inkscape_Guide.md)
+- [Vector Asset Creator guide](guides/Vector_Asset_Creator.md)
+
+**Come chat with us on Matrix:**
+
+<a href="https://app.element.io/#/room/#arcticons:matrix.org"><img height="40" alt="Donate using Paypal" src="https://github.com/Donnnno/Arcticons/blob/main/github/matrix_button.svg"></a>
+
 ### Submitting icon requests
 
 Historically [Turtl](https://f-droid.org/en/packages/org.xphnx.iconsubmit/) was used to collect the necessary information for adding missing icons. But now there is an awesome built-in feature to submit icon request right inside the app!  
@@ -41,18 +53,6 @@ A simple step-by-step guide:
 5. Now you can check the information that will be sent via email, and if everything looks fine, simply send the email and it's done!
 
 In case you accidentally close the app during the process, and want to clean the cache, there is an option named `Clear Icon Request Data` in `Settings` to do that.
-
-### Making icons
-
-Making icons is fun and **you don't even have to know how to code**. Just install a vector graphic program like [Inkscape](https://inkscape.org/en/), Illustrator, Affinity Designer, [PenPot](https://penpot.app/) or [Vector Asset Creator](https://play.google.com/store/apps/details?id=com.inglesdivino.vectorassetcreator). 
-Read the full details here: 
-- [Contributing](CONTRIBUTING.md)
-- [Inkscape Guide](guides/Inkscape_Guide.md)
-- [Vector Asset Creator guide](guides/Vector_Asset_Creator.md)
-
-**Come chat with us on Matrix:**
-
-<a href="https://app.element.io/#/room/#arcticons:matrix.org"><img height="40" alt="Donate using Paypal" src="https://github.com/Donnnno/Arcticons/blob/main/github/matrix_button.svg"></a>
 
 ## License
 
