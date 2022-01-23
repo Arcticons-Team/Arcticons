@@ -39,7 +39,7 @@ You can access this menu by pressing **Control + Shift + A**, and here you will 
 ### Stroke styling
 
 To make your strokes white, just select it, and go to the bottom color bar, hold the **Shift** key and click the white square, you can click on the X to make the color transparent, in case you added a Fill color by mistake.
-You should also make sure the stroke widht stays at 1px. Use **Contrl + Shift + F** to view the *Fill and Stroke* menu and go to *Stroke style* and set the width to 1px. Keep in mind that if you resize and object you might alter this value.
+You should also make sure the stroke width stays at 1px. Use **Control + Shift + F** to view the *Fill and Stroke* menu and go to *Stroke style* and set the width to 1px. Keep in mind that if you resize and object you might alter this value.
 
 ## Exporting
 
