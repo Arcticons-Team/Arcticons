@@ -1,5 +1,5 @@
 ### 3.6.0
-###### Released: Jan 17, 2022
+###### Released: Jan 23, 2022
 * 🎉 91 new or updated icons (thanks Kaiserdragon2, Csmnn, Quantenzitrone, Giannis05)
 * 🔥 3600 icons in total! 
 * ℹ️ You can request icons again, but only one at the time! We still have a lot of requests so please be patient and carfull with it, and consider donating to support the pack.
