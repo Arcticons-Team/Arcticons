@@ -10,9 +10,9 @@
 2. Download the templates provided [here](templates) and design the new icons
 3. Upload the SVG icons to your repository's **/other** folder
 4. Create a pull request and explain your changes
-5. Provide the activity names of the new apps
+5. Provide the activity names of the new apps, you can gather them easily with [Icon Request](https://github.com/Kaiserdragon2/IconRequest/releases).
    - These should look something like `com.donnnno.arcticons/com.donnnno.arcticons.MainActivity`
-   - If you want to help even more you can add your new icons to the appfilter.xml file
+   - Add them to the `appfilter.xml` in the **/other** folder
 
 
 ### Basic rules
