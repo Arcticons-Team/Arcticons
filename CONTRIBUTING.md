@@ -13,7 +13,7 @@
 5. Provide the activity names of the new apps, you can gather them easily with [Icon Request](https://github.com/Kaiserdragon2/IconRequest/releases).
    - These should look something like `com.donnnno.arcticons/com.donnnno.arcticons.MainActivity`
    - Add them to the `appfilter.xml` in the **/other** folder
-
+6. Give yourself an entry at the bottom of `app/src/main/res/xml/contributors.xml` to be included in the credits!
 
 ### Basic rules
 
