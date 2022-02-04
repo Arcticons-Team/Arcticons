@@ -264,18 +264,8 @@ public abstract class CandyBarMainActivity extends AppCompatActivity implements
 
                     onAllChecksCompleted.run();
             };
-
-            if (Preferences.get(this).isPlayStoreCheckEnabled()) {
-                new PlayStoreCheckHelper(this, checkLicenseIfEnabled).run();
-            } else {
-                checkLicenseIfEnabled.run();
-            }
-            return;
         }
 
-        if (mConfig.isLicenseCheckerEnabled() && !Preferences.get(this).isLicensed()) {
-            finish();
-        }
     }
 
     @Override
