@@ -7,9 +7,6 @@ import androidx.annotation.NonNull;
 import candybar.lib.applications.CandyBarApplication;
 import candybar.lib.items.Request;
 
-// TODO: Remove `//` below to enable OneSignal
-//import com.onesignal.OneSignal;
-
 public class CandyBar extends CandyBarApplication {
 
 

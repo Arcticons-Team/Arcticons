@@ -55,7 +55,6 @@ public class Preferences {
     private static final String KEY_PREMIUM_REQUEST_TOTAL = "premium_request_total";
     private static final String KEY_REGULAR_REQUEST_USED = "regular_request_used";
     private static final String KEY_INAPP_BILLING_TYPE = "inapp_billing_type";
-    private static final String KEY_LICENSED = "licensed";
     private static final String KEY_LATEST_CRASHLOG = "last_crashlog";
     private static final String KEY_PREMIUM_REQUEST_ENABLED = "premium_request_enabled";
     private static final String KEY_AVAILABLE_WALLPAPERS_COUNT = "available_wallpapers_count";
@@ -88,13 +87,8 @@ public class Preferences {
     }
 
     public void clearPreferences() {
-        boolean isLicensed = isLicensed();
         getSharedPreferences().edit().clear().apply();
-
-        if (isLicensed) {
-            setFirstRun(false);
-            setLicensed(true);
-        }
+        
     }
 
     public boolean isFirstRun() {
@@ -245,14 +239,6 @@ public class Preferences {
 
     public void setInAppBillingType(int type) {
         getSharedPreferences().edit().putInt(KEY_INAPP_BILLING_TYPE, type).apply();
-    }
-
-    public boolean isLicensed() {
-        return getSharedPreferences().getBoolean(KEY_LICENSED, false);
-    }
-
-    public void setLicensed(boolean bool) {
-        getSharedPreferences().edit().putBoolean(KEY_LICENSED, bool).apply();
     }
 
     public boolean isCropWallpaper() {
