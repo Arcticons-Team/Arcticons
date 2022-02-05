@@ -1,3 +1,8 @@
+### 3.7.3
+###### Released: Feb 05, 2022
+* 🎉 130 new or updated icons (thanks Kaiserdragon2, Joelchrono12, Quantenzitrone, Filipkemuel, Beanie0815, Hassancreative, CSMNN, Giannis05, Yetanother-user, FREEZEball)
+* 🔥 3730 icons in total! 
+
 ### 3.6.0
 ###### Released: Jan 23, 2022
 * 🎉 91 new or updated icons (thanks Kaiserdragon2, Csmnn, Quantenzitrone, Giannis05)
