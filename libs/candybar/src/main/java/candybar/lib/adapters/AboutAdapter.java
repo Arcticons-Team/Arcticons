@@ -38,7 +38,6 @@ import candybar.lib.BuildConfig;
 import candybar.lib.R;
 import candybar.lib.applications.CandyBarApplication;
 import candybar.lib.fragments.dialog.CreditsFragment;
-import candybar.lib.fragments.dialog.LicensesFragment;
 import candybar.lib.helpers.ConfigurationHelper;
 import candybar.lib.preferences.Preferences;
 
@@ -405,10 +404,6 @@ public class AboutAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         @Override
         public void onClick(View view) {
             int id = view.getId();
-            if (id == R.id.about_dashboard_licenses) {
-                LicensesFragment.showLicensesDialog(((AppCompatActivity) mContext).getSupportFragmentManager());
-                return;
-            }
 
             if (id == R.id.about_dashboard_contributors) {
                 CreditsFragment.showCreditsDialog(((AppCompatActivity) mContext).getSupportFragmentManager(),
