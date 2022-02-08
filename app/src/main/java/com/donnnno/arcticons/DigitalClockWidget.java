@@ -1,13 +1,10 @@
 package com.donnnno.arcticons;
 
-import static android.app.PendingIntent.getActivity;
-
 import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
 import android.content.Context;
 import android.content.Intent;
-import android.os.Build;
 import android.provider.AlarmClock;
 import android.widget.RemoteViews;
 import java.util.Date;
