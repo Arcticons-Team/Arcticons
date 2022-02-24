@@ -27,6 +27,42 @@
 	<!-- Shortcut Maker -->
 	<item component="ComponentInfo{rk.android.app.shortcutmaker/rk.android.app.shortcutmaker.CommonMethods.SplashScreenActivity}" drawable="shortcut_maker"/>
 
+	<!-- Fox's Mmm -->
+	<item component="ComponentInfo{com.fox2code.mmm/com.fox2code.mmm.MainActivity}" drawable="foxs_mmm"/>
+
+	<!-- Kraken -->
+	<item component="ComponentInfo{com.kraken.invest.app/com.kraken.invest.app.MainActivity}" drawable="kraken" />
+
+	<!-- YNAB -->
+	<item component="ComponentInfo{com.youneedabudget.evergreen.app/ynab.app.start.StartActivity}" drawable="ynab" />
+
+	<!-- Calendula -->
+	<item component="ComponentInfo{es.usc.citius.servando.calendula/es.usc.citius.servando.calendula.activities.StartActivity}" drawable="calendula" />
+
+	<!-- Rakuten Link -->
+	<item component="ComponentInfo{jp.co.rakuten.mobile.rcs/jp.co.rakuten.mobile.rcs.main.launcher.LauncherActivity}" drawable="rakuten_link" />
+
+	<!-- Proxdroid -->
+	<item component="ComponentInfo{de.jonasled.proxdroid/de.jonasled.proxdroid.startActivity}" drawable="proxdroid" />
+
+	<!-- Productivity -->
+	<item component="ComponentInfo{com.apps.adrcotfas.goodtime/com.apps.adrcotfas.goodtime.main.TimerActivity}" drawable="productivity" />
+
+	<!-- Garena -->
+	<item component="ComponentInfo{com.garena.gaslite/com.garena.gxx.splash.GGSplashActivity}" drawable="garena" />
+
+	<!-- Deepstash -->
+	<item component="ComponentInfo{com.deepstash/com.deepstash.MainActivity}" drawable="deepstash" />
+
+	<!-- Silence -->
+	<item component="ComponentInfo{me.lucky.silence/me.lucky.silence.MainActivity}" drawable="silence_2" />
+	
+	<!-- Synology Photos -->
+	<item component="ComponentInfo{com.synology.projectkailash/com.synology.projectkailash.ui.splash.SplashActivity}" drawable="synology_photos" />
+	
+	<!-- BLE Scanner -->
+	<item component="ComponentInfo{com.macdom.ble.blescanner/com.macdom.ble.blescanner.SplashActivity}" drawable="ble_scanner"/>
+
     <!-- $HELL -->
     <item component="ComponentInfo{in.ac.dducollegedu.shell/in.ac.dducollegedu.shell.MainActivity}" drawable="shell" />
 
@@ -52,6 +88,30 @@
 
     <!-- 1DM+ -->
     <item component="ComponentInfo{idm.internet.download.manager.plus/idm.internet.download.manager.MainActivity}" drawable="a1dm" />
+
+	<!-- Sudoku -->
+	<item component="ComponentInfo{com.easybrain.sudoku.android/com.easybrain.sudoku.gui.splash.SplashActivity}" drawable="sudoku" />
+
+	<!-- tawakkalna -->
+	<item component="ComponentInfo{sa.gov.nic.tawakkalna/com.store.android.ui.SplashActivity}" drawable="tawakkalna" />
+
+	<!-- Final Surge -->
+	<item component="ComponentInfo{com.finalsurge.runtracker/com.tizbi.FinalSurge.UI.activities.Auth.SplashActivity}" drawable="final_surge" />
+
+	<!-- Stryd -->
+	<item component="ComponentInfo{com.stryd.pioneer/com.stryd.pioneer.MainActivity}" drawable="letter_capital_s" />
+
+	<!-- TrainAsONE -->
+	<item component="ComponentInfo{com.trainasone/io.flutter.embedding.android.FlutterActivity}" drawable="trainasone" />
+
+	<!-- Búsqueda Searx -->
+	<item component="ComponentInfo{search.searx/search.searx.MainActivity}" drawable="letter_capital_s" />
+	
+    <!-- Findroid -->
+	<item component="ComponentInfo{dev.jdtech.jellyfin/dev.jdtech.jellyfin.MainActivity}" drawable="findroid"/>
+
+	<!-- Proxdroid -->
+	<item component="ComponentInfo{de.jonasled.proxdroid/de.jonasled.proxdroid.startActivity}" drawable="proxdroid" />
 
     <!-- 1List -->
     <item component="ComponentInfo{com.lolo.io.onelist/com.lolo.io.onelist.MainActivity}" drawable="onelist" />
@@ -3507,9 +3567,6 @@
     <!-- Finder Samsung-->
     <item component="ComponentInfo{com.samsung.android.app.galaxyfinder/com.samsung.android.app.galaxyfinder.GalaxyFinderMainLauncher}" drawable="samsung_finder" />
 
-    <!-- Findroid -->
-    <item component="ComponentInfo{dev.jdtech.jellyfin/dev.jdtech.jellyfin.MainActivity}" drawable="jellyfin" />
-
     <!-- Find Device -->
     <item component="ComponentInfo{com.google.android.apps.adm/com.google.android.apps.adm.activities.MainActivity}" drawable="finddevice" />
 
@@ -4888,6 +4945,7 @@
 
     <!-- ImmoScout24 -->
     <item component="ComponentInfo{de.is24.android/de.is24.mobile.android.ui.Splash}" drawable="immoscout24" />
+	<item component="ComponentInfo{de.is24.android/de.is24.mobile.splash.LegacySplashscreenActivity}" drawable="immoscout24"/>
 
     <!-- Improvement Roll -->
     <item component="ComponentInfo{com.improvement_roll/com.improvement_roll.MainActivity}" drawable="improvementroll" />
@@ -6575,6 +6633,7 @@
 
     <!-- Mooltifill -->
     <item component="ComponentInfo{ch.stephanelectronics.mooltifill/ch.stephanelectronics.mooltifill.SettingsActivity}" drawable="mooltifill" />
+	<item component="ComponentInfo{ch.stephanelectronics.mooltifill/de.mathfactory.mooltifill.SettingsActivity}" drawable="mooltifill"/>
 
     <!-- Moon+ Reader Pro -->
     <item component="ComponentInfo{com.flyersoft.moonreaderp/com.flyersoft.moonreaderp.ActivityMain}" drawable="moonreaderpro" />
@@ -11159,8 +11218,9 @@
 
     <!-- Threema -->
     <item component="ComponentInfo{ch.threema.app/ch.threema.app.activities.MainActivity}" drawable="threema" />
+	<item component="ComponentInfo{ch.threema.app.work/ch.threema.app.activities.MainActivity}" drawable="threema" />
 
-    <!-- Thuisbezorgd -->
+    <!-- Takeaway / Thuisbezorgd / Lieferando -->
     <item component="ComponentInfo{com.takeaway.android/com.takeaway.android.activity.Splash}" drawable="thuisbezorgd" />
     <item component="ComponentInfo{com.yopeso.lieferando/com.takeaway.android.activity.Splash}" drawable="thuisbezorgd" />
     <item component="ComponentInfo{com.yourdelivery.pyszne/com.takeaway.android.activity.Splash}" drawable="thuisbezorgd" />
