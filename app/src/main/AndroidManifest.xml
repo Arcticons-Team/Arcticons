@@ -45,6 +45,17 @@
                 android:name="android.appwidget.provider"
                 android:resource="@xml/digital_clock_widget_info" />
         </receiver>
+        <activity
+            android:name="GoogleWeatherWidget"
+            android:icon="@drawable/google_weather"
+            android:label="@string/google_weather"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.CREATE_SHORTCUT" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
 
         <activity
             android:name=".activities.SplashActivity"

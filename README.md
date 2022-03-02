@@ -43,7 +43,7 @@ Read the full details here:
 
 ### Submitting icon requests
 
-Historically [Turtl](https://f-droid.org/en/packages/org.xphnx.iconsubmit/) was used to collect the necessary information for adding missing icons. But now there is an awesome built-in feature to submit icon request right inside the app!  
+The preferred way of submitting icon requests is with our in-app request tool. Alternatively, you can use the very handy [Icon Request](https://github.com/Kaiserdragon2/IconRequest) app to provide necessary information.
 
 A simple step-by-step guide:
 1. Open Arcticons
