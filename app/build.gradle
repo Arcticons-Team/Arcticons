@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion 31
 
     defaultConfig {
         applicationId "com.donnnno.arcticons"
@@ -57,23 +57,8 @@ android {
 }
 
 dependencies {
-    /*
-     * CandyBar Material Dashboard Library
-     *
-     * TODO: How to update the dashboard?!
-     * Check this update guide for every version
-     *      - https://github.com/zixpo/candybar-sample/wiki/Updating-the-dashboard
-     * If you've missed some versions you've to also follow update guide for those versions
-     */
-
 
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-
-    implementation 'androidx.appcompat:appcompat:1.3.1'
-
-    implementation project(':libs:candybar')
-    implementation project(':libs:extLibs:PreLollipopTransitions')
+    implementation 'com.github.Donnnno:candybar-foss:3.13.3'
 
 }
