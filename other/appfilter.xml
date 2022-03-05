@@ -1,7 +1,33 @@
-<resources>
+<resources>    
+    <!-- Lidraughts -->
+    <item component="ComponentInfo{org.lidraughts.mobileapp/org.lidraughts.mobileapp.MainActivity}" drawable="lidraughts"/>
+
+    <!-- Lovense Remote -->
+    <item component="ComponentInfo{com.lovense.wear/com.wear.main.FlashActivity}" drawable="lovense_remote"/>
+
+	<!-- Shokz -->
+	<item component="ComponentInfo{cn.com.aftershokz.app/cn.com.aftershokz.app.ui.auth.SplashActivity}" drawable="shokz"/>
+
+    <!-- BECU -->
+    <item component="ComponentInfo{org.becu.androidapp/org.cocos2dx.moneymobile.AppActivity}" drawable="becu"/>
+    
+    <!-- Citi Mobile -->
+    <item component="ComponentInfo{com.citi.citimobile/com.citi.mobile.pt3.GlobalPhoneActivity}" drawable="citi_mobile"/>
+
+    <!-- Drive Safe & Save™ -->
+    <item component="ComponentInfo{com.statefarm.dssm/com.statefarm.dssm.feature.new_login.NewSplashScreenActivity}" drawable="drive_safe_save"/>
+
+    <!-- State Farm -->
+    <item component="ComponentInfo{com.statefarm.pocketagent/com.statefarm.pocketagent.ui.login.activity.SplashScreenActivity}" drawable="state_farm"/>
+
+    <!-- USAA -->
+    <item component="ComponentInfo{com.usaa.mobile.android.usaa/com.usaa.mobile.android.app.SplashScreenActivity}" drawable="usaa"/>
 
     <!-- $HELL -->
     <item component="ComponentInfo{in.ac.dducollegedu.shell/in.ac.dducollegedu.shell.MainActivity}" drawable="shell" />
+
+    <!-- Chronicle Audiobook Player -->
+	  <item component="ComponentInfo{io.github.mattpvaughn.chronicle/io.github.mattpvaughn.chronicle.application.MainActivity}" drawable="chronicle_audiobook_player"/>
 
     <!-- PostePay -->
     <item component="ComponentInfo{posteitaliane.posteapp.apppostepay/posteitaliane.posteapp.apppostepay.ui.activity.SplashActivity}" drawable="postepay" />
@@ -148,6 +174,12 @@
 
     <!-- 17TRACK -->
     <item component="ComponentInfo{yqtrack.app/yqtrack.app.ui.splash.SplashActivity}" drawable="a17track" />
+
+    <!-- Nayatel Joy -->
+    <item component="ComponentInfo{com.nayatel.joy.joymob/com.nayatel.joy.joymob.SplashScreenActivity}" drawable="nayateljoy"/>
+
+    <!-- Digital Signage -->
+    <item component="ComponentInfo{com.nayatel.signage/com.nayatel.signage.view.SplashActivity}" drawable="digitalsignage"/>
 
     <!-- 1822TAN+ -->
     <item component="ComponentInfo{de.direkt1822.tanplus/de.direkt1822.tanplus.MainActivity}" drawable="a1822tan" />
@@ -4402,6 +4434,7 @@
     <!-- Google Pay -->
     <item component="ComponentInfo{com.google.android.apps.walletnfcrel/com.google.commerce.tapandpay.android.cardlist.CardListActivity}" drawable="googlepay" />
     <item component="ComponentInfo{com.google.android.apps.nbu.paisa.user/com.google.nbu.paisa.flutter.gpay.app.MainActivity}" drawable="googlepay" />
+    <item component="ComponentInfo{com.google.android.apps.nbu.paisa.user/com.google.nbu.paisa.flutter.gpay.app.LauncherActivity}" drawable="googlepay"/>
 
     <!-- Google Photos -->
     <item component="ComponentInfo{com.google.android.apps.photos/com.google.android.apps.photos.home.HomeActivity}" drawable="googlephotos" />
