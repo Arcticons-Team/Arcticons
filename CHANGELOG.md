@@ -1,6 +1,6 @@
 ### 3.8.3
 ###### Released: Mar 5, 2022
-* 🎉 55 new or updated icons (thanks Kaiserdragon2, Hassancreative, Dgcampbe, Para-lized, Denizonm)
+* 🎉 55 new or updated icons (thanks Kaiserdragon2, Hassancreative, Dgcampbe, Para-lyzed, Denizonm)
 * 🔥 3830 icons in total! 
 
 ### 3.7.6
