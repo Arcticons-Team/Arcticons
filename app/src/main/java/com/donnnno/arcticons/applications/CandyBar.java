@@ -29,8 +29,7 @@ public class CandyBar extends CandyBarApplication {
                     first = false;
                 }
 
-                emailBody.append("- [ ] ")
-                        .append(request.getName())
+                    emailBody.append(request.getName())
                         .append("\r\n")
                         .append(request.getActivity())
                         .append("\r\n");
