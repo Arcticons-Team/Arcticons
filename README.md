@@ -62,8 +62,6 @@ All icons are licensed under [Creative Commonns Attribution-ShareAlike 4.0 Inter
 
 ### Contributors
 
-You can find a list of all Arcticons contributors [here](https://github.com/Donnnno/Arcticons/graphs/contributors).
-
-Frost contributors can be found [here](https://github.com/dkanada/frost/graphs/contributors).
-
-ICEcons contributors can be found [here](https://github.com/1C3/ICEcons/graphs/contributors). 
+- You can find a list of all Arcticons contributors [here](https://github.com/Donnnno/Arcticons/graphs/contributors).
+- Frost contributors can be found [here](https://github.com/dkanada/frost/graphs/contributors).
+- ICEcons contributors can be found [here](https://github.com/1C3/ICEcons/graphs/contributors). 
