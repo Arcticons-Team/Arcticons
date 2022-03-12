@@ -1,4 +1,9 @@
 <resources>
+    <!-- HP Print Service Plugin -->
+    <item component="ComponentInfo{com.hp.android.printservice/com.hp.android.printservice.launcher.SplashActivity}" drawable="hp_print_service_plugin"/>
+
+    <!-- Aurora -->
+    <item component="ComponentInfo{com.funkymuse.aurora/com.funkymuse.aurora.MainActivity}" drawable="aurora"/>
 
     <!-- $HELL -->
     <item component="ComponentInfo{in.ac.dducollegedu.shell/in.ac.dducollegedu.shell.MainActivity}" drawable="shell" />
@@ -2878,6 +2883,7 @@
 
     <!-- Documents OnlyOffice -->
     <item component="ComponentInfo{com.onlyoffice.documents/app.editors.manager.ui.activities.login.SplashActivity}" drawable="documents" />
+    <item component="ComponentInfo{com.onlyoffice.documents/app.editors.manager.ui.activities.main.OnBoardingActivity}" drawable="documents" />
 
     <!-- Document Viewer -->
     <item component="ComponentInfo{org.sufficientlysecure.viewer/org.ebookdroid.ui.library.RecentActivity}" drawable="document_viewer" />
@@ -11148,6 +11154,7 @@
 
     <!-- TED -->
     <item component="ComponentInfo{com.ted.android/com.ted.android.view.splash.SplashActivity}" drawable="ted" />
+    <item component="ComponentInfo{com.ted.android/com.ted.android.MainActivity}" drawable="ted" />
 
     <!-- TEdit -->
     <item component="ComponentInfo{com.atr.tedit/com.atr.tedit.TEditActivity}" drawable="tedit" />
