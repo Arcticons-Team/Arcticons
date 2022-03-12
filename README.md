@@ -23,9 +23,9 @@ Submitting icon requests helps a lot, but maintaining the project (as you may im
 
 Maintaining this icon-pack costs a lot of time, besides making icons I'm curating every single icon if it has the right sizing and other design rules. So if you like the icons and want to support the development consider supporting. :)
 
-|Paypal|Liberapay|
-|---|---|
-|<a href="https://www.paypal.com/paypalme/onnovdd"><img height="40" alt="Donate using Paypal" src="https://github.com/Donnnno/Arcticons/blob/main/github/pp_button.svg"></a>|<a href="https://liberapay.com/Donno/donate"><img height="40" alt="Donate using Liberapay" src="https://github.com/Donnnno/Arcticons/blob/main/github/lp_button.svg"></a>|
+|Paypal|Liberapay|Ko-Fi|
+|---|---|---|
+|<a href="https://www.paypal.com/paypalme/onnovdd"><img height="40" alt="Donate using Paypal" src="https://github.com/Donnnno/Arcticons/blob/main/github/pp_button.svg"></a>|<a href="https://liberapay.com/Donno/donate"><img height="40" alt="Donate using Liberapay" src="https://github.com/Donnnno/Arcticons/blob/main/github/lp_button.svg"></a>||<a href="Ko-fi.com/donno_"><img height="40" alt="Donate using Ko-Fi" src="https://github.com/Donnnno/Arcticons/blob/main/github/kofi_button.svg"></a>
 
 ## Contributing
 
