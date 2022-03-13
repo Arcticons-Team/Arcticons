@@ -1,7 +1,8 @@
-### 3.8.3
-###### Released: Mar 5, 2022
-* 🎉 55 new or updated icons (thanks Kaiserdragon2, Hassancreative, Dgcampbe, Para-lyzed, Denizonm)
-* 🔥 3830 icons in total! 
+### 3.8.6
+###### Released: Mar 13, 2022
+* 🌞 I now accept premium requests via Ko-Fi. If you want to see your icons quickly, this might be a great option for you!
+* 🎉 32 new or updated icons (thanks Kaiserdragon2, Hassancreative, Dgcampbe, Para-lyzed, Denizonm)
+* 🔥 3860 icons in total! 
 
 ### 3.7.6
 ###### Released: Feb 25, 2022
