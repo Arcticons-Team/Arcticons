@@ -41,11 +41,10 @@ Read the full details here:
 
 <a href="https://app.element.io/#/room/#arcticons:matrix.org"><img height="40" alt="Donate using Paypal" src="https://github.com/Donnnno/Arcticons/blob/main/github/matrix_button.svg"></a>
 
-### Submitting icon requests
+## Icon requests
 
-The preferred way of submitting icon requests is with our in-app request tool. Alternatively, you can use the very handy [Icon Request](https://github.com/Kaiserdragon2/IconRequest) app to provide necessary information.
-
-A simple step-by-step guide:
+### Regular reguests
+You can request icons with our in app tool:
 1. Open Arcticons
 2. Press the symbol on the upper-left corner and select `Icon Request`
 3. Choose the missing apps you wish to submit, it's also possible to select/deselect all missing apps
@@ -53,6 +52,9 @@ A simple step-by-step guide:
 5. Now you can check the information that will be sent via email, and if everything looks fine, simply send the email and it's done!
 
 In case you accidentally close the app during the process, and want to clean the cache, there is an option named `Clear Icon Request Data` in `Settings` to do that.
+
+### Premium requests
+If it's taking too long for you, you can also buy priority requests via <a href="https://Ko-fi.com/donno_">Ko-Fi</a>, with this your icon will be the first one in the queue.
 
 ## License
 
