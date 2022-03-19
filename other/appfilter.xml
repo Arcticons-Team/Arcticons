@@ -1468,7 +1468,7 @@
 
     <!-- Brave Browser -->
     <item component="ComponentInfo{com.brave.browser/com.google.android.apps.chrome.Main}" drawable="brave" />
-    <item component="ComponentInfo{com.brave.browser_beta/com.google.android.apps.chrome.Main}" drawable="brave" />
+    <item component="ComponentInfo{com.brave.browser_beta/com.google.android.apps.chrome.Main}" drawable="brave_beta" />
 
     <!-- Brawl Stars -->
     <item component="ComponentInfo{com.supercell.brawlstars/com.supercell.brawlstars.GameApp}" drawable="brawlstars" />
@@ -3630,11 +3630,17 @@
 
     <!-- Firefox -->
     <item component="ComponentInfo{org.mozilla.firefox/org.mozilla.firefox.App}" drawable="firefox" />
-    <item component="ComponentInfo{org.mozilla.firefox_beta/org.mozilla.firefox_beta.App}" drawable="firefox" />
-    <item component="ComponentInfo{org.mozilla.firefox_beta/org.mozilla.firefox_beta.App}" drawable="firefox" />
+
+    <!-- Firefox Beta -->
+    <item component="ComponentInfo{org.mozilla.firefox_beta/org.mozilla.firefox_beta.App}" drawable="firefox_beta" />
+    <item component="ComponentInfo{org.mozilla.firefox_beta/org.mozilla.firefox_beta.App}" drawable="firefox_beta" />
+
+    <!-- Firefox Nightly -->
+    <item component="ComponentInfo{org.mozilla.fenix.nightly/org.mozilla.fenix.HomeActivity}" drawable="firefox" />
+    <item component="ComponentInfo{org.mozilla.fenix.nightly/org.mozilla.fenix.nightly.App}" drawable="firefox" />
 
     <!-- Firefox Focus -->
-    <item component="ComponentInfo{org.mozilla.focus/org.mozilla.focus.activity.MainActivity}" drawable="firefox" />
+    <item component="ComponentInfo{org.mozilla.focus/org.mozilla.focus.activity.MainActivity}" drawable="firefox_focus" />
 
     <!-- Firefox Klar -->
     <item component="ComponentInfo{org.mozilla.klar/org.mozilla.focus.activity.MainActivity}" drawable="firefox" />
@@ -3647,8 +3653,6 @@
 
     <!-- Firefox Preview -->
     <item component="ComponentInfo{org.mozilla.fenix/org.mozilla.fenix.HomeActivity}" drawable="firefox" />
-    <item component="ComponentInfo{org.mozilla.fenix.nightly/org.mozilla.fenix.HomeActivity}" drawable="firefox" />
-    <item component="ComponentInfo{org.mozilla.fenix.nightly/org.mozilla.fenix.nightly.App}" drawable="firefox" />
     <item component="ComponentInfo{org.mozilla.fenix/org.mozilla.fenix.App}" drawable="firefox" />
 
     <!-- Firefox Send -->
@@ -4301,8 +4305,8 @@
 
     <!-- Google Chrome -->
     <item component="ComponentInfo{com.android.chrome/com.google.android.apps.chrome.Main}" drawable="googlechrome" />
-    <item component="ComponentInfo{com.chrome.beta/com.google.android.apps.chrome.Main}" drawable="googlechrome" />
-    <item component="ComponentInfo{com.chrome.dev/com.google.android.apps.chrome.Main}" drawable="googlechrome" />
+    <item component="ComponentInfo{com.chrome.beta/com.google.android.apps.chrome.Main}" drawable="google_chrome_beta" />
+    <item component="ComponentInfo{com.chrome.dev/com.google.android.apps.chrome.Main}" drawable="google_chrome_dev" />
 
     <!-- Google Clock -->
     <item component="ComponentInfo{com.google.android.deskclock/com.android.deskclock.DeskClock}" drawable="clock" />
@@ -11655,7 +11659,7 @@
 
     <!-- Tor Browser -->
     <item component="ComponentInfo{org.torproject.torbrowser/org.torproject.torbrowser.App}" drawable="torbrowser" />
-    <item component="ComponentInfo{org.torproject.torbrowser_alpha/org.torproject.torbrowser_alpha.App}" drawable="torbrowser" />
+    <item component="ComponentInfo{org.torproject.torbrowser_alpha/org.torproject.torbrowser_alpha.App}" drawable="torbrowser_alpha" />
 
     <!-- Tor Services -->
     <item component="ComponentInfo{org.torproject.torservices/org.torproject.torservices.SettingsActivity}" drawable="torservices" />
@@ -12994,9 +12998,6 @@
 
     <!-- Zap -->
     <item component="ComponentInfo{zapsolutions.zap/zapsolutions.zap.LandingActivity}" drawable="zap" />
-
-    <!-- Zedge -->
-    <item component="ComponentInfo{net.zedge.android/net.zedge.android.Main}" drawable="zedge" />
 
     <!-- Zedge -->
     <item component="ComponentInfo{net.zedge.android/net.zedge.android.Main}" drawable="zedge" />
