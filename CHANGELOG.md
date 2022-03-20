@@ -1,3 +1,11 @@
+### 3.9.0
+###### Released: Mar 20, 2022
+* 🇺🇦 
+* 🌞 Priority requests via Ko-Fi
+* 🌐 Browsers have more variation now
+* 🎉 40 new or updated icons (thanks Joelchrono12, Quantenzitrone, Kaiserdragon2)
+* 🔥 3900 icons in total! 
+
 ### 3.8.6
 ###### Released: Mar 13, 2022
 * 🌞 I now accept premium requests via Ko-Fi. If you want to see your icons quickly, this might be a great option for you!
