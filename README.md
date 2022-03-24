@@ -23,9 +23,9 @@ Submitting icon requests helps a lot, but maintaining the project (as you may im
 
 Maintaining this icon-pack costs a lot of time, besides making icons I'm curating every single icon if it has the right sizing and other design rules. So if you like the icons and want to support the development consider supporting. :)
 
-|Paypal|Liberapay|
-|---|---|
-|<a href="https://www.paypal.com/paypalme/onnovdd"><img height="40" alt="Donate using Paypal" src="https://github.com/Donnnno/Arcticons/blob/main/github/pp_button.svg"></a>|<a href="https://liberapay.com/Donno/donate"><img height="40" alt="Donate using Liberapay" src="https://github.com/Donnnno/Arcticons/blob/main/github/lp_button.svg"></a>|
+|Paypal|Liberapay|Ko-Fi|
+|---|---|---|
+|<a href="https://www.paypal.com/paypalme/onnovdd"><img height="40" alt="Donate using Paypal" src="https://github.com/Donnnno/Arcticons/blob/main/github/pp_button.svg"></a>|<a href="https://liberapay.com/Donno/donate"><img height="40" alt="Donate using Liberapay" src="https://github.com/Donnnno/Arcticons/blob/main/github/lp_button.svg"></a>|<a href="https://Ko-fi.com/donno_"><img height="40" alt="Donate using Ko-Fi" src="https://github.com/Donnnno/Arcticons/blob/main/github/kofi_button.svg"></a>
 
 ## Contributing
 
@@ -41,11 +41,10 @@ Read the full details here:
 
 <a href="https://app.element.io/#/room/#arcticons:matrix.org"><img height="40" alt="Donate using Paypal" src="https://github.com/Donnnno/Arcticons/blob/main/github/matrix_button.svg"></a>
 
-### Submitting icon requests
+## Icon requests
 
-The preferred way of submitting icon requests is with our in-app request tool. Alternatively, you can use the very handy [Icon Request](https://github.com/Kaiserdragon2/IconRequest) app to provide necessary information.
-
-A simple step-by-step guide:
+### Regular reguests
+You can request icons with our in app tool:
 1. Open Arcticons
 2. Press the symbol on the upper-left corner and select `Icon Request`
 3. Choose the missing apps you wish to submit, it's also possible to select/deselect all missing apps
@@ -53,6 +52,9 @@ A simple step-by-step guide:
 5. Now you can check the information that will be sent via email, and if everything looks fine, simply send the email and it's done!
 
 In case you accidentally close the app during the process, and want to clean the cache, there is an option named `Clear Icon Request Data` in `Settings` to do that.
+
+### Premium requests
+If it's taking too long for you, you can also buy priority requests via <a href="https://Ko-fi.com/donno_">Ko-Fi</a>, with this your icon will be the first one in the queue.
 
 ## License
 
