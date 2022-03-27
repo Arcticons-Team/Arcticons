@@ -53,7 +53,7 @@ minRequests = 5
 # Remove people sending more than X requests
 def removeGreedy(address, element):
 	if address in element['senders']:
-		element['count'] = element['count'] - 1
+		element['count'] = element['count']
 		element['senders'] = [x for x in element['senders'] if x is not address]
 	return element
 
