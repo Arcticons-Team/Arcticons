@@ -58,7 +58,7 @@ def removeGreedy(address, element):
 	return element
 
 def parseExisting():
-	requestBlockQuery = re.compile(r'<!-- (?P<Name>.+) -->\s<item component=\"ComponentInfo{(?P<ComponentInfo>.+)}\" drawable=(\".+\"|\"\") />\s(https:\/\/play.google.com\/store\/apps\/details\?id=.+\shttps:\/\/f-droid\.org\/en\/packages\/.+\s)Requested (?P<count>\d+) times\s?(Last requested (?P<requestDate>\d+\.?\d+?))?',re.M)
+	requestBlockQuery = re.compile(r'(?P<Name>.+)\s(?P<ComponentInfo>.+)\s(https:\/\/play.google.com\/store\/apps\/details\?id=.+\shttps:\/\/f-droid\.org\/en\/packages\/.+\s)Requested (?P<count>\d+) times\s?(Last requested (?P<requestDate>\d+\.?\d+?))?',re.M)
 	if len(argv) < 4:
 		return
 	with open(argv[3], 'r', encoding="utf8") as existingFile:
@@ -186,7 +186,7 @@ def main():
         if len(argv) >= 2:
                 parseExisting()
         filterOld()
-        parseMails()
+        #parseMails()
         apps = dict(sorted(apps.items(), key=lambda item: item[1]['count'], reverse=True))
         #sorted(apps.values(), key=itemgetter('count'), reverse=True)
         separateupdatable()
