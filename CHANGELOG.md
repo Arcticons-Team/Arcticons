@@ -1,8 +1,8 @@
 ### 4.0.0
 ###### Released: Mar 28, 2022
-🇺🇦 
-🎉 100 new or updated icons (thanks @Joelchrono12, Quantenzitrone, Kaiserdragon2, Ktutsch, JapanYoshi, SolarisSonne)
-🔥 4000 icons in total! This is huge btw!!!
+- 🇺🇦 
+- 🎉 100 new or updated icons (thanks Joelchrono12, Quantenzitrone, Kaiserdragon2, Ktutsch, JapanYoshi, SolarisSonne)
+- 🔥 4000 icons in total! This is huge btw!!!
 
 ### 3.9.0
 ###### Released: Mar 20, 2022
