@@ -53,12 +53,12 @@ minRequests = 5
 # Remove people sending more than X requests
 def removeGreedy(address, element):
 	if address in element['senders']:
-		element['count'] = element['count'] - 1
+		element['count'] = element['count']
 		element['senders'] = [x for x in element['senders'] if x is not address]
 	return element
 
 def parseExisting():
-	requestBlockQuery = re.compile(r'(?P<Name>.+)\s(?P<ComponentInfo>.+)\s(https:\/\/play.google.com\/store\/apps\/details\?id=.+\shttps:\/\/f-droid\.org\/en\/packages\/.+\s)Requested (?P<count>\d+) times\s?(Last requested (?P<requestDate>\d+\.?\d+?))?',re.M)
+	requestBlockQuery = re.compile(r'<!-- (?P<Name>.+) -->\s<item component=\"ComponentInfo{(?P<ComponentInfo>.+)}\" drawable=(\".+\"|\"\") />\s(https:\/\/play.google.com\/store\/apps\/details\?id=.+\shttps:\/\/f-droid\.org\/en\/packages\/.+\s)Requested (?P<count>\d+) times\s?(Last requested (?P<requestDate>\d+\.?\d+?))?',re.M)
 	if len(argv) < 4:
 		return
 	with open(argv[3], 'r', encoding="utf8") as existingFile:
@@ -135,8 +135,8 @@ def filterOld():
 
 def separateupdatable():
 	objectBlock = """
-{name}
-{component}
+<!-- {name} -->
+<item component="ComponentInfo{{{component}}}" drawable="{appname}" />
 https://play.google.com/store/apps/details?id={packageName}
 https://f-droid.org/en/packages/{packageNames}/
 Requested {count} times
@@ -150,9 +150,12 @@ Last requested {reqDate}
                                 #print(values["Name"])
                                 componentInfo = componentInfo[:componentInfo.index('/')]
                                 if appfilter.find(componentInfo) == -1 and ''.join(newApps).find(componentInfo) == -1:
+                                        apprename = re.sub(r"[^a-zA-Z0-9 ]+", r"", values["Name"])
+                                        apprename = re.sub(r"[ ]+",r"_",apprename)
                                         newApps.append(objectBlock.format(
                                                 name = values["Name"],
                                                 component = values["ComponentInfo"],
+                                                appname = apprename.lower(),
                                                 packageName = values["ComponentInfo"][0:values["ComponentInfo"].index('/')],
                                                 packageNames = values["ComponentInfo"][0:values["ComponentInfo"].index('/')],
                                                 count = values["count"],
