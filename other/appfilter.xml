@@ -62,6 +62,39 @@
 	<!-- Digital Yuan  -->
 	<item component="ComponentInfo{cn.gov.pbc.dcep/com.alipay.mobile.quinox.LauncherActivity}" drawable="digital_yuan" />
 
+    <!-- Leumiwallet / לאומי -->
+    <item component="ComponentInfo{com.leumi.leumiwallet/com.ngsoft.app.ui.LMSplashActivity}" drawable="leumiwallet" />
+
+    <!-- Weather Forecast -->
+    <item component="ComponentInfo{uk.org.boddie.android.weatherforecast/uk.org.boddie.android.weatherforecast.WeatherForecastActivity}" drawable="weather_forecast" />
+
+    <!-- Genshin Impact -->
+    <item component="ComponentInfo{com.miHoYo.GenshinImpact/com.miHoYo.GetMobileInfo.MainActivity}" drawable="genshin_impact" />
+
+    <!-- EdXposed Manager -->
+    <item component="ComponentInfo{org.meowcat.edxposed.manager/org.meowcat.edxposed.manager.WelcomeActivityMlgmXyysd}" drawable="xposed" />
+
+    <!-- MPG -->
+    <item component="ComponentInfo{com.monpetitgazon.monpetitgazonapp/com.monpetitgazon.MainActivity}" drawable="monpetitgazon" />
+
+    <!-- StadtRAD Hamburg -->
+    <item component="ComponentInfo{de.stadtrad.hamburg/de.stadtrad.hamburg.StadtRadHamburgActivity}" drawable="stadtrad_hamburg" />
+
+    <!-- Skoob -->
+    <item component="ComponentInfo{com.gaudium.skoob/com.gaudium.skoob.MainActivity}" drawable="skoob" />
+
+    <!-- Xash3D FWGS -->
+    <item component="ComponentInfo{su.xash.engine/su.xash.engine.LauncherActivity}" drawable="circle_letter_x" />
+
+    <!-- meteoblue -->
+    <item component="ComponentInfo{com.meteoblue.droid/crc64759a0cf6dda89994.MainActivity}" drawable="goodweather" />
+
+    <!-- HP Print Service Plugin -->
+    <item component="ComponentInfo{com.hp.android.printservice/com.hp.android.printservice.launcher.SplashActivity}" drawable="hpprinteraio"/>
+
+    <!-- Aurora -->
+    <item component="ComponentInfo{com.funkymuse.aurora/com.funkymuse.aurora.MainActivity}" drawable="aurora"/>
+
     <!--Galnet Dictionary -->
     <item component="ComponentInfo{gal.sli.digalnet/gal.sli.digalnet.MainActivity} " drawable="galnet_dictionary" />
 
@@ -111,6 +144,15 @@
 
     <!-- 1by1 -->
     <item component="ComponentInfo{com.mpesch3.onebyone/com.mpesch3.onebyone.OboActivity}" drawable="_1by1" />
+
+	<!-- KOLEO -->
+	<item component="ComponentInfo{pl.koleo/pl.astarium.koleo.ui.startscreen.StartScreenActivity}" drawable="koleo"/>
+
+	<!-- Oura -->
+	<item component="ComponentInfo{com.ouraring.oura/com.ouraring.oura.LauncherActivity}" drawable="oura"/>
+
+	<!-- Waking Up -->
+	<item component="ComponentInfo{org.wakingup.android/org.wakingup.android.activity.MainActivity}" drawable="waking_up"/>
 
     <!-- 1lyrics -->
     <item component="ComponentInfo{com.lyricslover.onelyrics/com.lyricslover.onelyrics.main.MainActivity}" drawable="music" />
@@ -1283,7 +1325,7 @@
     <item component="ComponentInfo{nl.dcentralize.beltegoed.ben_nl/nl.dcentralize.beltegoed.ben_nl.MainActivity}" drawable="ben" />
 
     <!-- BeowulfWeather -->
-    <item component="ComponentInfo{de.beowulf.wetter/de.beowulf.wetter.activities.LaunchActivity}" drawable="weather" />
+    <item component="ComponentInfo{de.beowulf.wetter/de.beowulf.wetter.activities.LaunchActivity}" drawable="beowulfweather" />
     <item component="ComponentInfo{de.beowulf.wetter/de.beowulf.wetter.LaunchActivity}" drawable="beowulfweather" />
     <item component="ComponentInfo{com.asus.weathertime/com.asus.weathertime.WeatherTimeSettings}" drawable="beowulfweather" />
 
@@ -1482,9 +1524,6 @@
     <item component="ComponentInfo{org.blokada.fem.fdroid/ui.MainActivity}" drawable="blokada" />
     <item component="ComponentInfo{org.blokada.origin.alarm/ui.MainActivity}" drawable="blokada" />
     <item component="ComponentInfo{org.blokada.fyra/core.PanelActivity}" drawable="blokada" />
-
-    <!-- Blokada 5 -->
-    <item component="ComponentInfo{org.blokada.origin.alarm/ui.MainActivity}" drawable="blokada_alt" />
 
     <!-- Blokada 5 -->
     <item component="ComponentInfo{org.blokada.origin.alarm/ui.MainActivity}" drawable="blokada_alt" />
@@ -2104,9 +2143,9 @@
     <item component="ComponentInfo{com.pragmatic.apps.piano.chord.analyser/com.pragmatic.apps.piano.chord.analyser.MainActivity}" drawable="chordanalyser" />
 
     <!-- Chromium -->
-    <item component="ComponentInfo{org.notphenom.swe.browser/org.notphenom.swe.browser.Main}" drawable="googlechrome" />
-    <item component="ComponentInfo{org.chromium.chrome/com.google.android.apps.chrome.Main}" drawable="googlechrome" />
-    <item component="ComponentInfo{org.bromite.chromium/com.google.android.apps.chrome.Main}" drawable="googlechrome" />
+    <item component="ComponentInfo{org.notphenom.swe.browser/org.notphenom.swe.browser.Main}" drawable="google_chrome" />
+    <item component="ComponentInfo{org.chromium.chrome/com.google.android.apps.chrome.Main}" drawable="google_chrome" />
+    <item component="ComponentInfo{org.bromite.chromium/com.google.android.apps.chrome.Main}" drawable="google_chrome" />
 
     <!-- Chronicle Audiobook Player -->
     <item component="ComponentInfo{io.github.mattpvaughn.chronicle/io.github.mattpvaughn.chronicle.application.MainActivity}" drawable="chronicle_audiobook_player" />
@@ -3055,6 +3094,7 @@
 
     <!-- Documents OnlyOffice -->
     <item component="ComponentInfo{com.onlyoffice.documents/app.editors.manager.ui.activities.login.SplashActivity}" drawable="documents" />
+    <item component="ComponentInfo{com.onlyoffice.documents/app.editors.manager.ui.activities.main.OnBoardingActivity}" drawable="documents" />
 
     <!-- Document Viewer -->
     <item component="ComponentInfo{org.sufficientlysecure.viewer/org.ebookdroid.ui.library.RecentActivity}" drawable="document_viewer" />
@@ -4464,28 +4504,28 @@
     <item component="ComponentInfo{org.asdtm.goodweather/org.asdtm.goodweather.MainActivity}" drawable="goodweather" />
 
     <!-- Google -->
-    <item component="ComponentInfo{com.google.android.googlequicksearchbox/com.google.android.googlequicksearchbox.SearchActivity}" drawable="googleapp" />
+    <item component="ComponentInfo{com.google.android.googlequicksearchbox/com.google.android.googlequicksearchbox.SearchActivity}" drawable="google_app" />
 
     <!-- Google Assistant -->
-    <item component="ComponentInfo{com.google.android.apps.googleassistant/com.google.android.apps.googleassistant.AssistantActivity}" drawable="googleassistant" />
-    <item component="ComponentInfo{com.google.android.apps.assistant/com.google.android.apps.assistant.go.MainActivity}" drawable="googleassistant" />
+    <item component="ComponentInfo{com.google.android.apps.googleassistant/com.google.android.apps.googleassistant.AssistantActivity}" drawable="google_assistant" />
+    <item component="ComponentInfo{com.google.android.apps.assistant/com.google.android.apps.assistant.go.MainActivity}" drawable="google_assistant" />
 
     <!-- Google Authenticator -->
-    <item component="ComponentInfo{com.google.android.apps.authenticator2/com.google.android.apps.authenticator.AuthenticatorActivity}" drawable="googleauthenticator" />
+    <item component="ComponentInfo{com.google.android.apps.authenticator2/com.google.android.apps.authenticator.AuthenticatorActivity}" drawable="google_authenticator" />
 
     <!-- Google Calculator -->
     <item component="ComponentInfo{com.google.android.calculator/com.android.calculator2.Calculator}" drawable="calculator" />
 
     <!-- Google Camera -->
-    <item component="ComponentInfo{com.google.android.GoogleCamera/com.android.camera.CameraLauncher}" drawable="googlecamera" />
-    <item component="ComponentInfo{com.google.android.CameraRedmi5Plus/com.android.camera.CameraLauncher}" drawable="googlecamera" />
-    <item component="ComponentInfo{com.google.android.GoogleCameraEng/com.android.camera.CameraLauncher}" drawable="googlecamera" />
-    <item component="ComponentInfo{org.codeaurora.snapcam/com.android.camera.CameraLauncher}" drawable="googlecamera" />
-    <item component="ComponentInfo{com.google.android.GoogleCamera/com.android.camera.CameraLauncher}" drawable="googlecamera" />
-    <item component="ComponentInfo{com.google.android.GoogleCamera.Urnyx/com.android.camera.CameraLauncher}" drawable="googlecamera" />
+    <item component="ComponentInfo{com.google.android.GoogleCamera/com.android.camera.CameraLauncher}" drawable="google_camera" />
+    <item component="ComponentInfo{com.google.android.CameraRedmi5Plus/com.android.camera.CameraLauncher}" drawable="google_camera" />
+    <item component="ComponentInfo{com.google.android.GoogleCameraEng/com.android.camera.CameraLauncher}" drawable="google_camera" />
+    <item component="ComponentInfo{org.codeaurora.snapcam/com.android.camera.CameraLauncher}" drawable="google_camera" />
+    <item component="ComponentInfo{com.google.android.GoogleCamera/com.android.camera.CameraLauncher}" drawable="google_camera" />
+    <item component="ComponentInfo{com.google.android.GoogleCamera.Urnyx/com.android.camera.CameraLauncher}" drawable="google_camera" />
 
     <!-- Google Chrome -->
-    <item component="ComponentInfo{com.android.chrome/com.google.android.apps.chrome.Main}" drawable="googlechrome" />
+    <item component="ComponentInfo{com.android.chrome/com.google.android.apps.chrome.Main}" drawable="google_chrome" />
     <item component="ComponentInfo{com.chrome.beta/com.google.android.apps.chrome.Main}" drawable="google_chrome_beta" />
     <item component="ComponentInfo{com.chrome.dev/com.google.android.apps.chrome.Main}" drawable="google_chrome_dev" />
 
@@ -4493,13 +4533,13 @@
     <item component="ComponentInfo{com.google.android.deskclock/com.android.deskclock.DeskClock}" drawable="clock" />
 
     <!-- Google Docs -->
-    <item component="ComponentInfo{com.google.android.apps.docs.editors.docs/com.google.android.apps.docs.app.NewMainProxyActivity}" drawable="googledocs" />
+    <item component="ComponentInfo{com.google.android.apps.docs.editors.docs/com.google.android.apps.docs.app.NewMainProxyActivity}" drawable="google_docs" />
 
     <!-- Google Drive -->
-    <item component="ComponentInfo{com.google.android.apps.docs/com.google.android.apps.docs.app.NewMainProxyActivity}" drawable="googledrive" />
+    <item component="ComponentInfo{com.google.android.apps.docs/com.google.android.apps.docs.app.NewMainProxyActivity}" drawable="google_drive" />
 
     <!-- Google Earth -->
-    <item component="ComponentInfo{com.google.earth/com.google.android.apps.earth.EarthActivity}" drawable="earth" />
+    <item component="ComponentInfo{com.google.earth/com.google.android.apps.earth.EarthActivity}" drawable="google_earth" />
 
     <!-- Google Email -->
     <item component="ComponentInfo{com.google.android.email/com.android.email.activity.Welcome}" drawable="mail" />
@@ -4520,7 +4560,7 @@
     <item component="ComponentInfo{com.google.android.talk/com.google.android.talk.SigningInActivity}" drawable="googlehangouts" />
 
     <!-- Google Home -->
-    <item component="ComponentInfo{com.google.android.apps.chromecast.app/com.google.android.apps.chromecast.app.DiscoveryActivity}" drawable="googlehome" />
+    <item component="ComponentInfo{com.google.android.apps.chromecast.app/com.google.android.apps.chromecast.app.DiscoveryActivity}" drawable="google_home" />
 
     <!-- Google Japanese Input -->
     <item component="ComponentInfo{com.google.android.inputmethod.japanese/com.google.android.apps.inputmethod.libs.framework.core.LauncherActivity}" drawable="keyboard" />
@@ -4534,34 +4574,34 @@
     <item component="ComponentInfo{com.google.android.inputmethod.pinyin/com.google.android.apps.inputmethod.libs.framework.core.LauncherActivity}" drawable="keyboard" />
 
     <!-- Google Maps -->
-    <item component="ComponentInfo{com.google.android.apps.maps/com.google.android.maps.MapsActivity}" drawable="googlemaps" />
+    <item component="ComponentInfo{com.google.android.apps.maps/com.google.android.maps.MapsActivity}" drawable="google_maps" />
 
     <!-- Google Meet -->
-    <item component="ComponentInfo{com.google.android.apps.meetings/com.google.android.apps.meetings.splash.SplashActivity}" drawable="googlemeet" />
+    <item component="ComponentInfo{com.google.android.apps.meetings/com.google.android.apps.meetings.splash.SplashActivity}" drawable="google_meet" />
 
     <!-- Google My Business -->
     <item component="ComponentInfo{com.google.android.apps.vega/com.google.android.apps.vega.VegaMainActivity} " drawable="google_my_business" />
 
     <!-- Google Newsstand -->
-    <item component="ComponentInfo{com.google.android.apps.magazines/com.google.apps.dots.android.app.activity.CurrentsStartActivity}" drawable="googlenewsstand" />
+    <item component="ComponentInfo{com.google.android.apps.magazines/com.google.apps.dots.android.app.activity.CurrentsStartActivity}" drawable="google_newsstand" />
 
     <!-- Google News & Weather -->
-    <item component="ComponentInfo{com.google.android.apps.genie.geniewidget/com.google.android.apps.genie.geniewidget.activities.NewsActivity}" drawable="googlenewsweather" />
+    <item component="ComponentInfo{com.google.android.apps.genie.geniewidget/com.google.android.apps.genie.geniewidget.activities.NewsActivity}" drawable="google_newsweather" />
 
     <!-- Google Now Launcher -->
     <item component="ComponentInfo{com.google.android.launcher/com.google.android.launcher.StubApp}" drawable="google" />
 
     <!-- Google One -->
-    <item component="ComponentInfo{com.google.android.apps.subscriptions.red.LauncherActivity}" drawable="googleone" />
+    <item component="ComponentInfo{com.google.android.apps.subscriptions.red.LauncherActivity}" drawable="google_one" />
     <item component="ComponentInfo{com.google.android.apps.subscriptions.red/com.google.android.apps.subscriptions.red.LauncherActivity}" drawable="googleone" />
 
     <!-- Google Pay -->
-    <item component="ComponentInfo{com.google.android.apps.walletnfcrel/com.google.commerce.tapandpay.android.cardlist.CardListActivity}" drawable="googlepay" />
-    <item component="ComponentInfo{com.google.android.apps.nbu.paisa.user/com.google.nbu.paisa.flutter.gpay.app.MainActivity}" drawable="googlepay" />
-    <item component="ComponentInfo{com.google.android.apps.nbu.paisa.user/com.google.nbu.paisa.flutter.gpay.app.LauncherActivity}" drawable="googlepay" />
+    <item component="ComponentInfo{com.google.android.apps.walletnfcrel/com.google.commerce.tapandpay.android.cardlist.CardListActivity}" drawable="google_pay" />
+    <item component="ComponentInfo{com.google.android.apps.nbu.paisa.user/com.google.nbu.paisa.flutter.gpay.app.MainActivity}" drawable="google_pay" />
+    <item component="ComponentInfo{com.google.android.apps.nbu.paisa.user/com.google.nbu.paisa.flutter.gpay.app.LauncherActivity}" drawable="google_pay" />
 
     <!-- Google Photos -->
-    <item component="ComponentInfo{com.google.android.apps.photos/com.google.android.apps.photos.home.HomeActivity}" drawable="googlephotos" />
+    <item component="ComponentInfo{com.google.android.apps.photos/com.google.android.apps.photos.home.HomeActivity}" drawable="google_photos" />
 
     <!-- Google Pinyin Input -->
     <item component="ComponentInfo{com.google.android.inputmethod.pinyin/com.google.android.apps.inputmethod.libs.framework.core.LauncherActivity}" drawable="google_pinyin_input" />
@@ -4573,52 +4613,52 @@
     <item component="ComponentInfo{com.google.android.apps.playconsole/com.google.android.apps.playconsole.activity.MainAndroidActivity}" drawable="google_play_console" />
 
     <!-- Google Play Games -->
-    <item component="ComponentInfo{com.google.android.play.games/com.google.android.gms.games.ui.destination.main.MainActivity}" drawable="googleplay" />
+    <item component="ComponentInfo{com.google.android.play.games/com.google.android.gms.games.ui.destination.main.MainActivity}" drawable="google_play" />
 
     <!-- Google Play Movies -->
-    <item component="ComponentInfo{com.google.android.videos/com.google.android.youtube.videos.EntryPoint}" drawable="googlemovies" />
+    <item component="ComponentInfo{com.google.android.videos/com.google.android.youtube.videos.EntryPoint}" drawable="google_movies" />
 
     <!-- Google Play Music -->
-    <item component="ComponentInfo{com.google.android.music/com.android.music.activitymanagement.TopLevelActivity}" drawable="googlemusic" />
-    <item component="ComponentInfo{com.google.android.music/com.google.android.music.tombstone.LauncherActivity}" drawable="googlemusic" />
+    <item component="ComponentInfo{com.google.android.music/com.android.music.activitymanagement.TopLevelActivity}" drawable="google_music" />
+    <item component="ComponentInfo{com.google.android.music/com.google.android.music.tombstone.LauncherActivity}" drawable="google_music" />
 
     <!-- Google Play Store -->
-    <item component="ComponentInfo{com.android.vending/com.android.vending.AssetBrowserActivity}" drawable="googleplaystore" />
+    <item component="ComponentInfo{com.android.vending/com.android.vending.AssetBrowserActivity}" drawable="google_playstore" />
 
     <!-- Google Podcasts -->
-    <item component="ComponentInfo{com.google.android.apps.podcasts/com.google.android.apps.podcasts.PodcastsActivity}" drawable="googlepodcasts" />
+    <item component="ComponentInfo{com.google.android.apps.podcasts/com.google.android.apps.podcasts.PodcastsActivity}" drawable="google_podcasts" />
 
     <!-- Google Settings -->
-    <item component="ComponentInfo{com.google.android.gms/com.google.android.gms.app.settings.GoogleSettingsActivity}" drawable="googlesettings" />
+    <item component="ComponentInfo{com.google.android.gms/com.google.android.gms.app.settings.GoogleSettingsActivity}" drawable="google_settings" />
 
     <!-- Google Sheets -->
-    <item component="ComponentInfo{com.google.android.apps.docs.editors.sheets/com.google.android.apps.docs.app.NewMainProxyActivity}" drawable="googlesheets" />
+    <item component="ComponentInfo{com.google.android.apps.docs.editors.sheets/com.google.android.apps.docs.app.NewMainProxyActivity}" drawable="google_sheets" />
 
     <!-- Google Slides -->
-    <item component="ComponentInfo{com.google.android.apps.docs.editors.slides/com.google.android.apps.docs.app.NewMainProxyActivity}" drawable="googleslides" />
+    <item component="ComponentInfo{com.google.android.apps.docs.editors.slides/com.google.android.apps.docs.app.NewMainProxyActivity}" drawable="google_slides" />
 
     <!-- Google TV -->
     <item component="ComponentInfo{com.google.android.videos/com.google.android.youtube.videos.EntryPointGtv}" drawable="googletv" />
-    <item component="ComponentInfo{com.google.android.videos/com.google.android.youtube.videos.EntryPointGtv/com.google.android.videos.GoogleTvEntryPoint}" drawable="googletv" />
+    <item component="ComponentInfo{com.google.android.videos/com.google.android.youtube.videos.EntryPointGtv/com.google.android.videos.GoogleTvEntryPoint}" drawable="google_tv" />
     <item component="ComponentInfo{com.google.android.videos/com.google.android.videos.GoogleTvEntryPoint}" drawable="googletv" />
 
     <!-- Google Tasks -->
-    <item component="ComponentInfo{com.google.android.apps.tasks/com.google.android.apps.tasks.ui.TaskListsActivity}" drawable="googletasks" />
+    <item component="ComponentInfo{com.google.android.apps.tasks/com.google.android.apps.tasks.ui.TaskListsActivity}" drawable="google_tasks" />
 
     <!-- Google Translate -->
-    <item component="ComponentInfo{com.google.android.apps.translate/com.google.android.apps.translate.TranslateActivity}" drawable="googletranslate" />
+    <item component="ComponentInfo{com.google.android.apps.translate/com.google.android.apps.translate.TranslateActivity}" drawable="google_translate" />
 
     <!-- Google Voice -->
     <item component="ComponentInfo{com.google.android.apps.googlevoice/com.google.android.apps.googlevoice.SplashActivity}" drawable="google_voice" />
 
     <!-- Google Voice -->
-    <item component="ComponentInfo{com.google.android.apps.googlevoice/com.google.android.apps.googlevoice.SplashActivity}" drawable="googlevoice" />
+    <item component="ComponentInfo{com.google.android.apps.googlevoice/com.google.android.apps.googlevoice.SplashActivity}" drawable="google_voice" />
 
     <!-- Google Wear OS -->
     <item component="ComponentInfo{com.google.android.wearable.app/com.google.android.clockwork.companion.launcher.LauncherActivity}" drawable="wearos" />
 
     <!-- Google Wifi -->
-    <item component="ComponentInfo{com.google.android.apps.access.wifi.consumer/com.google.android.apps.access.wifi.consumer.app.MainActivity}" drawable="googlewifi" />
+    <item component="ComponentInfo{com.google.android.apps.access.wifi.consumer/com.google.android.apps.access.wifi.consumer.app.MainActivity}" drawable="google_wifi" />
 
     <!-- Gotify-UP -->
     <item component="ComponentInfo{com.github.gotify.up/com.github.gotify.init.InitializationActivity}" drawable="gotify" />
@@ -5184,6 +5224,9 @@
 
     <!-- IVONA English -->
     <item component="ComponentInfo{com.ivona.tts.voicebeta.eng.gbr.amy/com.ivona.tts.voicebeta.eng.gbr.amy.IvonaVoice}" drawable="ivonaenglish" />
+
+	<!-- FocusReader -->
+	<item component="ComponentInfo{allen.town.focus.reader/allen.town.focus.reader.ui.activity.SplashActivity}" drawable="letter_capital_r"/>
 
     <!-- IVONA French -->
     <item component="ComponentInfo{com.ivona.tts.voicebeta.fra.fra.celine/com.ivona.tts.voicebeta.fra.fra.celine.IvonaVoice}" drawable="ivonafrench" />
@@ -10143,7 +10186,9 @@
     <!-- Signal -->
     <item component="ComponentInfo{org.libresignal/org.thoughtcrime.securesms.RoutingActivity}" drawable="signal" />
     <item component="ComponentInfo{org.thoughtcrime.securesms/org.thoughtcrime.securesms.RoutingActivity}" drawable="signal" />
-    <item component="ComponentInfo{im.molly.app/org.thoughtcrime.securesms.RoutingActivity}" drawable="signal" />
+    
+	<!-- Molly -->    
+    <item component="ComponentInfo{im.molly.app/org.thoughtcrime.securesms.RoutingActivity}" drawable="molly" />
 
     <!-- Signal Generator -->
     <item component="ComponentInfo{org.billthefarmer.siggen/org.billthefarmer.siggen.Main}" drawable="signalgenerator" />
@@ -11638,6 +11683,7 @@
 
     <!-- TED -->
     <item component="ComponentInfo{com.ted.android/com.ted.android.view.splash.SplashActivity}" drawable="ted" />
+    <item component="ComponentInfo{com.ted.android/com.ted.android.MainActivity}" drawable="ted" />
 
     <!-- TEdit -->
     <item component="ComponentInfo{com.atr.tedit/com.atr.tedit.TEditActivity}" drawable="tedit" />
@@ -12471,10 +12517,10 @@
     <item component="ComponentInfo{com.valvesoftware.underlords/com.valvesoftware.underlords.applauncher}" drawable="underlords" />
 
     <!-- Ungoogled Chromium -->
-    <item component="ComponentInfo{org.ungoogled.chromium.stable/com.google.android.apps.chrome.Main}" drawable="googlechrome" />
+    <item component="ComponentInfo{org.ungoogled.chromium.stable/com.google.android.apps.chrome.Main}" drawable="google_chrome" />
 
     <!-- Ungoogled Chromium Extensions -->
-    <item component="ComponentInfo{org.ungoogled.chromium.extensions.stable/com.google.android.apps.chrome.Main}" drawable="googlechrome" />
+    <item component="ComponentInfo{org.ungoogled.chromium.extensions.stable/com.google.android.apps.chrome.Main}" drawable="google_chrome" />
 
     <!-- UniPatcher -->
     <item component="ComponentInfo{org.emunix.unipatcher/org.emunix.unipatcher.ui.activity.MainActivity}" drawable="unipatcher" />
@@ -13291,7 +13337,7 @@
     <item component="ComponentInfo{com.sonymobile.xperiatransfermobile/com.sonymobile.xperiatransfermobile.ui.LaunchActivity}" drawable="transfer" />
 
     <!-- Xposed Installer -->
-    <item component="ComponentInfo{de.robv.android.xposed.installer/de.robv.android.xposed.installer.WelcomeActivity}" drawable="xposedinstaller" />
+    <item component="ComponentInfo{de.robv.android.xposed.installer/de.robv.android.xposed.installer.WelcomeActivity}" drawable="xposed" />
 
     <!-- X Server -->
     <item component="ComponentInfo{au.com.darkside.xdemo/au.com.darkside.xdemo.XServerActivity}" drawable="x_server" />
@@ -13390,14 +13436,14 @@
     <item component="ComponentInfo{com.google.android.youtube/com.google.android.youtube.app.honeycomb.Shell$HomeActivity}" drawable="youtube" />
 
     <!-- YouTube Downloader -->
-    <item component="ComponentInfo{dentex.youtube.downloader/dentex.youtube.downloader._MainActivity}" drawable="youtubedownloader" />
+    <item component="ComponentInfo{dentex.youtube.downloader/dentex.youtube.downloader._MainActivity}" drawable="youtube_downloader" />
 
     <!-- YouTube Music -->
-    <item component="ComponentInfo{com.google.android.apps.youtube.music/com.google.android.apps.youtube.music.activities.MusicActivity}" drawable="youtubemusic" />
-    <item component="ComponentInfo{com.vanced.android.apps.youtube.music/com.google.android.apps.youtube.music.activities.MusicActivity}" drawable="youtubemusic" />
-
+    <item component="ComponentInfo{com.google.android.apps.youtube.music/com.google.android.apps.youtube.music.activities.MusicActivity}" drawable="youtube_music" />
+    <item component="ComponentInfo{com.vanced.android.apps.youtube.music/com.google.android.apps.youtube.music.activities.MusicActivity}" drawable="youtube_music" />
+_
     <!-- YouTube Vanced -->
-    <item component="ComponentInfo{com.vanced.android.youtube/com.google.android.youtube.app.honeycomb.Shell$HomeActivity}" drawable="youtubevanced" />
+    <item component="ComponentInfo{com.vanced.android.youtube/com.google.android.youtube.app.honeycomb.Shell$HomeActivity}" drawable="youtube_vanced" />
 
     <!-- Youdao Note -->
     <item component="ComponentInfo{com.youdao.note/com.youdao.note.splash.SplashActivity}" drawable="youdao_note" />
@@ -13411,8 +13457,8 @@
     <!-- Your local weather -->
     <item component="ComponentInfo{org.thosp.yourlocalweather/org.thosp.yourlocalweather.MainActivity}" drawable="yourlocalweather" />
 
-    <!-- Youtube Studio -->
-    <item component="ComponentInfo{com.google.android.apps.youtube.creator/com.google.android.apps.youtube.creator.main.MainActivity}" drawable="youtubestudio" />
+    <!-- YouTube Studio -->
+    <item component="ComponentInfo{com.google.android.apps.youtube.creator/com.google.android.apps.youtube.creator.main.MainActivity}" drawable="youtube_studio" />
 
     <!-- Yubico Authenticator -->
     <item component="ComponentInfo{com.yubico.yubioath/com.yubico.yubioath.ui.main.MainActivity}" drawable="yubico_authenticator" />
