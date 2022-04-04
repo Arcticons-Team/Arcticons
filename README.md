@@ -39,7 +39,7 @@ Read the full details here:
 
 **Come chat with us on Matrix:**
 
-<a href="https://app.element.io/#/room/#arcticons:matrix.org"><img height="40" alt="Donate using Paypal" src="https://github.com/Donnnno/Arcticons/blob/main/github/matrix_button.svg"></a>
+<a href="https://matrix.to/#/#arcticons-central:matrix.org"><img height="40" alt="Donate using Paypal" src="https://github.com/Donnnno/Arcticons/blob/main/github/matrix_button.svg"></a>
 
 ## Icon requests
 
