@@ -2984,9 +2984,6 @@
 
     <!-- Device Connect -->
     <item component="ComponentInfo{net.dcnnt/net.dcnnt.MainActivity}" drawable="device_connect" />
-	
-	<!-- Kvaesitso -->
-	<item component="ComponentInfo{de.mm20.launcher2.release/de.mm20.launcher2.ui.launcher.LauncherActivity}" drawable="kvaesitso" />
 
     <!-- De Volkskrant -->
     <item component="ComponentInfo{be.persgroep.red.mobile.android.vkn/com.visiolink.reader.SplashScreenActivity}" drawable="de_volkskrant" />
@@ -5917,9 +5914,10 @@
     <item component="ComponentInfo{com.github.adamantcheese.chan/com.github.adamantcheese.chan.StartActivity}" drawable="kuroba" />
     <item component="ComponentInfo{com.github.k1rakishou.chan/com.github.k1rakishou.chan.activity.StartActivity}" drawable="kurobaex" />
 
-    <!-- Kvæsitso -->
-    <item component="ComponentInfo{de.mm20.launcher2.release/de.mm20.launcher2.ui.legacy.activity.LauncherActivity}" drawable="kvsitso" />
-
+    <!-- Kvæsitso / Kvaesitso -->
+    <item component="ComponentInfo{de.mm20.launcher2.release/de.mm20.launcher2.ui.legacy.activity.LauncherActivity}" drawable="kvaesitso" />
+	<item component="ComponentInfo{de.mm20.launcher2.release/de.mm20.launcher2.ui.launcher.LauncherActivity}" drawable="kvaesitso" />
+    
     <!-- Kwik EFIS Pro -->
     <item component="ComponentInfo{player.efis.pfd/player.efis.pfd.MainActivity}" drawable="kwikefis" />
 
