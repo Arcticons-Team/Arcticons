@@ -629,12 +629,27 @@
     <!-- Amaze -->
     <item component="ComponentInfo{com.amaze.filemanager/com.amaze.filemanager.activities.MainActivity}" drawable="amaze" />
     <item component="ComponentInfo{com.amaze.filemanager/com.amaze.filemanager.ui.activities.MainActivity}" drawable="amaze" />
+	
+	<!-- LinShare -->
+	<item component="ComponentInfo{com.linagora.android.linshare/com.linagora.flutter.linshare_flutter_app.MainActivity}" drawable="linshare" />
+	
+	<!-- Service NSW -->
+	<item component="ComponentInfo{au.gov.nsw.service/au.gov.nsw.service.MainActivity}" drawable="service_nsw" />
+	
+	<!-- Hue BT -->
+	<item component="ComponentInfo{com.signify.hue.blue/com.signify.hue.hueblueapp.MainActivity}" drawable="hue_bt" />
 
     <!-- Amazon Alexa -->
     <item component="ComponentInfo{com.amazon.dee.app/com.amazon.dee.app.Launcher}" drawable="amazon_alexa" />
+	
+	<!-- HedgeCam 2 -->
+	<item component="ComponentInfo{com.caddish_hedgehog.hedgecam2/com.caddish_hedgehog.hedgecam2.MainActivity}" drawable="hedgecam_2" />
 
     <!-- Amazon Appstore -->
     <item component="ComponentInfo{com.amazon.venezia/com.amazon.venezia.Launcher}" drawable="amazonappstore" />
+
+	<!-- Dolby -->
+	<item component="ComponentInfo{com.dolby.daxappUI/com.dolby.daxappUI.MainActivity}" drawable="dolby" />
 
     <!-- Amazon Music -->
     <item component="ComponentInfo{com.amazon.mp3/com.amazon.mp3.client.activity.LauncherActivity}" drawable="amazonmusic" />
@@ -4537,6 +4552,7 @@
     <!-- Goodtime -->
     <item component="ComponentInfo{com.apps.adrcotfas.goodtime/com.apps.adrcotfas.goodtime.TimerActivity}" drawable="goodtime" />
     <item component="ComponentInfo{com.apps.adrcotfas.goodtime/com.apps.adrcotfas.goodtime.Main.TimerActivity}" drawable="goodtime" />
+	<item component="ComponentInfo{com.apps.adrcotfas.goodtime/com.apps.adrcotfas.goodtime.main.TimerActivity}" drawable="goodtime" />
 
     <!-- Good Weather -->
     <item component="ComponentInfo{org.asdtm.goodweather/org.asdtm.goodweather.MainActivity}" drawable="goodweather" />
@@ -5898,9 +5914,10 @@
     <item component="ComponentInfo{com.github.adamantcheese.chan/com.github.adamantcheese.chan.StartActivity}" drawable="kuroba" />
     <item component="ComponentInfo{com.github.k1rakishou.chan/com.github.k1rakishou.chan.activity.StartActivity}" drawable="kurobaex" />
 
-    <!-- Kvæsitso -->
-    <item component="ComponentInfo{de.mm20.launcher2.release/de.mm20.launcher2.ui.legacy.activity.LauncherActivity}" drawable="kvsitso" />
-
+    <!-- Kvæsitso / Kvaesitso -->
+    <item component="ComponentInfo{de.mm20.launcher2.release/de.mm20.launcher2.ui.legacy.activity.LauncherActivity}" drawable="kvaesitso" />
+	<item component="ComponentInfo{de.mm20.launcher2.release/de.mm20.launcher2.ui.launcher.LauncherActivity}" drawable="kvaesitso" />
+    
     <!-- Kwik EFIS Pro -->
     <item component="ComponentInfo{player.efis.pfd/player.efis.pfd.MainActivity}" drawable="kwikefis" />
 
@@ -9130,6 +9147,7 @@
 
     <!-- ProtonMail -->
     <item component="ComponentInfo{ch.protonmail.android/ch.protonmail.android.activities.SplashActivity}" drawable="protonmail" />
+	<item component="ComponentInfo{ch.protonmail.android/ch.protonmail.android.mailbox.presentation.MailboxActivity}" drawable="protonmail" />
 
     <!-- ProtonVPN -->
     <item component="ComponentInfo{com.protonvpn.android/com.protonvpn.android.ui.onboarding.SplashActivity}" drawable="protonvpn" />
@@ -9487,10 +9505,16 @@
     <item component="ComponentInfo{com.laurencedawson.reddit_sync/com.laurencedawson.reddit_sync.ui.activities.HomeActivity}" drawable="redditsync" />
     <item component="ComponentInfo{com.laurencedawson.reddit_sync.pro/com.laurencedawson.reddit_sync.ui.activities.HomeActivity.Default}" drawable="redditsync" />
     <item component="ComponentInfo{com.laurencedawson.reddit_sync.pro/com.laurencedawson.reddit_sync.ui.activities.HomeActivity}" drawable="redditsync" />
+	
+	<!-- Exponential Idle -->
+	<item component="ComponentInfo{com.conicgames.exponentialidle/crc64327945add1aba81c.MainActivity}" drawable="exponential_idle" />
 
     <!-- Reddit is fun RIF -->
-    <item component="a{com.andrewshu.android.reddit/com.andrewshu.android.reddit.MainActivity}" drawable="reddit_is_fun" />
     <item component="ComponentInfo{com.andrewshu.android.redditdonation/com.andrewshu.android.reddit.MainActivity}" drawable="reddit_is_fun" />
+	<item component="ComponentInfo{com.andrewshu.android.reddit/com.andrewshu.android.reddit.MainActivity}" drawable="reddit_is_fun" />
+
+	<!-- Connect IQ -->
+	<item component="ComponentInfo{com.garmin.connectiq/com.garmin.connectiq.ui.startup.StartupActivity}" drawable="connect_iq" />
 
     <!-- Red Moon -->
     <item component="ComponentInfo{com.jmstudios.redmoon/com.jmstudios.redmoon.MainActivity}" drawable="redmoon" />
@@ -11909,6 +11933,10 @@
     <item component="ComponentInfo{org.tasks/com.todoroo.astrid.activity.TaskListActivity.Yellow}" drawable="tasks" />
     <item component="ComponentInfo{org.tasks/com.todoroo.astrid.activity.TaskListActivity.DeepPurple}" drawable="tasks" />
     <item component="ComponentInfo{org.tasks/com.todoroo.astrid.activity.TaskListActivity.Teal}" drawable="tasks" />
+	<item component="ComponentInfo{org.tasks/com.todoroo.astrid.activity.TaskListActivity.LightGreen}" drawable="tasks" />
+	
+	<!-- AniDroid -->
+	<item component="ComponentInfo{com.jurasdev.anidroid/crc640c36fddd54741971.StartActivity}" drawable="anidroid" />
 
     <!-- Taskwarrior -->
     <item component="ComponentInfo{kvj.taskw/kvj.taskw.ui.MainActivity}" drawable="taskwarrior" />
