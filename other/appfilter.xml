@@ -1203,7 +1203,7 @@
     <item component="ComponentInfo{com.busydev.audiocutter/com.busydev.audiocutter.SplashActivity}" drawable="beetv" />
 
     <!-- Beelinguapp -->
-    <item component="ComponentInfo{com.david.android.languageswitch/com.david.android.languageswitch.ui.MainActivity" drawable="beelinguapp" />
+    <item component="ComponentInfo{com.david.android.languageswitch/com.david.android.languageswitch.ui.MainActivity}" drawable="beelinguapp" />
 
     <!-- Bee Brilliant -->
     <item component="ComponentInfo{dk.tactile.beebrilliant/dk.tactile.player.TactileActivityProxy}" drawable="beebrilliant" />
@@ -1720,7 +1720,7 @@
     <item component="ComponentInfo{org.geogebra.android.cascalc/org.geogebra.android.privatelibrary.splashscreen.SplashScreenActivity}" drawable="calcolatrice_cas" />
 
     <!-- Calctastic -->
-    <item component="com.shaytasticsoftware.calctasticfree/com.calctastic.android.CalcTasticActivity}" drawable="calctastic" />
+    <item component="ComponentInfo{com.shaytasticsoftware.calctasticfree/com.calctastic.android.CalcTasticActivity}" drawable="calctastic" />
 
     <!-- Calculator++ (Window mode) -->
     <item component="ComponentInfo{org.solovyev.android.calculator/org.solovyev.android.calculator.floating.FloatingCalculatorActivity}" drawable="calculatorpluspluswindowed" />
@@ -2264,7 +2264,7 @@
     <item component="ComponentInfo{com.viewer.comicscreen/com.viewer.comicscreen.ListActivity}" drawable="comicscreen" />
 
     <!-- Commons -->
-    <item component="fr.free.nrw.commons/fr.free.nrw.commons.auth.LoginActivity" drawable="commons" />
+    <item component="ComponentInfo{fr.free.nrw.commons/fr.free.nrw.commons.auth.LoginActivity}" drawable="commons" />
     <item component="ComponentInfo{fr.free.nrw.commons/fr.free.nrw.commons.auth.LoginActivity}" drawable="commons" />
 
     <!-- Common Voice -->
@@ -2503,7 +2503,7 @@
     <item component="ComponentInfo{com.nathanatos.Cuppa/com.nathanatos.Cuppa.MainActivity}" drawable="cuppa" />
 
     <!-- CuprumPDF -->
-    <item component="ComponentInfo{org.ninthfloor.copperpdf/co.copperhead.pdfviewer.PdfViewer}" drawable="cuprumpdf" />
+    <item component="ComponentInfo{org.ninthfloor.copperpdf/co.copperhead.pdfviewer.PdfViewer}" drawable="pdf_viewer" />
 
     <!-- CuriosityStream -->
     <item component="ComponentInfo{com.curiosity.curiositystream/com.curiosity.activities.OnboardingActivity}" drawable="curiositystream" />
@@ -3584,15 +3584,15 @@
 
     <!-- Facebook -->
     <item component="ComponentInfo{com.facebook.katana/com.facebook.katana.LoginActivity}" drawable="facebook" />
-    <item component="ComponentInfo{com.facebook.lite/com.facebook.lite.MainActivity}" drawable="facebook" />
+    <item component="ComponentInfo{com.facebook.lite/com.facebook.lite.MainActivity}" drawable="facebook_lite" />
 
     <!-- Facebook Messenger -->
-    <item component="ComponentInfo{com.facebook.orca/com.facebook.orca.auth.StartScreenActivity}" drawable="messenger" />
+    <item component="ComponentInfo{com.facebook.orca/com.facebook.orca.auth.StartScreenActivity}" drawable="facebook_messenger" />
 
     <!-- Facebook Messenger Lite -->
-    <item component="ComponentInfo{com.facebook.mlite/com.facebook.mlite.coreui.view.MainActivity}" drawable="messenger" />
-    <item component="ComponentInfo{com.facebook.mlite/com.facebook.mlite.share.view.ShareActivity}" drawable="messenger" />
-    <item component="ComponentInfo{com.facebook.mlite/com.facebook.mlite.coreui.view.MainActivity}" drawable="messenger" />
+    <item component="ComponentInfo{com.facebook.mlite/com.facebook.mlite.coreui.view.MainActivity}" drawable="facebook_messenger_lite" />
+    <item component="ComponentInfo{com.facebook.mlite/com.facebook.mlite.share.view.ShareActivity}" drawable="facebook_messenger_lite" />
+    <item component="ComponentInfo{com.facebook.mlite/com.facebook.mlite.coreui.view.MainActivity}" drawable="facebook_messenger_lite" />
 
     <!-- Facebook Slim -->
     <item component="ComponentInfo{org.indywidualni.fblite/org.indywidualni.fblite.activity.MainActivity}" drawable="facebook" />
@@ -7837,7 +7837,7 @@
     <item component="ComponentInfo{com.symantec.cleansweep/com.symantec.cleansweep.app.SplashScreenActivity}" drawable="nortonclean" />
 
     <!-- Nosurf for Reddit -->
-    <item component="ComponentInfo{com.aaronhalbert.nosurfforreddit/com.aaronhalbert.nosurfforreddit.MainActivity" drawable="nosurfforreddit" />
+    <item component="ComponentInfo{com.aaronhalbert.nosurfforreddit/com.aaronhalbert.nosurfforreddit.MainActivity}" drawable="nosurfforreddit" />
     <item component="ComponentInfo{com.aaronhalbert.nosurfforreddit/com.aaronhalbert.nosurfforreddit.ui.main.MainActivity}" drawable="nosurfforreddit" />
 
     <!-- Notable -->
@@ -9929,13 +9929,10 @@
     <item component="ComponentInfo{xyz.myachin.saveto/xyz.myachin.saveto.ui.MainActivity}" drawable="saveto" />
 
     <!-- Sav PDF Viewer -->
-    <item component="ComponentInfo{com.saverio.pdfviewer/com.saverio.pdfviewer.MainActivity}" drawable="cuprumpdf" />
+    <item component="ComponentInfo{com.saverio.pdfviewer/com.saverio.pdfviewer.MainActivity}" drawable="CuprumPDF" />
 
     <!-- Sberbank -->
     <item component="ComponentInfo{ru.sberbankmobile/ru.sberbankmobile.SplashActivity}" drawable="sberbank" />
-
-    <!-- Scale -->
-    <scale factor="1.0" />
 
     <!-- Scam Shield -->
     <item component="ComponentInfo{com.tmobile.services.nameid/com.tmobile.services.nameid.Startup.IdentifyingNumbersActivity}" drawable="scam_shield" />
@@ -11585,7 +11582,7 @@
     <item component="ComponentInfo{com.stuff.todo/com.stuff.todo.activities.OrganizeActivity}" drawable="stuff" />
 
     <!-- Stumbler -->
-    <item component="org.mozilla.mozstumbler/org.mozilla.mozstumbler.client.navdrawer.MainDrawerActivity" drawable="stumbler" />
+    <item component="ComponentInfo{org.mozilla.mozstumbler/org.mozilla.mozstumbler.client.navdrawer.MainDrawerActivity}" drawable="stumbler" />
 
     <!-- Stuudium -->
     <item component="ComponentInfo{com.stuudium.app/com.stuudium.app.Stuudium}" drawable="letter_lowercase_s" />
