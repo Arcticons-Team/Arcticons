@@ -1801,9 +1801,7 @@
 
     <!-- Call of Duty -->
     <item component="ComponentInfo{com.activision.callofduty.shooter/com.tencent.tmgp.cod.CODMPrivatePermissionActivity}" drawable="call_of_duty" />
-
-    <!-- Call of Duty -->
-    <item component="ComponentInfo{com.activision.callofduty.shooter/com.tencent.tmgp.cod.CODMPrivatePermissionActivity}" drawable="call_of_duty" />
+	<item component="ComponentInfo{com.garena.game.codm/com.tencent.tmgp.cod.CODMPrivatePermissionActivity}" drawable="call_of_duty" />
 
     <!-- Calm -->
     <item component="ComponentInfo{com.calm.android/com.calm.android.ui.misc.SplashActivity}" drawable="calm" />
@@ -4488,6 +4486,9 @@
     <!-- Google Authenticator -->
     <item component="ComponentInfo{com.google.android.apps.authenticator2/com.google.android.apps.authenticator.AuthenticatorActivity}" drawable="google_authenticator" />
 
+	<!-- ONLYOFFICE Documents -->
+	<item component="ComponentInfo{com.onlyoffice.documents/app.editors.manager.ui.activities.main.OnBoardingActivity}" drawable="onlyoffice_documents" />
+
     <!-- Google Calculator -->
     <item component="ComponentInfo{com.google.android.calculator/com.android.calculator2.Calculator}" drawable="calculator" />
 
@@ -4529,13 +4530,13 @@
     <item component="ComponentInfo{com.google.android.apps.fitness/com.google.android.apps.fitness.welcome.WelcomeActivity}" drawable="hearth" />
 
     <!-- Google Fi -->
-    <item component="ComponentInfo{com.google.android.apps.tycho/com.google.android.apps.tycho.AccountDetailsActivity}" drawable="googlefi" />
+    <item component="ComponentInfo{com.google.android.apps.tycho/com.google.android.apps.tycho.AccountDetailsActivity}" drawable="google_fi" />
 
     <!-- Google Gmail -->
-    <item component="ComponentInfo{com.google.android.gm/com.google.android.gm.ConversationListActivityGmail}" drawable="googlemail" />
+    <item component="ComponentInfo{com.google.android.gm/com.google.android.gm.ConversationListActivityGmail}" drawable="google_mail" />
 
     <!-- Google Hangouts -->
-    <item component="ComponentInfo{com.google.android.talk/com.google.android.talk.SigningInActivity}" drawable="googlehangouts" />
+    <item component="ComponentInfo{com.google.android.talk/com.google.android.talk.SigningInActivity}" drawable="google_hangouts" />
 
     <!-- Google Home -->
     <item component="ComponentInfo{com.google.android.apps.chromecast.app/com.google.android.apps.chromecast.app.DiscoveryActivity}" drawable="google_home" />
@@ -4544,7 +4545,7 @@
     <item component="ComponentInfo{com.google.android.inputmethod.japanese/com.google.android.apps.inputmethod.libs.framework.core.LauncherActivity}" drawable="keyboard" />
 
     <!-- Google Keep -->
-    <item component="ComponentInfo{com.google.android.keep/com.google.android.keep.activities.BrowseActivity}" drawable="googlekeep" />
+    <item component="ComponentInfo{com.google.android.keep/com.google.android.keep.activities.BrowseActivity}" drawable="google_keep" />
 
     <!-- Google Keyboard -->
     <item component="ComponentInfo{com.google.android.inputmethod.latin/com.android.inputmethod.latin.setup.SetupActivity}" drawable="google_keyboard" />
@@ -4571,7 +4572,7 @@
 
     <!-- Google One -->
     <item component="ComponentInfo{com.google.android.apps.subscriptions.red.LauncherActivity}" drawable="google_one" />
-    <item component="ComponentInfo{com.google.android.apps.subscriptions.red/com.google.android.apps.subscriptions.red.LauncherActivity}" drawable="googleone" />
+    <item component="ComponentInfo{com.google.android.apps.subscriptions.red/com.google.android.apps.subscriptions.red.LauncherActivity}" drawable="google_one" />
 
     <!-- Google Pay -->
     <item component="ComponentInfo{com.google.android.apps.walletnfcrel/com.google.commerce.tapandpay.android.cardlist.CardListActivity}" drawable="google_pay" />
@@ -4616,9 +4617,9 @@
     <item component="ComponentInfo{com.google.android.apps.docs.editors.slides/com.google.android.apps.docs.app.NewMainProxyActivity}" drawable="google_slides" />
 
     <!-- Google TV -->
-    <item component="ComponentInfo{com.google.android.videos/com.google.android.youtube.videos.EntryPointGtv}" drawable="googletv" />
+    <item component="ComponentInfo{com.google.android.videos/com.google.android.youtube.videos.EntryPointGtv}" drawable="google_tv" />
     <item component="ComponentInfo{com.google.android.videos/com.google.android.youtube.videos.EntryPointGtv/com.google.android.videos.GoogleTvEntryPoint}" drawable="google_tv" />
-    <item component="ComponentInfo{com.google.android.videos/com.google.android.videos.GoogleTvEntryPoint}" drawable="googletv" />
+    <item component="ComponentInfo{com.google.android.videos/com.google.android.videos.GoogleTvEntryPoint}" drawable="google_tv" />
 
     <!-- Google Tasks -->
     <item component="ComponentInfo{com.google.android.apps.tasks/com.google.android.apps.tasks.ui.TaskListsActivity}" drawable="google_tasks" />
@@ -7555,6 +7556,12 @@
     <!-- Nationwide -->
     <item component="ComponentInfo{co.uk.Nationwide.Mobile/co.uk.Nationwide.Mobile.ui.MainActivity}" drawable="nationwide" />
 
+	<!-- Blitzortung Lightning Monitor -->
+	<item component="ComponentInfo{org.blitzortung.android.app/org.blitzortung.android.app.Main}" drawable="blitzortung_lightning_monitor"/>
+	
+	<!-- Webtube -->
+	<item component="ComponentInfo{dev.androne.webtube/dev.androne.webtube.MainActivity}" drawable="webtube"/>
+	
     <!-- Native Alpha -->
     <item component="ComponentInfo{com.cylonid.nativealpha/com.cylonid.nativealpha.MainActivity}" drawable="native_alpha" />
 
@@ -7578,7 +7585,11 @@
 
     <!-- Nayto -->
     <item component="ComponentInfo{com.zunjae.nayto/com.zunjae.nayto.ui.activities.SplashActivity}" drawable="nayto" />
+	<item component="ComponentInfo{com.zunjae.nayto/com.zunjae.nayto.SplashActivity}" drawable="nayto"/>
 
+	<!-- Thud -->
+	<item component="ComponentInfo{com.aerotoad.thud/io.ionic.starter.MainActivity}" drawable="thud"/>
+	
     <!-- Ncert Book -->
     <item component="ComponentInfo{letest.ncertbooks/letest.ncertbooks.SplashActivity}" drawable="ncert_book" />
 
@@ -8064,6 +8075,9 @@
 
     <!-- Odysee -->
     <item component="ComponentInfo{com.odysee.app/com.odysee.app.MainActivity}" drawable="odysee" />
+	
+	<!-- Parkeren -->
+	<item component="ComponentInfo{com.tanqyou.park/crc64c64fc43e53daecb4.MainActivity}" drawable="parkeren" />
 
     <!-- Odyssey -->
     <item component="ComponentInfo{org.gateshipone.odyssey/org.gateshipone.odyssey.activities.OdysseySplashActivity}" drawable="odyssey" />
@@ -9915,7 +9929,7 @@
     <item component="ComponentInfo{xyz.myachin.saveto/xyz.myachin.saveto.ui.MainActivity}" drawable="saveto" />
 
     <!-- Sav PDF Viewer -->
-    <item component="ComponentInfo{com.saverio.pdfviewer/com.saverio.pdfviewer.MainActivity}" drawable="CuprumPDF" />
+    <item component="ComponentInfo{com.saverio.pdfviewer/com.saverio.pdfviewer.MainActivity}" drawable="pdf_viewer" />
 
     <!-- Sberbank -->
     <item component="ComponentInfo{ru.sberbankmobile/ru.sberbankmobile.SplashActivity}" drawable="sberbank" />
@@ -11534,7 +11548,7 @@
 
     <!-- StreetComplete -->
     <item component="ComponentInfo{de.westnordost.streetcomplete/de.westnordost.streetcomplete.MainActivity}" drawable="streetcomplete" />
-    <item component="ComponentInfo{de.westnordost.streetcomplete/de.westnordost.streetcomplete.screens.MainActivity}" drawable="street­complete" />
+    <item component="ComponentInfo{de.westnordost.streetcomplete/de.westnordost.streetcomplete.screens.MainActivity}" drawable="streetcomplete" />
 
     <!-- Street View -->
     <item component="ComponentInfo{com.google.android.street/com.google.android.apps.dragonfly.activities.main.LauncherActivity}" drawable="streetview" />
@@ -13609,6 +13623,15 @@
 
     <!-- YourHour -->
     <item component="ComponentInfo{com.mindefy.phoneaddiction.mobilepe/com.mindefy.phoneaddiction.mobilepe.home.splash.SplashActivity}" drawable="yourhour" />
+	
+	<!-- SuisseMobile -->
+	<item component="ComponentInfo{ch.schweizmobil/ch.schweizmobil.map.MapActivity}" drawable="suissemobile" />
+	
+	<!-- Memento Database -->
+	<item component="ComponentInfo{com.luckydroid.droidbase/com.luckydroid.droidbase.DroidBaseActivity2}" drawable="memento_database" />
+	
+	<!-- BeterDichtbij -->
+	<item component="ComponentInfo{nl.beterDichtbij/nl.beterDichtbij.startup.StartupActivity}" drawable="beterdichtbij" />
 
     <!-- Your Battery Drainer -->
     <item component="ComponentInfo{mertcancucen.com.YourBatteryDrainer/mertcancucen.com.batterydrain.MainActivity}" drawable="yourbatterydrainer" />
@@ -13621,9 +13644,15 @@
 
     <!-- Yuito -->
     <item component="ComponentInfo{net.accelf.yuito/com.keylesspalace.tusky.SplashActivity}" drawable="yuito" />
+	
+	<!-- tFileTransfer -->
+	<item component="ComponentInfo{com.tans.tfiletransporter/com.tans.tfiletransporter.ui.activity.connection.ConnectionActivity}" drawable="tfiletransfer" />
 
     <!-- Yuka -->
     <item component="ComponentInfo{io.yuka.android/io.yuka.android.Main.RootActivity}" drawable="yuka" />
+	
+	<!-- The Weather Channel -->
+	<item component="ComponentInfo{com.weather.Weather/com.weather.Weather.app.SplashScreenActivity}" drawable="weathercan" />
 
     <!-- ZArchiver -->
     <item component="ComponentInfo{ru.zdevs.zarchiver/ru.zdevs.zarchiver.ZArchiver}" drawable="zarchiver" />
