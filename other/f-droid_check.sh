@@ -1,14 +1,24 @@
 #!/bin/bash
 links=$(grep "https://f-droid.org/*" $1)
-repeat=0
+progress=0
+error=0
+check=0
 
 for link in ${links}; do
-	printf "Not found (since last success): $repeat\r"
+	check=$((check+1))
+	printf "Not found (since last success): $progress\r"
 
 	if curl --output /dev/null --silent --head --fail "$link"; then
 		printf "\rFound: $link\n"
-		repeat=0
+		progress=0
 	else
-		repeat=$((repeat+1))
+		progress=$((progress + 1))
+		error=$((error + 1))
 	fi
 done
+
+printf "\n\n"
+echo "Total:        $check"
+echo "Errors:       $error"
+echo "Successes:    $((check - error))"
+echo "Success in %: $(echo "1-$error/$check*100+100" | bc -l)%"
