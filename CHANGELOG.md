@@ -1,8 +1,20 @@
+### 4.2.0
+###### Released: Apr 11, 2022
+* 🆕 A new app category.
+* 🧱 Sorry for breaking the Google icons, that should be fixed now.
+* 🎉52 new or updated icons (thanks Kaiserdragon2, Ktutsch, Quantenzitrone, Joelchrono12, Tieu1991, MrMannWood, EdwinRodger)
+* 🔥 4200 icons in total!
+
 ### 4.1.0
 ###### Released: Apr 11, 2022
-
 * 🎉 105 new or updated icons (thanks Joelchrono12, Quantenzitrone, Kaiserdragon2, Ktutsch, Tieu1991, rYR79435, LovelyParanoia)
 * 🔥 4101 icons in total!
+
+### 4.0.0
+###### Released: Mar 28, 2022
+- 🇺🇦 
+- 🎉 100 new or updated icons (thanks Joelchrono12, Quantenzitrone, Kaiserdragon2, Ktutsch, JapanYoshi, SolarisSonne)
+- 🔥 4000 icons in total! This is huge btw!!!
 
 ### 3.9.0
 ###### Released: Mar 20, 2022
