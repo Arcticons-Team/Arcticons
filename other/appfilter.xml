@@ -20,6 +20,30 @@
     <item component="ComponentInfo{io.github.lonamiwebs.klooni/io.github.lonamiwebs.klooni.AndroidLauncher}" drawable="tentenklooni" />
     <item component="ComponentInfo{dev.lonami.klooni/dev.lonami.klooni.AndroidLauncher}" drawable="tentenklooni" />
 
+    <!-- Battle.net -->
+    <item component="ComponentInfo{com.blizzard.messenger/com.blizzard.messenger.ui.splash.SplashActivity}" drawable="battlenet"/>
+
+    <!-- Buienalarm -->
+    <item component="ComponentInfo{org.yoki.android.buienalarm/org.yoki.android.buienalarm.activity.LaunchActivity}" drawable="buienalarm"/>
+
+    <!-- DroidEdit -->
+    <item component="ComponentInfo{com.aor.droidedit.pro/com.aor.droidedit.DroidEditProActivity}" drawable="droidedit"/>
+
+    <!-- IRMA -->
+    <item component="ComponentInfo{org.irmacard.cardemu/foundation.privacybydesign.irmamobile.MainActivity}" drawable="irma"/>
+
+    <!-- Jottacloud -->
+    <item component="ComponentInfo{no.jottacloud.jottacloudphotos/no.jottacloud.jottacloudphotos.main.LauncherActivity}" drawable="jottacloud"/>
+
+    <!-- MijnGegevens -->
+    <item component="ComponentInfo{nl.rijksoverheid.mijngegevens.pub/crc648aec74f5122876aa.MainActivity}" drawable="mijngegevens"/>
+
+    <!-- RFID Tools -->
+    <item component="ComponentInfo{com.rfidresearchgroup.rfidtools/cn.rrg.rdv.activities.tools.LoginActivity}" drawable="rfid_tools"/>
+
+    <!-- Slay the Spire -->
+    <item component="ComponentInfo{com.humble.SlayTheSpire/android.app.NativeActivity}" drawable="slay_the_spire"/>
+
     <!-- 17TRACK -->
     <item component="ComponentInfo{yqtrack.app/yqtrack.app.ui.splash.SplashActivity}" drawable="a17track" />
 
@@ -520,10 +544,10 @@
     <item component="ComponentInfo{com.amazon.dee.app/com.amazon.dee.app.Launcher}" drawable="amazon_alexa" />
 
     <!-- Amazon Appstore -->
-    <item component="ComponentInfo{com.amazon.venezia/com.amazon.venezia.Launcher}" drawable="amazonappstore" />
+    <item component="ComponentInfo{com.amazon.venezia/com.amazon.venezia.Launcher}" drawable="amazon_appstore" />
 
     <!-- Amazon Music -->
-    <item component="ComponentInfo{com.amazon.mp3/com.amazon.mp3.client.activity.LauncherActivity}" drawable="amazonmusic" />
+    <item component="ComponentInfo{com.amazon.mp3/com.amazon.mp3.client.activity.LauncherActivity}" drawable="amazon_music" />
 
     <!-- Amazon Photos -->
     <item component="ComponentInfo{com.amazon.clouddrive.photos/com.amazon.clouddrive.photos.display.LauncherActivity}" drawable="amazon_photos" />
@@ -532,8 +556,8 @@
     <item component="ComponentInfo{com.amazon.shopperpanel.android.mobile.app/com.amazon.shopperpanel.android.mobile.app.MainActivity}" drawable="amazon_shopper_panel" />
 
     <!-- Amazon Shopping -->
-    <item component="ComponentInfo{com.amazon.mShop.android.shopping/com.amazon.mShop.home.HomeActivity}" drawable="amazonshopping" />
-    <item component="ComponentInfo{in.amazon.mShop.android.shopping/com.amazon.mShop.home.HomeActivity}" drawable="amazonshopping" />
+    <item component="ComponentInfo{com.amazon.mShop.android.shopping/com.amazon.mShop.home.HomeActivity}" drawable="amazon_shopping" />
+    <item component="ComponentInfo{in.amazon.mShop.android.shopping/com.amazon.mShop.home.HomeActivity}" drawable="amazon_shopping" />
 
     <!-- Ambiance - Relaxing Sounds -->
     <item component="ComponentInfo{net.epictimes.ambiance/net.epictimes.ambiance.MainActivity}" drawable="ambiance" />
@@ -9163,8 +9187,8 @@
     <!-- Price Per Unit -->
     <item component="ComponentInfo{net.nitratine.priceperunit/net.nitratine.priceperunit.MainActivity}" drawable="priceperunit" />
 
-    <!-- Prime Video -->
-    <item component="ComponentInfo{com.amazon.avod.thirdpartyclient/com.amazon.avod.thirdpartyclient.LauncherActivity}" drawable="primevideo" />
+    <!-- Amazon Prime Video -->
+    <item component="ComponentInfo{com.amazon.avod.thirdpartyclient/com.amazon.avod.thirdpartyclient.LauncherActivity}" drawable="amazon_prime_video" />
 
     <!-- Primitive ftpd -->
     <item component="ComponentInfo{org.primftpd/org.primftpd.PrimitiveFtpdActivity}" drawable="primitiveftpd" />
