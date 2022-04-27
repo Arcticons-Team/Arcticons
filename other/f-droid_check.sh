@@ -10,11 +10,10 @@ for link in ${links}; do
 
 	if curl --output /dev/null --silent --head --fail "$link"; then
 		printf "\rFound: $link\n"
-		
-		error=$((error + progress))
 		progress=0
 	else
 		progress=$((progress + 1))
+		error=$((error + 1))
 	fi
 done
 
