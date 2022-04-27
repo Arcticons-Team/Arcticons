@@ -1,3 +1,9 @@
+### 4.2.5
+###### Released: Apr 11, 2022
+* ✨ Improvements on existing icons.
+* 🎉 64 new or updated icons (thanks Kaiserdragon2, Ktutsch, Tieu1991, EdwinRodger, Adamsdesk, Lunar-21, LovelyParanoia, ElijahElliotP)
+* 🔥 4256 icons in total!
+
 ### 4.2.0
 ###### Released: Apr 11, 2022
 * 🆕 A new app category.
