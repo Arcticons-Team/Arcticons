@@ -4,7 +4,7 @@
 
 <img src='https://raw.githubusercontent.com/Donnnno/Arcticons/main/github/header-background.png'>
 
-Arcticons (Arctic icons) is a line-based icon pack forked from [Frost](https://github.com/dkanada/frost) but rebuild with consistent sizing and adjustments specifically for lines in mind. Arcticons is FOSS and provides mostly icons for open-source apps on F-Droid (but there are many other apps in this pack too). The design is simple and clean with minimal lines that give you a nice see-through effect.
+Arcticons (Arctic icons) is a line-based icon pack forked from [Frost](https://github.com/dkanada/frost), but rebuilt with consistent sizing and adjustments specifically for lines in mind. Arcticons is FOSS and provides mostly icons for open-source apps on F-Droid (but there are many other apps in this pack too). The design is simple and clean, with minimal lines that give you a nice see-through effect.
 
 [<img src="https://f-droid.org/badge/get-it-on.png" alt="Get it on F-Droid" height="90">](https://f-droid.org/packages/com.donnnno.arcticons)
 [<img src="https://camo.githubusercontent.com/35b4ec18c762358fb784f9e973f77cf6eb596f2240e69a4c6c093a836655d889/68747470733a2f2f692e6962622e636f2f71306d6463345a2f6765742d69742d6f6e2d6769746875622e706e67" alt="Get it on F-Droid" height="90">](https://github.com/Donnnno/Arcticons/releases)
@@ -21,7 +21,7 @@ Submitting icon requests helps a lot, but maintaining the project (as you may im
 
 ## Donate
 
-Maintaining this icon-pack costs a lot of time, besides making icons I'm curating every single icon if it has the right sizing and other design rules. So if you like the icons and want to support the development consider supporting. :)
+Maintaining this icon-pack costs a lot of time, besides making icons I'm curating every single icon if it has the right sizing and other design rules. So if you like the icons and want to support the development, consider supporting. :)
 
 |Paypal|Liberapay|Ko-Fi|
 |---|---|---|
@@ -43,10 +43,10 @@ Read the full details here:
 
 ## Icon requests
 
-### Regular reguests
-You can request icons with our in app tool:
+### Regular requests
+You can request icons with our in-app tool:
 1. Open Arcticons
-2. Press the symbol on the upper-left corner and select `Icon Request`
+2. Press the symbol in the upper-left corner and select `Icon Request`
 3. Choose the missing apps you wish to submit, it's also possible to select/deselect all missing apps
 4. Press the plane symbol and choose the app in the pop-up menu to send the icon request
 5. Now you can check the information that will be sent via email, and if everything looks fine, simply send the email and it's done!
