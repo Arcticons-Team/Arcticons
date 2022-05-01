@@ -37,7 +37,7 @@ if not path.endswith('/'):
 # List of e-mail files
 filelist = glob.glob(path + '*.eml')
 # Initialization
-requestlimit = 1 #Limit of requests per person
+requestlimit = 5 #Limit of requests per person
 apps = {} #Dictionary of requested apps and according info
 addresses = {} #E-Mail addresses with number of requests
 appInfoQuery = re.compile(r'(?<!])(?! )(?P<Name>[\w\d\@\?\(\)\! +.\-:\-|&＆​,]+)\s\n?(?P<ComponentInfo>[\w\.\/\d]+)\s?\n?(https://play\.google\.com/store/apps/details\?id=|https://f-droid\.org/en/packages/)(?P<PackageName>[\w\.]+)(/|)', re.M)
