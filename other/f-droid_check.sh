@@ -1,4 +1,11 @@
 #!/bin/bash
+
+# Copyright 2022 Konstantin Tutsch
+# This script is distributed under the GNU General Public License.
+# Original file: https://codeberg.org/ktutsch/scripts/src/branch/main/f-droid_check.sh
+#
+# It was originally written to be used in the Arcticons Icon pack for checking other/requests.txt to output valid F-Droid links.
+
 links=$(grep "https://f-droid.org/*" $1)
 progress=0
 error=0
@@ -10,6 +17,7 @@ for link in ${links}; do
 
 	if curl --output /dev/null --silent --head --fail "$link"; then
 		printf "\rFound: $link\n"
+		
 		progress=0
 	else
 		progress=$((progress + 1))
