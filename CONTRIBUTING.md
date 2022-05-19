@@ -1,6 +1,6 @@
 # Super cool graphic guide
 
-![guide](https://user-images.githubusercontent.com/31142286/115920627-bd127180-a47a-11eb-98a7-2c902e4fc961.jpg)
+![guide](https://user-images.githubusercontent.com/31142286/163720671-d2d2c77b-fdcd-4a69-99f5-f5f260d519f4.jpg)
 
 # Text version
 
@@ -14,12 +14,16 @@
    - These should look something like `com.donnnno.arcticons/com.donnnno.arcticons.MainActivity`
    - Add them to the `appfilter.xml` in the **/other** folder
 6. Give yourself an entry at the bottom of `app/src/main/res/xml/contributors.xml` to be included in the credits!
+7. If you're interesting in doing some icon requests, take a look at our [requests.txt](https://github.com/Donnnno/Arcticons/blob/main/other/requests.txt) list! When you've completed a request, you can remove it from the list by editing it.
+
 
 ### Basic rules
 
 - use the template files as a reference, the document size should be *48px*
 - lines have a thickness of **1px (Inkscape), 1pt (Illustrator)**
 - lines should have a **round cap & round corner﻿**
+- the icons should be drawn in **white**
+- dots should be a circle with a **radius of 0,5px**
 - try to be consistent with sizing your icons, make sure it's not to big or small (use the templates as a reference)
 - we don't accept files that are directly image traced, they are a mess to work with and look sloppy
 - if you use any letters or numbers make sure to use the font document from the templates folder.

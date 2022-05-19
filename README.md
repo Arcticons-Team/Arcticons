@@ -4,13 +4,13 @@
 
 <img src='https://raw.githubusercontent.com/Donnnno/Arcticons/main/github/header-background.png'>
 
-Arcticons (Arctic icons) is a line-based icon pack forked from [Frost](https://github.com/dkanada/frost) but rebuild with consistent sizing and adjustments specifically for lines in mind. Arcticons is FOSS and provides mostly icons for open-source apps on F-Droid (but there are many other apps in this pack too). The design is simple and clean with minimal lines that give you a nice see-through effect.
+Arcticons (Arctic icons) is a line-based icon pack forked from [Frost](https://github.com/dkanada/frost), but rebuilt with consistent sizing and adjustments specifically for lines in mind. Arcticons is FOSS and provides mostly icons for open-source apps on F-Droid (but there are many other apps in this pack too). The design is simple and clean, with minimal lines that give you a nice see-through effect.
 
 [<img src="https://f-droid.org/badge/get-it-on.png" alt="Get it on F-Droid" height="90">](https://f-droid.org/packages/com.donnnno.arcticons)
 [<img src="https://camo.githubusercontent.com/35b4ec18c762358fb784f9e973f77cf6eb596f2240e69a4c6c093a836655d889/68747470733a2f2f692e6962622e636f2f71306d6463345a2f6765742d69742d6f6e2d6769746875622e706e67" alt="Get it on F-Droid" height="90">](https://github.com/Donnnno/Arcticons/releases)
 [<img src="https://raw.githubusercontent.com/Etar-Group/Etar-Calendar/master/metadata/en_google_play.png" height="90">](https://play.google.com/store/apps/details?id=com.donnnno.arcticons)
 
-Arcticons includes support for a lot of launchers like Trebuchet, KISS, Nova, Apex, Holo, ZenUI, ADW, and many more. The installation depends on your launcher, it's probably somewhere in the settings. **There are over 3600 icons.**
+Arcticons includes support for a lot of launchers like Trebuchet, KISS, Nova, Apex, Holo, ZenUI, ADW, and many more. The installation depends on your launcher, it's probably somewhere in the settings. **There are over 4000 icons.**
 
 Submitting icon requests helps a lot, but maintaining the project (as you may imagine) takes a lot of time and effort, so please be patient about adding new icons. Contributions for new icons are always welcome, and no experience with programming is necessary.
 
@@ -21,11 +21,11 @@ Submitting icon requests helps a lot, but maintaining the project (as you may im
 
 ## Donate
 
-Maintaining this icon-pack costs a lot of time, besides making icons I'm curating every single icon if it has the right sizing and other design rules. So if you like the icons and want to support the development consider supporting. :)
+Maintaining this icon-pack costs a lot of time, besides making icons I'm curating every single icon if it has the right sizing and other design rules. So if you like the icons and want to support the development, consider supporting. :)
 
-|Paypal|Liberapay|
-|---|---|
-|<a href="https://www.paypal.com/paypalme/onnovdd"><img height="40" alt="Donate using Paypal" src="https://github.com/Donnnno/Arcticons/blob/main/github/pp_button.svg"></a>|<a href="https://liberapay.com/Donno/donate"><img height="40" alt="Donate using Liberapay" src="https://github.com/Donnnno/Arcticons/blob/main/github/lp_button.svg"></a>|
+|Paypal|Liberapay|Ko-Fi|
+|---|---|---|
+|<a href="https://www.paypal.com/paypalme/onnovdd"><img height="40" alt="Donate using Paypal" src="https://github.com/Donnnno/Arcticons/blob/main/github/pp_button.svg"></a>|<a href="https://liberapay.com/Donno/donate"><img height="40" alt="Donate using Liberapay" src="https://github.com/Donnnno/Arcticons/blob/main/github/lp_button.svg"></a>|<a href="https://Ko-fi.com/donno_"><img height="40" alt="Donate using Ko-Fi" src="https://github.com/Donnnno/Arcticons/blob/main/github/kofi_button.svg"></a>
 
 ## Contributing
 
@@ -39,20 +39,22 @@ Read the full details here:
 
 **Come chat with us on Matrix:**
 
-<a href="https://app.element.io/#/room/#arcticons:matrix.org"><img height="40" alt="Donate using Paypal" src="https://github.com/Donnnno/Arcticons/blob/main/github/matrix_button.svg"></a>
+<a href="https://matrix.to/#/#arcticons-central:matrix.org"><img height="40" alt="Donate using Paypal" src="https://github.com/Donnnno/Arcticons/blob/main/github/matrix_button.svg"></a>
 
-### Submitting icon requests
+## Icon requests
 
-The preferred way of submitting icon requests is with our in-app request tool. Alternatively, you can use the very handy [Icon Request](https://github.com/Kaiserdragon2/IconRequest) app to provide necessary information.
-
-A simple step-by-step guide:
+### Regular requests
+You can request icons with our in-app tool:
 1. Open Arcticons
-2. Press the symbol on the upper-left corner and select `Icon Request`
+2. Press the symbol in the upper-left corner and select `Icon Request`
 3. Choose the missing apps you wish to submit, it's also possible to select/deselect all missing apps
 4. Press the plane symbol and choose the app in the pop-up menu to send the icon request
 5. Now you can check the information that will be sent via email, and if everything looks fine, simply send the email and it's done!
 
 In case you accidentally close the app during the process, and want to clean the cache, there is an option named `Clear Icon Request Data` in `Settings` to do that.
+
+### Premium requests
+If it's taking too long for you, you can also buy priority requests via <a href="https://Ko-fi.com/donno_">Ko-Fi</a>, with this your icon will be the first one in the queue.
 
 ## License
 
@@ -62,8 +64,6 @@ All icons are licensed under [Creative Commonns Attribution-ShareAlike 4.0 Inter
 
 ### Contributors
 
-You can find a list of all Arcticons contributors [here](https://github.com/Donnnno/Arcticons/graphs/contributors).
-
-Frost contributors can be found [here](https://github.com/dkanada/frost/graphs/contributors).
-
-ICEcons contributors can be found [here](https://github.com/1C3/ICEcons/graphs/contributors). 
+- You can find a list of all Arcticons contributors [here](https://github.com/Donnnno/Arcticons/graphs/contributors).
+- Frost contributors can be found [here](https://github.com/dkanada/frost/graphs/contributors).
+- ICEcons contributors can be found [here](https://github.com/1C3/ICEcons/graphs/contributors). 

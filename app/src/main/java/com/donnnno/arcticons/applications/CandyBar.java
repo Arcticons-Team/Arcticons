@@ -29,8 +29,7 @@ public class CandyBar extends CandyBarApplication {
                     first = false;
                 }
 
-                emailBody.append("- [ ] ")
-                        .append(request.getName())
+                    emailBody.append(request.getName())
                         .append("\r\n")
                         .append(request.getActivity())
                         .append("\r\n");
@@ -67,8 +66,14 @@ public class CandyBar extends CandyBarApplication {
                         "liberapay",
                         "Liberapay",
                         "Support me on Liberapay",
-                        "https://liberapay.com/Donno/")
-                        };
+                        "https://liberapay.com/Donno/"),
+                new DonationLink(
+                        // You can use png file (without extension) inside drawable-nodpi folder or url
+                        "kofi",
+                        "Ko-Fi",
+                        "Support me on Ko-Fi",
+                        "https://ko-fi.com/donno_")
+        };
         configuration.setDonationLinks(donationLinks);
 
         return configuration;

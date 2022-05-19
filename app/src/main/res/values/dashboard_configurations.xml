@@ -60,8 +60,7 @@
         Available choices:
         - card_square
         - card_landscape
-        - landscape
-        - square
+
     -->
     <string name="home_image_style">card_landscape</string>
     <!-- Description which will be shown in the home page.
@@ -74,13 +73,15 @@
     <string name="home_description">
         <![CDATA[
             <p><b>Arcticons is a Line based <a href="https://github.com/Donnnno/Arcticons/">open-source</a> icon-pack</b></p>
+            <br>
+            <p><b>You can get priority icon requests <a href="https://ko-fi.com/donno_">on Ko-fi</a></b></p>
         ]]>
     </string>
 
     <!-- Link to your app's Rate and Review page.
         Leave this empty to disable the "Rate and Review" button.
         You can use special keyword `{{packageName}}`, `{{packageName}}` will be replaced with your app's package name -->
-    <string name="rate_and_review_link"></string>
+    <string name="rate_and_review_link">https://play.google.com/store/apps/details?id=com.donnnno.arcticons</string>
 
     <!-- Link to your app's main page. It will be used when your user shares your app using "Share" button.
         Leave this empty to disable the "Share" button.
@@ -161,7 +162,7 @@
         After making 10 icon request the user will not be able to request again.
 
         See "reset_icon_request_limit" option to learn how to reset the limit. -->
-    <integer name="icon_request_limit">1</integer>
+    <integer name="icon_request_limit">5</integer>
 
     <!-- Reset regular icon request limit every update
         IGNORE if "enable_icon_request_limit" option is disabled
@@ -311,13 +312,6 @@
         You can generate one from https://app-privacy-policy-generator.firebaseapp.com/ -->
     <string name="terms_and_conditions_link"></string>
 
-
-    <!--
-        CONFIG: DONATE
-    -->
-    <!-- Enable/disable donation
-        Show support development option in the home page. -->
-    <bool name="enable_donation">true</bool>
 
     <!-- Take a look inside License.java for donation product -->
 

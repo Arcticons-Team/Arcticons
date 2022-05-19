@@ -1,8 +1,54 @@
+### 4.2.8
+###### Released: May 8, 2022
+* 🚀 Shoutout to Sam Beckman! Thanks a lot!!
+* 📈 You can request 5 icons per update now.
+* ✨ Updated the candybar dashboard, the bug where you couldn't request one icon is gone now.
+* 🎉 46 new or updated icons (thanks Kaiserdragon2, Dgcampbe, Baltevl, GreenPeteUK, Ktutsch, RahulTPatil, Dalaeance, Lavin-Tom, Frod0r, JoelChrono12, ElijahElliotP)
+* 🔥 4283 icons in total!
+
+
+### 4.2.5
+###### Released: Apr 11, 2022
+* ✨ Improvements on existing icons.
+* 🎉 64 new or updated icons (thanks Kaiserdragon2, Ktutsch, Tieu1991, EdwinRodger, Adamsdesk, Lunar-21, LovelyParanoia, ElijahElliotP)
+* 🔥 4256 icons in total!
+
+### 4.2.0
+###### Released: Apr 11, 2022
+* 🆕 A new app category.
+* 🧱 Sorry for breaking the Google icons, that should be fixed now.
+* 🎉52 new or updated icons (thanks Kaiserdragon2, Ktutsch, Quantenzitrone, Joelchrono12, Tieu1991, MrMannWood, EdwinRodger)
+* 🔥 4200 icons in total!
+
+### 4.1.0
+###### Released: Apr 11, 2022
+* 🎉 105 new or updated icons (thanks Joelchrono12, Quantenzitrone, Kaiserdragon2, Ktutsch, Tieu1991, rYR79435, LovelyParanoia)
+* 🔥 4101 icons in total!
+
+### 4.0.0
+###### Released: Mar 28, 2022
+- 🇺🇦 
+- 🎉 100 new or updated icons (thanks Joelchrono12, Quantenzitrone, Kaiserdragon2, Ktutsch, JapanYoshi, SolarisSonne)
+- 🔥 4000 icons in total! This is huge btw!!!
+
+### 3.9.0
+###### Released: Mar 20, 2022
+* 🇺🇦 
+* 🌞 Priority requests via Ko-Fi
+* 🌐 Browsers have more variation now
+* 🎉 40 new or updated icons (thanks Joelchrono12, Quantenzitrone, Kaiserdragon2)
+* 🔥 3900 icons in total! 
+
+### 3.8.6
+###### Released: Mar 13, 2022
+* 🌞 I now accept premium requests via Ko-Fi. If you want to see your icons quickly, this might be a great option for you!
+* 🎉 32 new or updated icons (thanks Totoroot and Hacknorris)
+* 🔥 3860 icons in total! 
+
 ### 3.7.6
 ###### Released: Feb 25, 2022
 * 🎉 47 new or updated icons (thanks Kaiserdragon2, Joelchrono12, Hassancreative, FilloBuccia)
 * 🔥 3776 icons in total! 
-
 
 ### 3.7.3
 ###### Released: Feb 05, 2022

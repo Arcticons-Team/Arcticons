@@ -1,5 +1,6 @@
 #!/bin/bash
 
+sh newcategory.sh
 sh rasterdark.sh
 sh rasterlight.sh
 
