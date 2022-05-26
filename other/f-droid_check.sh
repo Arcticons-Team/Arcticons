@@ -1,8 +1,7 @@
 #!/bin/bash
 
-# Copyright 2022 Konstantin Tutsch
+# Copyright 2022 Arcticons contributers
 # This script is distributed under the GNU General Public License.
-# Original file: https://codeberg.org/ktutsch/scripts/src/branch/main/f-droid_check.sh
 #
 # It was originally written to be used in the Arcticons Icon pack for checking other/requests.txt to output valid F-Droid links.
 
