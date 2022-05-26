@@ -3388,6 +3388,9 @@
 
     <!-- EasyConnect -->
     <item component="ComponentInfo{com.sangfor.vpn.client.phone/com.sangfor.vpn.client.phone.WelcomeActivity}" drawable="easyconnect" />
+	
+	<!-- OCR (Tesseract) -->
+	<item component="ComponentInfo{org.totschnig.ocr.tesseract/org.totschnig.ocr.SettingsActivity}" drawable="ocr_tesseract" />
 
     <!-- EasyJoin -->
     <item component="ComponentInfo{net.easyjoin/net.easyjoin.activity.MainActivity}" drawable="easyjoin" />
@@ -5943,9 +5946,18 @@
 
     <!-- Khalti -->
     <item component="ComponentInfo{com.khalti/com.khalti.intro.splash.SplashActivity}" drawable="khalti" />
+	
+	<!-- AI Gallery -->
+	<item component="ComponentInfo{com.gallery20/com.gallery20.activities.GalleryActivity}" drawable="ai_gallery" />
+	
+	<!-- Ishtar Commander -->
+	<item component="ComponentInfo{com.unintuitive.IshtarCommander/com.example.ZingProject.MainActivity}" drawable="ishtar_commander" />
 
     <!-- Khan Academy -->
-    <item component="ComponentInfo{org.khanacademy.android/org.khanacademy.android.ui.library.MainActivity}" drawable="khanacademy" />
+    <item component="ComponentInfo{org.khanacademy.android/org.khanacademy.android.ui.library.MainActivity}" drawable="khan_academy" />
+	
+	<!-- EZ Notes -->
+	<item component="ComponentInfo{com.pristineusa.android.speechtotext/com.pristineusa.android.speechtotext.dynamic.activity.SplashActivity}" drawable="ez_notes"/>
 
     <!-- Kickstarter -->
     <item component="ComponentInfo{com.kickstarter.kickstarter/com.kickstarter.ui.activities.DiscoveryActivity}" drawable="kickstarter" />
@@ -6987,6 +6999,7 @@
 
     <!-- Messaging -->
     <item component="ComponentInfo{com.android.messaging/com.android.messaging.ui.conversationlist.ConversationListActivity}" drawable="messaging" />
+	<item component="ComponentInfo{aos.andro.messaging/com.android.messaging.ui.conversationlist.ConversationListActivity}" drawable="messaging" />
 
     <!-- Mes Comptes - LCL -->
     <item component="ComponentInfo{fr.lcl.android.customerarea/fr.lcl.android.customerarea.activities.notconnected.SplashScreenActivity}" drawable="mescompteslcl" />
@@ -12526,6 +12539,10 @@
 
     <!-- TikTok -->
     <item component="ComponentInfo{com.zhiliaoapp.musically/com.ss.android.ugc.aweme.splash.SplashActivity}" drawable="tiktok" />
+	<item component="ComponentInfo{com.ss.android.ugc.trill/com.ss.android.ugc.aweme.splash.SplashActivity}" drawable="tiktok" />
+	
+	<!-- Listy -->
+	<item component="ComponentInfo{pro.listy/pro.listy.presentation.MainActivity}" drawable="listy" />
 
     <!-- Tikkie -->
     <item component="ComponentInfo{com.abnamro.nl.tikkie/com.abnamro.nl.mobile.gui.startup.AppActivity}" drawable="tikkie" />
