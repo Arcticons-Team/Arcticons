@@ -45,15 +45,15 @@ android {
         lightPlay {
             dimension "variant"
             applicationIdSuffix '.light'
-            resValue "string", "app_name", "Arcticons Dark"
+            resValue "string", "app_name", "Arcticons Light"
         }
     }
 
     sourceSets {
         dark { res.srcDirs = ['src/darkFree/res/', 'src/dark/res'] }
         darkPlay { res.srcDirs = ['src/darkPlay/res/', 'src/dark/res'] }
-        light { res.srcDirs = ['src/lightFree/res/', 'src/dark/res'] }
-        lightPlay { res.srcDirs = ['src/lightPlay/res/', 'src/dark/res'] }
+        light { res.srcDirs = ['src/lightFree/res/', 'src/light/res'] }
+        lightPlay { res.srcDirs = ['src/lightPlay/res/', 'src/light/res'] }
     }
 
 
