@@ -230,7 +230,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-
+        <!--
         <provider
             android:name=".services.MuzeiService"
             android:authorities="${applicationId}.ArtProvider"
@@ -246,7 +246,7 @@
                 android:name="color"
                 android:value="@color/muzei_color" />
         </provider>
-
+        -->
         <receiver
             android:name=".services.ClockWidget"
             android:label="Clock Widget">
