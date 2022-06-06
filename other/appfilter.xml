@@ -1867,10 +1867,6 @@
     <item component="ComponentInfo{org.calyxos.etar/com.android.calendar.AllInOneActivity}" drawable="calendar_31" />
     <item component="ComponentInfo{com.android.calendar/com.android.calendar.homepage.AllInOneActivity}" drawable="calendar_31" />
 
-    <!-- Proton Calendar -->
-    <item component="ComponentInfo{me.proton.android.calendar/me.proton.android.calendar.presentation.MainActivity}" drawable="proton_calendar" />
-    <item component="ComponentInfo{me.proton.android.calendar/me.proton.android.calendar.presentation.main.MainActivity}" drawable="proton_calendar" />
-
     <!-- Calendar Color -->
     <item component="ComponentInfo{ch.ihdg.calendarcolor/ch.ihdg.calendarcolor.CalendarListActivity}" drawable="calendarcolor" />
 
@@ -1888,12 +1884,6 @@
     <calendar component="ComponentInfo{org.calyxos.etar/com.android.calendar.AllInOneActivity}" drawable="calendar_" />
     <calendar component="ComponentInfo{com.huawei.calendar/com.android.calendar.AllInOneActivity}" drawable="calendar_" />
     <item component="ComponentInfo{com.android.calendar/com.android.calendar.homepage.AllInOneActivity}" drawable="calendar_" />
-    
-    <!-- Google Calendar -->
-    <item component="ComponentInfo{com.google.android.calendar/com.android.calendar.AllInOneActivity}" drawable="calendar_google_31" />
-
-    <!-- Google Calendar Dynamic Icon -->
-    <calendar component="ComponentInfo{com.google.android.calendar/com.android.calendar.AllInOneActivity}" prefix="calendar_google_" />
 
     <!-- Calendar Import-Export -->
     <item component="ComponentInfo{org.sufficientlysecure.ical/org.sufficientlysecure.ical.ui.MainActivity}" drawable="calendarimportexport" />
@@ -2847,9 +2837,9 @@
 
     <!-- Dawn -->
     <item component="ComponentInfo{me.thanel.dank/me.saket.dank.Launcher}" drawable="dawn" />
-    
+
     <!-- Daybook -->
-	<item component="ComponentInfo{com.bigheadtechies.diary/com.bigheadtechies.diary.Lastest.Activity.MainActivity.MainActivityMigration1}" drawable="daybook"/>
+    <item component="ComponentInfo{com.bigheadtechies.diary/com.bigheadtechies.diary.Lastest.Activity.MainActivity.MainActivityMigration1}" drawable="daybook" />
 
     <!-- Daylio -->
     <item component="ComponentInfo{net.daylio/net.daylio.activities.OverviewActivity}" drawable="daylio" />
@@ -4723,6 +4713,12 @@
 
     <!-- Google Calculator -->
     <item component="ComponentInfo{com.google.android.calculator/com.android.calculator2.Calculator}" drawable="calculator" />
+
+    <!-- Google Calendar -->
+    <item component="ComponentInfo{com.google.android.calendar/com.android.calendar.AllInOneActivity}" drawable="calendar_google_31" />
+
+    <!-- Google Calendar Dynamic Icon -->
+    <calendar component="ComponentInfo{com.google.android.calendar/com.android.calendar.AllInOneActivity}" prefix="calendar_google_" />
 
     <!-- Google Camera -->
     <item component="ComponentInfo{com.google.android.GoogleCamera/com.android.camera.CameraLauncher}" drawable="google_camera" />
@@ -8523,6 +8519,9 @@
     <!-- OneCalendar -->
     <item component="ComponentInfo{biz.codespark.xcalendarapp/crc64c040fa4b38b83970.MainActivity}" drawable="onecalendar" />
 
+    <!-- OneFootball -->
+    <item component="ComponentInfo{de.motain.iliga/com.onefootball.android.activity.FastLaunchSplashScreenActivity}" drawable="onefootball" />
+
     <!-- OnePlus Weather -->
     <item component="ComponentInfo{net.oneplus.weather/net.oneplus.weather.app.MainActivity}" drawable="oneplus_weather" />
 
@@ -9540,6 +9539,10 @@
     <!-- ProjectM -->
     <item component="ComponentInfo{com.psperl.prjM/com.psperl.prjM.MainActivity}" drawable="projectm" />
 
+    <!-- Proton Calendar -->
+    <item component="ComponentInfo{me.proton.android.calendar/me.proton.android.calendar.presentation.MainActivity}" drawable="proton_calendar" />
+    <item component="ComponentInfo{me.proton.android.calendar/me.proton.android.calendar.presentation.main.MainActivity}" drawable="proton_calendar" />
+
     <!-- Proton Calendar Dynamic icon -->
     <calendar component="ComponentInfo{me.proton.android.calendar/me.proton.android.calendar.presentation.MainActivity}" prefix="calendar_proton_" />
     <calendar component="ComponentInfo{me.proton.android.calendar/me.proton.android.calendar.presentation.main.MainActivity}" prefix="calendar_proton_" />
@@ -9547,7 +9550,7 @@
     <!-- Proton Mail -->
     <item component="ComponentInfo{ch.protonmail.android/ch.protonmail.android.activities.SplashActivity}" drawable="proton_mail" />
     <item component="ComponentInfo{ch.protonmail.android/ch.protonmail.android.mailbox.presentation.MailboxActivity}" drawable="proton_mail" />
-    <item component="ComponentInfo{ch.protonmail.android/ch.protonmail.android.mailbox.presentation.ui.MailboxActivity}" drawable="proton_mail"/>
+    <item component="ComponentInfo{ch.protonmail.android/ch.protonmail.android.mailbox.presentation.ui.MailboxActivity}" drawable="proton_mail" />
 
     <!-- Proton VPN -->
     <item component="ComponentInfo{com.protonvpn.android/com.protonvpn.android.ui.onboarding.SplashActivity}" drawable="proton_vpn" />
@@ -11644,7 +11647,7 @@
 
     <!-- Smart Transfer -->
     <item component="ComponentInfo{com.aomatatech.datatransferapp.filesharing/com.aomataconsulting.smartio.activities.SplashActivity}" drawable="smart_transfer" />
-    
+
     <!-- Smart Tutor -->
     <item component="ComponentInfo{com.rsupport.rs.activity.rsupport.aas2/com.rsupport.rs.activity.edit.IntroActivity}" drawable="smart_tutor" />
 
@@ -14604,8 +14607,5 @@
 
     <!-- ダンカグ aka Touhou Danmaku Kagura -->
     <item component="ComponentInfo{com.dena.a12026801/jp.co.xeen.xeapp2.CustomPlayerActivity}" drawable="touhou_danmaku_kagura" />
-    
-    <!-- OneFootball -->
-    <item component="ComponentInfo{de.motain.iliga/com.onefootball.android.activity.FastLaunchSplashScreenActivity}" drawable="onefootball" />
 
 </resources>

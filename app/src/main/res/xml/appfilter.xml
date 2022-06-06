@@ -49,6 +49,7 @@
 
     <!-- 1Weather -->
     <item component="ComponentInfo{com.handmark.expressweather/com.handmark.expressweather.ui.activities.SplashActivity}" drawable="simpleweather" />
+    <item component="ComponentInfo{com.handmark.expressweather/com.handmark.expressweather.ui.activities.MainActivity}" drawable="simpleweather" />
 
     <!-- 1by1 -->
     <item component="ComponentInfo{com.mpesch3.onebyone/com.mpesch3.onebyone.OboActivity}" drawable="_1by1" />
@@ -1854,7 +1855,6 @@
 
     <!-- Calendar -->
     <item component="ComponentInfo{com.android.calendar/com.android.calendar.AllInOneActivity}" drawable="calendar_31" />
-    <item component="ComponentInfo{com.google.android.calendar/com.android.calendar.AllInOneActivity}" drawable="calendar_31" />
     <item component="ComponentInfo{com.blackberry.calendar/com.blackberry.calendar.AllInOneActivity}" drawable="calendar_31" />
     <item component="ComponentInfo{com.samsung.android.calendar/com.android.calendar.AllInOneActivity}" drawable="calendar_31" />
     <item component="ComponentInfo{com.samsung.android.calendar/com.samsung.android.app.calendar.activity.MainActivity}" drawable="calendar_31" />
@@ -1867,10 +1867,6 @@
     <item component="ComponentInfo{org.calyxos.etar/com.android.calendar.AllInOneActivity}" drawable="calendar_31" />
     <item component="ComponentInfo{com.android.calendar/com.android.calendar.homepage.AllInOneActivity}" drawable="calendar_31" />
 
-    <!-- Calendar -->
-    <item component="ComponentInfo{me.proton.android.calendar/me.proton.android.calendar.presentation.MainActivity}" drawable="proton_calendar" />
-    <item component="ComponentInfo{me.proton.android.calendar/me.proton.android.calendar.presentation.main.MainActivity}" drawable="proton_calendar" />
-
     <!-- Calendar Color -->
     <item component="ComponentInfo{ch.ihdg.calendarcolor/ch.ihdg.calendarcolor.CalendarListActivity}" drawable="calendarcolor" />
 
@@ -1881,7 +1877,6 @@
     <calendar component="ComponentInfo{com.samsung.android.calendar/com.samsung.android.app.calendar.activity.MainActivity}" prefix="calendar_" />
     <calendar component="ComponentInfo{org.sufficientlysecure.localcalendar/org.sufficientlysecure.localcalendar.ui.MainActivity}" prefix="calendar_" />
     <calendar component="ComponentInfo{org.lineageos.etar/com.android.calendar.AllInOneActivity}" prefix="calendar_" />
-    <calendar component="ComponentInfo{com.google.android.calendar/com.android.calendar.AllInOneActivity}" prefix="calendar_" />
     <calendar component="ComponentInfo{ws.xsoh.etar/com.android.calendar.AllInOneActivity}" prefix="calendar_" />
     <calendar component="ComponentInfo{foundation.e.calendar/com.android.calendar.AllInOneActivity}" prefix="calendar_" />
     <calendar component="ComponentInfo{com.bbk.calendar/com.bbk.calendar.MainActivity}" drawable="calendar_" />
@@ -1967,6 +1962,7 @@
     <item component="ComponentInfo{com.mediatek.camera/com.android.camera.CameraLauncher}" drawable="camera" />
     <item component="ComponentInfo{com.oplus.camera/com.oplus.camera.Camera}" drawable="camera" />
     <item component="ComponentInfo{com.motorola.cameraone/com.motorola.camera.Camera}" drawable="camera" />
+    <item component="ComponentInfo{com.motorola.camera/com.motorola.camera.Camera}" drawable="camera" />
 
     <!-- Camera Connect -->
     <item component="ComponentInfo{jp.co.canon.ic.cameraconnect/jp.co.canon.ic.cameraconnect.top.CCTopActivity}" drawable="cameraconnect" />
@@ -2842,6 +2838,9 @@
     <!-- Dawn -->
     <item component="ComponentInfo{me.thanel.dank/me.saket.dank.Launcher}" drawable="dawn" />
 
+    <!-- Daybook -->
+    <item component="ComponentInfo{com.bigheadtechies.diary/com.bigheadtechies.diary.Lastest.Activity.MainActivity.MainActivityMigration1}" drawable="daybook" />
+
     <!-- Daylio -->
     <item component="ComponentInfo{net.daylio/net.daylio.activities.OverviewActivity}" drawable="daylio" />
 
@@ -3440,6 +3439,8 @@
 
     <!-- Easy Diary -->
     <item component="ComponentInfo{me.blog.korn123.easydiary/me.blog.korn123.easydiary.activities.IntroActivity}" drawable="easydiary" />
+    <item component="ComponentInfo{me.blog.korn123.easydiary/me.blog.korn123.easydiary.activities.IntroActivity.Dark}" drawable="easydiary" />
+    <item component="ComponentInfo{me.blog.korn123.easydiary/me.blog.korn123.easydiary.activities.IntroActivity.Green}" drawable="easydiary" />
 
     <!-- Easy Noise -->
     <item component="ComponentInfo{com.cliambrown.easynoise/com.cliambrown.easynoise.MainActivity}" drawable="easynoise" />
@@ -4374,6 +4375,9 @@
     <!-- Funkwhale -->
     <item component="ComponentInfo{audio.funkwhale.ffa/audio.funkwhale.ffa.activities.SplashActivity}" drawable="funkwhale" />
 
+    <!-- Førerkort -->
+    <item component="ComponentInfo{no.vegvesen.forerkort/no.vegvesen.forerkort.SplashActivity}" drawable="forerkort" />
+
     <!-- G-Droid -->
     <item component="ComponentInfo{org.gdroid.gdroid/org.gdroid.gdroid.MainActivity}" drawable="gdroid" />
 
@@ -4709,6 +4713,12 @@
 
     <!-- Google Calculator -->
     <item component="ComponentInfo{com.google.android.calculator/com.android.calculator2.Calculator}" drawable="calculator" />
+
+    <!-- Google Calendar -->
+    <item component="ComponentInfo{com.google.android.calendar/com.android.calendar.AllInOneActivity}" drawable="calendar_google_31" />
+
+    <!-- Google Calendar Dynamic Icon -->
+    <calendar component="ComponentInfo{com.google.android.calendar/com.android.calendar.AllInOneActivity}" prefix="calendar_google_" />
 
     <!-- Google Camera -->
     <item component="ComponentInfo{com.google.android.GoogleCamera/com.android.camera.CameraLauncher}" drawable="google_camera" />
@@ -8284,6 +8294,7 @@
 
     <!-- Nova Launcher Prime -->
     <item component="ComponentInfo{com.teslacoilsw.launcher.prime/com.teslacoilsw.launcher.prime.NovaLauncherPrimeActivity}" drawable="novaprime" />
+    <item component="ComponentInfo{com.teslacoilsw.launcher.prime/android.app.AppDetailsActivity}" drawable="novaprime" />
 
     <!-- Nova Video Player -->
     <item component="ComponentInfo{org.courville.nova/org.courville.nova.browser.BrowserActivityVideo}" drawable="nova_video_player" />
@@ -8507,6 +8518,9 @@
 
     <!-- OneCalendar -->
     <item component="ComponentInfo{biz.codespark.xcalendarapp/crc64c040fa4b38b83970.MainActivity}" drawable="onecalendar" />
+
+    <!-- OneFootball -->
+    <item component="ComponentInfo{de.motain.iliga/com.onefootball.android.activity.FastLaunchSplashScreenActivity}" drawable="onefootball" />
 
     <!-- OnePlus Weather -->
     <item component="ComponentInfo{net.oneplus.weather/net.oneplus.weather.app.MainActivity}" drawable="oneplus_weather" />
@@ -8781,6 +8795,7 @@
 
     <!-- OwlGram -->
     <item component="ComponentInfo{it.owlgram.android/org.telegram.ui.LaunchActivity}" drawable="owlgram" />
+    <item component="ComponentInfo{it.owlgram.android/org.telegram.messenger.OG_Icon_Alt_Developer}" drawable="owlgram" />
 
     <!-- Owly -->
     <item component="ComponentInfo{com.arthurivanets.owly/com.arthurivanets.owly.ui.splash.SplashActivity}" drawable="owly" />
@@ -9524,6 +9539,10 @@
     <!-- ProjectM -->
     <item component="ComponentInfo{com.psperl.prjM/com.psperl.prjM.MainActivity}" drawable="projectm" />
 
+    <!-- Proton Calendar -->
+    <item component="ComponentInfo{me.proton.android.calendar/me.proton.android.calendar.presentation.MainActivity}" drawable="proton_calendar" />
+    <item component="ComponentInfo{me.proton.android.calendar/me.proton.android.calendar.presentation.main.MainActivity}" drawable="proton_calendar" />
+
     <!-- Proton Calendar Dynamic icon -->
     <calendar component="ComponentInfo{me.proton.android.calendar/me.proton.android.calendar.presentation.MainActivity}" prefix="calendar_proton_" />
     <calendar component="ComponentInfo{me.proton.android.calendar/me.proton.android.calendar.presentation.main.MainActivity}" prefix="calendar_proton_" />
@@ -9531,7 +9550,7 @@
     <!-- Proton Mail -->
     <item component="ComponentInfo{ch.protonmail.android/ch.protonmail.android.activities.SplashActivity}" drawable="proton_mail" />
     <item component="ComponentInfo{ch.protonmail.android/ch.protonmail.android.mailbox.presentation.MailboxActivity}" drawable="proton_mail" />
-    <item component="ComponentInfo{ch.protonmail.android/ch.protonmail.android.mailbox.presentation.ui.MailboxActivity}" drawable="proton_mail"/>
+    <item component="ComponentInfo{ch.protonmail.android/ch.protonmail.android.mailbox.presentation.ui.MailboxActivity}" drawable="proton_mail" />
 
     <!-- Proton VPN -->
     <item component="ComponentInfo{com.protonvpn.android/com.protonvpn.android.ui.onboarding.SplashActivity}" drawable="proton_vpn" />
@@ -10346,6 +10365,9 @@
 
     <!-- Sav PDF Viewer -->
     <item component="ComponentInfo{com.saverio.pdfviewer/com.saverio.pdfviewer.MainActivity}" drawable="pdf_viewer" />
+
+    <!-- Sbanken -->
+    <item component="ComponentInfo{no.skandiabanken/internbank.no.sbanken.activities.MainActivity}" drawable="sbanken" />
 
     <!-- Sberbank -->
     <item component="ComponentInfo{ru.sberbankmobile/ru.sberbankmobile.SplashActivity}" drawable="sberbank" />
@@ -11509,6 +11531,7 @@
 
     <!-- Skroutz -->
     <item component="ComponentInfo{com.niobiumlabs.android.apps.skroutz/gr.skroutz.ui.StartupActivity}" drawable="skroutz" />
+    <item component="ComponentInfo{com.niobiumlabs.android.apps.skroutz/gr.skroutz.ui.startup.StartupActivity}" drawable="skroutz" />
 
     <!-- SkyCash -->
     <item component="ComponentInfo{com.skycash.beta/com.norbsoft.android.ease.activities.SplashScreenActivity}" drawable="skycash" />
@@ -11624,6 +11647,8 @@
 
     <!-- Smart Transfer -->
     <item component="ComponentInfo{com.aomatatech.datatransferapp.filesharing/com.aomataconsulting.smartio.activities.SplashActivity}" drawable="smart_transfer" />
+
+    <!-- Smart Tutor -->
     <item component="ComponentInfo{com.rsupport.rs.activity.rsupport.aas2/com.rsupport.rs.activity.edit.IntroActivity}" drawable="smart_tutor" />
 
     <!-- Smart VPN -->
@@ -12111,6 +12136,7 @@
 
     <!-- Super Hexagon -->
     <item component="ComponentInfo{com.distractionware.superhexagon.humble/com.distractionware.superhexagon.humble.SplashScreenActivity}" drawable="superhexagon" />
+    <item component="ComponentInfo{com.distractionware.superhexagon/com.distractionware.superhexagon.SplashScreenActivity}" drawable="superhexagon" />
 
     <!-- Support -->
     <item component="ComponentInfo{com.sonymobile.support/com.sonymobile.support.InAppSupportLauncher}" drawable="feedback" />
@@ -13272,6 +13298,7 @@
 
     <!-- VK -->
     <item component="ComponentInfo{com.vkontakte.android/com.vkontakte.android.MainActivity}" drawable="vk" />
+    <item component="ComponentInfo{com.vkontakte.android/com.vk.android.launcher.icons.IconAlias.DefaultIcon}" drawable="vk" />
 
     <!-- VLC -->
     <item component="ComponentInfo{org.videolan.vlc/org.videolan.vlc.gui.MainActivity}" drawable="vlc" />

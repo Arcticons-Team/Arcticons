@@ -1,3 +1,12 @@
+### 4.3.8
+###### Released: Jun 6, 2022
+* ✨ For the two F-Droid users that are using Arcticons Light, it's now light again and not dark :) 
+* ✨ A lot of old icons with tiny bugs are now normal again.
+* 📅 Two new sets of dynamic calendar icons, one for Google Calendar and an updated one for Proton Calendar
+* 🎉 79 new or updated icons (thanks Lavin-tom, Petlyh, RahulTPatil)
+* 🔥 4388 icons in total!
+
+
 ### 4.3.1
 ###### Released: May 26, 2022
 * ✨ Icon requests should be fixed now.
