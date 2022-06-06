@@ -13,7 +13,8 @@
 #   weight for the 48x48 is identical to the original line weight.
 #
 # This will create an `arcticons` directory in the current working dir
-# containing the icon theme.
+# containing the icon theme and an archive of the directory as
+# `arcticons.tar.gz`.
 #
 # WARNING! If the directory already exists, its original contents will be wiped.
 #
@@ -56,3 +57,5 @@ for size in $sizes; do
   rm "${dest_root}@3" 2> /dev/null || true
   ln -s "${size}x${size}" "${dest_root}@3"
 done
+
+tar czf arcticons.tar.gz arcticons
