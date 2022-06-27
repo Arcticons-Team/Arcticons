@@ -1555,6 +1555,9 @@
 
     <!-- Bluetooth Extension -->
     <item component="ComponentInfo{org.codeaurora.bluetooth/org.coreaurora.bluetooth.ftp.BluetoothFtpActivity}" drawable="bluetooth" />
+    
+    <!-- Bluetooth Keyboard & Mouse -->
+    <item component="ComponentInfo{io.appground.blek/io.appground.blek.MainActivity}" drawable="bluetooth_keyboard_mouse"/>
 
     <!-- Bluetooth Share -->
     <item component="ComponentInfo{com.android.bluetooth/com.android.bluetooth.opp.BluetoothOppLauncherActivity}" drawable="bluetooth" />
@@ -10776,7 +10779,10 @@
 
     <!-- Shuttle+ -->
     <item component="ComponentInfo{com.simplecity.amp_pro/com.simplecity.amp_library.ui.activities.MainActivity}" drawable="shuttle" />
-
+    
+    <!-- SIB Mirror -->
+    <item component="ComponentInfo{com.SIBMobile/com.SIBMobile.SibOnBoarding}" drawable="sib_mirror"/>
+    
     <!-- SicMu Player -->
     <item component="ComponentInfo{souch.smp/souch.smp.Main}" drawable="sicmu_player" />
 
