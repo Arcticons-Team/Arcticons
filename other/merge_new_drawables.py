@@ -12,6 +12,7 @@ with open(sys.argv[1]) as file:
 	calendar = []
 	numbers = []
 	letters = []
+	number = []
 
 	# Get all in New
 	newDrawables = []
@@ -47,6 +48,8 @@ with open(sys.argv[1]) as file:
 				letters.append(new.groups(0)[0])
 			elif new.groups(0)[0].startswith('number_'):
 				numbers.append(new.groups(0)[0])
+			elif new.groups(0)[0].startswith('_'):
+				number.append(new.groups(0)[0])
 			else:
 				drawables.append(new.groups(0)[0])
 		num += 1
@@ -81,6 +84,9 @@ with open(sys.argv[1]) as file:
 		output += '<item drawable="%s" />\n\t' % entry
 	output += '\n\t<category title="Numbers" />\n\t'
 	for entry in numbers:
+		output += '<item drawable="%s" />\n\t' % entry
+	output += '\n\t<category title="0-9" />\n\t'
+	for entry in number:
 		output += '<item drawable="%s" />\n\t' % entry
 
 

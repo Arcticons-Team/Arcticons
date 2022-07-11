@@ -7,8 +7,8 @@ android {
         applicationId "com.donnnno.arcticons"
         minSdkVersion rootProject.ext.MinSdk
         targetSdkVersion rootProject.ext.TargetSdk
-        versionCode 92
-        versionName '4.2.8'
+        versionCode 96
+        versionName '4.5.6'
         multiDexEnabled true
 
         // Naming app bundles
@@ -45,15 +45,15 @@ android {
         lightPlay {
             dimension "variant"
             applicationIdSuffix '.light'
-            resValue "string", "app_name", "Arcticons Dark"
+            resValue "string", "app_name", "Arcticons Light"
         }
     }
 
     sourceSets {
         dark { res.srcDirs = ['src/darkFree/res/', 'src/dark/res'] }
         darkPlay { res.srcDirs = ['src/darkPlay/res/', 'src/dark/res'] }
-        light { res.srcDirs = ['src/lightFree/res/', 'src/dark/res'] }
-        lightPlay { res.srcDirs = ['src/lightPlay/res/', 'src/dark/res'] }
+        light { res.srcDirs = ['src/lightFree/res/', 'src/light/res'] }
+        lightPlay { res.srcDirs = ['src/lightPlay/res/', 'src/light/res'] }
     }
 
 
@@ -75,6 +75,6 @@ android {
 dependencies {
 
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    implementation 'com.github.Donnnno:candybar-foss:3.14.0'
+    implementation 'com.github.Donnnno:candybar-foss:3.14.2'
 
 }

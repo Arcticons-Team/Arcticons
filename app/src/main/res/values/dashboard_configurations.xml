@@ -40,12 +40,6 @@
     <string name="kustom_pack_description">Cool Kustom presets</string>
 
 
-    <!--
-        CONFIG: HOME
-    -->
-    <!-- Home title. This will be shown in the home page -->
-    <string name="home_title">Arcticons</string>
-
     <!-- Home image
         If you want to use an image from url, just put the url here
         If you want to use an image stored in the project ("drawable" folder)
@@ -62,7 +56,7 @@
         - card_landscape
 
     -->
-    <string name="home_image_style">card_landscape</string>
+    <string name="home_image_style">card_square</string>
     <!-- Description which will be shown in the home page.
         Put your markup/text inside of `<![CDATA[` and `]]>`
         ex: `<![CDATA[ There are - <b>Bold</b> <i>Italic</i> <u>Underline</u> <a href="url">Link</a> ]]>`
@@ -77,16 +71,6 @@
             <p><b>You can get priority icon requests <a href="https://ko-fi.com/donno_">on Ko-fi</a></b></p>
         ]]>
     </string>
-
-    <!-- Link to your app's Rate and Review page.
-        Leave this empty to disable the "Rate and Review" button.
-        You can use special keyword `{{packageName}}`, `{{packageName}}` will be replaced with your app's package name -->
-    <string name="rate_and_review_link">https://play.google.com/store/apps/details?id=com.donnnno.arcticons</string>
-
-    <!-- Link to your app's main page. It will be used when your user shares your app using "Share" button.
-        Leave this empty to disable the "Share" button.
-        You can use special keyword `{{packageName}}`, `{{packageName}}` will be replaced with your app's package name -->
-    <string name="share_link">https://f-droid.org/packages/com.donnnno.arcticons</string>
 
     <!-- Enable "Check for update" button.
         It needs the option "config_json" to be configured in order to work -->
