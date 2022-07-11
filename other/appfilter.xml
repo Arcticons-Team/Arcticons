@@ -26,10 +26,22 @@
     <!-- 17TRACK -->
     <item component="ComponentInfo{yqtrack.app/yqtrack.app.ui.splash.SplashActivity}" drawable="a17track" />
 
+	<!-- ProofMode -->
+	<item component="ComponentInfo{org.witness.proofmode/org.witness.proofmode.MainActivity}" drawable="proofmode" />
+
+	<!-- Tesla -->
+	<item component="ComponentInfo{com.teslamotors.tesla/com.teslamotors.TeslaApp.MainActivity}" drawable="tesla" />
+
+	<!-- Toggl Track -->
+	<item component="ComponentInfo{com.toggl.giskard/com.toggl.ui.MainActivity}" drawable="toggl_track" />
+
+	<!-- YI Home -->
+	<item component="ComponentInfo{com.ants360.yicamera.international/com.ants360.yicamera.activity.SplashActivity}" drawable="yi_home" />
+
 	<!-- Linwood Butterfly -->
 	<item component="ComponentInfo{dev.linwood.butterfly/dev.linwood.butterfly.MainActivity}" drawable="butterfly_nightly"/>
 
-	<!-- DĀK -->
+	<!-- DAK -->
 	<item component="ComponentInfo{nl.woningnet.dak/nl.woningnet.dak.launcher_62e1c0c5106262f7c50234f670f7a1b6041e832443ed1c8b00767ff157b966e4}" drawable="dak"/>
 
 	<!-- Do Kapsy -->
@@ -12796,6 +12808,7 @@
     <item component="ComponentInfo{org.thunderdog.challegram/org.thunderdog.challegram.MainActivity}" drawable="telegram" />
     <item component="ComponentInfo{org.telegram.messenger.web/org.telegram.ui.LaunchActivity}" drawable="telegram" />
     <item component="ComponentInfo{com.exteragram.messenger/org.telegram.ui.LaunchActivity}" drawable="telegram" />
+	<item component="ComponentInfo{org.telegram.messenger/org.telegram.messenger.DefaultIcon}" drawable="telegram" />
 
     <!-- Telegram Plus -->
     <item component="ComponentInfo{org.telegram.plus/org.telegram.ui.LaunchActivity}" drawable="telegram_plus" />
