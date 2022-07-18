@@ -162,7 +162,7 @@
 
 	<!-- SWI plus -->
 	<item component="ComponentInfo{ch.swissinfo.android/ch.swissinfo.android.MainActivity}" drawable="swi_plus" />
-	
+
 	<!-- Raiffeisen Vorsorgeradar -->
 	<item component="ComponentInfo{ch.raiffeisen.vorsorgeapp/ch.raiffeisen.vorsorgeapp.MainActivity}" drawable="raiffeisen_vorsorgeradar" />
 
@@ -1461,7 +1461,8 @@
     <item component="ComponentInfo{np.com.binabh.basedcooking/mp.com.binabh.basedcooking.based_cooking.MainActivity}" drawable="based_cooking" />
 
     <!-- BatteryBot -->
-    <item component="ComponentInfo{com.darshancomputing.BatteryIndicatorPro/com.darshancomputing.BatteryIndicatorPro.BatteryInfoActivity}" drawable="battery" />
+    <item component="ComponentInfo{com.darshancomputing.BatteryIndicatorPro/com.darshancomputing.BatteryIndicatorPro.BatteryInfoActivity}" drawable="batterybot" />
+    <item component="ComponentInfo{com.darshancomputing.BatteryIndicator/com.darshancomputing.BatteryIndicator.BatteryInfoActivity}" drawable="batterybot"/>
 
     <!-- BatteryCalibration -->
     <item component="ComponentInfo{de.perflyst.batterycalibration/de.perflyst.batterycalibration.MainActivity}" drawable="batterycalibration" />
@@ -7408,7 +7409,7 @@
     <!-- Mercari -->
     <item component="ComponentInfo{com.mercariapp.mercari/com.mercari.ramen.launch.LaunchActivity}" drawable="mercari" />
     <item component="ComponentInfo{com.mercariapp.mercari/com.mercari.denali.MainActivity}" drawable="mercari" />
-    
+
     <!-- Mercedes me -->
     <item component="ComponentInfo{com.daimler.ris.mercedesme.ece.android/com.daimler.mycar.screen.splash.SplashActivity}" drawable="mercedes_me" />
 
@@ -7911,6 +7912,9 @@
 
     <!-- MuchBetter -->
     <item component="ComponentInfo{com.mirlimited.muchbetter/com.mirlimited.muchbetter.domain.signup.LauncherActivity}" drawable="muchbetter" />
+
+    <!-- Můj vlak -->
+    <item component="ComponentInfo{cz.cd.mujvlak.an/com.circlegate.cd.app.activity.MainActivity}" drawable="mujvlak"/>
 
     <!-- Mullvad VPN -->
     <item component="ComponentInfo{net.mullvad.mullvadvpn/net.mullvad.mullvadvpn.ui.MainActivity}" drawable="mullvadvpn" />
@@ -8765,13 +8769,13 @@
     <item component="ComponentInfo{io.github.subhamtyagi.ocr/io.github.subhamtyagi.ocr.MainActivity}" drawable="ocr" />
 
     <!-- OI.Palette -->
-    <item component="ComponentInfo{jp.olympusimaging.oipalette/jp.olympusimaging.oipalette.jorudan.baseAct.WelcomActivity}" drawable="oi.palette" />
+    <item component="ComponentInfo{jp.olympusimaging.oipalette/jp.olympusimaging.oipalette.jorudan.baseAct.WelcomActivity}" drawable="oipalette" />
 
     <!-- OI.Share -->
-    <item component="ComponentInfo{jp.olympusimaging.oishare/jp.olympusimaging.oishare.splash.SplashActivity}" drawable="oi.share" />
+    <item component="ComponentInfo{jp.olympusimaging.oishare/jp.olympusimaging.oishare.splash.SplashActivity}" drawable="oishare" />
 
     <!-- OI.Track -->
-    <item component="ComponentInfo{jp.olympusimaging.oitrack/jp.olympusimaging.oitrack.splash.SplashActivity}" drawable="oi.track" />
+    <item component="ComponentInfo{jp.olympusimaging.oitrack/jp.olympusimaging.oitrack.splash.SplashActivity}" drawable="oitrack" />
 
     <!-- OKO Light Meter -->
     <item component="ComponentInfo{com.okacat.lightmeter/com.okacat.lightmeter.ui.activities.SplashActivity}" drawable="okolightmeter" />
@@ -10233,6 +10237,9 @@
 
     <!-- RED & Moi -->
     <item component="ComponentInfo{com.sfr.android.redmoncompte/com.sfr.android.redmoncompte.MonCompteMain}" drawable="redmoi" />
+
+    <!-- Rekola -->
+    <item component="ComponentInfo{cz.rekola.app/cz.rekola.app.MainActivity}" drawable="rekola"/>
 
     <!-- REMA 1000 -->
     <item component="ComponentInfo{dk.iroots.rema1000/dk.iroots.rema1000.app.activity.MainActivity}" drawable="rema1000" />
@@ -13966,7 +13973,7 @@
 
     <!-- Viaplay -->
     <item component="ComponentInfo{com.viaplay.android/com.viaplay.android.vc2.activity.VPSlashScreenActivity}" drawable="viaplay" />
-    
+
     <!-- Via -->
     <item component="ComponentInfo{mark.via.gp/mark.via.Shell}" drawable="via" />
     <item component="ComponentInfo{mark.via.gp/mark.via.Shell}" drawable="via" />
