@@ -1,3 +1,9 @@
+### 4.6.2
+###### Released: Jul 6, 2022
+* 🎉 96  new or updated icons (thanks Duese, Aloxe, Yetanother-user, toxcien, prirai, ojppe, andmagdo. Petlyh, Hassancreative, Maciej-klupp!)
+* 🔥 4622 icons in total!
+
+
 ### 4.5.6
 ###### Released: Jul 6, 2022
 * 🎉 126 new or updated icons (thanks Maciej-Klupp, Calciume, Toxcien, Joelchrono12, KristhianX, Dgcampbe, tieu1991, EvysGarden, Lavin-tom, Shreyanshs31, Andmagdo, Endim8, ZuperZeus, Aao-fyi!)
