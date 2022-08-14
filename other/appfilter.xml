@@ -3299,6 +3299,7 @@
     <!-- Discord -->
     <item component="ComponentInfo{com.discord/com.discord.app.AppActivity$Main}" drawable="discord" />
     <item component="ComponentInfo{com.discord/com.discord.MainActivity}" drawable="discord" />
+    <item component="ComponentInfo{com.discord/com.discord.main.MainActivity}" drawable="discord" />
 
     <!-- Discovery+ -->
     <item component="ComponentInfo{com.discovery.discoveryplus.mobile/com.discovery.plus.presentation.activities.LaunchActivity}" drawable="discovery_" />
@@ -6129,7 +6130,7 @@
     <item component="ComponentInfo{com.chancehorizon.just24hoursplus/com.chancehorizon.just24hoursplus.theClockActivity}" drawable="just24hours" />
 
     <!-- Just Another Workout Timer -->
-    <item component="ComponentInfo{com.blockbasti.justanotherworkouttimer/com.blockbasti.just_another_workout_timer.MainActivity}" drawable="justanotherworkouttimer" />f
+    <item component="ComponentInfo{com.blockbasti.justanotherworkouttimer/com.blockbasti.just_another_workout_timer.MainActivity}" drawable="justanotherworkouttimer" />
 
     <!-- Just Dance Now -->
     <item component="ComponentInfo{com.ubisoft.dance.JustDance/com.ubisoft.dance.JustDance.JustDanceLaunchActivity}" drawable="just_dance_now" />
@@ -7294,7 +7295,10 @@
 
     <!-- Meditation Assistant -->
     <item component="ComponentInfo{sh.ftp.rocketninelabs.meditationassistant.opensource/sh.ftp.rocketninelabs.meditationassistant.MainActivity}" drawable="meditationassistant" />
-
+		
+    <!-- Meditation Timer -->
+    <item component="ComponentInfo{com.nyxkn.meditation/com.nyxkn.meditation.MainActivity}" drawable="meditation_timer" />
+	
     <!-- Meditation Timer & Log -->
     <item component="ComponentInfo{com.telesoftas.meditationtimer/com.telesoftas.meditationtimer.splash.SplashActivity}" drawable="meditation_timer_and_log" />
 
@@ -7650,6 +7654,9 @@
     <!-- Mircrosoft Edge -->
     <item component="ComponentInfo{com.microsoft.emmx/com.microsoft.ruby.Main}" drawable="microsoftedge" />
 
+    <!-- Mirror -->
+    <item component="ComponentInfo{com.android.hwmirror/com.android.hwmirror.Mirror}" drawable="hwmirror" />
+	
     <!-- Mirry -->
     <item component="ComponentInfo{rocks.poopjournal.mirry/rocks.poopjournal.mirry.MainActivity}" drawable="mirry" />
 
@@ -8196,6 +8203,9 @@
     <!-- MÜLLweg! DE -->
     <item component="ComponentInfo{de.lennartz.muellweg/inputfilesample.android.chrome.google.com.inputfilesample.SplashScreen}" drawable="mullwegde" />
 
+    <!-- MÁV -->
+    <item component="ComponentInfo{hu.mavszk.vonatinfo/hu.mavszk.vonatinfo2.gui.activity.SplashActivity}" drawable="mav_vonatinfo" />
+	
     <!-- Météo France -->
     <item component="ComponentInfo{fr.meteo/fr.meteo.activity.SplashscreenActivity_}" drawable="mtofrance" />
 
@@ -8380,7 +8390,7 @@
 
     <!-- Nekogram X -->
     <item component="ComponentInfo{nekox.messenger/org.telegram.ui.LaunchActivity}" drawable="nekogramx" />
-    <item component="ComponentInfo{nekox.messenger/org.telegram.messenger.DefaultIcon}" drawable="nekogram_x" />
+    <item component="ComponentInfo{nekox.messenger/org.telegram.messenger.DefaultIcon}" drawable="nekogramx" />
     <item component="ComponentInfo{tw.nekomimi.nekogram/org.telegram.ui.LaunchActivity}" drawable="nekogramx" />
 
     <!-- Neko -->
@@ -8775,6 +8785,9 @@
     <!-- Nærboks -->
     <item component="ComponentInfo{com.swipbox.infinity.consignee_app/com.swipbox.infinity.consignee_app.MainActivity}" drawable="nrboks" />
 
+    <!-- O'Reilly -->
+    <item component="ComponentInfo{com.safariflow.queue/oreilly.queue.SplashActivity}" drawable="oreilly"/>
+	
     <!-- OBB Scotty -->
     <item component="ComponentInfo{de.hafas.android.oebb/de.hafas.main.HafasApp}" drawable="obb_scotty" />
 
@@ -9187,7 +9200,7 @@
     <!-- OsmAnd -->
     <item component="ComponentInfo{net.osmand.plus/net.osmand.plus.activities.MapActivity}" drawable="osmand" />
     <item component="ComponentInfo{net.osmand/net.osmand.plus.activities.MapActivity}" drawable="osmand" />
-	<item component="ComponentInfo{net.osmand.dev/net.osmand.plus.activities.MapActivity}" drawable="osmand"/>
+    <item component="ComponentInfo{net.osmand.dev/net.osmand.plus.activities.MapActivity}" drawable="osmand" />
 
     <!-- Osmand Telegram -->
     <item component="ComponentInfo{net.osmand.telegram/net.osmand.telegram.ui.MainActivity}" drawable="osmandtelegram" />
@@ -10929,6 +10942,7 @@
 
     <!-- Satellite -->
     <item component="ComponentInfo{de.sipgate.app.satellite/de.sipgate.app.satellite.splash.SplashScreenActivity}" drawable="satellite" />
+	<item component="ComponentInfo{de.sipgate.app.satellite/de.sipgate.app.satellite.startup.RoutingActivity}" drawable="satellite"/>
 
     <!-- SauceNAO -->
     <item component="ComponentInfo{com.luk.saucenao/com.luk.saucenao.MainActivity}" drawable="saucenao" />
@@ -11060,6 +11074,15 @@
 
     <!-- Secur -->
     <item component="ComponentInfo{com.u2fa.secur/com.u2fa.secur.MainActivity}" drawable="secur" />
+	
+	<!-- ePA -->
+	<item component="ComponentInfo{com.rise_world.epa.bkkBpwBergischeAchsenAG.qu/com.rise_world.epa.ui.splash.SplashActivity}" drawable="epa_bkk_bpw"/>
+	
+	<!-- BKK BPW -->
+	<item component="ComponentInfo{de.bpw.kv365/de.bpw.kv365.main}" drawable="bkk_bpw"/>
+	
+	<!-- Subhub -->
+	<item component="ComponentInfo{com.crazylegend.subhub/com.crazylegend.subhub.MainActivity}" drawable="subhub"/>
 
     <!-- Secuso Foodtracker -->
     <item component="ComponentInfo{org.secuso.privacyfriendlyfoodtracker/org.secuso.privacyfriendlyfoodtracker.activities.SplashActivity}" drawable="foodtracker" />
@@ -12742,6 +12765,7 @@
 
     <!-- Super Hexagon -->
     <item component="ComponentInfo{com.distractionware.superhexagon.humble/com.distractionware.superhexagon.humble.SplashScreenActivity}" drawable="superhexagon" />
+    <item component="ComponentInfo{com.distractionware.superhexagon.humble/com.distractionware.superhexagon.SplashScreenActivity}" drawable="superhexagon" />
     <item component="ComponentInfo{com.distractionware.superhexagon/com.distractionware.superhexagon.SplashScreenActivity}" drawable="superhexagon" />
 
     <!-- Support -->
@@ -14031,7 +14055,7 @@
     <item component="ComponentInfo{com.varomoney.bank/com.varomoney.bank.presentation.splash.SplashActivity}" drawable="varobank" />
 
     <!-- Vattenfall -->
-    <item component="ComponentInfo{nl.nuon.android.futurestreet/com.nl.nuon.android.futurestreet.ui.splash.NuonSplashActivity}" drawable="vattenfall" />'
+    <item component="ComponentInfo{nl.nuon.android.futurestreet/com.nl.nuon.android.futurestreet.ui.splash.NuonSplashActivity}" drawable="vattenfall" />
 
     <!-- Vectorify da home! -->
     <item component="ComponentInfo{com.iven.iconify/com.iven.vectorify.ui.MainActivity}" drawable="vectorifydahome" />
@@ -14825,6 +14849,9 @@
     <!-- Yet Another Call Blocker -->
     <item component="ComponentInfo{dummydomain.yetanothercallblocker/dummydomain.yetanothercallblocker.MainActivity}" drawable="yetanothercallblocker" />
 
+    <!-- Yettel -->
+    <item component="ComponentInfo{com.telenor.mytelenor/com.telenor.mytelenor.genesys.SplashActivity}" drawable="yettel" />
+	
     <!-- Yle Areena -->
     <item component="ComponentInfo{com.yle.webtv/fi.yle.areena.ui.LaunchActivity}" drawable="yle_areena" />
 
