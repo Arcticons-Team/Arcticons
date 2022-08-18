@@ -3365,9 +3365,8 @@
 
     <!-- Dolby -->
     <item component="ComponentInfo{com.dolby.daxappUI/com.dolby.daxappUI.MainActivity}" drawable="dolby" />
-
-    <!-- Dolby On -->
-    <item component="ComponentInfo{com.dolby.dolby234/com.dolby.sessions.Launcher}" drawable="dolbyon" />
+    <item component="ComponentInfo{com.motorola.dolby.dolbyui/com.motorola.dolby.doldbyui.ui.LauncherActivity}" drawable="dolby" />
+    <item component="ComponentInfo{com.dolby.dolby234/com.dolby.sessions.Launcher}" drawable="dolby" />
 
     <!-- Dolphin Emulator -->
     <item component="ComponentInfo{org.dolphinemu.dolphinemu/org.dolphinemu.dolphinemu.ui.main.MainActivity}" drawable="dolphinemulator" />
@@ -7209,6 +7208,7 @@
 
     <!-- Master Password -->
     <item component="ComponentInfo{com.lyndir.masterpassword/com.lyndir.masterpassword.EmergencyActivity}" drawable="masterpassword" />
+    <item component="ComponentInfo{de.devland.masterpassword/de.devland.masterpassword.ui.PasswordViewActivity}" drawable="masterpassword" />
 
     <!-- Mastodon -->
     <item component="ComponentInfo{org.joinmastodon.android/org.joinmastodon.android.MainActivity}" drawable="mastodon" />
@@ -15383,4 +15383,21 @@
     <!-- ダンカグ aka Touhou Danmaku Kagura -->
     <item component="ComponentInfo{com.dena.a12026801/jp.co.xeen.xeapp2.CustomPlayerActivity}" drawable="touhou_danmaku_kagura" />
 
+    <!-- Gwent -->
+    <item component="ComponentInfo(com.cdprojektred.gwent/com.cdprojektred.androidbridge.PluginControllerActivity)" drawable="gwent" />
+
+    <!-- Acorns -->
+    <item component="ComponentInfo(com.acorns.androic/com.acorns.android.splash.SplashActivity)" drawable="acorns" />
+
+    <!-- EVE Portal -->
+    <item component="ComponentInfo(com.ccpgames.eveportal2android/com.google.firebase.MessagingUnityPlayerActivity)" drawable="eve_portal" />
+
+    <!-- Hy-Vee -->
+    <item component="ComponentInfo(com.hyvee.grocery/com.hyvee.SplashActivity)" drawable="hyvee" />
+
+    <!-- Kroger -->
+    <item component="ComponentInfo(com.kroger.mobile/com.kroger.mobile.BannerSelectionActivity)" drawable="kroger" />
+
+    <!-- Zillow Rental -->
+    <item component="ComponentInfo(com.zillow.android.rentals/com.zillow.android.re.ui.SplashScreenActivity)" drawable="zillow" />
 </resources>
