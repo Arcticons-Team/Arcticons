@@ -3477,9 +3477,7 @@
 
     <!-- Dolby -->
     <item component="ComponentInfo{com.dolby.daxappUI/com.dolby.daxappUI.MainActivity}" drawable="dolby" />
-
-    <!-- Dolby On -->
-    <item component="ComponentInfo{com.dolby.dolby234/com.dolby.sessions.Launcher}" drawable="dolbyon" />
+    <item component="ComponentInfo{com.dolby.dolby234/com.dolby.sessions.Launcher}" drawable="dolby" />
 
     <!-- Dolphin Emulator -->
     <item component="ComponentInfo{org.dolphinemu.dolphinemu/org.dolphinemu.dolphinemu.ui.main.MainActivity}" drawable="dolphinemulator" />
@@ -7357,7 +7355,8 @@
 
     <!-- Master Password -->
     <item component="ComponentInfo{com.lyndir.masterpassword/com.lyndir.masterpassword.EmergencyActivity}" drawable="masterpassword" />
-
+    <item component="ComponentInfo{de.devland.masterpassword/de.devland.masterpassword.ui.PasswordViewActivity}" drawable="masterpassword" />
+    
     <!-- Mastodon -->
     <item component="ComponentInfo{org.joinmastodon.android/org.joinmastodon.android.MainActivity}" drawable="mastodon" />
 
@@ -12987,6 +12986,24 @@
 
     <!-- Support AnymeX f-->
     <item component="ComponentInfo{com.zunjae.support/com.zunjae.support.MainActivity}" drawable="android" />
+
+    <!-- Gwent -->
+    <item component="ComponentInfo(com.cdprojektred.gwent/com.cdprojektred.androidbridge.PluginControllerActivity)" drawable="gwent" />
+
+    <!-- Acorns -->
+    <item component="ComponentInfo(com.acorns.androic/com.acorns.android.splash.SplashActivity)" drawable="acorns" />
+
+    <!-- EVE Portal -->
+    <item component="ComponentInfo(com.ccpgames.eveportal2android/com.google.firebase.MessagingUnityPlayerActivity)" drawable="eve_portal" />
+
+    <!-- Hy-Vee -->
+    <item component="ComponentInfo(com.hyvee.grocery/com.hyvee.SplashActivity)" drawable="hyvee" />
+
+    <!-- Kroger -->
+    <item component="ComponentInfo(com.kroger.mobile/com.kroger.mobile.BannerSelectionActivity)" drawable="kroger" />
+
+    <!-- Zillow Rental -->
+    <item component="ComponentInfo(com.zillow.android.rentals/com.zillow.android.re.ui.SplashScreenActivity)" drawable="zillow" />
 
     <!-- Surfshark -->
     <item component="ComponentInfo{com.surfshark.vpnclient.android/com.surfshark.vpnclient.android.StartActivity}" drawable="surfshark" />
