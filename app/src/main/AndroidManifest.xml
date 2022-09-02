@@ -50,7 +50,8 @@
             android:icon="@drawable/google_weather"
             android:label="@string/google_weather"
             android:launchMode="singleTask"
-            android:screenOrientation="portrait">
+            android:screenOrientation="fullSensor"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.CREATE_SHORTCUT" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -61,8 +62,9 @@
             android:name=".activities.SplashActivity"
             android:launchMode="singleTop"
             android:noHistory="true"
-            android:screenOrientation="portrait"
-            android:theme="@style/CandyBar.Theme.Splash">
+            android:screenOrientation="fullSensor"
+            android:theme="@style/CandyBar.Theme.Splash"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -77,7 +79,8 @@
             android:name=".activities.MainActivity"
             android:configChanges="uiMode|orientation|keyboardHidden|screenSize"
             android:launchMode="singleTop"
-            android:theme="@style/CandyBar.Theme.App">
+            android:theme="@style/CandyBar.Theme.App"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
@@ -249,7 +252,8 @@
         -->
         <receiver
             android:name=".services.ClockWidget"
-            android:label="Clock Widget">
+            android:label="Clock Widget"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>

@@ -1,5 +1,11 @@
+### 4.6.3
+###### Released: Aug 25, 2022
+* 🎉 84 new or updated icons (thanks Yetanother-user, Toxcien, Ojppe, Basings, Kreativ7, Lavin-Tom, Aliervo, Ronaldloyko, Kaiserdragon2, Petlyh, Prirai, Grrrrr, Kerioneesh, Wwwwwwari, MagiX13, Tieu1991 and Totoroot!)
+* 🔥 4606 icons in total!
+
+
 ### 4.6.2
-###### Released: Jul 6, 2022
+###### Released: Jul 26, 2022
 * 🎉 96  new or updated icons (thanks Duese, Aloxe, Yetanother-user, toxcien, prirai, ojppe, andmagdo. Petlyh, Hassancreative, Maciej-klupp!)
 * 🔥 4622 icons in total!
 
