@@ -12,7 +12,9 @@ You can modify what you send in the email:
 
 This information is solely used for the icon request and remains private. **You're also fully controlling what data you send to us via email.**
 
+All mails are securely stored with zero-access encryption via Proton Mail's servers.
+
 The icon request will be made public, but all identifiable information is stripped before it gets to be an issue on GitHub. At the end only the date of the request, app version, Candybar version and the requested apps will be visible in the GitHub issue.
 
 Last modified:
-**9 November 2021**
+**3 September 2022**
