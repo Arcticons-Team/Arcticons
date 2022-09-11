@@ -44,6 +44,7 @@ appInfoQuery = re.compile(r'(?<!])(?! )(?P<Name>[\w\d\@\?\(\)\! +.\-:\-|&＆​,
 eMailQuery = re.compile(r'<(.+)>$')
 updatable = []
 newApps = []
+TAG_RE = re.compile(r'<[^<]+?>')  # or maybe some other name, something more descriptive
 
 # Filters to limit backlog
 currentDate = date.today()
@@ -79,8 +80,11 @@ def parseMails():
 			parsed= msg.get_body(preferencelist=('plain'))
 			# Skip if body is empty
 			if parsed is None:
-				continue
-			emailBody = parsed.get_content()
+				parsed = msg.get_body().get_content()
+				emailBody = "\n".join([TAG_RE.sub('', string) for string in parsed.split('<br>')])
+
+			else:
+				emailBody = parsed.get_content()
 
 			# Check if sender exists
 			sender = re.search(eMailQuery, msg['From'])
