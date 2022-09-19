@@ -1059,7 +1059,9 @@
     <!-- AudioFX -->
     <item component="ComponentInfo{org.cyanogenmod.audiofx/org.cyanogenmod.audiofx.ActivityMusic}" drawable="audiofx" />
     <item component="ComponentInfo{org.cyanogenmod.audiofx/org.cyanogenmod.audiofx.activity.ActivityMusic}" drawable="audiofx" />
-    <item component="ComponentInfo{org.lineageos.audiofx/org.lineageos.audiofx.activity.ActivityMusic}" drawable="audiofx" />
+    
+    <!-- LineageOS AudioFX -->
+    <item component="ComponentInfo{org.lineageos.audiofx/org.lineageos.audiofx.activity.ActivityMusic}" drawable="lineage_audiofx" />
 
     <!-- AudioLab -->
     <item component="ComponentInfo{com.hitrolab.audioeditor/com.hitrolab.audioeditor.splash.SplashActivity}" drawable="audiolab" />
@@ -1845,9 +1847,11 @@
 
     <!-- Bromite -->
     <item component="ComponentInfo{org.bromite.bromite/com.google.android.apps.chrome.Main}" drawable="bromite" />
+    
+    <!-- LineageOS Browser -->
+    <item component="ComponentInfo{org.lineageos.jelly/org.lineageos.jelly.MainActivity}" drawable="lineage_browser" />
 
     <!-- Browser -->
-    <item component="ComponentInfo{org.lineageos.jelly/org.lineageos.jelly.MainActivity}" drawable="jelly" />
     <item component="ComponentInfo{foundation.e.browser/com.google.android.apps.chrome.Main}" drawable="browser" />
     <item component="ComponentInfo{com.mi.globalbrowser/com.mi.globalbrowser.Main}" drawable="browser" />
     <item component="ComponentInfo{com.vivo.browser/com.vivo.browser.BrowserActivity}" drawable="browser" />
@@ -2066,13 +2070,16 @@
     <!-- Calculator Basic & Scientific Calculations -->
     <item component="ComponentInfo{com.transsion.calculator/com.transsion.calculator.Calculator}" drawable="calculator_basic_scientific_calculations" />
 
+    <!-- LineageOS Calendar -->
+    <item component="ComponentInfo{org.lineageos.etar/com.android.calendar.AllInOneActivity}" drawable="lineage_calendar" />
+
+
     <!-- Calendar -->
     <item component="ComponentInfo{com.android.calendar/com.android.calendar.AllInOneActivity}" drawable="calendar_31" />
     <item component="ComponentInfo{com.blackberry.calendar/com.blackberry.calendar.AllInOneActivity}" drawable="calendar_31" />
     <item component="ComponentInfo{com.samsung.android.calendar/com.android.calendar.AllInOneActivity}" drawable="calendar_31" />
     <item component="ComponentInfo{com.samsung.android.calendar/com.samsung.android.app.calendar.activity.MainActivity}" drawable="calendar_31" />
     <item component="ComponentInfo{org.sufficientlysecure.localcalendar/org.sufficientlysecure.localcalendar.ui.MainActivity}" drawable="calendar_31" />
-    <item component="ComponentInfo{org.lineageos.etar/com.android.calendar.AllInOneActivity}" drawable="calendar_31" />
     <item component="ComponentInfo{ws.xsoh.etar/com.android.calendar.AllInOneActivity}" drawable="calendar_31" />
     <item component="ComponentInfo{foundation.e.calendar/com.android.calendar.AllInOneActivity}" drawable="calendar_31" />
     <item component="ComponentInfo{com.bbk.calendar/com.bbk.calendar.MainActivity}" drawable="calendar_31" />
@@ -2142,6 +2149,9 @@
 
     <!-- Camaliot -->
     <item component="ComponentInfo{com.iiasa.camaliot/com.iiasa.camaliot.MainActivity}" drawable="camaliot" />
+    
+    <!-- LineageOS Camera -->
+    <item component="ComponentInfo{org.lineageos.snap/com.android.camera.CameraLauncher}" drawable="camera" />
 
     <!-- Camera -->
     <item component="ComponentInfo{app.grapheneos.camera/app.grapheneos.camera.ui.activities.MainActivity}" drawable="opencamera" />
@@ -2151,7 +2161,6 @@
     <item component="ComponentInfo{com.android.camera2/com.android.camera.CameraActivity}" drawable="camera" />
     <item component="ComponentInfo{com.cyngn.cameranext/com.android.camera.CameraLauncher}" drawable="camera" />
     <item component="ComponentInfo{com.htc.camera2/com.htc.camera2.CameraEntry}" drawable="camera" />
-    <item component="ComponentInfo{org.lineageos.snap/com.android.camera.CameraLauncher}" drawable="camera" />
     <item component="ComponentInfo{com.sec.android.app.camera/com.sec.android.app.camera.Camera}" drawable="camera" />
     <item component="ComponentInfo{com.amazon.camera/com.amazon.camera.AmazonCameraActivity}" drawable="camera" />
     <item component="ComponentInfo{com.blackberry.camera/com.blackberry.camera.ui.coordination.MainActivity}" drawable="camera" />
@@ -7858,7 +7867,8 @@
 
     <!-- Mitch -->
     <item component="ComponentInfo{ua.gardenapple.itchupdater/ua.gardenapple.itchupdater.ui.MainActivity}" drawable="mitch" />
-
+	<item component="ComponentInfo{ua.gardenapple.itchupdater/garden.appl.mitch.ui.MainActivity}" drawable="mitch"/>
+    
     <!-- Mixcloud -->
     <item component="ComponentInfo{com.mixcloud.player/com.mixcloud.player.activity.RootActivity}" drawable="mixcloud" />
 
@@ -8161,10 +8171,12 @@
 	<!-- Obtainium -->
 	<item component="ComponentInfo{dev.imranr.obtainium/dev.imranr.obtainium.MainActivity}" drawable="obtainium"/>
 
+    <!-- LineageOS Music -->
+    <item component="ComponentInfo{org.lineageos.eleven/org.lineageos.eleven.ui.activities.HomeActivity}" drawable="lineage_music" />
+
     <!-- Music -->
     <item component="ComponentInfo{code.name.monkey.retromusic/code.name.monkey.retromusic.ui.activities.MainActivity}" drawable="music" />
     <item component="ComponentInfo{com.cyanogenmod.eleven/com.cyanogenmod.eleven.ui.activities.HomeActivity}" drawable="music" />
-    <item component="ComponentInfo{org.lineageos.eleven/org.lineageos.eleven.ui.activities.HomeActivity}" drawable="music" />
     <item component="ComponentInfo{com.android.mediacenter/com.android.mediacenter.PageActivity}" drawable="music" />
     <item component="ComponentInfo{com.sonyericsson.music/com.sonyericsson.music.MusicActivity}" drawable="music" />
     <item component="ComponentInfo{com.crdroid.music/com.kabouzeid.gramophone.ui.activities.MainActivity}" drawable="music" />
@@ -10675,9 +10687,11 @@
 
     <!-- Recon -->
     <item component="ComponentInfo{com.t101.android3.recon/com.t101.android3.recon.LoginActivity}" drawable="recon" />
+    
+    <!-- LineageOS Recorder -->
+    <item component="ComponentInfo{org.lineageos.recorder/org.lineageos.recorder.RecorderActivity}" drawable="lineage_recorder" />
 
     <!-- Recorder -->
-    <item component="ComponentInfo{org.lineageos.recorder/org.lineageos.recorder.RecorderActivity}" drawable="recorder" />
     <item component="ComponentInfo{com.android.soundrecorder/com.android.soundrecorder.RecordListActivity}" drawable="recorder" />
     <item component="ComponentInfo{org.calyxos.recorder/org.lineageos.recorder.RecorderActivity}" drawable="recorder" />
     <item component="ComponentInfo{com.google.android.apps.recorder/com.google.android.apps.recorder.ui.recordings.MainActivity}" drawable="recorder" />
