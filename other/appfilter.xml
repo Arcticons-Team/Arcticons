@@ -1301,6 +1301,9 @@
 
     <!-- Baby Phone -->
     <item component="ComponentInfo{com.serwylo.babyphone/com.serwylo.babyphone.MainActivity}" drawable="babyphone" />
+    
+    <!-- Commerzbank Banking -->
+    <item component="ComponentInfo{de.commerzbanking.mobil/com.neugelb.banking.features.startup.SplashActivity}" drawable="commerzbank_banking"/>
 
     <!-- Backdrops -->
     <item component="ComponentInfo{com.backdrops.wallpapers/com.backdrops.wallpapers.WelcomeActivity}" drawable="backdrops" />
@@ -1909,6 +1912,9 @@
     <item component="ComponentInfo{com.bk.pt/es.burgerking.android.presentation.walkthrough.WalkthroughIntroActivity}" drawable="burgerking" />
     <item component="ComponentInfo{de.burgerking.kingfinder/rbi.android.app.MainActivity}" drawable="burgerking" />
 
+    <!-- BusBahnBim -->
+    <item component="ComponentInfo{de.hafas.android.stv/de.hafas.main.HafasApp}" drawable="busbahnbim" />
+
     <!-- BusTO -->
     <item component="ComponentInfo{it.reyboz.bustorino/it.reyboz.bustorino.ActivityPrincipal}" drawable="busto" />
 
@@ -2053,6 +2059,9 @@
     <item component="ComponentInfo{com.inator.calculator/com.inator.calculator.activities.MainActivity}" drawable="calculator" />
     <item component="ComponentInfo{com.darkempire78.opencalculator/com.darkempire78.opencalculator.MainActivity}" drawable="calculator" />
     <item component="ComponentInfo{com.vivo.calculator/com.vivo.calculator.Calculator}" drawable="calculator" />
+       
+    <!-- Material Calculator -->
+    <item component="ComponentInfo{com.example.calculator/com.example.calculator.MainActivity}" drawable="material_calculator" />
 
     <!-- Calculator Basic & Scientific Calculations -->
     <item component="ComponentInfo{com.transsion.calculator/com.transsion.calculator.Calculator}" drawable="calculator_basic_scientific_calculations" />
@@ -2182,6 +2191,10 @@
     <item component="ComponentInfo{com.fgnm.baconcamera/com.fgnm.baconcamera.CameraActivity}" drawable="camera" />
     <item component="ComponentInfo{com.wingos.wingcamera/com.wingos.wingcamera.Camera}" drawable="camera" />
     <item component="ComponentInfo{com.tcl.camera/com.android.camera.CameraLauncher}" drawable="camera" />
+    
+    <!-- Nothing Camera -->    
+    <item component="ComponentInfo{com.nothing.camera/com.nothing.camera.activity.CameraActivity}" drawable="nothing_camera" />
+
 
     <!-- Camera Connect -->
     <item component="ComponentInfo{jp.co.canon.ic.cameraconnect/jp.co.canon.ic.cameraconnect.top.CCTopActivity}" drawable="cameraconnect" />
@@ -2359,7 +2372,7 @@
     <item component="ComponentInfo{com.keithburgungames.chessmix/com.unity3d.player.UnityPlayerActivity}" drawable="chessmix" />
 
     <!-- Chess PGN Master -->
-    <item component="com.kalab.pgnviewer.activity.GameListActivity" drawable="chesspgnmaster" />
+    <item component="ComponentInfo{com.kalab.pgnviewer/com.kalab.pgnviewer.activity.GameListActivity}" drawable="chess_pgn_master" />
 
     <!-- Chief Follow -->
     <item component="ComponentInfo{chiefchief.app/com.followersmanager.activities.publicpage.SplashActivity}" drawable="chieffollow" />
@@ -3350,6 +3363,9 @@
 
     <!-- DigiLux -->
     <item component="ComponentInfo{com.tunjid.fingergestures/com.tunjid.fingergestures.ui.main.MainActivity}" drawable="digilux" />
+
+    <!-- Digitales Amt -->
+    <item component="ComponentInfo{at.gv.io.app/at.gv.io.app.MainActivity}" drawable="digitalesamt" />
 
     <!-- Digital Signage -->
     <item component="ComponentInfo{com.nayatel.signage/com.nayatel.signage.view.SplashActivity}" drawable="digitalsignage" />
@@ -8558,8 +8574,10 @@
     <!-- NeoTerm -->
     <item component="ComponentInfo{io.neoterm/io.neoterm.ui.term.NeoTermActivity}" drawable="neoterm" />
 
-    <!-- Neo Backup / OAndBackupX -->
-    <item component="ComponentInfo{com.machiav3lli.backup/com.machiav3lli.backup.activities.SplashActivity}" drawable="oandbackupx" />
+    <!-- OAndBackupX -->
+    <item component="ComponentInfo{com.machiav3lli.backup/com.machiav3lli.backup.activities.IntroActivity}" drawable="oandbackupx" />
+
+    <!-- Neo Backup -->
     <item component="ComponentInfo{com.machiav3lli.backup/com.machiav3lli.backup.activities.SplashActivity}" drawable="neo_backup" />
 
     <!-- Neo Launcher / Omega Launcher -->
@@ -8647,7 +8665,7 @@
     <item component="ComponentInfo{com.EthanHeming.NeuralNetworkSimulator/com.EthanHeming.NeuralNetworkSimulator.MainActivity}" drawable="neuralnetworksimulator" />
 
     <!-- NeutriNote CE -->
-    <item component="ComponentInfo{com.appmindlab.nano/com.appmindlab.nano.IntroActivity}" drawable="neutrinotece" />
+    <item component="ComponentInfo{com.appmindlab.nano/com.appmindlab.nano.IntroActivity}" drawable="neutrinotes" />
 
     <!-- Neutron Player -->
     <item component="ComponentInfo{com.neutroncode.mp/com.neutroncode.mp.NeutronMPCore}" drawable="mediaplayer" />
@@ -8883,6 +8901,7 @@
 
     <!-- Notizen -->
     <item component="ComponentInfo{it.niedermann.owncloud.notes/it.niedermann.owncloud.notes.android.activity.SplashscreenActivity}" drawable="nextcloudnotes" />
+    <item component="ComponentInfo{it.niedermann.owncloud.notes/it.niedermann.owncloud.notes.main.MainActivity}" drawable="nextcloudnotes" />
 
     <!-- Noto -->
     <item component="ComponentInfo{com.noto/com.noto.app.AppActivity}" drawable="letter_uppercase_n" />
@@ -10051,6 +10070,7 @@
 
     <!-- Popcorn Time -->
     <item component="ComponentInfo{dp.ws.popcorntime/se.popcorn_time.mobile.ui.MainActivity}" drawable="popcorntime" />
+    <item component="ComponentInfo{pct.droid/butter.droid.activities.MainActivity}" drawable="popcorntime"/>
 
     <!-- Pop Time -->
     <item component="ComponentInfo{com.strawdogstudios.simonscatpoptime/dk.tactile.player.TactileActivityProxy}" drawable="pop_time" />
@@ -10639,6 +10659,9 @@
     <item component="ComponentInfo{com.coolncoolapps.easyvoicerecorder/com.coolncoolapps.secretsoundrecorderhd.activities.OneTouchRecordingActivity}" drawable="one_touch_recorder" />
     <item component="ComponentInfo{com.asus.soundrecorder/com.asus.soundrecorder.AsusRecorder}" drawable="recorder" />
     <item component="ComponentInfo{com.coloros.soundrecorder/oppo.multimedia.soundrecorder.filebrowser.BrowseFile}" drawable="recorder" />
+
+    <!-- Nothing Recorder -->    
+    <item component="ComponentInfo{com.nothing.soundrecorder/com.nothing.soundrecorder.view.MainActivity}" drawable="nothing_recorder" />
 
     <!-- Recurrence -->
     <item component="ComponentInfo{com.bleyl.recurrence/com.bleyl.recurrence.activities.MainActivity}" drawable="recurrence" />
@@ -11236,6 +11259,7 @@
     <!-- Secure Folder -->
     <item component="ComponentInfo{com.samsung.knox.securefolder/com.samsung.knox.securefolder.switcher.SecureFolderShortcutActivity}" drawable="securefolder" />
     <item component="ComponentInfo{com.samsung.knox.securefolder/com.samsung.knox.securefolder.presentation.switcher.SecureFolderShortcutActivity}" drawable="secure_folder" />
+    <item component="ComponentInfo{com.samsung.knox.securefolder/com.samsung.knox.securefolder.presentation.switcher.view.SecureFolderShortcutActivity}" drawable="secure_folder"/>
 
     <!-- Security -->
     <item component="ComponentInfo{com.miui.securitycenter/com.miui.securityscan.MainActivity}" drawable="security" />
@@ -12601,7 +12625,12 @@
     <item component="ComponentInfo{com.starfinanz.smob.android.sfinanzstatus/com.starfinanz.smob.android.sfinanzstatus.LauncherActivity}" drawable="sparkasse" />
 
     <!-- Sparkasse George -->
+    <item component="ComponentInfo{at.erstebank.george/at.beeone.george.SplashScreenActivity}" drawable="sparkasse_george" />
+    <item component="ComponentInfo{cz.csas.georgego/at.beeone.george.SplashScreenActivity}" drawable="sparkasse_george" />
+    <item component="ComponentInfo{hr.erstebank.george/at.beeone.george.SplashScreenActivity}" drawable="sparkasse_george" />
+    <item component="ComponentInfo{pegasus.project.ebh.mobile.android.bundle.mobilebank/at.beeone.george.SplashScreenActivity}" drawable="sparkasse_george" />
     <item component="ComponentInfo{ro.bcr.georgego/at.beeone.george.SplashScreenActivity}" drawable="sparkasse_george" />
+    <item component="ComponentInfo{sk.slsp.georgego/at.beeone.george.SplashScreenActivity}" drawable="sparkasse_george" />
 
     <!-- Spark -->
     <item component="ComponentInfo{com.readdle.spark/com.readdle.spark.ui.MainActivity}" drawable="spark" />
@@ -12744,6 +12773,7 @@
 
     <!-- Steam -->
     <item component="ComponentInfo{com.valvesoftware.android.steam.community/com.valvesoftware.android.steam.community.activity.MainActivity}" drawable="steam" />
+    <item component="ComponentInfo{com.valvesoftware.android.steam.community/com.valvesoftware.android.steam.community.MainActivity}" drawable="steam" />
 
     <!-- Steam Chat -->
     <item component="ComponentInfo{com.valvesoftware.android.steam.friendsui/com.valvesoftware.android.steam.friendsui.MainActivity}" drawable="steam_chat" />
@@ -15283,6 +15313,9 @@
 
     <!-- dataDex -->
     <item component="ComponentInfo{com.talzz.datadex/com.talzz.datadex.activities.main.MainActivity}" drawable="datadex" />
+
+    <!-- DCU -->
+    <item component="ComponentInfo{com.projectfinance.android.dcu/com.projectfinance.app.modules.general.StartupActivity}" drawable="dcu" />
 
     <!-- de Volkskrant -->
     <item component="ComponentInfo{be.persgroep.android.news.mobilevk/nl.persgroep.edition.activities.launcher.LauncherActivity}" drawable="de_volkskrant" />
