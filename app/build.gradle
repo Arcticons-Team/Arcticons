@@ -1,14 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 31
+    compileSdkVersion 32
 
     defaultConfig {
         applicationId "com.donnnno.arcticons"
         minSdkVersion rootProject.ext.MinSdk
         targetSdkVersion rootProject.ext.TargetSdk
         versionCode 98
-        versionName '4.6.3'
+        versionName '4.7.0'
         multiDexEnabled true
 
         // Naming app bundles
@@ -76,5 +76,4 @@ dependencies {
 
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'com.github.Donnnno:candybar-foss:3.14.2'
-
 }
