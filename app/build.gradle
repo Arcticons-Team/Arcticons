@@ -7,7 +7,7 @@ android {
         applicationId "com.donnnno.arcticons"
         minSdkVersion rootProject.ext.MinSdk
         targetSdkVersion rootProject.ext.TargetSdk
-        versionCode 98
+        versionCode 99
         versionName '4.7.0'
         multiDexEnabled true
 
@@ -75,5 +75,5 @@ android {
 dependencies {
 
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    implementation 'com.github.Donnnno:candybar-foss:3.14.2'
+    implementation 'com.github.Donnnno:candybar-foss:3.15.0'
 }
