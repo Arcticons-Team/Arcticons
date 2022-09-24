@@ -37,7 +37,7 @@ if not path.endswith('/'):
 # List of e-mail files
 filelist = glob.glob(path + '*.eml')
 # Initialization
-requestlimit = 5 #Limit of requests per person
+requestlimit = 500 #Limit of requests per person
 apps = {} #Dictionary of requested apps and according info
 addresses = {} #E-Mail addresses with number of requests
 appInfoQuery = re.compile(r'(?<!])(?! )(?P<Name>[\w\d\@\?\(\)\! +.\-:\-|&＆​,]+)\s\n?(?P<ComponentInfo>[\w\.\/\d]+)\s?\n?(https://play\.google\.com/store/apps/details\?id=|https://f-droid\.org/en/packages/)(?P<PackageName>[\w\.]+)(/|)', re.M)
@@ -48,7 +48,7 @@ TAG_RE = re.compile(r'<[^<]+?>')  # or maybe some other name, something more des
 
 # Filters to limit backlog
 currentDate = date.today()
-monthsLimit = 6
+monthsLimit = 60
 minRequests = 5
 
 # Remove people sending more than X requests
@@ -114,8 +114,8 @@ def parseMails():
 						continue
 				print('\n/// The following message could not be handled:\n',sender,emailBody,'\n')
 				with open('failedmail.txt', 'a', encoding='utf-8') as fileTwo:
-                                        fileTwo.write('\n----------------------------\n')
-                                        fileTwo.write(''.join(emailBody))
+										fileTwo.write('\n----------------------------\n')
+										fileTwo.write(''.join(emailBody))
 			else:
 				tempDict = appInfo.groupdict()
 				if tempDict['ComponentInfo'] in apps:
