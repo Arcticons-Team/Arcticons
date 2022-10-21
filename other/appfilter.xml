@@ -1,5 +1,20 @@
 <resources>
 
+	<!-- Body Measures -->
+	<item component="ComponentInfo{com.oncreatez.bodymeasures/com.oncreatez.bodymeasures.MainActivity}" drawable="body_measures"/>
+
+	<!-- fujiten -->
+	<item component="ComponentInfo{fr.odrevet.fujiten/fr.odrevet.fujiten.MainActivity}" drawable="fujiten"/>
+
+	<!-- Super Status Bar -->
+	<item component="ComponentInfo{com.tombayley.statusbar/com.tombayley.statusbar.app.ui.home.MainActivity}" drawable="super_status_bar"/>
+
+	<!-- P-SMS -->
+	<item component="ComponentInfo{org.cpartisans.psms/com.moez.QKSMS.feature.main.MainActivity}" drawable="psms"/>
+
+	<!-- Widgets -->
+	<item component="ComponentInfo{com.widgets.music/com.widgets.music.ui.permission.PermissionActivity}" drawable="widgets"/>
+
     <!-- $HELL -->
     <item component="ComponentInfo{in.ac.dducollegedu.shell/in.ac.dducollegedu.shell.MainActivity}" drawable="shell" />
 
@@ -992,12 +1007,6 @@
     <item component="ComponentInfo{com.donnnno.arcticons.light.debug/com.donnnno.arcticons.activities.MainActivity}" drawable="arcticonslight" />
     <item component="ComponentInfo{com.donnnno.arcticons.light.debug/com.donnnno.arcticons.activities.SplashActivity}" drawable="arcticonslight" />
 
-   	<!-- ARD Audiothek -->
-	<item component="ComponentInfo{de.ard.audiothek/de.ard.audiothek.MainActivity}" drawable="ard_mediathek"/>
-
-	<!-- ARD Mediathek -->
-	<item component="ComponentInfo{de.swr.avp.ard/de.ard.ardmediathek.ui.main.MainActivity}" drawable="ard_mediathek"/>
-
     <!-- ArduinoDroid -->
     <item component="ComponentInfo{name.antonsmirnov.android.arduinodroid2/name.antonsmirnov.android.arduinodroid.ui.OnboardingActivity}" drawable="arduinodroid" />
 
@@ -1804,9 +1813,6 @@
 
     <!-- Boost -->
     <item component="ComponentInfo{com.rubenmayayo.reddit/com.rubenmayayo.reddit.ui.submissions.subreddit.MainActivity}" drawable="boost" />
-
-   	<!-- Boostcamp -->
-	<item component="ComponentInfo{com.bpmhealth.boostcamp/com.bpmhealth.boostcamp.MainActivity}" drawable="boostcamp"/>
 
     <!-- Boot animations -->
     <item component="ComponentInfo{com.jrummy.apps.boot.animations/com.jrummyapps.bootanimations.activities.MainActivity}" drawable="nexus" />
@@ -3863,7 +3869,6 @@
     <item component="ComponentInfo{com.ultramegatech.ey/com.ultramegatech.ey.PeriodicTableActivity}" drawable="elementary" />
 
     <!-- Element -->
-    <item component="ComponentInfo{im.vector.app/im.vector.application.features.Alias}" drawable="element"/>
     <item component="ComponentInfo{im.vector.app/im.vector.riotx.features.Alias}" drawable="element" />
     <item component="ComponentInfo{im.vector.app/im.vector.app.features.Alias}" drawable="element" />
     <item component="ComponentInfo{im.vector.app/im.vector.app.features.MainActivity}" drawable="element" />
@@ -3997,17 +4002,8 @@
     <!-- Eversports -->
     <item component="ComponentInfo{at.eversport/com.eversports.android.eversports.activities.SplashActivity}" drawable="eversports" />
 
-   	<!-- Every Door -->
-	<item component="ComponentInfo{info.zverev.ilya.every_door/info.zverev.ilya.every_door.MainActivity}" drawable="every_door"/>
-
     <!-- Everyday Tasks -->
     <item component="ComponentInfo{de.jepfa.personaltasklogger/de.jepfa.personaltasklogger.MainActivity}" drawable="everyday_tasks" />
-
-   	<!-- Everywhere Launcher -->
-	<item component="ComponentInfo{com.appindustry.everywherelauncher/com.michaelflisar.everywherelauncher.ui.activitiesandfragments.MainActivity}" drawable="everywhere_launcher"/>
-
-	<!-- Everywhere Launcher - Unlocker -->
-	<item component="ComponentInfo{com.appindustry.everywherelauncher.unlocker/fr.marvinlabs.unlocker.activity.UnlockerActivity}" drawable="everywhere_launcher_unlocker"/>
 
     <!-- Evie -->
     <item component="ComponentInfo{is.shortcut/com.voxel.launcher3.Launcher}" drawable="evie" />
@@ -6612,9 +6608,6 @@
     <!-- Kitchen Stories -->
     <item component="ComponentInfo{com.ajnsnewmedia.kitchenstories/com.ajnsnewmedia.kitchenstories.ui.SplashActivity}" drawable="kitchen_stories" />
 
-   	<!-- KitchenOwl -->
-	<item component="ComponentInfo{com.tombursch.kitchenowl/com.tombursch.kitchenowl.MainActivity}" drawable="kitchenowl"/>
-
     <!-- Kivra -->
     <item component="ComponentInfo{com.kivra.Kivra/com.kivra.android.login.LoginActivity}" drawable="kivra" />
 
@@ -8126,9 +8119,6 @@
     <item component="ComponentInfo{com.flyersoft.moonreaderp/com.flyersoft.moonreaderp.ActivityMain}" drawable="moonreaderpro" />
     <item component="ComponentInfo{com.flyersoft.moonreader/com.flyersoft.moonreader.ActivityMain}" drawable="moonreaderpro" />
 
-	<!-- Moon Phase -->
-	<item component="ComponentInfo{simon.sander.moonphases/com.sajmons.moonphases.activities.MainActivity}" drawable="moon_phase"/>
-
     <!-- Moonlight -->
     <item component="ComponentInfo{com.limelight/com.limelight.PcView}" drawable="moonlight" />
 
@@ -9363,7 +9353,6 @@
     <!-- OpenTracks -->
     <item component="ComponentInfo{de.dennisguse.opentracks/de.dennisguse.opentracks.TrackListActivity}" drawable="opentracks" />
     <item component="ComponentInfo{de.dennisguse.opentracks.debug/de.dennisguse.opentracks.TrackListActivity}" drawable="opentracks" />
-    <item component="ComponentInfo{de.dennisguse.opentracks/de.dennisguse.opentracks.introduction.IntroductionActivity}" drawable="opentracks"/>
 
     <!-- OpenVPN -->
     <item component="ComponentInfo{de.blinkt.openvpn/de.blinkt.openvpn.activities.MainActivity}" drawable="openvpn" />
@@ -9388,9 +9377,6 @@
 
     <!-- Opensignal -->
     <item component="ComponentInfo{com.staircase3.opensignal/com.staircase3.opensignal.goldstar.loadingconfig.LoadConfigActivity}" drawable="opensignal" />
-
-   	<!-- OpenTracks -->
-	<item component="ComponentInfo{de.dennisguse.opentracks/de.dennisguse.opentracks.introduction.IntroductionActivity}" drawable="opentracks"/>
 
     <!-- Open Camera -->
     <item component="ComponentInfo{net.sourceforge.opencamera/net.sourceforge.opencamera.MainActivity}" drawable="opencamera" />
@@ -11309,7 +11295,6 @@
     <item component="ComponentInfo{com.bijoysingh.quicknote/com.maubis.scarlet.base.MainActivity}" drawable="scarletnotesfd" />
 
     <!-- SchildiChat -->
-    <item component="ComponentInfo{de.spiritcroc.riotx/im.vector.application.features.Alias}" drawable="schildichat"/>
     <item component="ComponentInfo{de.spiritcroc.riotx/im.vector.app.features.Alias}" drawable="schildichat" />
     <item component="ComponentInfo{de.spiritcroc.riotx.foss/im.vector.app.features.Alias}" drawable="schildichat" />
     <item component="ComponentInfo{de.spiritcroc.riotx.fcm/im.vector.app.features.Alias}" drawable="schildichat" />
@@ -15024,9 +15009,6 @@
 
     <!-- Word of the Day -->
     <item component="ComponentInfo{com.saverio.wordoftheday_en/com.saverio.wordoftheday_en.SplashScreen}" drawable="wordoftheday" />
-
-   	<!-- WorkIt -->
-	<item component="ComponentInfo{com.jimber.workit/com.jimber.workit.SplashActivity}" drawable="workit"/>
 
     <!-- WorkTimer -->
     <item component="ComponentInfo{com.mcsnowflake.worktimer/com.mcsnowflake.worktimer.MainActivity}" drawable="worktimer" />
