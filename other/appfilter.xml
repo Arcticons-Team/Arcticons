@@ -1,4 +1,9 @@
 <resources>
+    <!-- IU Mobile -->
+    <item component="ComponentInfo{iu.android/iu.android.MainActivity}" drawable="iu_mobile" />
+
+    <!-- Atomic -->
+    <item component="ComponentInfo{com.jlindemann.science/com.jlindemann.science.activites.SplashActivity}" drawable="atomic_science" />
 
     <!-- $HELL -->
     <item component="ComponentInfo{in.ac.dducollegedu.shell/in.ac.dducollegedu.shell.MainActivity}" drawable="shell" />
@@ -22,7 +27,7 @@
     <!-- 1010! Klooni -->
     <item component="ComponentInfo{io.github.lonamiwebs.klooni/io.github.lonamiwebs.klooni.AndroidLauncher}" drawable="tentenklooni" />
     <item component="ComponentInfo{dev.lonami.klooni/dev.lonami.klooni.AndroidLauncher}" drawable="tentenklooni" />
-    
+
     <!-- BBC iPlayer -->
     <item component="ComponentInfo{bbc.iplayer.android/uk.co.bbc.iplayer.startup.StartupActivity}" drawable="bbc_iplayer" />
 
@@ -37,7 +42,7 @@
 
     <!-- Alight Motion -->
     <item component="ComponentInfo{com.alightcreative.motion/com.alightcreative.app.motion.activities.main.MainActivity}" drawable="alight_motion" />
-        
+
     <!-- Doc Scanner -->
     <item component="ComponentInfo{com.cv.docscanner/com.cv.docscanner.Splash.SplashActivity}" drawable="doc_scanner" />
 
@@ -155,7 +160,8 @@
     <item component="ComponentInfo{org.joa.zipperplus7/org.test.flashtest.StartPageActivity}" drawable="a7zipper" />
 
     <!-- 8vim -->
-    <item component="ComponentInfo{inc.flide.vi8/inc.flide.vi8.ui.SettingsActivity}" drawable="a8vim" />
+    <item component="ComponentInfo{inc.flide.vi8/inc.flide.vi8.ui.SettingsActivity}" drawable="_8vim" />
+    <item component="ComponentInfo{inc.flide.vi8/inc.flide.vim8.ui.SettingsActivity}" drawable="_8vim"/>
 
     <!-- 8 Ball Pool -->
     <item component="ComponentInfo{com.miniclip.eightballpool/com.miniclip.eightballpool.EightBallPoolActivity}" drawable="a8ballpool" />
@@ -9514,6 +9520,9 @@
     <!-- Oura -->
     <item component="ComponentInfo{com.ouraring.oura/com.ouraring.oura.LauncherActivity}" drawable="oura" />
 
+    <!-- Outbank -->
+    <item component="ComponentInfo{com.stoegerit.outbank.android/com.stoegerit.outbank.android.ui.SplashScreenActivity}" drawable="outbank" />
+
     <!-- OutDoor Toolbox -->
     <item component="ComponentInfo{com.example.pri.toolbox/com.example.pri.toolbox.MainActivity}" drawable="outdoortoolbox" />
 
@@ -10210,7 +10219,7 @@
     <!-- PostNL -->
     <item component="ComponentInfo{nl.tpp.mobile.android/nl.postnl.app.activity.SplashActivity}" drawable="postnl" />
     <item component="ComponentInfo{nl.tpp.mobile.android/nl.postnl.app.splash.SplashActivity}" drawable="postnl"/>
-    
+
     <!-- PostNord -->
     <item component="ComponentInfo{se.postnord.private/com.postnord.MaCMainActivity}" drawable="postnord" />
 
@@ -11370,8 +11379,8 @@
 
     <!-- Secure Folder -->
     <item component="ComponentInfo{com.samsung.knox.securefolder/com.samsung.knox.securefolder.switcher.SecureFolderShortcutActivity}" drawable="securefolder" />
-    <item component="ComponentInfo{com.samsung.knox.securefolder/com.samsung.knox.securefolder.presentation.switcher.SecureFolderShortcutActivity}" drawable="secure_folder" />
-    <item component="ComponentInfo{com.samsung.knox.securefolder/com.samsung.knox.securefolder.presentation.switcher.view.SecureFolderShortcutActivity}" drawable="secure_folder" />
+    <item component="ComponentInfo{com.samsung.knox.securefolder/com.samsung.knox.securefolder.presentation.switcher.SecureFolderShortcutActivity}" drawable="securefolder" />
+    <item component="ComponentInfo{com.samsung.knox.securefolder/com.samsung.knox.securefolder.presentation.switcher.view.SecureFolderShortcutActivity}" drawable="securefolder" />
 
     <!-- Security -->
     <item component="ComponentInfo{com.miui.securitycenter/com.miui.securityscan.MainActivity}" drawable="security" />
@@ -12533,6 +12542,9 @@
 
     <!-- Smart Control -->
     <item component="ComponentInfo{com.sennheiser.control/com.tns.NativeScriptActivity}" drawable="smartcontrol" />
+	
+    <!-- Smart Edge -->
+    <item component="ComponentInfo{com.abh80.smartedge/com.abh80.smartedge.activities.MainActivity}" drawable="smart_edge"/>
 
     <!-- Smart EggTimer -->
     <item component="ComponentInfo{org.woheller69.eggtimer/org.woheller69.eggtimer.MainActivity}" drawable="smarteggtimer" />
@@ -14359,6 +14371,7 @@
 
     <!-- VR Banking Classic -->
     <item component="ComponentInfo{de.fiducia.smartphone.android.banking.vr/de.fiducia.smartphone.android.banking.vr.launcher_c99b8623bf88d047ce6c7714002e8da0bfba680414df6903ecfa544d74367ec5}" drawable="vrbankingclassic" />
+    <item component="ComponentInfo{de.fiduciagad.banking.vr/de.fiduciagad.banking.screens.navigation.NavigationActivity}" drawable="vrbankingclassic" />
 
     <!-- VR Matkalla -->
     <item component="ComponentInfo{fi.vr.mobile.app/fi.vr.app.MainActivity}" drawable="vr_matkalla" />
@@ -14599,6 +14612,9 @@
     <item component="ComponentInfo{com.Frontesque.youtube/com.Frontesque.vuetube.MainActivity}" drawable="vuetube" />
     <item component="ComponentInfo{com.Frontesque.vuetube/com.Frontesque.vuetube.MainActivity}" drawable="vuetube" />
 
+	<!-- Volumio -->
+	<item component="ComponentInfo{volumio.browser.Volumio/com.volumio.SplashActivity}" drawable="volumio" />
+
     <!-- Västtrafik -->
     <item component="ComponentInfo{com.vaesttrafik.vaesttrafik/se.vasttrafik.togo.core.MainActivity}" drawable="vsttrafik" />
 
@@ -14661,6 +14677,9 @@
 
     <!-- Wallet -->
     <item component="ComponentInfo{org.toshi/com.toshi.application.MainActivity}" drawable="wallet" />
+	
+    <!-- Wallme-Wallpaper -->
+    <item component="ComponentInfo{com.alaory.wallmewallpaper/com.alaory.wallmewallpaper.MainActivity}" drawable="wallmewallpaper"/>
 
     <!-- Wallpapers -->
     <item component="ComponentInfo{com.google.android.apps.wallpaper/com.google.android.apps.wallpaper.picker.CategoryPickerActivity}" drawable="wallpapers" />
