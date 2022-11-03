@@ -1,4 +1,11 @@
 <resources>
+	
+    <!-- MJ PDF Reader -->
+    <item component="ComponentInfo{com.gitlab.mudlej.MjPdfReader/com.gitlab.mudlej.MjPdfReader.LauncherAlias}" drawable="mj_pdf_reader" />
+
+    <!-- Location Share -->
+    <item component="ComponentInfo{ca.cmetcalfe.locationshare/ca.cmetcalfe.locationshare.MainActivity}" drawable="location_share" />
+
     <!-- AAAAXY -->
     <item component="ComponentInfo{io.github.divverent.aaaaxy/io.github.divverent.aaaaxy.MainActivity}" drawable="aaaaxy"/>
 
@@ -71,6 +78,15 @@
 	<!-- Widgets -->
 	<item component="ComponentInfo{com.widgets.music/com.widgets.music.ui.permission.PermissionActivity}" drawable="widgets"/>
 
+    <!-- Notification notes -->
+    <item component="ComponentInfo{no.berge.notificationnotes/com.example.notification_notes.MainActivity}" drawable="notification_notes" />
+
+    <!-- AVR-Remote -->
+    <item component="ComponentInfo{de.pskiwi.avrremote/de.pskiwi.avrremote.AVRRemote}" drawable="circle" />
+	
+    <!-- Print -->
+    <item component="ComponentInfo{org.billthefarmer.print/org.billthefarmer.print.Print}" drawable="print" />
+    
     <!-- $HELL -->
     <item component="ComponentInfo{in.ac.dducollegedu.shell/in.ac.dducollegedu.shell.MainActivity}" drawable="shell" />
 
@@ -7086,6 +7102,7 @@
 
     <!-- Lichess -->
     <item component="ComponentInfo{org.lichess.mobileapp/org.lichess.mobileapp.MainActivity}" drawable="lichess" />
+    <item component="ComponentInfo{org.lichess.mobileapp.free/org.lichess.mobileapp.MainActivity}" drawable="lichess"/>
 
     <!-- Lidl Plus -->
     <item component="ComponentInfo{com.lidl.eci.lidlplus/es.lidlplus.i18n.splash.presentation.view.SplashActivity}" drawable="lidl_plus" />
