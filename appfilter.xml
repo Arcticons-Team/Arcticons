@@ -22,6 +22,36 @@
     <!-- 1010! Klooni -->
     <item component="ComponentInfo{io.github.lonamiwebs.klooni/io.github.lonamiwebs.klooni.AndroidLauncher}" drawable="tentenklooni" />
     <item component="ComponentInfo{dev.lonami.klooni/dev.lonami.klooni.AndroidLauncher}" drawable="tentenklooni" />
+    
+    <!-- BBC iPlayer -->
+    <item component="ComponentInfo{bbc.iplayer.android/uk.co.bbc.iplayer.startup.StartupActivity}" drawable="bbc_iplayer" />
+
+	<!-- Google Jamboard -->
+	<item component="ComponentInfo{com.google.android.apps.jam/com.google.android.apps.jam.jelly.home.HomeActivity}" drawable="google_jamboard" />
+
+    <!-- BAND -->
+    <item component="ComponentInfo{com.nhn.android.band/com.nhn.android.band.SplashActivity}" drawable="band" />
+
+    <!-- NAB -->
+    <item component="ComponentInfo{au.com.nab.mobile/au.com.nab.mobile.activity.LauncherActivity}" drawable="nab" />
+
+    <!-- Alight Motion -->
+    <item component="ComponentInfo{com.alightcreative.motion/com.alightcreative.app.motion.activities.main.MainActivity}" drawable="alight_motion" />
+        
+    <!-- Doc Scanner -->
+    <item component="ComponentInfo{com.cv.docscanner/com.cv.docscanner.Splash.SplashActivity}" drawable="doc_scanner" />
+
+    <!-- Activity Manager -->
+    <item component="ComponentInfo{com.activitymanager/com.sdex.activityrunner.MainActivity}" drawable="activity_manager" />
+
+    <!-- Depth Lab -->
+    <item component="ComponentInfo{com.google.ar.unity.arcore_depth_lab/com.unity3d.player.UnityPlayerActivity}" drawable="depth_lab" />
+
+    <!-- AirGuard -->
+    <item component="ComponentInfo{de.seemoo.at_tracking_detection.release/de.seemoo.at_tracking_detection.ui.MainActivity}" drawable="airguard" />
+
+    <!-- Reuters -->
+    <item component="ComponentInfo{com.thomsonreuters.reuters/com.thomsonreuters.reuters.ui.splash.SplashActivity}" drawable="reuters" />
 
     <!-- 17TRACK -->
     <item component="ComponentInfo{yqtrack.app/yqtrack.app.ui.splash.SplashActivity}" drawable="a17track" />
@@ -34,6 +64,7 @@
 
     <!-- 1DM+ -->
     <item component="ComponentInfo{idm.internet.download.manager.plus/idm.internet.download.manager.MainActivity}" drawable="a1dm" />
+    <item component="ComponentInfo{idm.internet.download.manager/idm.internet.download.manager.MainActivity}" drawable="a1dm" />
 
     <!-- 1List -->
     <item component="ComponentInfo{com.lolo.io.onelist/com.lolo.io.onelist.MainActivity}" drawable="onelist" />
@@ -217,6 +248,22 @@
 
     <!-- ALDI Nord -->
     <item component="ComponentInfo{de.aldiNord.android/de.aldiNord.android.activities.MainActivity}" drawable="aldi_nord" />
+	<item component="ComponentInfo{de.aldiNord.android/de.aldiNord.android.main.MainActivity}" drawable="aldi_nord"/>
+
+    <!-- ALDI Mobile -->
+	<item component="ComponentInfo{ch.aldi.selfcare/ch.aldi.selfcare.MainActivity}" drawable="aldi_mobile"/>
+
+	<!-- ALDI Shop & Go -->
+	<item component="ComponentInfo{de.aldinord.bco/de.aldinord.bco.ui.launcher.LauncherActivity}" drawable="aldi_shop_go"/>
+
+	<!-- Aldi Shop and Go -->
+	<item component="ComponentInfo{com.aldisued.shopgo/com.aldisued.shopgo.MainActivity}" drawable="aldi_shop_and_go"/>
+
+	<!-- ALDI SÜD -->
+	<item component="ComponentInfo{de.apptiv.business.android.aldi_de/de.apptiv.business.android.aldi_at_ahead.presentation.screens.splash.SplashActivity}" drawable="aldi_sd"/>
+
+	<!-- ALDIgo -->
+	<item component="ComponentInfo{com.aldisued.aldigo.android/com.staffbase.capacitor.MainActivity}" drawable="aldigo"/>
 
     <!-- ALDI TALK -->
     <item component="ComponentInfo{de.eplus.mappecc.client.android.alditalk/de.eplus.mappecc.client.android.feature.splashscreen.SplashActivity}" drawable="alditalk" />
@@ -266,9 +313,6 @@
 
     <!-- AP News -->
     <item component="ComponentInfo{mnn.Android/mnn.Android.ui.splash.SplashActivity}" drawable="ap_news" />
-
-    <!-- ARD-Mediathek -->
-    <item component="ComponentInfo{de.swr.avp.ard/de.ard.ardmediathek.ui.main.MainActivity}" drawable="ardmediathek" />
 
     <!-- ARTE -->
     <item component="ComponentInfo{tv.arte.plus7/tv.arte.plus7.mobile.presentation.home.HomeActivityPortraitMobile}" drawable="arte" />
@@ -3479,6 +3523,7 @@
     <!-- Dolby -->
     <item component="ComponentInfo{com.dolby.daxappUI/com.dolby.daxappUI.MainActivity}" drawable="dolby" />
     <item component="ComponentInfo{com.dolby.dolby234/com.dolby.sessions.Launcher}" drawable="dolby" />
+    <item component="ComponentInfo{com.dolby.dax2appUI/com.motorola.dlbafx.MotoMainActivity}" drawable="dolby" />
 
     <!-- Dolphin Emulator -->
     <item component="ComponentInfo{org.dolphinemu.dolphinemu/org.dolphinemu.dolphinemu.ui.main.MainActivity}" drawable="dolphinemulator" />
@@ -4270,6 +4315,7 @@
     <item component="ComponentInfo{com.alphainventor.filemanager/com.alphainventor.filemanager.activity.MainActivity}" drawable="files" />
     <item component="ComponentInfo{com.oneplus.filemanager/com.oplus.filemanager.main.ui.MainActivity}" drawable="files" />
     <item component="ComponentInfo{net.micode.fileexplorer/net.micode.fileexplorer.FileExplorerTabActivity}" drawable="files" />
+    <item component="ComponentInfo{com.coloros.filemanager/com.coloros.filemanager.ad.SplashActivity}" drawable="files" />
 
     <!-- File Commander -->
     <item component="ComponentInfo{com.mobisystems.fileman/com.mobisystems.files.FileBrowser}" drawable="file_commander" />
@@ -4558,6 +4604,7 @@
     <!-- Fork Client -->
     <item component="ComponentInfo{org.forkclient.messenger.beta/org.telegram.ui.LaunchActivity}" drawable="forkclient" />
     <item component="ComponentInfo{org.forkgram.messenger/org.telegram.ui.LaunchActivity}" drawable="forkclient" />
+    <item component="ComponentInfo{org.forkgram.messenger/org.telegram.messenger.DefaultIcon}" drawable="forkclient" />
 
     <!-- Formula 1 -->
     <item component="ComponentInfo{com.softpauer.f1timingapp2014.basic/com.formula1.base.MainActivity}" drawable="formula_1" />
@@ -4746,6 +4793,7 @@
 
     <!-- GBWhatsApp -->
     <item component="ComponentInfo{com.gbwhatsapp/com.gbwhatsapp.11}" drawable="whatsapp" />
+    <item component="ComponentInfo{com.gbwhatsapp/com.gbwhatsapp.0}" drawable="whatsapp" />
 
     <!-- GCash -->
     <item component="ComponentInfo{com.globe.gcash.android/com.globe.gcash.android.Default}" drawable="gcash" />
@@ -5171,6 +5219,7 @@
 
     <!-- Google Meet -->
     <item component="ComponentInfo{com.google.android.apps.meetings/com.google.android.apps.meetings.splash.SplashActivity}" drawable="google_meet" />
+    <item component="ComponentInfo{com.google.android.apps.tachyon/com.google.android.apps.tachyon.MainActivitySecondLauncher}" drawable="google_meet" />
 
     <!-- Google My Business -->
     <item component="ComponentInfo{com.google.android.apps.vega/com.google.android.apps.vega.VegaMainActivity}" drawable="google_my_business" />
@@ -6919,6 +6968,7 @@
     <!-- LibreTube -->
     <item component="ComponentInfo{com.github.libretube/com.github.libretube.MainActivity}" drawable="libretube" />
     <item component="ComponentInfo{com.github.libretube/com.github.libretube.activities.MainActivity}" drawable="libretube" />
+    <item component="ComponentInfo{com.github.libretube/com.github.libretube.ui.activities.MainActivity}" drawable="libretube"/>
 
     <!-- Libreflix -->
     <item component="ComponentInfo{org.libreflix.app/org.libreflix.app.MainActivity}" drawable="libreflix" />
@@ -7073,6 +7123,7 @@
 
     <!-- Linux Command Library -->
     <item component="ComponentInfo{com.inspiredandroid.linuxcommandbibliotheca/com.inspiredandroid.linuxcommandbibliotheca.NavigationActivity}" drawable="linuxcommandlibrary" />
+    <item component="ComponentInfo{com.inspiredandroid.linuxcommandbibliotheca/com.inspiredandroid.linuxcommandbibliotheca.MainActivity}" drawable="linuxcommandlibrary" />
 
     <!-- Linux Deploy -->
     <item component="ComponentInfo{ru.meefik.linuxdeploy/ru.meefik.linuxdeploy.Launcher}" drawable="linux_deploy" />
@@ -7231,7 +7282,7 @@
     <item component="ComponentInfo{se.lf.mobile.android/se.lf.mobile.android.module.outside.ProxyActivity}" drawable="lnsfrskringar" />
 
     <!-- M.A.L.P. -->
-    <item component="ComponentInfo{org.gateshipone.malp/org.gateshipone.malp.application.activities.MainActivity}" drawable="malp" />
+    <item component="ComponentInfo{org.gateshipone.malp/org.gateshipone.malp.application.activities.SplashActivity}" drawable="malp" />
 
     <!-- MALClient -->
     <item component="ComponentInfo{com.drutol.malclient/crc64538156a8cca88d64.MainActivity}" drawable="malclient" />
@@ -7482,6 +7533,9 @@
     <!-- McDonald's -->
     <item component="ComponentInfo{com.mcdonalds.app/com.mcdonalds.mcdcoreapp.common.activity.SplashActivity}" drawable="mcdonalds" />
     <item component="ComponentInfo{com.mcdonalds.mobileapp/mcdonalds.core.SplashActivity}" drawable="mcdonalds" />
+
+    <!-- Meine AOK -->
+	<item component="ComponentInfo{de.aoksystems.amg/de.aoksystems.amg.splash.SplashActivity}" drawable="meine_aok"/>
 
     <!-- MeWe -->
     <item component="ComponentInfo{com.mewe/com.mewe.ui.activity.SplashActivity}" drawable="mewe" />
@@ -12355,6 +12409,7 @@
     <item component="ComponentInfo{com.android.stk/com.android.stk.OppoStkLauncherActivity1}" drawable="sim_1_apps" />
     <item component="ComponentInfo{com.android.stk/com.android.stk.StkLauncherListActivity}" drawable="sim" />
     <item component="ComponentInfo{com.android.stk/com.android.stk.StkLauncherActivity_DualSim}" drawable="sim" />
+    <item component="ComponentInfo{com.android.stk/com.android.stk.StkLauncherActivityI}" drawable="sim" />
 
     <!-- Sipnetic -->
     <item component="ComponentInfo{com.sipnetic.app/app.sipcomm.phone.OnboardingActivity}" drawable="sipnetic" />
@@ -12953,6 +13008,9 @@
 
     <!-- Subtracks -->
     <item component="ComponentInfo{com.subtracks/com.subtracks.MainActivity}" drawable="subtracks" />
+
+   	<!-- substreamer -->
+	<item component="ComponentInfo{com.ghenry22.substream2/com.ghenry22.substream2.MainActivity}" drawable="substreamer"/>
 
     <!-- Subway Surf -->
     <item component="ComponentInfo{com.kiloo.subwaysurf/com.sybogames.chili.multidex.ChiliMultidexSupportActivity}" drawable="subwaysurf" />
