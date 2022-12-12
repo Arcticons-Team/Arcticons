@@ -71,6 +71,9 @@
     <!-- 17TRACK -->
     <item component="ComponentInfo{yqtrack.app/yqtrack.app.ui.splash.SplashActivity}" drawable="a17track" />
 
+    <!-- 1822direkt Banking -->
+    <item component="ComponentInfo{de.direkt1822.banking/de.direkt1822.banking.MainActivity}" drawable="_1822_direkt" />
+
     <!-- 1822TAN+ -->
     <item component="ComponentInfo{de.direkt1822.tanplus/de.direkt1822.tanplus.MainActivity}" drawable="a1822tan" />
 
@@ -4173,6 +4176,9 @@
     <!-- Emerald Launcher -->
     <item component="ComponentInfo{ru.henridellal.emerald/ru.henridellal.emerald.Apps}" drawable="emerald" />
 
+    <!-- EmiliosDict -->
+    <item component="ComponentInfo{de.studiorutton.gerengdict/de.studiorutton.gerencdict.LearningWordsActivity}" drawable="emiliosdict" />
+
     <!-- Emit -->
     <item component="ComponentInfo{tv.wpn.biokoda.android.emit/tv.wpn.biokoda.android.emitcommon.ConnectionActivity}" drawable="emit" />
 
@@ -4307,6 +4313,11 @@
     <!-- Expense Manager -->
     <item component="ComponentInfo{at.markushi.expensemanager/at.markushi.expensemanager.activities.HomeActivity}" drawable="markushiexpensemanager" />
 
+    <!-- Expense Register -->
+    <item component="ComponentInfo{pl.tierra.expenseregister/pl.tierra.expenseregister.ExpenseRegisterActivity}" drawable="expense_register" />
+    <item component="ComponentInfo{pl.tierra.expenseregister/pl.tierra.expenseregister.ExpenseEditorActivity}" drawable="expense_register" />
+    <item component="ComponentInfo{pl.tierra.expenseregister/pl.tierra.expenseregister.SummaryActivity}" drawable="expense_register" />
+    
     <!-- Explorer -->
     <item component="ComponentInfo{com.speedsoftware.explorer/com.speedsoftware.explorer.Explorer}" drawable="files" />
 
@@ -5176,6 +5187,9 @@
 
     <!-- GPS Status -->
     <item component="ComponentInfo{com.eclipsim.gpsstatus2/com.eclipsim.gpsstatus2.GPSStatus}" drawable="gpsstatus" />
+
+    <!-- GPS Test Plus -->
+    <item component="ComponentInfo{com.chartcross.gpstestplus/com.chartcross.gpstestplus.MainActivity}" drawable="gps_test_plus" />
 
     <!-- GPW -->
     <item component="ComponentInfo{pl.moveapp.gpw/pl.moveapp.agpw.feature.splash.SplashActivity}" drawable="gpw" />
@@ -6964,7 +6978,8 @@
     <item component="ComponentInfo{com.myklarnamobile/com.klarna.SplashActivity}" drawable="klarna" />
 
     <!-- Kleine Wettervorschau Deutschland -->
-    <item component="ComponentInfo{de.kaffeemitkoffein.tinyweatherforecastgermany/de.kaffeemitkoffein.tinyweatherforecastgermany.WelcomeActivity}" drawable="circle" />
+    <item component="ComponentInfo{de.kaffeemitkoffein.tinyweatherforecastgermany/de.kaffeemitkoffein.tinyweatherforecastgermany.WelcomeActivity}" drawable="kleine_wettervorschau_deutschland" />
+    <item component="ComponentInfo{de.kaffeemitkoffein.tinyweatherforecastgermany/de.kaffeemitkoffein.tinyweatherforecastgermany.MainActivity}" drawable="kleine_wettervorschau_deutschland" />
 
     <!-- Klock -->
     <item component="ComponentInfo{com.koshai_limited.klock/com.koshai_limited.klock.SplashScreen}" drawable="klock" />
@@ -8480,6 +8495,11 @@
     <!-- Moovit -->
     <item component="ComponentInfo{com.tranzmate/com.moovit.app.home.HomeActivity}" drawable="moovit" />
 
+    <!-- Mopria Print Service -->
+    <item component="ComponentInfo{org.mopria.printplugin/org.mopria.printplugin.SplashScreenActivity}" drawable="mopria_print_service" />
+    <item component="ComponentInfo{org.mopria.printplugin/org.mopria.printplugin.ShareToPrintActivity}" drawable="mopria_print_service" />
+    <item component="ComponentInfo{org.mopria.printplugin/org.mopria.printplugin.AddPrivateCloudServiceActivity}" drawable="mopria_print_service" />
+    
     <!-- MorseTrainer -->
     <item component="ComponentInfo{es.eoinrul.ecwt/es.eoinrul.ecwt.MainActivity}" drawable="morsetrainer" />
 
@@ -10146,6 +10166,12 @@
     <!-- Passman -->
     <item component="ComponentInfo{es.wolfi.app.passman/es.wolfi.app.passman.activities.PasswordListActivity}" drawable="passman" />
 
+    <!-- PasswdSafe -->
+    <item component="ComponentInfo{com.jefftharris.passwdsafe/com.jefftharris.passwdsafe.FileListActivity}" drawable="passwdsafe" />
+    <item component="ComponentInfo{com.jefftharris.passwdsafe/com.jefftharris.passwdsafe.LauncherFileShortcuts}" drawable="passwdsafe" />
+    <item component="ComponentInfo{com.jefftharris.passwdsafe/com.jefftharris.passwdsafe.LauncherRecordShortcuts}" drawable="passwdsafe" />
+    <item component="ComponentInfo{com.jefftharris.passwdsafe/com.jefftharris.passwdsafe.PasswdSafe}" drawable="passwdsafe" />
+
     <!-- Password Generator -->
     <item component="ComponentInfo{com.vecturagames.android.app.passwordgenerator/com.vecturagames.android.app.passwordgenerator.activity.MainActivity}" drawable="passwordgenerator" />
 
@@ -11808,6 +11834,9 @@
     <item component="ComponentInfo{com.samsung.knox.securefolder/com.samsung.knox.securefolder.presentation.switcher.SecureFolderShortcutActivity}" drawable="secure_folder" />
     <item component="ComponentInfo{com.samsung.knox.securefolder/com.samsung.knox.securefolder.presentation.switcher.view.SecureFolderShortcutActivity}" drawable="secure_folder" />
 
+    <!-- SecureGo+ Renault Bank direkt -->
+    <item component="ComponentInfo{de.renaultbankdirekt.securego/de.fiduciagad.securego.MainActivity}" drawable="securego_renault_bank_direkt" />
+
     <!-- Security -->
     <item component="ComponentInfo{com.miui.securitycenter/com.miui.securityscan.MainActivity}" drawable="security" />
 
@@ -13268,7 +13297,7 @@
     <item component="ComponentInfo{com.spren.android/com.spren.android.Activities.Common.SplashscreenActivity}" drawable="spren" />
 
     <!-- Spritpreise -->
-    <item component="ComponentInfo{com.ptvag.android.adacgasprices/com.ptvag.android.adacmap.activity.MainActivity}" drawable="spritpreise" />
+    <item component="ComponentInfo{com.ptvag.android.adacgasprices/de.adac.mobile.navigation.ui.onboarding.StartActivity}" drawable="spritpreise" />
 
     <!-- Sprouted Pixel Dungeon -->
     <item component="ComponentInfo{com.github.dachhack.sprout/com.github.dachhack.sprout.ShatteredPixelDungeon}" drawable="sproutedpixeldungeon" />
@@ -14389,6 +14418,9 @@
     <!-- Triodos Bank -->
     <item component="ComponentInfo{com.triodos.bankingnl/com.triodos.mobile.android.ui.InitActivity}" drawable="triodos_bank" />
 
+    <!-- Trips -->
+    <item component="ComponentInfo{de.adac.tourset/de.adac.mobile.travelsuite.ui.splash.StartUpActivity}" drawable="trips" />
+
     <!-- Tripvia Tours -->
     <item component="ComponentInfo{com.mytoursapp.android.app1228/com.mytours.MainActivity}" drawable="tripviatours" />
 
@@ -14910,6 +14942,9 @@
 
     <!-- Verkaufswert Rechner -->
     <item component="ComponentInfo{de.koloch.evaluator.free.app/de.koloch.evaluator.free.MainActivity}" drawable="symboldollar" />
+
+    <!-- Verkehr.NRW -->
+    <item component="ComponentInfo{de.momatec.vipnrw/de.strassennrw.vipnrw.verkehr_nrw.MainActivity}" drawable="verkehr_nrw" />
 
     <!-- Vernet -->
     <item component="ComponentInfo{org.fsociety.vernet/org.fsociety.vernet.MainActivity}" drawable="vernet" />
