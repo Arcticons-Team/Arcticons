@@ -2703,6 +2703,9 @@
     <item component="ComponentInfo{org.chromium.chrome/com.google.android.apps.chrome.Main}" drawable="google_chrome" />
     <item component="ComponentInfo{org.bromite.chromium/com.google.android.apps.chrome.Main}" drawable="google_chrome" />
 
+	<!-- Vanadium -->
+	<item component="ComponentInfo{app.vanadium.browser/com.google.android.apps.chrome.Main}" drawable="google_chrome"/>
+
     <!-- Chronicle Audiobook Player -->
     <item component="ComponentInfo{io.github.mattpvaughn.chronicle/io.github.mattpvaughn.chronicle.application.MainActivity}" drawable="chronicle_audiobook_player" />
 
@@ -4612,6 +4615,9 @@
     <!-- Filen -->
     <item component="ComponentInfo{io.filen.app/io.filen.app.MainActivity}" drawable="filen" />
 
+	<!-- APK Explorer & Editor -->
+	<item component="ComponentInfo{com.apk.editor/com.apk.editor.activities.StartActivity}" drawable="apk_explorer_editor"/>
+
     <!-- Files -->
     <item component="ComponentInfo{com.cyanogenmod.filemanager/com.cyanogenmod.filemanager.activities.NavigationActivity}" drawable="files" />
     <item component="ComponentInfo{com.jrdcom.filemanager.bb/com.jrdcom.filemanager.activity.FileBrowserActivity}" drawable="files" />
@@ -4722,6 +4728,9 @@
 
     <!-- Firewall -->
     <item component="ComponentInfo{org.calyxos.datura/org.calyxos.datura.MainActivity}" drawable="firewall" />
+
+	<!-- OpenKeychain -->
+	<item component="ComponentInfo{org.sufficientlysecure.keychain/org.sufficientlysecure.keychain.ui.MainActivity}" drawable="passwordgenerator"/>
 
     <!-- Fire Strike Retro -->
     <item component="ComponentInfo{com.eightsines.firestrike.opensource/zame.game.feature.launcher.LauncherActivity}" drawable="firestrikeretro" />
@@ -5936,6 +5945,9 @@
 
     <!-- Hermit -->
     <item component="ComponentInfo{com.chimbori.hermitcrab/com.chimbori.hermitcrab.AdminActivity}" drawable="hermit" />
+
+	<!-- Hermit Unlocker -->
+	<item component="ComponentInfo{com.chimbori.hermitcrab.premium.unlocker/com.chimbori.hermitcrab.unlocker.UnlockerActivity}" drawable="hermit_unlocker"/>
 
     <!-- Her -->
     <item component="ComponentInfo{com.weareher.her/com.weareher.her.SplashActivity}" drawable="her" />
@@ -9873,7 +9885,6 @@
     <item component="ComponentInfo{app.organicmaps/com.mapswithme.maps.DownloadResourcesActivity}" drawable="organicmaps" />
     <item component="ComponentInfo{app.organicmaps.beta/com.mapswithme.maps.DownloadResourcesActivity}" drawable="organicmaps" />
     <item component="ComponentInfo{app.organicmaps/app.organicmaps.DownloadResourcesActivity}" drawable="organicmaps"/>
-
 
     <!-- Organ Trail: Director's Cut -->
     <item component="ComponentInfo{com.hatsproductions.OrganTrail/com.mikamikem.AndroidUnity.AndroidUnityActivity}" drawable="organtrail" />
