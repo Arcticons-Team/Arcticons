@@ -164,6 +164,11 @@
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
+             <!-- Lawnchair Launcher -->
+            <intent-filter>
+                <action android:name="app.lawnchair.icons.THEMED_ICON" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
             <!-- Lawnchair -->
             <intent-filter>
                 <action android:name="ch.deletescape.lawnchair.ICONPACK" />
