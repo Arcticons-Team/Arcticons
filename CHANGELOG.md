@@ -1,3 +1,10 @@
+### 5.0.0
+###### Released: Dec 13, 2022
+* 📱 Dashboard update (lot's of bugs fixed!) 
+* 🎉 161 new and updated icons! (thanks Petlyh, Basings, Lavin-Tom, Quantenzitrone, Aspwil, Kaiserdragon2, GitGitro, Rmpj5, Artem13327, Jakejoh, Tversteeg, Naveenccmsd, Dgcampbe, Joelchrono12, GrantMoyer, Tieu1991, Squ1rr3lly, Aloxe, Joserebelo!)
+* 🔥 5003 icons in total!
+
+
 ### 4.8.5 - Anniversary Edition
 ###### Released: Nov 3, 2022
 * 🥳 Arcticons turns 2 years old! 
