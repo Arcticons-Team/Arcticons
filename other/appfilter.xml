@@ -1,6 +1,14 @@
 <resources>
 
+	<!-- First Aid -->
+	<item component="ComponentInfo{com.cube.arc.fa/com.cube.arc.fa.BootActivity}" drawable="first_aid"/>
 
+	<!-- Permission Pilot -->
+	<item component="ComponentInfo{eu.darken.myperm/eu.darken.myperm.main.ui.MainActivity}" drawable="permission_pilot"/>
+
+	<!-- Pet First Aid -->
+	<item component="ComponentInfo{com.cube.arc.pfa/com.cube.arc.pfa.BootActivity}" drawable="pet_first_aid"/>
+    
     <!-- Subway Tooter -->
     <item component="ComponentInfo{jp.juggler.subwaytooter/jp.juggler.subwaytooter.ActMain}" drawable="subway_tooter"/>
 
@@ -10691,6 +10699,7 @@
     <!-- PhotoTAN -->
     <item component="ComponentInfo{com.comdirect.phototan/de.comdirect.phototan.activity.start.StartActivity}" drawable="phototan" />
     <item component="ComponentInfo{com.commerzbank.photoTAN/de.commerzbank.phototan.container.ui.ContainerActivity}" drawable="phototan" />
+    <item component="ComponentInfo{ch.raiffeisen.phototan/ch.raiffeisen.phototan.RoutingActivity}" drawable="phototan" />
 
     <!-- Photoczip -->
     <item component="ComponentInfo{org.ibeccato.photoczip/org.ibeccato.photoczip.activity.MainActivity}" drawable="photoczip" />
@@ -11469,6 +11478,7 @@
 
     <!-- Raiffeisen E-Banking -->
     <item component="ComponentInfo{ch.raiffeisen.android/com.forcklabs.rch.portal.SplashActivity}" drawable="e_banking" />
+    <item component="ComponentInfo{ch.raiffeisen.android/com.forcklabs.rch.portal.RoutingActivity}" drawable="e_banking" />
 
     <!-- Raiffeisen MobileSCAN -->
     <item component="ComponentInfo{ch.raiffeisen.mobilescan/com.forcklabs.rch.scanner.SplashActivity}" drawable="mobilescan" />
@@ -14342,6 +14352,7 @@
     <item component="ComponentInfo{org.telegram.messenger/org.telegram.messenger.DefaultIcon}" drawable="telegram" />
     <item component="ComponentInfo{org.telegram.messenger.web/org.telegram.messenger.DefaultIcon}" drawable="telegram" />
     <item component="ComponentInfo{org.telegram.messenger/org.telegram.messenger.AquaIcon}" drawable="telegram" />
+	<item component="ComponentInfo{me.lucky.wasted/me.lucky.wasted.trigger.application.TelegramActivity}" drawable="telegram"/>
 
     <!-- Telegram Plus -->
     <item component="ComponentInfo{org.telegram.plus/org.telegram.ui.LaunchActivity}" drawable="telegram_plus" />
