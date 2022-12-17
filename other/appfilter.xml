@@ -1,5 +1,8 @@
 <resources>
 
+	<!-- pCloud Pass -->
+	<item component="ComponentInfo{com.pcloud.pass/com.pcloud.pass.MainActivity}" drawable="pcloud_pass"/>
+
     <!-- Accrescent -->
 	<item component="ComponentInfo{app.accrescent.client/app.accrescent.client.ui.MainActivity}" drawable="accrescent"/>
 
@@ -8301,10 +8304,12 @@
 
     <!-- Messagerie Vocale -->
     <item component="ComponentInfo{com.orange.vvm/com.orange.vvm.activities.DisclaimerActivity}" drawable="orangevvm" />
+    
+    <!-- Google Messages -->
+    <item component="ComponentInfo{com.google.android.apps.messaging/com.google.android.apps.messaging.ui.ConversationListActivity}" drawable="messages" />
 
     <!-- Messages -->
     <item component="ComponentInfo{com.android.mms/com.android.mms.ui.ConversationList}" drawable="messages" />
-    <item component="ComponentInfo{com.google.android.apps.messaging/com.google.android.apps.messaging.ui.ConversationListActivity}" drawable="messages" />
     <item component="ComponentInfo{com.samsung.android.messaging/com.android.mms.ui.ConversationComposer}" drawable="messages" />
     <item component="ComponentInfo{com.sonyericsson.conversations/com.sonyericsson.conversations.ui.ConversationListActivity}" drawable="messages" />
     <item component="ComponentInfo{com.oneplus.mms/com.android.mms.ui.ConversationList}" drawable="messages" />
