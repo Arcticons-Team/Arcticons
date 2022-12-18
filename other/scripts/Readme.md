@@ -28,12 +28,46 @@ To use the script, you will need to have Python installed on your system. You wi
 
 Once you have the dependencies installed, you can run the script from the command line by specifying the path to the XML file and the path to the folder containing the drawable resources as arguments. For example:
 
-    python script.py path/to/xml/file path/to/drawable/folder
+    python check_drawable.py path/to/xml/file path/to/drawable/folder
 
 The script will then parse the XML file, extract the item elements, and write them to the missing_drawables.xml file if the corresponding drawable resource file does not exist in the specified folder. The resulting file will contain the item elements and any preceding comments from the original XML file, indented to the same level as the opening <resources> tag.
 
 You can also use the --help option to get more information about the script's arguments:
 
-    python script.py --help
+    python check_drawable.py --help
 
 This will display the help message for the script, which provides a brief description of the arguments and their purpose.
+
+## 2. Duplicates
+
+### Summary of the function 
+
+1. The file name is passed as a command-line argument, and an IndexError is raised if no file name is provided.
+
+2. The XML file is parsed using the etree.XMLParser class and the etree.parse() function. The remove_blank_text option is set to True to remove any blank text nodes in the XML tree.
+
+3. The root element of the XML tree is obtained using the getroot() method.
+
+4. The script iterates over the item elements in the XML tree using the findall() method and the .//item XPath expression. For each item element, the component attribute value is extracted using the get() method and added to a list called components.
+
+5. The script then iterates over the components list and checks for duplicates using the count() method. If a component occurs more than once in the list and is not already in the duplicates list, it is added to the duplicates list.
+
+6. The script then creates a new XML tree with a root element called duplicates. For each component in the duplicates list, the script creates an item element and sets its component attribute to the component value.
+
+7. The script uses the tostring() function to pretty-print the new XML tree and write it to the found_duplicates.xml file.
+
+### How to use 
+
+To use this script, you will need to have Python and the lxml library installed on your system. You will also need to have an XML file that you want to parse.
+
+1. Open a terminal or command prompt and navigate to the directory where the script and XML file are located.
+
+2. Run the script by entering the following command:
+
+        python duplicates.py file_name.xml
+
+   Replace file_name.xml with the name of the XML file you want to parse.
+
+3. The script will parse the XML file, extract the component attribute values of item elements, and check for duplicates. If any duplicates are found, they will be written to a new XML file called found_duplicates.xml.
+
+4. You can then open the found_duplicates.xml file to see the list of duplicates.
