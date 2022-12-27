@@ -146,7 +146,7 @@ https://f-droid.org/en/packages/{packageNames}/
 Requested {count} times
 Last requested {reqDate}
 	"""
-	with open(argv[2]) as appfilter:
+	with  open(argv[2], encoding="utf8") as appfilter:
 		appfilter = appfilter.read()
 		for (componentInfo, values) in apps.items():
                         try:
