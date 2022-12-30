@@ -6,6 +6,21 @@
     <!-- Accrescent -->
 	<item component="ComponentInfo{app.accrescent.client/app.accrescent.client.ui.MainActivity}" drawable="accrescent"/>
 
+	<!-- 180 -->
+	<item component="ComponentInfo{com.opplysning180.no/com.opplysning180.no.features.main.DispatcherActivity}" drawable="_180" />
+
+	<!-- Blockbuster -->
+	<item component="ComponentInfo{dk.tdc.blockbuster.nordic/dk.tdc.blockbuster.nordic.screens.splash.SplashActivity}" drawable="blockbuster" />
+
+	<!-- Boliga -->
+	<item component="ComponentInfo{com.boliga.boliga/com.boliga.boliga.SplashActivity}" drawable="boliga" />
+
+	<!-- Boligsiden -->
+	<item component="ComponentInfo{dk.boligsiden/dk.boligsiden.MainActivity}" drawable="boligsiden" />
+    
+	<!-- Megalodon -->
+	<item component="ComponentInfo{org.joinmastodon.android.sk/org.joinmastodon.android.MainActivity}" drawable="megalodon" />
+    
 	<!-- Lines -->
 	<item component="ComponentInfo{com.natewren.lines/com.natewren.dashboard.SplashScreen}" drawable="lines"/>
 
@@ -14,6 +29,15 @@
 
 	<!-- First Aid -->
 	<item component="ComponentInfo{com.cube.arc.fa/com.cube.arc.fa.BootActivity}" drawable="first_aid"/>
+
+	<!-- ChargePoint -->
+	<item component="ComponentInfo{com.coulombtech/com.cp.ui.activity.launcher.LauncherActivity}" drawable="chargepoint" />
+
+	<!-- PlugShare -->
+	<item component="ComponentInfo{com.xatori.Plugshare/com.xatori.plugshare.ui.SplashScreenActivity}" drawable="plugshare" />
+
+	<!-- Recipe Keeper -->
+	<item component="ComponentInfo{com.tudorspan.recipekeeper/crc6494081064acdf378e.SplashScreenPage}" drawable="recipe_keeper" />
 
 	<!-- Permission Pilot -->
 	<item component="ComponentInfo{eu.darken.myperm/eu.darken.myperm.main.ui.MainActivity}" drawable="permission_pilot"/>
@@ -581,6 +605,7 @@
     <!-- Airbnb -->
     <item component="ComponentInfo{com.airbnb.android/com.airbnb.android.flavor.full.activities.HomeActivity}" drawable="airbnb" />
     <item component="ComponentInfo{com.airbnb.android/com.airbnb.android.feat.homescreen.HomeActivity}" drawable="airbnb" />
+    <item component="ComponentInfo{com.airbnb.android/com.airbnb.android.feat.splashscreen.SplashScreenActivity}" drawable="airbnb" />
 
     <!-- Airlift -->
     <item component="ComponentInfo{com.airlift.shop/com.airlift.shop.splash.SplashActivity}" drawable="airlift" />
@@ -8146,6 +8171,7 @@
 
     <!-- Ma Banque: Crédit Agricole -->
     <item component="ComponentInfo{fr.creditagricole.androidapp/fr.creditagricole.androidapp.activities.identification.ConnectionActivity}" drawable="creditagricole" />
+    <item component="ComponentInfo{fr.creditagricole.androidapp/fr.ca.cats.nmb.start.StartActivity}" drawable="creditagricole" />
 
     <!-- Ma Livebox -->
     <item component="ComponentInfo{com.orange.mylivebox.fr/com.orange.mylivebox.fr.gui.startup.StartupActivity}" drawable="malivebox" />
@@ -10901,7 +10927,7 @@
     <item component="ComponentInfo{net.kdt.pojavlaunch/net.kdt.pojavlaunch.PojavLoginActivity}" drawable="pojavlauncher" />
 
     <!-- PokeMMO -->
-    <item component="ComponentInfo{eu.pokemmo.client/eu.pokemmo.AndroidLauncher}" drawable="pokemmo" />
+    <item component="ComponentInfo{eu.pokemmo.client/eu.pokemmo.client.AndroidLauncher}" drawable="pokemmo" />
 
     <!-- PokerStars -->
     <item component="ComponentInfo{com.pyrsoftware.pokerstars.com/com.pokerstars.casinog.Activities.UpdaterActivity}" drawable="pokerstars" />
@@ -15533,6 +15559,7 @@
     <!-- Vi -->
     <item component="ComponentInfo{com.mventus.selfcare.activity/com.mventus.selfcare.activity.MainActivity}" drawable="vi" />
     <item component="ComponentInfo{com.mventus.selfcare.activity/com.mventus.selfcare.activity.MainActivityic_launcher}" drawable="vi" />
+    <item component="ComponentInfo{com.mventus.selfcare.activity/com.mventus.selfcare.activity.MainActivityic_independence}" drawable="vi"/>
 
     <!-- Vklass -->
     <item component="ComponentInfo{com.softronic.vklass.android/se.bbhstockholm.vklass.ui.MainActivity}" drawable="vklass" />
