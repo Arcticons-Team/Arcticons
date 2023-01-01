@@ -1,6 +1,6 @@
 """
 Script Usage:
-python (or python3) delta_email_parser.py ./path/to/emlFolder ./path/to/appfilter.xml (./path/to/requests.txt)
+python (or python3) email_parser.py ./path/to/emlFolder ./path/to/appfilter.xml (./path/to/requests.txt)
 
 Arguments
 0: Path to folder containing .eml files of requests
