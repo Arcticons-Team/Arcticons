@@ -8,7 +8,13 @@
 
 	<!-- 180 -->
 	<item component="ComponentInfo{com.opplysning180.no/com.opplysning180.no.features.main.DispatcherActivity}" drawable="_180" />
-
+	
+	<!-- Block'Buster -->
+	<item component="ComponentInfo{org.asafonov.blockbuster/org.asafonov.arkanoid.MainActivity}" drawable="block_buster"/>
+	
+	<!-- Textbender -->
+	<item component="ComponentInfo{sh.eliza.textbender/sh.eliza.textbender.SettingsActivity}" drawable="textbender"/>
+	
 	<!-- Blockbuster -->
 	<item component="ComponentInfo{dk.tdc.blockbuster.nordic/dk.tdc.blockbuster.nordic.screens.splash.SplashActivity}" drawable="blockbuster" />
 
@@ -76,6 +82,9 @@
     <!-- 1010! Klooni -->
     <item component="ComponentInfo{io.github.lonamiwebs.klooni/io.github.lonamiwebs.klooni.AndroidLauncher}" drawable="tentenklooni" />
     <item component="ComponentInfo{dev.lonami.klooni/dev.lonami.klooni.AndroidLauncher}" drawable="tentenklooni" />
+	
+	<!-- CallForwardingStatus -->
+	<item component="ComponentInfo{de.kaiserdragon.callforwardingstatus/de.kaiserdragon.callforwardingstatus.MainActivity}" drawable="callforwardingstatus"/>
 
     <!-- 17TRACK -->
     <item component="ComponentInfo{yqtrack.app/yqtrack.app.ui.splash.SplashActivity}" drawable="a17track" />
@@ -8899,6 +8908,7 @@
     <!-- MusicBrainz -->
     <item component="ComponentInfo{org.metabrainz.android/org.metabrainz.mobile.presentation.features.splash_screen.SplashActivity}" drawable="musicbrainz" />
     <item component="ComponentInfo{org.metabrainz.android/org.metabrainz.android.presentation.features.splash_screen.SplashActivity}" drawable="musicbrainz" />
+	<item component="ComponentInfo{org.metabrainz.android/org.metabrainz.android.presentation.features.dashboard.DashboardActivity}" drawable="musicbrainz"/>
 
     <!-- MusicPiped -->
     <item component="ComponentInfo{deep.ryd.rydplayer/deep.ryd.rydplayer.Main2Activity}" drawable="musicpiped" />
