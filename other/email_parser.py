@@ -129,16 +129,20 @@ def parseEmail():
                 sender = message['From']
                 no_zip[sender] = mail
                 continue
-            
-            # Extract the xml file from the zip
-            with zipfile.ZipFile(zip_file, 'r') as zip_ref:
-                xml_string = zip_ref.read('appfilter.xml')
+            try:
+                # Extract the xml file from the zip
+                with zipfile.ZipFile(zip_file, 'r') as zip_ref:
+                    xml_string = zip_ref.read('appfilter.xml')
 
-            # Parse the xml file
-            root = ET.fromstring(xml_string)
-            # Add the root element of the xml file to the combined root element
-            for child in root:
-                requests(child,message)
+                # Parse the xml file
+                root = ET.fromstring(xml_string)
+                # Add the root element of the xml file to the combined root element
+                for child in root:
+                    requests(child,message)
+            except:
+                sender = message['From']
+                no_zip[sender] = mail
+
                         
 
 def requests(child,msg):
