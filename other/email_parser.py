@@ -224,7 +224,7 @@ Last requested {reqDate}
                         reqDate = values["requestDate"],
                     ))
                 elif appfilter.find(componentInfo) != -1 and ''.join(updatable).find(componentInfo) == -1:
-                    updatable.append('<!-- '+ values['Name'] +' -->' + '\n' + '<item component="ComponentInfo{' + values['ComponentInfo'] +'" drawable="'+ values['drawable']+'" />' + '\n\n')
+                    updatable.append('<!-- '+ values['Name'] +' -->' + '\n' + '<item component="ComponentInfo{' + values['ComponentInfo'] +'}" drawable="'+ values['drawable']+'" />' + '\n\n')
             except: print('Error',componentInfo)
 
 def writeOutput():
