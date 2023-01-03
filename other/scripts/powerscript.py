@@ -9,13 +9,18 @@ import sys
 import argparse
 import pathlib
 
-
 parser = argparse.ArgumentParser()
 parser.add_argument('svg_dir', type=str, help='directory containing the SVG files')
 args = parser.parse_args()
 svg_dir = str(pathlib.Path(args.svg_dir).resolve())
 
 
+
+#Define Replace Colors
+replace_stroke_white = "stroke:#fff"
+replace_fill_white = "fill:#fff"
+replace_stroke_black = "stroke:#000"
+replace_fill_black = "fill:#000"
 
 
 #helper sort xml.sh
@@ -68,51 +73,22 @@ def convert_svg_files(svgdir: str, export: str) -> None:
     shutil.copy('appfilter.xml', f"{export}/assets/")
     shutil.copy('appfilter.xml', f"{export}/res/xml/")
 
-#equivalent white.sh
-def white_svg_colors(dir: str) -> None:
-    white = re.compile(r"stroke\s*:\s*\(#fff|#ffffff|white\)")
-    replace = "stroke:#fff"
+#equivalent white.sh and black.sh
+#rewrite to do both black and white
+def svg_colors(dir:str,stroke:str,fill:str)  -> None:
+    white_stroke = r"stroke\s*:\s*(#ffffff|#fff|white)"
+    white_fill = r"fill\s*:\s*(#ffffff|#fff|white)"
 
     for x in glob.glob(f"{dir}/*.svg"):
         with open(x, 'r') as fp:
             content = fp.read()
 
-        content = re.sub(white, replace, content, flags=re.IGNORECASE)
-
+        content = re.sub(white_stroke, stroke, content, flags=re.IGNORECASE)
+        content = re.sub(white_fill, fill, content, flags=re.IGNORECASE)
+        
         with open(x, 'w') as fp:
             fp.write(content)
 
-    white = re.compile(r"fill\s*:\s*\(#fff|#ffffff|white\)")
-    replace = "fill:#fff"
-
-    for x in glob.glob(f"{dir}/*.svg"):
-        with open(x, 'r') as fp:
-            content = fp.read()
-
-        content = re.sub(white, replace, content, flags=re.IGNORECASE)
-
-        with open(x, 'w') as fp:
-            fp.write(content)
-
-#black.sh
-def black_svg_colors(path: str) -> None:
-    import re
-    from pathlib import Path
-    from shutil import copy2
-
-    white_stroke = r'stroke\s*:\s*\(#fff\|#ffffff\|white\)'
-    black_stroke = r'stroke:#000'
-    white_fill = r'fill\s*:\s*\(#fff\|#ffffff\|white\)'
-    black_fill = r'fill:#000'
-
-    path = Path(path)
-    for file in path.glob('**/*.svg'):
-        with file.open() as fp:
-            content = fp.read()
-        content = re.sub(white_stroke, black_stroke, content, flags=re.IGNORECASE)
-        content = re.sub(white_fill, black_fill, content, flags=re.IGNORECASE)
-        with file.open('w') as fp:
-            fp.write(content)
 
 #sort.sh
 def process_appfilter(app: str) -> None:
@@ -184,7 +160,7 @@ def process_appfilter(app: str) -> None:
 def create_dark_icons(sizes: List[int], export_dir: str, icon_dir: str) -> None:
 
 
-    white_svg_colors(icon_dir)
+    svg_colors(svg_dir,replace_stroke_white,replace_fill_white)
 
     for dir_ in Path('.').glob('**/*.svg'):
         file = dir_.name
@@ -203,7 +179,7 @@ def create_dark_icons(sizes: List[int], export_dir: str, icon_dir: str) -> None:
 #rasterlight.sh
 def create_light_icons(sizes: List[int], export_dir: str, icon_dir: str) -> None:
 
-    black_svg_colors(icon_dir)
+    svg_colors(svg_dir,replace_stroke_black,replace_fill_black)
 
     for dir_ in Path('.').glob('**/*.svg'):
         file = dir_.name
@@ -361,3 +337,53 @@ def merge_new_drawables(pathxml: str):
 		# write to new_'filename'.xml in working directory
 		outFile = open("new_" + sys.argv[1].split("/")[-1].split("\\")[-1], "w", encoding='utf-8')
 		outFile.write(output)
+
+def main():
+
+    svg_colors(svg_dir,replace_stroke_white,replace_fill_white)
+    svg_colors(svg_dir,replace_stroke_black,replace_fill_black)
+    #black_svg_colors(svg_dir)
+
+
+def test():
+    from lxml import etree
+    import re
+
+    # Parse the XML file
+    parser = etree.XMLParser(remove_blank_text=True)
+    tree = etree.parse('input.xml', parser)
+    root = tree.getroot()
+    comment_str = None
+
+    # Find all elements that have a comment preceding them
+    pattern = re.compile(r'<!--(.+?)-->')
+    elements = []
+    items = []
+    for element in root:
+        if element.tag == etree.Comment:
+            if comment_str != None: 
+                elements.append((comment_str,items))
+                items = []
+            # Get the XML string representation of the element
+            match = pattern.match(etree.tostring(element).decode())
+            comment_str = etree.tostring(element, encoding='UTF-8')
+            print(comment_str)
+        else:
+            items.append(element)
+
+    # Sort the elements by the comment value
+    elements.sort(key=lambda element: element[0])
+
+    # Write the sorted elements back to the XML file
+    root.clear()
+    for element in elements:
+        #comment = etree.Comment(element[0])
+        #root.append(comment)
+        root.extend(element[1])
+
+    tree.write('output.xml', pretty_print=True)
+
+
+
+if __name__ == "__main__":
+	main()
