@@ -14,7 +14,16 @@
     
     <!-- Spaceflight Simulator -->
     <item component="ComponentInfo{com.StefMorojna.SpaceflightSimulator/com.unity3d.player.UnityPlayerActivity}" drawable="spaceflight_simulator" />
-            
+
+	<!-- Aura -->
+	<item component="ComponentInfo{com.pushd.client/com.pushd.client.ui.LaunchActivity}" drawable="aura"/>
+
+	<!-- Zee Archiver -->
+	<item component="ComponentInfo{com.mg.zeearchiver/com.mg.zeearchiver.StartupActivity}" drawable="zee_archiver"/>
+
+	<!-- Permission Pilot -->
+	<item component="ComponentInfo{eu.darken.myperm/eu.darken.myperm.main.ui.MainActivity}" drawable="permission_pilot"/>
+
     <!-- eToro -->
     <item component="ComponentInfo{com.etoro.openbook/com.etoro.openbook.MainActivity}" drawable="etoro" />
         
@@ -7897,6 +7906,7 @@
     <item component="ComponentInfo{org.lineageos.snap/com.android.camera.CameraLauncher}" drawable="lineage_camera" />
     <item component="ComponentInfo{org.lineageos.aperture/org.lineageos.aperture.CameraLauncher}" drawable="lineage_camera" />
     <item component="ComponentInfo{org.lineageos.aperture/.CameraLauncher}" drawable="lineage_camera" />
+    <item component="ComponentInfo{org.lineageos.aperture/com.android.camera.CameraLauncher}" drawable="lineage_camera" />
 
     <!-- LineageOS Music -->
     <item component="ComponentInfo{org.lineageos.eleven/org.lineageos.eleven.ui.activities.HomeActivity}" drawable="lineage_music" />
