@@ -4,16 +4,17 @@
 
 <img src='https://raw.githubusercontent.com/Donnnno/Arcticons/main/github/header-background.png'>
 
-Arcticons (Arctic icons) is a line-based icon pack forked from [Frost](https://github.com/dkanada/frost), but rebuilt with consistent sizing and adjustments specifically for lines in mind. Arcticons is FOSS and provides mostly icons for open-source apps on F-Droid (but there are many other apps in this pack too). The design is simple and clean, with minimal lines that give you a nice see-through effect.
-
+# Arcticons is a line-based icon pack for Android devices.
+It features a wide range **(over 5000!)** of elegant and consistent icons that are created by a community from all around the world. Arcticons is FOSS (Free and Open-Source Software) and provides many icons for other FOSS apps. 
+<br>
+<br>
+<br>
+## Get if from on of these stores
 [<img src="https://f-droid.org/badge/get-it-on.png" alt="Get it on F-Droid" height="90">](https://f-droid.org/packages/com.donnnno.arcticons)
-[<img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" height="90">](https://play.google.com/store/apps/details?id=com.donnnno.arcticons)
+[<img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" height="90">](https://play.google.com/store/apps/details?id=com.donnnno.arcticons)<br>
 [<img src="https://camo.githubusercontent.com/35b4ec18c762358fb784f9e973f77cf6eb596f2240e69a4c6c093a836655d889/68747470733a2f2f692e6962622e636f2f71306d6463345a2f6765742d69742d6f6e2d6769746875622e706e67" alt="Get it on Github" height="90">](https://github.com/Donnnno/Arcticons/releases)
 [<img src="https://accrescent.app/badges/get-it-on.png" alt="Get it on Accrescent" height="90">](https://accrescent.app/app/com.donnnno.arcticons)
 
-Arcticons includes support for a lot of launchers like Trebuchet, KISS, Nova, Apex, Holo, ZenUI, ADW, and many more. The installation depends on your launcher, it's probably somewhere in the settings. **There are over 5000 icons.**
-
-Submitting icon requests helps a lot, but maintaining the project (as you may imagine) takes a lot of time and effort, so please be patient about adding new icons. Contributions for new icons are always welcome, and no experience with programming is necessary.
 
 ## Screenshots
 
@@ -22,7 +23,7 @@ Submitting icon requests helps a lot, but maintaining the project (as you may im
 
 ## Donate
 
-Maintaining this icon-pack costs a lot of time, besides making icons I'm curating every single icon if it has the right sizing and other design rules. So if you like the icons and want to support the development, consider supporting. :)
+Providing a free icon-pack for everyone can cost a lot of time and effort. So if you like our work, consider donating!﻿
 
 |Paypal|Liberapay|Ko-Fi|
 |---|---|---|
