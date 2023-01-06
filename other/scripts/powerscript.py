@@ -8,6 +8,9 @@ from typing import List
 import sys
 import argparse
 import pathlib
+from lxml import etree
+
+from shutil import move
 
 parser = argparse.ArgumentParser()
 parser.add_argument('svg_dir', type=str, help='directory containing the SVG files')
@@ -89,73 +92,6 @@ def svg_colors(dir:str,stroke:str,fill:str)  -> None:
         with open(x, 'w') as fp:
             fp.write(content)
 
-
-#sort.sh
-def process_appfilter(app: str) -> None:
-
-    with open(app, 'r') as fp:
-        content = fp.read()
-
-    # remove whitespace at beginning of line
-    content = subprocess.run(['sed', '-r', 's:^[ \\t]*:g', app], capture_output=True, text=True).stdout
-    with open('onefilter.xml', 'w') as fp:
-        fp.write(content)
-
-    # remove whitespace at end of line
-    subprocess.run(['sed', '-ri', 's:[ \\t]*$::g', 'onefilter.xml'])
-
-    # remove extra spaces in items
-    subprocess.run(['sed', '-ri', 's: +: :g', 'onefilter.xml'])
-
-    # replace spaces with bar character
-    subprocess.run(['sed', '-ri', 's: :|:g', 'onefilter.xml'])
-
-    with open('onefilter.xml', 'r') as fp:
-        lines = fp.readlines()
-
-    with open('twofilter.xml', 'w') as fp:
-        for line in lines:
-            type_ = line[:4]
-            if type_ == '<!--':
-                fp.write(f'\n{line}')
-            elif type_ in ('<ite', '<sca', '<cal'):
-                fp.write(f' {line}')
-
-    # sort by label
-    subprocess.run(['sort', '-k', '1', '-f', '-n', 'twofilter.xml'], stdout=open('onefilter.xml', 'w'))
-
-    with open('onefilter.xml', 'r') as fp:
-        content = fp.read()
-
-    # separate each item group
-    content = re.sub(r' ([^ ]*)$', r'\1\n', content)
-    with open('onefilter.xml', 'w') as fp:
-        fp.write(content)
-
-    # replace spaces with newlines
-    subprocess.run(['tr', ' ', '\n', '<', 'onefilter.xml', '>', 'twofilter.xml'])
-
-    with open('twofilter.xml', 'r') as fp:
-        lines = fp.readlines()
-
-    with open('twofilter.xml', 'w') as fp:
-        for line in lines:
-            fp.write(f'    {line}')
-
-    # replace bar character with space in items
-    subprocess.run(['sed', '-ri', 's:|: :g', 'twofilter.xml'])
-
-    # add space at the end
-    subprocess.run(['sed', '-ri', 's:\\s?\\/>: \\/>:g', 'twofilter.xml'])
-
-    with open(app, 'w') as fp:
-        fp.write('<resources>\n')
-        with open('twofilter.xml', 'r') as infp:
-            fp.write(infp.read())
-            fp.write('</resources>')
-
-    subprocess.run(['rm', 'onefilter.xml', 'twofilter.xml'])
-
 #rasterdark      
 def create_dark_icons(sizes: List[int], export_dir: str, icon_dir: str) -> None:
 
@@ -197,9 +133,7 @@ def create_light_icons(sizes: List[int], export_dir: str, icon_dir: str) -> None
 
 #raster-nosort.sh || raster.sh
 def create_icons(export_dir: str) -> None:
-    import subprocess
-    from pathlib import Path
-    from shutil import move
+
     #only in raster
     create_new_drawables(svg_dir)
     #subprocess.run(['sh', 'rasterdark.sh'])
@@ -223,8 +157,6 @@ def create_icons(export_dir: str) -> None:
     move('drawable.xml', f'{export_dir}/../app/src/main/assets/')
 
 def create_new_drawables(svg_dir: str) -> None:
-    
-
     drawable_pre = '\t<item drawable="'
     drawable_suf = '" />\n'
     with open('newdrawables.xml', 'w') as fp:
@@ -339,16 +271,13 @@ def merge_new_drawables(pathxml: str):
 		outFile.write(output)
 
 def main():
-
+    create_new_drawables(svg_dir)
     svg_colors(svg_dir,replace_stroke_white,replace_fill_white)
     svg_colors(svg_dir,replace_stroke_black,replace_fill_black)
     #black_svg_colors(svg_dir)
 
-
-def test():
-    from lxml import etree
-    import re
-
+#new appfilter sort
+def sortxml():
     # Parse the XML file
     parser = etree.XMLParser(remove_blank_text=True)
     tree = etree.parse('input.xml', parser)
@@ -356,7 +285,6 @@ def test():
     comment_str = None
 
     # Find all elements that have a comment preceding them
-    pattern = re.compile(r'<!--(.+?)-->')
     elements = []
     items = []
     for element in root:
@@ -365,11 +293,11 @@ def test():
                 elements.append((comment_str,items))
                 items = []
             # Get the XML string representation of the element
-            match = pattern.match(etree.tostring(element).decode())
-            comment_str = etree.tostring(element, encoding='UTF-8')
-            print(comment_str)
+            comment_str = element.text
         else:
             items.append(element)
+    #This needs to be here ore the last entry is gone
+    elements.append((comment_str,items))
 
     # Sort the elements by the comment value
     elements.sort(key=lambda element: element[0])
@@ -377,9 +305,10 @@ def test():
     # Write the sorted elements back to the XML file
     root.clear()
     for element in elements:
-        #comment = etree.Comment(element[0])
-        #root.append(comment)
+        comment = etree.Comment(element[0])
+        root.append(comment)
         root.extend(element[1])
+
 
     tree.write('output.xml', pretty_print=True)
 
