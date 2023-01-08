@@ -1,3 +1,10 @@
+### 5.1.0
+###### Released: Jan 5, 2023
+* 📱 Dashboard update (no more crashes (hopefully)) 
+* 🎉 110 new and updated icons! (thanks Zykure, Terumitzu, Kaiserdragon2, Lavin-Tom, Artsuaga, Bbbhltz, Dgcampbe, Kaanelloed)
+* 🔥 5108 icons in total!
+
+
 ### 5.0.0
 ###### Released: Dec 13, 2022
 * 📱 Dashboard update (lot's of bugs fixed!) 
