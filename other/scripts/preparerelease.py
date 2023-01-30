@@ -122,6 +122,7 @@ def remove_svg(dir:str):
 def create_new_drawables(svgdir: str,newdrawables:str) -> None:
     drawable_pre = '\t<item drawable="'
     drawable_suf = '" />\n'
+    os.remove(newdrawables)
     with open(newdrawables, 'w',encoding="utf-8") as fp:
         fp.write('<?xml version="1.0" encoding="utf-8"?>\n<resources>\n\t<version>1</version>\n\t<category title="New" />\n')
         for file_path in glob.glob(f"{svgdir}/*.svg"):
