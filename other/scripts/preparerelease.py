@@ -15,7 +15,7 @@ from shutil import move
 
 parser = argparse.ArgumentParser()
 parser.add_argument('SVG_DIR', type=str, help='directory containing the SVG files')
-parser.add_argument('APP_SRC_DIR', type=str, help='main app directory somthing like app/src/main')
+parser.add_argument('APP_SRC_DIR', type=str, help='main app directory somthing like app/src')
 parser.add_argument('ICONS_DIR', type=str, help='directory that contains the folders for the black and white svg')
 args = parser.parse_args()
 
