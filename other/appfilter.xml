@@ -3203,7 +3203,6 @@
     <!-- Contacts -->
     <item component="ComponentInfo{com.android.contacts/com.android.contacts.activities.ContactsFrontDoor}" drawable="contacts" />
     <item component="ComponentInfo{com.android.contacts/com.android.contacts.activities.PeopleActivity}" drawable="contacts" />
-    <item component="ComponentInfo{com.google.android.contacts/com.android.contacts.activities.PeopleActivity}" drawable="contacts" />
     <item component="ComponentInfo{com.blackberry.contacts/com.android.contacts.activities.PeopleDrawerActivity}" drawable="contacts" />
     <item component="ComponentInfo{com.samsung.android.contacts/com.android.contacts.activities.PeopleActivity}" drawable="contacts" />
     <item component="ComponentInfo{com.samsung.android.contacts/com.samsung.android.contacts.contactslist.PeopleActivity}" drawable="contacts" />
@@ -5955,6 +5954,10 @@
     <!-- Google Keep -->
     <item component="ComponentInfo{com.google.android.keep/com.google.android.keep.activities.BrowseActivity}" drawable="google_keep" />
 
+    <!-- Google Contacts -->
+    <item component="ComponentInfo{com.google.android.contacts/com.android.contacts.activities.PeopleActivity}" drawable="google_contacts" />
+
+
     <!-- Google Keyboard -->
     <item component="ComponentInfo{com.google.android.inputmethod.latin/com.android.inputmethod.latin.setup.SetupActivity}" drawable="google_keyboard" />
     <item component="ComponentInfo{com.google.android.inputmethod.latin/com.google.android.apps.inputmethod.libs.framework.core.LauncherActivity}" drawable="google_keyboard" />
@@ -5968,7 +5971,10 @@
     <item component="ComponentInfo{com.google.android.apps.tachyon/com.google.android.apps.tachyon.MainActivitySecondLauncher}" drawable="google_meet" />
 
     <!-- Google Messages -->
-    <item component="ComponentInfo{com.google.android.apps.messaging/com.google.android.apps.messaging.ui.ConversationListActivity}" drawable="messages" />
+    <item component="ComponentInfo{com.google.android.apps.messaging/com.google.android.apps.messaging.ui.ConversationListActivity}" drawable="google_messages" />
+
+    <!-- Google Phone -->
+	<item component="ComponentInfo{com.google.android.dialer/com.google.android.dialer.extensions.GoogleDialtactsActivity}" drawable="google_phone"/>
 
     <!-- Google My Business -->
     <item component="ComponentInfo{com.google.android.apps.vega/com.google.android.apps.vega.VegaMainActivity}" drawable="google_my_business" />
@@ -9697,13 +9703,13 @@
     <item component="ComponentInfo{com.saggitt.omega.dev/com.saggitt.omega.OmegaLauncher}" drawable="neo_launcher" />
 
     <!-- Neo Store -->
-    <item component="ComponentInfo{com.looker.droidify/com.looker.droidify.MainActivity}" drawable="droidify" />
-    <item component="ComponentInfo{com.looker.droidify.debug/com.looker.droidify.MainActivity}" drawable="droidify" />
-    <item component="ComponentInfo{com.looker.droidify/com.looker.droidify.ui.activities.MainActivityX}" drawable="droidify" />
-
-    <!-- Droid-ify -->    
+    <item component="ComponentInfo{com.looker.droidify/com.looker.droidify.ui.activities.MainActivityX}" drawable="neo_store" />
     <item component="ComponentInfo{com.machiav3lli.fdroid/com.machiav3lli.fdroid.ui.activities.MainActivityX}" drawable="neo_store" />
     <item component="ComponentInfo{com.machiav3lli.fdroid.neo/com.machiav3lli.fdroid.ui.activities.MainActivityX}" drawable="neo_store" />
+
+    <!-- Droid-ify -->    
+    <item component="ComponentInfo{com.looker.droidify/com.looker.droidify.MainActivity}" drawable="droidify" />
+    <item component="ComponentInfo{com.looker.droidify.debug/com.looker.droidify.MainActivity}" drawable="droidify" />
 
     <!-- Nequi Colombia -->
     <item component="ComponentInfo{com.nequi.MobileApp/com.nequi.MobileApp.MainActivity}" drawable="nequi_colombia" />
@@ -10969,7 +10975,6 @@
     <item component="ComponentInfo{com.android.dialer/com.android.dialer.main.impl.MainActivity}" drawable="phone" />
     <item component="ComponentInfo{com.android.dialer/com.oneplus.contacts.activities.OPDialtactsActivity}" drawable="phone" />
     <item component="ComponentInfo{com.android.incallui/com.android.incallui.DialerLauncher}" drawable="phone" />
-    <item component="ComponentInfo{com.google.android.dialer/com.google.android.dialer.extensions.GoogleDialtactsActivity}" drawable="phone" />
     <item component="ComponentInfo{com.hb.dialer.free/com.hb.dialer.ui.PhoneActivity}" drawable="phone" />
     <item component="ComponentInfo{com.oneplus.dialer/com.android.dialer.oneplus.activity.OPDialtactsActivity}" drawable="phone" />
     <item component="ComponentInfo{com.samsung.android.contacts/com.android.dialer.DialtactsActivity}" drawable="phone" />
