@@ -26,6 +26,39 @@
         
     <!-- Pokémon HOME -->
     <item component="ComponentInfo{jp.pokemon.pokemonhome/com.unity3d.player.UnityPlayerActivity}" drawable="pokemon_home" />
+
+	<!-- Co-op -->
+	<item component="ComponentInfo{uk.co.coop.app/uk.co.coop.app.ui.screens.routing.RoutingActivity}" drawable="co_op"/>
+
+	<!-- Doctor Care Anywhere -->
+	<item component="ComponentInfo{com.doctorcareanywhere/com.doctorcareanywhere.activities.startup.SplashActivity}" drawable="doctor_care_anywhere"/>
+
+	<!-- Hevy -->
+	<item component="ComponentInfo{com.hevy/com.hevy.MainActivity}" drawable="hevy"/>
+
+	<!-- Hussle -->
+	<item component="ComponentInfo{com.payasugym.app/com.payasugym.app.MainActivity}" drawable="hussle"/>
+
+	<!-- My EE -->
+	<item component="ComponentInfo{uk.co.ee.myee/com.example.myee_app.MainActivity}" drawable="my_ee"/>
+
+	<!-- MyTherapy -->
+	<item component="ComponentInfo{eu.smartpatient.mytherapy/eu.smartpatient.mytherapy.mobile.onboarding.WelcomeActivity}" drawable="mytherapy"/>
+
+	<!-- Nationwide -->
+	<item component="ComponentInfo{co.uk.Nationwide.Mobile/uk.co.nationwide.mobile.ui.MainActivity}" drawable="nationwide"/>
+
+	<!-- NatWest -->
+	<item component="ComponentInfo{com.rbs.mobile.android.natwest/co.uk.rbsg.mobile.android.feature.login.LoginActivity}" drawable="natwest"/>
+
+	<!-- Refill -->
+	<item component="ComponentInfo{uk.geovation.refill/uk.geovation.refill.MainActivity}" drawable="refill"/>
+
+	<!-- TfL Oyster -->
+	<item component="ComponentInfo{uk.gov.tfl.oystercontactless/com.oyster.MainActivity}" drawable="tfl_oyster"/>
+
+	<!-- WW -->
+	<item component="ComponentInfo{com.weightwatchers.mobile/ui.activity.SplashScreen}" drawable="ww"/>
         
     <!-- Al Quran Indonesia -->
     <item component="ComponentInfo{com.andi.alquran.id/com.andi.alquran.ActivityHome}" drawable="al_quran_indonesia" />
@@ -3187,7 +3220,6 @@
     <item component="ComponentInfo{com.android.contacts/com.android.dialer.DialtactsActivity}" drawable="phone" />
     <item component="ComponentInfo{com.android.contacts/com.oppo.contacts.OppoDialtactsActivity}" drawable="contacts" />
     <item component="ComponentInfo{com.android.contacts/com.android.contacts.DialtactsContactsEntryActivityForDialpad}" drawable="contacts" />
-	<item component="ComponentInfo{com.hb.dialer.free/com.hb.dialer.ui.ShcStartActivityContacts}" drawable="kontakte" />
 
     <!-- Contact Diary -->
     <item component="ComponentInfo{com.apozas.contactdiary/com.apozas.contactdiary.MainActivity}" drawable="contactdiary" />
@@ -5831,8 +5863,8 @@
     <item component="ComponentInfo{org.asdtm.goodweather/org.asdtm.goodweather.MainActivity}" drawable="goodweather" />
 
     <!-- Google -->
-    <item component="ComponentInfo{com.google.android.googlequicksearchbox/com.google.android.googlequicksearchbox.SearchActivity}" drawable="google_app" />
-    <item component="ComponentInfo{com.google.android.apps.searchlite/com.google.android.apps.searchlite.ui.SearchActivity}" drawable="google_app" />
+    <item component="ComponentInfo{com.google.android.googlequicksearchbox/com.google.android.googlequicksearchbox.SearchActivity}" drawable="google" />
+    <item component="ComponentInfo{com.google.android.apps.searchlite/com.google.android.apps.searchlite.ui.SearchActivity}" drawable="google" />
 
     <!-- Google Assistant -->
     <item component="ComponentInfo{com.google.android.apps.googleassistant/com.google.android.apps.googleassistant.AssistantActivity}" drawable="google_assistant" />
@@ -8678,8 +8710,8 @@
     <!-- Microsoft Lens -->
     <item component="ComponentInfo{com.microsoft.office.officelens/com.microsoft.office.officelens.MainActivity}" drawable="microsoftlens" />
 
-    <!-- Microsoft Office -->
-    <item component="ComponentInfo{com.microsoft.office.officehubrow/com.microsoft.office.officesuite.OfficeSuiteActivity}" drawable="microsoftoffice" />
+    <!-- Microsoft 365 -->
+    <item component="ComponentInfo{com.microsoft.office.officehubrow/com.microsoft.office.officesuite.OfficeSuiteActivity}" drawable="microsoft_365" />
 
     <!-- Microsoft Onedrive -->
     <item component="ComponentInfo{com.microsoft.office.skydrive/com.microsoft.skydrive.MainActivity}" drawable="microsoftonedrive" />
@@ -10953,6 +10985,8 @@
     <item component="ComponentInfo{com.tct.dialer/com.android.dialer.app.DialtactsActivity}" drawable="phone" />
     <item component="ComponentInfo{com.simpler.dialer/com.simpler.ui.activities.ContactsAppActivity}" drawable="phone" />
     <item component="ComponentInfo{com.sh.smart.caller/com.android.dialer.main.impl.MainActivity}" drawable="phone" />
+	<item component="ComponentInfo{com.hb.dialer.free/com.hb.dialer.ui.ShcStartActivityContacts}" drawable="phone" />
+	<item component="ComponentInfo{com.oplus.dialer/com.android.contacts.DialtactsActivityAlias}" drawable="phone" />
 
     <!-- Phone Manager -->
     <item component="ComponentInfo{com.coloros.phonemanager/com.coloros.phonemanager.FakeActivity}" drawable="phone_manager" />
@@ -15794,6 +15828,7 @@
 
     <!-- Venmo -->
     <item component="ComponentInfo{com.venmo/com.venmo.TabCentralActivity}" drawable="venmo" />
+    <item component="ComponentInfo{com.venmo/com.venmo.tabcentral.TabCentralActivity}" drawable="venmo" />
 
     <!-- Verbs -->
     <item component="ComponentInfo{de.verbformen.verben.app/de.verbformen.app.MainActivity}" drawable="verbs" />
