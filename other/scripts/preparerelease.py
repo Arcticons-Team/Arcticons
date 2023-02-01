@@ -122,7 +122,8 @@ def remove_svg(dir:str):
 def create_new_drawables(svgdir: str,newdrawables:str) -> None:
     drawable_pre = '\t<item drawable="'
     drawable_suf = '" />\n'
-    os.remove(newdrawables)
+    if os.path.exists(newdrawables):
+        os.remove(newdrawables)
     with open(newdrawables, 'w',encoding="utf-8") as fp:
         fp.write('<?xml version="1.0" encoding="utf-8"?>\n<resources>\n\t<version>1</version>\n\t<category title="New" />\n')
         for file_path in glob.glob(f"{svgdir}/*.svg"):
@@ -157,18 +158,19 @@ def merge_new_drawables(pathxml: str, pathnewxml:str, assetpath:str):
         for line in lines:
             new = re.search(drawable,line)
             if new:
-                if new.groups(0)[0].startswith('folder'):
-                    folder.append(new.groups(0)[0])
-                elif new.groups(0)[0].startswith('calendar_'):
-                    calendar.append(new.groups(0)[0])
-                elif new.groups(0)[0].startswith('letter_'):
-                    letters.append(new.groups(0)[0])
-                elif new.groups(0)[0].startswith('number_'):
-                    numbers.append(new.groups(0)[0])
-                elif new.groups(0)[0].startswith('_'):
-                    number.append(new.groups(0)[0])
-                else:
-                    drawables.append(new.groups(0)[0])
+                if not new.groups(0)[0] in newDrawables:
+                    if new.groups(0)[0].startswith('folder'):
+                        folder.append(new.groups(0)[0])
+                    elif new.groups(0)[0].startswith('calendar_'):
+                        calendar.append(new.groups(0)[0])
+                    elif new.groups(0)[0].startswith('letter_'):
+                        letters.append(new.groups(0)[0])
+                    elif new.groups(0)[0].startswith('number_'):
+                        numbers.append(new.groups(0)[0])
+                    elif new.groups(0)[0].startswith('_'):
+                        number.append(new.groups(0)[0])
+                    else:
+                        drawables.append(new.groups(0)[0])
 
         newIcons= len(newDrawables)
         print("There are %i new icons"% newIcons)
@@ -253,7 +255,7 @@ def sortxml(path:str):
         root.append(comment)
         root.extend(element[1])
     #Write sorted xml to file
-    tree.write(path, pretty_print=True)
+    tree.write(path,encoding = 'utf-8', pretty_print=True)
 
 def find_non_white_svgs(dir: str):
     non_white_svgs = {}
