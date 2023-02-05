@@ -1,3 +1,10 @@
+### 5.2.6
+###### Released: Feb  5, 2023
+* 🎉 165 new and updated icons! (thanks Kaiserdragon2, Gitro, JoelChrono12, Akp37, TheLastZombie, Starfetch, Basings, Its-me-ct, Kerioneesh, Gbucar, Andmagdo)
+* 💡 Many fixes for icons not applying.
+* ✨ A special shoutout to Kaiserdragon2 for improving the release workflow!
+* 🔥 5268 icons in total!
+
 ### 5.1.0
 ###### Released: Jan 5, 2023
 * 📱 Dashboard update (no more crashes (hopefully)) 
@@ -18,31 +25,26 @@
 * 🎉 159 new or updated icons (thanks Kaiserdragon2, Quantenzitrone, JoelChrono12, Dgcampea, Aircan, PoorPocketsMcNewHold, 0slav, Ayecptn, KempfCreative, Petlyh, Tadas32, Lavin-Tom, Kaanelloed, NicoWeio , Ourslfs, Plasmid-zz, Basings, Akp 37!)
 * 🔥 4852 icons in total!
 
-
 ### 4.7.0
 ###### Released: Sep 23, 2022
 * 📱 Dashboard update
 * 🎉 100 new or updated icons (thanks Kport1, Basings, Actuallyhuman, GitGitro, Maciej-klupp, Joserebelo, Totoroot, Mrandyrew95, GrantMoyer, Ayecptn, Ojppe, Dgcampbe, Lavin-Tom, Yetanother-user and Akp37!)
 * 🔥 4698 icons in total!
 
-
 ### 4.6.3
 ###### Released: Aug 25, 2022
 * 🎉 84 new or updated icons (thanks Yetanother-user, Toxcien, Ojppe, Basings, Kreativ7, Lavin-Tom, Aliervo, Ronaldloyko, Kaiserdragon2, Petlyh, Prirai, Grrrrr, Kerioneesh, Wwwwwwari, MagiX13, Tieu1991 and Totoroot!)
 * 🔥 4606 icons in total!
-
 
 ### 4.6.2
 ###### Released: Jul 26, 2022
 * 🎉 96  new or updated icons (thanks Duese, Aloxe, Yetanother-user, toxcien, prirai, ojppe, andmagdo. Petlyh, Hassancreative, Maciej-klupp!)
 * 🔥 4622 icons in total!
 
-
 ### 4.5.6
 ###### Released: Jul 6, 2022
 * 🎉 126 new or updated icons (thanks Maciej-Klupp, Calciume, Toxcien, Joelchrono12, KristhianX, Dgcampbe, tieu1991, EvysGarden, Lavin-tom, Shreyanshs31, Andmagdo, Endim8, ZuperZeus, Aao-fyi!)
 * 🔥 4560 icons in total!
-
 
 ### 4.3.8
 ###### Released: Jun 6, 2022
@@ -58,7 +60,6 @@
 * ✨ Icon requests should be fixed now.
 * 🎉 38 new or updated icons (thanks Kaiserdragon2, Plasmid-zz, Hassancreative, Ktutsch, Lavin-tim, Jammo2k5)
 * 🔥 4310 icons in total!
-
 
 ### 4.2.8
 ###### Released: May 8, 2022
