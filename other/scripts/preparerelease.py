@@ -246,7 +246,7 @@ def sortxml(path:str):
     elements.append((comment_str,items))
 
     # Sort the elements by the comment value
-    elements.sort(key=lambda element: element[0])
+    elements.sort(key=lambda element: element[0].lower())
 
     # Write the sorted elements back to the XML file
     root.clear()
@@ -254,8 +254,17 @@ def sortxml(path:str):
         comment = etree.Comment(element[0])
         root.append(comment)
         root.extend(element[1])
+
+    # Add Spaces between entries
+    xml_str = etree.tostring(root,encoding = 'utf-8', pretty_print=True)
+    xml_str_line = add_newline_before_occurrences(xml_str.decode(),"  <!--")
+
     #Write sorted xml to file
-    tree.write(path,encoding = 'utf-8', pretty_print=True)
+    with open (path,'w', encoding='utf-8') as f:
+        f.write(xml_str_line)
+
+def add_newline_before_occurrences(string, pattern):
+    return re.sub(pattern, r"\n\g<0>", string)
 
 def find_non_white_svgs(dir: str):
     non_white_svgs = {}
