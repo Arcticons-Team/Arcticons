@@ -1,3 +1,9 @@
+### 5.4.0
+###### Released: Feb  6, 2023
+* 🎉 140 new and updated icons! (thanks Mast3rMirror, Hal47, RCaled, KR4U7H3R, Basings, Skedastically, Akp37, JoelChrono12, S-dasilva, Lavin-tom, WJehee, Andmagdo)
+* 💡 Many fixes for icons not applying.
+* 🔥 5403 icons in total!
+
 ### 5.2.6
 ###### Released: Feb  5, 2023
 * 🎉 165 new and updated icons! (thanks Kaiserdragon2, Gitro, JoelChrono12, Akp37, TheLastZombie, Starfetch, Basings, Its-me-ct, Kerioneesh, Gbucar, Andmagdo)
