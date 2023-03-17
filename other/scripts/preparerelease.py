@@ -159,7 +159,7 @@ def merge_new_drawables(pathxml: str, pathnewxml:str, assetpath:str):
             new = re.search(drawable,line)
             if new:
                 if not new.groups(0)[0] in newDrawables:
-                    if new.groups(0)[0].startswith('folder'):
+                    if new.groups(0)[0].startswith('folder_'):
                         folder.append(new.groups(0)[0])
                     elif new.groups(0)[0].startswith('calendar_'):
                         calendar.append(new.groups(0)[0])
