@@ -1311,7 +1311,7 @@
 
   <!-- ASN Bankieren -->
   <item component="ComponentInfo{nl.asnbank.asnbankieren/com.service2media.m2active.client.android.M2ActiveClient}" drawable="asn_bankieren"/>
-  <item component="ComponentInfo{nl.devolksbank.asn.bankieren/nl.devolksbank.mobile.banking.splash.SplashActivity}" drawable="asn_bankieren"/>
+  <item component="ComponentInfo{nl.devolksbank.asn.bankieren/nl.devolksbank.mobile.banking.splash.SplashActivity}" drawable="asn_bankieren_beta"/>
 
   <!-- ASN Betalen -->
   <item component="ComponentInfo{nl.asnbank.mobielbetalen/nl.sns.mobiel.betalen.activities.SplashActivity}" drawable="asn_betalen"/>
@@ -9365,6 +9365,9 @@
   <!-- Migros -->
   <item component="ComponentInfo{ch.migros.app/ch.migros.app.misc.MasterActivity}" drawable="letter_uppercase_m"/>
 
+  <!-- MijnDSW -->
+  <item component="ComponentInfo{nl.dsw.android.mijndsw/nl.mijnverzekering.modules.launch.LaunchActivity}" drawable="mijn_dsw"/>
+
   <!-- MijnGegevens -->
   <item component="ComponentInfo{nl.rijksoverheid.mijngegevens.pub/crc648aec74f5122876aa.MainActivity}" drawable="mijngegevens"/>
 
@@ -10459,8 +10462,7 @@
   <item component="ComponentInfo{org.schabi.newpipe.nightly/org.schabi.newpipe.MainActivity}" drawable="newpipe"/>
 
   <!-- News -->
-  <item component="ComponentInfo{de.luhmer.owncloudnewsreader/de.luhmer.owncloudnewsreader.NewsReaderListActivity}" drawable="news"/>
-  <item component="ComponentInfo{co.appreactor.news/common.AppActivity}" drawable="news"/>
+  <item component="ComponentInfo{co.appreactor.news/navigation.Activity}" drawable="news"/>
 
   <!-- News Provider -->
   <item component="ComponentInfo{m.co.rh.id.a_news_provider/m.co.rh.id.a_news_provider.app.MainActivity}" drawable="newsprovider"/>
@@ -10498,6 +10500,9 @@
 
   <!-- Nextcloud dev -->
   <item component="ComponentInfo{com.nextcloud.android.beta/com.owncloud.android.ui.activity.FileDisplayActivity}" drawable="nextclouddev"/>
+
+  <!-- Nextcloud News -->
+  <item component="ComponentInfo{de.luhmer.owncloudnewsreader/de.luhmer.owncloudnewsreader.NewsReaderListActivity}" drawable="nextcloud_news"/>
 
   <!-- Nextcloud Services -->
   <item component="ComponentInfo{com.polar.nextcloudservices/com.polar.nextcloudservices.SettingsActivity}" drawable="nextcloud_services"/>
