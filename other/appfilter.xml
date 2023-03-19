@@ -2222,6 +2222,7 @@
 
   <!-- BofA -->
   <item component="ComponentInfo{com.infonow.bofa/com.infonow.bofa.Launcher}" drawable="bofa"/>
+	<item component="ComponentInfo{com.infonow.bofa/com.bofa.ecom.marvel.Launcher}" drawable="bofa"/>
 
   <!-- BOINC -->
   <item component="ComponentInfo{edu.berkeley.boinc/edu.berkeley.boinc.SplashActivity}" drawable="boinc"/>
@@ -2824,7 +2825,7 @@
   <item component="ComponentInfo{com.Caseys.finder/com.caseys.commerce.activity.MainActivity}" drawable="caseys"/>
 
   <!-- Cash App -->
-  <item component="ComponentInfo{com.squareup.cash/com.squareup.cash.ui.MainActivity}" drawable="symboldollar"/>
+  <item component="ComponentInfo{com.squareup.cash/com.squareup.cash.ui.MainActivity}" drawable="currency_dollar"/>
 
   <!-- Casper -->
   <item component="ComponentInfo{io.casper.android/io.casper.android.activity.LaunchActivity}" drawable="casper"/>
@@ -3620,6 +3621,7 @@
 
   <!-- Cryptomator -->
   <item component="ComponentInfo{org.cryptomator/org.cryptomator.presentation.ui.activity.SplashActivity}" drawable="cryptomator"/>
+	<item component="ComponentInfo{org.cryptomator/org.cryptomator.presentation.ui.activity.VaultListActivity}" drawable="cryptomator"/>
 
   <!-- Cryten -->
   <item component="ComponentInfo{com.vertumus.cryten/com.vertumus.cryten.activities.SplashActivity}" drawable="cryten"/>
@@ -3669,11 +3671,21 @@
   <!-- CuriousCat -->
   <item component="ComponentInfo{me.curiouscat.app/me.curiouscat.app.MainActivity}" drawable="curiouscat"/>
 
+	<!-- My Link Manager -->
+	<item component="ComponentInfo{com.michaelflisar.linkmanager/com.michaelflisar.linkmanager.ui.activities.MainActivity}" drawable="my_link_manager"/>
+
   <!-- Currencies -->
   <item component="ComponentInfo{de.salomax.currencies/de.salomax.currencies.view.main.MainActivity}" drawable="currencies"/>
 
   <!-- Currency -->
   <item component="ComponentInfo{org.billthefarmer.currency/org.billthefarmer.currency.Main}" drawable="currency"/>
+	<item component="ComponentInfo{net.xelnaga.exchanger/net.xelnaga.exchanger.activity.MainActivity}" drawable="currency" />
+
+	<!-- Taxi.de -->
+	<item component="ComponentInfo{com.sic.taxibutton/de.talex.customer_apps.MainActivity}" drawable="taxi_de" />
+
+	<!-- GlobalFreeCall -->
+	<item component="ComponentInfo{finarea.GlobalFreeCall/finarea.MobileVoip.ui.activities.SplashScreenActivity}" drawable="globalfreecall" />
 
   <!-- Current Activity -->
   <item component="ComponentInfo{com.willme.topactivity/com.willme.topactivity.MainActivity}" drawable="current_activity"/>
@@ -4654,7 +4666,7 @@
   <item component="ComponentInfo{org.ebookdroid/org.ebookdroid.ui.MainActivity}" drawable="ebookdroid"/>
 
   <!-- EBT art -->
-  <item component="ComponentInfo{com.reactiveebt/com.reactiveebt.MainActivity}" drawable="symboleuro"/>
+  <item component="ComponentInfo{com.reactiveebt/com.reactiveebt.MainActivity}" drawable="currency_euro"/>
 
   <!-- Echo -->
   <item component="ComponentInfo{eu.mrogalski.saidit/eu.mrogalski.saidit.SaidItActivity}" drawable="echo"/>
@@ -9656,7 +9668,7 @@
   <item component="ComponentInfo{com.m2049r.xmrwallet/com.m2049r.xmrwallet.MainActivity}" drawable="monerujo"/>
 
   <!-- Money Balance -->
-  <item component="ComponentInfo{ivl.android.moneybalance/ivl.android.moneybalance.CalculationListActivity}" drawable="symboleuro"/>
+  <item component="ComponentInfo{ivl.android.moneybalance/ivl.android.moneybalance.CalculationListActivity}" drawable="currency_euro"/>
 
   <!-- Money Manager -->
   <item component="ComponentInfo{com.realbyteapps.moneymanagerfree/com.realbyteapps.moneymanagerfree.MMFreeActivity}" drawable="money_manager"/>
@@ -16915,7 +16927,7 @@
   <item component="ComponentInfo{com.whatever.verifit/com.example.verifit.MainActivity}" drawable="verifit"/>
 
   <!-- Verkaufswert Rechner -->
-  <item component="ComponentInfo{de.koloch.evaluator.free.app/de.koloch.evaluator.free.MainActivity}" drawable="symboldollar"/>
+  <item component="ComponentInfo{de.koloch.evaluator.free.app/de.koloch.evaluator.free.MainActivity}" drawable="currency_dollar"/>
 
   <!-- Verkehr.NRW -->
   <item component="ComponentInfo{de.momatec.vipnrw/de.strassennrw.vipnrw.verkehr_nrw.MainActivity}" drawable="verkehr_nrw"/>
