@@ -138,7 +138,7 @@ def merge_new_drawables(pathxml: str, pathnewxml:str, assetpath:str):
     folder = []
     calendar = []
     numbers = []
-    letters = []
+    symbols = []
     number = []
     drawable = re.compile(r'drawable="([\w_]+)"')
     
@@ -163,10 +163,8 @@ def merge_new_drawables(pathxml: str, pathnewxml:str, assetpath:str):
                         folder.append(new.groups(0)[0])
                     elif new.groups(0)[0].startswith('calendar_'):
                         calendar.append(new.groups(0)[0])
-                    elif new.groups(0)[0].startswith('letter_'):
-                        letters.append(new.groups(0)[0])
-                    elif new.groups(0)[0].startswith('number_'):
-                        numbers.append(new.groups(0)[0])
+                    elif new.groups(0)[0].startswith('letter_') or new.groups(0)[0].startswith('number_') or new.groups(0)[0].startswith('currency_'):
+                        symbols.append(new.groups(0)[0])
                     elif new.groups(0)[0].startswith('_'):
                         number.append(new.groups(0)[0])
                     else:
@@ -195,8 +193,8 @@ def merge_new_drawables(pathxml: str, pathnewxml:str, assetpath:str):
         for entry in calendar:
             output += '<item drawable="%s" />\n\t' % entry
 
-        output += '\n\t<category title="Letters" />\n\t'
-        for entry in letters:
+        output += '\n\t<category title="Symbols" />\n\t'
+        for entry in symbols:
             output += '<item drawable="%s" />\n\t' % entry
         output += '\n\t<category title="Numbers" />\n\t'
         for entry in numbers:
