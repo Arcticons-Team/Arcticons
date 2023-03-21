@@ -1,5 +1,110 @@
 <resources>
 
+  <!-- Bazoš -->
+  <item component="ComponentInfo{cz.ackee.bazos/cz.ackee.bazos.screens.main.MainActivity}" drawable="bazos"/>
+
+  <!-- LocalMonero -->
+  <item component="ComponentInfo{co.localmonero.app/io.flutter.embedding.android.FlutterFragmentActivity}" drawable="localmonero"/>
+
+  <!-- Nothing Weather -->
+  <item component="ComponentInfo{com.nothing.weather/com.nothing.weather.main.ui.MainActivity}" drawable="nothing_weather"/>
+
+  <!-- QRAlarm -->
+  <item component="ComponentInfo{com.sweak.qralarm/com.sweak.qralarm.MainActivity}" drawable="qralarm" />
+
+  <!-- Send Anywhere -->
+ <item component="ComponentInfo{com.estmob.android.sendanywhere/com.estmob.paprika4.activity.SplashActivity}" drawable="send_anywhere"/>
+
+  <!-- Scotiabank -->
+  <item component="ComponentInfo{com.scotiabank.banking/com.scotiabank.nova.startup.StartupAlias}" drawable="scotiabank"/>
+
+  <!-- USB Backup -->
+  <item component="ComponentInfo{com.sec.android.autobackup/com.sec.android.autobackup.ui.LauncherActivity}" drawable="usb_backup"/>
+
+  <!-- Vietcetera -->
+  <item component="ComponentInfo{com.vietcetera/com.vietcetera.MainActivity}" drawable="vietcetera"/>
+
+  <!-- Batdongsan.com.vn -->
+  <item component="ComponentInfo{vn.com.batdongsan/com.bdsviewer.MainActivity}" drawable="batdongsancomvn"/>
+
+  <!-- Batdongsan.com.vn - Đăng Tin -->
+  <item component="ComponentInfo{com.bdsbroker/com.bdsbroker.MainActivity}" drawable="batdongsancomvn_dang_tin"/>
+
+  <!-- Box, Box! -->
+  <item component="ComponentInfo{org.brightdv.boxbox/org.brightdv.boxbox.MainActivity}" drawable="box_box"/>
+
+  <!-- Chatous -->
+  <item component="ComponentInfo{com.chatous.chatous/com.chatous.chatous.ui.activity.AnnouncementActivity}" drawable="chatous"/>
+
+  <!-- Chợ Tốt -->
+  <item component="ComponentInfo{com.chotot.vn/com.chotot.vn.activities.SplashActivity}" drawable="chotot"/>
+
+  <!-- Foxpay -->
+  <item component="ComponentInfo{com.ftel.foxpay/com.ftel.foxpay.feature.auth.ui.SplashActivity}" drawable="foxpay"/>
+
+  <!-- Sổ sức khỏe điện tử -->
+  <item component="ComponentInfo{com.mohviettel.sskdt/com.mohviettel.sskdt.ui.SplashActivity}" drawable="so_suc_khoe_dien_tu"/>
+
+  <!-- Kvæsitso Icons -->
+  <item component="ComponentInfo{de.kvaesitso.icons/de.kvaesitso.icons.MainActivity}" drawable="kvaesitso_icons"/>
+
+  <!-- Hi FPT -->
+  <item component="ComponentInfo{com.rad.hifpt/com.rad.hifpt.screens_boarding.activities.BeginApplicationActivity}" drawable="hi_fpt"/>
+
+  <!-- FPT Camera -->
+  <item component="ComponentInfo{ftel.cmr.camera/vn.fpt.camera.ui.userModule.splashScreen.SplashScreenActivity}" drawable="fpt_camera"/>
+
+  <!-- FPT iVIEC -->
+  <item component="ComponentInfo{com.fpt.iviec/com.fpt.iviec.MainActivity}" drawable="fpt_iviec"/>
+
+  <!-- FPT Play -->
+  <item component="ComponentInfo{com.fplay.activity/com.fptplay.mobile.WelcomeActivity}" drawable="fpt_play"/>
+
+  <!-- Gugal -->
+  <item component="ComponentInfo{com.porg.gugal/com.porg.gugal.MainActivity}" drawable="gugal"/>
+
+  <!-- InstLife -->
+  <item component="ComponentInfo{com.instcoffee.instlife/com.unity3d.player.UnityPlayerActivity}" drawable="instlife"/>  
+
+  <!-- My CTU -->
+  <item component="ComponentInfo{com.canboctu/com.canboctu.MainActivity}" drawable="myctu"/>
+
+  <!-- My CTUS -->
+  <item component="ComponentInfo{com.demouiis/com.demouiis.MainActivity}" drawable="myctus"/>
+
+  <!-- My Viettel -->
+  <item component="ComponentInfo{com.vttm.vietteldiscovery/com.vttm.myviettelV2.activity.NFirstUserActivity}" drawable="my_viettel"/>
+
+  <!-- ON Plus -->
+  <item component="ComponentInfo{com.vtvcab.onsports/com.vtvcab.onsports.SplashActivity}" drawable="on_plus"/>
+
+  <!-- SSI iBoard -->
+  <item component="ComponentInfo{org.ssi.iBoardSSI/org.ssi.iBoardSSI.DefaultLaunchAlias}" drawable="ssi_iboard"/>
+
+  <!-- The End of the World -->
+  <item component="ComponentInfo{com.theendoftheworldgame/com.gamesalad.player.GSGameWrapperActivity}" drawable="the_end_of_the_world"/>
+
+  <!-- VTracking -->
+  <item component="ComponentInfo{com.viettel.vtrackingv2/com.viettel.vtrackingv2.presenter.activities.SplashActivity}" drawable="vtracking"/>
+
+  <!-- Network -->
+  <item component="ComponentInfo{de.mangelow.network/de.mangelow.network.RadioNetwork}" drawable="network"/>
+
+  <!-- Clipious -->
+  <item component="ComponentInfo{com.github.lamarios.clipious/com.github.lamarios.clipious.MainActivity}" drawable="clipious" />
+
+  <!-- Network -->
+  <item component="ComponentInfo{pl.lebihan.network/pl.lebihan.network.RadioNetwork}" drawable="network"/>
+
+  <!-- PhoneProfilesPlus -->
+  <item component="ComponentInfo{sk.henrichg.phoneprofilesplus/sk.henrichg.phoneprofilesplus.LauncherActivity}" drawable="phoneprofilesplus"/>
+
+  <!-- QR Scanner -->
+  <item component="ComponentInfo{com.kitkats.qrscanner/com.kitkats.qrscanner.NavActivity}" drawable="qr_scanner" />
+
+  <!-- Cwtch -->
+  <item component="ComponentInfo{im.cwtch.flwtch/im.cwtch.flwtch.MainActivity}" drawable="cwtch"/>
+
   <!-- $HELL -->
   <item component="ComponentInfo{in.ac.dducollegedu.shell/in.ac.dducollegedu.shell.MainActivity}" drawable="shell"/>
     
@@ -356,6 +461,9 @@
 
   <!-- ABANCA -->
   <item component="ComponentInfo{com.abanca.bancamovil.particulares/com.abanca.bancamovil.presentation.activities.StartActivity}" drawable="abanca"/>
+
+  <!-- ABC News -->
+  <item component="ComponentInfo{android.AbcApplication/au.net.abc.apollo.homescreen.HomeScreenActivity}" drawable="abc_news"/>
 
   <!-- ABN AMRO -->
   <item component="ComponentInfo{com.abnamro.nl.mobile.payments/com.abnamro.nl.mobile.payments.ui.activity.main.SplashActivity}" drawable="abnamro"/>
@@ -998,6 +1106,7 @@
 
   <!-- Angry Birds Space -->
   <item component="ComponentInfo{com.rovio.angrybirdsspaceHD/com.rovio.fusion.App}" drawable="angry_birds_space"/>
+  <item component="ComponentInfo{com.rovio.angrybirdsspace.ads/com.rovio.fusion.App}" drawable="angry_birds_space" />
 
   <!-- AniDroid -->
   <item component="ComponentInfo{com.jurasdev.anidroid/crc640c36fddd54741971.StartActivity}" drawable="anidroid"/>
@@ -5746,6 +5855,9 @@
   <item component="ComponentInfo{nya.kitsunyan.foxydroid/nya.kitsunyan.foxydroid.MainActivity}" drawable="foxydroid"/>
   <item component="ComponentInfo{nya.kitsunyan.foxydroid.neo/nya.kitsunyan.foxydroid.MainActivity}" drawable="foxydroid"/>
 
+  <!-- FPT TV Remote -->
+  <item component="ComponentInfo{vn.fpt.truyenhinh.rca/vn.fpt.remote.ui.splash_screen.SplashScreenActivity}" drawable="fpt_tv_remote"/>
+
   <!-- Frameo -->
   <item component="ComponentInfo{net.frameo.app/net.frameo.app.ui.activities.AEnterNameAtStartup}" drawable="frameo"/>
 
@@ -10485,9 +10597,6 @@
 
   <!-- Netto+ -->
   <item component="ComponentInfo{dk.dsg.netto/dk.sg.cp.features.common.ui.SplashActivity}" drawable="netto"/>
-
-  <!-- Network -->
-  <item component="ComponentInfo{de.mangelow.network/de.mangelow.network.RadioNetwork}" drawable="phone"/>
 
   <!-- Network Speed -->
   <item component="ComponentInfo{com.evozi.network/com.evozi.network.view.MainActivity}" drawable="network_speed"/>
@@ -17449,8 +17558,6 @@
   <item component="ComponentInfo{au.com.weatherzone.android.weatherzonefreeapp/au.com.weatherzone.android.weatherzonefreeapp.LauncherActivity}" drawable="weather"/>
   <item component="ComponentInfo{com.coloros.weather/com.coloros.weather.OppoMainActivity}" drawable="weather"/>
   <item component="ComponentInfo{com.coloros.weather2/com.coloros.weather.OppoMainActivity}" drawable="weather"/>
-  <item component="ComponentInfo{com.nothing.weather/com.nothing.weather.main.ui.MainActivity}" drawable="weather" />
-
   <!-- Weather Forecast -->
   <item component="ComponentInfo{uk.org.boddie.android.weatherforecast/uk.org.boddie.android.weatherforecast.WeatherForecastActivity}" drawable="weather_forecast"/>
 
