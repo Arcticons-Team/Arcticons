@@ -38,13 +38,19 @@ VALUE_PATH = APP_SRC_DIR + "/main/res/values"
 #Export Sizes of the icons
 SIZES = [256]
 #Define original color
-ORIGINAL_STROKE = r"stroke\s*:\s*(#ffffff|#fff|white)"
-ORIGINAL_FILL = r"fill\s*:\s*(#ffffff|#fff|white)"
+ORIGINAL_STROKE = r"stroke\s*:\s*(#FFFFFF|#ffffff|#fff|white)"
+ORIGINAL_STROKE_ALT = r"stroke\s*=\"\s*(#FFFFFF|#ffffff|#fff|white)\""
+ORIGINAL_FILL = r"fill\s*:\s*(#FFFFFF|#ffffff|#fff|white)"
+ORIGINAL_FILL_ALT = r"fill\s*=\"\s*(#FFFFFF|#ffffff|#fff|white)\""
 #Define Replace Colors
 REPLACE_STROKE_WHITE = "stroke:#fff"
+REPLACE_STROKE_WHITE_ALT = '''stroke="#fff"'''
 REPLACE_FILL_WHITE = "fill:#fff"
+REPLACE_FILL_WHITE_ALT = '''fill="#fff"'''
 REPLACE_STROKE_BLACK = "stroke:#000"
+REPLACE_STROKE_BLACK_ALT = '''stroke="#000"'''
 REPLACE_FILL_BLACK = "fill:#000"
+REPLACE_FILL_BLACK_ALT = '''fill="#000"'''
 
 
 #helper sort xml.sh
@@ -89,13 +95,15 @@ def convert_svg_files(iconsdir: str, xmldir: str, valuesdir:str, assetsdir:str,a
     copy2(appfilterpath, xmldir)
 
 #Change Color of SVG based on rules
-def svg_colors(dir:str,stroke:str,fill:str,replace_stroke:str,replace_fill:str)  -> None:
+def svg_colors(dir:str,stroke:str,fill:str,stroke_alt:str,fill_alt:str,replace_stroke:str,replace_fill:str,replace_stroke_alt:str,replace_fill_alt:str)  -> None:
     for x in glob.glob(f"{dir}/*.svg"):
         with open(x, 'r') as fp:
             content = fp.read()
        
         content = re.sub(stroke, replace_stroke, content, flags=re.IGNORECASE)
         content = re.sub(fill, replace_fill, content, flags=re.IGNORECASE)
+        content = re.sub(stroke_alt, replace_stroke_alt, content, flags=re.IGNORECASE)
+        content = re.sub(fill_alt, replace_fill_alt, content, flags=re.IGNORECASE)
     
         with open(x, 'w') as fp:
             fp.write(content)
@@ -269,17 +277,17 @@ def find_non_white_svgs(dir: str):
     for file_path in glob.glob(f"{dir}/*.svg"):
         file= os.path.basename(file_path)
         name = file[:-4]
-        with open(file_path, 'r') as fp:
+        with open(file_path, 'r', encoding='utf-8') as fp:
             content = fp.read()
-            stroke_colors = re.findall(r'stroke:#.*?(?=;)', content)
-            fill_colors = re.findall(r'fill:#.*?(?=;)', content)
+            stroke_colors = re.findall(r'stroke(?:=\"|:)#.*?(?=[\"; ])', content)
+            fill_colors = re.findall(r'fill(?:=\"|:)#.*?(?=[\"; ])', content)
             for stroke_color in stroke_colors:
-                if stroke_color not in ['stroke:#ffffff', 'stroke:#fff', 'stroke:#FFFFFF']:
+                if stroke_color not in ['stroke:#ffffff', 'stroke:#fff', 'stroke:#FFFFFF', 'stroke="#fff', 'stroke="#ffffff', 'stroke="#FFFFFF', 'stroke="white']:
                     if file in non_white_svgs:
                         non_white_svgs[file] += [stroke_color]
                     else: non_white_svgs[file] = [stroke_color]
             for fill_color in fill_colors:
-                if fill_color not in ['fill:#ffffff', 'fill:#fff', 'fill:#FFFFFF']:
+                if fill_color not in ['fill:#ffffff', 'fill:#fff', 'fill:#FFFFFF', 'fill="#ffffff', 'fill="#fff', 'fill="#FFFFFF', 'fill="white']:
                     if file in non_white_svgs:
                         non_white_svgs[file] += [fill_color]
                     else: non_white_svgs[file] = [fill_color]
@@ -305,9 +313,9 @@ def main():
     if find_non_white_svgs(SVG_DIR):
         return
     create_new_drawables(SVG_DIR,NEWDRAWABLE_PATH)
-    svg_colors(SVG_DIR,ORIGINAL_STROKE,ORIGINAL_FILL,REPLACE_STROKE_WHITE,REPLACE_FILL_WHITE)
+    svg_colors(SVG_DIR,ORIGINAL_STROKE,ORIGINAL_FILL,ORIGINAL_STROKE_ALT,ORIGINAL_FILL_ALT,REPLACE_STROKE_WHITE,REPLACE_FILL_WHITE,REPLACE_STROKE_WHITE_ALT,REPLACE_FILL_WHITE_ALT)
     create_icons(SIZES, SVG_DIR ,EXPORT_DARK_DIR, WHITE_DIR, 'Dark Mode')
-    svg_colors(SVG_DIR,ORIGINAL_STROKE,ORIGINAL_FILL,REPLACE_STROKE_BLACK,REPLACE_FILL_BLACK)
+    svg_colors(SVG_DIR,ORIGINAL_STROKE,ORIGINAL_FILL,ORIGINAL_STROKE_ALT,ORIGINAL_FILL_ALT,REPLACE_STROKE_BLACK,REPLACE_FILL_BLACK,REPLACE_STROKE_BLACK_ALT,REPLACE_FILL_BLACK_ALT)
     create_icons(SIZES, SVG_DIR ,EXPORT_LIGHT_DIR, BLACK_DIR, 'Light Mode')
     remove_svg(SVG_DIR)
     sortxml(APPFILTER_PATH)
