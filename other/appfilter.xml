@@ -810,6 +810,66 @@
   <item component="ComponentInfo{org.xphnx.ameixamonochrome/org.xphnx.ameixamonochrome.activities.MainActivity}" drawable="themes"/>
   <item component="ComponentInfo{org.xphnx.ameixamonochrome/org.xphnx.ameixa.activities.MainActivity}" drawable="themes"/>
 
+  <!-- Sticker.ly -->
+  <item component="ComponentInfo{com.snowcorp.stickerly.android/com.snowcorp.stickerly.android.LauncherEntryActivity}" drawable="stickerly" />
+
+	<!-- ADPMobile -->
+	<item component="ComponentInfo{com.adpmobile.android/com.adpmobile.android.auth.ui.AuthAppActivity}" drawable="adpmobile" />
+
+	<!-- Family Safety -->
+	<item component="ComponentInfo{com.microsoft.familysafety/com.microsoft.familysafety.MainActivity}" drawable="family_safety" />
+
+	<!-- Firewalla -->
+	<item component="ComponentInfo{com.firewalla.chancellor/com.firewalla.chancellor.MainActivity}" drawable="firewalla" />
+
+	<!-- Net Generation -->
+	<item component="ComponentInfo{com.usta.netgen/com.usta.netgen.ui.StartupActivity}" drawable="net_generation" />
+
+  <!-- Game Space -->
+  <item component="ComponentInfo{com.coloros.gamespaceui/com.coloros.gamespaceui.activity.StartActivity}" drawable="game_space" />
+
+  <!-- OVO -->
+  <item component="ComponentInfo{ovo.id/ovo.id.common.activity.StartingActivity}" drawable="ovo" />
+
+  <!-- UC Browser -->
+  <item component="ComponentInfo{com.UCMobile.intl/com.UCMobile.main.UCMobile}" drawable="uc_browser" />
+
+  <!-- Jupiter -->
+  <item component="ComponentInfo{money.jupiter/com.zoontek.rnbootsplash.RNBootSplashActivity}" drawable="jupiter" />
+
+  <!-- HM -->
+  <item component="ComponentInfo{com.hm.goe/com.hm.goe.app.home.HomeActivity}" drawable="hm" />
+
+  <!-- Resso -->
+  <item component="ComponentInfo{com.moonvideo.android.resso/com.anote.android.bach.app.SplashActivity}" drawable="resso" />
+
+  <!-- BRImo -->
+  <item component="ComponentInfo{id.co.bri.brimo/id.co.bri.brimo.ui.activities.SplashScreenActivity}" drawable="brimo" />
+
+  <!-- imo -->
+  <item component="ComponentInfo{com.imo.android.imoim/com.imo.android.imoim.activities.Home}" drawable="imo" />
+
+  <!-- BBVA -->
+  <item component="ComponentInfo{com.bancomer.mbanking/com.bbva.bgm.loginui.activity.SplashActivityDefault}" drawable="bbva" />
+
+  <!-- Tata Play -->
+  <item component="ComponentInfo{com.ryzmedia.tatasky/com.ryzmedia.tatasky.splash.SplashActivity}" drawable="tata_play" />
+
+  <!-- EasyShare -->
+  <item component="ComponentInfo{com.vivo.easyshare/com.vivo.easyshare.activity.SplashScreenActivity}" drawable="easyshare" />
+
+  <!-- Free Download ManagerFDM -->
+  <item component="ComponentInfo{org.freedownloadmanager.fdm/org.freedownloadmanager.fdm.MyActivity}" drawable="free_download_manager" />
+
+  <!-- FIFA Mobile -->
+  <item component="ComponentInfo{com.ea.gp.fifamobile/com.ea.gp.fifamobile.FifaMainActivity}" drawable="fifa_mobile" />
+
+  <!-- FamPay -->
+  <item component="ComponentInfo{com.fampay.in/com.fampay.in.ui.splash.SplashActivity}" drawable="fampay" />
+
+  <!-- UC Mini -->
+  <item component="ComponentInfo{com.uc.browser.en/com.UCMobile.main.UCMobile}" drawable="uc_browser_mini" />
+
   <!-- Ameli -->
   <item component="ComponentInfo{fr.cnamts.it.activity/fr.cnamts.it.activity.LoginActivity}" drawable="ameli"/>
 
@@ -817,8 +877,9 @@
   <item component="ComponentInfo{com.vitorpamplona.amethyst/com.vitorpamplona.amethyst.ui.MainActivity}" drawable="amethyst"/>
 
   <!-- Amex CA -->
-  <item component="ComponentInfo{com.americanexpress.android.acctsvcs.ca/com.americanexpress.android.intl.app.view.activity.SplashActivity}" drawable="amexca"/>
-  <item component="ComponentInfo{com.americanexpress.android.acctsvcs.ca/com.americanexpress.android.intl.app.view.activity.SplashInitializationActivity}" drawable="amexca"/>
+  <item component="ComponentInfo{com.americanexpress.android.acctsvcs.ca/com.americanexpress.android.intl.app.view.activity.SplashActivity}" drawable="amex"/>
+  <item component="ComponentInfo{com.americanexpress.android.acctsvcs.ca/com.americanexpress.android.intl.app.view.activity.SplashInitializationActivity}" drawable="amex"/>
+  <item component="ComponentInfo{com.americanexpress.android.acctsvcs.us/com.americanexpress.android.acctsvcs.us.firstuse.StartupActivity}" drawable="amex" />
 
   <!-- AmiGO -->
   <item component="ComponentInfo{com.tomtom.speedcams.android.map/com.zoontek.rnbootsplash.RNBootSplashActivity}" drawable="amigo"/>
@@ -2378,11 +2439,13 @@
 
   <!-- British Airways-->
   <item component="ComponentInfo{com.ba.mobile/com.ba.mobile.splash.SplashActivity}" drawable="british_airways" />
+  
   <!-- Browser -->
   <item component="ComponentInfo{foundation.e.browser/com.google.android.apps.chrome.Main}" drawable="browser"/>
   <item component="ComponentInfo{com.mi.globalbrowser/com.mi.globalbrowser.Main}" drawable="browser"/>
   <item component="ComponentInfo{com.vivo.browser/com.vivo.browser.BrowserActivity}" drawable="browser"/>
   <item component="ComponentInfo{com.heytap.browser/com.android.browser.BrowserActivity}" drawable="browser"/>
+  <item component="ComponentInfo{com.iode.firefox/com.iode.firefox.App}" drawable="browser" />
 
   <!-- Brubank -->
   <item component="ComponentInfo{com.brubank/com.brubank.android.ui.activities.LandingActivity}" drawable="brubank"/>
@@ -11451,6 +11514,12 @@
 
   <!-- Opera GX -->
   <item component="ComponentInfo{com.opera.gx/com.opera.gx.MainActivity}" drawable="opera_gx"/>
+  
+  <!-- Opera Touch -->
+  <item component="ComponentInfo{com.opera.touch/com.opera.touch.MainActivity}" drawable="opera_touch" />
+
+  <!-- Opera beta -->
+  <item component="ComponentInfo{com.opera.browser.beta/com.opera.Opera}" drawable="opera_beta" />
 
   <!-- OPlayer -->
   <item component="ComponentInfo{com.olimsoft.android.oplayer.pro/com.olimsoft.android.oplayer.StartActivity}" drawable="oplayer"/>
@@ -17846,6 +17915,7 @@
   <item component="ComponentInfo{au.com.weatherzone.android.weatherzonefreeapp/au.com.weatherzone.android.weatherzonefreeapp.LauncherActivity}" drawable="weather"/>
   <item component="ComponentInfo{com.coloros.weather/com.coloros.weather.OppoMainActivity}" drawable="weather"/>
   <item component="ComponentInfo{com.coloros.weather2/com.coloros.weather.OppoMainActivity}" drawable="weather"/>
+  <item component="ComponentInfo{com.sec.android.daemonapp/com.samsung.android.weather.app.AppLauncherActivity}" drawable="weather" />
 
   <!-- Weather Forecast -->
   <item component="ComponentInfo{uk.org.boddie.android.weatherforecast/uk.org.boddie.android.weatherforecast.WeatherForecastActivity}" drawable="weather_forecast"/>
