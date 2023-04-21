@@ -1,6 +1,6 @@
 ### 5.8.2
 ###### Released: Apr 21, 2023
-* 🎉 209 new and updated icons! (thanks Skedastically, Kaiserdragon2, Maskedman99, Basings, Petlyh, Gaenseblume, Cubedsheep, Quantenzitrone, 20brs, KR4U7H3R, Daywalk3r666, A-zurcher)
+* 🎉 221 new and updated icons!  (thanks Skedastically, Kaiserdragon2, Maskedman99, Basings, Petlyh, Gaenseblume, Cubedsheep, Quantenzitrone, 20brs, KR4U7H3R, Daywalk3r666, A-zurcher)
 * 📁 New folder icons.
 * 🔠 New circular icons for letters and numbers.
 * 💡 Many fixes for icons not applying.
