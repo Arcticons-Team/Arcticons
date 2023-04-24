@@ -16346,6 +16346,7 @@
   <item component="ComponentInfo{me.lucky.wasted/me.lucky.wasted.trigger.application.TelegramActivity}" drawable="telegram"/>
   <item component="ComponentInfo{org.telegram.messenger.beta/org.telegram.messenger.DefaultIcon}" drawable="telegram"/>
   <item component="ComponentInfo{org.telegram.messenger/org.telegram.messenger.VintageIcon}" drawable="telegram"/>
+  <item component="ComponentInfo{org.telegram.messenger.web/org.telegram.messenger.AquaIcon}" drawable="telegram"/>
 
   <!-- Telegram Plus -->
   <item component="ComponentInfo{org.telegram.plus/org.telegram.ui.LaunchActivity}" drawable="telegram_plus"/>
@@ -18438,8 +18439,21 @@
 
   <!-- Xbox -->
   <item component="ComponentInfo{com.microsoft.xboxone.smartglass/com.microsoft.xbox.MainActivity}" drawable="xbox"/>
-  <item component="ComponentInfo{com.gamepass.beta/com.gamepass.MainActivity}" drawable="xbox"/>
+
+	<!-- Xbox Beta -->
+	<item component="ComponentInfo{com.microsoft.xboxone.smartglass.beta/com.microsoft.xbox.MainActivity}" drawable="xbox_beta"/>
+
+	<!-- Xbox Family -->
+	<item component="ComponentInfo{com.microsoft.xboxfamily/com.xboxfamily.MainActivity}" drawable="xbox_family"/>
+
+	<!-- Xbox Game Pass -->
   <item component="ComponentInfo{com.gamepass/com.gamepass.MainActivity}" drawable="xbox"/>
+
+	<!-- Xbox Game Pass Beta -->
+  <item component="ComponentInfo{com.gamepass.beta/com.gamepass.MainActivity}" drawable="xbox_gamepass_beta"/>
+
+	<!-- Retro Mode -->
+	<item component="ComponentInfo{app.moertel.retro.iconpack.light/app.moertel.retro.iconpack.activities.SplashActivity}" drawable="retro_mode"/>
 
   <!-- XBrowserSync -->
   <item component="ComponentInfo{com.xBrowserSync.android/com.xBrowserSync.android.MainActivity}" drawable="xbrowsersync"/>
