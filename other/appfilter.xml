@@ -612,6 +612,7 @@
 
   <!-- Aliucord Installer -->
   <item component="ComponentInfo{com.aliucord.installer/com.aliucord.installer.MainActivity}" drawable="aliucord_installer"/>
+  <item component="ComponentInfo{com.aliucord.manager/com.aliucord.manager.MainActivity}" drawable="discord_alt_3" />
 
   <!-- All 4 -->
   <item component="ComponentInfo{com.channel4.ondemand/com.novoda.all4.launch.LaunchActivity}" drawable="all_4"/>
@@ -861,6 +862,10 @@
 
   <!-- Angry Birds -->
   <item component="ComponentInfo{com.rovio.abclassic22/com.unity3d.player.UnityPlayerActivity}" drawable="angry_birds"/>
+  <item component="ComponentInfo{com.rovio.abcasual/com.unity3d.player.UnityPlayerActivity}" drawable="angry_birds" />  
+
+  <!-- Angry Birds 2 -->
+  <item component="ComponentInfo{com.rovio.baba/com.unity3d.player.UnityPlayerActivity}" drawable="angry_birds_2" />
 
   <!-- Angry Birds Space -->
   <item component="ComponentInfo{com.rovio.angrybirdsspaceHD/com.rovio.fusion.App}" drawable="angry_birds_space"/>
@@ -3730,9 +3735,10 @@
   <!-- Curve -->
   <item component="ComponentInfo{com.imaginecurve.curve.prd/com.imaginecurve.curve.startup.launch.LaunchActivity}" drawable="curve"/>
 
-  <!-- Cut the Rope Free -->
+  <!-- Cut the Rope -->
   <item component="ComponentInfo{com.zeptolab.ctr.ads/com.zeptolab.ctr.CtrApp}" drawable="cut_the_rope"/>
-
+  <item component="ComponentInfo{com.zeptolab.ctr.paid/com.zeptolab.ctr.CtrApp}" drawable="cut_the_rope" />
+    
   <!-- CutTheCord -->
   <item component="ComponentInfo{com.cutthecord.notnite/com.discord.app.AppActivity$Main}" drawable="cutthecord"/>
   <item component="ComponentInfo{com.cutthecord.base/com.discord.app.AppActivity$Main}" drawable="cutthecord"/>
@@ -4409,7 +4415,10 @@
   <item component="ComponentInfo{com.dolby.dax2appUI/com.motorola.dlbafx.MotoMainActivity}" drawable="dolby"/>
   <item component="ComponentInfo{com.dolby.daxappui/com.dolby.daxappui.MainActivity}" drawable="dolby"/>
   <item component="ComponentInfo{com.motorola.dolby.dolbyui/com.motorola.dolby.dolbyui.ui.LauncherActivity}" drawable="dolby"/>
-
+  <item component="ComponentInfo{com.ontim.dolby/com.ontim.dolby.LauncherActivity}" drawable="dolby" />  
+  <item component="ComponentInfo{com.lifevibes.musicfx/com.lifevibes.musicfx.ActivityLauncher}" drawable="dolby" /> 
+  <item component="ComponentInfo{apcports.dolbyatmos98/ru.g000sha256.bass_booster.MainActivity}" drawable="dolby" />
+    
   <!-- Dolphin Emulator -->
   <item component="ComponentInfo{org.dolphinemu.dolphinemu/org.dolphinemu.dolphinemu.ui.main.MainActivity}" drawable="dolphinemulator"/>
 
@@ -7504,6 +7513,9 @@
 
   <!-- imo -->
   <item component="ComponentInfo{com.imo.android.imoim/com.imo.android.imoim.activities.Home}" drawable="imo"/>
+      
+  <!-- imo beta -->
+  <item component="ComponentInfo{com.imo.android.imoimbeta/com.imo.android.imoim.activities.Home}" drawable="imo_beta" />
 
   <!-- iMobile Pay -->
   <item component="ComponentInfo{com.csam.icici.bank.imobile/com.csam.icici.bank.imobile.IMOBILE}" drawable="imobile_pay"/>
@@ -9615,6 +9627,7 @@
 
   <!-- Microsoft Outlook -->
   <item component="ComponentInfo{com.microsoft.office.outlook/com.microsoft.office.outlook.MainActivity}" drawable="microsoftoutlook"/>
+  <item component="ComponentInfo{com.microsoft.outlooklite/com.microsoft.outlooklite.MainActivity}" drawable="microsoftoutlook" />
 
   <!-- Microsoft Planner -->
   <item component="ComponentInfo{com.microsoft.planner/com.microsoft.planner.login.ConnectActivity}" drawable="microsoft_planner"/>
@@ -9727,6 +9740,7 @@
   <!-- Minecraft -->
   <item component="ComponentInfo{com.mojang.minecraftpe/com.mojang.minecraftpe.MainActivity}" drawable="minecraft"/>
   <item component="ComponentInfo{com.mojang.minecraftpe/com.normal_archive.app.sdk.WelcomeActivity}" drawable="minecraft"/>
+  <item component="ComponentInfo{com.mojang.minecraftpe_Beta/com.mojang.minecraftpe.MainActivity}" drawable="minecraft" />
 
   <!-- Minesweeper -->
   <item component="ComponentInfo{org.secuso.privacyfriendlyminesweeper/org.secuso.privacyfriendlyminesweeper.activities.SplashActivity}" drawable="minesweeper"/>
@@ -9776,6 +9790,15 @@
 
   <!-- Mircrosoft Edge -->
   <item component="ComponentInfo{com.microsoft.emmx/com.microsoft.ruby.Main}" drawable="microsoftedge"/>
+  
+  <!-- Mircrosoft Edge Beta-->
+  <item component="ComponentInfo{com.microsoft.emmx.beta/com.microsoft.ruby.Main}" drawable="microsoft_edge_beta" />
+
+  <!-- Mircrosoft Edge Canary-->
+  <item component="ComponentInfo{com.microsoft.emmx.canary/com.microsoft.ruby.Main}" drawable="microsoft_edge_canary" />
+
+  <!-- Mircrosoft Edge Dev-->
+  <item component="ComponentInfo{com.microsoft.emmx.dev/com.microsoft.ruby.Main}" drawable="microsoft_edge_dev" />
 
   <!-- Miro -->
   <item component="ComponentInfo{com.realtimeboard/com.realtimeboard.MainActivity}" drawable="miro"/>
@@ -10220,6 +10243,7 @@
   <item component="ComponentInfo{com.musicplayer.playermusic/com.musicplayer.playermusic.activities.AudifyStartActivity}" drawable="music"/>
   <item component="ComponentInfo{com.github.anrimian.musicplayer/com.github.anrimian.musicplayer.ui.main.MainActivity}" drawable="music"/>
   <item component="ComponentInfo{com.tct.music/com.tct.music.activity.TctMusicBrowserActivity}" drawable="music" />
+  <item component="ComponentInfo{org.lds.ldsmusic/org.lds.ldsmusic.ux.startup.StartupActivity}" drawable="music" />
 
   <!-- Music Editor -->
   <item component="ComponentInfo{com.fragileheart.mp3editor/com.fragileheart.mp3editor.activity.SplashActivity}" drawable="music_editor"/>
@@ -11146,6 +11170,13 @@
   <item component="ComponentInfo{com.noto/com.noto.app.Futuristic}" drawable="letter_uppercase_square_n"/>
   <item component="ComponentInfo{com.noto/com.noto.app.Purpleberry}" drawable="letter_uppercase_square_n"/>
   <item component="ComponentInfo{com.noto/com.noto.app.SanguineSun}" drawable="letter_uppercase_square_n"/>
+      
+  <!-- D Notes -->
+  <item component="ComponentInfo{com.dvdb.bergnotes/com.dvdb.dnotes.MainActivity}" drawable="notes_2"/>
+  <item component="ComponentInfo{com.dvdb.bergnotes.beta/com.dvdb.dnotes.MainActivity}" drawable="notes_2"/>
+      
+  <!-- Simple Notes -->
+  <item component="ComponentInfo{com.rafapps.simplenotes/com.rafapps.simplenotes.NotesListActivity}" drawable="notes" />
 
   <!-- Nova América -->
   <item component="ComponentInfo{br.com.mobits.mobitsplaza.ancar.novaamerica/br.com.mobits.mobitsplaza.SplashActivity}" drawable="nova_america"/>
@@ -13085,11 +13116,15 @@
   <!-- RadarWeather -->
   <item component="ComponentInfo{org.woheller69.weather/org.woheller69.weather.activities.SplashActivity}" drawable="simpleweather"/>
 
+  <!-- LuX Icons -->
+  <item component="ComponentInfo{com.jndapp.lux.free.iconpack/com.jndapp.lux.free.iconpack.MainActivity}" drawable="lux_icons" /> 
+
   <!-- Radio -->
   <item component="ComponentInfo{com.tct.fmradio.bb/com.tct.fmradio.utils.BaseActivity}" drawable="radio"/>
   <item component="ComponentInfo{com.sec.android.app.fm/com.sec.android.app.fm.MainActivity}" drawable="radio"/>
   <item component="ComponentInfo{com.vivo.FMRadio/com.vivo.FMRadio.FMRadio}" drawable="radio"/>
   <item component="ComponentInfo{com.tcl.fmradio/com.tct.fmradio.utils.BaseActivity}" drawable="radio" />
+  <item component="ComponentInfo{com.transsion.fmradio/com.funbase.xradio.activity.SplashActivity}" drawable="radio" />
 
   <!-- Radio FM -->
   <item component="ComponentInfo{com.lge.fmradio/com.lge.fmradio.IntroActivity}" drawable="radiofm"/>
@@ -13460,6 +13495,9 @@
 
   <!-- Revolut -->
   <item component="ComponentInfo{com.revolut.revolut/com.revolut.ui.login.pin.LoginActivity}" drawable="revolut"/>
+  
+  <!-- Revolut Junior -->
+  <item component="ComponentInfo{com.revolut.junior/com.revolut.junior.ui.launcher.activity.LauncherActivityDefault}" drawable="revolut_junior" />
 
   <!-- Revolut Business -->
   <item component="ComponentInfo{com.revolut.business/com.revolut.business.ui.MainActivity}" drawable="revolut_business"/>
@@ -15998,6 +16036,9 @@
 
   <!-- SuperTuxKart -->
   <item component="ComponentInfo{org.supertuxkart.stk/org.supertuxkart.stk.SuperTuxKartActivity}" drawable="supertuxkart"/>
+    
+  <!-- SuperTuxKart Beta -->
+  <item component="ComponentInfo{org.supertuxkart.stk_beta/org.supertuxkart.stk_beta.SuperTuxKartActivity}" drawable="supertuxkart_beta" />
 
   <!-- Superuser -->
   <item component="ComponentInfo{me.phh.superuser/com.koushikdutta.superuser.MainActivity}" drawable="atomic"/>
@@ -17640,6 +17681,7 @@
 
   <!-- Videoland -->
   <item component="ComponentInfo{nl.rtl.videoland/nl.rtl.videoland.ui.onboarding.OnboardingActivity}" drawable="videoland"/>
+  <item component="ComponentInfo{nl.rtl.videoland.v2/fr.m6.m6replay.activity.SplashActivity}" drawable="videoland" />
 
   <!-- Videos -->
   <item component="ComponentInfo{com.coloros.video/com.oplus.video.SplashActivity}" drawable="mediaplayer"/>
@@ -18057,6 +18099,7 @@
   <item component="ComponentInfo{com.coloros.weather/com.coloros.weather.OppoMainActivity}" drawable="weather"/>
   <item component="ComponentInfo{com.coloros.weather2/com.coloros.weather.OppoMainActivity}" drawable="weather"/>
   <item component="ComponentInfo{com.sec.android.daemonapp/com.samsung.android.weather.app.AppLauncherActivity}" drawable="weather"/>
+  <item component="ComponentInfo{com.channel.weather.forecast.live.radar/com.nice.accurate.weather.ui.main.HomeActivity}" drawable="weather" />
 
   <!-- Weather Forecast -->
   <item component="ComponentInfo{uk.org.boddie.android.weatherforecast/uk.org.boddie.android.weatherforecast.WeatherForecastActivity}" drawable="weather_forecast"/>
