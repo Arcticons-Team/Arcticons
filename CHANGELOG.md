@@ -1,3 +1,10 @@
+### 6.0.4 
+###### Released: Apr 30, 2023
+* 🎉 Another huge milestone, we've reached 6k icons!
+* 🎉 226 new and updated icons!  (thanks Petlyh, Ojppe, Basings, Heruvetica)
+* 💡 Many fixes for icons not applying.
+* 🔥 6043 icons in total!
+
 ### 5.8.2
 ###### Released: Apr 21, 2023
 * 🎉 221 new and updated icons!  (thanks Skedastically, Kaiserdragon2, Maskedman99, Basings, Petlyh, Gaenseblume, Cubedsheep, Quantenzitrone, 20brs, KR4U7H3R, Daywalk3r666, A-zurcher)
