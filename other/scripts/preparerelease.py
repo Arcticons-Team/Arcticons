@@ -171,7 +171,7 @@ def merge_new_drawables(pathxml: str, pathnewxml:str, assetpath:str):
                         folder.append(new.groups(0)[0])
                     elif new.groups(0)[0].startswith('calendar_'):
                         calendar.append(new.groups(0)[0])
-                    elif new.groups(0)[0].startswith('letter_') or new.groups(0)[0].startswith('number_') or new.groups(0)[0].startswith('currency_'):
+                    elif new.groups(0)[0].startswith('letter_') or new.groups(0)[0].startswith('number_') or new.groups(0)[0].startswith('currency_') or new.groups(0)[0].startswith('symbol_'):
                         symbols.append(new.groups(0)[0])
                     elif new.groups(0)[0].startswith('_'):
                         number.append(new.groups(0)[0])
