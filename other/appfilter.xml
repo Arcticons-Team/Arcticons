@@ -3389,7 +3389,10 @@
   <item component="ComponentInfo{com.keithburgungames.chessmix/com.unity3d.player.UnityPlayerActivity}" drawable="chessmix"/>
 
   <!-- Chess PGN Master -->
-  <item component="ComponentInfo{com.kalab.pgnviewer/com.kalab.pgnviewer.activity.GameListActivity}" drawable="chesspgnmaster"/>
+  <item component="ComponentInfo{com.kalab.pgnviewer/com.kalab.pgnviewer.activity.GameListActivity}" drawable="chess_pgn_master"/>
+  
+  <!-- Chess PGN Master Pro -->
+  <item component="ComponentInfo{com.kalab.pgnviewerpro/com.kalab.pgnviewerpro.PgnViewerProActivity}" drawable="chess_pgn_master_pro" />
 
   <!-- Chess Walk -->
   <item component="ComponentInfo{cz.heji.chesswalk/cz.heji.chesswalk.MainActivity}" drawable="chesswalk"/>
@@ -17698,7 +17701,8 @@
   <!-- Two Dots -->
   <item component="ComponentInfo{com.weplaydots.twodotsandroid/com.weplaydots.twodots.TwoDotsActivity}" drawable="twodots"/>
   <item component="ComponentInfo{com.weplaydots.twodotsandroid/com.unity3d.player.UnityPlayerActivity}" drawable="twodots"/>
-
+  <item component="ComponentInfo{com.weplaydots.twodotsandroid/es.socialpoint.sparta.base.SpartaActivity}" drawable="twodots"/>
+  
   <!-- TWRP -->
   <item component="ComponentInfo{me.twrp.twrpapp/me.twrp.officialtwrpapp.MainActivity}" drawable="twrp"/>
   <item component="ComponentInfo{me.twrp.twrpapp/me.twrp.officialtwrpapp.activities.MainActivity}" drawable="twrp"/>
@@ -17831,6 +17835,7 @@
 
   <!-- Unified Remote -->
   <item component="ComponentInfo{com.Relmtech.RemotePaid/com.unified.v3.frontend.views.MainActivity}" drawable="unified_remote"/>
+  <item component="ComponentInfo{com.Relmtech.Remote/com.unified.v3.frontend.views.MainActivity}" drawable="unified_remote"/>
 
   <!-- UniPatcher -->
   <item component="ComponentInfo{org.emunix.unipatcher/org.emunix.unipatcher.ui.activity.MainActivity}" drawable="unipatcher"/>
