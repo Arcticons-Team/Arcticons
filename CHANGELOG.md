@@ -1,3 +1,25 @@
+### 6.0.4 
+###### Released: Apr 30, 2023
+* 🎉 Another huge milestone, we've reached 6k icons!
+* 🎉 226 new and updated icons!  (thanks Petlyh, Ojppe, Basings, Heruvetica)
+* 💡 Many fixes for icons not applying.
+* 🔥 6043 icons in total!
+
+### 5.8.2
+###### Released: Apr 21, 2023
+* 🎉 221 new and updated icons!  (thanks Skedastically, Kaiserdragon2, Maskedman99, Basings, Petlyh, Gaenseblume, Cubedsheep, Quantenzitrone, 20brs, KR4U7H3R, Daywalk3r666, A-zurcher)
+* 📁 New folder icons.
+* 🔠 New circular icons for letters and numbers.
+* 💡 Many fixes for icons not applying.
+* 🔥 5821 icons in total!
+
+### 5.6.0
+###### Released: Mar 22, 2023
+* 🎉 209 new and updated icons! (thanks Skedastically, Kaiserdragon2, Maskedman99, NicoWeio, KR4U7H3R, Lavin-Tom,, Trautb, Bsvka, Squ1rr3lly, Mast3rMirror, Basings)
+* 🪙 New icons for lots of different currencies.
+* 💡 Many fixes for icons not applying.
+* 🔥 5605 icons in total!
+
 ### 5.4.0
 ###### Released: Feb  6, 2023
 * 🎉 140 new and updated icons! (thanks Mast3rMirror, Hal47, RCaled, KR4U7H3R, Basings, Skedastically, Akp37, JoelChrono12, S-dasilva, Lavin-tom, WJehee, Andmagdo)

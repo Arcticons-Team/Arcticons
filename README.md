@@ -7,11 +7,11 @@
 <img src='https://raw.githubusercontent.com/Donnnno/Arcticons/main/github/header-background.png'>
 
 # Arcticons is a line-based icon pack for Android devices.
-It features a wide range **(over 5000!)** of elegant and consistent icons that are created by a community from all around the world. Arcticons is FOSS (Free and Open-Source Software) and provides many icons for other FOSS apps. 
+It features a wide range **(over 6000!)** of elegant and consistent icons that are created by a community from all around the world. Arcticons is FOSS (Free and Open-Source Software) and provides many icons for other FOSS apps. 
 <br>
 <br>
 <br>
-## Get if from on of these stores
+## Get it from one of these stores
 [<img src="https://f-droid.org/badge/get-it-on.png" alt="Get it on F-Droid" height="90">](https://f-droid.org/packages/com.donnnno.arcticons)
 [<img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" height="90">](https://play.google.com/store/apps/details?id=com.donnnno.arcticons)<br>
 [<img src="https://camo.githubusercontent.com/35b4ec18c762358fb784f9e973f77cf6eb596f2240e69a4c6c093a836655d889/68747470733a2f2f692e6962622e636f2f71306d6463345a2f6765742d69742d6f6e2d6769746875622e706e67" alt="Get it on Github" height="90">](https://github.com/Donnnno/Arcticons/releases)
@@ -64,7 +64,7 @@ If it's taking too long for you, you can also buy priority requests via <a href=
 
 The current version (2.1.8 and higher) of Arcticons is built with the CandyBar Dashboard, licensed under [Apache License, Version 2.0](https://www.apache.org/licenses/LICENSE-2.0)  which is compatible with the [GNU General Public License, Version 3.0](https://www.gnu.org/licenses/gpl-3.0.en.html) that we use.
 
-All icons are licensed under [Creative Commonns Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) ](https://creativecommons.org/licenses/by-sa/4.0/), with around 900 of the first icons based on [Frost](https://github.com/dkanada/frost)'s icons.
+All icons are licensed under [Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) ](https://creativecommons.org/licenses/by-sa/4.0/), with around 900 of the first icons based on [Frost](https://github.com/dkanada/frost)'s icons.
 
 ### Contributors
 
