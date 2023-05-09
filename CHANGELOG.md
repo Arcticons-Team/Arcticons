@@ -1,3 +1,9 @@
+### 6.1.7 
+###### Released: May 09, 2023
+* 🎉 137 new and updated icons! (thanks Ayecptn, MrMatrix, Axonym, Dimassasin1, Golden-peaches, Tempomode, Basings)
+* 💡 Many fixes for icons not applying.
+* 🔥 6172 icons in total!
+
 ### 6.0.4 
 ###### Released: Apr 30, 2023
 * 🎉 Another huge milestone, we've reached 6k icons!
