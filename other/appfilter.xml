@@ -5594,6 +5594,7 @@
   <item component="ComponentInfo{org.fdroid.fdroid/org.fdroid.fdroid.FDroid}" drawable="fdroid"/>
   <item component="ComponentInfo{org.fdroid.fdroid/org.fdroid.fdroid.views.main.MainActivity}" drawable="fdroid"/>
   <item component="ComponentInfo{org.fdroid.fdroid.debug/org.fdroid.fdroid.views.main.MainActivity}" drawable="fdroid"/>
+  <item component="ComponentInfo{org.fdroid.basic/org.fdroid.fdroid.views.main.MainActivity}" drawable="fdroid" />
 
   <!-- F-Droid Build Status -->
   <item component="ComponentInfo{de.storchp.fdroidbuildstatus/de.storchp.fdroidbuildstatus.MainActivity}" drawable="fdroidbuildstatus"/>
@@ -17232,7 +17233,16 @@
 
   <!-- Telegraher -->
   <item component="ComponentInfo{com.evildayz.code.telegraher/org.telegram.ui.LaunchActivity}" drawable="telegraher"/>
+      
+  <!-- App vault -->
+  <item component="ComponentInfo{com.mi.globalminusscreen/com.mi.globalminusscreen.MainActivity}" drawable="app_vault" />
 
+	<!-- Samsung Gift Indonesia -->
+	<item component="ComponentInfo{com.srin.indramayu/com.srin.indramayu.view.SplashActivity}" drawable="samsung_gift_indonesia" />
+
+	<!-- Samsung Pay -->
+	<item component="ComponentInfo{com.samsung.android.rajaampat/com.srin.rajaampat.view.activity.SplashScreenActivity}" drawable="samsung_pay" />
+      
   <!-- Telegram -->
   <item component="ComponentInfo{org.telegram.messenger/org.telegram.ui.LaunchActivity}" drawable="telegram"/>
   <item component="ComponentInfo{org.telegram.messenger.beta/org.telegram.ui.LaunchActivity}" drawable="telegram"/>
@@ -17247,6 +17257,7 @@
   <item component="ComponentInfo{org.telegram.messenger/org.telegram.messenger.VintageIcon}" drawable="telegram"/>
   <item component="ComponentInfo{org.telegram.messenger.web/org.telegram.messenger.AquaIcon}" drawable="telegram"/>
   <item component="ComponentInfo{org.telegram.messenger.beta/org.telegram.messenger.DefaultIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{org.telegram.messenger.web/org.telegram.messenger.market.DefaultIcon}" drawable="telegram" />
 
   <!-- Telegram Plus -->
   <item component="ComponentInfo{org.telegram.plus/org.telegram.ui.LaunchActivity}" drawable="telegram_plus"/>
@@ -19395,8 +19406,8 @@
   <item component="ComponentInfo{com.xact.wallet/com.xact.wallet.MainActivity}" drawable="xact"/>
 
   <!-- Xash3D FWGS -->
-  <item component="ComponentInfo{su.xash.engine/su.xash.engine.LauncherActivity}" drawable="circle_letter_x"/>
-  <item component="ComponentInfo{in.celest.xash3d.hl/in.celest.xash3d.LauncherActivity}" drawable="circle_letter_x"/>
+  <item component="ComponentInfo{su.xash.engine/su.xash.engine.LauncherActivity}" drawable="letter_uppercase_circle_x"/>
+  <item component="ComponentInfo{in.celest.xash3d.hl/in.celest.xash3d.LauncherActivity}" drawable="letter_uppercase_circle_x"/>
 
   <!-- Xbox -->
   <item component="ComponentInfo{com.microsoft.xboxone.smartglass/com.microsoft.xbox.MainActivity}" drawable="xbox"/>
