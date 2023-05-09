@@ -937,11 +937,22 @@
 
   <!-- Amethyst -->
   <item component="ComponentInfo{com.vitorpamplona.amethyst/com.vitorpamplona.amethyst.ui.MainActivity}" drawable="amethyst"/>
-
-  <!-- Amex CA -->
+      
+  <!-- U.S. Bank -->
+  <item component="ComponentInfo{com.usbank.mobilebanking/com.usb.module.environment.ui.SplashActivity}" drawable="us_bank" />
+  
+  <!-- Amex -->
   <item component="ComponentInfo{com.americanexpress.android.acctsvcs.ca/com.americanexpress.android.intl.app.view.activity.SplashActivity}" drawable="amex"/>
   <item component="ComponentInfo{com.americanexpress.android.acctsvcs.ca/com.americanexpress.android.intl.app.view.activity.SplashInitializationActivity}" drawable="amex"/>
   <item component="ComponentInfo{com.americanexpress.android.acctsvcs.us/com.americanexpress.android.acctsvcs.us.firstuse.StartupActivity}" drawable="amex"/>
+  <item component="ComponentInfo{com.americanexpress.android.acctsvcs.in/com.americanexpress.android.intl.app.view.activity.SplashInitializationActivity}" drawable="amex" />
+  <item component="ComponentInfo{com.americanexpress.android.acctsvcs.uk/com.americanexpress.android.intl.app.view.activity.SplashActivity}" drawable="amex" />
+  <item component="ComponentInfo{com.americanexpress.android.acctsvcs.mx/com.americanexpress.android.intl.app.view.activity.SplashActivity}" drawable="amex" />
+  <item component="ComponentInfo{com.americanexpress.android.acctsvcs.icc/com.americanexpress.android.intl.app.view.activity.SplashActivity}" drawable="amex" />
+  <item component="ComponentInfo{com.americanexpress.android.acctsvcs.au/com.americanexpress.android.intl.app.view.activity.SplashInitializationActivity}" drawable="amex" />
+  <item component="ComponentInfo{com.AmexApp/com.AmexApp.MainActivity}" drawable="amex" />
+  <item component="ComponentInfo{com.americanexpress.android.acctsvcs.de/com.americanexpress.android.intl.app.view.activity.SplashInitializationActivity}" drawable="amex" />
+  <item component="ComponentInfo{com.americanexpress.android.acctsvcs.nl/com.americanexpress.android.intl.app.view.activity.SplashInitializationActivity}" drawable="amex" />
 
   <!-- AmiGO -->
   <item component="ComponentInfo{com.tomtom.speedcams.android.map/com.zoontek.rnbootsplash.RNBootSplashActivity}" drawable="amigo"/>
@@ -3031,7 +3042,9 @@
   <item component="ComponentInfo{com.iode.aperture/org.lineageos.aperture.CameraLauncher}" drawable="camera"/>
   <item component="ComponentInfo{com.evenwell.camera2/com.android.camera.CameraLauncher}" drawable="camera"/>
   <item component="ComponentInfo{com.lenovotab.camera/com.lenovotab.camera.CameraLauncher}" drawable="camera"/>
-
+  <item component="ComponentInfo{photo.android.hd.camera/com.android.camera.activity.SplashActivity}" drawable="camera" />
+  <item component="ComponentInfo{com.shamim.cam/com.android.camera.CameraLauncher}" drawable="camera" />
+ 
   <!-- Camera Connect -->
   <item component="ComponentInfo{jp.co.canon.ic.cameraconnect/jp.co.canon.ic.cameraconnect.top.CCTopActivity}" drawable="cameraconnect"/>
 
@@ -3747,7 +3760,10 @@
 
   <!-- Company Portal -->
   <item component="ComponentInfo{com.microsoft.windowsintune.companyportal/com.microsoft.windowsintune.companyportal.views.SplashActivity}" drawable="company_portal"/>
-
+      
+  <!-- Manual Camera DSLR Pro -->
+  <item component="ComponentInfo{com.lensesdev.manual.camera.pro/com.antafunny.burstcamera.MainActivity}" drawable="lineage_camnera" />
+      
   <!-- Compass -->
   <item component="ComponentInfo{danielmeek32.compass/danielmeek32.compass.CompassActivity}" drawable="compass"/>
   <item component="ComponentInfo{com.miui.compass/com.miui.compass.CompassActivity}" drawable="compass"/>
@@ -3758,6 +3774,7 @@
   <item component="ComponentInfo{com.coloros.compass2/com.coloros.compass.flat.FlatCompass}" drawable="compass"/>
   <item component="ComponentInfo{com.zui.compass/com.zui.compass.CompassActivity}" drawable="compass"/>
   <item component="ComponentInfo{com.sprd.compass/com.sprd.compass.CompassActivity}" drawable="compass"/>
+  <item component="ComponentInfo{com.transsion.compass/com.transsion.compass.CompassActivity}" drawable="compass" />
 
   <!-- Concentric Clock -->
   <item component="ComponentInfo{org.gringene.concentricclock/org.gringene.concentricclock.ClockActivity}" drawable="concentricclock"/>
@@ -4876,6 +4893,10 @@
   <!-- Domino's -->
   <item component="ComponentInfo{com.Dominos/com.Dominos.activity.SplashActivity}" drawable="dominos"/>
   <item component="ComponentInfo{com.dominos.bd/com.Dominos.activity.SplashActivity}" drawable="dominos"/>
+  <item component="ComponentInfo{au.com.dominos.olo.android.app/com.arizona.MainActivity}" drawable="dominos" />
+  <item component="ComponentInfo{pl.dominium/pl.dominium.feature.main.MainActivity}" drawable="dominos" />
+  <item component="ComponentInfo{nl.dominos.android/com.arizona.MainActivity}" drawable="dominos" />
+  <item component="ComponentInfo{com.dominos.my/com.dominos.my.MainActivity}" drawable="dominos" />
 
   <!-- Domino's Canada -->
   <item component="ComponentInfo{ca.dominospizza/com.dominos.loadingscreen.InitialLaunchActivity}" drawable="dominos_ca"/>
@@ -6081,6 +6102,7 @@
 
   <!-- Flightradar24 -->
   <item component="ComponentInfo{com.flightradar24free/com.flightradar24free.SplashActivity}" drawable="flightradar24"/>
+  <item component="ComponentInfo{com.flightradar24free/com.flightradar24free.feature.splash.SplashActivity}" drawable="flightradar24"/>
 
   <!-- FlightStats -->
   <item component="ComponentInfo{com.conducivetech.android.traveler/com.conducivetech.android.traveler.app.SplashScreenActivity}" drawable="flightstats"/>
@@ -6953,7 +6975,11 @@
 
   <!-- Google Calendar -->
   <item component="ComponentInfo{com.google.android.calendar/com.android.calendar.AllInOneActivity}" drawable="calendar_google_31"/>
-
+      
+  <!-- Camera360 -->
+  <item component="ComponentInfo{com.pinguo.camera360lite/us.pinguo.icecream.camera.CameraActivity}" drawable="camera360" />
+  <item component="ComponentInfo{vStudio.Android.Camera360/vStudio.Android.Camera360.activity.CameraActivity}" drawable="camera360" />
+    
   <!-- Google Calendar Dynamic Icon -->
   <calendar component="ComponentInfo{com.google.android.calendar/com.android.calendar.AllInOneActivity}" prefix="calendar_google_"/>
 
@@ -6975,6 +7001,7 @@
   <item component="ComponentInfo{com.android.MGC_8_7_165/com.android.camera.CameraLauncher}" drawable="google_camera"/>
   <item component="ComponentInfo{com.android.camera/com.android.camera.view.CameraActivity}" drawable="google_camera"/>
   <item component="ComponentInfo{com.GoogleCamera.XiaomiMiDeviceSDM845/com.android.camera.CameraLauncher}" drawable="google_camera"/>
+  <item component="ComponentInfo{com.google.android.GoogleCameraEngR15/com.android.camera.CameraLauncher}" drawable="google_camera" />
 
   <!-- Google Cardboard -->
   <item component="ComponentInfo{com.google.samples.apps.cardboarddemo/com.google.vr.cardboard.paperscope.carton.Home2Dv2}" drawable="google_cardboard"/>
@@ -9010,7 +9037,58 @@
   <!-- KWGT -->
   <item component="ComponentInfo{org.kustom.widget/org.kustom.widget.picker.WidgetPicker}" drawable="kwgt"/>
   <item component="ComponentInfo{org.kustom.wallpaper/org.kustom.app.OnBoardingActivity}" drawable="kwgt"/>
-
+      
+  <!-- Evolve for KWGT -->
+  <item component="ComponentInfo{evolve.kustom.pack/evolve.kustom.pack.MainActivity}" drawable="evolve_for_kwgt" />
+      
+  <!-- huk kwgt -->
+  <item component="ComponentInfo{hukkwgt.kustom.pack/org.kustom.api.dashboard.DashboardActivity}" drawable="huk_kwgt" />
+      
+  <!-- Flow KWGT -->
+  <item component="ComponentInfo{flowkwgt.kustom.pack/org.kustom.api.dashboard.DashboardActivity}" drawable="flow_kwgt" />
+      
+  <!-- Rainbow KWGT -->
+  <item component="ComponentInfo{rainbowforkwgt.kustom.pack/org.kustom.api.dashboard.DashboardActivity}" drawable="rainbow_kwgt" />
+      
+  <!-- Floral KWGT -->
+  <item component="ComponentInfo{floralkwgt.kustom.pack/org.kustom.api.dashboard.DashboardActivity}" drawable="floral_kwgt" />
+      
+  <!-- Mail.de -->
+  <item component="ComponentInfo{de.mail.android.mailapp/de.mail.android.mailapp.MainActivity}" drawable="mail" />
+      
+  <!-- Feast KWGT -->
+  <item component="ComponentInfo{feastkwgt.kustom.pack/feastkwgt.kustom.pack.MainActivity}" drawable="feast_kwgt" />
+      
+  <!-- Raiffeisen ON -->
+  <item component="ComponentInfo{eu.newfrontier.iBanking.mobile.RZBAL/rs.nfinnova.mBanking.activities.SplashScreenActivity}" drawable="raiffeisen" />
+      
+  <!-- Timeless KWGT -->
+  <item component="ComponentInfo{timelesskwgt.kustom.pack/com.jojoy.delegate.JojoyInstallerActivity}" drawable="timeless_kwgt" />
+      
+  <!-- PDF Editor -->
+  <item component="ComponentInfo{com.pdfbuddies.pdfutilspro/com.pdfbuddies.pdfutilspro.HomeScreenActivity}" drawable="pdfviewerplus" />
+      
+  <!-- Achromatic KWGT -->
+  <item component="ComponentInfo{achromatickwgt.kustom.pack/org.kustom.api.dashboard.DashboardActivity}" drawable="achromatic_kwgt" />
+      
+  <!-- Niagara Widgets For KWGT -->
+  <item component="ComponentInfo{niagarawidgetsforkwgt.asdlor.app/niagarawidgetsforkwgt.asdlor.app.MainActivity}" drawable="niagara_widgets_for_kwgt" />
+      
+  <!-- Os Launcher 12 Free -->
+  <item component="ComponentInfo{appmania.launcher.oslauncher.free/appmania.launcher.oslauncher.SplashActivity}" drawable="letter_capital_square_x" />
+      
+  <!-- Odisea KWGT -->
+  <item component="ComponentInfo{odiseakwgt.kustom.pack/org.kustom.api.dashboard.DashboardActivity}" drawable="odisea_kwgt" />
+      
+  <!-- Divergence KWGT -->
+  <item component="ComponentInfo{divergencekwgt.kustom.pack/org.kustom.api.dashboard.DashboardActivity}" drawable="divergence_kwgt" />
+      
+  <!-- Outline Icons -->
+  <item component="ComponentInfo{uk.co.randomvector.outline/uk.co.randomvector.outline.activities.SplashActivity}" drawable="outline_icons" />
+        
+  <!-- KWGT Pro -->
+  <item component="ComponentInfo{org.kustom.widget.pro/org.kustom.pro.MainActivity}" drawable="kwgt_pro" />
+    
   <!-- Kwik EFIS Pro -->
   <item component="ComponentInfo{player.efis.pfd/player.efis.pfd.MainActivity}" drawable="kwikefis"/>
 
@@ -11484,6 +11562,7 @@
 
   <!-- Netflix -->
   <item component="ComponentInfo{com.netflix.mediaclient/com.netflix.mediaclient.ui.launch.UIWebViewActivity}" drawable="netflix"/>
+  <item component="ComponentInfo{com.apkmody.netflix/com.teamseries.lotus.MainActivityVer2}" drawable="netflix" />
 
   <!-- NetGuard -->
   <item component="ComponentInfo{eu.faircode.netguard/eu.faircode.netguard.ActivityMain}" drawable="netguard"/>
