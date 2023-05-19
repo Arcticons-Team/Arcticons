@@ -76,6 +76,8 @@ public class CandyBar extends CandyBarApplication {
         };
         configuration.setDonationLinks(donationLinks);
 
+        configuration.setShadowEnabled(false);
+
         return configuration;
     }
 }
