@@ -63,17 +63,18 @@ android {
         targetCompatibility JavaVersion.VERSION_11
     }
 
-    lintOptions {
-        checkReleaseBuilds false
-        abortOnError false
-    }
     buildFeatures {
         viewBinding true
+    }
+    namespace 'com.donnnno.arcticons'
+    lint {
+        abortOnError false
+        checkReleaseBuilds false
     }
 }
 
 dependencies {
 
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    implementation 'com.github.Donnnno:candybar-foss:3.16.2'
+    implementation 'com.github.donnnno:candybar-foss:3.17.3'
 }
