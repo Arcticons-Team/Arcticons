@@ -1,3 +1,11 @@
+### 6.2.5 
+###### Released: May 25, 2023
+* 📱 Dashboard update
+* ✨ Material You theming inside the app!
+* 🎉 84 new and updated icons! (thanks Tieu1991, Dunexus, Saijin-Naib, Bsvka, Wwwwwwwari, kaanelloed, Dimassasin1, Th3Thrid3ye, Aloxe, Dgcampbe, Stephane-74, Ayecptn)
+* 💡 Many fixes for icons not applying.
+* 🔥 6254 icons in total!
+
 ### 6.1.7 
 ###### Released: May 09, 2023
 * 🎉 137 new and updated icons! (thanks Ayecptn, MrMatrix, Axonym, Dimassasin1, Golden-peaches, Tempomode, Basings)
