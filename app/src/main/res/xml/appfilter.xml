@@ -3715,7 +3715,9 @@
   <item component="ComponentInfo{zte.com.cn.alarmclock/zte.com.cn.alarmclock.activity.AlarmClockActivity}" drawable="clock"/>
   <item component="ComponentInfo{org.artsplanet.android.simpleanalogclock/org.artsplanet.android.simpleanalogclock.MainActivity}" drawable="analog_clock"/>
   <item component="ComponentInfo{com.android.deskclock.go/com.android.deskclock.DeskClockTabActivity}" drawable="clock"/>
-  <dynamic-clock defaultHour="10" defaultMinute="10" drawable="clock" hourLayerIndex="0" minuteLayerIndex="1" />
+  
+  <!-- Clock Dynamic -->
+  <dynamic-clock drawable="clock_dynamic" defaultHour="10" defaultMinute="10" hourLayerIndex="0" minuteLayerIndex="1" />
   
   <!-- Clock+ -->
   <item component="ComponentInfo{com.philliphsu.clock2/com.philliphsu.clock2.MainActivity}" drawable="clock"/>
