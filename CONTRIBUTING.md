@@ -48,5 +48,5 @@ Before contributing SVG icons, open them inside a text editor and check for the 
 
 ## Guides for specific softwares
 
-- [Inkscape](guides/Inkscape_guide.md)
+- [Inkscape](guides/Inkscape_Guide.md)
 - [Vector Asset Creator](guides/Vector_Asset_Creator.md)
