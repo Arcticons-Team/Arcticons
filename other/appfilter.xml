@@ -2746,6 +2746,7 @@
   <item component="ComponentInfo{in.burgerking.android/in.burgerking.android.MainActivity}" drawable="burgerking"/>
   <item component="ComponentInfo{com.emn8.mobilem8.nativeapp.bkuk/rbi.android.app.MainActivity}" drawable="burgerking"/>
   <item component="ComponentInfo{burgerking.com.br.appandroid/edeploy.com.br.delivery.splash.SplashActivity_}" drawable="burgerking"/>
+	<item component="ComponentInfo{burgerking.com.br.appandroid/burgerking.com.br.appandroid.splash.SplashActivity_}" drawable="burger_king" />
 
   <!-- Bus & Tram -->
   <item component="ComponentInfo{com.lothianbuses.lothianbuses/crc6436921ee7a9d13c84.SplashScreen}" drawable="bus_tram"/>
@@ -3978,6 +3979,7 @@
   <item component="ComponentInfo{com.lenovo.ideafriend/com.lenovo.ideafriend.alias.PeopleActivity}" drawable="contacts"/>
   <item component="ComponentInfo{com.tct.contacts.transfer/com.tct.contacts.transfer.TransferToPhoneActivity}" drawable="contacts"/>
   <item component="ComponentInfo{com.android.lgcontacts/com.android.lgcontacts.activities.PeopleActivity}" drawable="contacts"/>
+	<item component="ComponentInfo{com.sh.smart.caller/com.android.dialer.ContactMainActivity}" drawable="contacts" />
 
   <!-- Content Transfer -->
   <item component="ComponentInfo{com.mediamushroom.easymigrate/com.mediamushroom.easymigrate.UI.EasyMigrateActivityCompat}" drawable="contenttransfer"/>
@@ -6057,6 +6059,7 @@
   <item component="ComponentInfo{com.chaozhuo.filemanager/com.chaozhuo.filemanager.activities.SplashActivity}" drawable="files"/>
   <item component="ComponentInfo{com.lenovo.FileBrowser2/com.lenovo.FileBrowser.activities.FileBrowserMain}" drawable="files"/>
   <item component="ComponentInfo{com.liuzho.file.explorer/com.liuzho.file.explorer.splash.SplashActivity}" drawable="files"/>
+	<item component="ComponentInfo{com.transsion.filemanagerx/com.transsion.filemanagerx.ui.launch.SplashActivity}" drawable="files" />
 
   <!-- Files Shortcut -->
   <item component="ComponentInfo{org.aospstudio.files/com.aospstudio.shortcuts.MainActivity}" drawable="folder_shortcut"/>
@@ -8238,6 +8241,13 @@
 
   <!-- IFood -->
   <item component="ComponentInfo{br.com.brainweb.ifood/br.com.brainweb.ifood.mvp.splash.view.SplashScreenActivity}" drawable="ifood"/>
+	<item component="ComponentInfo{br.com.brainweb.ifood/br.com.ifood.activity.HomeActivity}" drawable="ifood" />
+
+	<!-- Ingresso.com -->
+	<item component="ComponentInfo{com.ingresso.cinemas/br.com.ingresso.ui.activities.SplashActivity}" drawable="ingressocom" />
+
+	<!-- BRB Bank -->
+	<item component="ComponentInfo{br.com.brb.digitalflamengo/br.com.brb.digital.MainActivity}" drawable="brb_bank" />
 
   <!-- iFruit -->
   <item component="ComponentInfo{com.rockstargames.ifruit/com.rockstargames.ifruit.StartupActivity}" drawable="ifruit"/>
@@ -10383,9 +10393,11 @@
 
   <!-- Mercado Libre -->
   <item component="ComponentInfo{com.mercadolibre/com.mercadolibre.activities.SplashActivity}" drawable="mercado_libre"/>
+	<item component="ComponentInfo{com.mercadolibre/com.mercadolibre.splash.SplashActivity}" drawable="mercado_libre" />
 
   <!-- Mercado Pago -->
   <item component="ComponentInfo{com.mercadopago.wallet/com.mercadopago.wallet.AccountSummaryActivity}" drawable="mercado_pago"/>
+  <item component="ComponentInfo{com.mercadopago.wallet/com.mercadopago.wallet.splash.SplashActivity}" drawable="mercado_pago" />
 
   <!-- Mercari -->
   <item component="ComponentInfo{com.mercariapp.mercari/com.mercari.ramen.launch.LaunchActivity}" drawable="mercari"/>
@@ -10496,9 +10508,16 @@
 
   <!-- Mi Fit -->
   <item component="ComponentInfo{com.xiaomi.hm.health/com.xiaomi.hm.health.activity.StartUpActivity}" drawable="mifit"/>
+  
+	<!-- Dont Starve -->
+	<item component="ComponentInfo{com.kleientertainment.doNotStarvePocket/com.kleientertainment.doNotStarvePocket.DoNotStarveActivity}" drawable="dont_starve" />
+
+	<!-- Fondeadora -->
+	<item component="ComponentInfo{com.fondeadora.bank/com.fondeadora.bank.MainActivity}" drawable="fondeadora" />
 
   <!-- Mi Fitness -->
   <item component="ComponentInfo{com.mi.health/com.xiaomi.fitness.login.SplashActivity}" drawable="mi_fitness"/>
+  <item component="ComponentInfo{com.xiaomi.wearable/com.xiaomi.fitness.login.SplashActivity}" drawable="mi_fitness" />
 
   <!-- Mi Home -->
   <item component="ComponentInfo{com.xiaomi.smarthome/com.xiaomi.smarthome.SmartHomeMainActivity}" drawable="mi_home"/>
@@ -12131,6 +12150,7 @@
   <item component="ComponentInfo{com.nononsenseapps.notepad/com.nononsenseapps.notepad.ActivityMain_}" drawable="notes"/>
   <item component="ComponentInfo{notizen.basic.notes.notas.note.notepad/notizen.basic.notes.notas.note.notepad.main.SplashActivity}" drawable="notes"/>
   <item component="ComponentInfo{com.coloros.note/com.nearme.note.main.MainActivity}" drawable="notes"/>
+  <item component="ComponentInfo{foundation.e.notes/it.niedermann.owncloud.notes.main.MainActivity}" drawable="notes" />
 
   <!-- Notes / Another Notes -->
   <item component="ComponentInfo{com.maltaisn.notes.sync/com.maltaisn.notes.ui.main.MainActivity}" drawable="another_notes"/>
@@ -13539,14 +13559,15 @@
   <!-- Plankwork-out -->
   <item component="ComponentInfo{fat.burnning.plank.fitness.loseweight/fat.burnning.plank.fitness.loseweight.activity.StartActivity}" drawable="plank_workout"/>
 
-  <!-- Plant vs Zombie 2 -->
+  <!-- Plants vs Zombies 2 -->
   <item component="ComponentInfo{com.ea.game.pvz2_na/com.popcap.PvZ2.PvZ2GameActivity}" drawable="plant_vs_zombie_2"/>
+  <item component="ComponentInfo{com.ea.game.pvz2_row/com.popcap.PvZ2.PvZ2GameActivity}" drawable="plant_vs_zombie_2" />
 
   <!-- PlantNet -->
   <item component="ComponentInfo{org.plantnet/com.zoontek.rnbootsplash.RNBootSplashActivity}" drawable="plantnet"/>
   <item component="ComponentInfo{org.plantnet/org.plantnet.MainActivity}" drawable="plantnet"/>
 
-  <!-- Plants vs. Zombies FREE -->
+  <!-- Plants vs Zombies FREE -->
   <item component="ComponentInfo{com.ea.game.pvzfree_row/com.ea.game.pvzfree_row.COPPAActivity}" drawable="plants_vs_zombies"/>
 
   <!-- Plato -->
@@ -14466,6 +14487,28 @@
   <item component="ComponentInfo{com.android.bbksoundrecorder/com.android.bbksoundrecorder.SoundRecorder}" drawable="recorder"/>
   <item component="ComponentInfo{com.android.soundrecorder/com.android.soundrecorder.StartActivity}" drawable="recorder"/>
   <item component="ComponentInfo{com.coloros.soundrecorder/oplus.multimedia.soundrecorder.filebrowser.BrowseFile}" drawable="recorder"/>
+	<item component="ComponentInfo{com.transsion.soundrecorder/com.transsion.soundrecorder.SoundRecorder}" drawable="recorder" />
+
+	<!-- Intercept X -->
+	<item component="ComponentInfo{com.sophos.smsec/com.sophos.smsec.ui.DroidGuardMainActivity}" drawable="intercept_x" />
+
+	<!-- MobileScanner -->
+	<item component="ComponentInfo{com.glority.everlens/com.glority.everlens.view.main.SplashActivity}" drawable="pdf_scan" />
+
+	<!-- AVG Cleaner -->
+	<item component="ComponentInfo{com.avg.cleaner/com.avast.android.cleaner.activity.StartActivity}" drawable="avg_cleaner" />
+
+	<!-- Home Depot -->
+	<item component="ComponentInfo{com.thehomedepot/com.thehomedepot.startup.activities.StartupActivity}" drawable="home_depot" />
+
+	<!-- Stop & Shop -->
+	<item component="ComponentInfo{com.stopandshop.mobile.droid/com.mobilecontainer.MainActivity}" drawable="stop_and_shop" />
+
+	<!-- Toast Takeout -->
+	<item component="ComponentInfo{com.toasttab.consumer/com.toasttab.consumer.MainActivity}" drawable="toast_takeout" />
+
+	<!-- Whole Foods Market -->
+	<item component="ComponentInfo{com.wholefoods.wholefoodsmarket/com.wholefoods.wholefoodsmarket.StartupActivity}" drawable="whole_foods_market" />
 
   <!-- Recurrence -->
   <item component="ComponentInfo{com.bleyl.recurrence/com.bleyl.recurrence.activities.MainActivity}" drawable="recurrence"/>
@@ -18656,6 +18699,7 @@
 
   <!-- Uber -->
   <item component="ComponentInfo{com.ubercab/com.ubercab.presidio.app.core.root.RootActivity}" drawable="uber"/>
+  <item component="ComponentInfo{com.ubercab.uberlite/com.ubercab.uberlite.feature.RootActivity}" drawable="uber" />
 
   <!-- Uber Driver -->
   <item component="ComponentInfo{com.ubercab.driver/com.ubercab.carbon.core.CarbonActivity}" drawable="uber_driver"/>
