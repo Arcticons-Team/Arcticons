@@ -1,5 +1,11 @@
 <resources>
 
+  <!-- Kanopy -->
+  <item component="ComponentInfo{com.kanopy/com.kanopy.RootTabbarActivity}" drawable="kanopy"/>
+
+  <!-- Lysn -->
+	<item component="ComponentInfo{com.everysing.lysn/com.everysing.lysn.MainActivityForLysn}" drawable="lysn"/>
+
   <!--  Aldiko Next  -->
   <item component="ComponentInfo{com.aldiko.android/com.demarque.android.ui.splash.SplashActivity}" drawable="aldiko_next"/>
 
@@ -10204,6 +10210,8 @@
 
   <!-- MacroDroid -->
   <item component="ComponentInfo{com.arlosoft.macrodroid/com.arlosoft.macrodroid.LauncherActivity}" drawable="macrodroid"/>
+  <item component="ComponentInfo{com.arlosoft.macrodroid/com.arlosoft.macrodroid.intro.IntroActivity}" drawable="macrodroid"/>
+
 
   <!-- Mada Pay -->
   <item component="ComponentInfo{com.mada.madapay/com.emcrey.app.activities.SupportActivity}" drawable="mada_pay"/>
