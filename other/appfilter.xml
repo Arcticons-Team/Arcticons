@@ -732,7 +732,13 @@
 
   <!-- Alchemy Stars -->
   <item component="ComponentInfo{com.tencent.baiyeint/com.tencent.baiye.MainActivity}" drawable="alchemy_stars"/>
-
+          
+  <!-- KLM -->
+  <item component="ComponentInfo{com.afklm.mobile.android.gomobile.klm/com.klm.mobile.android.core.activity.SplashScreenActivity}" drawable="klm" />
+   
+  <!-- ALDI -->
+  <item component="ComponentInfo{de.apptiv.business.android.aldi_au/com.aldi.app.home.HomeActivity}" drawable="aldi" />
+    
   <!-- ALDI life Musik -->
   <item component="ComponentInfo{com.rhapsody.alditalk/com.rhapsodycore.SplashScreen}" drawable="napster"/>
 
@@ -880,7 +886,16 @@
 
   <!-- Amaze Utilities -->
   <item component="ComponentInfo{com.amaze.fileutilities/com.amaze.fileutilities.home_page.MainActivity}" drawable="amaze_utilities"/>
-
+        
+  <!-- Amazon -->
+  <item component="ComponentInfo{com.amazon.windowshop/com.amazon.mShop.home.HomeActivity}" drawable="amazon" />
+        
+  <!-- Olauncher -->
+  <item component="ComponentInfo{app.olaunchercf/app.olaunchercf.MainActivity}" drawable="olauncher_clutter_free" />
+            
+  <!-- Redbubble -->
+  <item component="ComponentInfo{com.redbubble/com.redbubble.ui.MainActivity}" drawable="redbubble" />
+      
   <!-- Amazon Alexa -->
   <item component="ComponentInfo{com.amazon.dee.app/com.amazon.dee.app.Launcher}" drawable="amazon_alexa"/>
 
@@ -2350,6 +2365,12 @@
   <!-- Bitpanda -->
   <item component="ComponentInfo{com.bitpanda.bitpanda/com.bitpanda.bitpanda.ui.splash.SplashscreenActivity}" drawable="bitpanda"/>
   <item component="ComponentInfo{com.bitpanda.bitpanda/com.bitpanda.feature.onboarding.authentication.impl.ui.RoutingActivity}" drawable="bitpanda"/>
+      
+  <!-- Tesco -->
+  <item component="ComponentInfo{com.tesco.grocery.view/com.tesco.mobile.titan.splash.view.SplashActivity}" drawable="tesco_grocery" />
+        
+  <!-- Tesco Clubcard  -->
+  <item component="ComponentInfo{hu.tesco.clubcard/com.tesco.clubcard.activity.main.MainActivity}" drawable="tesco_clubcard" />
 
   <!-- BitPay -->
   <item component="ComponentInfo{com.bitpay.wallet/com.bitpay.wallet.MainActivity}" drawable="bitpay"/>
@@ -2365,7 +2386,7 @@
 
   <!-- BitTorrent -->
   <item component="ComponentInfo{com.bittorrent.client/com.bittorrent.app.Main}" drawable="bittorrent"/>
-
+  
   <!-- Bitwarden -->
   <item component="ComponentInfo{com.x8bit.bitwarden/md5b95ad25b85f158431f24aa9fc17a1c1e.SplashActivity}" drawable="bitwarden"/>
   <item component="ComponentInfo{com.x8bit.bitwarden/com.x8bit.bitwarden.MainActivity}" drawable="bitwarden"/>
@@ -3045,7 +3066,10 @@
   <item component="ComponentInfo{org.calyxos.etar/com.android.calendar.AllInOneActivity}" drawable="calendar_31"/>
   <item component="ComponentInfo{com.android.calendar/com.android.calendar.homepage.AllInOneActivity}" drawable="calendar_31"/>
   <item component="ComponentInfo{com.transsion.calendar/com.android.calendar.AllInOneActivity}" drawable="calendar_31"/>
-
+  <item component="ComponentInfo{com.lbrc.PeriodCalendar/com.digitalchemy.period.activity.MainActivity}" drawable="calendar" />
+  <item component="ComponentInfo{com.mi.calendar.agenda/com.icalendar.os.activity.SplashScreenActivity}" drawable="calendar" />
+  <item component="ComponentInfo{org.leafos.etar/com.android.calendar.AllInOneActivity}" drawable="calendar" />
+  
   <!-- Calendar Color -->
   <item component="ComponentInfo{ch.ihdg.calendarcolor/ch.ihdg.calendarcolor.CalendarListActivity}" drawable="calendarcolor"/>
 
@@ -3062,7 +3086,10 @@
   <calendar component="ComponentInfo{com.huawei.calendar/com.android.calendar.AllInOneActivity}" prefix="calendar_"/>
   <calendar component="ComponentInfo{com.android.calendar/com.android.calendar.homepage.AllInOneActivity}" prefix="calendar_"/>
   <calendar component="ComponentInfo{com.transsion.calendar/com.android.calendar.AllInOneActivity}" prefix="calendar_"/>
-
+  <calendar component="ComponentInfo{com.lbrc.PeriodCalendar/com.digitalchemy.period.activity.MainActivity}" prefix="calendar_" />
+  <calendar component="ComponentInfo{com.mi.calendar.agenda/com.icalendar.os.activity.SplashScreenActivity}" prefix="calendar_" />
+  <calendar component="ComponentInfo{org.leafos.etar/com.android.calendar.AllInOneActivity}" prefix="calendar_" />
+  
   <!-- Calendar Import-Export -->
   <item component="ComponentInfo{org.sufficientlysecure.ical/org.sufficientlysecure.ical.ui.MainActivity}" drawable="calendarimportexport"/>
 
@@ -3238,6 +3265,9 @@
   <item component="ComponentInfo{com.motorola.odm.camera3/com.android.camera.CameraLauncher}" drawable="camara"/>
 	<item component="ComponentInfo{photo.beauty.sticker.ar.camera/com.ijoysoft.camera.activity.WelcomeActivity}" drawable="camera" />
 	<item component="ComponentInfo{com.ss.android.ugc.aweme/com.android.camera.CameraLauncher}" drawable="camera" />
+  <item component="ComponentInfo{Cameracom.iakmds.librecamera/com.iakmds.librecamera.MainActivity}" drawable="libre_camera" />
+  <item component="ComponentInfo{com.motorola.cameraonemtk/com.motorola.camera.Camera}" drawable="camera" />
+  <item component="ComponentInfo{camera.pro.video.beauty.camera/com.ijoysoft.cameratab.activity.SplashActivity}" drawable="camera" />
 
   <!-- Camera Connect -->
   <item component="ComponentInfo{jp.co.canon.ic.cameraconnect/jp.co.canon.ic.cameraconnect.top.CCTopActivity}" drawable="cameraconnect"/>
@@ -3248,6 +3278,19 @@
   <item component="ComponentInfo{com.triversoft.icamera.ioscamera15/com.tech.catti_camera.framework.MainActivity}" drawable="camera_pro"/>
   <item component="ComponentInfo{com.galaxys.camera4k/com.safeads.activity.SplashActivity}" drawable="camera_pro"/>
   <item component="ComponentInfo{com.flavionet.android.camera.pro/com.flavionet.android.camera.MainActivity}" drawable="camera_pro"/>
+  <item component="ComponentInfo{com.intermedia.hd.camera.pro/com.antafunny.burstcamera.MainActivity}" drawable="camera_pro" />
+  <item component="ComponentInfo{com.lensesdev.manual.camera.professional/com.antafunny.burstcamera.MainActivity}" drawable="camera_pro" />
+  <item component="ComponentInfo{com.accarunit.hd.camera.pro/com.lightcone.procamera.activity.splash.SplashActivity}" drawable="camera_pro" />
+  <item component="ComponentInfo{com.risingcabbage.hd.camera/com.lightcone.procamera.activity.splash.SplashActivity}" drawable="camera_pro" />
+  <item component="ComponentInfo{com.jeyluta.timestampcamerafreeent/com.example.PermissionActivity}" drawable="camera_pro" />
+  <item component="ComponentInfo{com.darkogolner.darkcamera2/com.darkogolner.darkcamera2.FullscreenActivity}" drawable="camera_pro" />
+  <item component="ComponentInfo{com.footej.camera2/com.footej.camera.SplashActivity}" drawable="camera_pro" />
+  <item component="ComponentInfo{de.seebi.deepskycamera/de.seebi.deepskycamera.main.DeepSkyCamera}" drawable="camera_pro" />
+  <item component="ComponentInfo{com.blogspot.newapphorizons.fakecamera/com.blogspot.newapphorizons.fakecamera.MainActivity}" drawable="camera_pro" />
+  <item component="ComponentInfo{com.momomomo111.camerax_opencv/com.momomomo111.camerax_opencv.MainActivity}" drawable="camera_pro" />
+  <item component="ComponentInfo{com.airbeat.device.inspector/com.airbeat.device.inspector.MainActivity}" drawable="camera_pro" />
+  <item component="ComponentInfo{pl.vipek.camera2/pl.vipek.camera2.CameraActivity}" drawable="camera_pro" />
+  <item component="ComponentInfo{com.parallx.company.DSLRCamera4KHDCamera_PhotoEffect/com.parallx.company.DSLRCamera4KHDCamera_PhotoEffect.PHFR_Splash_Activity}" drawable="camera_pro" />
 
   <!-- Camera Remote -->
   <item component="ComponentInfo{com.fujifilm_dsc.app.remoteshooter/com.fujifilm_dsc.app.remoteshooter.InitializeActivity}" drawable="cameraremote"/>
@@ -4097,6 +4140,7 @@
   <item component="ComponentInfo{com.tct.contacts.transfer/com.tct.contacts.transfer.TransferToPhoneActivity}" drawable="contacts"/>
   <item component="ComponentInfo{com.android.lgcontacts/com.android.lgcontacts.activities.PeopleActivity}" drawable="contacts"/>
 	<item component="ComponentInfo{com.sh.smart.caller/com.android.dialer.ContactMainActivity}" drawable="contacts" />
+  <item component="ComponentInfo{com.vinsmart.contacts/com.android.contacts.activities.PeopleActivity}" drawable="contacts" />
 
   <!-- Content Transfer -->
   <item component="ComponentInfo{com.mediamushroom.easymigrate/com.mediamushroom.easymigrate.UI.EasyMigrateActivityCompat}" drawable="contenttransfer"/>
@@ -7029,6 +7073,7 @@
   <item component="ComponentInfo{com.oplus.games/com.oplus.games.ui.main.MainGameActivity}" drawable="games"/>
   <item component="ComponentInfo{com.oneplus.gamespace/com.oplus.games.ui.main.MainGameActivity}" drawable="games"/>
   <item component="ComponentInfo{io.chaldeaprjkt.gamespace/io.chaldeaprjkt.gamespace.settings.SettingsActivity}" drawable="games"/>
+  <item component="ComponentInfo{com.dti.folderlauncher/com.dti.folderlauncher.MainActivity}" drawable="games" />
 
   <!-- Games Tracker -->
   <item component="ComponentInfo{com.gamesTracking.gamesTracker/host.exp.exponent.MainActivity}" drawable="games_tracker"/>
