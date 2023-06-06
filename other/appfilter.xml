@@ -9,12 +9,18 @@
   <!--  Biota  -->
   <item component="ComponentInfo{co.pawdigital.wallet/co.pawdigital.wallet.MainActivity}" drawable="biota"/>
 
+	<!-- WallStone -->
+	<item component="ComponentInfo{wallstone.rad.walls/wallstone.rad.walls.MainActivity}" drawable="wallstone"/>
+
   <!--  Jugnoo  -->
   <item component="ComponentInfo{product.clicklabs.jugnoo/product.clicklabs.jugnoo.SplashNewActivity}" drawable="jugnoo"/>
 
   <!--  Kalium  -->
   <item component="ComponentInfo{com.banano.kaliumwallet/com.banano.kaliumwallet.MainActivity}" drawable="kalium"/>
   
+	<!-- Mint Launcher -->
+	<item component="ComponentInfo{com.mi.android.go.globallauncher/com.miui.home.launcher.SplashActivity}" drawable="mint_launcher" />
+
   <!--  KFC  -->
   <item component="ComponentInfo{com.kfc_polska/com.kfc_polska.ui.activities.MainActivity}" drawable="kfc" />
   <item component="ComponentInfo{jp.dreambrain.adiorama/jp.co.kfc.ui.MainActivity}" drawable="kfc" />
@@ -22,6 +28,7 @@
   <item component="ComponentInfo{com.kfc.mobile/com.kfc.mobile.presentation.splash.SplashActivity}" drawable="kfc" />
   <item component="ComponentInfo{ru.kfc.kfc_delivery/com.kfc.ui.activities.NativeModuleActivity}" drawable="kfc" />
   <item component="ComponentInfo{com.yum.kfc/com.yum.kfc.MainActivity}" drawable="kfc" />
+  <item component="ComponentInfo{com.kfc.malaysia/com.kfc.my.views.activity.SplashActivity}" drawable="kfc" />
 
 	<!-- AtomicClock -->
 	<item component="ComponentInfo{partl.atomicclock/partl.atomicclock.MainActivity}" drawable="atomic_clock"/>
@@ -3497,6 +3504,15 @@
   <!-- Checkey -->
   <item component="ComponentInfo{info.guardianproject.checkey/info.guardianproject.checkey.MainActivity}" drawable="checkey"/>
 
+	<!-- MyAflac -->
+	<item component="ComponentInfo{com.aflac.access/com.aflac.access.MainActivity}" drawable="myaflac"/>
+      
+  <!-- Samsung Flow -->
+  <item component="ComponentInfo{com.samsung.android.galaxycontinuity/com.samsung.android.galaxycontinuity.SplashActivity}" drawable="samsung_flow" />
+
+	<!-- Travelers -->
+	<item component="ComponentInfo{com.travelers.digitalservice/com.travelers.digitalservice.SplashActivity}" drawable="travelers"/>
+
   <!-- Cheetay -->
   <item component="ComponentInfo{com.app.cheetay/com.app.cheetay.activities.SplashActivity}" drawable="cheetay"/>
 
@@ -3509,6 +3525,7 @@
 
   <!-- Cheogram -->
   <item component="ComponentInfo{com.cheogram.android/eu.siacs.conversations.ui.ConversationActivity}" drawable="cheogram"/>
+	<item component="ComponentInfo{com.cheogram.android.playstore/eu.siacs.conversations.ui.ConversationActivity}" drawable="cheogram"/>
 
   <!-- Chess -->
   <item component="ComponentInfo{com.chess/com.chess.splash.SplashActivity}" drawable="chess"/>
@@ -3809,6 +3826,7 @@
   <item component="ComponentInfo{zte.com.cn.alarmclock/zte.com.cn.alarmclock.activity.AlarmClockActivity}" drawable="clock"/>
   <item component="ComponentInfo{org.artsplanet.android.simpleanalogclock/org.artsplanet.android.simpleanalogclock.MainActivity}" drawable="analog_clock"/>
   <item component="ComponentInfo{com.android.deskclock.go/com.android.deskclock.DeskClockTabActivity}" drawable="clock"/>
+  <item component="ComponentInfo{systems.sieber.fsclock/systems.sieber.fsclock.FullscreenActivity}" drawable="clock"/>
 
   <!-- Clock+ -->
   <item component="ComponentInfo{com.philliphsu.clock2/com.philliphsu.clock2.MainActivity}" drawable="clock"/>
@@ -6603,6 +6621,7 @@
   <item component="ComponentInfo{org.forkclient.messenger.beta/org.telegram.ui.LaunchActivity}" drawable="forkclient"/>
   <item component="ComponentInfo{org.forkgram.messenger/org.telegram.ui.LaunchActivity}" drawable="forkclient"/>
   <item component="ComponentInfo{org.forkgram.messenger/org.telegram.messenger.DefaultIcon}" drawable="forkclient"/>
+  <item component="ComponentInfo{org.forkclient.messenger.beta/org.telegram.messenger.DefaultIcon}" drawable="forkclient"/>
 
   <!-- Forkhub -->
   <item component="ComponentInfo{jp.forkhub/com.github.mobile.ui.user.HomeActivity}" drawable="forkhub"/>
@@ -7791,6 +7810,7 @@
 
   <!-- HappyMod -->
   <item component="ComponentInfo{com.happymod.apk/com.happymod.apk.hmmvp.allfunction.LaunchActivity}" drawable="happymod"/>
+  <item component="ComponentInfo{com.happymod.apk/com.happymod.apk.hmmvp.main.LaunchActivity}" drawable="happymod"/>
 
   <!-- Harmonic -->
   <item component="ComponentInfo{com.simon.harmonichackernews/com.simon.harmonichackernews.MainActivity}" drawable="harmonic"/>
@@ -8880,6 +8900,7 @@
 
   <!-- JioCinema -->
   <item component="ComponentInfo{com.jio.media.ondemand/com.jio.media.ondemand.view.HomeActivity}" drawable="jiocinema"/>
+  <item component="ComponentInfo{com.jio.media.ondemand/com.v18.voot.features.home.ui.JVHomeActivity}" drawable="jiocinema"/>
 
   <!-- JioJoin -->
   <item component="ComponentInfo{com.jio.jse/com.jio.jse.mobile.ui.activity.SplashScreenActivity}" drawable="jiojoin"/>
@@ -15387,6 +15408,7 @@
 
   <!-- Scrambled Exif -->
   <item component="ComponentInfo{com.jarsilio.android.scrambledeggsif/com.jarsilio.android.scrambledeggsif.MainActivity}" drawable="scrambledexif"/>
+	<item component="ComponentInfo{com.jarsilio.android.scrambledeggsif.fortunecookies/com.jarsilio.android.scrambledeggsif.MainActivity}" drawable="scrambledexif"/>
 
   <!-- Screen Master -->
   <item component="ComponentInfo{pro.capture.screenshot/pro.capture.screenshot.activity.SplashActivity}" drawable="screenmaster"/>
@@ -17307,6 +17329,15 @@
   <!-- Standoff 2 -->
   <item component="ComponentInfo{com.axlebolt.standoff2/com.google.firebase.MessagingUnityPlayerActivity}" drawable="standoff"/>
 
+	<!-- Kvaesitso Nightly -->
+	<item component="ComponentInfo{de.mm20.launcher2.nightly/de.mm20.launcher2.ui.launcher.LauncherActivity}" drawable="kvaesitso_nightly"/>
+
+	<!-- Nanoleaf -->
+	<item component="ComponentInfo{me.nanoleaf.nanoleaf/me.nanoleaf.nanoleaf.activities.SplashActivity}" drawable="nanoleaf"/>
+
+	<!-- Switched -->
+	<item component="ComponentInfo{com.ed2digital.switchedapp/crc6436f9cd630ac9b24d.MainActivity}" drawable="switched"/>
+
   <!-- Star Traders RPG -->
   <item component="ComponentInfo{com.corytrese.games.startraders/com.corytrese.games.startraders.menu.MainMenu}" drawable="startradersrpg"/>
 
@@ -17317,9 +17348,10 @@
   <item component="ComponentInfo{com.starbucks.mobilecard/com.starbucks.mobilecard.main.activity.LandingPageActivity}" drawable="starbucks"/>
   <item component="ComponentInfo{com.starbucks.ar/com.starbucks.emea.features.splash.SplashActivity}" drawable="starbucks"/>
   <item component="ComponentInfo{com.starbucks.jp/com.appunite.sbj.splash.SplashActivity}" drawable="starbucks"/>
-  <item component="ComponentInfo{com.starbucks.id/com.starbucks.id.MainActivity}" drawable="starbucks_id"/>
-  <item component="ComponentInfo{com.starbucks.in/com.tsb.app.home.presentation.view.activity.HomeActivity}" drawable="starbucks_in"/>
-  <item component="ComponentInfo{com.starbucks.ph/com.starbucks.revamp.activity.SplashActivity}" drawable="starbucks_ph"/>
+  <item component="ComponentInfo{com.starbucks.id/com.starbucks.id.MainActivity}" drawable="starbucks"/>
+  <item component="ComponentInfo{com.starbucks.in/com.tsb.app.home.presentation.view.activity.HomeActivity}" drawable="starbucks"/>
+  <item component="ComponentInfo{com.starbucks.ph/com.starbucks.revamp.activity.SplashActivity}" drawable="starbucks"/>
+  <item component="ComponentInfo{com.starbucks.mx/com.starbucks.mx.splash.SBLauncherActivity}" drawable="starbucks"/>
 
   <!-- Stardew Valley -->
   <item component="ComponentInfo{com.chucklefish.stardewvalley/crc64e8b22d3833b21ea5.MainActivity}" drawable="stardew_valley"/>
@@ -17512,8 +17544,9 @@
   <!-- Subtracks -->
   <item component="ComponentInfo{com.subtracks/com.subtracks.MainActivity}" drawable="subtracks"/>
 
-  <!-- SUBWAY -->
+  <!-- Subway -->
   <item component="ComponentInfo{com.subway.mobile.subwayapp03/com.subway.mobile.subwayapp03.ui.SplashActivity}" drawable="subway"/>
+  <item component="ComponentInfo{com.subway.subway/com.subway.subway.SplashActivity}" drawable="subway"/>
 
   <!-- Subway Surf -->
   <item component="ComponentInfo{com.kiloo.subwaysurf/com.sybogames.chili.multidex.ChiliMultidexSupportActivity}" drawable="subwaysurf"/>
@@ -19906,6 +19939,7 @@
   <item component="ComponentInfo{com.wane.android.weather/com.wsi.android.weather.ui.SplashScreen}" drawable="simpleweather" />
   <item component="ComponentInfo{com.transsion.weathers/com.rlk.weathers.activity.WeatherMainActivity}" drawable="simpleweather" />
   <item component="ComponentInfo{com.libreweatherrn/com.libreweatherrn.MainActivity}" drawable="simpleweather" />
+  <item component="ComponentInfo{com.coloros.weather2/com.oplus.weather.main.view.WeatherMainActivity}" drawable="simpleweather" />
 
   <!-- Weather Forecast -->
   <item component="ComponentInfo{uk.org.boddie.android.weatherforecast/uk.org.boddie.android.weatherforecast.WeatherForecastActivity}" drawable="weather_forecast"/>
