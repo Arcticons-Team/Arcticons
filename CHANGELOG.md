@@ -1,3 +1,10 @@
+### 6.3.6
+###### Released: Jun 10, 2023
+* 📱 Dashboard update
+* 🎉 113 new and updated icons! (thanks Redbox3070, Aloxe, Kaiserdragon2, Wari, Joelchrono12, 1qq9qq, Th3Third3ye)
+* 💡 Many fixes for icons not applying.
+* 🔥 6363 icons in total!
+
 ### 6.2.5 
 ###### Released: May 25, 2023
 * 📱 Dashboard update
