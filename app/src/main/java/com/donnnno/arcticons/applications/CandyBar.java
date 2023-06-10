@@ -78,6 +78,15 @@ public class CandyBar extends CandyBarApplication {
 
         configuration.setShadowEnabled(false);
 
+        configuration.setFilterRequestHandler((request) -> {
+            // Return true to include the request
+            // Return false to exclude the request
+
+            String pkg = request.getPackageName();
+            if (pkg == null) return true;
+            return !(pkg.startsWith("org.chromium.webapk") || pkg.startsWith("com.sec.android.app.sbrowser.webapk"));
+        });
+
         return configuration;
     }
 }
