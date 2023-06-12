@@ -47,6 +47,19 @@ android {
             applicationIdSuffix '.light'
             resValue "string", "app_name", "Arcticons Light"
         }
+		        }
+        you {
+            dimension "variant"
+            minSdkVersion "31"
+            applicationIdSuffix '.you'
+            resValue "string", "app_name", "Arcticons You"
+        }
+        youPlay {
+            dimension "variant"
+            minSdkVersion "31"
+            applicationIdSuffix '.you'
+            resValue "string", "app_name", "Arcticons You"
+        }
     }
 
     sourceSets {
@@ -54,6 +67,8 @@ android {
         darkPlay { res.srcDirs = ['src/darkPlay/res/', 'src/dark/res'] }
         light { res.srcDirs = ['src/lightFree/res/', 'src/light/res'] }
         lightPlay { res.srcDirs = ['src/lightPlay/res/', 'src/light/res'] }
+		you { res.srcDirs = ['src/youFree/res/', 'src/you/res'] }
+        youPlay { res.srcDirs = ['src/youPlay/res/', 'src/you/res'] }
     }
 
 
