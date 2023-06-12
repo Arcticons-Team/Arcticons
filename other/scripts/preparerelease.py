@@ -193,7 +193,7 @@ def svg_xml_exporter(dir:str,exportpath:str,icon_dir:str,mode:str):
                         stroke_opacity = strokeO_match.group('StrokeO')
                 if not (stroke_opacity == None):
                     xml += f'        android:strokeAlpha="{stroke_opacity}"\n'
-            xml += f'        android:strokeWidth="1"\n'
+            xml += f'        android:strokeWidth="1.2"\n'
             xml +=  '        android:strokeLineCap="round"\n'
             xml +=  '        android:strokeLineJoin="round"\n'
             xml +=  '        android:pathData="'
