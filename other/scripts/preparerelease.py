@@ -31,6 +31,7 @@ WHITE_DIR = ICONS_DIR + "/white"
 BLACK_DIR = ICONS_DIR + "/black"
 EXPORT_DARK_DIR = APP_SRC_DIR +"/dark/res/drawable-nodpi"
 EXPORT_LIGHT_DIR = APP_SRC_DIR +"/light/res/drawable-nodpi"
+EXPORT_YOU_DIR = APP_SRC_DIR +"/materialYou/res/drawable-anydpi-v31"
 RES_XML_PATH = APP_SRC_DIR + "/main/res/xml"
 ASSETS_PATH = APP_SRC_DIR + "/main/assets"
 VALUE_PATH = APP_SRC_DIR + "/main/res/values"
@@ -57,6 +58,165 @@ REPLACE_FILL_BLACK_ALT = '''fill="#000"'''
 def natural_sort_key(s: str, _nsre=re.compile('([0-9]+)')):
     return [int(text) if text.isdigit() else text.lower()
             for text in re.split(_nsre, s.as_posix())]
+
+#extractinfo for xmlicons (materialyou) from svg
+def svg_xml_exporter(dir:str,exportpath:str,icon_dir:str,mode:str):
+
+    from svgpathtools import svg2paths
+    import re
+    from bs4 import BeautifulSoup
+    import os
+    from shutil import copy2
+    import glob
+
+    styles_pattern = re.compile(r'\..*?}', re.M)
+    name_pattern = re.compile(r'\.(?P<Name>.+?)({|,)', re.M)
+    fill_pattern = re.compile(r'fill:(?P<Fill>.+?);', re.M)
+    fillO_pattern = re.compile(r'fill-opacity:(?P<FillO>.+?)', re.M)
+    stroke_pattern = re.compile(r'stroke:(?P<Stroke>.+?);', re.M)
+    strokeO_pattern = re.compile(r'stroke-opacity:(?P<StrokeO>.+?)', re.M)
+    rotate_pattern = re.compile(r'translate\((?P<X>.+?) (?P<Y>.+?)\).*rotate\((?P<Rotate>.+?)\)', re.M)
+    
+
+    def extract_style_info(svg_file):
+        all_style ={}
+        with open(svg_file, "r") as f:
+            svg_file = f.read()
+        # parse the SVG file
+        soup = BeautifulSoup(svg_file, "xml")
+        #print(soup.select("style"))
+        for i in soup.select("style"):
+            style_match =  re.finditer(styles_pattern, str(i))
+            for style in style_match:
+                data= {}
+                search_str = style.group()
+                name_match = re.finditer(name_pattern, search_str)
+                for names in name_match:
+                    try:
+                        data = all_style[names.group('Name')]
+                    except:
+                        data= {}
+                    data['Name'] = names.group('Name')
+                    fill_match = re.search(fill_pattern, search_str)
+                    if fill_match:
+                        data['Fill'] = fill_match.group('Fill')
+                        fillO_match = re.search(fillO_pattern, search_str)
+                        if fillO_match:
+                            data['FillOpacity'] = fillO_match.group('FillO')
+                    stroke_match = re.search(stroke_pattern, search_str)
+                    if stroke_match:
+                        data['Stroke'] = stroke_match.group('Stroke')
+                        strokeO_match = re.search(strokeO_pattern, search_str)
+                        if strokeO_match:
+                            data['StrokeOpacity'] = strokeO_match.group('StrokeO')
+                    all_style[data['Name']] = data
+        #print(all_style)
+        return all_style
+
+    def svg_to_xml(svg_file, xml_file):
+        all_style ={}
+        # Load the SVG file
+        #with open(svg_file, 'r') as file:
+        #    svg_content = file.read()
+
+        # Extract the path data and style information from the SVG
+        paths, attributes = svg2paths(svg_file)
+        all_style = extract_style_info(svg_file)
+        
+        # Start building the XML file
+        xml =  '<vector xmlns:android="http://schemas.android.com/apk/res/android"\n'
+        xml += '    android:width="48dp"\n'
+        xml += '    android:height="48dp"\n'
+        xml += '    android:viewportWidth="48"\n'
+        xml += '    android:viewportHeight="48">\n'
+
+        # Add a path for each element in the SVG
+        for path, attr in zip(paths, attributes):
+            rotate = None
+            transX = None
+            transY = None
+            #print(str(attr))
+            class_val = attr.get('class')
+            transform = attr.get('transform')
+            if not transform == None:
+                rotate_match = re.search(rotate_pattern, str(attr))
+                if rotate_match:
+                    rotate = rotate_match.group('Rotate')
+                    transX = rotate_match.group('X')
+                    transY = rotate_match.group('Y')
+            #print(class_val)
+            values = all_style.get(class_val)
+            #print(values)
+            fill = None
+            stroke =None
+            fill_opacity = None
+            stroke_opacity = None
+            if not values == None:
+                fill = attr.get('fill', values.get('Fill'))
+                stroke = attr.get('stroke', values.get("Stroke"))
+                fill_opacity = attr.get('fill-opacity', values.get("FillOpacity",None))
+                stroke_opacity = attr.get('stroke-opacity', values.get("StrokeOpacity",None))
+            if fill == None:
+                fill_match = re.search(fill_pattern, str(attr))
+                if fill_match:
+                    fill = fill_match.group('Fill')
+            if stroke == None:
+                stroke_match = re.search(stroke_pattern, str(attr))
+                if stroke_match:
+                    stroke = stroke_match.group('Stroke')
+
+
+            if not rotate == None:
+                xml +='    <group\n'
+                xml += f'        android:rotation="{rotate}"'
+                if not transX == None:
+                    xml += f'\n        android:translateX="{transX}"'
+                if not transY == None:
+                    xml += f'\n        android:translateY="{transY}">\n'
+                else:
+                    xml +='>\n'
+            
+            xml += '    <path\n'
+            if not (fill == 'none' or fill == None):
+                xml += f'        android:fillColor="@android:color/system_accent1_200"\n'
+                if fill_opacity == None:
+                    fillO_match = re.search(fillO_pattern, str(attr))
+                    if fillO_match:
+                        fill_opacity = fillO_match.group('FillO')
+                if not (fill_opacity == None):
+                    xml += f'        android:fillAlpha="{fill_opacity}"\n'
+            if not (stroke == 'none' or stroke == None):    
+                xml += f'        android:strokeColor="@android:color/system_accent1_200"\n'
+                if stroke_opacity == None:
+                    strokeO_match = re.search(strokeO_pattern, str(attr))
+                    if strokeO_match:
+                        stroke_opacity = strokeO_match.group('StrokeO')
+                if not (stroke_opacity == None):
+                    xml += f'        android:strokeAlpha="{stroke_opacity}"\n'
+            xml += f'        android:strokeWidth="1"\n'
+            xml +=  '        android:strokeLineCap="round"\n'
+            xml +=  '        android:strokeLineJoin="round"\n'
+            xml +=  '        android:pathData="'
+            xml += path.d()
+            xml += '"/>\n'
+            if not rotate == None:
+                xml +='    </group>\n'
+
+        # Close the XML file
+        xml += '</vector>\n'
+
+        # Write the XML to the output file
+        with open(xml_file, 'w') as file:
+            file.write(xml)
+
+    
+    for file_path in glob.glob(f"{dir}/*.svg"):
+        file= os.path.basename(file_path)
+        name = file[:-4]
+        #Don't copy svg to white dir because already done before 
+        #copy2(file_path, f'{icon_dir}/{file}')
+        print(f'Working on {file} {mode}')
+        svg_to_xml(file_path, exportpath +'/' + name +'.xml')
 
 #xml.sh
 def convert_svg_files(iconsdir: str, xmldir: str, valuesdir:str, assetsdir:str,appfilterpath:str) -> None:
@@ -315,6 +475,7 @@ def main():
     create_new_drawables(SVG_DIR,NEWDRAWABLE_PATH)
     svg_colors(SVG_DIR,ORIGINAL_STROKE,ORIGINAL_FILL,ORIGINAL_STROKE_ALT,ORIGINAL_FILL_ALT,REPLACE_STROKE_WHITE,REPLACE_FILL_WHITE,REPLACE_STROKE_WHITE_ALT,REPLACE_FILL_WHITE_ALT)
     create_icons(SIZES, SVG_DIR ,EXPORT_DARK_DIR, WHITE_DIR, 'Dark Mode')
+    svg_xml_exporter(SVG_DIR, EXPORT_YOU_DIR, WHITE_DIR, 'You Mode')
     svg_colors(SVG_DIR,ORIGINAL_STROKE,ORIGINAL_FILL,ORIGINAL_STROKE_ALT,ORIGINAL_FILL_ALT,REPLACE_STROKE_BLACK,REPLACE_FILL_BLACK,REPLACE_STROKE_BLACK_ALT,REPLACE_FILL_BLACK_ALT)
     create_icons(SIZES, SVG_DIR ,EXPORT_LIGHT_DIR, BLACK_DIR, 'Light Mode')
     remove_svg(SVG_DIR)
