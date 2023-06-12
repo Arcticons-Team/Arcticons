@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--
+        Try to not reference other theme colors, or it may result in
+        an error (android.view.InflateException)
+
+        If you want to reuse colors using referencing, just create a
+        new color and reference it. Do not try to reference existing
+        theme colors.
+        Example -
+        ```
+        Declaring the color
+        <color name="common_color">#FFF</color>
+
+        Referencing the common color
+        <color name="someColor">@color/common_color</color>
+        <color name="anotherColor">@color/common_color</color>
+        ```
+    -->
+
+    <color name="colorPrimary">#404040</color>
+    <color name="colorPrimaryDark">#404040</color>
+    <color name="colorAccent">#ffffff</color>
+
+    <color name="darkColorPrimary">#000000</color>
+    <color name="darkColorPrimaryDark">#000000</color>
+    <color name="darkColorAccent">#ffffff</color>
+
+    <!-- Shortcut Icon -->
+    <color name="shortcutIconBackground">#000000</color>
+    <color name="shortcutIconForeground">#ffffff</color>
+
+    <!-- Navigation Bar
+    * Must be solid color, no alpha -->
+    <color name="navigationBar">#404040</color>
+    <color name="navigationBarDark">#000000</color>
+
+    <!-- Splash Screen -->
+    <color name="splashColor">#000000</color>
+
+    <!-- Navigation View -->
+    <color name="navigationViewHeaderBackground">#00FFFFFF</color>
+    <color name="navigationViewHeaderBackgroundDark">#00FFFFFF</color>
+    <color name="navigationViewTitle">#FFFFFF</color>
+    <color name="navigationViewTitleBack">#80000000</color>
+
+    <color name="navigationViewText">#e0e0e0</color>
+    <color name="navigationViewTextDark">#c0c0c0</color>
+    <color name="navigationViewTextSelected">#FFFFFF</color>
+    <color name="navigationViewTextSelectedDark">#FFFFFF</color>
+    <color name="navigationViewSelectedBackground">#404040</color>
+    <color name="navigationViewSelectedBackgroundDark">#000000</color>
+
+    <!-- Swipe Refresh -->
+    <color name="swipeRefresh">#FFFFFF</color>
+
+    <!-- Toolbar -->
+    <color name="toolbarIcon">#FFF</color>
+    <color name="toolbarIconDark">#FFFFFFFF</color>
+
+    <!-- Tab -->
+    <color name="tabIndicator">#FFF</color>
+    <color name="tabIndicatorDark">#FFF</color>
+    <color name="tabText">#FFF</color>
+    <color name="tabTextDark">#FFF</color>
+    <color name="tabTextSelected">#FFF</color>
+    <color name="tabTextSelectedDark">#FFF</color>
+
+    <!-- Card -->
+    <color name="cardBackground">#404040</color>
+    <color name="cardBackgroundDark">#191919</color>
+    <color name="cardStroke">#90FFFFFF</color>
+    <color name="cardStrokeDark">#11000000</color>
+
+    <!-- Ripple -->
+    <color name="rippleColor">#202020</color>
+    <color name="rippleColorDark">#404040</color>
+    <color name="rippleAccent">#202020</color>
+    <color name="rippleAccentDark">#404040</color>
+
+    <!-- Attributes -->
+    <color name="mainBackground">#404040</color>
+    <color name="mainBackgroundDark">#000000</color>
+    <color name="primaryText">#FFFFFF</color>
+    <color name="primaryTextDark">#FFFFFF</color>
+    <color name="secondaryText">#e0e0e0</color>
+    <color name="secondaryTextDark">#c0c0c0</color>
+
+    <color name="dividerList">#404040</color>
+    <color name="dividerListDark">#000000</color>
+
+    <!-- Wallpaper Preview -->
+    <color name="wallpaperStatusBar">#000000</color>
+    <color name="wallpaperToolbar">#000000</color>
+
+</resources>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--
+        Try to not reference other theme colors, or it may result in
+        an error (android.view.InflateException)
+
+        If you want to reuse colors using referencing, just create a
+        new color and reference it. Do not try to reference existing
+        theme colors.
+        Example -
+        ```
+        Declaring the color
+        <color name="common_color">#FFF</color>
+
+        Referencing the common color
+        <color name="someColor">@color/common_color</color>
+        <color name="anotherColor">@color/common_color</color>
+        ```
+    -->
+
+    <color name="colorPrimary">@android:color/system_neutral1_900</color>
+    <color name="colorPrimaryDark">@android:color/system_neutral1_900</color>
+    <color name="colorAccent">@android:color/system_accent3_300</color>
+
+    <color name="darkColorPrimary">@android:color/system_neutral1_900</color>
+    <color name="darkColorPrimaryDark">@android:color/system_neutral1_900</color>
+    <color name="darkColorAccent">@android:color/system_accent3_300</color>
+
+    <!-- Shortcut Icon -->
+    <color name="shortcutIconBackground">#000000</color>
+    <color name="shortcutIconForeground">@android:color/system_accent1_100</color>
+
+    <!-- Navigation Bar
+    * Must be solid color, no alpha -->
+    <color name="navigationBar">@android:color/system_neutral1_900</color>
+    <color name="navigationBarDark">@android:color/system_neutral1_900</color>
+
+    <!-- Splash Screen -->
+    <color name="splashColor">@android:color/system_neutral1_900</color>
+
+    <!-- Navigation View -->
+    <color name="navigationViewHeaderBackground">#00FFFFFF</color>
+    <color name="navigationViewHeaderBackgroundDark">#00FFFFFF</color>
+    <color name="navigationViewTitle">@android:color/system_accent1_100</color>
+    <color name="navigationViewTitleBack">#00000000</color>
+
+    <color name="navigationViewText">@android:color/system_accent2_200</color>
+    <color name="navigationViewTextDark">@android:color/system_accent2_200</color>
+    <color name="navigationViewTextSelected">@android:color/system_accent2_50</color>
+    <color name="navigationViewTextSelectedDark">@android:color/system_accent2_50</color>
+    <color name="navigationViewSelectedBackground">@android:color/system_accent1_900</color>
+    <color name="navigationViewSelectedBackgroundDark">@android:color/system_accent1_900</color>
+
+    <!-- Swipe Refresh -->
+    <color name="swipeRefresh">@android:color/system_accent1_100</color>
+
+    <!-- Toolbar -->
+    <color name="toolbarIcon">@android:color/system_accent1_100</color>
+    <color name="toolbarIconDark">@android:color/system_accent1_100</color>
+
+    <!-- Tab -->
+    <color name="tabIndicator">@android:color/system_accent3_300</color>
+    <color name="tabIndicatorDark">@android:color/system_accent3_300</color>
+    <color name="tabText">@android:color/system_accent1_100</color>
+    <color name="tabTextDark">@android:color/system_accent1_100</color>
+    <color name="tabTextSelected">@android:color/system_accent1_100</color>
+    <color name="tabTextSelectedDark">@android:color/system_accent1_100</color>
+
+    <!-- Card -->
+    <color name="cardBackground">@android:color/system_accent1_800</color>
+    <color name="cardBackgroundDark">@android:color/system_accent1_800</color>
+    <color name="cardStroke">@android:color/system_accent1_100</color>
+    <color name="cardStrokeDark">@android:color/system_accent1_800</color>
+
+    <!-- Ripple -->
+    <color name="rippleColor">@android:color/system_accent1_700</color>
+    <color name="rippleColorDark">@android:color/system_accent1_700</color>
+    <color name="rippleAccent">@android:color/system_accent1_700</color>
+    <color name="rippleAccentDark">@android:color/system_accent1_700</color>
+
+    <!-- Attributes -->
+    <color name="mainBackground">@android:color/system_neutral1_900</color>
+    <color name="mainBackgroundDark">@android:color/system_neutral1_900</color>
+    <color name="primaryText">@android:color/system_accent2_50</color>
+    <color name="primaryTextDark">@android:color/system_accent2_50</color>
+    <color name="secondaryText">@android:color/system_accent2_100</color>
+    <color name="secondaryTextDark">@android:color/system_accent2_100</color>
+
+    <color name="dividerList">@android:color/system_accent1_900</color>
+    <color name="dividerListDark">@android:color/system_accent1_900</color>
+
+    <!-- Wallpaper Preview -->
+    <color name="wallpaperStatusBar">#000000</color>
+    <color name="wallpaperToolbar">#000000</color>
+
+</resources>
