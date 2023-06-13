@@ -178,7 +178,7 @@ def svg_xml_exporter(dir:str,exportpath:str,icon_dir:str,mode:str):
             
             xml += '    <path\n'
             if not (fill == 'none' or fill == None):
-                xml += f'        android:fillColor="@android:color/system_accent1_200"\n'
+                xml += f'        android:fillColor="@color/icon_color"\n'
                 if fill_opacity == None:
                     fillO_match = re.search(fillO_pattern, str(attr))
                     if fillO_match:
@@ -186,7 +186,7 @@ def svg_xml_exporter(dir:str,exportpath:str,icon_dir:str,mode:str):
                 if not (fill_opacity == None):
                     xml += f'        android:fillAlpha="{fill_opacity}"\n'
             if not (stroke == 'none' or stroke == None):    
-                xml += f'        android:strokeColor="@android:color/system_accent1_200"\n'
+                xml += f'        android:strokeColor="@color/icon_color"\n'
                 if stroke_opacity == None:
                     strokeO_match = re.search(strokeO_pattern, str(attr))
                     if strokeO_match:
