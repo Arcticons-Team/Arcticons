@@ -124,11 +124,19 @@ def svg_xml_exporter(dir:str,exportpath:str,icon_dir:str,mode:str):
         all_style = extract_style_info(svg_file)
         
         # Start building the XML file
-        xml =  '<vector xmlns:android="http://schemas.android.com/apk/res/android"\n'
-        xml += '    android:width="48dp"\n'
-        xml += '    android:height="48dp"\n'
-        xml += '    android:viewportWidth="48"\n'
-        xml += '    android:viewportHeight="48">\n'
+        xml = '<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">\n'
+        xml += '    <background android:drawable="@color/icon_background_color" />\n'
+        xml += '        <foreground>\n'
+        xml += '            <inset\n'
+        xml += '                android:insetBottom="18dp"\n'
+        xml += '                android:insetLeft="18dp"\n'
+        xml += '                android:insetRight="18dp"\n'
+        xml += '                android:insetTop="18dp">\n'
+        xml += '            <vector\n'
+        xml += '                android:width="48dp"\n'
+        xml += '                android:height="48dp"\n'
+        xml += '                android:viewportWidth="48"\n'
+        xml += '                android:viewportHeight="48">\n'
 
         # Add a path for each element in the SVG
         for path, attr in zip(paths, attributes):
@@ -203,7 +211,10 @@ def svg_xml_exporter(dir:str,exportpath:str,icon_dir:str,mode:str):
                 xml +='    </group>\n'
 
         # Close the XML file
-        xml += '</vector>\n'
+        xml += '            </vector>\n'
+        xml += '        </inset>\n'
+        xml += '    </foreground>\n'
+        xml += '</adaptive-icon>\n'
 
         # Write the XML to the output file
         with open(xml_file, 'w') as file:
