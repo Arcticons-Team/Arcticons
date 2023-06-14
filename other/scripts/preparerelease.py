@@ -31,7 +31,7 @@ WHITE_DIR = ICONS_DIR + "/white"
 BLACK_DIR = ICONS_DIR + "/black"
 EXPORT_DARK_DIR = APP_SRC_DIR +"/dark/res/drawable-nodpi"
 EXPORT_LIGHT_DIR = APP_SRC_DIR +"/light/res/drawable-nodpi"
-EXPORT_YOU_DIR = APP_SRC_DIR +"/you/res/drawable-anydpi-v31"
+EXPORT_YOU_DIR = APP_SRC_DIR +"/you/res/drawable-anydpi-v26"
 RES_XML_PATH = APP_SRC_DIR + "/main/res/xml"
 ASSETS_PATH = APP_SRC_DIR + "/main/assets"
 VALUE_PATH = APP_SRC_DIR + "/main/res/values"
@@ -127,11 +127,7 @@ def svg_xml_exporter(dir:str,exportpath:str,icon_dir:str,mode:str):
         xml = '<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">\n'
         xml += '    <background android:drawable="@color/icon_background_color" />\n'
         xml += '        <foreground>\n'
-        xml += '            <inset\n'
-        xml += '                android:insetBottom="18dp"\n'
-        xml += '                android:insetLeft="18dp"\n'
-        xml += '                android:insetRight="18dp"\n'
-        xml += '                android:insetTop="18dp">\n'
+        xml += '            <inset android:inset="25%">\n'
         xml += '            <vector\n'
         xml += '                android:width="48dp"\n'
         xml += '                android:height="48dp"\n'
@@ -175,40 +171,40 @@ def svg_xml_exporter(dir:str,exportpath:str,icon_dir:str,mode:str):
 
 
             if not rotate == None:
-                xml +='    <group\n'
-                xml += f'        android:rotation="{rotate}"'
+                xml +='                <group\n'
+                xml += f'                   android:rotation="{rotate}"'
                 if not transX == None:
-                    xml += f'\n        android:translateX="{transX}"'
+                    xml += f'\n                   android:translateX="{transX}"'
                 if not transY == None:
-                    xml += f'\n        android:translateY="{transY}">\n'
+                    xml += f'\n                   android:translateY="{transY}">\n'
                 else:
                     xml +='>\n'
             
-            xml += '    <path\n'
+            xml += '                <path\n'
             if not (fill == 'none' or fill == None):
-                xml += f'        android:fillColor="@color/icon_color"\n'
+                xml += f'                   android:fillColor="@color/icon_color"\n'
                 if fill_opacity == None:
                     fillO_match = re.search(fillO_pattern, str(attr))
                     if fillO_match:
                         fill_opacity = fillO_match.group('FillO')
                 if not (fill_opacity == None):
-                    xml += f'        android:fillAlpha="{fill_opacity}"\n'
+                    xml += f'                   android:fillAlpha="{fill_opacity}"\n'
             if not (stroke == 'none' or stroke == None):    
-                xml += f'        android:strokeColor="@color/icon_color"\n'
+                xml += f'                   android:strokeColor="@color/icon_color"\n'
                 if stroke_opacity == None:
                     strokeO_match = re.search(strokeO_pattern, str(attr))
                     if strokeO_match:
                         stroke_opacity = strokeO_match.group('StrokeO')
                 if not (stroke_opacity == None):
-                    xml += f'        android:strokeAlpha="{stroke_opacity}"\n'
-            xml += f'        android:strokeWidth="1.2"\n'
-            xml +=  '        android:strokeLineCap="round"\n'
-            xml +=  '        android:strokeLineJoin="round"\n'
-            xml +=  '        android:pathData="'
+                    xml += f'                   android:strokeAlpha="{stroke_opacity}"\n'
+            xml += f'                   android:strokeWidth="1.2"\n'
+            xml +=  '                   android:strokeLineCap="round"\n'
+            xml +=  '                   android:strokeLineJoin="round"\n'
+            xml +=  '                   android:pathData="'
             xml += path.d()
             xml += '"/>\n'
             if not rotate == None:
-                xml +='    </group>\n'
+                xml +='                </group>\n'
 
         # Close the XML file
         xml += '            </vector>\n'
