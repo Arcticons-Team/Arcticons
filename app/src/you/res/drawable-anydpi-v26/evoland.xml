@@ -1,0 +1,25 @@
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+    <background android:drawable="@color/icon_background_color" />
+        <foreground>
+            <inset android:inset="25%">
+            <vector
+                android:width="48dp"
+                android:height="48dp"
+                android:viewportWidth="48"
+                android:viewportHeight="48">
+                <path
+                   android:strokeColor="@color/icon_color"
+                   android:strokeWidth="1.2"
+                   android:strokeLineCap="round"
+                   android:strokeLineJoin="round"
+                   android:pathData="M 24.0,29.8226 C 23.2197,29.8226 22.1948,30.215 22.1948,31.1752 C 22.1948,31.9864 23.003,32.644 24.0,32.644 L 24.0001,32.644 C 24.9971,32.644 25.8052,31.9863 25.8052,31.175199999999997 C 25.8052,30.214999999999996 24.7757,29.822599999999998 24.0,29.822599999999998 M 22.0961,40.819599999999994 L 22.0961,35.759499999999996 C 19.950499999999998,35.4336 18.078400000000002,34.57019999999999 16.8714,33.3499 L 17.8045,30.9699 L 19.6403,30.9699 L 19.6403,11.4613 C 19.6403,9.796899999999999 22.2852,5.1579 24.0,4.5 C 25.7148,5.1579 28.3597,9.796800000000001 28.3597,11.4613 L 28.3597,30.969900000000003 L 30.1955,30.969900000000003 L 31.1286,33.3498 C 29.921699999999998,34.57 28.0495,35.4335 25.9039,35.7594 L 25.9039,40.8195 C 25.9039,40.8195 26.4643,40.8195 26.4643,40.8195 C 26.437900000000003,41.841499999999996 26.1539,42.8054 25.6746,43.4998 L 22.325200000000002,43.4998 C 21.845900000000004,42.8052 21.562,41.8414 21.535500000000003,40.8195 L 22.096000000000004,40.8195 L 22.0961,40.819599999999994"/>
+                <path
+                   android:strokeColor="@color/icon_color"
+                   android:strokeWidth="1.2"
+                   android:strokeLineCap="round"
+                   android:strokeLineJoin="round"
+                   android:pathData="M 24.0,29.8226 L 24.0,12.4685"/>
+            </vector>
+        </inset>
+    </foreground>
+</adaptive-icon>

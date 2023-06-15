@@ -1,0 +1,31 @@
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+    <background android:drawable="@color/icon_background_color" />
+        <foreground>
+            <inset android:inset="25%">
+            <vector
+                android:width="48dp"
+                android:height="48dp"
+                android:viewportWidth="48"
+                android:viewportHeight="48">
+                <path
+                   android:strokeColor="@color/icon_color"
+                   android:strokeWidth="1.2"
+                   android:strokeLineCap="round"
+                   android:strokeLineJoin="round"
+                   android:pathData="M 24.0,4.5017 A 13.09,13.09 0.0 0,0 10.91,17.5917 C 10.91,27.8417 20.91,40.2017 23.52,43.2217 A 0.8,0.8 0.0 0,0 24.73,43.2217 C 27.28,40.2217 37.09,27.841699999999996 37.09,17.5917 A 13.09,13.09 0.0 0,0 24.0,4.5017"/>
+                <path
+                   android:strokeColor="@color/icon_color"
+                   android:strokeWidth="1.2"
+                   android:strokeLineCap="round"
+                   android:strokeLineJoin="round"
+                   android:pathData="M 26.266,14.6449 A 2.0853,2.0853 0.0 0,1 27.3174,12.9416 C 28.3113,12.268699999999999 29.0424,12.519499999999999 29.371499999999997,12.870299999999999 A 1.6413,1.6413 0.0 0,1 29.462099999999996,14.836399999999998 C 28.732799999999997,15.896999999999998 27.742099999999997,15.509299999999998 27.042099999999998,16.500899999999998 C 25.152099999999997,19.18 24.086899999999996,20.885199999999998 23.5569,24.549699999999998 L 23.5569,24.551399999999997 L 22.3969,19.551399999999997 C 22.3969,19.551399999999997 21.4785,14.878899999999998 18.537599999999998,12.775699999999997"/>
+                <path
+                   android:strokeColor="@color/icon_color"
+                   android:strokeWidth="1.2"
+                   android:strokeLineCap="round"
+                   android:strokeLineJoin="round"
+                   android:pathData="M 13.9145,17.596 A 10.0898,10.0898 0.0 1,0 34.0941,17.596 A 10.0898,10.0898 0.0 1,0 13.914499999999997,17.596"/>
+            </vector>
+        </inset>
+    </foreground>
+</adaptive-icon>

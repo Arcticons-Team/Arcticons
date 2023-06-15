@@ -1,0 +1,19 @@
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+    <background android:drawable="@color/icon_background_color" />
+        <foreground>
+            <inset android:inset="25%">
+            <vector
+                android:width="48dp"
+                android:height="48dp"
+                android:viewportWidth="48"
+                android:viewportHeight="48">
+                <path
+                   android:strokeColor="@color/icon_color"
+                   android:strokeWidth="1.2"
+                   android:strokeLineCap="round"
+                   android:strokeLineJoin="round"
+                   android:pathData="M 24.0,4.5 A 15.08,15.08 0.0 0,0 8.92,19.58 C 8.92,32.14 24.0,43.5 24.0,43.5 C 24.0,43.5 39.08,32.14 39.08,19.58 A 15.08,15.08 0.0 0,0 24.0,4.5 M 24.07,5.3 C 26.26,6.4 29.87,9.059999999999999 31.12,12.73 C 30.12,16.1 26.73,19.16 24.12,20.33 L 24.12,16.5 C 22.0,17.2 17.630000000000003,21.59 17.39,23.85 C 17.93,26.28 22.240000000000002,30.490000000000002 24.04,30.950000000000003 C 24.04,30.950000000000003 23.99,27.520000000000003 24.04,27.370000000000005 C 31.41,27.370000000000005 35.16,20.490000000000006 35.12,16.250000000000007 C 35.08,12.010000000000009 33.34,7.66 29.8,5.65 A 14.63,14.63 0.0 0,1 37.8,18.560000000000002 A 13.75,13.75 0.0 0,1 24.0,32.31 C 23.67,32.31 23.35,32.31 23.0,32.31 C 9.18,30.110000000000003 10.87,10.310000000000002 24.0,9.260000000000002 L 24.07,5.3"/>
+            </vector>
+        </inset>
+    </foreground>
+</adaptive-icon>

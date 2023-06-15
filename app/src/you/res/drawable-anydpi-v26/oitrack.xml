@@ -1,0 +1,31 @@
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+    <background android:drawable="@color/icon_background_color" />
+        <foreground>
+            <inset android:inset="25%">
+            <vector
+                android:width="48dp"
+                android:height="48dp"
+                android:viewportWidth="48"
+                android:viewportHeight="48">
+                <path
+                   android:strokeColor="@color/icon_color"
+                   android:strokeWidth="1.2"
+                   android:strokeLineCap="round"
+                   android:strokeLineJoin="round"
+                   android:pathData="M 40.5,5.5 L 7.5,5.5 A 2.0,2.0 0.0 0,0 5.5,7.5 L 5.5,40.5 A 2.0,2.0 0.0 0,0 7.5,42.5 L 40.5,42.5 A 2.0,2.0 0.0 0,0 42.5,40.5 L 42.5,7.5 A 2.0,2.0 0.0 0,0 40.5,5.5"/>
+                <path
+                   android:strokeColor="@color/icon_color"
+                   android:strokeWidth="1.2"
+                   android:strokeLineCap="round"
+                   android:strokeLineJoin="round"
+                   android:pathData="M 15.5292,18.1143 L 31.4816,10.898399999999999 A 1.0,1.0 0.0 0,1 32.8048,11.3973 L 35.071,16.4073 A 1.0,1.0 0.0 0,1 34.5721,17.7305 L 31.663,19.0464 A 1.0,1.0 0.0 0,0 31.164,20.369699999999998 L 35.684,30.363099999999996 A 1.0,1.0 0.0 0,1 35.184999999999995,31.686299999999996 L 29.6067,34.21 A 1.0,1.0 0.0 0,1 28.2835,33.7111 L 23.7635,23.717600000000004 A 1.0,1.0 0.0 0,0 22.4403,23.218700000000005 L 18.6203,24.946700000000007"/>
+                <path
+                   android:strokeColor="@color/icon_color"
+                   android:strokeWidth="1.2"
+                   android:strokeLineCap="round"
+                   android:strokeLineJoin="round"
+                   android:pathData="M 17.0387,35.13 A 4.5808,4.5808 0.0 0,0 12.910899999999998,30.980000000000004 L 12.899299999999998,30.991600000000005 M 13.634999999999998,34.379000000000005 A 1.8363,1.8363 0.0 1,0 13.634299999999998,36.9759 L 13.634999999999998,36.975300000000004 L 13.634999999999998,36.975300000000004 A 1.8365,1.8365 0.0 0,0 13.635,34.3794 L 13.634999999999998,34.379000000000005 M 21.259099999999997,34.85980000000001 A 9.0063,9.0063 0.0 0,0 13.154199999999996,26.754900000000006"/>
+            </vector>
+        </inset>
+    </foreground>
+</adaptive-icon>

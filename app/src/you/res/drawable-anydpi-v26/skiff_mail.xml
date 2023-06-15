@@ -1,0 +1,37 @@
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+    <background android:drawable="@color/icon_background_color" />
+        <foreground>
+            <inset android:inset="25%">
+            <vector
+                android:width="48dp"
+                android:height="48dp"
+                android:viewportWidth="48"
+                android:viewportHeight="48">
+                <path
+                   android:strokeColor="@color/icon_color"
+                   android:strokeWidth="1.2"
+                   android:strokeLineCap="round"
+                   android:strokeLineJoin="round"
+                   android:pathData="M 29.0372,2.9407 C 10.1876,-0.3507 1.1806,15.498 2.6664,27.0655 C 4.8987,44.444 25.5414,49.5567 29.1893,31.1045 C 12.459799999999998,30.2101 10.726599999999998,5.734000000000002 29.0373,2.940700000000003 L 29.0372,2.9407"/>
+                <path
+                   android:strokeColor="@color/icon_color"
+                   android:strokeWidth="1.2"
+                   android:strokeLineCap="round"
+                   android:strokeLineJoin="round"
+                   android:pathData="M 29.0372,2.9407 C -4.619900000000001,3.4042000000000003 11.710099999999997,51.376 29.1892,31.104499999999998"/>
+                <path
+                   android:strokeColor="@color/icon_color"
+                   android:strokeWidth="1.2"
+                   android:strokeLineCap="round"
+                   android:strokeLineJoin="round"
+                   android:pathData="M 18.9628,45.0596 C 37.8124,48.349900000000005 46.8194,32.501200000000004 45.333600000000004,20.9337 C 43.1013,3.5551 22.4586,-1.5575 18.8108,16.8947 C 35.5403,17.7891 37.2735,42.2652 18.9628,45.058499999999995 L 18.9628,45.05949999999999 L 18.9628,45.0596"/>
+                <path
+                   android:strokeColor="@color/icon_color"
+                   android:strokeWidth="1.2"
+                   android:strokeLineCap="round"
+                   android:strokeLineJoin="round"
+                   android:pathData="M 18.9628,45.0596 C 52.6199,44.5951 36.290000000000006,-3.3766999999999996 18.8108,16.894700000000004"/>
+            </vector>
+        </inset>
+    </foreground>
+</adaptive-icon>

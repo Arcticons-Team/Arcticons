@@ -1,0 +1,41 @@
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+    <background android:drawable="@color/icon_background_color" />
+        <foreground>
+            <inset android:inset="25%">
+            <vector
+                android:width="48dp"
+                android:height="48dp"
+                android:viewportWidth="48"
+                android:viewportHeight="48">
+                <path
+                   android:strokeColor="@color/icon_color"
+                   android:strokeWidth="1.2"
+                   android:strokeLineCap="round"
+                   android:strokeLineJoin="round"
+                   android:pathData="M 12.5,5.5 L 12.5,5.5 A 7.0,7.0 0.0 0,1 19.5,12.5 L 19.5,35.5 A 7.0,7.0 0.0 0,1 12.5,42.5 L 12.5,42.5 A 7.0,7.0 0.0 0,1 5.5,35.5 L 5.5,12.5 A 7.0,7.0 0.0 0,1 12.5,5.5"/>
+                <group
+                   android:rotation="-90"
+                   android:translateX="11.5"
+                   android:translateY="36.5">
+                <path
+                   android:strokeColor="@color/icon_color"
+                   android:strokeWidth="1.2"
+                   android:strokeLineCap="round"
+                   android:strokeLineJoin="round"
+                   android:pathData="M 24.0,-6.0 L 24.0,-6.0 A 7.0,7.0 0.0 0,1 31.0,1.0 L 31.0,24.0 A 7.0,7.0 0.0 0,1 24.0,31.0 L 24.0,31.0 A 7.0,7.0 0.0 0,1 17.0,24.0 L 17.0,1.0 A 7.0,7.0 0.0 0,1 24.0,-6.0"/>
+                </group>
+                <group
+                   android:rotation="-45"
+                   android:translateX="-8.5744"
+                   android:translateY="20.6435">
+                <path
+                   android:strokeColor="@color/icon_color"
+                   android:strokeWidth="1.2"
+                   android:strokeLineCap="round"
+                   android:strokeLineJoin="round"
+                   android:pathData="M 20.631700000000002,2.1719 L 20.631700000000002,2.1719 A 7.0,7.0 0.0 0,1 27.631700000000002,9.1719 L 27.631700000000002,32.1719 A 7.0,7.0 0.0 0,1 20.631700000000002,39.1719 L 20.631700000000002,39.1719 A 7.0,7.0 0.0 0,1 13.6317,32.1719 L 13.6317,9.1719 A 7.0,7.0 0.0 0,1 20.631700000000002,2.1719"/>
+                </group>
+            </vector>
+        </inset>
+    </foreground>
+</adaptive-icon>

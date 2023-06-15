@@ -1,0 +1,42 @@
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+    <background android:drawable="@color/icon_background_color" />
+        <foreground>
+            <inset android:inset="25%">
+            <vector
+                android:width="48dp"
+                android:height="48dp"
+                android:viewportWidth="48"
+                android:viewportHeight="48">
+                <path
+                   android:strokeColor="@color/icon_color"
+                   android:strokeWidth="1.2"
+                   android:strokeLineCap="round"
+                   android:strokeLineJoin="round"
+                   android:pathData="M 24.1994,16.5458 A 3.9069,3.9069 0.0 0,0 23.1573,17.2909 C 21.3859,19.0623 21.6404,22.1889 23.7257,24.2743 C 25.811,26.3597 28.9377,26.6143 30.7091,24.8427 A 3.9049,3.9049 0.0 0,0 31.4541,23.800800000000002"/>
+                <path
+                   android:strokeColor="@color/icon_color"
+                   android:strokeWidth="1.2"
+                   android:strokeLineCap="round"
+                   android:strokeLineJoin="round"
+                   android:pathData="M 15.0423,22.6959 L 22.6955,15.0427"/>
+                <path
+                   android:strokeColor="@color/icon_color"
+                   android:strokeWidth="1.2"
+                   android:strokeLineCap="round"
+                   android:strokeLineJoin="round"
+                   android:pathData="M 25.3041,32.9577 L 32.9573,25.3045"/>
+                <group
+                   android:rotation="45"
+                   android:translateX="24.0001"
+                   android:translateY="-9.9409">
+                <path
+                   android:strokeColor="@color/icon_color"
+                   android:strokeWidth="1.2"
+                   android:strokeLineCap="round"
+                   android:strokeLineJoin="round"
+                   android:pathData="M 3.2485,18.5886 L 44.7512,18.5886 L 44.7512,29.4118 L 3.2485,29.4118 L 3.2485,18.5886"/>
+                </group>
+            </vector>
+        </inset>
+    </foreground>
+</adaptive-icon>

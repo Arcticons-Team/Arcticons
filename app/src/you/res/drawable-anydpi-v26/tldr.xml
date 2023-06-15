@@ -1,0 +1,37 @@
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+    <background android:drawable="@color/icon_background_color" />
+        <foreground>
+            <inset android:inset="25%">
+            <vector
+                android:width="48dp"
+                android:height="48dp"
+                android:viewportWidth="48"
+                android:viewportHeight="48">
+                <path
+                   android:strokeColor="@color/icon_color"
+                   android:strokeWidth="1.2"
+                   android:strokeLineCap="round"
+                   android:strokeLineJoin="round"
+                   android:pathData="M 40.5,42.5 L 7.5,42.5 A 2.0059,2.0059 0.0 0,1 5.5,40.5 L 5.5,7.5 A 2.0059,2.0059 0.0 0,1 7.5,5.5 L 40.5,5.5 A 2.0059,2.0059 0.0 0,1 42.5,7.5 L 42.5,40.5 A 2.0059,2.0059 0.0 0,1 40.5,42.5"/>
+                <path
+                   android:strokeColor="@color/icon_color"
+                   android:strokeWidth="1.2"
+                   android:strokeLineCap="round"
+                   android:strokeLineJoin="round"
+                   android:pathData="M 12.2038,30.2469 A 4.4754,4.4754 0.0 0,0 16.1268,32.0 L 18.4955,32.0 A 3.9957,3.9957 0.0 0,0 22.4869,28.0 L 22.4869,28.0 A 3.9957,3.9957 0.0 0,0 18.4955,24.0 L 15.8783,24.0 A 3.9957,3.9957 0.0 0,1 11.886899999999999,20.0 L 11.886899999999999,20.0 A 3.9957,3.9957 0.0 0,1 15.8783,16.0 L 18.2471,16.0 A 4.4755,4.4755 0.0 0,1 22.170099999999998,17.7531"/>
+                <path
+                   android:strokeColor="@color/icon_color"
+                   android:strokeWidth="1.2"
+                   android:strokeLineCap="round"
+                   android:strokeLineJoin="round"
+                   android:pathData="M 17.1869,34.0 L 17.1869,14.0"/>
+                <path
+                   android:strokeColor="@color/icon_color"
+                   android:strokeWidth="1.2"
+                   android:strokeLineCap="round"
+                   android:strokeLineJoin="round"
+                   android:pathData="M 25.5131,34.0 L 36.1131,34.0"/>
+            </vector>
+        </inset>
+    </foreground>
+</adaptive-icon>

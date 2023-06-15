@@ -1,0 +1,31 @@
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+    <background android:drawable="@color/icon_background_color" />
+        <foreground>
+            <inset android:inset="25%">
+            <vector
+                android:width="48dp"
+                android:height="48dp"
+                android:viewportWidth="48"
+                android:viewportHeight="48">
+                <path
+                   android:strokeColor="@color/icon_color"
+                   android:strokeWidth="1.2"
+                   android:strokeLineCap="round"
+                   android:strokeLineJoin="round"
+                   android:pathData="M 10.273,5.5 C 10.273,9.1987 5.7882,9.1987 5.7882,12.897300000000001 C 5.7882,16.594 10.273,16.594 10.273,20.2906 C 10.273,23.9906 5.7882,23.9906 5.7882,27.690600000000003 C 5.7882,31.393000000000004 10.273,31.393000000000004 10.273,35.095400000000005 C 10.273,38.79780000000001 5.7882,38.7976 5.7882,42.5"/>
+                <path
+                   android:strokeColor="@color/icon_color"
+                   android:strokeWidth="1.2"
+                   android:strokeLineCap="round"
+                   android:strokeLineJoin="round"
+                   android:pathData="M 26.2424,5.5 C 26.2424,9.1987 21.7576,9.1987 21.7576,12.897300000000001 C 21.7576,16.594 26.2424,16.594 26.2424,20.2906 C 26.2424,23.9906 21.7576,23.9906 21.7576,27.690600000000003 C 21.7576,31.393000000000004 26.2424,31.393000000000004 26.2424,35.095400000000005 C 26.2424,38.79780000000001 21.7576,38.7976 21.7576,42.5"/>
+                <path
+                   android:strokeColor="@color/icon_color"
+                   android:strokeWidth="1.2"
+                   android:strokeLineCap="round"
+                   android:strokeLineJoin="round"
+                   android:pathData="M 42.2118,5.5 C 42.2118,9.1987 37.727,9.1987 37.727,12.897300000000001 C 37.727,16.594 42.2118,16.594 42.2118,20.2906 C 42.2118,23.9906 37.727,23.9906 37.727,27.690600000000003 C 37.727,31.393000000000004 42.2118,31.393000000000004 42.2118,35.095400000000005 C 42.2118,38.79780000000001 37.727,38.7976 37.727,42.5"/>
+            </vector>
+        </inset>
+    </foreground>
+</adaptive-icon>

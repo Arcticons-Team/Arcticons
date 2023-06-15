@@ -1,0 +1,31 @@
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+    <background android:drawable="@color/icon_background_color" />
+        <foreground>
+            <inset android:inset="25%">
+            <vector
+                android:width="48dp"
+                android:height="48dp"
+                android:viewportWidth="48"
+                android:viewportHeight="48">
+                <path
+                   android:strokeColor="@color/icon_color"
+                   android:strokeWidth="1.2"
+                   android:strokeLineCap="round"
+                   android:strokeLineJoin="round"
+                   android:pathData="M 24.0,2.5 C 35.9,2.5 45.5,12.1 45.5,24.0 C 45.5,35.9 35.9,45.5 24.0,45.5 C 12.100000000000001,45.5 2.5,35.9 2.5,24.0 C 2.5,12.100000000000001 12.1,2.5 24.0,2.5"/>
+                <path
+                   android:strokeColor="@color/icon_color"
+                   android:strokeWidth="1.2"
+                   android:strokeLineCap="round"
+                   android:strokeLineJoin="round"
+                   android:pathData="M 24.0,7.0 C 33.4,7.0 41.0,14.6 41.0,24.0 C 41.0,33.4 33.4,41.0 24.0,41.0 C 14.600000000000001,41.0 7.0,33.4 7.0,24.0 C 7.0,14.600000000000001 14.6,7.0 24.0,7.0"/>
+                <path
+                   android:strokeColor="@color/icon_color"
+                   android:strokeWidth="1.2"
+                   android:strokeLineCap="round"
+                   android:strokeLineJoin="round"
+                   android:pathData="M 32.7,25.3 C 33.400000000000006,25.1 33.900000000000006,24.400000000000002 33.7,23.7 C 33.6,23.2 33.2,22.8 32.7,22.7 L 19.1,14.899999999999999 C 18.400000000000002,14.7 17.700000000000003,15.099999999999998 17.5,15.799999999999999 C 17.5,15.899999999999999 17.4,16.099999999999998 17.4,16.299999999999997 L 17.4,31.9 C 17.4,32.6 17.9,33.199999999999996 18.599999999999998,33.3 C 18.799999999999997,33.3 18.9,33.3 19.099999999999998,33.199999999999996 L 32.7,25.3"/>
+            </vector>
+        </inset>
+    </foreground>
+</adaptive-icon>

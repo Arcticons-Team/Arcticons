@@ -1,0 +1,25 @@
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+    <background android:drawable="@color/icon_background_color" />
+        <foreground>
+            <inset android:inset="25%">
+            <vector
+                android:width="48dp"
+                android:height="48dp"
+                android:viewportWidth="48"
+                android:viewportHeight="48">
+                <path
+                   android:strokeColor="@color/icon_color"
+                   android:strokeWidth="1.2"
+                   android:strokeLineCap="round"
+                   android:strokeLineJoin="round"
+                   android:pathData="M 40.21,22.82 L 40.21,26.18 M 38.21,22.82 L 38.21,26.0 M 39.0,37.41 L 39.81,37.41 M 39.410000000000004,34.16 L 40.220000000000006,34.16 M 39.410000000000004,30.909999999999997 L 40.220000000000006,30.909999999999997 M 37.0,26.0 L 37.0,39.0 M 33.75,26.0 L 38.62,26.0 C 41.87,26.0 43.5,27.63 43.5,29.25 L 43.5,37.38 C 43.5,39.0 41.87,42.25 38.63,42.25 L 33.75,42.25 L 33.75,26.0"/>
+                <path
+                   android:strokeColor="@color/icon_color"
+                   android:strokeWidth="1.2"
+                   android:strokeLineCap="round"
+                   android:strokeLineJoin="round"
+                   android:pathData="M 7.79,26.19 L 7.79,22.82 M 9.79,25.990000000000002 L 9.79,22.82 M 8.16,37.41 L 9.0,37.41 M 7.75,34.16 L 8.56,34.16 M 7.75,30.909999999999997 L 8.56,30.909999999999997 M 11.0,39.0 L 11.0,26.0 M 14.25,42.25 L 9.37,42.25 C 6.13,42.28 4.5,39.0 4.5,37.41 L 4.5,29.28 C 4.5,27.66 6.13,26.0 9.38,26.0 L 14.25,26.0 L 14.25,42.25 M 24.0,5.72 C 15.06,5.72 6.129999999999999,11.41 6.129999999999999,22.779999999999998 L 11.0,22.779999999999998 C 11.0,14.659999999999998 17.5,10.589999999999998 24.0,10.589999999999998 L 24.0,10.589999999999998 C 30.5,10.589999999999998 37.0,14.659999999999998 37.0,22.779999999999998 L 41.87,22.779999999999998 C 41.87,11.41 32.94,5.72 24.0,5.72"/>
+            </vector>
+        </inset>
+    </foreground>
+</adaptive-icon>
