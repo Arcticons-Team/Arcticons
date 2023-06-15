@@ -164,10 +164,14 @@ def svg_xml_exporter(dir:str,exportpath:str,icon_dir:str,mode:str):
                 fill_match = re.search(fill_pattern, str(attr))
                 if fill_match:
                     fill = fill_match.group('Fill')
+                else:
+                    fill = attr.get('fill')
             if stroke == None:
                 stroke_match = re.search(stroke_pattern, str(attr))
                 if stroke_match:
                     stroke = stroke_match.group('Stroke')
+                else:
+                    stroke = attr.get('stroke')
 
 
             if not rotate == None:
