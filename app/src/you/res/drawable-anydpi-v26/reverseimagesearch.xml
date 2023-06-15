@@ -1,0 +1,49 @@
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+    <background android:drawable="@color/icon_background_color" />
+        <foreground>
+            <inset android:inset="25%">
+            <vector
+                android:width="48dp"
+                android:height="48dp"
+                android:viewportWidth="48"
+                android:viewportHeight="48">
+                <path
+                   android:strokeColor="@color/icon_color"
+                   android:strokeWidth="1.2"
+                   android:strokeLineCap="round"
+                   android:strokeLineJoin="round"
+                   android:pathData="M 6.075,17.9268 A 16.7653,16.7653 0.0 1,1 26.6083,38.46"/>
+                <path
+                   android:strokeColor="@color/icon_color"
+                   android:strokeWidth="1.2"
+                   android:strokeLineCap="round"
+                   android:strokeLineJoin="round"
+                   android:pathData="M 16.535,38.02 A 16.7651,16.7651 0.0 0,1 6.074999999999999,26.605000000000004"/>
+                <path
+                   android:strokeColor="@color/icon_color"
+                   android:strokeWidth="1.2"
+                   android:strokeLineCap="round"
+                   android:strokeLineJoin="round"
+                   android:pathData="M 33.9721,34.273 L 41.925,42.5"/>
+                <path
+                   android:strokeColor="@color/icon_color"
+                   android:strokeWidth="1.2"
+                   android:strokeLineCap="round"
+                   android:strokeLineJoin="round"
+                   android:pathData="M 20.5348,22.3816 A 1.7343,1.7343 0.0 1,0 24.0034,22.3816 A 1.7343,1.7343 0.0 1,0 20.5348,22.3816"/>
+                <path
+                   android:strokeColor="@color/icon_color"
+                   android:strokeWidth="1.2"
+                   android:strokeLineCap="round"
+                   android:strokeLineJoin="round"
+                   android:pathData="M 28.0503,22.3816 A 1.7343,1.7343 0.0 1,0 31.5189,22.3816 A 1.7343,1.7343 0.0 1,0 28.0503,22.3816"/>
+                <path
+                   android:strokeColor="@color/icon_color"
+                   android:strokeWidth="1.2"
+                   android:strokeLineCap="round"
+                   android:strokeLineJoin="round"
+                   android:pathData="M 13.019300000000001,22.3816 A 1.7343,1.7343 0.0 1,0 16.4879,22.3816 A 1.7343,1.7343 0.0 1,0 13.0193,22.3816"/>
+            </vector>
+        </inset>
+    </foreground>
+</adaptive-icon>

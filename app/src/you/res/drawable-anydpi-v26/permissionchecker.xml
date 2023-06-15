@@ -1,0 +1,25 @@
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+    <background android:drawable="@color/icon_background_color" />
+        <foreground>
+            <inset android:inset="25%">
+            <vector
+                android:width="48dp"
+                android:height="48dp"
+                android:viewportWidth="48"
+                android:viewportHeight="48">
+                <path
+                   android:strokeColor="@color/icon_color"
+                   android:strokeWidth="1.2"
+                   android:strokeLineCap="round"
+                   android:strokeLineJoin="round"
+                   android:pathData="M 33.07,19.51 L 28.0,23.2 L 30.0,29.13 A 0.57,0.57 0.0 0,1 29.13,29.759999999999998 L 24.0,26.15 L 18.92,29.849999999999998 A 0.56,0.56 0.0 0,1 18.130000000000003,29.7 A 0.62,0.62 0.0 0,1 18.050000000000004,29.22 L 20.0,23.3 L 14.93,19.6 A 0.55,0.55 0.0 0,1 15.25,18.6 L 21.52,18.6 L 23.47,12.670000000000002 A 0.55,0.55 0.0 0,1 24.529999999999998,12.580000000000002 L 26.479999999999997,18.5 L 32.75,18.5 A 0.56,0.56 0.0 0,1 33.3,19.07 A 0.53,0.53 0.0 0,1 33.07,19.51"/>
+                <path
+                   android:strokeColor="@color/icon_color"
+                   android:strokeWidth="1.2"
+                   android:strokeLineCap="round"
+                   android:strokeLineJoin="round"
+                   android:pathData="M 24.0,4.5 C 24.0,4.5 12.74,6.5 8.75,6.5 L 8.75,26.5 A 11.16,11.16 0.0 0,0 9.55,30.6 A 15.0,15.0 0.0 0,0 11.55,34.21 A 22.0,22.0 0.0 0,0 14.360000000000001,37.28 A 34.47,34.47 0.0 0,0 17.36,39.76 A 34.0,34.0 0.0 0,0 20.25,41.62 C 21.25,42.21 21.96,42.62 22.38,42.809999999999995 L 23.38,43.3 A 1.44,1.44 0.0 0,0 24.619999999999997,43.3 L 25.619999999999997,42.809999999999995 C 26.04,42.60999999999999 26.749999999999996,42.209999999999994 27.749999999999996,41.62 A 34.0,34.0 0.0 0,0 30.639999999999997,39.76 A 34.47,34.47 0.0 0,0 33.64,37.28 A 22.0,22.0 0.0 0,0 36.45,34.21 A 15.0,15.0 0.0 0,0 38.45,30.6 A 11.16,11.16 0.0 0,0 39.25,26.5 L 39.25,6.5 C 35.26,6.53 24.0,4.5 24.0,4.5"/>
+            </vector>
+        </inset>
+    </foreground>
+</adaptive-icon>

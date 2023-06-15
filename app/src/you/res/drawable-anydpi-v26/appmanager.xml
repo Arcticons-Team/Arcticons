@@ -1,0 +1,25 @@
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+    <background android:drawable="@color/icon_background_color" />
+        <foreground>
+            <inset android:inset="25%">
+            <vector
+                android:width="48dp"
+                android:height="48dp"
+                android:viewportWidth="48"
+                android:viewportHeight="48">
+                <path
+                   android:strokeColor="@color/icon_color"
+                   android:strokeWidth="1.2"
+                   android:strokeLineCap="round"
+                   android:strokeLineJoin="round"
+                   android:pathData="M 7.5,5.5 A 2.0,2.0 0.0 0,0 5.5,7.5 L 5.5,40.5 A 2.0,2.0 0.0 0,0 7.5,42.5 L 40.5,42.5 A 2.0,2.0 0.0 0,0 42.5,40.5 L 42.5,7.5 A 2.0,2.0 0.0 0,0 40.5,5.5 L 7.5,5.5"/>
+                <path
+                   android:strokeColor="@color/icon_color"
+                   android:strokeWidth="1.2"
+                   android:strokeLineCap="round"
+                   android:strokeLineJoin="round"
+                   android:pathData="M 34.4,25.37 A 12.44,12.44 0.0 0,0 34.5,24.0 A 12.08,12.08 0.0 0,0 34.4,22.64 L 37.4,20.32 A 0.7,0.7 0.0 0,0 37.57,19.42 L 34.77,14.570000000000002 A 0.7,0.7 0.0 0,0 33.910000000000004,14.270000000000001 L 30.430000000000003,15.680000000000001 A 10.35,10.35 0.0 0,0 28.0,14.3 L 27.48,10.59 A 0.73,0.73 0.0 0,0 26.78,10.0 L 21.2,10.0 A 0.72,0.72 0.0 0,0 20.5,10.59 L 20.0,14.3 A 10.41,10.41 0.0 0,0 17.63,15.68 L 14.149999999999999,14.27 A 0.72,0.72 0.0 0,0 13.29,14.57 L 10.489999999999998,19.42 A 0.71,0.71 0.0 0,0 10.659999999999998,20.32 L 13.61,22.64 A 10.24,10.24 0.0 0,0 13.5,24.0 A 12.44,12.44 0.0 0,0 13.59,25.37 L 10.64,27.68 A 0.7,0.7 0.0 0,0 10.47,28.58 L 13.27,33.43 A 0.7,0.7 0.0 0,0 14.129999999999999,33.73 L 17.61,32.32 A 10.0,10.0 0.0 0,0 20.0,33.7 L 20.52,37.410000000000004 A 0.72,0.72 0.0 0,0 21.22,38.00000000000001 L 26.82,38.00000000000001 A 0.71,0.71 0.0 0,0 27.51,37.410000000000004 L 28.0,33.7 A 9.86,9.86 0.0 0,0 30.37,32.32 L 33.86,33.73 A 0.69,0.69 0.0 0,0 34.71,33.43 L 37.51,28.58 A 0.7,0.7 0.0 0,0 37.339999999999996,27.68 L 34.4,25.37 M 24.0,28.9 A 4.9,4.9 0.0 1,1 28.9,24.0 A 4.9,4.9 0.0 0,1 24.0,28.9"/>
+            </vector>
+        </inset>
+    </foreground>
+</adaptive-icon>

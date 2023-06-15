@@ -1,0 +1,31 @@
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+    <background android:drawable="@color/icon_background_color" />
+        <foreground>
+            <inset android:inset="25%">
+            <vector
+                android:width="48dp"
+                android:height="48dp"
+                android:viewportWidth="48"
+                android:viewportHeight="48">
+                <path
+                   android:strokeColor="@color/icon_color"
+                   android:strokeWidth="1.2"
+                   android:strokeLineCap="round"
+                   android:strokeLineJoin="round"
+                   android:pathData="M 23.26,22.32 A 1.7111984104714448,1.7111984104714448 0.0 1,0 25.68,24.740000000000002"/>
+                <path
+                   android:strokeColor="@color/icon_color"
+                   android:strokeWidth="1.2"
+                   android:strokeLineCap="round"
+                   android:strokeLineJoin="round"
+                   android:pathData="M 25.28,13.26 L 24.67,16.75 A 4.38,4.38 0.0 0,1 24.48,17.57 A 2.0,2.0 0.0 0,1 24.22,18.07 A 4.39,4.39 0.0 0,1 23.65,18.69 L 5.79,36.55 A 1.0,1.0 0.0 0,0 5.79,37.97 L 10.0,42.21 A 1.0,1.0 0.0 0,0 11.42,42.21 L 29.31,24.35 A 4.39,4.39 0.0 0,1 29.93,23.78 A 2.0,2.0 0.0 0,1 30.43,23.52 A 4.38,4.38 0.0 0,1 31.25,23.33 L 34.74,22.72 A 10.78,10.78 0.0 0,0 39.31,20.0 L 28.0,8.69 A 10.78,10.78 0.0 0,0 25.28,13.26 M 23.28,22.32 A 1.7111984104714464,1.7111984104714464 0.0 0,1 25.700000000000003,24.740000000000002 L 23.28,27.17 A 1.72,1.72 0.0 0,1 20.85,24.740000000000002 L 23.28,22.32"/>
+                <path
+                   android:strokeColor="@color/icon_color"
+                   android:strokeWidth="1.2"
+                   android:strokeLineCap="round"
+                   android:strokeLineJoin="round"
+                   android:pathData="M 39.31,20.0 A 43.0,43.0 0.0 0,0 42.31,16.73 A 2.28,2.28 0.0 0,0 42.31,14.99 A 5.7,5.7 0.0 0,0 41.0,13.44 L 34.56,7.0 A 5.7,5.7 0.0 0,0 33.0,5.67 A 2.28,2.28 0.0 0,0 31.26,5.67 A 43.0,43.0 0.0 0,0 27.990000000000002,8.67"/>
+            </vector>
+        </inset>
+    </foreground>
+</adaptive-icon>

@@ -1,0 +1,31 @@
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+    <background android:drawable="@color/icon_background_color" />
+        <foreground>
+            <inset android:inset="25%">
+            <vector
+                android:width="48dp"
+                android:height="48dp"
+                android:viewportWidth="48"
+                android:viewportHeight="48">
+                <path
+                   android:strokeColor="@color/icon_color"
+                   android:strokeWidth="1.2"
+                   android:strokeLineCap="round"
+                   android:strokeLineJoin="round"
+                   android:pathData="M 18.9873,38.1598 C 18.9873,41.183499999999995 16.5345,43.634699999999995 13.5088,43.634699999999995 C 10.4831,43.634699999999995 8.0303,41.183499999999995 8.0303,38.1598 L 8.0303,10.116 C 8.0303,7.0923 10.4831,4.6411 13.5088,4.6411 C 16.5345,4.6411 18.9873,7.0923 18.9873,10.116 L 18.9873,38.159800000000004 L 18.9873,38.1598"/>
+                <path
+                   android:strokeColor="@color/icon_color"
+                   android:strokeWidth="1.2"
+                   android:strokeLineCap="round"
+                   android:strokeLineJoin="round"
+                   android:pathData="M 18.9945,17.9733 L 30.734099999999998,6.241399999999999 C 32.873599999999996,4.103299999999999 36.3424,4.103299999999999 38.4818,6.241399999999999 C 40.6212,8.379499999999998 40.6213,11.845999999999998 38.4818,13.983999999999998 L 19.002,33.4509"/>
+                <path
+                   android:strokeColor="@color/icon_color"
+                   android:strokeWidth="1.2"
+                   android:strokeLineCap="round"
+                   android:strokeLineJoin="round"
+                   android:pathData="M 27.1929,25.7185 L 35.7717,34.2917 C 37.9112,36.4298 37.9112,39.8962 35.7717,42.0343 C 33.632200000000005,44.1724 30.163400000000003,44.1724 28.024,42.0343 L 19.581000000000003,33.596900000000005"/>
+            </vector>
+        </inset>
+    </foreground>
+</adaptive-icon>

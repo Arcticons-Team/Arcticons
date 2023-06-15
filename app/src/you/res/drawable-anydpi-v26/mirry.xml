@@ -1,0 +1,31 @@
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+    <background android:drawable="@color/icon_background_color" />
+        <foreground>
+            <inset android:inset="25%">
+            <vector
+                android:width="48dp"
+                android:height="48dp"
+                android:viewportWidth="48"
+                android:viewportHeight="48">
+                <path
+                   android:strokeColor="@color/icon_color"
+                   android:strokeWidth="1.2"
+                   android:strokeLineCap="round"
+                   android:strokeLineJoin="round"
+                   android:pathData="M 35.57,18.25 C 35.57,10.66 30.39,4.5 24.0,4.5 C 17.61,4.5 12.43,10.66 12.43,18.25 C 12.43,24.35 15.78,29.509999999999998 20.43,31.25 L 20.43,31.25 C 22.24,31.94 22.1,34.04 21.88,35.55 L 20.92,40.0 A 3.1326107322806642,3.1326107322806642 0.0 0,0 27.130000000000003,40.83 A 2.89,2.89 0.0 0,0 27.130000000000003,40.0 L 26.200000000000003,35.62 C 25.990000000000002,34.129999999999995 25.840000000000003,32.01 27.660000000000004,31.319999999999997 L 27.660000000000004,31.319999999999997 C 32.22,29.51 35.57,24.35 35.57,18.25 M 24.0,28.81 C 19.259999999999998,28.81 15.41,24.09 15.41,18.25 C 15.41,12.41 19.26,7.67 24.0,7.67 C 28.74,7.67 32.59,12.41 32.59,18.25 C 32.59,24.09 28.74,28.81 24.0,28.81"/>
+                <path
+                   android:strokeColor="@color/icon_color"
+                   android:strokeWidth="1.2"
+                   android:strokeLineCap="round"
+                   android:strokeLineJoin="round"
+                   android:pathData="M 22.41,11.73 L 19.67,14.47"/>
+                <path
+                   android:strokeColor="@color/icon_color"
+                   android:strokeWidth="1.2"
+                   android:strokeLineCap="round"
+                   android:strokeLineJoin="round"
+                   android:pathData="M 25.85,12.0 L 19.94,17.9"/>
+            </vector>
+        </inset>
+    </foreground>
+</adaptive-icon>

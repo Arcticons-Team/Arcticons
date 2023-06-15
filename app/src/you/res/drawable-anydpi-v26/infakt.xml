@@ -1,0 +1,25 @@
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+    <background android:drawable="@color/icon_background_color" />
+        <foreground>
+            <inset android:inset="25%">
+            <vector
+                android:width="48dp"
+                android:height="48dp"
+                android:viewportWidth="48"
+                android:viewportHeight="48">
+                <path
+                   android:strokeColor="@color/icon_color"
+                   android:strokeWidth="1.2"
+                   android:strokeLineCap="round"
+                   android:strokeLineJoin="round"
+                   android:pathData="M 9.1167,9.4 C 9.122399999999999,9.328000000000001 5.385199999999999,12.7417 11.372499999999999,17.3557 C 8.958499999999999,21.648899999999998 13.253099999999998,23.7316 13.253099999999998,23.7316 C 11.108499999999998,27.7367 16.3247,29.7102 16.3247,29.7102 C 14.1159,34.8024 11.908999999999999,39.6857 8.4738,43.4648 C 11.773800000000001,43.658699999999996 12.979600000000001,43.0483 14.8777,41.667199999999994 C 22.3537,36.227199999999996 25.7788,27.875299999999996 27.606900000000003,23.293699999999994 C 28.458000000000002,21.160899999999994 26.894900000000003,18.032599999999995 24.854900000000004,16.978199999999994 C 19.2906,14.1025 9.004,9.4633 9.1167,9.4"/>
+                <path
+                   android:strokeColor="@color/icon_color"
+                   android:strokeWidth="1.2"
+                   android:strokeLineCap="round"
+                   android:strokeLineJoin="round"
+                   android:pathData="M 26.0416,11.4943 A 6.9943,6.9943 0.0 1,0 40.0302,11.4943 A 6.9943,6.9943 0.0 1,0 26.041600000000003,11.4943"/>
+            </vector>
+        </inset>
+    </foreground>
+</adaptive-icon>

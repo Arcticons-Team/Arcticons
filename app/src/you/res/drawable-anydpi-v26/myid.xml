@@ -1,0 +1,19 @@
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+    <background android:drawable="@color/icon_background_color" />
+        <foreground>
+            <inset android:inset="25%">
+            <vector
+                android:width="48dp"
+                android:height="48dp"
+                android:viewportWidth="48"
+                android:viewportHeight="48">
+                <path
+                   android:strokeColor="@color/icon_color"
+                   android:strokeWidth="1.2"
+                   android:strokeLineCap="round"
+                   android:strokeLineJoin="round"
+                   android:pathData="M 41.98,18.143 L 38.062,11.357 L 27.918,17.214 L 27.918,5.5 L 20.082,5.5 L 20.082,17.214 L 9.938,11.357 L 6.02,18.143 L 16.164,24.0 L 6.02,29.857 L 9.938,36.643 L 20.082,30.786 L 20.082,42.5 L 27.918,42.5 L 27.918,30.786 L 38.062,36.643 L 41.98,29.857 L 31.836,24.0 L 41.98,18.143 L 41.98,18.143"/>
+            </vector>
+        </inset>
+    </foreground>
+</adaptive-icon>

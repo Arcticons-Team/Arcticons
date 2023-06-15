@@ -1,0 +1,46 @@
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+    <background android:drawable="@color/icon_background_color" />
+        <foreground>
+            <inset android:inset="25%">
+            <vector
+                android:width="48dp"
+                android:height="48dp"
+                android:viewportWidth="48"
+                android:viewportHeight="48">
+                <group
+                   android:rotation="-34.12"
+                   android:translateX="-14.1425"
+                   android:translateY="12.3006">
+                <path
+                   android:strokeColor="@color/icon_color"
+                   android:strokeWidth="1.2"
+                   android:strokeLineCap="round"
+                   android:strokeLineJoin="round"
+                   android:pathData="M 7.184,29.193 A 5.7863,12.4521 0.0 1,0 18.7566,29.193 A 5.7863,12.4521 0.0 1,0 7.183999999999999,29.193"/>
+                </group>
+                <group
+                   android:rotation="-55.8798"
+                   android:translateX="-9.0288"
+                   android:translateY="41.9455">
+                <path
+                   android:strokeColor="@color/icon_color"
+                   android:strokeWidth="1.2"
+                   android:strokeLineCap="round"
+                   android:strokeLineJoin="round"
+                   android:pathData="M 22.5777,29.4846 A 12.452000000000004,5.786300000000001 0.0 1,0 47.481700000000004,29.4846 A 12.452,5.7863 0.0 1,0 22.577700000000004,29.4846"/>
+                </group>
+                <group
+                   android:rotation="-0.263"
+                   android:translateX="-0.0617"
+                   android:translateY="0.1096">
+                <path
+                   android:strokeColor="@color/icon_color"
+                   android:strokeWidth="1.2"
+                   android:strokeLineCap="round"
+                   android:strokeLineJoin="round"
+                   android:pathData="M 11.4016,13.4916 A 12.4521,5.7863 0.0 1,0 36.3058,13.4916 A 12.4521,5.7863 0.0 1,0 11.401599999999998,13.4916"/>
+                </group>
+            </vector>
+        </inset>
+    </foreground>
+</adaptive-icon>

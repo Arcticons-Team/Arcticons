@@ -1,0 +1,37 @@
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+    <background android:drawable="@color/icon_background_color" />
+        <foreground>
+            <inset android:inset="25%">
+            <vector
+                android:width="48dp"
+                android:height="48dp"
+                android:viewportWidth="48"
+                android:viewportHeight="48">
+                <path
+                   android:strokeColor="@color/icon_color"
+                   android:strokeWidth="1.2"
+                   android:strokeLineCap="round"
+                   android:strokeLineJoin="round"
+                   android:pathData="M 23.84,29.0 L 30.08,25.4 L 32.16,29.0 L 28.0,31.36 L 32.16,33.769999999999996 L 30.08,37.37 L 23.839999999999996,33.769999999999996 L 17.599999999999994,37.37 L 15.519999999999994,33.769999999999996 L 19.679999999999993,31.359999999999996 L 15.52,29.0 L 17.6,25.4 L 23.84,29.0"/>
+                <path
+                   android:strokeColor="@color/icon_color"
+                   android:strokeWidth="1.2"
+                   android:strokeLineCap="round"
+                   android:strokeLineJoin="round"
+                   android:pathData="M 2.5,24.0 A 21.5,21.5 0.0 1,0 45.5,24.0 A 21.5,21.5 0.0 1,0 2.5,24.0"/>
+                <path
+                   android:strokeColor="@color/icon_color"
+                   android:strokeWidth="1.2"
+                   android:strokeLineCap="round"
+                   android:strokeLineJoin="round"
+                   android:pathData="M 11.75,17.78 A 3.5,3.5 0.0 1,0 18.75,17.78 A 3.5,3.5 0.0 1,0 11.75,17.78"/>
+                <path
+                   android:strokeColor="@color/icon_color"
+                   android:strokeWidth="1.2"
+                   android:strokeLineCap="round"
+                   android:strokeLineJoin="round"
+                   android:pathData="M 29.25,17.78 A 3.5,3.5 0.0 1,0 36.25,17.78 A 3.5,3.5 0.0 1,0 29.25,17.78"/>
+            </vector>
+        </inset>
+    </foreground>
+</adaptive-icon>
