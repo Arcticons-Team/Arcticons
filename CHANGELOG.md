@@ -1,3 +1,9 @@
+###### Released: Jun 16, 2023
+* 🆕Arcticons You release! A new flavor has arrived, now with Material You themed icons. Available on all platforms! (Special thanks to Kaiserdragon2 for making all of this possible)
+* 🎉 82 new and updated icons! (thanks Kaiserdragon2, Wari, Skedastically, Tieu1991, Dgcampbe)
+* 💡 Many fixes for icons not applying.
+* 🔥 6438 icons in total!
+
 ### 6.3.6
 ###### Released: Jun 10, 2023
 * 📱 Dashboard update

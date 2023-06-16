@@ -1,0 +1,37 @@
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+    <background android:drawable="@color/icon_background_color" />
+        <foreground>
+            <inset android:inset="25%">
+            <vector
+                android:width="48dp"
+                android:height="48dp"
+                android:viewportWidth="48"
+                android:viewportHeight="48">
+                <path
+                   android:strokeColor="@color/icon_color"
+                   android:strokeWidth="1.2"
+                   android:strokeLineCap="round"
+                   android:strokeLineJoin="round"
+                   android:pathData="M 15.3236,19.9579 L 26.8934,35.114999999999995 L 22.6075,35.114999999999995 C 20.8317,35.114999999999995 19.9176,33.943099999999994 18.9768,32.6994 L 12.2521,23.809299999999997 L 15.3236,19.957899999999995 L 18.9768,15.300599999999996 C 19.9176,14.056899999999995 20.8317,12.884999999999996 22.6075,12.884999999999996 L 26.8934,12.884999999999996 C 26.8934,12.884999999999996 18.447499999999998,24.050499999999996 18.447499999999998,24.050499999999996"/>
+                <path
+                   android:strokeColor="@color/icon_color"
+                   android:strokeWidth="1.2"
+                   android:strokeLineCap="round"
+                   android:strokeLineJoin="round"
+                   android:pathData="M 37.2241,22.1778 L 37.2241,34.7295"/>
+                <path
+                   android:strokeColor="@color/icon_color"
+                   android:strokeWidth="1.2"
+                   android:strokeLineCap="round"
+                   android:strokeLineJoin="round"
+                   android:pathData="M 30.9483,28.4536 L 43.5,28.4536"/>
+                <path
+                   android:strokeColor="@color/icon_color"
+                   android:strokeWidth="1.2"
+                   android:strokeLineCap="round"
+                   android:strokeLineJoin="round"
+                   android:pathData="M 4.5,13.1057 L 9.825700000000001,13.1057 L 9.825700000000001,34.8341 L 4.5,34.8341 L 4.5,13.1057"/>
+            </vector>
+        </inset>
+    </foreground>
+</adaptive-icon>
