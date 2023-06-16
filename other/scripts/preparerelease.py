@@ -69,12 +69,12 @@ def svg_xml_exporter(dir:str,exportpath:str,icon_dir:str,mode:str):
     from shutil import copy2
     import glob
 
-    styles_pattern = re.compile(r'\..*?}', re.M)
-    name_pattern = re.compile(r'\.(?P<Name>.+?)({|,)', re.M)
-    fill_pattern = re.compile(r'fill:(?P<Fill>.+?);', re.M)
-    fillO_pattern = re.compile(r'fill-opacity:(?P<FillO>.+?)', re.M)
-    stroke_pattern = re.compile(r'stroke:(?P<Stroke>.+?);', re.M)
-    strokeO_pattern = re.compile(r'stroke-opacity:(?P<StrokeO>.+?)', re.M)
+    styles_pattern = re.compile(r'(?s)\..*?}', re.M)
+    name_pattern = re.compile(r'\.(?P<Name>.+?)( ?{|,)', re.M)
+    fill_pattern = re.compile(r'fill: ?(?P<Fill>.+?);', re.M)
+    fillO_pattern = re.compile(r'fill-opacity: ?(?P<FillO>.+?)', re.M)
+    stroke_pattern = re.compile(r'stroke: ?(?P<Stroke>.+?);', re.M)
+    strokeO_pattern = re.compile(r'stroke-opacity: ?(?P<StrokeO>.+?)', re.M)
     rotate_pattern = re.compile(r'translate\((?P<X>.+?) (?P<Y>.+?)\).*rotate\((?P<Rotate>.+?)\)', re.M)
     
 
