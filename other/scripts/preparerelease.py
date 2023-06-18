@@ -72,9 +72,9 @@ def svg_xml_exporter(dir:str,exportpath:str,icon_dir:str,mode:str):
     styles_pattern = re.compile(r'(?s)\..*?}', re.M)
     name_pattern = re.compile(r'\.(?P<Name>.+?)( ?{|,)', re.M)
     fill_pattern = re.compile(r'fill: ?(?P<Fill>.+?);', re.M)
-    fillO_pattern = re.compile(r'fill-opacity: ?(?P<FillO>.+?)', re.M)
+    fillO_pattern = re.compile(r'fill-opacity: ?(?P<FillO>\d?\.?\d*)', re.M)
     stroke_pattern = re.compile(r'stroke: ?(?P<Stroke>.+?);', re.M)
-    strokeO_pattern = re.compile(r'stroke-opacity: ?(?P<StrokeO>.+?)', re.M)
+    strokeO_pattern = re.compile(r'stroke-opacity: ?(?P<StrokeO>\d?\.?\d*)', re.M)
     rotate_pattern = re.compile(r'translate\((?P<X>.+?) (?P<Y>.+?)\).*rotate\((?P<Rotate>.+?)\)', re.M)
     
 
@@ -452,6 +452,8 @@ def find_non_white_svgs(dir: str):
             content = fp.read()
             stroke_colors = re.findall(r'stroke(?:=\"|:)#.*?(?=[\"; ])', content)
             fill_colors = re.findall(r'fill(?:=\"|:)#.*?(?=[\"; ])', content)
+            stroke_opacities = re.findall(r'stroke-opacity(?:=\"|:).*?(?=[\"; ])', content)
+            fill_opacities = re.findall(r'fill-opacity(?:=\"|:).*?(?=[\"; ])', content)
             for stroke_color in stroke_colors:
                 if stroke_color not in ['stroke:#ffffff', 'stroke:#fff', 'stroke:#FFFFFF', 'stroke="#fff', 'stroke="#ffffff', 'stroke="#FFFFFF', 'stroke="white']:
                     if file in non_white_svgs:
@@ -462,6 +464,17 @@ def find_non_white_svgs(dir: str):
                     if file in non_white_svgs:
                         non_white_svgs[file] += [fill_color]
                     else: non_white_svgs[file] = [fill_color]
+            for stroke_opacity in stroke_opacities:
+                if stroke_opacity not in ['stroke-opacity="0', 'stroke-opacity="0%', 'stroke-opacity="1', 'stroke-opacity="100%','stroke-opacity:1','stroke-opacity:0']:
+                    if file in non_white_svgs:
+                        non_white_svgs[file] += [stroke_opacity]
+                    else: non_white_svgs[file] = [stroke_opacity]
+            for fill_opacity in fill_opacities:
+                if fill_opacity not in ['fill-opacity="0', 'fill-opacity="0%', 'fill-opacity="1', 'fill-opacity="100%','fill-opacity:0','fill-opacity:1']:
+                    if file in non_white_svgs:
+                        non_white_svgs[file] += [fill_opacity]
+                    else: non_white_svgs[file] = [fill_opacity]
+
     if len(non_white_svgs) > 0:
         print('______ Found SVG with colors other then white ______\n')
         for svg in non_white_svgs:
@@ -471,7 +484,6 @@ def find_non_white_svgs(dir: str):
 
         print("\n____ Please check these first before preceeding ____\n")
         return True
-
     return False
 
 
