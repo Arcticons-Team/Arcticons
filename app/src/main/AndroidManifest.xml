@@ -19,32 +19,8 @@
         tools:ignore="GoogleAppIndexingWarning,GoogleAppIndexingUrlError"
         tools:replace="android:icon"
         >
-        <receiver
-            android:name=".DateWidget"
-            android:label="Date Widget"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-            </intent-filter>
-
-            <meta-data
-                android:name="android.appwidget.provider"
-                android:resource="@xml/date_widget_info" />
-        </receiver>
-        <receiver
-            android:name=".DigitalClockWidget"
-            android:exported="true"
-            android:label="Digital Clock Widget">
-            <intent-filter>
-                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-            </intent-filter>
-
-            <meta-data
-                android:name="android.appwidget.provider"
-                android:resource="@xml/digital_clock_widget_info" />
-        </receiver>
         <activity
-            android:name="GoogleWeatherWidget"
+            android:name=".services.GoogleWeatherWidget"
             android:icon="@drawable/google_weather"
             android:label="@string/google_weather"
             android:launchMode="singleTask"
@@ -250,15 +226,18 @@
         -->
         <receiver
             android:name=".services.ClockWidget"
-            android:label="Clock Widget"
+            android:label="Clock Widget 1"
             android:exported="true">
             <intent-filter>
-                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+                <action android:name="android.intent.action.SHOW_ALARMS" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
 
             <meta-data
                 android:name="android.appwidget.provider"
-                android:resource="@xml/analog_clock" />
+                android:resource="@xml/analog_clock_1" />
+
         </receiver>
 
         <receiver
@@ -267,6 +246,8 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="android.intent.action.SHOW_ALARMS" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
 
             <meta-data
@@ -280,11 +261,40 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
 
             <meta-data
                 android:name="android.appwidget.provider"
                 android:resource="@xml/analog_clock_3" />
+        </receiver>
+
+        <receiver
+            android:name=".services.DateWidget"
+            android:label="Date Widget"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/date_widget_info" />
+        </receiver>
+
+        <receiver
+            android:name=".services.DigitalClockWidget"
+            android:exported="true"
+            android:label="Digital Clock Widget">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/digital_clock_widget_info" />
         </receiver>
         <!--
             Uncomment the following code to enable Kustom.

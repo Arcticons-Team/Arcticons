@@ -1,4 +1,4 @@
-package com.donnnno.arcticons;
+package com.donnnno.arcticons.services;
 
 import android.content.ComponentName;
 import android.content.Intent;
@@ -6,6 +6,8 @@ import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.donnnno.arcticons.R;
 
 public class GoogleWeatherWidget extends AppCompatActivity {
     @Override

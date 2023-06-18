@@ -1,4 +1,4 @@
-package com.donnnno.arcticons;
+package com.donnnno.arcticons.services;
 
 import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
@@ -8,6 +8,9 @@ import android.content.Intent;
 import android.os.Build;
 import android.provider.AlarmClock;
 import android.widget.RemoteViews;
+
+import com.donnnno.arcticons.R;
+
 import java.util.Date;
 import java.text.DateFormat;
 
