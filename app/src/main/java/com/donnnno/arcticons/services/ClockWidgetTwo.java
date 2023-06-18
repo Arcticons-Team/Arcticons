@@ -14,7 +14,7 @@ import com.donnnno.arcticons.R;
 public class ClockWidgetTwo extends AppWidgetProvider {
     public void onReceive(Context context, Intent intent) {
         String act = intent.getAction();
-        int flags;
+        int flags = 0;
 
         if (AppWidgetManager.ACTION_APPWIDGET_UPDATE.equals(act)) {
             RemoteViews clockView = new RemoteViews(context.getPackageName(), R.layout.analog_clock_2);
@@ -22,11 +22,8 @@ public class ClockWidgetTwo extends AppWidgetProvider {
             Intent clockIntent = new Intent(AlarmClock.ACTION_SHOW_ALARMS);
             clockIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 flags = PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE;
-            }
-            else {
-                flags = 0;
             }
             clockView.setOnClickPendingIntent(R.id.analog_clock_2, PendingIntent.getActivity(context, 0, clockIntent, flags));
 

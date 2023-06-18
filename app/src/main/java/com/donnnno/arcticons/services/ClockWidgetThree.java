@@ -25,7 +25,7 @@ public class ClockWidgetThree extends AppWidgetProvider {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 flags = PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE;
             }
-            clockView.setOnClickPendingIntent(R.id.analog_clock, PendingIntent.getActivity(context, 0, clockIntent, flags));
+            clockView.setOnClickPendingIntent(R.id.analog_clock_3, PendingIntent.getActivity(context, 0, clockIntent, flags));
 
             AppWidgetManager.getInstance(context).updateAppWidget(intent.getIntArrayExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS), clockView);
         }
