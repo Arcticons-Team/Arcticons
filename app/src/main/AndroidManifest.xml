@@ -270,6 +270,51 @@
         </receiver>
 
         <receiver
+            android:name=".services.ClockWidgetFour"
+            android:label="Clock Widget 4"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+                <action android:name="android.intent.action.SHOW_ALARMS" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/analog_clock_4" />
+
+        </receiver>
+
+        <receiver
+            android:name=".services.ClockWidgetFive"
+            android:label="Clock Widget 5"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="android.intent.action.SHOW_ALARMS" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/analog_clock_5" />
+        </receiver>
+
+        <receiver
+            android:name=".services.ClockWidgetSix"
+            android:label="Clock Widget 6"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/analog_clock_6" />
+        </receiver>
+
+        <receiver
             android:name=".services.DateWidget"
             android:label="Date Widget"
             android:exported="true">
