@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:installLocation="auto">
 
+    <uses-permission android:name="android.permission.INTERNET" tools:node="remove" />
+
     <supports-screens
         android:largeScreens="true"
         android:normalScreens="true"
@@ -369,5 +371,4 @@
                 android:resource="@xml/file_provider_paths" />
         </provider>
     </application>
-
 </manifest>
