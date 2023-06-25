@@ -27,3 +27,8 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+//F-DROID REPRODUCIBLE BUILDS
+
+// NB: Android Studio can't find the imports; this does not affect the
+// actual build since Gradle can find them just fine.
