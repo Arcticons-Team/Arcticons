@@ -1,3 +1,9 @@
+### 6.6.0
+###### Released: Jul 07, 2023
+* 🕒 Three new clocks to choose from! 
+* 🎉 177 new and updated icons! (thanks Wari, Tunfisch96, 1qq9qq, Redbox3070, Achin, Salmonmon, Maciej-klupp, PixelRuzt, Kaiserdragon2, Dgcampbe, Phampyk, Eeelbrens, Aman9das, AsankaSovis)
+* 🔥 6609 icons in total!
+
 ### 6.4.3
 ###### Released: Jun 16, 2023
 * 🆕Arcticons You release! A new flavor has arrived, now with Material You themed icons. Available on all platforms! (Special thanks to Kaiserdragon2 for making all of this possible)
