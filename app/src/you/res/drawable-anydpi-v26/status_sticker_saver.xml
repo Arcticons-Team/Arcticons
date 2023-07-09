@@ -1,0 +1,37 @@
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+    <background android:drawable="@color/icon_background_color" />
+        <foreground>
+            <inset android:inset="25%">
+            <vector
+                android:width="48dp"
+                android:height="48dp"
+                android:viewportWidth="48"
+                android:viewportHeight="48">
+                <path
+                   android:strokeColor="@color/icon_color"
+                   android:strokeWidth="1.2"
+                   android:strokeLineCap="round"
+                   android:strokeLineJoin="round"
+                   android:pathData="M 24.0178,2.503 C 7.6829,2.5205 -2.672599999999999,20.0234 5.176000000000002,34.349199999999996 L 2.527100000000002,45.484399999999994 L 13.662300000000002,42.835499999999996 C 25.963,49.583099999999995 41.3253,42.926899999999996 44.8138,29.338399999999996 C 48.3028,15.749299999999996 38.0473,2.5159999999999982 24.0178,2.5029999999999966 L 24.0178,2.503"/>
+                <path
+                   android:strokeColor="@color/icon_color"
+                   android:strokeWidth="1.2"
+                   android:strokeLineCap="round"
+                   android:strokeLineJoin="round"
+                   android:pathData="M 34.3985,22.3574 L 24.0178,32.7381 L 13.6371,22.3574"/>
+                <path
+                   android:strokeColor="@color/icon_color"
+                   android:strokeWidth="1.2"
+                   android:strokeLineCap="round"
+                   android:strokeLineJoin="round"
+                   android:pathData="M 24.0178,11.9767 L 24.0178,32.7381"/>
+                <path
+                   android:strokeColor="@color/icon_color"
+                   android:strokeWidth="1.2"
+                   android:strokeLineCap="round"
+                   android:strokeLineJoin="round"
+                   android:pathData="M 34.3985,36.0199 L 13.6371,36.0199"/>
+            </vector>
+        </inset>
+    </foreground>
+</adaptive-icon>

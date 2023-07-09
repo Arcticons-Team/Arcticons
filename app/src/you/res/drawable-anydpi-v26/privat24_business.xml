@@ -1,0 +1,31 @@
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+    <background android:drawable="@color/icon_background_color" />
+        <foreground>
+            <inset android:inset="25%">
+            <vector
+                android:width="48dp"
+                android:height="48dp"
+                android:viewportWidth="48"
+                android:viewportHeight="48">
+                <path
+                   android:strokeColor="@color/icon_color"
+                   android:strokeWidth="1.2"
+                   android:strokeLineCap="round"
+                   android:strokeLineJoin="round"
+                   android:pathData="M 5.5,5.5 L 5.5,20.3 L 13.825,20.3 L 13.825,14.75 L 33.25,14.75 L 33.25,34.175 L 29.55,34.175 L 29.55,42.5 L 42.5,42.5 L 42.5,5.5 L 5.5,5.5"/>
+                <path
+                   android:strokeColor="@color/icon_color"
+                   android:strokeWidth="1.2"
+                   android:strokeLineCap="round"
+                   android:strokeLineJoin="round"
+                   android:pathData="M 11.05,29.55 L 6.425000000000001,29.55 C 5.9625,29.55 5.500000000000001,30.0125 5.500000000000001,30.475 L 5.500000000000001,41.575 C 5.500000000000001,42.0375 5.962500000000001,42.5 6.425000000000001,42.5 L 23.075,42.5 C 23.537499999999998,42.5 24.0,42.0375 24.0,41.575 L 24.0,30.475 C 24.0,30.012500000000003 23.5375,29.55 23.075,29.55 L 18.45,29.55 L 18.45,25.85 L 11.049999999999999,25.85 L 11.049999999999999,29.55 L 11.05,29.55"/>
+                <path
+                   android:strokeColor="@color/icon_color"
+                   android:strokeWidth="1.2"
+                   android:strokeLineCap="round"
+                   android:strokeLineJoin="round"
+                   android:pathData="M 18.45,29.55 L 11.049999999999999,29.55"/>
+            </vector>
+        </inset>
+    </foreground>
+</adaptive-icon>
