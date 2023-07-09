@@ -4,11 +4,17 @@ import android.content.pm.PackageManager;
 
 import androidx.annotation.NonNull;
 
+import com.donnnno.arcticons.R;
 import candybar.lib.applications.CandyBarApplication;
 import candybar.lib.items.Request;
 
 public class CandyBar extends CandyBarApplication {
 
+    @NonNull
+    @Override
+    public Class<?> getDrawableClass() {
+        return R.drawable.class;
+    }
 
     @NonNull
     @Override
