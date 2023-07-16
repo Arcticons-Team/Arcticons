@@ -39,10 +39,10 @@ VALUE_PATH = APP_SRC_DIR + "/main/res/values"
 #Export Sizes of the icons
 SIZES = [256]
 #Define original color
-ORIGINAL_STROKE = r"stroke\s*:\s*(#FFFFFF|#ffffff|#fff|white)"
-ORIGINAL_STROKE_ALT = r"stroke\s*=\"\s*(#FFFFFF|#ffffff|#fff|white)\""
-ORIGINAL_FILL = r"fill\s*:\s*(#FFFFFF|#ffffff|#fff|white)"
-ORIGINAL_FILL_ALT = r"fill\s*=\"\s*(#FFFFFF|#ffffff|#fff|white)\""
+ORIGINAL_STROKE = r"stroke\s*:\s*(#FFFFFF|#ffffff|#fff|white|rgb\(255,255,255\)|rgba\(255,255,255,1\.?\d*\))"
+ORIGINAL_STROKE_ALT = r"stroke\s*=\"\s*(#FFFFFF|#ffffff|#fff|white|rgb\(255,255,255\)|rgba\(255,255,255,1\.?\d*\))\""
+ORIGINAL_FILL = r"fill\s*:\s*(#FFFFFF|#ffffff|#fff|white|rgb\(255,255,255\)|rgba\(255,255,255,1\.?\d*\))"
+ORIGINAL_FILL_ALT = r"fill\s*=\"\s*(#FFFFFF|#ffffff|#fff|white|rgb\(255,255,255\)|rgba\(255,255,255,1\.?\d*\))\""
 #Define Replace Colors
 REPLACE_STROKE_WHITE = "stroke:#fff"
 REPLACE_STROKE_WHITE_ALT = '''stroke="#fff"'''
@@ -450,30 +450,45 @@ def find_non_white_svgs(dir: str):
         name = file[:-4]
         with open(file_path, 'r', encoding='utf-8') as fp:
             content = fp.read()
-            stroke_colors = re.findall(r'stroke(?:=\"|:)#.*?(?=[\"; ])', content)
-            fill_colors = re.findall(r'fill(?:=\"|:)#.*?(?=[\"; ])', content)
+            stroke_colors = re.findall(r'stroke(?:=\"|:)(?:rgb[^a]|#).*?(?=[\"; ])', content)
+            fill_colors = re.findall(r'fill(?:=\"|:)(?:rgb[^a]|#).*?(?=[\"; ])', content)
             stroke_opacities = re.findall(r'stroke-opacity(?:=\"|:).*?(?=[\"; ])', content)
             fill_opacities = re.findall(r'fill-opacity(?:=\"|:).*?(?=[\"; ])', content)
+            stroke_rgbas = re.findall(r'stroke(?:=\"|:)rgba.*?(?=[\"; ])', content)
+            fill_rgbas = re.findall(r'fill(?:=\"|:)rgba.*?(?=[\"; ])', content)
+            
             for stroke_color in stroke_colors:
-                if stroke_color not in ['stroke:#ffffff', 'stroke:#fff', 'stroke:#FFFFFF', 'stroke="#fff', 'stroke="#ffffff', 'stroke="#FFFFFF', 'stroke="white']:
+                if stroke_color not in ['stroke:#ffffff', 'stroke:#fff', 'stroke:#FFFFFF', 'stroke="#fff', 'stroke="#ffffff', 'stroke="#FFFFFF', 'stroke="white', 'stroke:rgb(255,255,255)', 'stroke="rgb(255,255,255)']:
                     if file in non_white_svgs:
                         non_white_svgs[file] += [stroke_color]
                     else: non_white_svgs[file] = [stroke_color]
             for fill_color in fill_colors:
-                if fill_color not in ['fill:#ffffff', 'fill:#fff', 'fill:#FFFFFF', 'fill="#ffffff', 'fill="#fff', 'fill="#FFFFFF', 'fill="white']:
+                if fill_color not in ['fill:#ffffff', 'fill:#fff', 'fill:#FFFFFF', 'fill="#ffffff', 'fill="#fff', 'fill="#FFFFFF', 'fill="white', 'fill:rgb(255,255,255)', 'fill="rgb(255,255,255)']:
                     if file in non_white_svgs:
                         non_white_svgs[file] += [fill_color]
                     else: non_white_svgs[file] = [fill_color]
             for stroke_opacity in stroke_opacities:
-                if stroke_opacity not in ['stroke-opacity="0', 'stroke-opacity="0%', 'stroke-opacity="1', 'stroke-opacity="100%','stroke-opacity:1','stroke-opacity:0']:
+                if stroke_opacity not in ['stroke-opacity="0', 'stroke-opacity="0%', 'stroke-opacity="1', 'stroke-opacity="100%','stroke-opacity:1','stroke-opacity:0'] and not re.findall(r'stroke-opacity[=:]\"?[01]\.0+$',stroke_opacity):
                     if file in non_white_svgs:
                         non_white_svgs[file] += [stroke_opacity]
                     else: non_white_svgs[file] = [stroke_opacity]
             for fill_opacity in fill_opacities:
-                if fill_opacity not in ['fill-opacity="0', 'fill-opacity="0%', 'fill-opacity="1', 'fill-opacity="100%','fill-opacity:0','fill-opacity:1']:
+                if fill_opacity not in ['fill-opacity="0', 'fill-opacity="0%', 'fill-opacity="1', 'fill-opacity="100%','fill-opacity:0','fill-opacity:1'] and not re.findall(r'fill-opacity[=:]\"?[01]\.0+$',fill_opacity):
                     if file in non_white_svgs:
                         non_white_svgs[file] += [fill_opacity]
                     else: non_white_svgs[file] = [fill_opacity]
+            for stroke_rgba in stroke_rgbas:
+                stroke_rgba_color, stroke_rgba_opacity = stroke_rgba.rsplit(',',1)
+                if stroke_rgba_color not in ['stroke:rgba(255,255,255', 'stroke="rgba(255,255,255'] or float(stroke_rgba_opacity[:-1]) not in [0.0, 1.0]:
+                    if file in non_white_svgs:
+                        non_white_svgs[file] += [stroke_rgba]
+                    else: non_white_svgs[file] = [stroke_rgba]
+            for fill_rgba in fill_rgbas:
+                fill_rgba_color, fill_rgba_opacity = fill_rgba.rsplit(',',1)
+                if fill_rgba_color not in ['fill:rgba(255,255,255', 'fill="rgba(255,255,255'] or float(fill_rgba_opacity[:-1]) not in [0.0, 1.0]:
+                    if file in non_white_svgs:
+                        non_white_svgs[file] += [fill_rgba]
+                    else: non_white_svgs[file] = [fill_rgba]
 
     if len(non_white_svgs) > 0:
         print('______ Found SVG with colors other then white ______\n')
