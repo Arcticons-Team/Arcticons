@@ -1,3 +1,8 @@
+### 6.7.1
+###### Released: Jul 19, 2023
+* 🎉 113 new and updated icons! (thanks Wari, Dgcampbe, Pelyh, Dioxias, Orbitaldr0p, PixelRuzt, AsankaSovis, Lividhen, Tieu1991)
+* 🔥 6714 icons in total!
+
 ### 6.6.0
 ###### Released: Jul 07, 2023
 * 🕒 Three new clocks to choose from! 
