@@ -1,5 +1,20 @@
 <resources>
 
+	<!-- Breezy Weather -->
+	<item component="ComponentInfo{org.breezyweather/org.breezyweather.main.MainActivity}" drawable="breezy_weather"/>
+
+  <!-- Camera FV-5 Lite -->
+	<item component="ComponentInfo{com.flavionet.android.camera.lite/com.flavionet.android.camera.MainActivity}" drawable="camera_fv5_lite"/>
+
+	<!-- Pixelfed -->
+	<item component="ComponentInfo{com.pixelfed/com.pixelfed.MainActivity}" drawable="pixeldroid_alt"/>
+
+	<!-- Spanish -->
+	<item component="ComponentInfo{com.gonliapps.learnspanish/com.gonliapps.learnspanish.ConsentEU}" drawable="spanish"/>
+	
+	<!-- Learn Spanish -->
+	<item component="ComponentInfo{com.breboucas.espanholparaviajar/com.breboucas.espanholparaviajar.menu.MainActivity}" drawable="spanish"/>
+
   <!--  Aldiko Next  -->
   <item component="ComponentInfo{com.aldiko.android/com.demarque.android.ui.splash.SplashActivity}" drawable="aldiko_next"/>
 
@@ -4343,7 +4358,7 @@
   <!-- Connect You -->
   <item component="ComponentInfo{com.bnyro.contacts/com.bnyro.contacts.ui.MainActivity}" drawable="connect_you"/>
   <item component="ComponentInfo{com.bnyro.contacts/com.bnyro.contacts.ui.activities.MainActivity}" drawable="connect_you"/>
-
+	
   <!-- ConnectBot -->
   <item component="ComponentInfo{org.connectbot/org.connectbot.ConsoleActivity}" drawable="shell"/>
   <item component="ComponentInfo{org.connectbot/org.connectbot.HostListActivity}" drawable="shell"/>
@@ -6011,7 +6026,8 @@
   <item component="ComponentInfo{im.vector.app/im.vector.app.features.Alias}" drawable="element"/>
   <item component="ComponentInfo{im.vector.app/im.vector.app.features.MainActivity}" drawable="element"/>
   <item component="ComponentInfo{im.vector.app/im.vector.application.features.Alias}" drawable="element"/>
-
+	<item component="ComponentInfo{im.vector.app.debug/im.vector.application.features.Alias}" drawable="element"/>
+	
   <!-- Elementary -->
   <item component="ComponentInfo{com.ultramegatech.ey/com.ultramegatech.ey.PeriodicTableActivity}" drawable="elementary"/>
 
@@ -7742,8 +7758,9 @@
   <!-- GIF Live Wallpaper -->
   <item component="ComponentInfo{net.redwarp.gifwallpaper/net.redwarp.gifwallpaper.LauncherActivity}" drawable="giflivewallpaper"/>
 
-  <!-- GIF Maker-Editor -->
+  <!-- GIF Maker -->
   <item component="ComponentInfo{com.media.zatashima.studio/com.media.zatashima.studio.SplashScreen}" drawable="gifmaker"/>
+	<item component="ComponentInfo{com.bk.videotogif/com.bk.videotogif.ui.splash.ActivitySplash}" drawable="gifmaker"/>
 
   <!-- Giffgaff -->
   <item component="ComponentInfo{com.giffgaffmobile.controller/com.giffgaff.reapps.SplashActivity}" drawable="giffgaff"/>
