@@ -1,8 +1,11 @@
 package com.donnnno.arcticons.services;
 
+import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
 import android.content.Context;
+import android.content.Intent;
+import android.os.Build;
 import android.widget.RemoteViews;
 
 import com.donnnno.arcticons.R;
@@ -11,6 +14,25 @@ import com.donnnno.arcticons.R;
  * Implementation of App Widget functionality.
  */
 public class DateWidget extends AppWidgetProvider {
+
+    @Override
+    public void onReceive(Context context, Intent intent) {
+        if (intent.getAction().equals(AppWidgetManager.ACTION_APPWIDGET_UPDATE)) {
+            Intent calendarIntent = new Intent(Intent.ACTION_MAIN);
+            calendarIntent.addCategory(Intent.CATEGORY_APP_CALENDAR);
+
+            int flags = Build.VERSION.SDK_INT >= Build.VERSION_CODES.M
+                    ? PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE
+                    : 0;
+
+            PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, calendarIntent, flags);
+
+            RemoteViews clockView = new RemoteViews(context.getPackageName(), R.layout.date_widget);
+            clockView.setOnClickPendingIntent(R.id.date_view, pendingIntent);
+
+            AppWidgetManager.getInstance(context).updateAppWidget(intent.getIntArrayExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS), clockView);
+        }
+    }
 
     static void updateAppWidget(Context context, AppWidgetManager appWidgetManager,
                                 int appWidgetId) {
