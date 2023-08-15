@@ -185,6 +185,15 @@
 
 	<!-- Garmin Explore -->
 	<item component="ComponentInfo{com.garmin.android.apps.explore/ui.SplashScreenActivity}" drawable="garmin_explore"/>
+      
+  <!-- Garmin Dive -->
+  <item component="ComponentInfo{com.garmin.android.apps.dive/com.garmin.android.apps.dive.ui.StartupActivity}" drawable="garmin_dive" />
+      
+  <!-- Garmin Drive -->
+  <item component="ComponentInfo{com.garmin.android.apps.gecko/com.garmin.android.apps.gecko.main.SplashActivity}" drawable="garmin_drive" />
+            
+  <!-- Garmin Nav -->
+  <item component="ComponentInfo{com.ravenfeld.nav.garmin/com.ravenfeld.nav.garmin.ui.HomeActivity}" drawable="garmin_nav" />
 
 	<!-- GF Scanner -->
 	<item component="ComponentInfo{com.theglutenfreescan/com.theglutenfreescan.MainActivity}" drawable="gf_scanner"/>
@@ -12150,6 +12159,7 @@
   <item component="ComponentInfo{io.anuke.mindustry/io.anuke.mindustry.AndroidLauncher}" drawable="mindustry"/>
   <item component="ComponentInfo{io.anuke.mindustry/mindustry.android.AndroidLauncher}" drawable="mindustry"/>
   <item component="ComponentInfo{io.anuke.mindustrz/mindustry.android.AndroidLauncher}" drawable="mindustry"/>
+  <item component="ComponentInfo{io.anuke.mindustry.be/mindustry.android.AndroidLauncher}" drawable="mindustry" />
 
   <!-- Mindvalley -->
   <item component="ComponentInfo{com.mindvalley.mva/com.mindvalley.mva.ui.home.HomeActivity}" drawable="mindvalley"/>
@@ -14920,6 +14930,34 @@
   <item component="ComponentInfo{cx.hell.android.pdfview/cx.hell.android.pdfview.ChooseFileActivity}" drawable="pdf_viewer"/>
   <item component="ComponentInfo{Viewerapp.grapheneos.pdfviewer/app.grapheneos.pdfviewer.PdfViewer}" drawable="pdf_viewer"/>
   <item component="ComponentInfo{pdf.reader.prime/pdf.reader.prime.MainActivity}" drawable="pdf_viewer"/>
+  <item component="ComponentInfo{com.ezt.pdfreader.pdfviewer/com.ezt.pdfreader.pdfviewer.SplashScreen}" drawable="pdf_file" />
+  <item component="ComponentInfo{com.ilovepdf.www/com.android.ilovepdf.ui.activity.SplashScreenActivity}" drawable="pdf_file" />
+  <item component="ComponentInfo{pdf.reader.pdfviewer.pdfeditor/pdf.reader.pdfviewer.pdfeditor.ui.act.WelcomeActivity}" drawable="pdf_file" />
+  <item component="ComponentInfo{tz.co.wadau.pdfreader/tz.co.wadau.allpdf.LaunchScreenActivity}" drawable="pdf_file" />
+  <item component="ComponentInfo{com.pdf.reader.pdfviewer.pdfeditor.forandroid/com.arr.pdfreader.ui.splash.SplashLauncherActivity}" drawable="pdf_file" />
+  <item component="ComponentInfo{pdf.converter.imagetopdf.jpgtopdf.createpdf/pdf.converter.imagetopdf.jpgtopdf.createpdf.pdfviewer.onemb.imagetopdf.ui.splash.SplashActivity}" drawable="pdf_file" />
+  <item component="ComponentInfo{udk.android.reader/udk.android.reader.ApplicationExActivity}" drawable="pdf_file" />
+  <item component="ComponentInfo{com.org.jvp7.accumulator_pdfcreator/com.org.jvp7.accumulator_pdfcreator.Start_Activity}" drawable="pdf_file" />
+  <item component="ComponentInfo{com.trustedapp.pdfreaderpdfviewer/com.trustedapp.pdfreader.view.activity.SplashActivity}" drawable="pdf_file" />
+  <item component="ComponentInfo{com.example.webpdf/com.example.webpdf.MainActivity}" drawable="pdf_file" />
+  <item component="ComponentInfo{org.leafos.mupdf/com.artifex.mupdf.viewer.app.LibraryActivity}" drawable="pdf_file" />
+  <item component="ComponentInfo{com.rizwan.simplepdfreader2018/com.rizwan.simplepdfreader2018.ui.activity.SplashActivity}" drawable="pdf_file" />
+  <item component="ComponentInfo{com.pdftechnologies.pdfreaderpro/com.pdftechnologies.pdfreaderpro.screenui.home.view.activity.ProWelcomeActivity}" drawable="pdf_file" />
+  <item component="ComponentInfo{org.pdf.and.djvu.reader/org.ebookdroid.ui.MainActivity}" drawable="pdf_file" />
+  <item component="ComponentInfo{com.kmo.pdf.editor/com.kmo.pdf.editor.bootpage.splash.SplashActivity}" drawable="pdf_file" />
+  <item component="ComponentInfo{pdf.scanner.scannerapp.free.pdfscanner/pdf.scanner.scannerapp.free.pdfscanner.guide.SplashActivity}" drawable="pdf_file" />
+  <item component="ComponentInfo{com.pdfreader.pdf.viewer.document.signer/com.office.pdf.nomanland.reader.view.splash.SplashAct}" drawable="pdf_file" />
+  <item component="ComponentInfo{alldocumentreader.pdfreader.documentreader/com.zooteam.zoodocumentreader.ui.SplashActivity}" drawable="pdf_file" />
+  <item component="ComponentInfo{kaagaz.scanner.docs.pdf/kaagaz.scanner.docs.pdf.ui.splash.SplashActivity}" drawable="pdf_file" />
+  <item component="ComponentInfo{com.document.pdf.reader.alldocument/com.document.pdf.reader.alldocument.SplashActivity}" drawable="pdf_file" />
+  <item component="ComponentInfo{de.baumann.pdfcreator/de.baumann.pdfcreator.Activity_Main}" drawable="pdf_file" />
+  <item component="ComponentInfo{pdfreader.pdfviewer.officetool.pdfscanner/pdfreader.pdfviewer.officetool.pdfscanner.views.activities.SplashActivityUpdated}" drawable="pdf_file" />
+  <item component="ComponentInfo{com.all.document.reader.doc.pdf.reader/com.all.document.reader.doc.pdf.reader.SplashActivity}" drawable="pdf_file" />
+  <item component="ComponentInfo{pdf.pdfreader.viewer.editor.free/pdf.pdfreader.viewer.editor.free.ReaderWelcomeActivity}" drawable="pdf_file" />
+    
+  <!-- PDF Scanner -->
+  <item component="ComponentInfo{pdf.scanner.scannerapp.free.pdfscanner/pdf.scanner.scannerapp.free.pdfscanner.guide.SplashActivity}" drawable="pdf_scan" />
+  <item component="ComponentInfo{com.camscanner.documentscanner.pdfscanner.textscanner.photos.scanner/com.hazel.cam.scanner.free.activity.splash.SplashActivity}" drawable="pdf_scan" />
 
   <!-- PDF Viewer Lite -->
   <item component="ComponentInfo{com.avrapps.pdfviewer/com.avrapps.pdfviewer.MainActivity}" drawable="pdfviewerplus"/>
@@ -14928,7 +14966,7 @@
   <item component="ComponentInfo{com.gsnathan.pdfviewer/com.gsnathan.pdfviewer.MainActivity_}" drawable="pdfviewerplus"/>
   <item component="ComponentInfo{com.gsnathan.pdfviewer/com.gsnathan.pdfviewer.LauncherAlias}" drawable="pdfviewerplus"/>
   <item component="ComponentInfo{foundation.e.pdfviewer/com.gsnathan.pdfviewer.MainActivity_}" drawable="pdfviewerplus"/>
-
+    
   <!-- Peace of Mind -->
   <item component="ComponentInfo{ca.mudar.fairphone.peaceofmind/ca.mudar.fairphone.peaceofmind.ui.activity.MainActivity}" drawable="peace_of_mind"/>
 
@@ -15069,7 +15107,7 @@
   <item component="ComponentInfo{com.android.lgcontacts/com.android.lgcontacts.activities.DialtactsActivity}" drawable="phone"/>
   <item component="ComponentInfo{com.android.contacts/com.android.dialer.app.DialtactsActivity}" drawable="phone"/>
   <item component="ComponentInfo{com.vinsmart.android.dialer/com.android.vinsmart.ui.dialer.VSmartDialerActivity}" drawable="phone" />
-  
+
   <!-- Phone Manager -->
   <item component="ComponentInfo{com.coloros.phonemanager/com.coloros.phonemanager.FakeActivity}" drawable="phone_manager"/>
 
@@ -22672,6 +22710,23 @@
 
   <!-- YouTube Downloader -->
   <item component="ComponentInfo{dentex.youtube.downloader/dentex.youtube.downloader._MainActivity}" drawable="youtube_downloader"/>
+      
+  <!-- Cleaner -->
+  <item component="ComponentInfo{com.miui.securitycleaner/com.miui.securitycleaner.MainActivity}" drawable="cleaner" />
+  <item component="ComponentInfo{com.miui.cleaner.go/com.miui.cleaner.MainActivity}" drawable="cleaner" />
+  <item component="ComponentInfo{com.a0soft.gphone.acc.pro/com.a0soft.gphone.acc.pro.MainWnd}" drawable="cleaner" />
+  <item component="ComponentInfo{com.a0soft.gphone.acc.free/com.a0soft.gphone.acc.free.MainWnd}" drawable="cleaner" />
+  <item component="ComponentInfo{com.redsoft.zerocleaner/com.redsoft.zerocleaner.ui.activities.MainActivity}" drawable="cleaner" />
+  <item component="ComponentInfo{com.goat.phone.clean.booster/com.goat.booster.cleaner.activity.GuideActivity}" drawable="cleaner" />
+  <item component="ComponentInfo{co.easy4u.ncleaner/co.easy4u.ncleaner.ui.main.MainActivity}" drawable="cleaner" />
+  <item component="ComponentInfo{com.iclean.master.boost/com.iclean.master.boost.module.setting.SplashActivity}" drawable="cleaner" />
+  <item component="ComponentInfo{com.simpler.merge/com.simpler.ui.activities.MergeAppActivity}" drawable="cleaner" />
+  <item component="ComponentInfo{com.mira.fastcleaner/com.mira.fastcleaner.activity.SplashActivity}" drawable="cleaner" />
+  <item component="ComponentInfo{com.tap.mastercleaner/com.tap.cleaner.ui.LaunchActivity}" drawable="cleaner" />
+  <item component="ComponentInfo{com.cleaner.booster.battery.security.master/com.cleaner.booster.battery.security.master.ui.main.CleanHomeActivity}" drawable="cleaner" />
+  <item component="ComponentInfo{com.sup.phone.cleaner.booster.app/com.booster.app.SplashActivity}" drawable="cleaner" />
+  <item component="ComponentInfo{com.fast.cleaner.cpu.cool.powerful/com.fast.clean.Splash}" drawable="cleaner" />
+  <item component="ComponentInfo{cleaner.clean.booster/code.ui.splash.SplashPHActivity}" drawable="cleaner" />
 
   <!-- YouTube Go -->
   <item component="ComponentInfo{com.google.android.apps.youtube.mango/com.google.android.apps.youtube.lite.frontend.activities.SplashActivity}" drawable="youtube_go"/>
@@ -22683,6 +22738,7 @@
   <!-- Youtube Misc -->
   <item component="ComponentInfo{com.gold.android.youtube/com.google.android.youtube.app.honeycomb.ShellHomeActivity}" drawable="youtube"/>
   <item component="ComponentInfo{ma.wanam.youtubeadaway/ma.wanam.youtubeadaway.SettingsActivity}" drawable="youtube"/>
+  <item component="ComponentInfo{free.tube.premium.mariodev.tuber/com.biomes.vanced.splash.SplashActivity}" drawable="youtube" />
 
   <!-- YouTube Music -->
   <item component="ComponentInfo{com.google.android.apps.youtube.music/com.google.android.apps.youtube.music.activities.MusicActivity}" drawable="youtube_music"/>
