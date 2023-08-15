@@ -83,7 +83,10 @@
         
   <!-- Mighty DOOM -->
   <item component="ComponentInfo{com.bethsoft.ubu/com.google.firebase.MessagingUnityPlayerActivity}" drawable="mighty_doom" />
-        
+          
+  <!-- DOOM II -->
+  <item component="ComponentInfo{com.bethsoft.DOOMII/com.idsoftware.Doom.DoomActivity}" drawable="doom_2" />
+      
   <!-- PREQUEL -->
   <item component="ComponentInfo{com.prequel.app/com.prequel.app.ui.SplashActivity}" drawable="prequel"/>
 
@@ -329,6 +332,9 @@
   <item component="ComponentInfo{com.spring.bird.game2048plus/com.spring.bird.game2048plus.MainActivity}" drawable="_2048"/>
   <item component="ComponentInfo{com.androbaby.original2048/com.androbaby.original2048.MainActivity}" drawable="_2048"/>
   <item component="ComponentInfo{com.androbaby.game2048/com.androbaby.game2048.MainActivity}" drawable="_2048"/>
+  <item component="ComponentInfo{com.alexjlockwood.twentyfortyeight/com.alexjlockwood.twentyfortyeight.MainActivity}" drawable="_2048_" />
+  <item component="ComponentInfo{info.radicalgames.android.A2048/info.radicalgames.android.A2048.AndroidLauncher}" drawable="_2048" />
+  <item component="ComponentInfo{game2048.b2048game.twozerofoureight2048.game/game2048.b2048game.twozerofoureight2048.game.SplashActivity}" drawable="_2048" />
 
   <!-- 2050 -->
   <item component="ComponentInfo{org.mattvchandler.a2050/org.mattvchandler.a2050.MainActivity}" drawable="_2050"/>
@@ -3286,16 +3292,19 @@
   <item component="ComponentInfo{corewala.gemini.buran/corewala.buran.ui.GemActivity}" drawable="buran"/>
 
   <!-- Burger King -->
-  <item component="ComponentInfo{com.emn8.mobilem8.nativeapp.bk/rbi.android.app.MainActivity}" drawable="burgerking"/>
-  <item component="ComponentInfo{com.bk.pt/es.burgerking.android.presentation.walkthrough.WalkthroughIntroActivity}" drawable="burgerking"/>
-  <item component="ComponentInfo{de.burgerking.kingfinder/rbi.android.app.MainActivity}" drawable="burgerking"/>
-  <item component="ComponentInfo{se.burgerking.ordersapp/se.burgerking.ordersapp.MainActivity}" drawable="burgerking"/>
-  <item component="ComponentInfo{fi.restel.bk.android/fi.restel.foodandevents.MainActivity}" drawable="burgerking"/>
-  <item component="ComponentInfo{com.bk.ch/rbi.android.app.MainActivity}" drawable="burgerking"/>
-  <item component="ComponentInfo{in.burgerking.android/in.burgerking.android.MainActivity}" drawable="burgerking"/>
-  <item component="ComponentInfo{com.emn8.mobilem8.nativeapp.bkuk/rbi.android.app.MainActivity}" drawable="burgerking"/>
-  <item component="ComponentInfo{burgerking.com.br.appandroid/edeploy.com.br.delivery.splash.SplashActivity_}" drawable="burgerking"/>
-  <item component="ComponentInfo{burgerking.com.br.appandroid/burgerking.com.br.appandroid.splash.SplashActivity_}" drawable="burgerking"/>
+  <item component="ComponentInfo{com.emn8.mobilem8.nativeapp.bk/rbi.android.app.MainActivity}" drawable="burger_king"/>
+  <item component="ComponentInfo{com.bk.pt/es.burgerking.android.presentation.walkthrough.WalkthroughIntroActivity}" drawable="burger_king"/>
+  <item component="ComponentInfo{de.burgerking.kingfinder/rbi.android.app.MainActivity}" drawable="burger_king"/>
+  <item component="ComponentInfo{se.burgerking.ordersapp/se.burgerking.ordersapp.MainActivity}" drawable="burger_king"/>
+  <item component="ComponentInfo{fi.restel.bk.android/fi.restel.foodandevents.MainActivity}" drawable="burger_king"/>
+  <item component="ComponentInfo{com.bk.ch/rbi.android.app.MainActivity}" drawable="burger_king"/>
+  <item component="ComponentInfo{in.burgerking.android/in.burgerking.android.MainActivity}" drawable="burger_king"/>
+  <item component="ComponentInfo{com.emn8.mobilem8.nativeapp.bkuk/rbi.android.app.MainActivity}" drawable="burger_king"/>
+  <item component="ComponentInfo{burgerking.com.br.appandroid/edeploy.com.br.delivery.splash.SplashActivity_}" drawable="burger_king"/>
+  <item component="ComponentInfo{burgerking.com.br.appandroid/burgerking.com.br.appandroid.splash.SplashActivity_}" drawable="burger_king"/>
+  <item component="ComponentInfo{ru.burgerking/ru.burgerking.feature.splash.SplashScreenActivity}" drawable="burger_king" />
+  <item component="ComponentInfo{ph.burgerking/com.usemenu.MenuAndroidApplication.SplashActivity}" drawable="burger_king" />
+  <item component="ComponentInfo{ar.burgerking/com.usemenu.MenuAndroidApplication.SplashActivity}" drawable="burger_king" />
 
   <!-- Bus & Tram -->
   <item component="ComponentInfo{com.lothianbuses.lothianbuses/crc6436921ee7a9d13c84.SplashScreen}" drawable="bus_tram"/>
@@ -7883,10 +7892,6 @@
   <!-- Gastromapa Lukáše Hejlíka -->
   <item component="ComponentInfo{com.thefuntasty.gmlh/com.thefuntasty.gmlh.ui.splash.SplashActivity}" drawable="gastromapalukehejlka"/>
 
-  <!-- GBWhatsApp -->
-  <item component="ComponentInfo{com.gbwhatsapp/com.gbwhatsapp.11}" drawable="whatsapp"/>
-  <item component="ComponentInfo{com.gbwhatsapp/com.gbwhatsapp.0}" drawable="whatsapp"/>
-
   <!-- GCash -->
   <item component="ComponentInfo{com.globe.gcash.android/com.globe.gcash.android.Default}" drawable="gcash"/>
   <item component="ComponentInfo{com.globe.gcash.android/com.globe.gcash.android.GCashBirthday}" drawable="gcash"/>
@@ -8447,6 +8452,9 @@
 
   <!-- Google Wallet -->
   <item component="ComponentInfo{com.google.android.apps.walletnfcrel/com.google.commerce.tapandpay.android.wallet.WalletActivity}" drawable="google_wallet"/>
+      
+  <!-- Watch -->
+  <item component="ComponentInfo{com.google.android.apps.wear.companion/com.google.android.apps.wear.companion.application.RootActivity}" drawable="google_watch" />
 
   <!-- Google Wear OS -->
   <item component="ComponentInfo{com.google.android.wearable.app/com.google.android.clockwork.companion.launcher.LauncherActivity}" drawable="wearos"/>
@@ -11666,9 +11674,6 @@
   <!-- MBS Mobile -->
   <item component="ComponentInfo{vn.com.mbs.m24np/vn.com.mbs.MbsApp.MainActivity}" drawable="mbs_mobile"/>
 
-  <!-- MBWhatsApp -->
-  <item component="ComponentInfo{com.mbwhatsapp/com.mbwhatsapp.0}" drawable="whatsapp"/>
-
   <!-- McAfee Security -->
   <item component="ComponentInfo{com.wsandroid.suite/com.android.mcafee.ui.framework.BaseActivity}" drawable="mcafee_security"/>
   <item component="ComponentInfo{com.wsandroid.suite.tmobile/com.mcafee.app.LauncherDelegateActivity}" drawable="mcafee_security"/>
@@ -14141,6 +14146,7 @@
   <item component="ComponentInfo{com.olx.pk/com.olx.pk.MainActivity}" drawable="olx"/>
   <item component="ComponentInfo{com.olxmena.horizontal/com.empg.olxeg.MainActivity}" drawable="olx"/>
   <item component="ComponentInfo{com.app.tokobagus.betterb/com.olxgroup.panamera.app.users.onboarding.activities.SplashActivity}" drawable="olx"/>
+  <item component="ComponentInfo{kz.slando/pl.tablica2.app.startup.activity.StartupActivity}" drawable="olx" />
 
   <!-- Olympics -->
   <item component="ComponentInfo{org.olympic.app.mobile/org.olympic.app.main.OlympicsActivity}" drawable="olympics"/>
@@ -15062,7 +15068,8 @@
   <item component="ComponentInfo{com.hihonor.contacts/com.android.contacts.activities.DialtactsActivity}" drawable="phone"/>
   <item component="ComponentInfo{com.android.lgcontacts/com.android.lgcontacts.activities.DialtactsActivity}" drawable="phone"/>
   <item component="ComponentInfo{com.android.contacts/com.android.dialer.app.DialtactsActivity}" drawable="phone"/>
-
+  <item component="ComponentInfo{com.vinsmart.android.dialer/com.android.vinsmart.ui.dialer.VSmartDialerActivity}" drawable="phone" />
+  
   <!-- Phone Manager -->
   <item component="ComponentInfo{com.coloros.phonemanager/com.coloros.phonemanager.FakeActivity}" drawable="phone_manager"/>
 
@@ -19772,8 +19779,9 @@
   <!-- TCL AR -->
   <item component="ComponentInfo{com.tcl.xrmanager.main/com.tcl.xr.aries.ui.activity.BootActivity}" drawable="tcl_ar"/>
 
-  <!-- TD (Canada) -->
-  <item component="ComponentInfo{com.td/com.td.mobile.controllers.StartupActivity}" drawable="td_canada"/>
+  <!-- TD Bank -->
+  <item component="ComponentInfo{com.td/com.td.mobile.controllers.StartupActivity}" drawable="td_bank"/>
+  <item component="ComponentInfo{com.tdbank/com.td.dcts.android.us.app.MainActivity}" drawable="td_bank" />
 
   <!-- Team Fight Tactics -->
   <item component="ComponentInfo{com.riotgames.league.teamfighttactics/com.riotgames.leagueoflegends.RiotNativeActivity}" drawable="team_fight_tactics"/>
@@ -21963,6 +21971,19 @@
   <item component="ComponentInfo{com.coloros.weather2/com.oplus.weather.main.view.WeatherMainActivity}" drawable="simpleweather"/>
   <item component="ComponentInfo{net.oneplus.weather/com.oplus.weather.main.view.WeatherMainActivity}" drawable="simpleweather"/>
   <item component="ComponentInfo{org.breezyweather/org.breezyweather.main.MainActivity}" drawable="simpleweather"/>
+  <item component="ComponentInfo{com.akylas.weather/com.tns.NativeScriptActivity}" drawable="simpleweather" />
+  <item component="ComponentInfo{com.zimi.weather/com.icoolme.android.weather.ui.MainWeatherActivity}" drawable="simpleweather" />
+  <item component="ComponentInfo{com.weather.live.forecast.amwidget/com.weather.live.ui.home.main.HomeActivity}" drawable="simpleweather" />
+  <item component="ComponentInfo{com.luutinhit.ioslauncher/com.luutinhit.weather.WeatherActivity}" drawable="simpleweather" />
+      
+  <!-- BBC Sport -->
+  <item component="ComponentInfo{uk.co.bbc.android.sportdomestic/uk.co.bbc.android.sport.MainActivity}" drawable="bbc_sport" />
+      
+  <!-- BBC Bitesize -->
+  <item component="ComponentInfo{uk.co.bbc.bitesize/uk.co.bbc.maf.BootstrapActivity}" drawable="bbc_bitesize" />
+      
+  <!-- BBC Weather -->
+  <item component="ComponentInfo{bbc.mobile.weather/bbc.mobile.weather.ui.main.MainActivity}" drawable="bbc_weather" />
 
   <!-- Weather Forecast -->
   <item component="ComponentInfo{uk.org.boddie.android.weatherforecast/uk.org.boddie.android.weatherforecast.WeatherForecastActivity}" drawable="weather_forecast"/>
@@ -22089,6 +22110,10 @@
   <item component="ComponentInfo{com.aerowhatsapp/com.aerowhatsapp.0}" drawable="whatsapp"/>
   <item component="ComponentInfo{com.WhatsApp2Plus/com.WhatsApp2Plus.0}" drawable="whatsapp"/>
   <item component="ComponentInfo{com.whatsapp/com.whatsapp.19}" drawable="whatsapp"/>
+  <item component="ComponentInfo{com.RXPlay/com.whatsapp.Main}" drawable="whatsapp" />
+  <item component="ComponentInfo{com.mbwhatsapp/com.mbwhatsapp.0}" drawable="whatsapp"/>
+  <item component="ComponentInfo{com.gbwhatsapp/com.gbwhatsapp.11}" drawable="whatsapp"/>
+  <item component="ComponentInfo{com.gbwhatsapp/com.gbwhatsapp.0}" drawable="whatsapp"/>
 
   <!-- Whatsapp Business -->
   <item component="ComponentInfo{com.whatsapp.w4b/com.whatsapp.Main}" drawable="whatsappbusiness"/>
@@ -22776,6 +22801,9 @@
 
   <!-- SCP Anywhere -->
   <item component="ComponentInfo{com.tverona.scpanywhere/com.tverona.scpanywhere.ui.MainActivity}" drawable="scp_anywhere"/>
+      
+  <!-- SCP Reader -->
+  <item component="ComponentInfo{ca.vsong.scpreader/ca.vsong.scpreader.MainActivity}" drawable="scp" />
 
   <!-- SimpleMP -->
   <item component="ComponentInfo{com.lighttigerxiv.simple.mp/com.lighttigerxiv.simple.mp.compose.activities.main.MainActivity}" drawable="simplemp"/>
