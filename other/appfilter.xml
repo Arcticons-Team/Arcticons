@@ -3860,9 +3860,6 @@
   <!-- Campfire -->
   <item component="ComponentInfo{com.nianticlabs.campfire/com.nianticlabs.campfire.MainActivity}" drawable="campfire"/>
 
-  <!-- Cams -->
-  <item component="ComponentInfo{com.vladpen.cams/com.vladpen.cams.MainActivity}" drawable="screenrecorder"/>
-
   <!-- CamScanner -->
   <item component="ComponentInfo{com.intsig.camscanner/com.intsig.camscanner.launcher.WelcomeDefaultActivity}" drawable="camscanner"/>
   <item component="ComponentInfo{com.intsig.camscanner/com.intsig.camscanner.mainmenu.mainactivity.MainActivity}" drawable="camscanner"/>
@@ -4115,6 +4112,7 @@
   <!-- Chase -->
   <item component="ComponentInfo{com.chase.sig.android/com.chase.sig.android.activity.LoginActivity}" drawable="chase"/>
   <item component="ComponentInfo{com.chase.sig.android/com.chase.sig.android.activity.SplashActivity}" drawable="chase"/>
+  <item component="ComponentInfo{com.chase.intl/com.mobile.MainActivity}" drawable="chase" />
 
   <!-- ChatCraft -->
   <item component="ComponentInfo{mattecarra.chatcraft/mattecarra.chatcraft.activities.LoginActivity}" drawable="chatcraft"/>
@@ -6029,6 +6027,7 @@
 
   <!-- DroidCam -->
   <item component="ComponentInfo{com.dev47apps.droidcam/com.dev47apps.droidcam.DroidCam}" drawable="droidcam"/>
+  <item component="ComponentInfo{com.dev47apps.droidcamx/com.dev47apps.droidcamx.DroidCamX}" drawable="droidcam" />
 
   <!-- DroidCam OBS -->
   <item component="ComponentInfo{com.dev47apps.obsdroidcam/com.dev47apps.obsdroidcam.MainActivity}" drawable="droidcam_obs"/>
@@ -7060,7 +7059,8 @@
   <item component="ComponentInfo{cn.nubia.myfile/zte.com.cn.filer.FileMgrActivity}" drawable="folder" />
   <item component="ComponentInfo{com.cvinfo.filemanager/com.cvinfo.filemanager.activities.SplashActivity}" drawable="folder" />
   <item component="ComponentInfo{zte.com.cn.filer/zte.com.cn.filer.FileMgrActivity}" drawable="folder" />
-  
+  <item component="ComponentInfo{com.raival.fileexplorer/com.raival.fileexplorer.activity.MainActivity}" drawable="folder" />
+
   <!-- Files Shortcut -->
   <item component="ComponentInfo{org.aospstudio.files/com.aospstudio.shortcuts.MainActivity}" drawable="folder_shortcut"/>
 
@@ -12240,6 +12240,7 @@
   <!-- Minesweeper -->
   <item component="ComponentInfo{org.secuso.privacyfriendlyminesweeper/org.secuso.privacyfriendlyminesweeper.activities.SplashActivity}" drawable="minesweeper"/>
   <item component="ComponentInfo{ee.dustland.android.minesweeper/ee.dustland.android.minesweeper.MinesweeperHostActivity}" drawable="minesweeper"/>
+  <item component="ComponentInfo{Draziw.Button.Mines/minesweeper.Button.Mines.BoardViewActivity}" drawable="minesweeper" />
 
   <!-- Minetest -->
   <item component="ComponentInfo{net.minetest.minetest/net.minetest.minetest.MainActivity}" drawable="minetest"/>
@@ -15942,6 +15943,7 @@
   <item component="ComponentInfo{com.tencent.ig/com.epicgames.ue4.SplashActivity}" drawable="pubg_mobile"/>
   <item component="ComponentInfo{com.pubg.imobile/com.epicgames.ue4.SplashActivity}" drawable="pubg_mobile"/>
   <item component="ComponentInfo{com.pubg.krmobile/com.epicgames.ue4.SplashActivity}" drawable="pubg_mobile"/>
+  <item component="ComponentInfo{com.tencent.iglite/com.epicgames.ue4.SplashActivity}" drawable="pubg_mobile" />
 
   <!-- Public -->
   <item component="ComponentInfo{com.public.app/com.publicapp.app.app.MainActivity}" drawable="public_app"/>
@@ -17216,8 +17218,103 @@
 
   <!-- Screen Recorder -->
   <item component="ComponentInfo{com.miui.screenrecorder/com.miui.screenrecorder.activity.ScreenRecorderHomeActivity}" drawable="screenrecorder"/>
-  <item component="ComponentInfo{net.yrom.screenrecorder.demo/net.yrom.screenrecorder.MainActivity}" drawable="screenrecorder"/>
-  <item component="ComponentInfo{com.kimcy929.screenrecorder/com.kimcy929.screenrecorder.activity.MainActivity}" drawable="screenrecorder"/>
+  <item component="ComponentInfo{net.yrom.screenrecorder.demo/net.yrom.screenrecorder.MainActivity}" drawable="screen_recorder"/>
+  <item component="ComponentInfo{com.kimcy929.screenrecorder/com.kimcy929.screenrecorder.activity.MainActivity}" drawable="screen_recorder"/>
+  <item component="ComponentInfo{com.vladpen.cams/com.vladpen.cams.MainActivity}" drawable="screen_recorder"/>
+  <item component="ComponentInfo{com.meberty.videorecorder/com.meberty.videorecorder.MainActivity}" drawable="screen_recorder" />
+  <item component="ComponentInfo{videoeditor.videorecorder.screenrecorder.lite/com.inshot.recorderlite.home.splash.pre.SplashBeforeActivity}" drawable="screen_recorder" />
+  <item component="ComponentInfo{com.camera.secretvideorecorder/com.redlucky.svr.MainActivity}" drawable="screen_recorder" />
+  <item component="ComponentInfo{com.hecorat.screenrecorder.free/com.hecorat.screenrecorder.free.ui.MainActivity}" drawable="screen_recorder" />
+  <item component="ComponentInfo{vidma.screenrecorder.videorecorder.videoeditor.lite/com.atlasv.android.screen.recorder.ui.splash.LaunchActivity}" drawable="screen_recorder" />
+  <item component="ComponentInfo{vidma.screenrecorder.videorecorder.videoeditor.pro/com.atlasv.android.screen.recorder.ui.splash.LaunchActivity}" drawable="screen_recorder" />
+      
+  <!-- My Verizon -->
+  <item component="ComponentInfo{com.vzw.hss.myverizon/com.vzw.hss.myverizon.ui.activities.LauncherActivity}" drawable="my_verizon" />
+        
+  <!-- Pokemon Sleep -->
+  <item component="ComponentInfo{jp.pokemon.pokemonsleep/jp.pokemon.pokemonsleep.commonutility.UnityPlayerActivity}" drawable="pokemon_sleep" />
+      
+  <!-- T-Mobile Play -->
+  <item component="ComponentInfo{com.tmobile.m1/com.metro.minus1.ui.main.MainActivity}" drawable="t_mobile_play" />
+          
+  <!-- AI Chat -->
+  <item component="ComponentInfo{com.ai.chat.bot.aichat/com.ai.chat.bot.aichat.start.StartActivity}" drawable="ai_chat" />
+        
+  <!-- Pexels -->
+  <item component="ComponentInfo{com.pexels.app/com.pexels.app.SplashActivity}" drawable="pexels" />
+        
+  <!-- LIMBO -->
+  <item component="ComponentInfo{com.playdead.limbo.full/com.playdead.limbo.LimboActivity}" drawable="limbo" />
+        
+  <!-- Lowe's -->
+  <item component="ComponentInfo{com.lowes.android/com.lowes.android.controller.util.OnboardingActivity}" drawable="lowes" />
+
+  <!-- Meet Mobile -->
+  <item component="ComponentInfo{com.active.aps.meetmobile/com.active.aps.meetmobile.activities.SplashActivity}" drawable="meet_mobile"/>
+
+  <!-- USA Swimming -->
+  <item component="ComponentInfo{org.usaswimming.usaswimmingapp/org.usaswimming.usaswimmingapp.MainActivity}" drawable="usa_swimming"/>
+      
+  <!-- BASIT -->
+  <item component="ComponentInfo{com.thomasdemirgil.basit.app/com.thomasdemirgil.basit.app.MainActivity}" drawable="basit" />
+      
+  <!-- MyDyson -->
+  <item component="ComponentInfo{com.dyson.mobile.android/com.dyson.mobile.android.launch.LaunchActivity}" drawable="my_dyson" />
+      
+  <!-- OKX -->
+  <item component="ComponentInfo{com.okinc.okex.gp/com.okinc.okex.welcome.WelcomeActivity}" drawable="okx" />
+          
+  <!-- blu -->
+  <item component="ComponentInfo{com.bcadigital.blu/com.bcadigital.blu.SplashActivity}" drawable="blu" />
+      
+  <!-- Fallout Pip-Boy -->
+  <item component="ComponentInfo{com.bethsoft.falloutcompanionapp/com.unity3d.player.UnityPlayerNativeActivity}" drawable="fallout_shelter" />
+      
+  <!-- 10 -->
+  <item component="ComponentInfo{app.fourequalsten.fourequalsten_app/app.fourequalsten.fourequalsten_app.MainActivity}" drawable="symbol_question_mark" />
+      
+  <!-- ES File Explorer Pro -->
+  <item component="ComponentInfo{com.estrongs.android.pop.pro/com.estrongs.android.pop.view.FileExplorerActivity}" drawable="es_file_explorer" />
+      
+  <!-- CBC Mobile -->
+  <item component="ComponentInfo{com.kbc.mobile.android.phone.cbc/com.kbc.mobile.android.mbk.activities.SplashScreenActivity}" drawable="cbc_mobile" />
+        
+  <!-- CBC News -->
+  <item component="ComponentInfo{ca.cbc.mobile.android.cbcnewsandroidwebview/ca.cbc.android.news.refresh.ui.SplashActivity}" drawable="cbc_news" />
+      
+  <!-- JioNews -->
+  <item component="ComponentInfo{com.jio.media.jioxpressnews/com.thenewj.jiox.ui.signup.SignUpActivity}" drawable="jionews" />
+          
+  <!-- NewsBreak -->
+  <item component="ComponentInfo{com.particlenews.newsbreak/com.particlemedia.ui.guide.UserGuideActivity}" drawable="newsbreak" />
+        
+  <!-- Sky News -->
+  <item component="ComponentInfo{com.bskyb.skynews.android/com.bskyb.skynews.android.activity.AppLoadingActivity}" drawable="sky_news" />
+        
+  <!-- Euronews -->
+  <item component="ComponentInfo{com.euronews.express/com.africanews.android.application.splash.SplashScreenActivity}" drawable="euronews" />
+        
+  <!-- ABC News -->
+  <item component="ComponentInfo{com.abc.abcnews/com.disney.bootstrap.activity.bootstrap.BootstrapActivity}" drawable="abc_news" />   
+
+  <!-- Puzzle blue -->
+  <item component="ComponentInfo{air.com.bartbonte.blue/air.com.bartbonte.blue.AIRAppEntry}" drawable="puzzle_blue" />
+
+  <!-- Puzzle green -->
+  <item component="ComponentInfo{air.com.bartbonte.green/air.com.bartbonte.green.AIRAppEntry}" drawable="puzzle_green" />
+  
+  <!-- Puzzle pink -->
+  <item component="ComponentInfo{air.com.bartbonte.pink/air.com.bartbonte.pink.AIRAppEntry}" drawable="puzzle_pink" />
+    
+  <!-- Puzzle red -->
+  <item component="ComponentInfo{air.com.bartbonte.red/air.com.bartbonte.red.AIRAppEntry}" drawable="puzzle_red" />
+
+  <!-- Puzzle yellow -->
+  <item component="ComponentInfo{air.com.bartbonte.yellow/air.com.bartbonte.yellow.AIRAppEntry}" drawable="puzzle_yellow" />
+          
+  <!-- My Orange -->
+  <item component="ComponentInfo{com.orange.myorange.omd/com.orange.omnis.main.ui.MainActivity}" drawable="my_orange" />
+  <item component="ComponentInfo{com.orange.contultauorange/com.orange.contultauorange.activity.EntryActivity}" drawable="my_orange" />
 
   <!-- Screen Time -->
   <item component="ComponentInfo{de.markusfisch.android.screentime/de.markusfisch.android.screentime.activity.MainActivity}" drawable="screentime"/>
