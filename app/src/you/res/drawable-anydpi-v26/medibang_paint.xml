@@ -1,0 +1,31 @@
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+    <background android:drawable="@color/icon_background_color" />
+        <foreground>
+            <inset android:inset="25%">
+            <vector
+                android:width="48dp"
+                android:height="48dp"
+                android:viewportWidth="48"
+                android:viewportHeight="48">
+                <path
+                   android:strokeColor="@color/icon_color"
+                   android:strokeWidth="1.2"
+                   android:strokeLineCap="round"
+                   android:strokeLineJoin="round"
+                   android:pathData="M 40.1674,27.2526 C 40.1674,36.303200000000004 32.830600000000004,43.64 23.78,43.64 C 14.729399999999998,43.64 7.3926,36.3032 7.3926,27.2526 C 7.3926,24.686500000000002 7.9854,22.2502 9.0415,20.0918 C 9.0415,20.0825 9.050799999999999,20.064 9.050799999999999,20.0547 C 10.2273,16.516000000000002 18.0366,6.4556000000000004 28.0599,4.640000000000001 C 27.5782,7.030000000000001 25.8644,9.3922 32.2656,13.236600000000001 C 36.9993,16.1176 40.1675,21.314500000000002 40.1675,27.2525 L 40.1674,27.2526"/>
+                <path
+                   android:strokeColor="@color/icon_color"
+                   android:strokeWidth="1.2"
+                   android:strokeLineCap="round"
+                   android:strokeLineJoin="round"
+                   android:pathData="M 7.9021,23.2136 C 11.459299999999999,25.316499999999998 16.8786,25.335 21.9458,22.8616 C 26.892599999999998,20.453 30.181199999999997,16.3215 30.8389,12.3103"/>
+                <path
+                   android:strokeColor="@color/icon_color"
+                   android:strokeWidth="1.2"
+                   android:strokeLineCap="round"
+                   android:strokeLineJoin="round"
+                   android:pathData="M 35.9359,16.2713 C 37.366899999999994,29.0758 24.358299999999996,44.7255 9.624299999999998,35.5122"/>
+            </vector>
+        </inset>
+    </foreground>
+</adaptive-icon>

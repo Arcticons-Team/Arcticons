@@ -1,3 +1,9 @@
+### 7.0.0
+###### Released: Aug 18, 2023
+* 🎉 360 new and updated icons! (thanks Petlyl, NablaMetal, Crazy-Unicooorn, Dgcampbe, NobodyForNothing, Mmaeusezahl, Tsuicaa, NicoWeio, Mdapa323, RedAuburn, Dioxias, PixelRuzt, DelayedPrototype, Kport1, kaiserdragon2, Wwwwwwari, KR4U7H3R, Basings, Orbitaldr0p, AsankaSovis, Yetanother-user)
+* 📁 Redesigned folder icons.
+* 🔥 7007 icons in total!
+
 ### 6.7.1
 ###### Released: Jul 19, 2023
 * 🎉 113 new and updated icons! (thanks Wari, Dgcampbe, Pelyh, Dioxias, Orbitaldr0p, PixelRuzt, AsankaSovis, Lividhen, Tieu1991)
