@@ -523,9 +523,10 @@ def duplicateEntry(path:str):
 
     # Iterate over the item elements in the XML file
     for item in root.findall('.//item'):
-        component = item.get('component')  # Get the component attribute value
-        components.append(component)  # Add the component value to the list
-
+        if 'prefix' not in item:
+            component = item.get('component')  # Get the component attribute value
+            components.append(component)  # Add the component value to the list
+            
     # Check for duplicates in the list
     duplicates = []  # Create a list to store the duplicates
     for component in components:
