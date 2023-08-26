@@ -526,7 +526,7 @@ def duplicateEntry(path:str):
         if 'prefix' not in item:
             component = item.get('component')  # Get the component attribute value
             components.append(component)  # Add the component value to the list
-            
+
     # Check for duplicates in the list
     duplicates = []  # Create a list to store the duplicates
     for component in components:
@@ -543,11 +543,42 @@ def duplicateEntry(path:str):
     return False
 
 
+# check appfilter entries for non existing drawables
+def missingDrawable(appfilterpath:str,whitedir:str,otherdir:str):
+    # Parse the XML file
+    parser = etree.XMLParser(remove_blank_text=True)
+    tree = etree.parse(appfilterpath, parser)
+    root = tree.getroot()
+
+    # Create a list to store the component attribute values
+    drawables = []
+
+    # Iterate over the item elements in the XML file
+    for item in root.findall('.//item'):
+        if 'prefix' not in item:
+            drawable = item.get('drawable')  # Get the component attribute value
+            # Check if the drawable resource file with the .svg extension exists in the folder
+            if not os.path.exists(os.path.join(whitedir, f'{drawable}.svg')):
+                if not os.path.exists(os.path.join(otherdir, f'{drawable}.svg')):
+                    drawables.append(item)  # Add the component value to the list
+
+    if len(drawables) > 0:
+        print('\n\n______ Found non existent drawables ______\n')
+        print('Possible causes are typos or completly different naming of the icon\n\n')
+        for item in drawables:
+            toprint = etree.tostring(item,encoding='unicode',method='xml')
+            print(f'{toprint}')
+        print("\n\n____ Please check these first before proceeding ____\n\n")
+        return True
+    return False
+
 
 
 ###### Main #####
 # runs everything in necessary order
 def main():
+    if missingDrawable(APPFILTER_PATH,WHITE_DIR,SVG_DIR):
+        return
     if duplicateEntry(APPFILTER_PATH):
         return
     if find_non_white_svgs(SVG_DIR):
