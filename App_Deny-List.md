@@ -1,6 +1,6 @@
 # Arcticons app deny-list
 
-We have a small list of apps that we don't allow in this icon pack for ethical reasons.
+Apps we don't allow due to hate speech, fake news, or illegal content.
 
 - Gab
 - Parler
