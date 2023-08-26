@@ -511,6 +511,35 @@ def find_non_white_svgs(dir: str):
         return True
     return False
 
+# Check appfilter for duplicate component entries
+def duplicateEntry(path:str):
+    # Parse the XML file
+    parser = etree.XMLParser(remove_blank_text=True)
+    tree = etree.parse(path, parser)
+    root = tree.getroot()
+
+    # Create a list to store the component attribute values
+    components = []
+
+    # Iterate over the item elements in the XML file
+    for item in root.findall('.//item'):
+        component = item.get('component')  # Get the component attribute value
+        components.append(component)  # Add the component value to the list
+
+    # Check for duplicates in the list
+    duplicates = []  # Create a list to store the duplicates
+    for component in components:
+        count = components.count(component)  # Count the number of occurrences of the component
+        if count > 1 and component not in duplicates:  # If the count is greater than 1 and the component is not already in the duplicates list
+            duplicates.append(component)  # Add the component to the duplicates list
+
+    if len(duplicates) > 0:
+        print('______ Found duplicate appfilter entries ______\n\n')
+        for item in duplicates:
+            print(f'\t {item}')
+        print("\n____ Please check these first before preceeding ____\n")
+        return True
+    return False
 
 
 
@@ -518,6 +547,8 @@ def find_non_white_svgs(dir: str):
 ###### Main #####
 # runs everything in necessary order
 def main():
+    if duplicateEntry(APPFILTER_PATH):
+        return
     if find_non_white_svgs(SVG_DIR):
         return
     create_new_drawables(SVG_DIR,NEWDRAWABLE_PATH)
