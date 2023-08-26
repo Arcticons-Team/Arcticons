@@ -54,10 +54,7 @@ REPLACE_FILL_BLACK = "fill:#000"
 REPLACE_FILL_BLACK_ALT = '''fill="#000"'''
 
 
-#helper sort xml.sh
-def natural_sort_key(s: str, _nsre=re.compile('([0-9]+)')):
-    return [int(text) if text.isdigit() else text.lower()
-            for text in re.split(_nsre, s.as_posix())]
+##### Material You Icon Stuff #####
 
 #extractinfo for xmlicons (materialyou) from svg
 def svg_xml_exporter(dir:str,exportpath:str,icon_dir:str,mode:str):
@@ -77,7 +74,6 @@ def svg_xml_exporter(dir:str,exportpath:str,icon_dir:str,mode:str):
     strokeO_pattern = re.compile(r'stroke-opacity: ?(?P<StrokeO>\d?\.?\d*)', re.M)
     rotate_pattern = re.compile(r'translate\((?P<X>.+?) (?P<Y>.+?)\).*rotate\((?P<Rotate>.+?)\)', re.M)
     
-
     def extract_style_info(svg_file):
         all_style ={}
         with open(svg_file, "r") as f:
@@ -219,7 +215,6 @@ def svg_xml_exporter(dir:str,exportpath:str,icon_dir:str,mode:str):
         # Write the XML to the output file
         with open(xml_file, 'w') as file:
             file.write(xml)
-
     
     for file_path in glob.glob(f"{dir}/*.svg"):
         file= os.path.basename(file_path)
@@ -229,7 +224,10 @@ def svg_xml_exporter(dir:str,exportpath:str,icon_dir:str,mode:str):
         print(f'Working on {file} {mode}')
         svg_to_xml(file_path, exportpath +'/' + name +'.xml')
 
-#xml.sh
+
+##### Iconpack stuff #####
+
+# Create differnt xml files and move them to needed place
 def convert_svg_files(iconsdir: str, xmldir: str, valuesdir:str, assetsdir:str,appfilterpath:str) -> None:
     icpack_pre = '\t    <item>'
     icpack_suf = '</item>\n'
@@ -265,38 +263,11 @@ def convert_svg_files(iconsdir: str, xmldir: str, valuesdir:str, assetsdir:str,a
     copy2(appfilterpath, assetsdir)
     copy2(appfilterpath, xmldir)
 
-#Change Color of SVG based on rules
-def svg_colors(dir:str,stroke:str,fill:str,stroke_alt:str,fill_alt:str,replace_stroke:str,replace_fill:str,replace_stroke_alt:str,replace_fill_alt:str)  -> None:
-    for x in glob.glob(f"{dir}/*.svg"):
-        with open(x, 'r') as fp:
-            content = fp.read()
-       
-        content = re.sub(stroke, replace_stroke, content, flags=re.IGNORECASE)
-        content = re.sub(fill, replace_fill, content, flags=re.IGNORECASE)
-        content = re.sub(stroke_alt, replace_stroke_alt, content, flags=re.IGNORECASE)
-        content = re.sub(fill_alt, replace_fill_alt, content, flags=re.IGNORECASE)
-    
-        with open(x, 'w') as fp:
-            fp.write(content)
+#helper sort xml creation
+def natural_sort_key(s: str, _nsre=re.compile('([0-9]+)')):
+    return [int(text) if text.isdigit() else text.lower()
+            for text in re.split(_nsre, s.as_posix())]
 
-#Create PNG of the SVG and Copy to destination
-def create_icons(sizes: List[int], dir:str ,export_dir: str, icon_dir: str , mode:str) -> None:
-    for file_path in glob.glob(f"{dir}/*.svg"):
-        file= os.path.basename(file_path)
-        name = file[:-4]
-        copy2(file_path, f'{icon_dir}/{file}')
-        print(f'Working on {file} {mode}')
-        for size in sizes:
-            subprocess.run(['inkscape', '--export-filename='+f'{name}'+'.png',
-                            f'--export-width={size}', f'--export-height={size}', file_path])
-            if size == 256:
-                copy2(f'{name}.png', export_dir)
-                Path(f'{name}.png').unlink()
-
-
-def remove_svg(dir:str):
-    for file_path in glob.glob(f"{dir}/*.svg"):
-        os.remove(file_path)
 
 def create_new_drawables(svgdir: str,newdrawables:str) -> None:
     drawable_pre = '\t<item drawable="'
@@ -443,6 +414,45 @@ def sortxml(path:str):
 def add_newline_before_occurrences(string, pattern):
     return re.sub(pattern, r"\n\g<0>", string)
 
+
+##### Legacy Arcticons #####
+
+#Change Color of SVG based on rules
+def svg_colors(dir:str,stroke:str,fill:str,stroke_alt:str,fill_alt:str,replace_stroke:str,replace_fill:str,replace_stroke_alt:str,replace_fill_alt:str)  -> None:
+    for x in glob.glob(f"{dir}/*.svg"):
+        with open(x, 'r') as fp:
+            content = fp.read()
+       
+        content = re.sub(stroke, replace_stroke, content, flags=re.IGNORECASE)
+        content = re.sub(fill, replace_fill, content, flags=re.IGNORECASE)
+        content = re.sub(stroke_alt, replace_stroke_alt, content, flags=re.IGNORECASE)
+        content = re.sub(fill_alt, replace_fill_alt, content, flags=re.IGNORECASE)
+    
+        with open(x, 'w') as fp:
+            fp.write(content)
+
+#Create PNG of the SVG and Copy to destination
+def create_icons(sizes: List[int], dir:str ,export_dir: str, icon_dir: str , mode:str) -> None:
+    for file_path in glob.glob(f"{dir}/*.svg"):
+        file= os.path.basename(file_path)
+        name = file[:-4]
+        copy2(file_path, f'{icon_dir}/{file}')
+        print(f'Working on {file} {mode}')
+        for size in sizes:
+            subprocess.run(['inkscape', '--export-filename='+f'{name}'+'.png',
+                            f'--export-width={size}', f'--export-height={size}', file_path])
+            if size == 256:
+                copy2(f'{name}.png', export_dir)
+                Path(f'{name}.png').unlink()
+
+
+def remove_svg(dir:str):
+    for file_path in glob.glob(f"{dir}/*.svg"):
+        os.remove(file_path)
+
+###### Checks ######
+
+# Check Icons
 def find_non_white_svgs(dir: str):
     non_white_svgs = {}
     for file_path in glob.glob(f"{dir}/*.svg"):
@@ -505,8 +515,8 @@ def find_non_white_svgs(dir: str):
 
 
 
-
-
+###### Main #####
+# runs everything in necessary order
 def main():
     if find_non_white_svgs(SVG_DIR):
         return
