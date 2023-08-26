@@ -550,17 +550,17 @@ def missingDrawable(appfilterpath:str,whitedir:str,otherdir:str):
     tree = etree.parse(appfilterpath, parser)
     root = tree.getroot()
 
-    # Create a list to store the component attribute values
+    # Create a list to store missing drawable appfilter info
     drawables = []
 
     # Iterate over the item elements in the XML file
     for item in root.findall('.//item'):
         if 'prefix' not in item:
-            drawable = item.get('drawable')  # Get the component attribute value
+            drawable = item.get('drawable')  # Get the drawable attribute value
             # Check if the drawable resource file with the .svg extension exists in the folder
             if not os.path.exists(os.path.join(whitedir, f'{drawable}.svg')):
                 if not os.path.exists(os.path.join(otherdir, f'{drawable}.svg')):
-                    drawables.append(item)  # Add the component value to the list
+                    drawables.append(item)  # Add the item value to the list
 
     if len(drawables) > 0:
         print('\n\n______ Found non existent drawables ______\n')
