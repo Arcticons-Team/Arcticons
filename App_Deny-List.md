@@ -4,9 +4,10 @@ We have a small list of apps that we don't allow in this icon pack for ethical r
 
 - Gab
 - Parler
+- Truth Social
 - Lucky Patcher
 - Loli Snatcher
 - Russia Today News
 
 Last modified:
-**31 March 2022**
+**26 Aug 2023**
