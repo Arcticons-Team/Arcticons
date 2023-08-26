@@ -58,4 +58,6 @@ for size in $sizes; do
   ln -s "${size}x${size}" "${dest_root}@3"
 done
 
+cp index.theme arcticons/
+
 tar czf arcticons.tar.gz arcticons
