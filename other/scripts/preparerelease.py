@@ -501,13 +501,13 @@ def find_non_white_svgs(dir: str):
                     else: non_white_svgs[file] = [fill_rgba]
 
     if len(non_white_svgs) > 0:
-        print('______ Found SVG with colors other then white ______\n')
+        print('\n\n______ Found SVG with colors other then white ______\n')
         for svg in non_white_svgs:
             print(f'\n{svg}:')
             for colors in non_white_svgs[svg]:
                 print(f'\t {colors}')
 
-        print("\n____ Please check these first before preceeding ____\n")
+        print("\n\n____ Please check these first before proceeding ____\n\n")
         return True
     return False
 
@@ -534,10 +534,10 @@ def duplicateEntry(path:str):
             duplicates.append(component)  # Add the component to the duplicates list
 
     if len(duplicates) > 0:
-        print('______ Found duplicate appfilter entries ______\n\n')
+        print('\n\n______ Found duplicate appfilter entries ______\n\n')
         for item in duplicates:
             print(f'\t {item}')
-        print("\n____ Please check these first before preceeding ____\n")
+        print("\n\n____ Please check these first before proceeding ____\n\n")
         return True
     return False
 
