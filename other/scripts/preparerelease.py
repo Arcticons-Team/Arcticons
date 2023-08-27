@@ -405,11 +405,16 @@ def sortxml(path:str):
 
     # Add Spaces between entries
     xml_str = etree.tostring(root,encoding = 'utf-8', pretty_print=True)
-    xml_str_line = add_newline_before_occurrences(xml_str.decode(),"  <!--")
+    xml_str_line = add_newline_before_occurrences(xml_str.decode(),r'  <!--|</res')
+    xml_str_line = add_tab(xml_str_line,r"..(<!|<i)")
+
 
     #Write sorted xml to file
     with open (path,'w', encoding='utf-8') as f:
         f.write(xml_str_line)
+
+def add_tab(string, pattern):
+    return re.sub(pattern, r"\t\g<1>", string)
 
 def add_newline_before_occurrences(string, pattern):
     return re.sub(pattern, r"\n\g<0>", string)
