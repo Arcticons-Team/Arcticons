@@ -519,24 +519,36 @@ def find_non_white_svgs(dir: str):
 #check stroke width
 def checkStroke(dir:str):
     strokewidth = {}
+    strokelinecap = {}
     for file_path in glob.glob(f"{dir}/*.svg"):
         file= os.path.basename(file_path)
         with open(file_path, 'r', encoding='utf-8') as fp:
             content = fp.read()
             strokes = re.findall(r'stroke-width(?:=\"|:).*?(?=[\"; ])', content)
+            linecaps = re.findall(r"stroke-linecap(?:=\"|:).*?(?=[\";])",content)
             for stroke in strokes:
                 if stroke not in ['stroke-width:1','stroke-width:1px','stroke-width:0px','stroke-width:0']:
                     if file in strokewidth:
                         strokewidth[file] += [stroke]
                     else: strokewidth[file] = [stroke]
+            for linecap in linecaps:
+                if linecap not in ['stroke-linecap:round','stroke-linecap="round','stroke-linecap: round']:
+                    if file in strokelinecap:
+                        strokelinecap[file] += [linecap]
+                    else: strokelinecap[file] = [linecap]
 
-    if len(strokewidth) > 0:
-        print('\n\n______ Found SVG with colors other then white ______\n')
+    if len(strokewidth) > 0 | len(strokelinecap) > 0:
+        print('\n\n______ Found SVG with wrong line attributtes ______\n')
+        #linewidth
         for svg in strokewidth:
             print(f'\n{svg}:')
             for width in strokewidth[svg]:
                 print(f'\t {width}')
-
+        #linecap
+        for svg in strokelinecap:
+            print(f'\n{svg}:')
+            for width in strokelinecap[svg]:
+                print(f'\t {width}')
         print("\n\n____ Please check these first before proceeding ____\n\n")
         return True
     return False
