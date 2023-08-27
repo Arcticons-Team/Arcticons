@@ -458,97 +458,83 @@ def remove_svg(dir:str):
 ###### Checks ######
 
 # Check Icons
-def find_non_white_svgs(dir: str):
-    non_white_svgs = {}
+def checkSVG(dir: str):
+    strokeattr = {}
     for file_path in glob.glob(f"{dir}/*.svg"):
         file= os.path.basename(file_path)
         name = file[:-4]
         with open(file_path, 'r', encoding='utf-8') as fp:
             content = fp.read()
+            #check colors regex
             stroke_colors = re.findall(r'stroke(?:=\"|:)(?:rgb[^a]|#).*?(?=[\"; ])', content)
             fill_colors = re.findall(r'fill(?:=\"|:)(?:rgb[^a]|#).*?(?=[\"; ])', content)
             stroke_opacities = re.findall(r'stroke-opacity(?:=\"|:).*?(?=[\"; ])', content)
             fill_opacities = re.findall(r'fill-opacity(?:=\"|:).*?(?=[\"; ])', content)
             stroke_rgbas = re.findall(r'stroke(?:=\"|:)rgba.*?(?=[\"; ])', content)
             fill_rgbas = re.findall(r'fill(?:=\"|:)rgba.*?(?=[\"; ])', content)
+
+            #Other Attributes regex
+            strokes = re.findall(r'stroke-width(?:=\"|:).*?(?=[\"; ])', content)
+            linecaps = re.findall(r"stroke-linecap(?:=\"|:).*?(?=[\";}])",content)
+            linejoins = re.findall(r"stroke-linejoin(?:=\"|:).*?(?=[\";}])",content)
             
+            #colors
             for stroke_color in stroke_colors:
                 if stroke_color not in ['stroke:#ffffff', 'stroke:#fff', 'stroke:#FFFFFF', 'stroke="#fff', 'stroke="#ffffff', 'stroke="#FFFFFF', 'stroke="white', 'stroke:rgb(255,255,255)', 'stroke="rgb(255,255,255)']:
-                    if file in non_white_svgs:
-                        non_white_svgs[file] += [stroke_color]
-                    else: non_white_svgs[file] = [stroke_color]
+                    if file in strokeattr:
+                        strokeattr[file] += [stroke_color]
+                    else: strokeattr[file] = [stroke_color]
             for fill_color in fill_colors:
                 if fill_color not in ['fill:#ffffff', 'fill:#fff', 'fill:#FFFFFF', 'fill="#ffffff', 'fill="#fff', 'fill="#FFFFFF', 'fill="white', 'fill:rgb(255,255,255)', 'fill="rgb(255,255,255)']:
-                    if file in non_white_svgs:
-                        non_white_svgs[file] += [fill_color]
-                    else: non_white_svgs[file] = [fill_color]
+                    if file in strokeattr:
+                        strokeattr[file] += [fill_color]
+                    else: strokeattr[file] = [fill_color]
             for stroke_opacity in stroke_opacities:
                 if stroke_opacity not in ['stroke-opacity="0', 'stroke-opacity="0%', 'stroke-opacity="1', 'stroke-opacity="100%','stroke-opacity:1','stroke-opacity:0'] and not re.findall(r'stroke-opacity[=:]\"?[01]\.0+$',stroke_opacity):
-                    if file in non_white_svgs:
-                        non_white_svgs[file] += [stroke_opacity]
-                    else: non_white_svgs[file] = [stroke_opacity]
+                    if file in strokeattr:
+                        strokeattr[file] += [stroke_opacity]
+                    else: strokeattr[file] = [stroke_opacity]
             for fill_opacity in fill_opacities:
                 if fill_opacity not in ['fill-opacity="0', 'fill-opacity="0%', 'fill-opacity="1', 'fill-opacity="100%','fill-opacity:0','fill-opacity:1'] and not re.findall(r'fill-opacity[=:]\"?[01]\.0+$',fill_opacity):
-                    if file in non_white_svgs:
-                        non_white_svgs[file] += [fill_opacity]
-                    else: non_white_svgs[file] = [fill_opacity]
+                    if file in strokeattr:
+                        strokeattr[file] += [fill_opacity]
+                    else: strokeattr[file] = [fill_opacity]
             for stroke_rgba in stroke_rgbas:
                 stroke_rgba_color, stroke_rgba_opacity = stroke_rgba.rsplit(',',1)
                 if stroke_rgba_color not in ['stroke:rgba(255,255,255', 'stroke="rgba(255,255,255'] or float(stroke_rgba_opacity[:-1]) not in [0.0, 1.0]:
-                    if file in non_white_svgs:
-                        non_white_svgs[file] += [stroke_rgba]
-                    else: non_white_svgs[file] = [stroke_rgba]
+                    if file in strokeattr:
+                        strokeattr[file] += [stroke_rgba]
+                    else: strokeattr[file] = [stroke_rgba]
             for fill_rgba in fill_rgbas:
                 fill_rgba_color, fill_rgba_opacity = fill_rgba.rsplit(',',1)
                 if fill_rgba_color not in ['fill:rgba(255,255,255', 'fill="rgba(255,255,255'] or float(fill_rgba_opacity[:-1]) not in [0.0, 1.0]:
-                    if file in non_white_svgs:
-                        non_white_svgs[file] += [fill_rgba]
-                    else: non_white_svgs[file] = [fill_rgba]
-
-    if len(non_white_svgs) > 0:
-        print('\n\n______ Found SVG with colors other then white ______\n')
-        for svg in non_white_svgs:
-            print(f'\n{svg}:')
-            for colors in non_white_svgs[svg]:
-                print(f'\t {colors}')
-
-        print("\n\n____ Please check these first before proceeding ____\n\n")
-        return True
-    return False
-
-#check stroke width
-def checkStroke(dir:str):
-    strokewidth = {}
-    strokelinecap = {}
-    for file_path in glob.glob(f"{dir}/*.svg"):
-        file= os.path.basename(file_path)
-        with open(file_path, 'r', encoding='utf-8') as fp:
-            content = fp.read()
-            strokes = re.findall(r'stroke-width(?:=\"|:).*?(?=[\"; ])', content)
-            linecaps = re.findall(r"stroke-linecap(?:=\"|:).*?(?=[\";])",content)
+                    if file in strokeattr:
+                        strokeattr[file] += [fill_rgba]
+                    else: strokeattr[file] = [fill_rgba]
+            #Other Attributes
             for stroke in strokes:
                 if stroke not in ['stroke-width:1','stroke-width:1px','stroke-width:0px','stroke-width:0']:
-                    if file in strokewidth:
-                        strokewidth[file] += [stroke]
-                    else: strokewidth[file] = [stroke]
+                    if file in strokeattr:
+                        strokeattr[file] += [stroke]
+                    else: strokeattr[file] = [stroke]
             for linecap in linecaps:
                 if linecap not in ['stroke-linecap:round','stroke-linecap="round','stroke-linecap: round']:
-                    if file in strokelinecap:
-                        strokelinecap[file] += [linecap]
-                    else: strokelinecap[file] = [linecap]
+                    if file in strokeattr:
+                        strokeattr[file] += [linecap]
+                    else: strokeattr[file] = [linecap]
+            for linejoin in linejoins:
+                if linejoin not in ['stroke-linejoin:round','stroke-linejoin="round','stroke-linejoin: round']:
+                    if file in strokeattr:
+                        strokeattr[file] += [linejoin]
+                    else: strokeattr[file] = [linejoin]   
 
-    if len(strokewidth) > 0 | len(strokelinecap) > 0:
+    if len(strokeattr) > 0:
         print('\n\n______ Found SVG with wrong line attributtes ______\n')
-        #linewidth
-        for svg in strokewidth:
+        for svg in strokeattr:
             print(f'\n{svg}:')
-            for width in strokewidth[svg]:
-                print(f'\t {width}')
-        #linecap
-        for svg in strokelinecap:
-            print(f'\n{svg}:')
-            for width in strokelinecap[svg]:
-                print(f'\t {width}')
+            for attr in strokeattr[svg]:
+                print(f'\t {attr}')
+
         print("\n\n____ Please check these first before proceeding ____\n\n")
         return True
     return False
@@ -619,13 +605,11 @@ def missingDrawable(appfilterpath:str,whitedir:str,otherdir:str):
 ###### Main #####
 # runs everything in necessary order
 def main():
+    if checkSVG(SVG_DIR):
+        return
     if missingDrawable(APPFILTER_PATH,WHITE_DIR,SVG_DIR):
         return
     if duplicateEntry(APPFILTER_PATH):
-        return
-    if checkStroke(SVG_DIR):
-        return
-    if find_non_white_svgs(SVG_DIR):
         return
     create_new_drawables(SVG_DIR,NEWDRAWABLE_PATH)
     svg_colors(SVG_DIR,ORIGINAL_STROKE,ORIGINAL_FILL,ORIGINAL_STROKE_ALT,ORIGINAL_FILL_ALT,REPLACE_STROKE_WHITE,REPLACE_FILL_WHITE,REPLACE_STROKE_WHITE_ALT,REPLACE_FILL_WHITE_ALT)
