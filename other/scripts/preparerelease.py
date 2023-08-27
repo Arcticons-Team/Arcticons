@@ -10,6 +10,8 @@ import argparse
 import pathlib
 from lxml import etree
 import os
+from bs4 import BeautifulSoup
+from svgpathtools import svg2paths
 
 from shutil import move
 
@@ -58,13 +60,6 @@ REPLACE_FILL_BLACK_ALT = '''fill="#000"'''
 
 #extractinfo for xmlicons (materialyou) from svg
 def svg_xml_exporter(dir:str,exportpath:str,icon_dir:str,mode:str):
-
-    from svgpathtools import svg2paths
-    import re
-    from bs4 import BeautifulSoup
-    import os
-    from shutil import copy2
-    import glob
 
     styles_pattern = re.compile(r'(?s)\..*?}', re.M)
     name_pattern = re.compile(r'\.(?P<Name>.+?)( ?{|,)', re.M)
