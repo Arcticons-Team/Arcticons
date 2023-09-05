@@ -36,6 +36,15 @@
 
   <!-- FediPhoto -->
   <item component="ComponentInfo{com.fediphoto.lineage/com.fediphoto.lineage.StartActivity}" drawable="fediphoto_lineage" />
+      
+  <!-- NU.nl -->
+  <item component="ComponentInfo{nl.sanomamedia.android.nu/nl.sanomamedia.android.nu.activity.NUMainActivity}" drawable="nu_nl" />
+      
+  <!-- Assistant for No Man's Sky -->
+  <item component="ComponentInfo{com.kurtlourens.no_mans_sky_recipes/io.flutter.embedding.android.FlutterActivity}" drawable="no_mans_sky" />
+      
+  <!-- RTL+ -->
+  <item component="ComponentInfo{de.rtli.tvnow/de.rtli.everest.activity.SplashActivity}" drawable="rtl_plus" />
 
 	<!-- evpass -->
 	<item component="ComponentInfo{ch.evpass.evpass/ch.evpass.evpass.base.activities.SplashActivity}" drawable="evpass"/>
@@ -994,7 +1003,9 @@
 
   <!-- Amarok -->
   <item component="ComponentInfo{deltazero.amarok.foss/deltazero.amarok.ui.MainActivity}" drawable="amarok"/>
-
+  <item component="ComponentInfo{deltazero.amarok.foss/deltazero.amarok.launcher.default}" drawable="amarok" />
+  <item component="ComponentInfo{deltazero.amarok.foss/deltazero.amarok.launcher.calendar}" drawable="calendar_31" />
+  
   <!-- Amaze -->
   <item component="ComponentInfo{com.amaze.filemanager/com.amaze.filemanager.activities.MainActivity}" drawable="amaze"/>
   <item component="ComponentInfo{com.amaze.filemanager/com.amaze.filemanager.ui.activities.MainActivity}" drawable="amaze"/>
