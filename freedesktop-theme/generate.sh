@@ -46,7 +46,7 @@ for size in $sizes; do
     dest=$(echo "$line" | cut -d, -f2)
 
     mkdir -p "$dest_root/$(dirname "$dest")"
-    cp -v "../icons/$style/$src.svg" "$dest_root/$dest.svg"
+    cp -v "../icons/$style/$src.svg" "$dest_root/$dest.svg" || continue
 
     grep -v 'stroke-width' "$dest_root/$dest.svg" > /dev/null && sed -i 's/\(stroke:[^;]\+\)/\1;stroke-width:1px/g' "$dest_root/$dest.svg"
     awk -i inplace -F 'stroke-width:|px' "{ print \$1 \"stroke-width:\" (\$2 * $line_weight * $factor) \"px\" \$3; }" "$dest_root/$dest.svg"
@@ -57,6 +57,20 @@ for size in $sizes; do
   rm "${dest_root}@3" 2> /dev/null || true
   ln -s "${size}x${size}" "${dest_root}@3"
 done
+
+if type inkscape; then
+  for line in $(cat mapping.txt); do
+    dest_root="./arcticons/symbolic"
+    src_root="./arcticons/48x48"
+    dest=$(echo "$line" | cut -d, -f2)
+
+    mkdir -p "$dest_root/$(dirname "$dest")"
+
+    inkscape --actions="select-all;object-stroke-to-path" --export-filename="$dest_root/$dest-symbolic.svg" "$src_root/$dest.svg" || true
+    rm $src_root/$dest*.0.svg || true
+  done
+else echo "Inkscape not found, skipping creating symbolic icons"
+fi
 
 cp index.theme arcticons/
 
