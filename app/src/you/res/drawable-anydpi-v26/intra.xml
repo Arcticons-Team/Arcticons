@@ -1,25 +1,25 @@
 <adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
-    <background android:drawable="@color/icon_background_color" />
-        <foreground>
-            <inset android:inset="25%">
-            <vector
-                android:width="48dp"
-                android:height="48dp"
-                android:viewportWidth="48"
-                android:viewportHeight="48">
-                <path
-                   android:strokeColor="@color/icon_color"
-                   android:strokeWidth="1.2"
-                   android:strokeLineCap="round"
-                   android:strokeLineJoin="round"
-                   android:pathData="M 4.5,39.343 L 24.0,19.843 L 43.5,39.343 L 4.5,39.343 L 4.5,39.343"/>
-                <path
-                   android:strokeColor="@color/icon_color"
-                   android:strokeWidth="1.2"
-                   android:strokeLineCap="round"
-                   android:strokeLineJoin="round"
-                   android:pathData="M 13.4387,19.2182 A 10.5613,10.5613 0.0 1,0 34.5613,19.2182 A 10.5613,10.5613 0.0 1,0 13.438700000000004,19.2182"/>
-            </vector>
-        </inset>
-    </foreground>
+	<background android:drawable="@color/icon_background_color" />
+	<foreground>
+		<inset android:inset="25%">
+			<vector
+				android:width="48dp"
+				android:height="48dp"
+				android:viewportWidth="48"
+				android:viewportHeight="48">
+				<path
+					android:strokeColor="@color/icon_color"
+					android:strokeWidth="1.2"
+					android:strokeLineCap="round"
+					android:strokeLineJoin="round"
+					android:pathData="M 4.5,39.343 L 24.0,19.843 L 43.5,39.343 L 4.5,39.343 L 4.5,39.343"/>
+				<path
+					android:strokeColor="@color/icon_color"
+					android:strokeWidth="1.2"
+					android:strokeLineCap="round"
+					android:strokeLineJoin="round"
+					android:pathData="M 13.4387,19.2182 A 10.5613,10.5613 0.0 1,0 34.5613,19.2182 A 10.5613,10.5613 0.0 1,0 13.438700000000004,19.2182"/>
+			</vector>
+		</inset>
+	</foreground>
 </adaptive-icon>
