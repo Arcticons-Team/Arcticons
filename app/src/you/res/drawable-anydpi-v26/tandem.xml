@@ -1,30 +1,30 @@
 <adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
-    <background android:drawable="@color/icon_background_color" />
-        <foreground>
-            <inset android:inset="25%">
-            <vector
-                android:width="48dp"
-                android:height="48dp"
-                android:viewportWidth="48"
-                android:viewportHeight="48">
-                <path
-                   android:strokeColor="@color/icon_color"
-                   android:strokeWidth="1.2"
-                   android:strokeLineCap="round"
-                   android:strokeLineJoin="round"
-                   android:pathData="M 31.3125,11.8125 L 43.5,11.8125 L 43.5,11.8125 L 43.5,24.0 A 12.1875,12.1875 0.0 0,1 31.3125,36.1875 L 31.3125,36.1875 A 12.1875,12.1875 0.0 0,1 19.125,24.0 L 19.125,24.0 A 12.1875,12.1875 0.0 0,1 31.3125,11.8125"/>
-                <group
-                   android:rotation="-180"
-                   android:translateX="33.375"
-                   android:translateY="48">
-                <path
-                   android:strokeColor="@color/icon_color"
-                   android:strokeWidth="1.2"
-                   android:strokeLineCap="round"
-                   android:strokeLineJoin="round"
-                   android:pathData="M 16.6875,11.8125 L 28.875,11.8125 L 28.875,11.8125 L 28.875,24.0 A 12.1875,12.1875 0.0 0,1 16.6875,36.1875 L 16.6875,36.1875 A 12.1875,12.1875 0.0 0,1 4.5,24.0 L 4.5,24.0 A 12.1875,12.1875 0.0 0,1 16.6875,11.8125"/>
-                </group>
-            </vector>
-        </inset>
-    </foreground>
+	<background android:drawable="@color/icon_background_color" />
+	<foreground>
+		<inset android:inset="25%">
+			<vector
+				android:width="48dp"
+				android:height="48dp"
+				android:viewportWidth="48"
+				android:viewportHeight="48">
+				<path
+					android:strokeColor="@color/icon_color"
+					android:strokeWidth="1.2"
+					android:strokeLineCap="round"
+					android:strokeLineJoin="round"
+					android:pathData="M 31.3125,11.8125 L 43.5,11.8125 L 43.5,11.8125 L 43.5,24.0 A 12.1875,12.1875 0.0 0,1 31.3125,36.1875 L 31.3125,36.1875 A 12.1875,12.1875 0.0 0,1 19.125,24.0 L 19.125,24.0 A 12.1875,12.1875 0.0 0,1 31.3125,11.8125"/>
+				<group
+					android:rotation="-180"
+					android:translateX="33.375"
+					android:translateY="48">
+				<path
+					android:strokeColor="@color/icon_color"
+					android:strokeWidth="1.2"
+					android:strokeLineCap="round"
+					android:strokeLineJoin="round"
+					android:pathData="M 16.6875,11.8125 L 28.875,11.8125 L 28.875,11.8125 L 28.875,24.0 A 12.1875,12.1875 0.0 0,1 16.6875,36.1875 L 16.6875,36.1875 A 12.1875,12.1875 0.0 0,1 4.5,24.0 L 4.5,24.0 A 12.1875,12.1875 0.0 0,1 16.6875,11.8125"/>
+				</group>
+			</vector>
+		</inset>
+	</foreground>
 </adaptive-icon>
