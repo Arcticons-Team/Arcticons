@@ -10,6 +10,8 @@ import argparse
 import pathlib
 from lxml import etree
 import os
+from bs4 import BeautifulSoup
+from svgpathtools import svg2paths
 
 from shutil import move
 
@@ -54,20 +56,10 @@ REPLACE_FILL_BLACK = "fill:#000"
 REPLACE_FILL_BLACK_ALT = '''fill="#000"'''
 
 
-#helper sort xml.sh
-def natural_sort_key(s: str, _nsre=re.compile('([0-9]+)')):
-    return [int(text) if text.isdigit() else text.lower()
-            for text in re.split(_nsre, s.as_posix())]
+##### Material You Icon Stuff #####
 
 #extractinfo for xmlicons (materialyou) from svg
 def svg_xml_exporter(dir:str,exportpath:str,icon_dir:str,mode:str):
-
-    from svgpathtools import svg2paths
-    import re
-    from bs4 import BeautifulSoup
-    import os
-    from shutil import copy2
-    import glob
 
     styles_pattern = re.compile(r'(?s)\..*?}', re.M)
     name_pattern = re.compile(r'\.(?P<Name>.+?)( ?{|,)', re.M)
@@ -77,7 +69,6 @@ def svg_xml_exporter(dir:str,exportpath:str,icon_dir:str,mode:str):
     strokeO_pattern = re.compile(r'stroke-opacity: ?(?P<StrokeO>\d?\.?\d*)', re.M)
     rotate_pattern = re.compile(r'translate\((?P<X>.+?) (?P<Y>.+?)\).*rotate\((?P<Rotate>.+?)\)', re.M)
     
-
     def extract_style_info(svg_file):
         all_style ={}
         with open(svg_file, "r") as f:
@@ -115,9 +106,6 @@ def svg_xml_exporter(dir:str,exportpath:str,icon_dir:str,mode:str):
 
     def svg_to_xml(svg_file, xml_file):
         all_style ={}
-        # Load the SVG file
-        #with open(svg_file, 'r') as file:
-        #    svg_content = file.read()
 
         # Extract the path data and style information from the SVG
         paths, attributes = svg2paths(svg_file)
@@ -125,14 +113,14 @@ def svg_xml_exporter(dir:str,exportpath:str,icon_dir:str,mode:str):
         
         # Start building the XML file
         xml = '<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">\n'
-        xml += '    <background android:drawable="@color/icon_background_color" />\n'
-        xml += '        <foreground>\n'
-        xml += '            <inset android:inset="25%">\n'
-        xml += '            <vector\n'
-        xml += '                android:width="48dp"\n'
-        xml += '                android:height="48dp"\n'
-        xml += '                android:viewportWidth="48"\n'
-        xml += '                android:viewportHeight="48">\n'
+        xml += '\t<background android:drawable="@color/icon_background_color" />\n'
+        xml += '\t<foreground>\n'
+        xml += '\t\t<inset android:inset="25%">\n'
+        xml += '\t\t\t<vector\n'
+        xml += '\t\t\t\tandroid:width="48dp"\n'
+        xml += '\t\t\t\tandroid:height="48dp"\n'
+        xml += '\t\t\t\tandroid:viewportWidth="48"\n'
+        xml += '\t\t\t\tandroid:viewportHeight="48">\n'
 
         # Add a path for each element in the SVG
         for path, attr in zip(paths, attributes):
@@ -175,51 +163,50 @@ def svg_xml_exporter(dir:str,exportpath:str,icon_dir:str,mode:str):
 
 
             if not rotate == None:
-                xml +='                <group\n'
-                xml += f'                   android:rotation="{rotate}"'
+                xml +='\t\t\t\t<group\n'
+                xml += f'\t\t\t\t\tandroid:rotation="{rotate}"'
                 if not transX == None:
-                    xml += f'\n                   android:translateX="{transX}"'
+                    xml += f'\n\t\t\t\t\tandroid:translateX="{transX}"'
                 if not transY == None:
-                    xml += f'\n                   android:translateY="{transY}">\n'
+                    xml += f'\n\t\t\t\t\tandroid:translateY="{transY}">\n'
                 else:
                     xml +='>\n'
             
-            xml += '                <path\n'
+            xml += '\t\t\t\t<path\n'
             if not (fill == 'none' or fill == None):
-                xml += f'                   android:fillColor="@color/icon_color"\n'
+                xml += f'\t\t\t\t\tandroid:fillColor="@color/icon_color"\n'
                 if fill_opacity == None:
                     fillO_match = re.search(fillO_pattern, str(attr))
                     if fillO_match:
                         fill_opacity = fillO_match.group('FillO')
                 if not (fill_opacity == None):
-                    xml += f'                   android:fillAlpha="{fill_opacity}"\n'
+                    xml += f'\t\t\t\t\tandroid:fillAlpha="{fill_opacity}"\n'
             if not (stroke == 'none' or stroke == None):    
-                xml += f'                   android:strokeColor="@color/icon_color"\n'
+                xml += f'\t\t\t\t\tandroid:strokeColor="@color/icon_color"\n'
                 if stroke_opacity == None:
                     strokeO_match = re.search(strokeO_pattern, str(attr))
                     if strokeO_match:
                         stroke_opacity = strokeO_match.group('StrokeO')
                 if not (stroke_opacity == None):
-                    xml += f'                   android:strokeAlpha="{stroke_opacity}"\n'
-            xml += f'                   android:strokeWidth="1.2"\n'
-            xml +=  '                   android:strokeLineCap="round"\n'
-            xml +=  '                   android:strokeLineJoin="round"\n'
-            xml +=  '                   android:pathData="'
+                    xml += f'\t\t\t\t\tandroid:strokeAlpha="{stroke_opacity}"\n'
+            xml += f'\t\t\t\t\tandroid:strokeWidth="1.2"\n'
+            xml +=  '\t\t\t\t\tandroid:strokeLineCap="round"\n'
+            xml +=  '\t\t\t\t\tandroid:strokeLineJoin="round"\n'
+            xml +=  '\t\t\t\t\tandroid:pathData="'
             xml += path.d()
             xml += '"/>\n'
             if not rotate == None:
-                xml +='                </group>\n'
+                xml +='\t\t\t\t</group>\n'
 
         # Close the XML file
-        xml += '            </vector>\n'
-        xml += '        </inset>\n'
-        xml += '    </foreground>\n'
+        xml += '\t\t\t</vector>\n'
+        xml += '\t\t</inset>\n'
+        xml += '\t</foreground>\n'
         xml += '</adaptive-icon>\n'
 
         # Write the XML to the output file
         with open(xml_file, 'w') as file:
             file.write(xml)
-
     
     for file_path in glob.glob(f"{dir}/*.svg"):
         file= os.path.basename(file_path)
@@ -229,7 +216,10 @@ def svg_xml_exporter(dir:str,exportpath:str,icon_dir:str,mode:str):
         print(f'Working on {file} {mode}')
         svg_to_xml(file_path, exportpath +'/' + name +'.xml')
 
-#xml.sh
+
+##### Iconpack stuff #####
+
+# Create differnt xml files and move them to needed place
 def convert_svg_files(iconsdir: str, xmldir: str, valuesdir:str, assetsdir:str,appfilterpath:str) -> None:
     icpack_pre = '\t    <item>'
     icpack_suf = '</item>\n'
@@ -265,38 +255,11 @@ def convert_svg_files(iconsdir: str, xmldir: str, valuesdir:str, assetsdir:str,a
     copy2(appfilterpath, assetsdir)
     copy2(appfilterpath, xmldir)
 
-#Change Color of SVG based on rules
-def svg_colors(dir:str,stroke:str,fill:str,stroke_alt:str,fill_alt:str,replace_stroke:str,replace_fill:str,replace_stroke_alt:str,replace_fill_alt:str)  -> None:
-    for x in glob.glob(f"{dir}/*.svg"):
-        with open(x, 'r') as fp:
-            content = fp.read()
-       
-        content = re.sub(stroke, replace_stroke, content, flags=re.IGNORECASE)
-        content = re.sub(fill, replace_fill, content, flags=re.IGNORECASE)
-        content = re.sub(stroke_alt, replace_stroke_alt, content, flags=re.IGNORECASE)
-        content = re.sub(fill_alt, replace_fill_alt, content, flags=re.IGNORECASE)
-    
-        with open(x, 'w') as fp:
-            fp.write(content)
+#helper sort xml creation
+def natural_sort_key(s: str, _nsre=re.compile('([0-9]+)')):
+    return [int(text) if text.isdigit() else text.lower()
+            for text in re.split(_nsre, s.as_posix())]
 
-#Create PNG of the SVG and Copy to destination
-def create_icons(sizes: List[int], dir:str ,export_dir: str, icon_dir: str , mode:str) -> None:
-    for file_path in glob.glob(f"{dir}/*.svg"):
-        file= os.path.basename(file_path)
-        name = file[:-4]
-        copy2(file_path, f'{icon_dir}/{file}')
-        print(f'Working on {file} {mode}')
-        for size in sizes:
-            subprocess.run(['inkscape', '--export-filename='+f'{name}'+'.png',
-                            f'--export-width={size}', f'--export-height={size}', file_path])
-            if size == 256:
-                copy2(f'{name}.png', export_dir)
-                Path(f'{name}.png').unlink()
-
-
-def remove_svg(dir:str):
-    for file_path in glob.glob(f"{dir}/*.svg"):
-        os.remove(file_path)
 
 def create_new_drawables(svgdir: str,newdrawables:str) -> None:
     drawable_pre = '\t<item drawable="'
@@ -434,81 +397,211 @@ def sortxml(path:str):
 
     # Add Spaces between entries
     xml_str = etree.tostring(root,encoding = 'utf-8', pretty_print=True)
-    xml_str_line = add_newline_before_occurrences(xml_str.decode(),"  <!--")
+    xml_str_line = add_newline_before_occurrences(xml_str.decode(),r'  <!--|</res')
+    xml_str_line = add_tab(xml_str_line,r"..(<!|<i)")
+
 
     #Write sorted xml to file
     with open (path,'w', encoding='utf-8') as f:
         f.write(xml_str_line)
 
+def add_tab(string, pattern):
+    return re.sub(pattern, r"\t\g<1>", string)
+
 def add_newline_before_occurrences(string, pattern):
     return re.sub(pattern, r"\n\g<0>", string)
 
-def find_non_white_svgs(dir: str):
-    non_white_svgs = {}
+
+##### Legacy Arcticons #####
+
+#Change Color of SVG based on rules
+def svg_colors(dir:str,stroke:str,fill:str,stroke_alt:str,fill_alt:str,replace_stroke:str,replace_fill:str,replace_stroke_alt:str,replace_fill_alt:str)  -> None:
+    for x in glob.glob(f"{dir}/*.svg"):
+        with open(x, 'r') as fp:
+            content = fp.read()
+       
+        content = re.sub(stroke, replace_stroke, content, flags=re.IGNORECASE)
+        content = re.sub(fill, replace_fill, content, flags=re.IGNORECASE)
+        content = re.sub(stroke_alt, replace_stroke_alt, content, flags=re.IGNORECASE)
+        content = re.sub(fill_alt, replace_fill_alt, content, flags=re.IGNORECASE)
+    
+        with open(x, 'w') as fp:
+            fp.write(content)
+
+#Create PNG of the SVG and Copy to destination
+def create_icons(sizes: List[int], dir:str ,export_dir: str, icon_dir: str , mode:str) -> None:
+    for file_path in glob.glob(f"{dir}/*.svg"):
+        file= os.path.basename(file_path)
+        name = file[:-4]
+        copy2(file_path, f'{icon_dir}/{file}')
+        print(f'Working on {file} {mode}')
+        for size in sizes:
+            subprocess.run(['inkscape', '--export-filename='+f'{name}'+'.png',
+                            f'--export-width={size}', f'--export-height={size}', file_path])
+            if size == 256:
+                copy2(f'{name}.png', export_dir)
+                Path(f'{name}.png').unlink()
+
+
+def remove_svg(dir:str):
+    for file_path in glob.glob(f"{dir}/*.svg"):
+        os.remove(file_path)
+
+###### Checks ######
+
+# Check Icons
+def checkSVG(dir: str):
+    strokeattr = {}
     for file_path in glob.glob(f"{dir}/*.svg"):
         file= os.path.basename(file_path)
         name = file[:-4]
         with open(file_path, 'r', encoding='utf-8') as fp:
             content = fp.read()
+            #check colors regex
             stroke_colors = re.findall(r'stroke(?:=\"|:)(?:rgb[^a]|#).*?(?=[\"; ])', content)
             fill_colors = re.findall(r'fill(?:=\"|:)(?:rgb[^a]|#).*?(?=[\"; ])', content)
             stroke_opacities = re.findall(r'stroke-opacity(?:=\"|:).*?(?=[\"; ])', content)
             fill_opacities = re.findall(r'fill-opacity(?:=\"|:).*?(?=[\"; ])', content)
             stroke_rgbas = re.findall(r'stroke(?:=\"|:)rgba.*?(?=[\"; ])', content)
             fill_rgbas = re.findall(r'fill(?:=\"|:)rgba.*?(?=[\"; ])', content)
+
+            #Other Attributes regex
+            strokes = re.findall(r'stroke-width(?:=\"|:).*?(?=[\"; ])', content)
+            linecaps = re.findall(r"stroke-linecap(?:=\"|:).*?(?=[\";}])",content)
+            linejoins = re.findall(r"stroke-linejoin(?:=\"|:).*?(?=[\";}])",content)
             
+            #colors
             for stroke_color in stroke_colors:
                 if stroke_color not in ['stroke:#ffffff', 'stroke:#fff', 'stroke:#FFFFFF', 'stroke="#fff', 'stroke="#ffffff', 'stroke="#FFFFFF', 'stroke="white', 'stroke:rgb(255,255,255)', 'stroke="rgb(255,255,255)']:
-                    if file in non_white_svgs:
-                        non_white_svgs[file] += [stroke_color]
-                    else: non_white_svgs[file] = [stroke_color]
+                    if file in strokeattr:
+                        strokeattr[file] += [stroke_color]
+                    else: strokeattr[file] = [stroke_color]
             for fill_color in fill_colors:
                 if fill_color not in ['fill:#ffffff', 'fill:#fff', 'fill:#FFFFFF', 'fill="#ffffff', 'fill="#fff', 'fill="#FFFFFF', 'fill="white', 'fill:rgb(255,255,255)', 'fill="rgb(255,255,255)']:
-                    if file in non_white_svgs:
-                        non_white_svgs[file] += [fill_color]
-                    else: non_white_svgs[file] = [fill_color]
+                    if file in strokeattr:
+                        strokeattr[file] += [fill_color]
+                    else: strokeattr[file] = [fill_color]
             for stroke_opacity in stroke_opacities:
                 if stroke_opacity not in ['stroke-opacity="0', 'stroke-opacity="0%', 'stroke-opacity="1', 'stroke-opacity="100%','stroke-opacity:1','stroke-opacity:0'] and not re.findall(r'stroke-opacity[=:]\"?[01]\.0+$',stroke_opacity):
-                    if file in non_white_svgs:
-                        non_white_svgs[file] += [stroke_opacity]
-                    else: non_white_svgs[file] = [stroke_opacity]
+                    if file in strokeattr:
+                        strokeattr[file] += [stroke_opacity]
+                    else: strokeattr[file] = [stroke_opacity]
             for fill_opacity in fill_opacities:
                 if fill_opacity not in ['fill-opacity="0', 'fill-opacity="0%', 'fill-opacity="1', 'fill-opacity="100%','fill-opacity:0','fill-opacity:1'] and not re.findall(r'fill-opacity[=:]\"?[01]\.0+$',fill_opacity):
-                    if file in non_white_svgs:
-                        non_white_svgs[file] += [fill_opacity]
-                    else: non_white_svgs[file] = [fill_opacity]
+                    if file in strokeattr:
+                        strokeattr[file] += [fill_opacity]
+                    else: strokeattr[file] = [fill_opacity]
             for stroke_rgba in stroke_rgbas:
                 stroke_rgba_color, stroke_rgba_opacity = stroke_rgba.rsplit(',',1)
                 if stroke_rgba_color not in ['stroke:rgba(255,255,255', 'stroke="rgba(255,255,255'] or float(stroke_rgba_opacity[:-1]) not in [0.0, 1.0]:
-                    if file in non_white_svgs:
-                        non_white_svgs[file] += [stroke_rgba]
-                    else: non_white_svgs[file] = [stroke_rgba]
+                    if file in strokeattr:
+                        strokeattr[file] += [stroke_rgba]
+                    else: strokeattr[file] = [stroke_rgba]
             for fill_rgba in fill_rgbas:
                 fill_rgba_color, fill_rgba_opacity = fill_rgba.rsplit(',',1)
                 if fill_rgba_color not in ['fill:rgba(255,255,255', 'fill="rgba(255,255,255'] or float(fill_rgba_opacity[:-1]) not in [0.0, 1.0]:
-                    if file in non_white_svgs:
-                        non_white_svgs[file] += [fill_rgba]
-                    else: non_white_svgs[file] = [fill_rgba]
+                    if file in strokeattr:
+                        strokeattr[file] += [fill_rgba]
+                    else: strokeattr[file] = [fill_rgba]
+            #Other Attributes
+            for stroke in strokes:
+                if stroke not in ['stroke-width:1','stroke-width:1px','stroke-width:0px','stroke-width:0']:
+                    if file in strokeattr:
+                        strokeattr[file] += [stroke]
+                    else: strokeattr[file] = [stroke]
+            for linecap in linecaps:
+                if linecap not in ['stroke-linecap:round','stroke-linecap="round','stroke-linecap: round']:
+                    if file in strokeattr:
+                        strokeattr[file] += [linecap]
+                    else: strokeattr[file] = [linecap]
+            for linejoin in linejoins:
+                if linejoin not in ['stroke-linejoin:round','stroke-linejoin="round','stroke-linejoin: round']:
+                    if file in strokeattr:
+                        strokeattr[file] += [linejoin]
+                    else: strokeattr[file] = [linejoin]   
 
-    if len(non_white_svgs) > 0:
-        print('______ Found SVG with colors other then white ______\n')
-        for svg in non_white_svgs:
+    if len(strokeattr) > 0:
+        print('\n\n______ Found SVG with wrong line attributtes ______\n')
+        for svg in strokeattr:
             print(f'\n{svg}:')
-            for colors in non_white_svgs[svg]:
-                print(f'\t {colors}')
+            for attr in strokeattr[svg]:
+                print(f'\t {attr}')
 
-        print("\n____ Please check these first before preceeding ____\n")
+        print("\n\n____ Please check these first before proceeding ____\n\n")
+        return True
+    return False
+
+# Check appfilter for duplicate component entries
+def duplicateEntry(path:str):
+    # Parse the XML file
+    parser = etree.XMLParser(remove_blank_text=True)
+    tree = etree.parse(path, parser)
+    root = tree.getroot()
+
+    # Create a list to store the component attribute values
+    components = []
+
+    # Iterate over the item elements in the XML file
+    for item in root.findall('.//item'):
+        if 'prefix' not in item:
+            component = item.get('component')  # Get the component attribute value
+            components.append(component)  # Add the component value to the list
+
+    # Check for duplicates in the list
+    duplicates = []  # Create a list to store the duplicates
+    for component in components:
+        count = components.count(component)  # Count the number of occurrences of the component
+        if count > 1 and component not in duplicates:  # If the count is greater than 1 and the component is not already in the duplicates list
+            duplicates.append(component)  # Add the component to the duplicates list
+
+    if len(duplicates) > 0:
+        print('\n\n______ Found duplicate appfilter entries ______\n\n')
+        for item in duplicates:
+            print(f'\t {item}')
+        print("\n\n____ Please check these first before proceeding ____\n\n")
+        return True
+    return False
+
+
+# check appfilter entries for non existing drawables
+def missingDrawable(appfilterpath:str,whitedir:str,otherdir:str):
+    # Parse the XML file
+    parser = etree.XMLParser(remove_blank_text=True)
+    tree = etree.parse(appfilterpath, parser)
+    root = tree.getroot()
+
+    # Create a list to store missing drawable appfilter info
+    drawables = []
+
+    # Iterate over the item elements in the XML file
+    for item in root.findall('.//item'):
+        if 'prefix' not in item:
+            drawable = item.get('drawable')  # Get the drawable attribute value
+            # Check if the drawable resource file with the .svg extension exists in the folder
+            if not os.path.exists(os.path.join(whitedir, f'{drawable}.svg')):
+                if not os.path.exists(os.path.join(otherdir, f'{drawable}.svg')):
+                    drawables.append(item)  # Add the item value to the list
+
+    if len(drawables) > 0:
+        print('\n\n______ Found non existent drawables ______\n')
+        print('Possible causes are typos or completly different naming of the icon\n\n')
+        for item in drawables:
+            toprint = etree.tostring(item,encoding='unicode',method='xml')
+            print(f'{toprint}')
+        print("\n\n____ Please check these first before proceeding ____\n\n")
         return True
     return False
 
 
 
-
-
-
-
+###### Main #####
+# runs everything in necessary order
 def main():
-    if find_non_white_svgs(SVG_DIR):
+    if checkSVG(SVG_DIR):
+        return
+    if missingDrawable(APPFILTER_PATH,WHITE_DIR,SVG_DIR):
+        return
+    if duplicateEntry(APPFILTER_PATH):
         return
     create_new_drawables(SVG_DIR,NEWDRAWABLE_PATH)
     svg_colors(SVG_DIR,ORIGINAL_STROKE,ORIGINAL_FILL,ORIGINAL_STROKE_ALT,ORIGINAL_FILL_ALT,REPLACE_STROKE_WHITE,REPLACE_FILL_WHITE,REPLACE_STROKE_WHITE_ALT,REPLACE_FILL_WHITE_ALT)
@@ -520,7 +613,6 @@ def main():
     sortxml(APPFILTER_PATH)
     convert_svg_files(WHITE_DIR, RES_XML_PATH,VALUE_PATH,ASSETS_PATH,APPFILTER_PATH) 
     merge_new_drawables(DRAWABLE_PATH,NEWDRAWABLE_PATH,ASSETS_PATH)
-
 
 if __name__ == "__main__":
 	main()
