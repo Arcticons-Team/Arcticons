@@ -18,8 +18,9 @@ components = []
 
 # Iterate over the item elements in the XML file
 for item in root.findall('.//item'):
-    component = item.get('component')  # Get the component attribute value
-    components.append(component)  # Add the component value to the list
+    if 'prefix' not in item:
+        component = item.get('component')  # Get the component attribute value
+        components.append(component)  # Add the component value to the list
 
 # Check for duplicates in the list
 duplicates = []  # Create a list to store the duplicates
@@ -40,3 +41,6 @@ xml_str = etree.tostring(new_root, pretty_print=True)
 # Write the pretty-printed XML to the output file
 with open('found_duplicates.xml', 'w') as f:
     f.write(xml_str.decode())
+
+
+
