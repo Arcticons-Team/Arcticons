@@ -33,41 +33,49 @@ set -euo pipefail
 style=${1:-white}
 line_weight=${2:-1.0}
 
-sizes="32 48 64 96 128 256 512"
+rm -r ./arcticons/ 2> /dev/null || true
 
-rm -r ./arcticons/*/** 2> /dev/null || true
+dest_root="./arcticons/scalable"
 
-for size in $sizes; do
-  factor=$(awk "BEGIN { print 48 / $size }")
-  dest_root="./arcticons/${size}x${size}"
+for line in $(cat mapping.txt); do
+  echo $line
+  src=$(echo "$line" | cut -d, -f1)
+  dests=( `echo "$line" | cut -d, -f2 | tr ':' ' '` )
+  dest=${dests[0]}
 
-  for line in $(cat mapping.txt); do
-    src=$(echo "$line" | cut -d, -f1)
-    dest=$(echo "$line" | cut -d, -f2)
+  mkdir -p "$dest_root/$(dirname "$dest")"
+  cp -v "../icons/$style/$src.svg" "$dest_root/$dest.svg" || continue
 
-    mkdir -p "$dest_root/$(dirname "$dest")"
-    cp -v "../icons/$style/$src.svg" "$dest_root/$dest.svg" || continue
+  grep -v 'stroke-width' "$dest_root/$dest.svg" > /dev/null && sed -i 's/\(stroke:[^;]\+\)/\1;stroke-width:1px/g' "$dest_root/$dest.svg"
+  awk -i inplace -F 'stroke-width:|px' "{ print \$1 \"stroke-width:\" (\$2 * $line_weight) \"px\" \$3; }" "$dest_root/$dest.svg"
 
-    grep -v 'stroke-width' "$dest_root/$dest.svg" > /dev/null && sed -i 's/\(stroke:[^;]\+\)/\1;stroke-width:1px/g' "$dest_root/$dest.svg"
-    awk -i inplace -F 'stroke-width:|px' "{ print \$1 \"stroke-width:\" (\$2 * $line_weight * $factor) \"px\" \$3; }" "$dest_root/$dest.svg"
-  done
-
-  rm "${dest_root}@2" 2> /dev/null || true
-  ln -s "${size}x${size}" "${dest_root}@2"
-  rm "${dest_root}@3" 2> /dev/null || true
-  ln -s "${size}x${size}" "${dest_root}@3"
+  if [ ${#dests[@]} -gt 1 ]; then
+    for i in $(seq 1 $((${#dests[@]}-1))); do
+      mkdir -p "$dest_root/$(dirname "${dests[$i]}")"
+      ln -vs "../${dests[0]}.svg" "$dest_root/${dests[$i]}.svg"
+    done
+  fi
 done
 
 if type inkscape; then
   for line in $(cat mapping.txt); do
+    echo $line
+    src=$(echo "$line" | cut -d, -f1)
+    dests=( `echo "$line" | cut -d, -f2 | tr ':' ' '` )
+    dest=${dests[0]}
     dest_root="./arcticons/symbolic"
-    src_root="./arcticons/48x48"
-    dest=$(echo "$line" | cut -d, -f2)
+    src_root="./arcticons/scalable"
 
     mkdir -p "$dest_root/$(dirname "$dest")"
-
     inkscape --actions="select-all;object-stroke-to-path" --export-filename="$dest_root/$dest-symbolic.svg" "$src_root/$dest.svg" || true
     rm $src_root/$dest*.0.svg || true
+
+    if [ ${#dests[@]} -gt 1 ]; then
+      for i in $(seq 1 $((${#dests[@]}-1))); do
+        mkdir -p "$dest_root/$(dirname "${dests[$i]}")"
+        ln -vs "../${dests[0]}-symbolic.svg" "$dest_root/${dests[$i]}-symbolic.svg"
+      done
+    fi
   done
 else echo "Inkscape not found, skipping creating symbolic icons"
 fi
