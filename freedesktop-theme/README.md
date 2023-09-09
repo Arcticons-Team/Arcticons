@@ -26,7 +26,9 @@ In KDE, you can select the icon theme in the System Settings > Icons.
 
 ## Mapping the icons
 
-The `mappings.txt` contains the mappings of the arcticons in the format `<Arcticon icon name>,<Freedesktop icon path>`
+The `mappings.txt` contains the mappings of the arcticons in the format `<Arcticon icon name>,<Freedesktop icon path>:<Freedesktop icon path>`
+
+When one Arcticons icon is used for multiple icons in the freedesktop theme, the paths are separated by a `:`.
 
 To contribute, you need to look the path of the priginal icons. Application icons are in `/usr/share/icons/hicolor/<icon size>/apps`, while system icons are covered by the other icon themes. (In GNOME, the default is Adwaita; For KDE Plasma, it's Breeze) The icons are either in the `<icon size>/<icon category>`, or in `<icon category>/<icon size>` subfolders.
 
