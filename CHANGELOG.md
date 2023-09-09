@@ -1,3 +1,9 @@
+### 7.1.6
+###### Released: Sep 9, 2023
+* 🎉 166 new and updated icons! (thanks Npnpatidar, Autinerd, Wwwwwwari, Mmaeusezahl, Crazy-Unicooorn, Ojppe, Dunexus, Dgcampbe, Joelchrono12, Kaiserdragon2, He-Ro, ThatOneCalculator, Zullinsky, Stephenmetcalfe-prodigy)
+* ✨ Updates, updates & updates for existing  apps (including Discord and ChatGPT :)
+* 🔥 7160 icons in total!
+
 ### 7.0.0
 ###### Released: Aug 18, 2023
 * 🎉 360 new and updated icons! (thanks Petlyl, NablaMetal, Crazy-Unicooorn, Dgcampbe, NobodyForNothing, Mmaeusezahl, Tsuicaa, NicoWeio, Mdapa323, RedAuburn, Dioxias, PixelRuzt, DelayedPrototype, Kport1, kaiserdragon2, Wwwwwwari, KR4U7H3R, Basings, Orbitaldr0p, AsankaSovis, Yetanother-user)
