@@ -58,7 +58,7 @@ component_pattern = re.compile('ComponentInfo{(?P<ComponentInfo>.+)}')
 package_name_pattern = re.compile(r'(?P<PackageName>[\w\.]+)/')
 
 def parseExisting():
-	requestBlockQuery = re.compile(r'<!-- (?P<Name>.+) -->\s<item component=\"ComponentInfo{(?P<ComponentInfo>.+)}\" drawable=\"(?P<drawable>.+|)\" />\s(https:\/\/play.google.com\/store\/apps\/details\?id=.+\shttps:\/\/f-droid\.org\/en\/packages\/.+\s)Requested (?P<count>\d+) times\s?(Last requested (?P<requestDate>\d+\.?\d+?))?',re.M)
+	requestBlockQuery = re.compile(r'<!-- (?P<Name>.+) -->\s<item component=\"ComponentInfo{(?P<ComponentInfo>.+)}\" drawable=\"(?P<drawable>.+|)\"(/>| />)\s(https:\/\/play.google.com\/store\/apps\/details\?id=.+\shttps:\/\/f-droid\.org\/en\/packages\/.+\s)Requested (?P<count>\d+) times\s?(Last requested (?P<requestDate>\d+\.?\d+?))?',re.M)
 	if len(argv) < 4:
 		return
 	with open(argv[3], 'r', encoding="utf8") as existingFile:
@@ -198,9 +198,9 @@ def moveNoZip():
 def separateupdatable():
     objectBlock = """
 <!-- {name} -->
-<item component="ComponentInfo{{{component}}}" drawable="{appname}" />
+<item component="ComponentInfo{{{component}}}" drawable="{appname}"/>
 https://play.google.com/store/apps/details?id={packageName}
-https://f-droid.org/en/packages/{packageNames}/
+https://f-droid.org/en/packages/{packageName}/
 Requested {count} times
 Last requested {reqDate}
     """
@@ -210,8 +210,8 @@ Last requested {reqDate}
             try:
                 #print(componentInfo)
                 #print(values['Name'])
-                componentInfo = componentInfo[:componentInfo.index('/')]
-                if appfilter.find(componentInfo) == -1 and ''.join(newApps).find(componentInfo) == -1:
+                PackageName = componentInfo[:componentInfo.index('/')]
+                if appfilter.find(componentInfo) == -1 and ''.join(newApps).find(componentInfo) == -1 and appfilter.find(PackageName) == -1:
                     apprename = re.sub(r"[^a-zA-Z0-9 ]+", r"", values["Name"])
                     apprename = re.sub(r"[ ]+",r"_",apprename)
                     newApps.append(objectBlock.format(
@@ -219,11 +219,10 @@ Last requested {reqDate}
                         component = values["ComponentInfo"],
                         appname = values["drawable"],
                         packageName = values["ComponentInfo"][0:values["ComponentInfo"].index('/')],
-                        packageNames = values["ComponentInfo"][0:values["ComponentInfo"].index('/')],
                         count = values["count"],
                         reqDate = values["requestDate"],
                     ))
-                elif appfilter.find(componentInfo) != -1 and ''.join(updatable).find(componentInfo) == -1:
+                elif appfilter.find(PackageName) != -1 and ''.join(updatable).find(componentInfo) == -1 and appfilter.find(componentInfo) == -1:
                     updatable.append('<!-- '+ values['Name'] +' -->' + '\n' + '<item component="ComponentInfo{' + values['ComponentInfo'] +'}" drawable="'+ values['drawable']+'" />' + '\n\n')
             except: print('Error',componentInfo)
 
