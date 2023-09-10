@@ -212,8 +212,8 @@ Last requested {reqDate}
                 #print(values['Name'])
                 PackageName = componentInfo[:componentInfo.index('/')]
                 if appfilter.find(componentInfo) == -1 and ''.join(newApps).find(componentInfo) == -1 and appfilter.find(PackageName) == -1:
-                    apprename = re.sub(r"[^a-zA-Z0-9 ]+", r"", values["Name"])
-                    apprename = re.sub(r"[ ]+",r"_",apprename)
+                    #apprename = re.sub(r"[^a-zA-Z0-9 ]+", r"", values["Name"])
+                    #apprename = re.sub(r"[ ]+",r"_",apprename)
                     newApps.append(objectBlock.format(
                         name = values["Name"],
                         component = values["ComponentInfo"],
