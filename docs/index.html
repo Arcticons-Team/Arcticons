@@ -1,75 +1,186 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
-    <title>Arcticons</title>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="A minimalist material design inspired icon pack for Android" />
-    <link rel="icon" type="image/png" href="icon.png" />
-    <link rel="stylesheet" href="style.css" />
-    <script src="script.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="description" content="A monotone line-based icon pack for Android"> 
+    <meta property="og:title" content="Arcticons - icon pack" />
+    <meta property="og:url" content="http://arcticons.com/" />
+    <meta property="og:description" content="A monotone line-based icon pack for Android">
+    <meta property="og:image" content="https://arcticons.onnno.nl/img/arcticons/arcticonspreview.gif">
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="nl" />
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Arcticons - icon pack">
+    <meta name="twitter:image" content="https://arcticons.onnno.nl/img/arcticons/arcticonspreview.gif">
+    <meta name="twitter:description" content="A monotone line-based icon pack for Android">
+    <link rel="me" href="https://fosstodon.org/@donno">
+
+    <title>Arcticons - icon pack</title>
+
+    <link rel="icon" type="image/png" href="img/arcticons/icon.png" />
+    <link rel="stylesheet" href="css/arcticons.css" />
+    <script src="js/arcticonssearch.js"></script>
   </head>
   <body>
     <header>
+      <img src="img/arcticons/icon.png">
       <h1>Arcticons</h1>
-      <p> A monotone line-based icon pack for Android.</p>
-      <ul class="actions">
-        <li class="button d"><a href="#download">Download</a></li>
-        <li class="button r"><a href="#content">Read more</a></li>
+      <p style="color: #fff; text-align: center;"> A monotone line-based icon pack for Android.</p>
+      <ul>
+        <button onclick="window.location.href='#dark';">Dark</button>
+        <button onclick="window.location.href='#light';">Light</button>
+        <button onclick="window.location.href='#you';">You</button>
       </ul>
     </header>
-    <section id="abstract" role="doc-abstract" aria-label="Abstract">
-    <div class="content" id="content">
-      <p>Arcticons (Arctic icons) is a line-based icon pack forked from Frost but rebuild with consistent sizing and adjustments specifically for lines in mind. Arcticons is FOSS and provides mostly icons for open-source apps on F-Droid (but there are many other apps in this pack too). The design is simple and clean with minimal lines that give you a nice see-through effect.</p>
-    </div>
-    </section>
-    <section id="download">
-      <h2>Download</h2>
-      <p>Two versions for the dark- and lightmode user, available to download from F-Droid, Google Play & Github!</p>
-      <div class="content">
-        <div id="arcticonsdark">
-          <img src="dark.jpg" alt="Screenshot of Arcticons dark in use." />
-          <p><b>Arcticons Dark</b></p>
-          <a href="https://f-droid.org/en/packages/com.donnnno.arcticons/"><img src="fdroid.png" /></a>
-          <a href="https://play.google.com/store/apps/details?id=com.donnnno.arcticons"><img src="googleplay.png" /></a>
-          <a href="https://github.com/Donnnno/Arcticons/releases"><img src="github.png" /></a>
-        </div>
-        <div id="arcticonslight">
-          <img src="light.jpg" alt="Screenshot of Arcticons light in use." />
-          <p><b>Arcticons Light</b></p>
-          <a href="https://f-droid.org/en/packages/com.donnnno.arcticons.light/"><img src="fdroid.png" /></a>
-          <a href="https://play.google.com/store/apps/details?id=com.donnnno.arcticons.light"><img src="googleplay.png" /></a>
-          <a href="https://github.com/Donnnno/Arcticons/releases"><img src="github.png" /></a>
-        </div>
-      </div>
-    </section>
-    <section id="contribute">
 
-      <h2>Contributing</h2>
-      <p>If you want to make the icons yourself, that would even be better! You can make use of the template files here. The only thing then left to do is making a pull request here.</p>
-    </div>
-    </section>
-    <section id="explorer">
-    <div class="content">
-      <h2>Search your icon</h2>
-      <div id="searchbox"><input type="search" id="search" /></div>
-      <div id="results" aria-live="assertive" aria-disabled="true">
-	<div class="tab" id="c"></div>
-	<div class="tab" id="mc"></div>
-      </div>
-      </div>
-    </section>
-    <section id="community">
-      <h2>Community versions</h2>
-      <p>Soon!</p>
-      <div class="content">
-        <div id="arcticonsblue">
-
-      </div>
-    </section>
-    <footer>
+    <hr class="inv2">
 
     <div class="content">
-      <p id="copyright">Website designed by <a href="https://onnno.nl">Onno van den Dungen</a> based on designs by <a href="https://gitlab.com/twilight1794">Giovanni Alfredo Garciliano Díaz</a> & <a href="https://html5up.net/fractal">Fractal theme</a> under <a href="https://creativecommons.org/licenses/by/3.0">CC-BY 3.0</a></p>
+      <div class="grid-content-3">
+        <div></div>
+        <div>
+          <p>With over <b>7000 icons</b>, Arcticons is one of the largest free & <a href="https://github.com/donnnno/arcticons/" style="color: blue;
+            ">open source</a> icon-packs available. Featuring consistent and elegant handcrafted icons, giving you a minimalistic clutter-free experience on your phone. <br>Powered by a <a href="https://github.com/Donnnno/Arcticons/graphs/contributors" style="color: blue;
+            ">community</a> of icon creators all around the world!</p>
+        </div>
+        <div></div>
       </div>
-    </footer>
+
+      <hr class="inv2">
+
+      <div id="dark" class="grid-content-right">
+        <div><img src="img/phone_dark.webp" class="phone" width="80%"></div>
+        <div class="align-left">
+          <div>
+            <h2><span style="font-weight: 400;">Arcticons</span> Dark</h2>
+            <p>The first flavor to release in the Arcticons collection.<br>A must have for your dark-themed setup. </p>
+          </div>
+          <ul>
+            <p>Get it on:</p>
+            <button class="dark" onclick="window.open('https://play.google.com/store/apps/details?id=com.donnnno.arcticons')">
+              <img src="img/play.svg">
+              Google Play
+            </button><hr class="inv">
+            <button class="dark" onclick="window.open('https://f-droid.org/packages/com.donnnno.arcticons.you/')">
+              <img src="img/fdroid.svg">
+              F-Droid
+            </button><hr class="inv">
+            <button class="dark" onclick="window.open('https://github.com/Donnnno/Arcticons/releases/')">
+              <img src="img/github.svg">
+              GitHub
+            </button>
+          </ul>
+        </div>  
+      </div>
+
+      <hr class="inv2">
+
+    </div>
+
+    <div class="contentdark">
+      <div class="content">
+        <hr class="inv2" style="  border: 6em solid #121212; margin-top: 0; margin-bottom: 0;">
+
+        <div id="light" class="grid-content-left">
+          <div class="align-right">
+            <div>
+              <h2 class="dark"><span style="font-weight: 400;">Arcticons</span> Light</h2>
+              <p class="dark">Light mode users, we didn't forget you! Light brings the excact same icons to you, but in black</p>
+            </div>
+          
+            <ul>
+              <p class="dark">Get it on:</p>
+              <button class="light" onclick="window.open('https://play.google.com/store/apps/details?id=com.donnnno.arcticons.light')">
+                <img src="img/play.svg">
+                Google Play
+              </button><hr class="inv">
+              <button class="light" onclick="window.open('https://f-droid.org/packages/com.donnnno.arcticons.light/')">
+                <img src="img/fdroid.svg">
+                F-Droid
+              </button><hr class="inv">
+              <button class="light" onclick="window.open('https://github.com/Donnnno/Arcticons/releases/')">
+                <img src="img/github.svg">
+                GitHub
+              </button>
+            </ul>
+          </div>  
+          <div><img src="img/phone_light.webp" width="80%" class="phone"></div>  
+
+          <hr class="inv2">
+        </div>
+      </div>
+
+    </div>
+
+    <hr class="inv2">
+
+    <div class="content">
+
+      <div id="you" class="grid-content-right">
+        <div><img src="img/phone_you.webp" class="phone" width="80%"></div>
+          <div class="align-left">
+            <div>
+              <h2><span style="font-weight: 400;">Arcticons</span> You</h2>
+              <p>The latest flavor in the Arcticons collection, adding Google's Material You to Arcticons. <br>It also changes automatically based on your light/dark theme!</p>
+            </div>
+
+            <ul>
+              <p>Get it on:</p>
+              <button class="dark" onclick="window.open('https://f-droid.org/packages/com.donnnno.arcticons.you/')">
+                <img src="img/fdroid.svg">
+                F-Droid
+              </button><hr class="inv">
+              <button class="dark" onclick="window.open('https://github.com/Donnnno/Arcticons/releases/')">
+                <img src="img/github.svg">
+                GitHub
+              </button>
+            </ul>
+          </div>  
+      </div>
+    
+      <hr class="inv2" style="margin-top: 12em; margin-bottom: 6;">
+
+      <div class="grid-content-3">
+        <div></div>
+        <div>
+          <h2 style="text-align: center;">Donate</h2>
+          <hr class="inv">
+          <p>Providing a free icon-pack for everyone can cost a lot of time and effort. So if you like our work, consider donating!</p>
+          <button class="dark" onclick="window.open('https://github.com/Donnnno/Arcticons/releases/')" style="justify-content: center; padding-left: 0px; margin-bottom: 10px;">
+            <img src="img/paypal.svg">
+            PayPal
+          </button>
+          <button class="dark" onclick="window.open('https://github.com/Donnnno/Arcticons/releases/')" style="justify-content: center; padding-left: 0px; margin-bottom: 10px;">
+            <img src="img/kofi.svg">
+            Ko-Fi
+          </button>
+          <button class="dark" onclick="window.open('https://github.com/Donnnno/Arcticons/releases/')"style="justify-content: center; padding-left: 0px; margin-bottom: 10px;">
+            <img src="img/liberapay.svg">
+            Liberapay
+          </button><br>
+          <hr class="inv2">
+          <a href="https://github.com/Donnnno/Arcticons/blob/main/Privacy_Policy.md">Privacy Policy</a> • <a href="https://creativecommons.org/licenses/by-sa/4.0/">License</a>
+
+        </div>
+        <div></div>
+      </div>
+
+      <hr class="inv2">
+
+      <section id="explorer">
+        <div class="content">
+          <h2 style="text-align: center;">Explore all icons!</h2>
+          <div id="searchbox"><input type="search" id="search" placeholder="Search" /></div>
+          <div id="results" aria-live="assertive" aria-disabled="true">
+            <div class="tab" id="c"></div>
+            <div class="tab" id="mc"></div>
+          </div>
+        </div>
+      </section>
+
+      <div><hr class="inv2"><p><span class="copyleft">&copy;</span><a href="https://www.onnno.nl/"> Onno van den Dungen</a> - <script>document.write(new Date().getFullYear())</script></p></div> 
+
+    </div>
   </body>
 </html>
