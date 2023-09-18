@@ -1,3 +1,8 @@
+### 7.2.6
+###### Released: Sep 18, 2023
+* 🎉 110 new and updated icons! (thanks Npnpatidar, Wwwwwwari, Mmaeusezahl, AsankaSovis)
+* 🔥 7269 icons in total!
+
 ### 7.1.6
 ###### Released: Sep 9, 2023
 * 🎉 166 new and updated icons! (thanks Npnpatidar, Autinerd, Wwwwwwari, Mmaeusezahl, Crazy-Unicooorn, Ojppe, Dunexus, Dgcampbe, Joelchrono12, Kaiserdragon2, He-Ro, ThatOneCalculator, Zullinsky, Stephenmetcalfe-prodigy)
