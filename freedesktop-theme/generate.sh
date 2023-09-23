@@ -80,6 +80,11 @@ if type inkscape; then
 else echo "Inkscape not found, skipping creating symbolic icons"
 fi
 
+folders=(8x8 16x16 16x16@2x 18x18 18x18@2x 22x22 22x22@2x 24x24 24x24@2x 32x32 32x32@2x 42x42 48x48 48x48@2x 64x64 64x64@2x 84x84 96x96 128x128)
+for folder in "${folders[@]}"; do
+  ln -sv scalable arcticons/$folder
+done
+
 cp index.theme arcticons/
 
 tar czf arcticons.tar.gz arcticons
