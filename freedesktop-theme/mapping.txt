@@ -1,4 +1,5 @@
 amongus,apps/steam_icon_1849900:apps/steam_icon_945360
+android,mimetypes/android-package-archive
 attestationdedeplacement,apps/kakoune
 battery,devices/battery
 bitwarden,apps/bitwarden
@@ -6,6 +7,7 @@ bluetooth,apps/bluetooth:devices/bluetooth
 browser,categories/applications-internet:categories/applications-network
 calculator,apps/org.gnome.Calculator
 camera,devices/camera-photo
+contacts,apps/org.gnome.Contacts
 cookie_clicker,apps/steam_icon_1454400
 crashontherun,apps/steam_icon_1378990:apps/steam_icon_731490
 cube_escape,apps/steam_icon_1292940:apps/steam_icon_909080
@@ -29,8 +31,8 @@ file,mimetypes/unknown:places/folder-documents
 firefox,apps/firefox:apps/install-firefox
 folder_alt_3,places/folder-open
 folder_book,places/folder-book:places/folder-library
-folder_cloud,places/folder-gdrive:places/folder-onedrive:places/folder-owncloud
-folder_desktop,places/desktop
+folder_cloud,places/folder-gdrive:places/folder-onedrive:places/folder-owncloud:places/folder-cloud
+folder_desktop,places/desktop:places/user-desktop
 folder_documents,places/folder-documents
 folder_download,places/folder-download
 folder_favourite,places/favorites
@@ -46,9 +48,9 @@ folder_photos,places/folder-image:places/folder-images:places/folder-picture:pla
 folder_search,places/folder-html:places/folder-saved-search
 folder_shared,places/folder-image-people:places/folder-public
 folder_sun,places/folder-activities
-folder,apps/nemo:apps/system-file-manager:places/folder:places/folder-black:places/folder-blue:places/folder-brown:places/folder-cyan:places/folder-green:places/folder-grey:places/folder-magenta:places/folder-stock:places/folder-violet:places/folder-yellow:system/index:system/org.kde.dolphin
+folder,apps/nemo:apps/system-file-manager:places/folder:places/folder-black:places/folder-blue:places/folder-brown:places/folder-cyan:places/folder-green:places/folder-grey:places/folder-magenta:places/folder-stock:places/folder-violet:places/folder-yellow:system/index:system/org.kde.dolphin:mimetypes/inode-directory
 galaxystore,apps/org.kde.discover:apps/plasmadiscover
-gallery,mimetypes/image-bmp:mimetypes/image-gif:mimetypes/image-ico:mimetypes/image-jpeg:mimetypes/image-jpeg2000:mimetypes/image-png:mimetypes/image-tiff:mimetypes/image-x-generic:mimetypes/image-x-portable-bitmap
+gallery,mimetypes/image-bmp:mimetypes/image-gif:mimetypes/image-ico:mimetypes/image-jpeg:mimetypes/image-jpeg2000:mimetypes/image-png:mimetypes/image-tiff:mimetypes/image-x-generic:mimetypes/image-x-portable-bitmap:apps/gthumb
 games,categories/applications-games:devices/input-gamepad:devices/input-gaming
 geometry_dash,apps/steam_icon_322170
 godot,apps/steam_icon_404790
@@ -68,8 +70,9 @@ letter_lowercase_square_b,apps/btop
 letter_lowercase_square_g,apps/steam_icon_4000
 libreofficeviewer,categories/applications-office
 limbo,apps/steam_icon_48000
+linksheet,emblems/emblem-symbolic-link
 lock,apps/plasmavault
-mediaplayer,categories/applications-multimedia
+mediaplayer,categories/applications-multimedia:apps/mpv
 microsoft,categories/applications-all
 microsoftteams,apps/teams
 minecraft,apps/steam_icon_1672970:apps/steam_icon_1928870
@@ -82,12 +85,12 @@ music,emblems/emblem-music
 nextcloud,apps/nextcloud
 no_mans_sky,apps/steam_icon_275850
 nuclear,apps/steam_icon_38410:apps/steam_icon_38420
-openttd,apps/steam_icon_1536610
+openttd,apps/steam_icon_1536610:apps/openttd
 organtrail,apps/steam_icon_233740
 papers_please,apps/steam_icon_239030
 plagueinc,apps/steam_icon_246620
 plants_vs_zombies,apps/steam_icon_1262240:apps/steam_icon_1922560:apps/steam_icon_3590
-print,actions/document-print:devices/cups:devices/cupsprinter:devices/printer
+print,actions/document-print:devices/cups:devices/cupsprinter:devices/printer:devices/printer-network
 qbittorrent_remote,apps/qbittorrent
 quakedroid,apps/steam_icon_2210:apps/steam_icon_2310:apps/steam_icon_2320:apps/steam_icon_282440
 radiodroid,status/audio-volume-high
@@ -95,11 +98,11 @@ rar,apps/ark
 remote_mouse,devices/input-mouse
 rocket_league_sideswipe,apps/steam_icon_252950
 schildichat,apps/schildichat-desktop
-settings,apps/ibus-engine:apps/ibus-setup:apps/org.gnome.Settings:apps/steam_icon_427520:apps/systemsettings:categories/applications-system
+settings,apps/ibus-engine:apps/ibus-setup:apps/org.gnome.Settings:apps/steam_icon_427520:apps/systemsettings:categories/applications-system:apps/preferences-system:apps/preferences-other
 sharetoclipboard,emblems/emblem-shared:places/folder-publicshare
 signal,apps/signal-desktop
 sim,devices/auth-sim
-simplenotes,apps/accessories-text-editor:apps/kwrite:mimetypes/application-application-rtf:mimetypes/application-application-sxw:mimetypes/application-msonenote:mimetypes/application-msword-template:mimetypes/text-x-adasrc:mimetypes/text-x-generic:mimetypes/text-x-vnd.abc:mimetypes/x-office-document
+simplenotes,apps/accessories-text-editor:apps/kwrite:mimetypes/application-application-rtf:mimetypes/application-application-sxw:mimetypes/application-msonenote:mimetypes/application-msword-template:mimetypes/text-x-adasrc:mimetypes/text-x-generic:mimetypes/text-x-vnd.abc:mimetypes/x-office-document:apps/org.gnome.gedit
 skyrim,apps/steam_icon_365720:apps/steam_icon_489830:apps/steam_icon_72850
 slack,apps/slack
 slay_the_spire,apps/steam_icon_646570
@@ -113,10 +116,9 @@ stumble_guys,apps/steam_icon_1677740
 superautopets,apps/steam_icon_1714040
 symbol_exclamation_mark,apps/ibus
 telegram,apps/telegram
-terminal,apps/org.gnome.Terminal:system/konsole
-termux,apps/utilities-terminal
+terminal,apps/org.gnome.Terminal:system/konsole:apps/utilities-terminal
 terraria,apps/steam_icon_105600
-thunderbird,apps/thunderbird
+thunderbird,apps/thunderbird:apps/org.mozilla.Thunderbird
 trashcan,places/user-trash:places/user-trash-full
 vector,apps/steam_icon_248970
 videocrop,devices/camera-video
@@ -125,4 +127,3 @@ vlc,apps/vlc:apps/vlc-kb:apps/vlc-xmas
 wifi,devices/network-wireless
 worldexplorers,apps/steam_icon_544730:apps/steam_icon_857680
 yubico_authenticator,apps/yubikey-personalization-gui
-linksheet,emblems/emblem-symbolic-link
