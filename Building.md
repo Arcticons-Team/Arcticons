@@ -7,6 +7,12 @@
 
         python preparerelease.py SVG_DIR APP_SRC_DIR ICONS_DIR
 
+        Example : 
+        
+        pip install -r .\other\scripts\requirements.txt
+
+        python .\other\scripts\preparerelease.py A:\GIT\Arcticons\other\xprateek A:\GIT\Arcticons\app\src A:\GIT\Arcticons\icons
+
 3. Change the `versionCode` and `versionName` in the `/app/build.gradle` file.
 4. Open the repo in Android Studio. It will take a while to sync/load everything for the first time.
 5. Plug your phone in (allow USB debugging), choose your build flavor and click the green play button to run it on your phone.
