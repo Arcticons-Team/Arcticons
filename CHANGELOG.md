@@ -1,3 +1,10 @@
+### 7.3.7
+###### Released: Oct 8, 2023
+* 🎉 118 new and updated icons! (thanks Petlyh, Wwwwwwari, AsankaSovis, Pgaskin, WJehee, Xprateek, Dgcampbe, Ojppe, VPS07, LunaShadowEmpress, Autinerd)
+* ✨ Updates to make sure lots of apps work again.
+* 📱 Dashboard update -> support more launchers.
+* 🔥 7378 icons in total!
+
 ### 7.2.6
 ###### Released: Sep 18, 2023
 * 🎉 110 new and updated icons! (thanks Npnpatidar, Wwwwwwari, Mmaeusezahl, AsankaSovis)
