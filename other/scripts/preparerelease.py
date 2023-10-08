@@ -63,9 +63,9 @@ def svg_xml_exporter(dir:str,exportpath:str,icon_dir:str,mode:str):
 
     styles_pattern = re.compile(r'(?s)\..*?}', re.M)
     name_pattern = re.compile(r'\.(?P<Name>.+?)( ?{|,)', re.M)
-    fill_pattern = re.compile(r'fill: ?(?P<Fill>.+?);', re.M)
+    fill_pattern = re.compile(r'''fill: ?(?P<Fill>.+?)[;']''', re.M)
     fillO_pattern = re.compile(r'fill-opacity: ?(?P<FillO>\d?\.?\d*)', re.M)
-    stroke_pattern = re.compile(r'stroke: ?(?P<Stroke>.+?);', re.M)
+    stroke_pattern = re.compile(r'''stroke: ?(?P<Stroke>.+?)[;']''', re.M)
     strokeO_pattern = re.compile(r'stroke-opacity: ?(?P<StrokeO>\d?\.?\d*)', re.M)
     rotate_pattern = re.compile(r'translate\((?P<X>.+?) (?P<Y>.+?)\).*rotate\((?P<Rotate>.+?)\)', re.M)
     
