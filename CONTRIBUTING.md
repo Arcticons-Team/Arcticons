@@ -14,7 +14,7 @@
    - Add them to the `appfilter.xml` in the **/other** folder with a code editor like VS Code (LF)
 5. Create a pull request and explain your changes.
 6. Give yourself an entry at the bottom of `app/src/main/res/xml/contributors.xml` to be included in the credits!
-7. If you're interested in doing some icon requests, take a look at our [requests.txt](https://github.com/Donnnno/Arcticons/blob/main/other/requests.txt) list! When you've completed a request, you can remove it from the list by editing it.
+7. If you're interested in doing some icon requests, take a look at our [requests.txt](https://github.com/Donnnno/Arcticons/blob/main/other/requests.txt) list! When you've completed a request, you **don't** need remove it from the list.
 
 ### Basic rules
 
