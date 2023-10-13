@@ -103,6 +103,28 @@ def svg_xml_exporter(dir:str,exportpath:str,icon_dir:str,mode:str):
                     all_style[data['Name']] = data
         #print(all_style)
         return all_style
+    
+    def group_remove(svgfile:str):
+        # Load the SVG file
+        tree = etree.parse(svgfile)
+        root = tree.getroot()
+
+        # Find all <g> elements
+        group_elements = root.findall(".//{http://www.w3.org/2000/svg}g")
+        # Iterate through each <g> element and add its attributes to every <path> element
+        if len(group_elements) > 0:
+            for group in group_elements:
+                for path in group.findall(".//{http://www.w3.org/2000/svg}path"):
+                    # Add all group attributes to the path
+                    for name, value in group.items():
+                        path.set(name, value)
+                    #add path after group
+                    group.addnext(path)
+                #remove group
+                group.getparent().remove(group)
+
+            # Save the modified SVG
+            tree.write(svgfile, encoding='utf-8', xml_declaration=False, pretty_print=False)
 
     def svg_to_xml(svg_file, xml_file):
         all_style ={}
@@ -214,6 +236,7 @@ def svg_xml_exporter(dir:str,exportpath:str,icon_dir:str,mode:str):
         #Don't copy svg to white dir because already done before 
         #copy2(file_path, f'{icon_dir}/{file}')
         print(f'Working on {file} {mode}')
+        group_remove(file_path)
         svg_to_xml(file_path, exportpath +'/' + name +'.xml')
 
 
