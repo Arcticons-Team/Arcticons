@@ -114,7 +114,8 @@ def svg_xml_exporter(dir:str,exportpath:str,icon_dir:str,mode:str):
         # Iterate through each <g> element and add its attributes to every <path> element
         if len(group_elements) > 0:
             for group in group_elements:
-                for path in group.findall(".//{http://www.w3.org/2000/svg}path"):
+                #for path in group.findall(".//{http://www.w3.org/2000/svg}path"):
+                for path in group:
                     # Add all group attributes to the path
                     for name, value in group.items():
                         path.set(name, value)
