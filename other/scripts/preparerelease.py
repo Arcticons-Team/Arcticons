@@ -475,12 +475,25 @@ def remove_svg(dir:str):
 
 # Check Icons
 def checkSVG(dir: str):
+
+    def replace_stroke(match):
+        strokestr = match.group("strokestr")
+        stroke_width = float(match.group("number"))
+        if stroke_width > 0.9 and stroke_width < 1.2:
+            return f'{strokestr}1'
+        elif stroke_width >= 0 and stroke_width < 0.3:
+            return f'{strokestr}0'
+        else:
+            return f'{strokestr}{stroke_width}'
+
     strokeattr = {}
     for file_path in glob.glob(f"{dir}/*.svg"):
         file= os.path.basename(file_path)
         name = file[:-4]
         with open(file_path, 'r', encoding='utf-8') as fp:
             content = fp.read()
+            content = re.sub(r'(?P<strokestr>stroke-width(?:="|: ?))(?P<number>\d*(?:.\d+)?)(?=[p"; }\/])', replace_stroke, content)
+
             #check colors regex
             stroke_colors = re.findall(r'stroke(?:=\"|:)(?:rgb[^a]|#).*?(?=[\"; ])', content)
             fill_colors = re.findall(r'fill(?:=\"|:)(?:rgb[^a]|#).*?(?=[\"; ])', content)
@@ -493,7 +506,9 @@ def checkSVG(dir: str):
             strokes = re.findall(r'stroke-width(?:=\"|:).*?(?=[\"; ])', content)
             linecaps = re.findall(r"stroke-linecap(?:=\"|:).*?(?=[\";}])",content)
             linejoins = re.findall(r"stroke-linejoin(?:=\"|:).*?(?=[\";}])",content)
-            
+            # Write the updated content back to the file
+            with open(file_path, 'w', encoding='utf-8') as output_file:
+                output_file.write(content)
             #colors
             for stroke_color in stroke_colors:
                 if stroke_color not in ['stroke:#ffffff', 'stroke:#fff', 'stroke:#FFFFFF', 'stroke="#fff', 'stroke="#ffffff', 'stroke="#FFFFFF', 'stroke="white', 'stroke:rgb(255,255,255)', 'stroke="rgb(255,255,255)']:
