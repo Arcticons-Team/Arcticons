@@ -63,9 +63,9 @@ def svg_xml_exporter(dir:str,exportpath:str,icon_dir:str,mode:str):
 
     styles_pattern = re.compile(r'(?s)\..*?}', re.M)
     name_pattern = re.compile(r'\.(?P<Name>.+?)( ?{|,)', re.M)
-    fill_pattern = re.compile(r'fill: ?(?P<Fill>.+?);', re.M)
+    fill_pattern = re.compile(r'''fill: ?(?P<Fill>.+?)[;']''', re.M)
     fillO_pattern = re.compile(r'fill-opacity: ?(?P<FillO>\d?\.?\d*)', re.M)
-    stroke_pattern = re.compile(r'stroke: ?(?P<Stroke>.+?);', re.M)
+    stroke_pattern = re.compile(r'''stroke: ?(?P<Stroke>.+?)[;']''', re.M)
     strokeO_pattern = re.compile(r'stroke-opacity: ?(?P<StrokeO>\d?\.?\d*)', re.M)
     rotate_pattern = re.compile(r'translate\((?P<X>.+?) (?P<Y>.+?)\).*rotate\((?P<Rotate>.+?)\)', re.M)
     
@@ -103,6 +103,29 @@ def svg_xml_exporter(dir:str,exportpath:str,icon_dir:str,mode:str):
                     all_style[data['Name']] = data
         #print(all_style)
         return all_style
+    
+    def group_remove(svgfile:str):
+        # Load the SVG file
+        tree = etree.parse(svgfile)
+        root = tree.getroot()
+
+        # Find all <g> elements
+        group_elements = root.findall(".//{http://www.w3.org/2000/svg}g")
+        # Iterate through each <g> element and add its attributes to every <path> element
+        if len(group_elements) > 0:
+            for group in group_elements:
+                #for path in group.findall(".//{http://www.w3.org/2000/svg}path"):
+                for path in group:
+                    # Add all group attributes to the path
+                    for name, value in group.items():
+                        path.set(name, value)
+                    #add path after group
+                    group.addnext(path)
+                #remove group
+                group.getparent().remove(group)
+
+            # Save the modified SVG
+            tree.write(svgfile, encoding='utf-8', xml_declaration=False, pretty_print=False)
 
     def svg_to_xml(svg_file, xml_file):
         all_style ={}
@@ -214,6 +237,7 @@ def svg_xml_exporter(dir:str,exportpath:str,icon_dir:str,mode:str):
         #Don't copy svg to white dir because already done before 
         #copy2(file_path, f'{icon_dir}/{file}')
         print(f'Working on {file} {mode}')
+        group_remove(file_path)
         svg_to_xml(file_path, exportpath +'/' + name +'.xml')
 
 
@@ -451,12 +475,25 @@ def remove_svg(dir:str):
 
 # Check Icons
 def checkSVG(dir: str):
+
+    def replace_stroke(match):
+        strokestr = match.group("strokestr")
+        stroke_width = float(match.group("number"))
+        if stroke_width > 0.9 and stroke_width < 1.2:
+            return f'{strokestr}1'
+        elif stroke_width >= 0 and stroke_width < 0.3:
+            return f'{strokestr}0'
+        else:
+            return f'{strokestr}{stroke_width}'
+
     strokeattr = {}
     for file_path in glob.glob(f"{dir}/*.svg"):
         file= os.path.basename(file_path)
         name = file[:-4]
         with open(file_path, 'r', encoding='utf-8') as fp:
             content = fp.read()
+            content = re.sub(r'(?P<strokestr>stroke-width(?:="|: ?))(?P<number>\d*(?:.\d+)?)(?=[p"; }\/])', replace_stroke, content)
+
             #check colors regex
             stroke_colors = re.findall(r'stroke(?:=\"|:)(?:rgb[^a]|#).*?(?=[\"; ])', content)
             fill_colors = re.findall(r'fill(?:=\"|:)(?:rgb[^a]|#).*?(?=[\"; ])', content)
@@ -469,7 +506,9 @@ def checkSVG(dir: str):
             strokes = re.findall(r'stroke-width(?:=\"|:).*?(?=[\"; ])', content)
             linecaps = re.findall(r"stroke-linecap(?:=\"|:).*?(?=[\";}])",content)
             linejoins = re.findall(r"stroke-linejoin(?:=\"|:).*?(?=[\";}])",content)
-            
+            # Write the updated content back to the file
+            with open(file_path, 'w', encoding='utf-8') as output_file:
+                output_file.write(content)
             #colors
             for stroke_color in stroke_colors:
                 if stroke_color not in ['stroke:#ffffff', 'stroke:#fff', 'stroke:#FFFFFF', 'stroke="#fff', 'stroke="#ffffff', 'stroke="#FFFFFF', 'stroke="white', 'stroke:rgb(255,255,255)', 'stroke="rgb(255,255,255)']:

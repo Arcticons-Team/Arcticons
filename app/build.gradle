@@ -7,8 +7,8 @@ android {
         applicationId "com.donnnno.arcticons"
         minSdkVersion rootProject.ext.MinSdk
         targetSdkVersion rootProject.ext.TargetSdk
-        versionCode 119
-        versionName '7.2.6'
+        versionCode 120
+        versionName '7.3.7'
         multiDexEnabled true
 
         // Naming app bundles
@@ -56,8 +56,8 @@ android {
         youPlay {
             dimension "variant"
             minSdkVersion "26"
-            applicationIdSuffix '.you'
-            resValue "string", "app_name", "Arcticons You"
+            applicationIdSuffix '.you.play'
+            resValue "string", "app_name", "Arcticons Material You"
         }
     }
 
@@ -90,7 +90,7 @@ android {
 dependencies {
 
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    implementation 'com.github.donnnno:candybar-foss:3.18.3'
+    implementation 'com.github.donnnno:candybar-foss:3.18.4'
 }
 
 import com.android.tools.profgen.ArtProfileKt
