@@ -1,3 +1,9 @@
+### 7.5.4
+###### Released: Oct 16, 2023
+* 🎉 175 new and updated icons! (thanks Petlyh, Wwwwwwari, Kaiserdragon2, Xprateek, Rbrunt, Dgcampbe, Tieu1991, Onuronsekiz, MikeTheGreat)
+* ✨ Updates to make sure lots of apps work again.
+* 🔥 7542 icons in total!
+
 ### 7.3.7
 ###### Released: Oct 8, 2023
 * 🎉 118 new and updated icons! (thanks Petlyh, Wwwwwwari, AsankaSovis, Pgaskin, WJehee, Xprateek, Dgcampbe, Ojppe, VPS07, LunaShadowEmpress, Autinerd)
