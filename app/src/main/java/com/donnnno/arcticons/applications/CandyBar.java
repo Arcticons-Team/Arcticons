@@ -102,8 +102,8 @@ public class CandyBar extends CandyBarApplication {
                         // You can use png file (without extension) inside drawable-nodpi folder or url
                         "arcticons_you",
                         "Arcticons You",
-                        "Arcticons, but with a material you flavor! (Note: this isn't available on Google Play anymore, due to their 'repetitive content' policy",
-                        "https://f-droid.org/en/packages/com.donnnno.arcticons.you/"),
+                        "Arcticons, but with a material you flavor!",
+                        "https://play.google.com/store/apps/details?id=com.donnnno.arcticons.you.play"),
                 new OtherApp(
                         // You can use png file (without extension) inside drawable-nodpi folder or url
                         "arcticonsdark",
