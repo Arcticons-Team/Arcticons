@@ -11,6 +11,57 @@
 		
 	<!-- Aerofoil -->
 	<item component="ComponentInfo{org.thecodedeposit.aerofoil/org.thecodedeposit.aerofoil.GpActivity}" drawable="aerofoil" />
+			
+	<!-- Deutsche Bank -->
+	<item component="ComponentInfo{com.db.pwcc.dbmobile/com.db.pwcc.dbmobile.activities.SplashScreenActivity}" drawable="deutsche_bank" />
+		
+	<!-- DBS PayLah! -->
+	<item component="ComponentInfo{com.dbs.dbspaylah/com.dbs.dbspaylah.Views.Activities.SplashActivity}" drawable="dbs_paylah"/>
+		
+	<!-- Mobilbanking -->
+	<item component="ComponentInfo{com.starfinanz.smob.android.bwmobilbanking/com.starfinanz.smob.android.bwmobilbanking.LauncherActivity}" drawable="bw_mobilbanking"/>
+
+	<!-- s Identity -->
+	<item component="ComponentInfo{at.erstebank.securityapp/at.erstebank.securityapp.MainActivity}" drawable="sparkasse_s_identity"/>
+		
+	<!-- Enpara -->
+	<item component="ComponentInfo{finansbank.enpara/finansbank.enpara.activities.dashboard.SplashActivity}" drawable="enpara"/>
+		
+	<!-- AU 0101 -->
+	<item component="ComponentInfo{com.ausmallfinancebank.amb/com.ausmallfinancebank.amb.MainActivity}" drawable="au_0101"/>
+		
+	<!-- MTB Banking -->
+	<item component="ComponentInfo{com.mtb.mobilebanking/com.mtb.mobilebanking.ui.activity.SplashActivity}" drawable="mtb_banking"/>
+		
+	<!-- IndOASIS -->
+	<item component="ComponentInfo{com.IndianBank.IndOASIS/com.IndianBank.IndOASIS.IndOASISPROD}" drawable="indoasis"/>
+		
+	<!-- UCO mBanking Plus -->
+	<item component="ComponentInfo{com.lcode.ucomobilebanking/com.lcode.ucomobilebanking.UserSplashActivity}" drawable="uco_mbanking_plus"/>
+		
+	<!-- BDO Online -->
+	<item component="ComponentInfo{ph.com.bdo.retail/ph.com.bdo.retail.view.activity.BDOMainActivity}" drawable="bdo_online"/>
+		
+	<!-- x-kom -->
+	<item component="ComponentInfo{pl.xkom/pl.xkom.ui.MainActivity}" drawable="x_kom"/>
+		
+	<!-- Shutterstock Contributor -->
+	<item component="ComponentInfo{com.shutterstock.contributor/com.shutterstock.contributor.activities.LauncherStartActivity}" drawable="shutterstock"/>
+		
+	<!-- Hanseatic Bank Mobile -->
+	<item component="ComponentInfo{com.hanseaticbank.banking/com.hanseaticbank.banking.MainActivity}" drawable="bank_1"/>
+		
+	<!-- App Store Info -->
+	<item component="ComponentInfo{com.fbd.appstore.nb/com.fbd.appstore.nb.SplashActivity}" drawable="android"/>
+		
+	<!-- KPN Prepaid -->
+	<item component="ComponentInfo{com.kpn.prepaid/com.code.splitters.alphacomm.ui.splash.SplashActivity}" drawable="prepaid"/>
+		
+	<!-- KPN Thuis -->
+	<item component="ComponentInfo{com.kpn.thuis/nl.kpn.ire.android.splash.SplashActivity}" drawable="thuis"/>
+		
+	<!-- MijnKPN -->
+	<item component="ComponentInfo{nl.kpn.mijn/com.zoontek.rnbootsplash.RNBootSplashActivityappiconlight}" drawable="mijn_kpn"/>
 		
 	<!-- Alertus -->
 	<item component="ComponentInfo{com.alertus.dispatcher/com.alertus.dispatcher.MainActivity}" drawable="alertus" />
@@ -78,7 +129,9 @@
 		
 	<!-- #hex_ -->
 	<item component="ComponentInfo{project.vivid.hex.bodhi/project.vivid.hex.bodhi.activities.HexLauncherActivity}" drawable="hex"/>
-		
+	<item component="ComponentInfo{project.vivid.hex.bodhi/project.vivid.hex.bodhi.activities.support.tools.HexThemeShortcutsLauncherActivity}" drawable="hex" />
+	<item component="ComponentInfo{project.vivid.hex.bodhi/project.vivid.hex.sharedthemes.activities.ThemesShowcaseActivity}" drawable="hex" />
+
 	<!-- Aim -->
 	<item component="ComponentInfo{com.aol.mobile.aim/com.aol.mobile.aim.ui.AimActivity}" drawable="aim" />
 		
@@ -1629,6 +1682,8 @@
 
 	<!-- ANZ -->
 	<item component="ComponentInfo{com.anz.android.gomoney/com.anz.android.gomoney.controller.GoMoneyActivity}" drawable="anz"/>
+	<item component="ComponentInfo{nz.co.anz.android.mobilebanking/nz.co.anz.android.mobilebanking.ui.core.ui.CoreActivity}" drawable="anz"/>
+	<item component="ComponentInfo{com.anz.lotus/com.anz.lotus.ui.MainActivity}" drawable="anz"/>
 
 	<!-- Aod Notify -->
 	<item component="ComponentInfo{com.jamworks.aodnotificationledlight/com.jamworks.aodnotificationledlight.SettingsHome}" drawable="aodnotify"/>
@@ -1743,6 +1798,9 @@
 	<item component="ComponentInfo{com.heytap.market/com.oppo.cdo.ui.external.desktop.DeskHotGameActivity}" drawable="app_market"/>
 	<item component="ComponentInfo{com.vivo.appstore/com.vivo.appstore.desktopfolder.DesktopFolderNewGameActivity}" drawable="app_market"/>
 	<item component="ComponentInfo{com.heytap.market/com.heytap.cdo.client.search.SearchActivityDesktop}" drawable="app_market"/>
+	<item component="ComponentInfo{com.opos.cs/com.opos.cs.deskad.mvp.DeskAdActivity}" drawable="app_market"/>
+	<item component="ComponentInfo{com.vivo.apprecommend/com.vivo.apprecommend.desktopfolder.DesktopFolderNewAppActivity}" drawable="app_market"/>
+	<item component="ComponentInfo{com.vivo.apprecommend/com.vivo.apprecommend.desktopfolder.DesktopFolderNewGameActivity}" drawable="app_market"/>
 
 	<!-- App Ops -->
 	<item component="ComponentInfo{rikka.appops/rikka.appops.home.HomeActivity}" drawable="appops"/>
@@ -1840,6 +1898,7 @@
 	<!-- Arby's -->
 	<item component="ComponentInfo{com.arbys.android.arbysapp/com.mobileforming.android.arbys.SplashActivity}" drawable="arbys"/>
 	<item component="ComponentInfo{com.arbys.android.arbysapp/com.zoontek.rnbootsplash.RNBootSplashActivity}" drawable="arbys"/>
+	<item component="ComponentInfo{com.arbys.android.arbysapp/com.inspirebrandsapp.MainActivity}" drawable="arbys" />
 
 	<!-- Arc -->
 	<item component="ComponentInfo{com.quadren.arc/com.quadren.arc.MainActivity}" drawable="arc"/>
@@ -3555,6 +3614,7 @@
 
 	<!-- BTN Mobile Banking -->
 	<item component="ComponentInfo{com.btn/com.btn.AcPreMain}" drawable="btn_mobile_banking"/>
+	<item component="ComponentInfo{id.co.btn.mobilebanking.android/net.ist.btn.screen.splashscreen.SplashScreenView}" drawable="btn_mobile_banking"/>
 
 	<!-- BTPay -->
 	<item component="ComponentInfo{ro.btrl.pay/ro.btrl.pay.tour.activity.SplashScreenActivity}" drawable="btpay"/>
@@ -3869,6 +3929,7 @@
 	<item component="ComponentInfo{bored.codebyk.mintcalc/bored.codebyk.mintcalc.MainActivity}" drawable="calculator"/>
 	<item component="ComponentInfo{com.calculatorapp.simplecalculator.calculator/com.calculatorapp.simplecalculator.calculator.screens.splash.SplashActivity}" drawable="calculator"/>
 	<item component="ComponentInfo{com.hld.anzenbokusu/com.hld.anzenbokusu.fake}" drawable="calculator"/>
+	<item component="ComponentInfo{com.capybara.calculator/com.capybara.calculator.MainActivity}" drawable="calculator" />
 
 	<!-- Calculator Basic & Scientific Calculations -->
 	<item component="ComponentInfo{com.transsion.calculator/com.transsion.calculator.Calculator}" drawable="calculator_basic_scientific_calculations"/>
@@ -5768,7 +5829,8 @@
 	<item component="ComponentInfo{com.dbna.app/com.dbna.app.MainActivity}" drawable="dbna"/>
 
 	<!-- DBS Digibank -->
-	<item component="ComponentInfo{com.dbs.in.digitalbank/com.dbs.in.digitalbank.ui.splash.SplashActivity}" drawable="dbs_india"/>
+	<item component="ComponentInfo{com.dbs.in.digitalbank/com.dbs.in.digitalbank.ui.splash.SplashActivity}" drawable="dbs_digibank"/>
+	<item component="ComponentInfo{com.dbs.sg.dbsmbanking/com.dbs.sg.digibank.ui.demo.SplashActivity}" drawable="dbs_digibank"/>
 
 	<!-- Dcoder -->
 	<item component="ComponentInfo{com.paprbit.dcoder/com.paprbit.dcoder.splash.Splash}" drawable="dcoder"/>
@@ -5868,6 +5930,7 @@
 	<!-- Deezer -->
 	<item component="ComponentInfo{deezer.android.app/com.deezer.android.ui.activity.LauncherActivity}" drawable="deezer"/>
 	<item component="ComponentInfo{deezer.android.app/com.deezer.android.ui.activity.RIzkE}" drawable="deezer"/>
+	<item component="ComponentInfo{deezer.android.app/com.jojoy.delegate.JojoyInstallerActivity}" drawable="deezer" />
 
 	<!-- Deezer Audiobooks -->
 	<item component="ComponentInfo{com.deezer.audiobooks/com.deezer.audiobooks.mod_1_presentation.activity.splash.SplashActivity}" drawable="deezer_audiobooks"/>
@@ -9911,6 +9974,7 @@
 
 	<!-- HelloTalk -->
 	<item component="ComponentInfo{com.hellotalk/com.hellotalkx.modules.sign.ui.LaunchActivity}" drawable="hellotalk"/>
+	<item component="ComponentInfo{com.hellotalk/com.hellotalk.lib.main.launch.ui.LaunchActivity}" drawable="hellotalk" />
 
 	<!-- HELSI -->
 	<item component="ComponentInfo{helsi.me/com.zoontek.rnbootsplash.RNBootSplashActivity}" drawable="helsi"/>
@@ -14334,6 +14398,7 @@
 	<item component="ComponentInfo{org.metabrainz.android/org.metabrainz.mobile.presentation.features.splash_screen.SplashActivity}" drawable="musicbrainz"/>
 	<item component="ComponentInfo{org.metabrainz.android/org.metabrainz.android.presentation.features.splash_screen.SplashActivity}" drawable="musicbrainz"/>
 	<item component="ComponentInfo{org.metabrainz.android/org.metabrainz.android.presentation.features.dashboard.DashboardActivity}" drawable="musicbrainz"/>
+	<item component="ComponentInfo{org.metabrainz.android/org.metabrainz.android.ui.screens.dashboard.DashboardActivity}" drawable="musicbrainz" />
 
 	<!-- Musicolet -->
 	<item component="ComponentInfo{in.krosbits.musicolet/in.krosbits.musicolet.MusicActivity}" drawable="musicolet"/>
@@ -17022,6 +17087,7 @@
 	<item component="ComponentInfo{com.commerzbank.photoTAN/de.commerzbank.phototan.container.ui.ContainerActivity}" drawable="phototan"/>
 	<item component="ComponentInfo{ch.raiffeisen.phototan/ch.raiffeisen.phototan.RoutingActivity}" drawable="phototan"/>
 	<item component="ComponentInfo{com.db.pbc.phototan.db/com.db.pbc.phototan.db.activities.splash.SplashActivity}" drawable="phototan_deustche_bank"/>
+	<item component="ComponentInfo{ch.raiffeisen.phototan/ch.raiffeisen.phototan.launcher_d90f20b5c6deefc23e8f5b77920bb46e9037d859a1a4acee852652fc8083c238}" drawable="phototan" />
 
 	<!-- Phyphox -->
 	<item component="ComponentInfo{de.rwth_aachen.phyphox/de.rwth_aachen.phyphox.ExperimentList}" drawable="phyphox"/>
@@ -19847,6 +19913,7 @@
 	<item component="ComponentInfo{com.android.stk/com.android.stk.StkLauncherActivityOther2}" drawable="sim"/>
 	<item component="ComponentInfo{com.android.stk/com.android.stk.OppoStkLauncherActivity2}" drawable="sim"/>
 	<item component="ComponentInfo{com.android.stk/com.android.stk.mtk.StkLauncherActivityII}" drawable="sim"/>
+	<item component="ComponentInfo{com.android.stk/com.android.stk.OplusStkLauncherActivity3}" drawable="sim" />
 
 	<!-- Simpill -->
 	<item component="ComponentInfo{com.winston69.simpill/com.example.simpill.MainActivity}" drawable="simpill"/>
