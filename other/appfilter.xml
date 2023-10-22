@@ -1239,8 +1239,12 @@
 	<item component="ComponentInfo{com.alohamobile.browser/com.alohamobile.browser.presentation.launcher.LauncherActivity}" drawable="letter_uppercase_square_a"/>
 	<item component="ComponentInfo{com.alohamobile.browser.lite/com.alohamobile.browser.lite.presentation.launcher.LauncherActivity}" drawable="letter_uppercase_square_a"/>
 
-	<!-- Alovoa Lite -->
-	<item component="ComponentInfo{com.alovoa.alovoa/com.google.androidbrowserhelper.trusted.LauncherActivity}" drawable="alovoa_lite"/>
+	<!-- Alovoa -->
+	<item component="ComponentInfo{com.alovoa.alovoa/com.google.androidbrowserhelper.trusted.LauncherActivity}" drawable="alovoa"/>
+	<item component="ComponentInfo{com.alovoa.expo/com.alovoa.expo.MainActivity}" drawable="alovoa"/>
+		
+	<!-- RuneScape -->
+	<item component="ComponentInfo{com.jagex.runescape.android/com.jagex.android.MainActivity}" drawable="runescape"/>
 
 	<!-- Alpha Hybrid Launcher -->
 	<item component="ComponentInfo{launcher.alpha/launcher.alpha.SplashActivity}" drawable="alpha_hybrid_launcher"/>
@@ -3714,6 +3718,9 @@
 	<item component="ComponentInfo{com.emn8.mobilem8.nativeapp.bk/com.emn8.mobilem8.nativeapp.bk.MainActivity}" drawable="burger_king"/>
 	<item component="ComponentInfo{es.burgerking.android/es.burgerking.android.presentation.walkthrough.WalkthroughIntroActivity}" drawable="burger_king"/>
 	<item component="ComponentInfo{air.com.unit9.bkFrApp/air.com.unit9.bkFrApp.MainActivity}" drawable="burger_king"/>
+	<item component="ComponentInfo{com.emn8.mobilem8.nativeapp.bkca/com.emn8.mobilem8.nativeapp.bkca.MainActivity}" drawable="burger_king"/>
+	<item component="ComponentInfo{com.burgerkingpl/pl.looksoft.burgerking.ui.splash.SplashActivity}" drawable="burger_king"/>
+	<item component="ComponentInfo{com.expremio.burgerking/com.expremio.mobileapp.MainActivity}" drawable="burger_king"/>
 
 	<!-- Bus & Tram -->
 	<item component="ComponentInfo{com.lothianbuses.lothianbuses/crc6436921ee7a9d13c84.SplashScreen}" drawable="bus_tram"/>
@@ -4186,6 +4193,11 @@
 	<item component="ComponentInfo{com.razerzone.camera/com.android.camera.CameraLauncher}" drawable="camera"/>
 	<item component="ComponentInfo{com.ngcam.camera/com.android.camera.CameraLauncher}" drawable="camera"/>
 	<item component="ComponentInfo{com.android.camera/com.android.camera.module.camera.CameraActivity}" drawable="camera"/>
+	<item component="ComponentInfo{org.derpfest.flash/org.derpfest.flash.CameraLauncher}" drawable="camera"/>
+	<item component="ComponentInfo{com.cei.snapcam/com.android.camera.CameraLauncher}" drawable="camera"/>
+	<item component="ComponentInfo{com.fp5.camera/com.android.camera.CameraLauncher}" drawable="camera"/>
+	<item component="ComponentInfo{com.rakin.camstellar/com.android.camera.CameraLauncher}" drawable="camera"/>
+	<item component="ComponentInfo{com.voltage.flash/com.voltage.flash.CameraLauncher}" drawable="camera"/>
 
 	<!-- Camera Connect -->
 	<item component="ComponentInfo{jp.co.canon.ic.cameraconnect/jp.co.canon.ic.cameraconnect.top.CCTopActivity}" drawable="cameraconnect"/>
@@ -6507,6 +6519,9 @@
 	<item component="ComponentInfo{com.ontim.dolby/com.ontim.dolby.LauncherActivity}" drawable="dolby"/>
 	<item component="ComponentInfo{com.lifevibes.musicfx/com.lifevibes.musicfx.ActivityLauncher}" drawable="dolby"/>
 	<item component="ComponentInfo{apcports.dolbyatmos98/ru.g000sha256.bass_booster.MainActivity}" drawable="dolby"/>
+	<item component="ComponentInfo{com.dolby.daxappui2/com.dolby.daxappui2.SplashScreenActivity}" drawable="dolby"/>
+	<item component="ComponentInfo{com.atmos.daxappUI/com.atmos.daxappUI.MainActivity}" drawable="dolby"/>
+	<item component="ComponentInfo{com.atmos/com.atmos.ds1appUI.MainActivity}" drawable="dolby"/>
 
 	<!-- Dolphin Emulator -->
 	<item component="ComponentInfo{org.dolphinemu.dolphinemu/org.dolphinemu.dolphinemu.ui.main.MainActivity}" drawable="dolphinemulator"/>
@@ -6600,6 +6615,7 @@
 	<item component="ComponentInfo{instasaver.videodownloader.photodownloader.repost/instasaver.videodownloader.photodownloader.repost.view.activity.SplashMainActivity}" drawable="instagram_downloader"/>
 	<item component="ComponentInfo{instagram.downloader.download.videos.photos/instagram.downloader.download.videos.photos.ui.activity.TutorialsActivity}" drawable="instagram_downloader"/>
 	<item component="ComponentInfo{instagram.video.downloader.story.saver/instasaver.instagram.video.downloader.photo.ui.startup.StartupActivity}" drawable="instagram_downloader"/>
+	<item component="ComponentInfo{saveinsta.download.video.instagram.photo.reels.story/saveinsta.download.video.instagram.photo.reels.story.MainActivity}" drawable="instagram_downloader"/>
 
 	<!-- Downloader - Pinterest -->
 	<item component="ComponentInfo{ru.spaple.pinterest.downloader/ru.spaple.pinterest.downloader.mvvm.main.activity.presentation.MainActivity}" drawable="pinterest_downloader"/>
@@ -6619,6 +6635,7 @@
 	<!-- Downloader - Twitter -->
 	<item component="ComponentInfo{tweeter.gif.twittervideodownloader/tweeter.gif.twittervideodownloader.ui.search.SearchActivity}" drawable="twitter_downloader"/>
 	<item component="ComponentInfo{twittervideodownloader.twitter.videoindir.savegif.twdown/twittervideodownloader.twitter.videoindir.savegif.twdown.view.activity.StartupActivity}" drawable="twitter_downloader"/>
+	<item component="ComponentInfo{net.videodownloader.twittervideoindir/net.videodownloader.twittervideoindir.FirstOpen}" drawable="twitter_downloader"/>
 
 	<!-- Downloader - Video  -->
 	<item component="ComponentInfo{video.downloader.videodownloader/video.downloader.videodownloader.activity.MainActivity}" drawable="video_downloader"/>
@@ -6868,8 +6885,11 @@
 	<!-- DW -->
 	<item component="ComponentInfo{com.idmedia.android.newsportal/de.dw.mobile.activities.SplashActivity}" drawable="dw"/>
 
-	<!-- dynamic​Spot -->
+	<!-- Dynamic Island -->
 	<item component="ComponentInfo{com.jamworks.dynamicspot/com.jamworks.dynamicspot.SettingsHome}" drawable="dynamic_island"/>
+	<item component="ComponentInfo{com.grice.di/com.mobile.oneui.presentation.OneUIActivity}" drawable="dynamic_island"/>
+	<item component="ComponentInfo{dynamic.island.dynamicisland/com.lock.SplashLaunchActivity}" drawable="dynamic_island"/>
+	<item component="ComponentInfo{com.dynamicisland.phone.ios/com.dynamicisland.phone.ios.ActivitySplash}" drawable="dynamic_island"/>
 
 	<!-- DékaDico -->
 	<item component="ComponentInfo{com.example.spokennumbers/com.example.spokennumbers.MainActivity}" drawable="dkadico"/>
@@ -7143,6 +7163,7 @@
 	<item component="ComponentInfo{com.tencent.androidqqmail/com.tencent.qqmail.launcher.desktop.LauncherActivity}" drawable="mail"/>
 	<item component="ComponentInfo{ru.mail.mailapp/ru.mail.mailapp.SplashScreenActivity}" drawable="mail"/>
 	<item component="ComponentInfo{ru.yandex.mail/ru.yandex.mail.ui.LoginActivity}" drawable="mail"/>
+	<item component="ComponentInfo{com.lotus.sync.traveler/com.lotus.sync.traveler.LotusMail}" drawable="mail"/>
 
 	<!-- Emby -->
 	<item component="ComponentInfo{com.mb.android/com.mb.android.MainActivity}" drawable="emby"/>
@@ -9352,6 +9373,14 @@
 	<item component="ComponentInfo{com.google.android.GoogleCameraNext/com.android.camera.CameraLauncher}" drawable="google_camera"/>
 	<item component="ComponentInfo{com.google.android.GoogleCameraEngR14/com.android.camera.CameraLauncher}" drawable="google_camera"/>
 	<item component="ComponentInfo{com.samsung.android.scan3d/com.samsung.android.scan3d.CameraActivity}" drawable="google_camera"/>
+	<item component="ComponentInfo{com.google.android.GoogleCameraLMCR11/com.android.camera.CameraLauncher}" drawable="google_camera"/>
+	<item component="ComponentInfo{com.android.MGC.not.stable/com.android.camera.CameraLauncher}" drawable="google_camera"/>
+	<item component="ComponentInfo{com.android.MGC_8_9_097/com.android.camera.CameraLauncher}" drawable="google_camera"/>
+	<item component="ComponentInfo{com.agc.gcam88/com.android.camera.CameraLauncher}" drawable="google_camera"/>
+	<item component="ComponentInfo{com.android.MGC_8_4_300/com.android.camera.CameraLauncher}" drawable="google_camera"/>
+	<item component="ComponentInfo{com.google.android.YshManson8/com.android.camera.CameraLauncher}" drawable="google_camera"/>
+	<item component="ComponentInfo{arn.android.gcam/com.android.camera.CameraLauncher}" drawable="google_camera"/>
+	<item component="ComponentInfo{com.android.snapcam/com.android.camera.CameraLauncher}" drawable="google_camera"/>
 
 	<!-- Google Cardboard -->
 	<item component="ComponentInfo{com.google.samples.apps.cardboarddemo/com.google.vr.cardboard.paperscope.carton.Home2Dv2}" drawable="google_cardboard"/>
@@ -12375,6 +12404,7 @@
 	<item component="ComponentInfo{org.lineageos.aperture/.CameraLauncher}" drawable="lineage_camera"/>
 	<item component="ComponentInfo{org.lineageos.aperture/com.android.camera.CameraLauncher}" drawable="lineage_camera"/>
 	<item component="ComponentInfo{org.leafos.aperture/org.lineageos.aperture.CameraLauncher}" drawable="lineage_camera"/>
+<item component="ComponentInfo{com.PaLo_6415.camera14.cam/org.lineageos.aperture.CameraLauncher}" drawable="lineage_camera"/>
 
 	<!-- LineageOS Music -->
 	<item component="ComponentInfo{org.lineageos.eleven/org.lineageos.eleven.ui.activities.HomeActivity}" drawable="lineage_music"/>
@@ -13348,6 +13378,7 @@
 	<item component="ComponentInfo{com.nhstudio.smsmessenger.iosmessages.messageiphone/com.nhstudio.smsmessenger.iosmessages.messageiphone.MainActivity}" drawable="messages"/>
 	<item component="ComponentInfo{com.sms.messages.themessages/vn.com.messagerios.ui.main.PermisstionActivity}" drawable="messages"/>
 	<item component="ComponentInfo{com.transsion.smartmessage/com.android.messaging.ui.conversationlist.ConversationListActivity}" drawable="messages"/>
+	<item component="ComponentInfo{foundation.e.message.debug/com.moez.QKSMS.feature.main.MainActivity}" drawable="messages"/>
 
 	<!-- Messaging -->
 	<item component="ComponentInfo{com.android.messaging/com.android.messaging.ui.conversationlist.ConversationListActivity}" drawable="messaging"/>
@@ -16366,6 +16397,7 @@
 
 	<!-- Osu! -->
 	<item component="ComponentInfo{sh.ppy.osulazer/crc64f3e94a995e5d9e96.OsuGameActivity}" drawable="osu"/>
+	<item component="ComponentInfo{com.dub.app.oregonstate/com.ready.controller.mainactivity.MainActivity}" drawable="osu"/>
 
 	<!-- Osu!droid -->
 	<item component="ComponentInfo{ru.nsu.ccfit.zuev.osuplus/ru.nsu.ccfit.zuev.osu.MainActivity}" drawable="osudroid"/>
@@ -18194,6 +18226,8 @@
 	<item component="ComponentInfo{com.quranreading.qibladirection/com.quranreading.qibladirection.activities.SplashActivity}" drawable="quran"/>
 	<item component="ComponentInfo{com.isysway.free.alquran/com.isysway.free.alquran.AlQuranNewActivity}" drawable="quran"/>
 	<item component="ComponentInfo{com.quran.labs.androidquran.warsh/com.quran.labs.androidquran.QuranDataActivity}" drawable="quran"/>
+	<item component="ComponentInfo{com.golap.hefzquran/com.golap.hefzquran.activity.SplashScreenActivity}" drawable="quran"/>
+	<item component="ComponentInfo{com.andi.alquran.en/com.andi.alquran.ActivityHome}" drawable="quran"/>
 
 	<!-- Qwant -->
 	<item component="ComponentInfo{com.qwant.liberty/org.mozilla.reference.browser.BrowserActivity}" drawable="qwant"/>
@@ -20033,25 +20067,25 @@
 	<item component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Red}" drawable="simple_calendar"/>
 
 	<!-- Simple Calendar Pro Dynamic icon -->
-  <calendar component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Pink}" prefix="calendar_simple_"/>
-  <calendar component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Purple}" prefix="calendar_simple_"/>
-  <calendar component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Deep_purple}" prefix="calendar_simple_"/>
-  <calendar component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Indigo}" prefix="calendar_simple_"/>
-  <calendar component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Blue}" prefix="calendar_simple_"/>
-  <calendar component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Light_blue}" prefix="calendar_simple_"/>
-  <calendar component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Cyan}" prefix="calendar_simple_"/>
-  <calendar component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Teal}" prefix="calendar_simple_"/>
-  <calendar component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Green}" prefix="calendar_simple_"/>
-  <calendar component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Light_green}" prefix="calendar_simple_"/>
-  <calendar component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Lime}" prefix="calendar_simple_"/>
-  <calendar component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Yellow}" prefix="calendar_simple_"/>
-  <calendar component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Amber}" prefix="calendar_simple_"/>
-  <calendar component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Orange}" prefix="calendar_simple_"/>
-  <calendar component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Deep_orange}" prefix="calendar_simple_"/>
-  <calendar component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Brown}" prefix="calendar_simple_"/>
-  <calendar component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Blue_grey}" prefix="calendar_simple_"/>
-  <calendar component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Grey_black}" prefix="calendar_simple_"/>
-  <calendar component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Red}" prefix="calendar_simple_"/>
+	<calendar component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Pink}" prefix="calendar_simple_"/>
+	<calendar component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Purple}" prefix="calendar_simple_"/>
+	<calendar component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Deep_purple}" prefix="calendar_simple_"/>
+	<calendar component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Indigo}" prefix="calendar_simple_"/>
+	<calendar component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Blue}" prefix="calendar_simple_"/>
+	<calendar component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Light_blue}" prefix="calendar_simple_"/>
+	<calendar component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Cyan}" prefix="calendar_simple_"/>
+	<calendar component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Teal}" prefix="calendar_simple_"/>
+	<calendar component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Green}" prefix="calendar_simple_"/>
+	<calendar component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Light_green}" prefix="calendar_simple_"/>
+	<calendar component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Lime}" prefix="calendar_simple_"/>
+	<calendar component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Yellow}" prefix="calendar_simple_"/>
+	<calendar component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Amber}" prefix="calendar_simple_"/>
+	<calendar component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Orange}" prefix="calendar_simple_"/>
+	<calendar component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Deep_orange}" prefix="calendar_simple_"/>
+	<calendar component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Brown}" prefix="calendar_simple_"/>
+	<calendar component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Blue_grey}" prefix="calendar_simple_"/>
+	<calendar component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Grey_black}" prefix="calendar_simple_"/>
+	<calendar component="ComponentInfo{com.simplemobiletools.calendar.pro/com.simplemobiletools.calendar.pro.activities.SplashActivity.Red}" prefix="calendar_simple_"/>
 
 	<!-- Simple Camera -->
 	<item component="ComponentInfo{com.simplemobiletools.camera/com.simplemobiletools.camera.activities.SplashActivity.Pink}" drawable="simplecamera"/>
@@ -22307,6 +22341,7 @@
 	<item component="ComponentInfo{xyz.nextalone.nagram/org.telegram.messenger.NeonIcon}" drawable="telegram"/>
 	<item component="ComponentInfo{com.iMe.android/org.telegram.ui.LaunchActivityBlueIcon}" drawable="telegram"/>
 	<item component="ComponentInfo{com.exteragram.messenger/com.exteragram.messenger.GradientIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{top.qwq2333.nullgram/org.telegram.messenger.DefaultIcon}" drawable="telegram"/>
 
 	<!-- Telegram Plus -->
 	<item component="ComponentInfo{org.telegram.plus/org.telegram.ui.LaunchActivity}" drawable="telegram_plus"/>
@@ -24852,9 +24887,25 @@
 	<item component="ComponentInfo{com.anwhatsapp/com.anwhatsapp.69}" drawable="whatsapp"/>
 	<item component="ComponentInfo{com.whatsapp/com.whatsapp.62}" drawable="whatsapp"/>
 	<item component="ComponentInfo{com.gbwhatsapp3/com.gbwhatsapp3.0}" drawable="whatsapp"/>
+	<item component="ComponentInfo{com.blueWAplus/com.blueWAplus.0}" drawable="whatsapp"/>
+
+		
+	<!-- Whatsapp Status Saver -->
+	<item component="ComponentInfo{com.studio.nexteck.storysaver.statussaverwhatsapp/com.studio.nexteck.storysaver.statussaverwhatsapp.SplashActivity}" drawable="whatsapp_downloader"/>
+	<item component="ComponentInfo{com.downloadwhatsappstatus.statussaver.videodownloader/com.downloadwhatsappstatus.statussaver.videodownloader.view.activity.SplashActivity}" drawable="whatsapp_downloader"/>
+	<item component="ComponentInfo{saveit.whatsappstatussaver.whatsappsaver/saveit.whatsappstatussaver.whatsappsaver.view.mainactivity.MainScreen}" drawable="whatsapp_downloader"/>
+	<item component="ComponentInfo{com.studio.nexteck.storysaver.statussaverwhatsapp/com.studio.nexteck.storysaver.statussaverwhatsapp.SplashActivity}" drawable="whatsapp_downloader"/>
+	<item component="ComponentInfo{com.statussaver.wapp/com.statussaver.wapp.activity.SplashScreenActivity}" drawable="whatsapp_downloader"/>
+	<item component="ComponentInfo{com.magic.whatsapp.status.saver.download/com.magic.whatsapp.status.saver.download.ui.activity.SplashActivity}" drawable="whatsapp_downloader"/>
+	<item component="ComponentInfo{statussaver.statusdownloader.videodownloader/statussaver.statusdownloader.videodownloader.activities.SplashActivity}" drawable="whatsapp_downloader"/>
+
+	<!-- WhatsApp Cleaner -->
+	<item component="ComponentInfo{com.lookandfeel.cleanerforwhatsapp/com.lookandfeel.cleanerforwhatsapp.SplashscreenActivity}" drawable="whatsapp_cleaner"/>
+	<item component="ComponentInfo{com.tserumula.dbcleanerforwhatsapp/com.tserumula.dbcleanerforwhatsapp.MainActivity}" drawable="whatsapp_cleaner"/>
+
 
 	<!-- Whatsapp Business -->
-	<item component="ComponentInfo{com.whatsapp.w4b/com.whatsapp.Main}" drawable="whatsappbusiness"/>
+	<item component="ComponentInfo{com.whatsapp.w4b/com.whatsapp.Main}" drawable="whatsapp_business"/>
 
 	<!-- WhatsApp Web To Go -->
 	<item component="ComponentInfo{io.kuenzler.whatsappwebtogo/io.kuenzler.whatsappwebtogo.MainActivity}" drawable="whatsappwebtogo"/>
@@ -25324,7 +25375,7 @@
 	<!-- XShare -->
 	<item component="ComponentInfo{com.talpa.share/com.infinix.xshare.MainActivity}" drawable="sharex"/>
 	<item component="ComponentInfo{com.infinix.xshare/com.infinix.xshare.MainActivity}" drawable="sharex"/>
-
+	
 	<!-- xStation -->
 	<item component="ComponentInfo{com.xtb.xmobile2/com.xtb.xmobile2.ui.splash.SplashActivity}" drawable="xstation"/>
 
