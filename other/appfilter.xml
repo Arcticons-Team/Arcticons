@@ -40,7 +40,6 @@
 	<!-- WiiM Home -->
 	<item component="ComponentInfo{com.linkplay.wiimhome/com.wifiaudio.app.Splash2Activity}" drawable="wiim_home"/>
 
-
 	<!-- $HELL -->
 	<item component="ComponentInfo{in.ac.dducollegedu.shell/in.ac.dducollegedu.shell.MainActivity}" drawable="shell_terminal"/>
 		
@@ -372,7 +371,11 @@
 
 	<!-- Voyager for Lemmy -->
 	<item component="ComponentInfo{app.vger.voyager/app.vger.voyager.MainActivity}" drawable="voyager_for_lemmy" />
-	<item component="ComponentInfo{app.vger.voyager/app.vger.voyager.space}" drawable="voyager_for_lemmy" />
+	<item component="ComponentInfo{app.vger.voyager/app.vger.voyager.planetary}" drawable="voyager_for_lemmy" />
+	<item component="ComponentInfo{app.vger.voyager/app.vger.voyager.psych}" drawable="voyager_for_lemmy_psych" />
+	<item component="ComponentInfo{app.vger.voyager/app.vger.voyager.galactic}" drawable="voyager_for_lemmy" />
+	<item component="ComponentInfo{app.vger.voyager/app.vger.voyager.space}" drawable="voyager_for_lemmy_space" />
+	<item component="ComponentInfo{app.vger.voyager/app.vger.voyager.original}" drawable="lemmy" />
 
 	<!-- Grayjay -->
 	<item component="ComponentInfo{com.futo.platformplayer/com.futo.platformplayer.activities.MainActivity}" drawable="grayjay" />
@@ -12160,9 +12163,11 @@
 	<!-- Lemmy Redirect -->
 	<item component="ComponentInfo{dev.zwander.lemmyredirect/dev.zwander.lemmyredirect.MainActivity}" drawable="mastodon_redirect"/>
 
-	<!-- Lemmy Sync -->
-	<item component="ComponentInfo{io.syncapps.lemmy_sync/io.syncapps.lemmy_sync.ui.activities.HomeActivity.Default}" drawable="lemmysync"/>
-	<item component="ComponentInfo{com.laurencedawson.reddit_sync.pro/com.laurencedawson.reddit_sync.ui.activities.HomeActivity.DefaultDark}" drawable="lemmysync"/>
+	<!-- Sync for Lemmy -->
+	<item component="ComponentInfo{io.syncapps.lemmy_sync/io.syncapps.lemmy_sync.ui.activities.HomeActivity.Default}" drawable="sync"/>
+	<item component="ComponentInfo{com.laurencedawson.reddit_sync.pro/com.laurencedawson.reddit_sync.ui.activities.HomeActivity.DefaultDark}" drawable="sync"/>
+	<item component="ComponentInfo{io.syncapps.lemmy_sync/io.syncapps.lemmy_sync.ui.activities.HomeActivity.Blm}" drawable="sync_alt_1"/>
+	<item component="ComponentInfo{io.syncapps.lemmy_sync/io.syncapps.lemmy_sync.ui.activities.HomeActivity.Pride}" drawable="sync_alt_2"/>
 
 	<!-- Lemuroid -->
 	<item component="ComponentInfo{com.swordfish.lemuroid/com.swordfish.lemuroid.app.mobile.feature.main.MainActivity}" drawable="lemuroid"/>
