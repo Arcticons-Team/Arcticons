@@ -5,7 +5,46 @@
 		
 	<!-- JustNotes -->
 	<item component="ComponentInfo{com.jjewuz.justnotes/com.jjewuz.justnotes.MainActivity}" drawable="justnotes"/>
+				
+	<!-- SafeInCloud -->
+	<item component="ComponentInfo{com.safeincloud.free/com.safeincloud.EntryActivity}" drawable="safeincloud"/>
+	<item component="ComponentInfo{com.safeincloud/com.safeincloud.EntryActivity}" drawable="safeincloud" />
+
+	<!-- QR Droid -->
+	<item component="ComponentInfo{la.droid.qr/la.droid.qr.DeCamara}" drawable="qrforkeepass"/>
+
+	<!-- Before Launcher -->
+	<item component="ComponentInfo{com.beforesoft.launcher/com.beforesoftware.launcher.activities.LauncherActivity}" drawable="before_launcher"/>
 		
+	<!-- Daily You -->
+	<item component="ComponentInfo{com.demizo.daily_you/com.demizo.daily_you.MainActivity}" drawable="daily_you"/>
+		
+	<!-- Last Launcher -->
+	<item component="ComponentInfo{io.github.subhamtyagi.lastlauncher/io.github.subhamtyagi.lastlauncher.LauncherActivity}" drawable="last_launcher"/>
+		
+	<!-- Text Launcher -->
+	<item component="ComponentInfo{ademar.textlauncher/ademar.textlauncher.LauncherActivity}" drawable="text_launcher"/>
+
+	<!-- ACKO -->
+	<item component="ComponentInfo{com.acko.android/com.acko.android.AckoActivity}" drawable="acko"/>
+		
+	<!-- Zoho Daybook -->
+	<item component="ComponentInfo{com.zoho.daybook/com.zoho.daybook.launcher.LauncherActivity}" drawable="zoho_daybook"/>
+		
+	<!-- Multi App Uninstaller -->
+	<item component="ComponentInfo{com.spencerstudios.multiappuninstaller/com.spencerstudios.multiappuninstaller.activities.MainActivity}" drawable="multi_app_uninstaller"/>
+				
+	<!-- Samsung Max -->
+	<item component="ComponentInfo{com.opera.max.global/com.opera.max.ui.v2.MainActivity}" drawable="samsung_max"/>
+	<item component="ComponentInfo{com.samsung.max.go/com.opera.max.ui.v2.MainActivity}" drawable="samsung_max"/>
+	<item component="ComponentInfo{com.samsung.max.go/com.opera.max.ui.UltraLauncherActivityAlias}" drawable="samsung_max" />
+
+	<!-- BOOM -->
+	<item component="ComponentInfo{com.logitech.ueboom/com.logitech.ue.howhigh.activities.SplashActivity}" drawable="boom"/>
+		
+	<!-- Hotels.com -->
+	<item component="ComponentInfo{com.hcom.android/com.expedia.bookings.activity.SearchActivity}" drawable="hotels_com"/>
+
 	<!-- DigiCal -->
 	<item component="ComponentInfo{com.digibites.calendar/com.digibites.calendar.WeekAgendaActivity}" drawable="digical"/>
 		
@@ -12984,6 +13023,7 @@
 	<!-- Libre 3 -->
 	<item component="ComponentInfo{com.freestylelibre3.app.fr/com.adc.trident.app.startup.SplashActivity}" drawable="libre_3"/>
 	<item component="ComponentInfo{com.freestylelibre3.app.nl/com.adc.trident.app.startup.SplashActivity}" drawable="libre_3"/>
+	<item component="ComponentInfo{com.freestylelibre3.app.de/com.adc.trident.app.startup.SplashActivity}" drawable="libre_3"/>
 
 	<!-- Libre Camera -->
 	<item component="ComponentInfo{com.iakmds.librecamera/com.iakmds.librecamera.MainActivity}" drawable="camera"/>
@@ -17046,9 +17086,13 @@
 	<!-- Opera -->
 	<item component="ComponentInfo{com.opera.browser/com.opera.Opera}" drawable="opera"/>
 	<item component="ComponentInfo{com.opera.mini.native/com.opera.mini.android.Browser}" drawable="opera"/>
+	<item component="ComponentInfo{com.opera.browser.afin/com.opera.Opera}" drawable="opera"/>
 
 	<!-- Opera beta -->
 	<item component="ComponentInfo{com.opera.browser.beta/com.opera.Opera}" drawable="opera_beta"/>
+	
+	<!-- Opera beta -->
+	<item component="ComponentInfo{com.opera.mini.native.beta/com.opera.mini.android.Browser}" drawable="opera_mini_beta"/>
 
 	<!-- Opera GX -->
 	<item component="ComponentInfo{com.opera.gx/com.opera.gx.MainActivity}" drawable="opera_gx"/>
@@ -18870,6 +18914,17 @@
 	<item component="ComponentInfo{com.kaspersky.qrscanner/com.kms.qrscanner.ui.MainActivity}" drawable="qr"/>
 	<item component="ComponentInfo{com.scannerapp.qrcodereader/com.scannerapp.qrcodereader.activity.SplashActivity}" drawable="qr"/>
 	<item component="ComponentInfo{com.gamma.scan/com.gamma.barcodeapp.ui.BarcodeCaptureActivity}" drawable="qr"/>
+	<item component="ComponentInfo{com.camvision.qrcode.barcode.reader/com.camvision.qrcode.barcode.reader.main.Qr2MainActivity}" drawable="qr"/>
+	<item component="ComponentInfo{qrcodescanner.barcodescanner.qrscanner.qrcodereader/qrcodescanner.barcodescanner.qrscanner.qrcodereader.page.WelcomeActivity}" drawable="qr"/>
+	<item component="ComponentInfo{com.teacapps.barcodescanner.pro/net.qrbot.ui.main.MainActivity}" drawable="qr"/>
+	<item component="ComponentInfo{com.qrcode.barcode.scanner.reader.generator.pro/com.qrcode.barcode.scanner.reader.generator.pro.activity.MainActivity}" drawable="qr"/>
+	<item component="ComponentInfo{qrcodereader.barcodescanner.scan.qrscanner/qrcodereader.barcodescanner.scan.qrscanner.page.SplashActivity}" drawable="qr"/>
+	<item component="ComponentInfo{com.miscdata.qrcontrol/com.miscdata.qrcontrol.MainActivity}" drawable="qr"/>
+	<item component="ComponentInfo{la.droid.qr.priva/la.droid.qr.priva.DeCamara}" drawable="qr"/>
+	<item component="ComponentInfo{com.appswing.qr.barcodescanner.barcodereader/com.appswing.qr.barcodescanner.barcodereader.activities.main.MainActivity}" drawable="qr"/>
+	<item component="ComponentInfo{me.scan.android.client/me.scan.android.client.ui.ScanActivity}" drawable="qr_code_reader"/>
+	<item component="ComponentInfo{com.editoradigital.leitorcodigobarrasqrcode/com.editoradigital.leitorcodigobarrasqrcode.MainActivity}" drawable="qr"/>
+	<item component="ComponentInfo{com.gamma.scan2/com.gamma.barcodeapp.ui.BarcodeCaptureActivity}" drawable="qr"/>
 
 	<!-- QR/Barcode Scanner Pro -->
 	<item component="ComponentInfo{com.barcode.qrcode.scanner.reader.pro/com.barcode.qrcode.scanner.reader.pro.activity.MainActivity}" drawable="scanner"/>
