@@ -7,8 +7,8 @@ android {
         applicationId "com.donnnno.arcticons"
         minSdkVersion rootProject.ext.MinSdk
         targetSdkVersion rootProject.ext.TargetSdk
-        versionCode 121
-        versionName '7.5.4'
+        versionCode 122
+        versionName '8.0.6'
         multiDexEnabled true
 
         // Naming app bundles
@@ -90,7 +90,7 @@ android {
 dependencies {
 
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    implementation 'com.github.donnnno:candybar-foss:3.18.4'
+    implementation 'com.github.donnnno:candybar-foss:3.18.5'
 }
 
 import com.android.tools.profgen.ArtProfileKt

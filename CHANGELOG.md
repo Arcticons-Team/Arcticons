@@ -3,7 +3,7 @@
 * 🎈 Arcticons turns 3 years old, thanks everyone for being with us, making this possible!
 * 🎉 551 new and updated icons! (thanks Onuronsekiz, Petlyh, Kaiserdragon2, Starfetch,  MikeTheGreat, MrAlpha786)
 * ✨ Updates to make sure lots of apps work again.
-* 🔥 8069 icons in total!
+* 🔥 8068 icons in total!
 
 ### 7.5.4
 ###### Released: Oct 16, 2023
