@@ -1,3 +1,10 @@
+### 8.0.6 - Anniversary update
+###### Released: Nov 8, 2023
+* 🎈 Arcticons turns 3 years old, thanks everyone for being with us, making this possible!
+* 🎉 551 new and updated icons! (thanks Onuronsekiz, Petlyh, Kaiserdragon2, Starfetch,  MikeTheGreat, MrAlpha786)
+* ✨ Updates to make sure lots of apps work again.
+* 🔥 8069 icons in total!
+
 ### 7.5.4
 ###### Released: Oct 16, 2023
 * 🎉 175 new and updated icons! (thanks Petlyh, Wwwwwwari, Kaiserdragon2, Xprateek, Rbrunt, Dgcampbe, Tieu1991, Onuronsekiz, MikeTheGreat)
