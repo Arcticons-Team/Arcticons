@@ -1,3 +1,10 @@
+### 8.x.x - The Renamening
+###### Released: TBA
+* 🔠  Sometimes you have a good idea, and sometimes it just doesn't work that good in practice. That was the case with the Arcticons names. Dark and Light stands for Darkmode and Lightmode, but that was confusing, because it wasn't in the title. We've renamed it to Arcticons, Arcticons Black, and Arcticons Material You.
+* 🎉 X new and updated icons! (thanks ...)
+* ✨ Updates to make sure lots of apps work again.
+* 🔥 X icons in total!
+
 ### 8.0.6 - Anniversary update
 ###### Released: Nov 8, 2023
 * 🎈 Arcticons turns 3 years old, thanks everyone for being with us, making this possible!
