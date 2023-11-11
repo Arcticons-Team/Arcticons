@@ -101,19 +101,19 @@ public class CandyBar extends CandyBarApplication {
                 new OtherApp(
                         // You can use png file (without extension) inside drawable-nodpi folder or url
                         "arcticons_you",
-                        "Arcticons You",
+                        "Arcticons Material You",
                         "Arcticons, but with a material you flavor!",
                         "https://play.google.com/store/apps/details?id=com.donnnno.arcticons.you.play"),
                 new OtherApp(
                         // You can use png file (without extension) inside drawable-nodpi folder or url
                         "arcticonsdark",
-                        "Arcticons Dark",
+                        "Arcticons",
                         "Arcticons, with white lines",
                         "https://play.google.com/store/apps/details?id=com.donnnno.arcticons"),
                 new OtherApp(
                         // You can use png file (without extension) inside drawable-nodpi folder or url
                         "arcticonslight",
-                        "Arcticons Light",
+                        "Arcticons Black",
                         "Arcticons, with black lines.",
                         "https://play.google.com/store/apps/details?id=com.donnnno.arcticons.light")
         };

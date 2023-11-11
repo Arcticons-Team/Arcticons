@@ -30,28 +30,28 @@ android {
     productFlavors {
         dark {
             dimension "variant"
-            resValue "string", "app_name", "Arcticons Dark"
+            resValue "string", "app_name", "Arcticons"
         }
         darkPlay {
             dimension "variant"
-            resValue "string", "app_name", "Arcticons Dark"
+            resValue "string", "app_name", "Arcticons"
         }
         light {
             dimension "variant"
             //noinspection GradlePath
             applicationIdSuffix '.light'
-            resValue "string", "app_name", "Arcticons Light"
+            resValue "string", "app_name", "Arcticons Black"
         }
         lightPlay {
             dimension "variant"
             applicationIdSuffix '.light'
-            resValue "string", "app_name", "Arcticons Light"
+            resValue "string", "app_name", "Arcticons Black"
         }
         you {
             dimension "variant"
             minSdkVersion "26"
             applicationIdSuffix '.you'
-            resValue "string", "app_name", "Arcticons You"
+            resValue "string", "app_name", "Arcticons Material You"
         }
         youPlay {
             dimension "variant"

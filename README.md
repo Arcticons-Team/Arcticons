@@ -7,7 +7,8 @@
 <img src='https://raw.githubusercontent.com/Donnnno/Arcticons/main/github/header-background.png'>
 
 # Arcticons is a line-based icon pack for Android devices.
-It features a wide range **(over 8000!)** of elegant and consistent icons that are created by a community from all around the world. Arcticons is FOSS (Free and Open-Source Software) and provides many icons for other FOSS apps. 
+With **over 8000 icons**, Arcticons is one of the largest free & open source icon-packs available. Featuring consistent and elegant handcrafted icons, giving you a minimalistic clutter-free experience on your phone.
+Powered by a community of icon creators all around the world!
 <br>
 <br>
 <br>
@@ -25,7 +26,7 @@ It features a wide range **(over 8000!)** of elegant and consistent icons that a
 
 ## Donate
 
-Providing a free icon-pack for everyone can cost a lot of time and effort. So if you like our work, consider donating!﻿
+Providing a free icon-pack for everyone can cost a lot of time and effort. So if you like our work, consider donating!
 
 |Paypal|Liberapay|Ko-Fi|
 |---|---|---|
