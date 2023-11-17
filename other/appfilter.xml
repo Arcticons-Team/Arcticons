@@ -7628,10 +7628,12 @@
 	<!-- ente -->
 	<item component="ComponentInfo{io.ente.photos.fdroid/io.ente.photos.MainActivity}" drawable="ente"/>
 	<item component="ComponentInfo{io.ente.photos/io.ente.photos.MainActivity}" drawable="ente"/>
+	<item component="ComponentInfo{io.ente.photos.independent/io.ente.photos.MainActivity}" drawable="ente"/>
 
 	<!-- ente Authenticator -->
 	<item component="ComponentInfo{io.ente.auth/io.ente.auth.MainActivity}" drawable="ente_authenticator"/>
-
+	<item component="ComponentInfo{io.ente.auth.independent/io.ente.auth.MainActivity}" drawable="ente_authenticator"/>
+	
 	<!-- Entel -->
 	<item component="ComponentInfo{cl.entel.appswlsdesa/cl.entel.appswlsdesa.MainActivity}" drawable="entel"/>
 
@@ -17076,6 +17078,7 @@
 
 	<!-- OnePlus Weather -->
 	<item component="ComponentInfo{weather/net.oneplus.weather.app.MainActivity}" drawable="oneplus_weather"/>
+	<item component="ComponentInfo{net.oneplus.weather/net.oneplus.weather.app.MainActivity}" drawable="oneplus_weather"/>
 
 	<!-- OneScore -->
 	<item component="ComponentInfo{tech.fplabs.score/tech.fplabs.score.MainActivity}" drawable="onescore"/>
@@ -19965,6 +19968,9 @@
 
 	<!-- ReVanced Extended -->
 	<item component="ComponentInfo{app.rvx.android.youtube/com.google.android.youtube.app.honeycomb.Shell$HomeActivity}" drawable="revanced_extended"/>
+	
+	<!-- ReVanced Extended Manager -->
+	<item component="ComponentInfo{app.rvx.manager.flutter/app.revanced.manager.flutter.MainActivity}" drawable="rvx_manager"/>
 
 	<!-- ReVanced Manager -->
 	<item component="ComponentInfo{app.revanced.manager.flutter/app.revanced.manager.flutter.MainActivity}" drawable="revanced_manager"/>
@@ -27597,5 +27603,25 @@
 
 	<!-- ﾆｺﾆｺ動画 -->
 	<item component="ComponentInfo{jp.nicovideo.android/jp.nicovideo.android.StartupActivity}" drawable="niconico"/>
+	
+	<!-- AntiiQ -->
+	<item component="ComponentInfo{com.coleblvck.antiiq/com.ryanheise.audioservice.AudioServiceActivity}" drawable="antiiq"/>
+	
+	<!-- The Hello Club -->
+	<item component="ComponentInfo{com.springbig.theHelloClub/com.springbig.theHelloClub.MainActivity}" drawable="the_hello_club"/>
 
+	<!-- FreePaint -->
+	<item component="ComponentInfo{io.github.pastthepixels.freepaint/io.github.pastthepixels.freepaint.MainActivity}" drawable="free_paint"/>
+		
+	<!-- Go Mobile PGH -->
+	<item component="ComponentInfo{net.sharewire.gomobilepgh/com.parkmobile.android.client.activity.ZoneActivity}" drawable="go_mobile_pgh"/>
+	
+	<!-- lWS -->
+	<item component="ComponentInfo{net.basov.lws.fdroid/net.basov.lws.StartActivity}" drawable="lws"/>
+	
+	<!-- Netgear Nighthawk -->
+	<item component="ComponentInfo{com.netgear.netgearup/com.netgear.netgearup.LauncherActivity}" drawable="netgear_nighthawk"/>
+	
+	<!-- RPG Simple Dice -->
+	<item component="ComponentInfo{com.ccp.rpgsimpledice/com.ccp.rpgsimpledice.SplashActivity}" drawable="rpg_simple_dice"/>
 </resources>
