@@ -22,19 +22,6 @@
         tools:replace="android:icon"
         >
         <activity
-            android:name=".services.GoogleWeatherWidget"
-            android:icon="@drawable/google_weather"
-            android:label="@string/google_weather"
-            android:launchMode="singleTask"
-            android:screenOrientation="fullSensor"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.CREATE_SHORTCUT" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-
-        <activity
             android:name=".activities.SplashActivity"
             android:launchMode="singleTop"
             android:noHistory="true"
