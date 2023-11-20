@@ -1,5 +1,8 @@
 apply plugin: 'com.android.application'
 
+
+tasks.getByName("preBuild").dependsOn(":preparehelper:run")
+
 android {
     compileSdkVersion 33
 
