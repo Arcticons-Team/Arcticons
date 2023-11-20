@@ -1,14 +1,14 @@
 """
 Script Usage:
-python (or python3) email_parser.py ./path/to/emlFolder ./path/to/appfilter.xml (./path/to/requests.txt)
+python (or python3) email_parser.py ./path/to/emlFolder ./path/to/appfilter.xml (./path/to/requests.xml)
 
 Arguments
 0: Path to folder containing .eml files of requests
 1: Path to existing appfilter.xml to recognize potentially updatable appfilters
-3 (optional): existing requests.txt file to augment with new info
+3 (optional): existing requests.xml file to augment with new info
 
 Output
-If only two arguments are given the script will generate 'requests.txt' and 'updatable.txt'.
+If only two arguments are given the script will generate 'requests.xml' and 'updatable.txt'.
 If the third argument is given the file will be overwritten with the updated info.
 """
 
@@ -95,7 +95,7 @@ def findZip(message):
             zip_data = part.get_payload(decode=True)
             zip_file = io.BytesIO(zip_data)
             return  zip_file# Only save the first zip attachment
-    return None                
+    return None
 
 def greedy(message):
     # Get the sender's email address
@@ -114,7 +114,7 @@ def showGreedy():
     for sender in email_count:
         if email_count[sender] > requestlimit:
             print('---- We have a greedy one: '+ str(email_count[sender]) + ' Requests ' + sender)
-    
+
 def parseEmail():
     # Create a new root element for the combined xml
     combined_root = ET.Element('combined')
@@ -143,12 +143,12 @@ def parseEmail():
                 sender = message['From']
                 no_zip[sender] = mail
 
-                        
+
 
 def requests(child,msg):
     global data
     if child.get('component') == None:
-        #clear data for new entrty 
+        #clear data for new entrty
         data = {}
         child_string = ET.tostring(child, encoding='utf-8').decode()
         name_match = re.search(name_pattern, child_string)
@@ -185,7 +185,7 @@ def moveNoZip():
         #now_path = os.chdir(os.path.dirname(normalized_path))
 
         file_name = os.path.basename(normalized_path)
-        
+
         # Set the destination path for the file
         destination_path = os.path.join("failedmail", file_name)
         # Check if the folder already exists
@@ -235,7 +235,7 @@ def writeOutput():
     newList = newListHeader.format( totalCount = len(apps), date = date.today().strftime("X%d %B %Y").replace("X0","X").replace("X",""))
     newList += ''.join(newApps)
 
-    requestsFilePath = 'requests.txt' if len(argv) < 4 else argv[3]
+    requestsFilePath = 'requests.xml' if len(argv) < 4 else argv[3]
     with open(requestsFilePath, 'w', encoding='utf-8') as file:
             file.write(newList)
     if len(updatable):
