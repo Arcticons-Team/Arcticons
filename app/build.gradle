@@ -26,14 +26,13 @@ android {
             }
         }
         applicationVariants.all { variant ->
-
-            println(variant.flavorName)
+            
             if (variant.flavorName == "you" || variant.flavorName == "youPlay") {
-                variant.preBuild.dependsOn(":preparehelper:runyou")
+                variant.preBuildProvider.get().dependsOn(":preparehelper:runyou")
             } else if (variant.flavorName == "light" || variant.flavorName == "lightPlay") {
-                variant.preBuild.dependsOn(":preparehelper:runlight")
+                variant.preBuildProvider.get().dependsOn(":preparehelper:runlight")
             }else if (variant.flavorName == "dark" || variant.flavorName == "darkPlay") {
-                variant.preBuild.dependsOn(":preparehelper:rundark")
+                variant.preBuildProvider.get().dependsOn(":preparehelper:rundark")
             }
             // Add more conditions for additional flavors
         }
