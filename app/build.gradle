@@ -1,7 +1,6 @@
 apply plugin: 'com.android.application'
 
-
-tasks.getByName("preBuild").dependsOn(":preparehelper:run")
+// build.gradle in the 'app' module
 
 android {
     compileSdkVersion 33
@@ -26,7 +25,20 @@ android {
                 applicationIdSuffix '.debug'
             }
         }
+        applicationVariants.all { variant ->
+
+            println(variant.flavorName)
+            if (variant.flavorName == "you" || variant.flavorName == "youPlay") {
+                variant.preBuild.dependsOn(":preparehelper:runyou")
+            } else if (variant.flavorName == "light" || variant.flavorName == "lightPlay") {
+                variant.preBuild.dependsOn(":preparehelper:runlight")
+            }else if (variant.flavorName == "dark" || variant.flavorName == "darkPlay") {
+                variant.preBuild.dependsOn(":preparehelper:rundark")
+            }
+            // Add more conditions for additional flavors
+        }
     }
+
 
 
     flavorDimensions "variant"

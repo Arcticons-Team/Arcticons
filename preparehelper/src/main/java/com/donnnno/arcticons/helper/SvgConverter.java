@@ -1,38 +1,28 @@
 package com.donnnno.arcticons.helper;
 
 import com.android.ide.common.vectordrawable.Svg2Vector;
+
 import org.dom4j.Document;
-import org.dom4j.DocumentException;
 import org.dom4j.DocumentHelper;
 import org.dom4j.Element;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
-import java.nio.file.*;
+import java.nio.file.FileAlreadyExistsException;
+import java.nio.file.FileVisitOption;
+import java.nio.file.FileVisitResult;
+import java.nio.file.FileVisitor;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.SimpleFileVisitor;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.util.EnumSet;
 
 public class SvgConverter {
     private static Path sourceSvgPath;
     private static Path destinationVectorPath;
-
-    public static void process(String sourceDirectory, String destDirectory) {
-        sourceSvgPath = Paths.get(sourceDirectory);
-        destinationVectorPath = Paths.get(destDirectory);
-        try {
-            EnumSet<FileVisitOption> options = EnumSet.of(FileVisitOption.FOLLOW_LINKS);
-            // check first if source is a directory
-            if (Files.isDirectory(sourceSvgPath)) {
-                Files.walkFileTree(sourceSvgPath, options, Integer.MAX_VALUE, fileVisitor);
-            } else {
-                System.out.println("source not a directory");
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
     private static FileVisitor<Path> fileVisitor = new SimpleFileVisitor<Path>() {
         @Override
         public FileVisitResult postVisitDirectory(Path dir, IOException exc) throws IOException {
@@ -68,6 +58,22 @@ public class SvgConverter {
             return FileVisitResult.CONTINUE;
         }
     };
+
+    public static void process(String sourceDirectory, String destDirectory) {
+        sourceSvgPath = Paths.get(sourceDirectory);
+        destinationVectorPath = Paths.get(destDirectory);
+        try {
+            EnumSet<FileVisitOption> options = EnumSet.of(FileVisitOption.FOLLOW_LINKS);
+            // check first if source is a directory
+            if (Files.isDirectory(sourceSvgPath)) {
+                Files.walkFileTree(sourceSvgPath, options, Integer.MAX_VALUE, fileVisitor);
+            } else {
+                System.out.println("source not a directory");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     private static void convertToVector(Path svgSource, Path vectorTargetPath) {
         // convert only if it is .svg
@@ -124,6 +130,7 @@ public class SvgConverter {
     private static void updateXmlPath(Document xmlDocument, String searchKey, String attributeValue) {
         updateXmlPath(xmlDocument.getRootElement(), searchKey, attributeValue);
     }
+
     private static void updateXmlPath(Element parentElement, String searchKey, String attributeValue) {
         String keyWithoutNameSpace = searchKey.substring(searchKey.indexOf(":") + 1);
 

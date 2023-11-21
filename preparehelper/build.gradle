@@ -6,6 +6,31 @@ application {
     mainClassName = "com.donnnno.arcticons.helper.Start"
 }
 
+task runyou(type: JavaExec) {
+    // Configure the task as needed
+    mainClass = 'com.donnnno.arcticons.helper.Start'
+    classpath = sourceSets.main.runtimeClasspath
+    // Other configurations...
+    args =['you']
+}
+task runlight(type: JavaExec) {
+    // Configure the task as needed
+    mainClass = 'com.donnnno.arcticons.helper.Start'
+    classpath = sourceSets.main.runtimeClasspath
+    // Other configurations...
+    args =['light']
+}
+task rundark(type: JavaExec) {
+    // Configure the task as needed
+    mainClass = 'com.donnnno.arcticons.helper.Start'
+    classpath = sourceSets.main.runtimeClasspath
+    // Other configurations...
+    args =['dark']
+}
+
+
+
+
 dependencies {
     implementation("com.android.tools:sdk-common:31.1.4")
     implementation("org.dom4j:dom4j:2.1.4")
