@@ -53,16 +53,4 @@ public class XMLhelper {
             xmlWriter.close();
         }
     }
-    public static ByteArrayOutputStream writeDocumentToStream(Document document, ByteArrayOutputStream outputStream) throws IOException {
-        OutputFormat format = OutputFormat.createPrettyPrint();
-        format.setEncoding(UTF_8);
-
-        try {
-            XMLWriter xmlWriter = new XMLWriter(outputStream, format);
-            xmlWriter.write(document);
-        } catch (Exception e) {
-            throw new IOException("Error writing XML to stream", e);
-        }
-        return outputStream;
-    }
 }
