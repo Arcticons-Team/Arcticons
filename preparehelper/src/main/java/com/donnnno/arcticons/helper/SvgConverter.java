@@ -23,6 +23,7 @@ import java.util.EnumSet;
 public class SvgConverter {
     private static Path sourceSvgPath;
     private static Path destinationVectorPath;
+    private static String flavor;
     private static FileVisitor<Path> fileVisitor = new SimpleFileVisitor<Path>() {
         @Override
         public FileVisitResult postVisitDirectory(Path dir, IOException exc) throws IOException {
@@ -59,9 +60,10 @@ public class SvgConverter {
         }
     };
 
-    public static void process(String sourceDirectory, String destDirectory) {
+    public static void process(String sourceDirectory, String destDirectory, String getFlavor) {
         sourceSvgPath = Paths.get(sourceDirectory);
         destinationVectorPath = Paths.get(destDirectory);
+        flavor = getFlavor;
         try {
             EnumSet<FileVisitOption> options = EnumSet.of(FileVisitOption.FOLLOW_LINKS);
             // check first if source is a directory
@@ -81,13 +83,30 @@ public class SvgConverter {
             Path targetFile = Path.of(XMLhelper.getFileWithExtension(vectorTargetPath));
             try (ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream()) {
                 Svg2Vector.parseSvgToXml(svgSource, byteArrayOutputStream);
+                if (flavor == "you"){
                 createAdaptive(byteArrayOutputStream, String.valueOf(targetFile));
+                } else if (flavor == "light") {
+                    createDrawable(byteArrayOutputStream, String.valueOf(targetFile),"@color/icon_color");
+                }else if (flavor == "dark"){
+                    createDrawable(byteArrayOutputStream, String.valueOf(targetFile),"@color/icon_color");
+                }
+
             } catch (Exception e) {
                 e.printStackTrace();
             }
         } else {
             System.out.println("Skipping file as it's not an svg " + svgSource.getFileName());
         }
+    }
+    private static void createDrawable(ByteArrayOutputStream byteArrayOutputStream, String resPath, String color) throws Exception {
+        String px = "1.2";
+        String XmlContent = new String(byteArrayOutputStream.toByteArray(), StandardCharsets.UTF_8);
+        Document document = DocumentHelper.parseText(XmlContent);
+        updateXmlPath(document, "android:strokeColor", color);
+        updateXmlPath(document, "android:fillColor", color);
+        updateXmlPath(document, "android:strokeWidth", px);
+        updateRootElement(document, "android:tint", color);
+        XMLhelper.writeDocumentToFile(document, resPath);
     }
 
     private static void createAdaptive(ByteArrayOutputStream byteArrayOutputStream, String resPath) throws Exception {

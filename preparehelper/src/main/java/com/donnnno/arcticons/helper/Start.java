@@ -7,36 +7,42 @@ public class Start {
             String flavor = args[0];
             // Use the flavor as needed
             System.out.println("Processing with flavor: " + flavor);
-
+            String rootDir = "..";
+            String sourceDir = rootDir + "/icons/white";
+            String resDir;
+            String destDir;
+            //String appFilterFile = rootDir + "/app/assets/appfilter.xml";
             switch (flavor) {
                 case "you":
-                    String rootDir = "..";
-                    String sourceDir = rootDir + "/icons/white";
-                    String resDir = rootDir + "/app/src/you/res";
-                    String appFilterFile = rootDir + "/app/assets/appfilter.xml";
-                    String destDir = resDir + "/drawable-anydpi";
-
+                    resDir = rootDir + "/app/src/you/res";
+                    destDir = resDir + "/drawable-anydpi";
                     // Convert svg to drawable in runtime
-                    SvgConverter.process(sourceDir, destDir);
+                    SvgConverter.process(sourceDir, destDir, flavor);
+                    break;
 
-                    // Read appfilter xml and create icon, drawable xml file.
+                case "light":
+                    resDir = rootDir + "/app/src/light/res";
+                    destDir = resDir + "/drawable-anydpi";
+                    // Convert svg to drawable in runtime
+                    SvgConverter.process(sourceDir, destDir, flavor);
+                    break;
+
+                case "dark":
+                    resDir = rootDir + "/app/src/dark/res";
+                    destDir = resDir + "/drawable-anydpi";
+                    // Convert svg to drawable in runtime
+                    SvgConverter.process(sourceDir, destDir, flavor);
+                    break;
+
+            }
+            System.out.println("SvgToVector task completed");
+            // Read appfilter xml and create icon, drawable xml file.
                 /* try {
             ConfigProcessor.loadAndCreateConfigs(appFilterFile, resDir);
         } catch (Exception e) {
             e.printStackTrace();
         }
         */
-                    break;
-                case "light":
-                    //code for light
-                    break;
-
-                case "dark":
-//code for dark
-                    break;
-
-            }
-            System.out.println("SvgToVector task completed");
         }
     }
 }
