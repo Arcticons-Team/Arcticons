@@ -19,6 +19,7 @@ import java.nio.file.Paths;
 import java.nio.file.SimpleFileVisitor;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.util.EnumSet;
+import java.util.Objects;
 
 public class SvgConverter {
     private static Path sourceSvgPath;
@@ -56,6 +57,7 @@ public class SvgConverter {
 
         @Override
         public FileVisitResult visitFileFailed(Path file, IOException exc) throws IOException {
+            System.out.println("File visit failed");
             return FileVisitResult.CONTINUE;
         }
     };
@@ -83,12 +85,12 @@ public class SvgConverter {
             Path targetFile = Path.of(XMLhelper.getFileWithExtension(vectorTargetPath));
             try (ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream()) {
                 Svg2Vector.parseSvgToXml(svgSource, byteArrayOutputStream);
-                if (flavor == "you"){
+                if (Objects.equals(flavor, "you")){
                 createAdaptive(byteArrayOutputStream, String.valueOf(targetFile));
-                } else if (flavor == "light") {
-                    createDrawable(byteArrayOutputStream, String.valueOf(targetFile),"@color/icon_color");
-                }else if (flavor == "dark"){
-                    createDrawable(byteArrayOutputStream, String.valueOf(targetFile),"@color/icon_color");
+                } else if (Objects.equals(flavor, "light")) {
+                    createDrawable(byteArrayOutputStream, String.valueOf(targetFile),"#000000");
+                }else if (Objects.equals(flavor, "dark")){
+                    createDrawable(byteArrayOutputStream, String.valueOf(targetFile),"#ffffff");
                 }
 
             } catch (Exception e) {
@@ -99,7 +101,7 @@ public class SvgConverter {
         }
     }
     private static void createDrawable(ByteArrayOutputStream byteArrayOutputStream, String resPath, String color) throws Exception {
-        String px = "1.2";
+        String px = "1";
         String XmlContent = new String(byteArrayOutputStream.toByteArray(), StandardCharsets.UTF_8);
         Document document = DocumentHelper.parseText(XmlContent);
         updateXmlPath(document, "android:strokeColor", color);
