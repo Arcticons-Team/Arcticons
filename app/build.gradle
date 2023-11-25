@@ -42,7 +42,7 @@ android {
 
 
 
-    flavorDimensions ["variant"]
+    flavorDimensions += "variant"
     productFlavors {
         dark {
             dimension "variant"
