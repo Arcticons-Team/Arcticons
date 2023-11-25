@@ -9,8 +9,8 @@ android {
         applicationId "com.donnnno.arcticons"
         minSdkVersion rootProject.ext.MinSdk
         targetSdkVersion rootProject.ext.TargetSdk
-        versionCode 123
-        versionName '8.2.0'
+        versionCode 124
+        versionName '8.2.0-hotfix'
         multiDexEnabled true
 
         // Naming app bundles
@@ -44,21 +44,21 @@ android {
 
     flavorDimensions += "variant"
     productFlavors {
-        dark {
+        normal {
             dimension "variant"
             resValue "string", "app_name", "Arcticons"
         }
-        darkPlay {
+        normalPlay {
             dimension "variant"
             resValue "string", "app_name", "Arcticons"
         }
-        light {
+        black {
             dimension "variant"
             //noinspection GradlePath
             applicationIdSuffix '.light'
             resValue "string", "app_name", "Arcticons Black"
         }
-        lightPlay {
+        blackPlay {
             dimension "variant"
             applicationIdSuffix '.light'
             resValue "string", "app_name", "Arcticons Black"
@@ -90,10 +90,10 @@ android {
     }
 
     sourceSets {
-        dark { res.srcDirs = ['src/darkFree/res/', 'src/dark/res'] }
-        darkPlay { res.srcDirs = ['src/darkPlay/res/', 'src/dark/res'] }
-        light { res.srcDirs = ['src/lightFree/res/', 'src/light/res'] }
-        lightPlay { res.srcDirs = ['src/lightPlay/res/', 'src/light/res'] }
+        normal { res.srcDirs = ['src/darkFree/res/', 'src/dark/res'] }
+        normalPlay { res.srcDirs = ['src/darkPlay/res/', 'src/dark/res'] }
+        black { res.srcDirs = ['src/lightFree/res/', 'src/light/res'] }
+        blackPlay { res.srcDirs = ['src/lightPlay/res/', 'src/light/res'] }
 		you { res.srcDirs = ['src/youFree/res/', 'src/you/res'] }
         youPlay { res.srcDirs = ['src/youPlay/res/', 'src/you/res'] }
         dayNight { res.srcDirs = ['src/dayNightFree/res/', 'src/dayNight/res'] }
