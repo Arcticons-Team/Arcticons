@@ -32,7 +32,7 @@ public class Start {
                     // Convert svg to drawable in runtime
                     SvgConverter.process(sourceDir, destDir, flavor);
                 }
-                case "light" -> {
+                case "black" -> {
                     if (false) {
                         resDir = rootDir + "/app/src/light/res";
                         destDir = resDir + "/drawable-anydpi";
@@ -40,7 +40,7 @@ public class Start {
                         SvgConverter.process(sourceDir, destDir, flavor);
                     }
                 }
-                case "dark" -> {
+                case "normal" -> {
                     if (false) {
                         resDir = rootDir + "/app/src/dark/res";
                         destDir = resDir + "/drawable-anydpi";

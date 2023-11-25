@@ -29,10 +29,10 @@ android {
 
             if (variant.flavorName == "you" || variant.flavorName == "youPlay") {
                 variant.preBuildProvider.get().dependsOn(":preparehelper:runyou")
-            } else if (variant.flavorName == "light" || variant.flavorName == "lightPlay") {
-                variant.preBuildProvider.get().dependsOn(":preparehelper:runlight")
-            }else if (variant.flavorName == "dark" || variant.flavorName == "darkPlay") {
-                variant.preBuildProvider.get().dependsOn(":preparehelper:rundark")
+            } else if (variant.flavorName == "black" || variant.flavorName == "blackPlay") {
+                variant.preBuildProvider.get().dependsOn(":preparehelper:runblack")
+            }else if (variant.flavorName == "normal" || variant.flavorName == "normalPlay") {
+                variant.preBuildProvider.get().dependsOn(":preparehelper:runnormal")
             }else if (variant.flavorName == "dayNight" || variant.flavorName == "dayNightPlay") {
             variant.preBuildProvider.get().dependsOn(":preparehelper:rundayNight")
         }

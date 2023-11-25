@@ -13,19 +13,19 @@ task runyou(type: JavaExec) {
     // Other configurations...
     args =['you']
 }
-task runlight(type: JavaExec) {
+task runblack(type: JavaExec) {
     // Configure the task as needed
     mainClass = 'com.donnnno.arcticons.helper.Start'
     classpath = sourceSets.main.runtimeClasspath
     // Other configurations...
-    args =['light']
+    args =['black']
 }
-task rundark(type: JavaExec) {
+task runnormal(type: JavaExec) {
     // Configure the task as needed
     mainClass = 'com.donnnno.arcticons.helper.Start'
     classpath = sourceSets.main.runtimeClasspath
     // Other configurations...
-    args =['dark']
+    args =['normal']
 }
 task rundayNight(type: JavaExec) {
     // Configure the task as needed

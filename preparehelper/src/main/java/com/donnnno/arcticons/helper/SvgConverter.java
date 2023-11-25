@@ -87,9 +87,9 @@ public class SvgConverter {
                 Svg2Vector.parseSvgToXml(svgSource, byteArrayOutputStream);
                 if (Objects.equals(flavor, "you")){
                 createAdaptive(byteArrayOutputStream, String.valueOf(targetFile));
-                } else if (Objects.equals(flavor, "light")){
+                } else if (Objects.equals(flavor, "black")){
                     createDrawable(byteArrayOutputStream, String.valueOf(targetFile),"#000000");
-                }else if (Objects.equals(flavor, "dark")){
+                }else if (Objects.equals(flavor, "normal")){
                     createDrawable(byteArrayOutputStream, String.valueOf(targetFile),"#ffffff");
                 }else if (Objects.equals(flavor, "dayNight")) {
                     createDrawable(byteArrayOutputStream, String.valueOf(targetFile), "@color/icon_color");
