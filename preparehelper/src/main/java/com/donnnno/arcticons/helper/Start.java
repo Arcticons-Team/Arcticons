@@ -34,17 +34,21 @@ public class Start {
                     break;
 
                 case "light":
-                    resDir = rootDir + "/app/src/light/res";
-                    destDir = resDir + "/drawable-anydpi";
-                    // Convert svg to drawable in runtime
-                    SvgConverter.process(sourceDir, destDir, flavor);
+                    if (false) {
+                        resDir = rootDir + "/app/src/light/res";
+                        destDir = resDir + "/drawable-anydpi";
+                        // Convert svg to drawable in runtime
+                        SvgConverter.process(sourceDir, destDir, flavor);
+                    }
                     break;
 
                 case "dark":
-                    resDir = rootDir + "/app/src/dark/res";
-                    destDir = resDir + "/drawable-anydpi";
-                    // Convert svg to drawable in runtime
-                    SvgConverter.process(sourceDir, destDir, flavor);
+                    if (false) {
+                        resDir = rootDir + "/app/src/dark/res";
+                        destDir = resDir + "/drawable-anydpi";
+                        // Convert svg to drawable in runtime
+                        SvgConverter.process(sourceDir, destDir, flavor);
+                    }
                     break;
 
             }
