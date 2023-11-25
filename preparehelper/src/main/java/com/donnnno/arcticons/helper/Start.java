@@ -26,36 +26,34 @@ public class Start {
             System.out.println("Processing with flavor: " + flavor);
             //String appFilterFile = rootDir + "/app/assets/appfilter.xml";
             switch (flavor) {
-                case "you":
+                case "you" -> {
                     resDir = rootDir + "/app/src/you/res";
                     destDir = resDir + "/drawable-anydpi";
                     // Convert svg to drawable in runtime
                     SvgConverter.process(sourceDir, destDir, flavor);
-                    break;
-
-                case "light":
+                }
+                case "light" -> {
                     if (false) {
                         resDir = rootDir + "/app/src/light/res";
                         destDir = resDir + "/drawable-anydpi";
                         // Convert svg to drawable in runtime
                         SvgConverter.process(sourceDir, destDir, flavor);
                     }
-                    break;
-
-                case "dark":
+                }
+                case "dark" -> {
                     if (false) {
                         resDir = rootDir + "/app/src/dark/res";
                         destDir = resDir + "/drawable-anydpi";
                         // Convert svg to drawable in runtime
                         SvgConverter.process(sourceDir, destDir, flavor);
                     }
-                    break;
-                case "dayNight":
-                        resDir = rootDir + "/app/src/dayNight/res";
-                        destDir = resDir + "/drawable-anydpi";
-                        // Convert svg to drawable in runtime
-                        SvgConverter.process(sourceDir, destDir, flavor);
-                    break;
+                }
+                case "dayNight" -> {
+                    resDir = rootDir + "/app/src/dayNight/res";
+                    destDir = resDir + "/drawable-anydpi";
+                    // Convert svg to drawable in runtime
+                    SvgConverter.process(sourceDir, destDir, flavor);
+                }
             }
             System.out.println("SvgToVector task completed");
             // Read appfilter xml and create icon, drawable xml file.

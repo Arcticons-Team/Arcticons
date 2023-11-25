@@ -77,14 +77,14 @@ android {
         }
     dayNight {
         dimension "variant"
-        minSdkVersion "24"
+        minSdkVersion "29"
         applicationIdSuffix '.daynight'
         resValue "string", "app_name", "Arcticons Day & Night"
     }
     dayNightPlay {
         dimension "variant"
-        minSdkVersion "24"
-        applicationIdSuffix '.daynight.play'
+        minSdkVersion "29"
+        applicationIdSuffix '.daynight'
         resValue "string", "app_name", "Arcticons Day & Night"
     }
     }
