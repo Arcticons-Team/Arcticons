@@ -50,7 +50,12 @@ public class Start {
                         SvgConverter.process(sourceDir, destDir, flavor);
                     }
                     break;
-
+                case "dayNight":
+                        resDir = rootDir + "/app/src/dayNight/res";
+                        destDir = resDir + "/drawable-anydpi";
+                        // Convert svg to drawable in runtime
+                        SvgConverter.process(sourceDir, destDir, flavor);
+                    break;
             }
             System.out.println("SvgToVector task completed");
             // Read appfilter xml and create icon, drawable xml file.

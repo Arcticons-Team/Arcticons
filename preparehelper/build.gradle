@@ -27,6 +27,13 @@ task rundark(type: JavaExec) {
     // Other configurations...
     args =['dark']
 }
+task rundayNight(type: JavaExec) {
+    // Configure the task as needed
+    mainClass = 'com.donnnno.arcticons.helper.Start'
+    classpath = sourceSets.main.runtimeClasspath
+    // Other configurations...
+    args =['dayNight']
+}
 
 
 
