@@ -1,14 +1,14 @@
-### 8.x.x - The Renamening
-###### Released: TBA
-* 🔠  Sometimes you have a good idea, and sometimes it just doesn't work that good in practice. That was the case with the Arcticons names. Dark and Light stands for Darkmode and Lightmode, but that was confusing, because it wasn't in the title. We've renamed it to Arcticons, Arcticons Black, and Arcticons Material You.
-* 🎉 X new and updated icons! (thanks ...)
+### 8.2.0 - The Renamening
+###### Released: Nov 25, 2023
+* 🔠 Sometimes you have a good idea, and sometimes it just doesn't work that good in practice. That was the case with the Arcticons names. Dark and Light stands for Darkmode and Lightmode, but that was confusing, because it wasn't in the title. We've renamed it to Arcticons, Arcticons Black, and Arcticons Material You.
+* 🎉 150 new and updated icons! (thanks Orbitaldr0p, Supertsy5, MikeTheGreat, TotallyAvailable, Xprateek, Subroutine7901, Ojppe, Lavin-Tom, Quantenzitrone)
 * ✨ Updates to make sure lots of apps work again.
-* 🔥 X icons in total!
+* 🔥 8200 icons in total!
 
 ### 8.0.6 - Anniversary update
 ###### Released: Nov 8, 2023
 * 🎈 Arcticons turns 3 years old, thanks everyone for being with us, making this possible!
-* 🎉 550 new and updated icons! (thanks Onuronsekiz, Petlyh, Kaiserdragon2, Starfetch,  MikeTheGreat, MrAlpha786)
+* 🎉 550 new and updated icons! (thanks Onuronsekiz, Petlyh, Kaiserdragon2, Starfetch, MikeTheGreat, MrAlpha786)
 * ✨ Updates to make sure lots of apps work again.
 * 🔥 8068 icons in total!
 
