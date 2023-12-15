@@ -33,7 +33,7 @@ android {
                 variant.preBuildProvider.get().dependsOn(":preparehelper:runblack")
             }else if (variant.flavorName == "normal" || variant.flavorName == "normalPlay") {
                 variant.preBuildProvider.get().dependsOn(":preparehelper:runnormal")
-            }else if (variant.flavorName == "dayNight" || variant.flavorName == "dayNightPlay") {
+            }else if (variant.flavorName == "dayNight") {
             variant.preBuildProvider.get().dependsOn(":preparehelper:rundayNight")
         }
             // Add more conditions for additional flavors
@@ -75,18 +75,12 @@ android {
             applicationIdSuffix '.you.play'
             resValue "string", "app_name", "Arcticons Material You"
         }
-    dayNight {
-        dimension "variant"
-        minSdkVersion "29"
-        applicationIdSuffix '.daynight'
-        resValue "string", "app_name", "Arcticons Day & Night"
-    }
-    dayNightPlay {
-        dimension "variant"
-        minSdkVersion "29"
-        applicationIdSuffix '.daynight'
-        resValue "string", "app_name", "Arcticons Day & Night"
-    }
+        dayNight {
+            dimension "variant"
+            minSdkVersion "29"
+            applicationIdSuffix '.daynight'
+            resValue "string", "app_name", "Arcticons Day & Night"
+        }
     }
 
     sourceSets {
@@ -97,7 +91,6 @@ android {
 		you { res.srcDirs = ['src/youFree/res/', 'src/you/res'] }
         youPlay { res.srcDirs = ['src/youPlay/res/', 'src/you/res'] }
         dayNight { res.srcDirs = ['src/dayNightFree/res/', 'src/dayNight/res'] }
-        dayNightPlay { res.srcDirs = ['src/dayNightPlay/res/', 'src/dayNight/res'] }
     }
 
 
