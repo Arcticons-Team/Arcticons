@@ -453,18 +453,19 @@ def svg_colors(dir:str,stroke:str,fill:str,stroke_alt:str,fill_alt:str,replace_s
             fp.write(content)
 
 #Create PNG of the SVG and Copy to destination
-def create_icons(sizes: List[int], dir:str ,export_dir: str, icon_dir: str , mode:str) -> None:
+def create_icons(sizes: List[int], dir:str ,export_dir: str, icon_dir: str , mode:str,inkscape:bool) -> None:
     for file_path in glob.glob(f"{dir}/*.svg"):
         file= os.path.basename(file_path)
         name = file[:-4]
         copy2(file_path, f'{icon_dir}/{file}')
         print(f'Working on {file} {mode}')
-        for size in sizes:
-            subprocess.run(['inkscape', '--export-filename='+f'{name}'+'.png',
-                            f'--export-width={size}', f'--export-height={size}', file_path])
-            if size == 256:
-                copy2(f'{name}.png', export_dir)
-                Path(f'{name}.png').unlink()
+        if inkscape:
+            for size in sizes:
+                subprocess.run(['inkscape', '--export-filename='+f'{name}'+'.png',
+                                f'--export-width={size}', f'--export-height={size}', file_path])
+                if size == 256:
+                    copy2(f'{name}.png', export_dir)
+                    Path(f'{name}.png').unlink()
 
 
 def remove_svg(dir:str):
@@ -644,10 +645,10 @@ def main():
         return
     create_new_drawables(SVG_DIR,NEWDRAWABLE_PATH)
     svg_colors(SVG_DIR,ORIGINAL_STROKE,ORIGINAL_FILL,ORIGINAL_STROKE_ALT,ORIGINAL_FILL_ALT,REPLACE_STROKE_WHITE,REPLACE_FILL_WHITE,REPLACE_STROKE_WHITE_ALT,REPLACE_FILL_WHITE_ALT)
-    create_icons(SIZES, SVG_DIR ,EXPORT_DARK_DIR, WHITE_DIR, 'Dark Mode')
-    svg_xml_exporter(SVG_DIR, EXPORT_YOU_DIR, WHITE_DIR, 'You Mode')
+    create_icons(SIZES, SVG_DIR ,EXPORT_DARK_DIR, WHITE_DIR, 'Dark Mode',True)
+    #svg_xml_exporter(SVG_DIR, EXPORT_YOU_DIR, WHITE_DIR, 'You Mode')
     svg_colors(SVG_DIR,ORIGINAL_STROKE,ORIGINAL_FILL,ORIGINAL_STROKE_ALT,ORIGINAL_FILL_ALT,REPLACE_STROKE_BLACK,REPLACE_FILL_BLACK,REPLACE_STROKE_BLACK_ALT,REPLACE_FILL_BLACK_ALT)
-    create_icons(SIZES, SVG_DIR ,EXPORT_LIGHT_DIR, BLACK_DIR, 'Light Mode')
+    create_icons(SIZES, SVG_DIR ,EXPORT_LIGHT_DIR, BLACK_DIR, 'Light Mode',True)
     remove_svg(SVG_DIR)
     sortxml(APPFILTER_PATH)
     convert_svg_files(WHITE_DIR, RES_XML_PATH,VALUE_PATH,ASSETS_PATH,APPFILTER_PATH) 

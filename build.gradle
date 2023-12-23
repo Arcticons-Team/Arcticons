@@ -26,6 +26,10 @@ allprojects {
 
 task clean(type: Delete) {
     delete rootProject.buildDir
+    delete fileTree(dir:  'app/src/you/res/drawable-anydpi')
+    delete fileTree(dir:  'app/src/light/res/drawable-anydpi')
+    delete fileTree(dir:  'app/src/dark/res/drawable-anydpi')
+    delete fileTree(dir:  'app/src/dayNight/res/drawable-anydpi')
 }
 
 //F-DROID REPRODUCIBLE BUILDS
