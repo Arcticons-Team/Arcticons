@@ -120,6 +120,7 @@ import com.android.tools.profgen.ArtProfileKt
 import com.android.tools.profgen.ArtProfileSerializer
 import com.android.tools.profgen.DexFile
 
+// F-Droid Reproducible Build tasks
 
 project.afterEvaluate {
     tasks.each { task ->
