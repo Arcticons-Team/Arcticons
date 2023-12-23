@@ -100,22 +100,28 @@ public class CandyBar extends CandyBarApplication {
         OtherApp[] otherApps = new OtherApp[] {
                 new OtherApp(
                         // You can use png file (without extension) inside drawable-nodpi folder or url
-                        "arcticons_you",
+                        "arcticons_material_you",
                         "Arcticons Material You",
                         "Arcticons, but with a material you flavor!",
                         "https://play.google.com/store/apps/details?id=com.donnnno.arcticons.you.play"),
                 new OtherApp(
                         // You can use png file (without extension) inside drawable-nodpi folder or url
-                        "arcticonsdark",
+                        "arcticons",
                         "Arcticons",
                         "Arcticons, with white lines",
                         "https://play.google.com/store/apps/details?id=com.donnnno.arcticons"),
                 new OtherApp(
                         // You can use png file (without extension) inside drawable-nodpi folder or url
-                        "arcticonslight",
+                        "arcticons_black",
                         "Arcticons Black",
                         "Arcticons, with black lines.",
-                        "https://play.google.com/store/apps/details?id=com.donnnno.arcticons.light")
+                        "https://play.google.com/store/apps/details?id=com.donnnno.arcticons.light"),
+                new OtherApp(
+                        // You can use png file (without extension) inside drawable-nodpi folder or url
+                        "arcticons_day_night",
+                        "Arcticons Day & Night",
+                        "An expirimental version of Arcticons that switches between dark & light mode.",
+                        "https://github.com/Donnnno/Arcticons/releases")
         };
         configuration.setOtherApps(otherApps);
 
