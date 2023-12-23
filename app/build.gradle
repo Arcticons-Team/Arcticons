@@ -3,14 +3,14 @@ apply plugin: 'com.android.application'
 // build.gradle in the 'app' module
 
 android {
-    compileSdk 33
+    compileSdk 34
 
     defaultConfig {
         applicationId "com.donnnno.arcticons"
         minSdkVersion rootProject.ext.MinSdk
         targetSdkVersion rootProject.ext.TargetSdk
-        versionCode 124
-        versionName '8.2.0-hotfix'
+        versionCode 126
+        versionName '8.3.0'
         multiDexEnabled true
 
         // Naming app bundles
