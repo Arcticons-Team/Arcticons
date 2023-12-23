@@ -1,6 +1,6 @@
 ### 8.3.0 - Day & Night 
 ###### Released: Dec 23, 2023
-* 🎉 150 new and updated icons! (thanks Kaiserdragon, Supertsy5, MikeTheGreat, TotallyAvailable, Xprateek, Alchemiker, NicoWeio, Lavin-Tom)
+* 🎉 108 new and updated icons! (thanks Kaiserdragon, Supertsy5, MikeTheGreat, TotallyAvailable, Xprateek, Alchemiker, NicoWeio, Lavin-Tom)
 * ✨ Updates to make sure lots of apps work again.
 * ☀️🌙 Arcticons Day and Night: A new expirimental flavor that switches between your system themes. (thanks to Kaiserdragon)
 * 🔥 8300 icons in total!
