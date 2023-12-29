@@ -54,7 +54,7 @@ Usually Inkscape will add a lot of metadata that will get cleaned up by the mant
 - Once in your fork, click "other" directory
 - Click "Add file" > Upload files > choose your files
 - Select your masterpiece(s) and Commit changes (you can add a commit message if you want)
-- There will be a dialog "... is 1 commit ahead of Arcticons-Team:Arcticons"
+- There will be a dialog "... is 1 commit ahead of Arcticons-Team/Arcticons:main"
 - Click "Contribute" > "Open pull request"
 - Type the pull-request message (e.g. name of the icons)
 - Click "create pull request"
