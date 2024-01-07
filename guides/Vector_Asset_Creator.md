@@ -38,7 +38,7 @@ You'll notice that the fill color is white and stroke colour is black.
 
 ## Uploading
 
-- Go to the github page <https://github.com/Donnnno/Arcticons/> in a browser
+- Go to the github page <https://github.com/Arcticons-Team/Arcticons/> in a browser
 
 - Turn on desktop mode in the browser
 
