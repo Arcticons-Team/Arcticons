@@ -18,7 +18,7 @@ The guide will use the colour #4080ff as an example
 
 - `git init`
 
-- `git remote add upstream https://github.com/Donnnno/Arcticons/`
+- `git remote add upstream https://github.com/Arcticons-Team/Arcticons/`
 
 - `git pull upstream main`
 
