@@ -1,5 +1,8 @@
 <resources>
 
+	<!-- Mojo Sports -->
+	<item component="ComponentInfo{sport.mojo.android/sport.mojo.android.ui.MainActivity}" drawable="mojo_sports"/>
+	
 	<!-- #DRIVE -->
 	<item component="ComponentInfo{com.pixelperfectdude.htdrive/com.unity3d.player.UnityPlayerActivity}" drawable="drive"/>
 
@@ -695,6 +698,9 @@
 
 	<!-- Affirm -->
 	<item component="ComponentInfo{com.affirm.central/com.affirm.central.RootActivity}" drawable="affirm"/>
+	
+	<!-- Affluences -->
+	<item component="ComponentInfo{fr.affluences/fr.affluences.MainActivity}" drawable="affluences"/>
 
 	<!-- AFK Arena -->
 	<item component="ComponentInfo{com.lilithgame.hgame.gp/sh.lilithgame.hgame.AppActivity}" drawable="afk_arena"/>
@@ -1044,6 +1050,33 @@
 
 	<!-- Aliucord -->
 	<item component="ComponentInfo{com.aliucord/com.discord.app.AppActivity$Main}" drawable="discord_alt_2"/>
+	<item component="ComponentInfo{com.aliucord/com.discord.MainActivity}" drawable="discord_alt_2"/>
+	<item component="ComponentInfo{com.aliucord/com.discord.main.MainActivity}" drawable="discord_alt_2"/>
+	<item component="ComponentInfo{com.aliucord/com.discord.main.MainDefault}" drawable="discord_alt_2"/>
+	<item component="ComponentInfo{com.aliucord/com.discord.main.MainBrandInverted}" drawable="discord_alt_2"/>
+	<item component="ComponentInfo{com.aliucord/com.discord.main.MainMatteDark}" drawable="discord_alt_2"/>
+	<item component="ComponentInfo{com.aliucord/com.discord.main.MainMatteLight}" drawable="discord_alt_2"/>
+	<item component="ComponentInfo{com.aliucord/com.discord.main.MainBrandDark}" drawable="discord_alt_2"/>
+	<item component="ComponentInfo{com.aliucord/com.discord.main.MainPastel}" drawable="discord_alt_2"/>
+	<item component="ComponentInfo{com.aliucord/com.discord.main.MainPirate}" drawable="discord_alt_2"/>
+	<item component="ComponentInfo{com.aliucord/com.discord.main.MainCamo}" drawable="discord_alt_2"/>
+	<item component="ComponentInfo{com.aliucord/com.discord.main.MainSunset}" drawable="discord_alt_2"/>
+	<item component="ComponentInfo{com.aliucord/com.discord.main.MainGalaxy}" drawable="discord_alt_2"/>
+	<item component="ComponentInfo{com.aliucord/com.discord.main.MainY2K}" drawable="discord_alt_2"/>
+	<item component="ComponentInfo{com.aliucord/com.discord.main.MainCherryBlossom}" drawable="discord_alt_2"/>
+	<item component="ComponentInfo{com.aliucord/com.discord.main.MainBeanie}" drawable="discord_alt_2"/>
+	<item component="ComponentInfo{com.aliucord/com.discord.main.MainGaming}" drawable="discord_alt_2"/>
+	<item component="ComponentInfo{com.aliucord/com.discord.main.MainCircuit}" drawable="discord_alt_2"/>
+	<item component="ComponentInfo{com.aliucord/com.discord.main.MainHoloWaves}" drawable="discord_alt_2"/>
+	<item component="ComponentInfo{com.aliucord/com.discord.main.MainBlush}" drawable="discord_alt_2"/>
+	<item component="ComponentInfo{com.aliucord/com.discord.main.MainAngry}" drawable="discord_alt_2"/>
+	<item component="ComponentInfo{com.aliucord/com.discord.main.MainManga}" drawable="discord_alt_2"/>
+	<item component="ComponentInfo{com.aliucord/com.discord.main.MainController}" drawable="discord_alt_2"/>
+	<item component="ComponentInfo{com.aliucord/com.discord.main.MainMushroom}" drawable="discord_alt_2"/>
+	<item component="ComponentInfo{com.aliucord/com.discord.main.MainZombie}" drawable="discord_alt_2"/>
+	<item component="ComponentInfo{com.aliucord/com.discord.main.MainClydeStein}" drawable="discord_alt_2"/>
+	<item component="ComponentInfo{com.aliucord/com.discord.main.MainSlimy}" drawable="discord_alt_2"/>
+	<item component="ComponentInfo{com.aliucord/com.discord.main.MainDrip}" drawable="discord_alt_2"/>
 
 	<!-- Aliucord Installer -->
 	<item component="ComponentInfo{com.aliucord.installer/com.aliucord.installer.MainActivity}" drawable="aliucord_installer"/>
@@ -1410,6 +1443,7 @@
 	<item component="ComponentInfo{com.github.mueller_ma.viewandroidversion/com.github.mueller_ma.viewandroidversion.MainActivity}" drawable="android"/>
 	<item component="ComponentInfo{io.github.muntashirakon.captiveportalcontroller/io.github.muntashirakon.captiveportalcontroller.LaunchActivity}" drawable="android"/>
 	<item component="ComponentInfo{lsposed.orange/lsposed.orange.Launcher}" drawable="android"/>
+	<item component="ComponentInfo{de.k3b.android.geo2articlesmap/de.k3b.android.articlemap.ShowArticlesInMapActivity}" drawable="android"/>
 
 	<!-- AndroidRun -->
 	<item component="ComponentInfo{fr.asterope/fr.asterope.MainActivity}" drawable="androidrun"/>
@@ -2217,7 +2251,7 @@
 
 	<!-- AudioRelay -->
 	<item component="ComponentInfo{com.azefsw.audioconnect/com.azefsw.audioconnect.root.ui.RootActivity}" drawable="audiorelay"/>
-	<item component="ComponentInfo{orion.soft/orion.soft.clsVentanaPrevia}" drawable="audiorelay"/>
+	<item component="ComponentInfo{Orion.Soft/orion.soft.clsVentanaPrevia}" drawable="audiorelay"/>
 
 	<!-- Audio­mack -->
 	<item component="ComponentInfo{com.audiomack/com.audiomack.ui.splash.SplashActivity}" drawable="audiomack"/>
@@ -2688,6 +2722,9 @@
 	<!-- Battery Tool -->
 	<item component="ComponentInfo{io.github.domi04151309.batterytool/io.github.domi04151309.batterytool.activities.SplashActivity}" drawable="batterytool"/>
 
+	<!--  Battery Widget  -->
+	<item component="ComponentInfo{com.lstapps.batterywidget/com.lstapps.batterywidget.MainActivity}" drawable="battery_widget"/>
+	
 	<!-- BatteryBot -->
 	<item component="ComponentInfo{com.darshancomputing.BatteryIndicatorPro/com.darshancomputing.BatteryIndicatorPro.BatteryInfoActivity}" drawable="batterybot"/>
 	<item component="ComponentInfo{com.darshancomputing.BatteryIndicator/com.darshancomputing.BatteryIndicator.BatteryInfoActivity}" drawable="batterybot"/>
@@ -3007,6 +3044,20 @@
 	<!-- BGram -->
 	<item component="ComponentInfo{org.telegram.BifToGram/org.telegram.ui.LaunchActivity}" drawable="bgram"/>
 	<item component="ComponentInfo{org.telegram.BifToGram/org.telegram.messenger.DefaultIcon}" drawable="bgram"/>
+	<item component="ComponentInfo{org.telegram.BifToGram/org.telegram.messenger.TurboIcon}" drawable="bgram"/>
+	<item component="ComponentInfo{org.telegram.BifToGram/org.telegram.messenger.NoxIcon}" drawable="bgram"/>
+	<item component="ComponentInfo{org.telegram.BifToGram/org.telegram.messenger.PremiumIcon}" drawable="bgram"/>
+	<item component="ComponentInfo{org.telegram.BifToGram/org.telegram.messenger.AquaIcon}" drawable="bgram"/>
+	<item component="ComponentInfo{org.telegram.BifToGram/org.telegram.messenger.MerioIcon}" drawable="bgram"/>
+	<item component="ComponentInfo{org.telegram.BifToGram/org.telegram.messenger.RainbowIcon}" drawable="bgram"/>
+	<item component="ComponentInfo{org.telegram.BifToGram/org.telegram.messenger.OldSchoolIcon}" drawable="bgram"/>
+	<item component="ComponentInfo{org.telegram.BifToGram/org.telegram.messenger.MusheenIcon}" drawable="bgram"/>
+	<item component="ComponentInfo{org.telegram.BifToGram/org.telegram.messenger.SpaceIcon}" drawable="bgram"/>
+	<item component="ComponentInfo{org.telegram.BifToGram/org.telegram.messenger.CloudIcon}" drawable="bgram"/>
+	<item component="ComponentInfo{org.telegram.BifToGram/org.telegram.messenger.NeonIcon}" drawable="bgram"/>
+	<item component="ComponentInfo{org.telegram.BifToGram/org.telegram.messenger.DarkIcon}" drawable="bgram"/>
+	<item component="ComponentInfo{org.telegram.BifToGram/org.telegram.messenger.VintageIcon}" drawable="bgram"/>
+	<item component="ComponentInfo{org.telegram.BifToGram/org.telegram.messenger.MaterialIcon}" drawable="bgram"/>
 
 	<!-- Bhagavad Gita -->
 	<item component="ComponentInfo{com.wirelessalien.android.bhagavadgita/com.wirelessalien.android.bhagavadgita.activity.SplashActivity}" drawable="bhagavad_gita"/>
@@ -3132,6 +3183,9 @@
 
 	<!-- Billiards City -->
 	<item component="ComponentInfo{com.billiards.city.pool.nation.club/org.cocos2dx.cpp.AppActivity}" drawable="_8_ball_pool"/>
+	
+	<!-- BILnet -->
+	<item component="ComponentInfo{com.bil.android/com.bil.android.MainActivity}" drawable="bilnet"/>
 
 	<!-- Bima+ -->
 	<item component="ComponentInfo{com.linkit.bimatri/com.linkit.bimatri.presentation.activity.SplashScreenActivity}" drawable="bima"/>
@@ -3441,7 +3495,63 @@
 
 	<!-- Bluecord -->
 	<item component="ComponentInfo{com.bluecord/com.discord.app.AppActivity$Main}" drawable="discord_alt_5"/>
+	<item component="ComponentInfo{com.bluecord/com.discord.app.AppActivityMain}" drawable="discord_alt_5"/>
+	<item component="ComponentInfo{com.bluecord/com.discord.MainActivity}" drawable="discord_alt_5"/>
+	<item component="ComponentInfo{com.bluecord/com.discord.main.MainActivity}" drawable="discord_alt_5"/>
+	<item component="ComponentInfo{com.bluecord/com.discord.main.MainDefault}" drawable="discord_alt_5"/>
+	<item component="ComponentInfo{com.bluecord/com.discord.main.MainBrandInverted}" drawable="discord_alt_5"/>
+	<item component="ComponentInfo{com.bluecord/com.discord.main.MainMatteDark}" drawable="discord_alt_5"/>
+	<item component="ComponentInfo{com.bluecord/com.discord.main.MainMatteLight}" drawable="discord_alt_5"/>
+	<item component="ComponentInfo{com.bluecord/com.discord.main.MainBrandDark}" drawable="discord_alt_5"/>
+	<item component="ComponentInfo{com.bluecord/com.discord.main.MainPastel}" drawable="discord_alt_5"/>
+	<item component="ComponentInfo{com.bluecord/com.discord.main.MainPirate}" drawable="discord_alt_5"/>
+	<item component="ComponentInfo{com.bluecord/com.discord.main.MainCamo}" drawable="discord_alt_5"/>
+	<item component="ComponentInfo{com.bluecord/com.discord.main.MainSunset}" drawable="discord_alt_5"/>
+	<item component="ComponentInfo{com.bluecord/com.discord.main.MainGalaxy}" drawable="discord_alt_5"/>
+	<item component="ComponentInfo{com.bluecord/com.discord.main.MainY2K}" drawable="discord_alt_5"/>
+	<item component="ComponentInfo{com.bluecord/com.discord.main.MainCherryBlossom}" drawable="discord_alt_5"/>
+	<item component="ComponentInfo{com.bluecord/com.discord.main.MainBeanie}" drawable="discord_alt_5"/>
+	<item component="ComponentInfo{com.bluecord/com.discord.main.MainGaming}" drawable="discord_alt_5"/>
+	<item component="ComponentInfo{com.bluecord/com.discord.main.MainCircuit}" drawable="discord_alt_5"/>
+	<item component="ComponentInfo{com.bluecord/com.discord.main.MainHoloWaves}" drawable="discord_alt_5"/>
+	<item component="ComponentInfo{com.bluecord/com.discord.main.MainBlush}" drawable="discord_alt_5"/>
+	<item component="ComponentInfo{com.bluecord/com.discord.main.MainAngry}" drawable="discord_alt_5"/>
+	<item component="ComponentInfo{com.bluecord/com.discord.main.MainManga}" drawable="discord_alt_5"/>
+	<item component="ComponentInfo{com.bluecord/com.discord.main.MainController}" drawable="discord_alt_5"/>
+	<item component="ComponentInfo{com.bluecord/com.discord.main.MainMushroom}" drawable="discord_alt_5"/>
+	<item component="ComponentInfo{com.bluecord/com.discord.main.MainZombie}" drawable="discord_alt_5"/>
+	<item component="ComponentInfo{com.bluecord/com.discord.main.MainClydeStein}" drawable="discord_alt_5"/>
+	<item component="ComponentInfo{com.bluecord/com.discord.main.MainSlimy}" drawable="discord_alt_5"/>
+	<item component="ComponentInfo{com.bluecord/com.discord.main.MainDrip}" drawable="discord_alt_5"/>
 	<item component="ComponentInfo{com.bluecordbeta/com.discord.app.AppActivityMain}" drawable="discord_alt_5"/>
+	<item component="ComponentInfo{com.bluecordbeta/com.discord.app.AppActivity$Main}" drawable="discord_alt_5"/>
+	<item component="ComponentInfo{com.bluecordbeta/com.discord.MainActivity}" drawable="discord_alt_5"/>
+	<item component="ComponentInfo{com.bluecordbeta/com.discord.main.MainActivity}" drawable="discord_alt_5"/>
+	<item component="ComponentInfo{com.bluecordbeta/com.discord.main.MainDefault}" drawable="discord_alt_5"/>
+	<item component="ComponentInfo{com.bluecordbeta/com.discord.main.MainBrandInverted}" drawable="discord_alt_5"/>
+	<item component="ComponentInfo{com.bluecordbeta/com.discord.main.MainMatteDark}" drawable="discord_alt_5"/>
+	<item component="ComponentInfo{com.bluecordbeta/com.discord.main.MainMatteLight}" drawable="discord_alt_5"/>
+	<item component="ComponentInfo{com.bluecordbeta/com.discord.main.MainBrandDark}" drawable="discord_alt_5"/>
+	<item component="ComponentInfo{com.bluecordbeta/com.discord.main.MainPastel}" drawable="discord_alt_5"/>
+	<item component="ComponentInfo{com.bluecordbeta/com.discord.main.MainPirate}" drawable="discord_alt_5"/>
+	<item component="ComponentInfo{com.bluecordbeta/com.discord.main.MainCamo}" drawable="discord_alt_5"/>
+	<item component="ComponentInfo{com.bluecordbeta/com.discord.main.MainSunset}" drawable="discord_alt_5"/>
+	<item component="ComponentInfo{com.bluecordbeta/com.discord.main.MainGalaxy}" drawable="discord_alt_5"/>
+	<item component="ComponentInfo{com.bluecordbeta/com.discord.main.MainY2K}" drawable="discord_alt_5"/>
+	<item component="ComponentInfo{com.bluecordbeta/com.discord.main.MainCherryBlossom}" drawable="discord_alt_5"/>
+	<item component="ComponentInfo{com.bluecordbeta/com.discord.main.MainBeanie}" drawable="discord_alt_5"/>
+	<item component="ComponentInfo{com.bluecordbeta/com.discord.main.MainGaming}" drawable="discord_alt_5"/>
+	<item component="ComponentInfo{com.bluecordbeta/com.discord.main.MainCircuit}" drawable="discord_alt_5"/>
+	<item component="ComponentInfo{com.bluecordbeta/com.discord.main.MainHoloWaves}" drawable="discord_alt_5"/>
+	<item component="ComponentInfo{com.bluecordbeta/com.discord.main.MainBlush}" drawable="discord_alt_5"/>
+	<item component="ComponentInfo{com.bluecordbeta/com.discord.main.MainAngry}" drawable="discord_alt_5"/>
+	<item component="ComponentInfo{com.bluecordbeta/com.discord.main.MainManga}" drawable="discord_alt_5"/>
+	<item component="ComponentInfo{com.bluecordbeta/com.discord.main.MainController}" drawable="discord_alt_5"/>
+	<item component="ComponentInfo{com.bluecordbeta/com.discord.main.MainMushroom}" drawable="discord_alt_5"/>
+	<item component="ComponentInfo{com.bluecordbeta/com.discord.main.MainZombie}" drawable="discord_alt_5"/>
+	<item component="ComponentInfo{com.bluecordbeta/com.discord.main.MainClydeStein}" drawable="discord_alt_5"/>
+	<item component="ComponentInfo{com.bluecordbeta/com.discord.main.MainSlimy}" drawable="discord_alt_5"/>
+	<item component="ComponentInfo{com.bluecordbeta/com.discord.main.MainDrip}" drawable="discord_alt_5"/>
 
 	<!-- BlueDriver -->
 	<item component="ComponentInfo{com.lemurmonitors.bluedriver/com.lemurmonitors.bluedriver.MainActivity}" drawable="bluedriver"/>
@@ -4770,6 +4880,9 @@
 
 	<!-- CF.lumen -->
 	<item component="ComponentInfo{eu.chainfire.lumen/eu.chainfire.lumen.ui.MainActivity}" drawable="cflumen"/>
+	
+	<!-- CFL mobile -->
+	<item component="ComponentInfo{de.hafas.android.cfl/de.hafas.main.HafasApp}" drawable="cfl_mobile"/>
 
 	<!-- CH info -->
 	<item component="ComponentInfo{ch.vsdruck.eversify.buku/com.appswithlove.webapp.MainActivity}" drawable="ch_info"/>
@@ -4852,6 +4965,9 @@
 	<!-- Cheogram -->
 	<item component="ComponentInfo{com.cheogram.android/eu.siacs.conversations.ui.ConversationActivity}" drawable="cheogram"/>
 	<item component="ComponentInfo{com.cheogram.android.playstore/eu.siacs.conversations.ui.ConversationActivity}" drawable="cheogram"/>
+
+ 	<!-- Cherrygram -->
+	<item component="ComponentInfo{uz.unnarsx.cherrygram/uz.unnarsx.cherrygram.CG_Icon_Cherry}" drawable="cherrygram" />
 
 	<!-- Chess -->
 	<item component="ComponentInfo{com.chess/com.chess.splash.SplashActivity}" drawable="chess"/>
@@ -5086,6 +5202,9 @@
 
 	<!-- City Transit -->
 	<item component="ComponentInfo{com.swash.traveller.main/com.swash.traveller.main.SplashScreen}" drawable="city_transit"/>
+	
+	<!-- cityapp – VDL -->
+	<item component="ComponentInfo{lu.vdl/lu.vdl.SplashActivity}" drawable="cityapp_vdl"/>
 
 	<!-- Citymapper -->
 	<item component="ComponentInfo{com.citymapper.app.release/com.citymapper.app.MainActivity}" drawable="citymapper"/>
@@ -6175,6 +6294,8 @@
 
 	<!-- DataBackup -->
 	<item component="ComponentInfo{com.xayah.databackup/com.xayah.databackup.ui.activity.screen.ScreenActivity}" drawable="databackup"/>
+	<item component="ComponentInfo{com.xayah.databackup/com.xayah.databackup.SplashActivity}" drawable="databackup"/>
+	<item component="ComponentInfo{com.xayah.databackup.foss/com.xayah.databackup.SplashActivity}" drawable="databackup"/>
 
 	<!-- dataDex -->
 	<item component="ComponentInfo{com.talzz.datadex/com.talzz.datadex.activities.main.MainActivity}" drawable="datadex"/>
@@ -6771,6 +6892,7 @@
 	<item component="ComponentInfo{com.discord/com.discord.MainActivity}" drawable="discord"/>
 	<item component="ComponentInfo{com.discord/com.discord.main.MainActivity}" drawable="discord"/>
 	<item component="ComponentInfo{com.discord/com.discord.main.MainDefault}" drawable="discord"/>
+	<item component="ComponentInfo{com.discord/com.discord.main.MainBrandInverted}" drawable="discord"/>
 	<item component="ComponentInfo{com.discord/com.discord.main.MainBrandDark}" drawable="discord"/>
 	<item component="ComponentInfo{com.discord/com.discord.main.MainMatteDark}" drawable="discord"/>
 	<item component="ComponentInfo{com.discord/com.discord.main.MainMatteLight}" drawable="discord"/>
@@ -6791,6 +6913,9 @@
 	<item component="ComponentInfo{com.discord/com.discord.main.MainController}" drawable="discord"/>
 	<item component="ComponentInfo{com.discord/com.discord.main.MainMushroom}" drawable="discord"/>
 	<item component="ComponentInfo{com.discord/com.discord.main.MainZombie}" drawable="discord"/>
+	<item component="ComponentInfo{com.discord/com.discord.main.MainClydeStein}" drawable="discord"/>
+	<item component="ComponentInfo{com.discord/com.discord.main.MainSlimy}" drawable="discord"/>
+	<item component="ComponentInfo{com.discord/com.discord.main.MainDrip}" drawable="discord"/>
 
 	<!-- Discover -->
 	<item component="ComponentInfo{com.discoverfinancial.mobile/com.discoverfinancial.mobile.MainActivity}" drawable="discover"/>
@@ -6874,6 +6999,7 @@
 
 	<!-- DM Unipd -->
 	<item component="ComponentInfo{it.unipd.math.dm_unipd/it.unipd.math.dm_unipd.MainActivity}" drawable="dm_unipd"/>
+	<item component="ComponentInfo{it.unipd.math.dm_unipd/io.ionic.starter.MainActivity}" drawable="dm_unipd"/>
 
 	<!-- DMI -->
 	<item component="ComponentInfo{dk.dmi.byvejret/dk.dmi.app.presentation.ui.splash.SplashActivity}" drawable="dmi"/>
@@ -7025,6 +7151,7 @@
 	<item component="ComponentInfo{tr.com.dominos/tr.com.dominos.MainActivity}" drawable="dominos"/>
 	<item component="ComponentInfo{com.Dominos/com.Dominos.activity.alias.LauncherDefaultAlias}" drawable="dominos"/>
 	<item component="ComponentInfo{com.Dominos/com.Dominos.activity.alias.LauncherDiwaliAlias}" drawable="dominos"/>
+	<item component="ComponentInfo{com.Dominos/com.Dominos.activity.alias.LauncherNewYearAlias}" drawable="dominos"/>
 
 	<!-- Dont Starve -->
 	<item component="ComponentInfo{com.kleientertainment.doNotStarvePocket/com.kleientertainment.doNotStarvePocket.DoNotStarveActivity}" drawable="dont_starve"/>
@@ -7475,6 +7602,7 @@
 
 	<!-- Easter Eggs -->
 	<item component="ComponentInfo{com.dede.android_eggs/com.dede.android_eggs.main.EasterEggsActivity}" drawable="easter_eggs"/>
+	<item component="ComponentInfo{com.dede.android_eggs/com.dede.android_eggs.views.main.EasterEggsActivity}" drawable="easter_eggs"/>
 
 	<!-- Easy Contacts -->
 	<item component="ComponentInfo{com.simpler.contacts/com.simpler.ui.activities.ContactsAppActivity}" drawable="easycontacts"/>
@@ -7559,6 +7687,9 @@
 
 	<!-- EboBirthday -->
 	<item component="ComponentInfo{com.ebomike.ebobirthday/com.ebomike.ebobirthday.EboBirthday}" drawable="ebobirthday"/>
+	
+	<!-- eboo -->
+	<item component="ComponentInfo{lu.post.finance.mobile.eboo/lu.post.finance.mobile.eboo.MainActivity}" drawable="eboo"/>
 
 	<!-- EBookDroid -->
 	<item component="ComponentInfo{org.ebookdroid/org.ebookdroid.ui.MainActivity}" drawable="ebookdroid"/>
@@ -7828,6 +7959,9 @@
 	<!-- ENUYGUN -->
 	<item component="ComponentInfo{com.mobilatolye.android.enuygun/com.mobilatolye.android.enuygun.features.application.MainActivity}" drawable="enuygun"/>
 
+	<!--  Eortologio  -->
+	<item component="ComponentInfo{com.eortes2/com.eortes2.MainScreen}" drawable="eortologio"/>
+	
 	<!-- ePA -->
 	<item component="ComponentInfo{com.rise_world.epa.bkkBpwBergischeAchsenAG.qu/com.rise_world.epa.ui.splash.SplashActivity}" drawable="epa_bkk_bpw"/>
 
@@ -7927,6 +8061,7 @@
 
 	<!-- EtchDroid -->
 	<item component="ComponentInfo{eu.depau.etchdroid/eu.depau.etchdroid.ui.activities.StartActivity}" drawable="etchdroid"/>
+	<item component="ComponentInfo{eu.depau.etchdroid/eu.depau.etchdroid.ui.MainActivity}" drawable="etchdroid"/>
 
 	<!-- Eternity for Lemmy -->
 	<item component="ComponentInfo{eu.toldi.infinityforlemmy/eu.toldi.infinityforlemmy.activities.MainActivity}" drawable="eternity_for_lemmy"/>
@@ -8832,6 +8967,9 @@
 
 	<!-- Fleksy -->
 	<item component="ComponentInfo{com.syntellia.fleksy.keyboard/com.syntellia.fleksy.settings.activities.SplashActivity}" drawable="fleksy"/>
+	
+	<!-- FLEX -->
+	<item component="ComponentInfo{com.mobilityinternational.classic.client103/de.tamyca.fleetbutler.activities.RoutingActivity}" drawable="flex"/>
 
 	<!-- FlexHero -->
 	<item component="ComponentInfo{de.flexhero.flexheromobileapp/io.flutter.embedding.android.FlutterActivity}" drawable="flexhero"/>
@@ -9121,13 +9259,39 @@
 	<item component="ComponentInfo{com.odnovolov.forgetmenot/com.odnovolov.forgetmenot.presentation.common.mainactivity.MainActivity}" drawable="forgetmenot"/>
 
 	<!-- Fork Client -->
-	<item component="ComponentInfo{org.forkclient.messenger.beta/org.telegram.ui.LaunchActivity}" drawable="forkclient"/>
 	<item component="ComponentInfo{org.forkgram.messenger/org.telegram.ui.LaunchActivity}" drawable="forkclient"/>
 	<item component="ComponentInfo{org.forkgram.messenger/org.telegram.messenger.DefaultIcon}" drawable="forkclient"/>
-	<item component="ComponentInfo{org.forkclient.messenger.beta/org.telegram.messenger.DefaultIcon}" drawable="forkclient"/>
-	<item component="ComponentInfo{org.forkclient.messenger.beta/org.telegram.messenger.VintageIcon}" drawable="forkclient"/>
 	<item component="ComponentInfo{org.forkgram.messenger/org.telegram.messenger.AquaIcon}" drawable="forkclient"/>
 	<item component="ComponentInfo{org.forkgram.messenger/org.telegram.messenger.OriginalIcon}" drawable="forkclient"/>
+	<item component="ComponentInfo{org.forkgram.messenger/org.telegram.messenger.TurboIcon}" drawable="forkclient"/>
+	<item component="ComponentInfo{org.forkgram.messenger/org.telegram.messenger.NoxIcon}" drawable="forkclient"/>
+	<item component="ComponentInfo{org.forkgram.messenger/org.telegram.messenger.PremiumIcon}" drawable="forkclient"/>
+	<item component="ComponentInfo{org.forkgram.messenger/org.telegram.messenger.MerioIcon}" drawable="forkclient"/>
+	<item component="ComponentInfo{org.forkgram.messenger/org.telegram.messenger.RainbowIcon}" drawable="forkclient"/>
+	<item component="ComponentInfo{org.forkgram.messenger/org.telegram.messenger.OldSchoolIcon}" drawable="forkclient"/>
+	<item component="ComponentInfo{org.forkgram.messenger/org.telegram.messenger.MusheenIcon}" drawable="forkclient"/>
+	<item component="ComponentInfo{org.forkgram.messenger/org.telegram.messenger.SpaceIcon}" drawable="forkclient"/>
+	<item component="ComponentInfo{org.forkgram.messenger/org.telegram.messenger.CloudIcon}" drawable="forkclient"/>
+	<item component="ComponentInfo{org.forkgram.messenger/org.telegram.messenger.NeonIcon}" drawable="forkclient"/>
+	<item component="ComponentInfo{org.forkgram.messenger/org.telegram.messenger.DarkIcon}" drawable="forkclient"/>
+	<item component="ComponentInfo{org.forkgram.messenger/org.telegram.messenger.VintageIcon}" drawable="forkclient"/>
+	<item component="ComponentInfo{org.forkgram.messenger/org.telegram.messenger.MaterialIcon}" drawable="forkclient"/>
+	<item component="ComponentInfo{org.forkclient.messenger.beta/org.telegram.ui.LaunchActivity}" drawable="forkclient"/>
+	<item component="ComponentInfo{org.forkclient.messenger.beta/org.telegram.messenger.DefaultIcon}" drawable="forkclient"/>
+	<item component="ComponentInfo{org.forkclient.messenger.beta/org.telegram.messenger.VintageIcon}" drawable="forkclient"/>
+	<item component="ComponentInfo{org.forkclient.messenger.beta/org.telegram.messenger.TurboIcon}" drawable="forkclient"/>
+	<item component="ComponentInfo{org.forkclient.messenger.beta/org.telegram.messenger.NoxIcon}" drawable="forkclient"/>
+	<item component="ComponentInfo{org.forkclient.messenger.beta/org.telegram.messenger.PremiumIcon}" drawable="forkclient"/>
+	<item component="ComponentInfo{org.forkclient.messenger.beta/org.telegram.messenger.AquaIcon}" drawable="forkclient"/>
+	<item component="ComponentInfo{org.forkclient.messenger.beta/org.telegram.messenger.MerioIcon}" drawable="forkclient"/>
+	<item component="ComponentInfo{org.forkclient.messenger.beta/org.telegram.messenger.RainbowIcon}" drawable="forkclient"/>
+	<item component="ComponentInfo{org.forkclient.messenger.beta/org.telegram.messenger.OldSchoolIcon}" drawable="forkclient"/>
+	<item component="ComponentInfo{org.forkclient.messenger.beta/org.telegram.messenger.MusheenIcon}" drawable="forkclient"/>
+	<item component="ComponentInfo{org.forkclient.messenger.beta/org.telegram.messenger.SpaceIcon}" drawable="forkclient"/>
+	<item component="ComponentInfo{org.forkclient.messenger.beta/org.telegram.messenger.CloudIcon}" drawable="forkclient"/>
+	<item component="ComponentInfo{org.forkclient.messenger.beta/org.telegram.messenger.NeonIcon}" drawable="forkclient"/>
+	<item component="ComponentInfo{org.forkclient.messenger.beta/org.telegram.messenger.DarkIcon}" drawable="forkclient"/>
+	<item component="ComponentInfo{org.forkclient.messenger.beta/org.telegram.messenger.MaterialIcon}" drawable="forkclient"/>
 
 	<!-- Forkhub -->
 	<item component="ComponentInfo{jp.forkhub/com.github.mobile.ui.user.HomeActivity}" drawable="forkhub"/>
@@ -11071,6 +11235,9 @@
 	<!-- GoTube -->
 	<item component="ComponentInfo{premium.gotube.adblock.utube/com.biomes.vanced.splash.SplashActivity}" drawable="gotube"/>
 	<item component="ComponentInfo{premium.gotube.adblock.utube/premium.gotube.adblock.utube.main.MainActivity}" drawable="gotube"/>
+	
+	<!-- GouvId -->
+	<item component="ComponentInfo{lu.etat.ci.gid.android/crc6473f37c844c33436f.MainActivity}" drawable="gouvid"/>
 
 	<!-- Gov.br -->
 	<item component="ComponentInfo{br.gov.meugovbr/br.gov.meugovbr.MainActivity}" drawable="gov_br"/>
@@ -12471,6 +12638,9 @@
 	<!-- InShot -->
 	<item component="ComponentInfo{com.camerasideas.instashot/com.camerasideas.instashot.DummyActivity}" drawable="inshot"/>
 	<item component="ComponentInfo{com.camerasideas.instashot/com.camerasideas.instashot.MainActivity}" drawable="inshot"/>
+	
+  <!-- insideCFL -->
+	<item component="ComponentInfo{com.cfl.insidecfl.android/com.staffbase.capacitor.MainActivity}" drawable="insidecfl"/>
 
 	<!-- Insight Timer -->
 	<item component="ComponentInfo{com.spotlightsix.zentimerlite2/co.insight.timer2.LauncherActivity}" drawable="insight_timer"/>
@@ -13706,6 +13876,10 @@
 
 	<!-- L Speed -->
 	<item component="ComponentInfo{com.paget96.lsandroid/com.paget96.lsandroid.activities.SplashScreenActivity}" drawable="l_speed"/>
+	
+	<!-- L'essentiel -->
+	<item component="ComponentInfo{com.swernerus.android.lessentiel/ch.iAgentur.i20Min.Splash}" drawable="lessentiel"/>
+	<item component="ComponentInfo{lu.lessentiel.mobile.de/ch.iAgentur.i20Min.Splash}" drawable="lessentiel"/>
 
 	<!-- La Banque Postale -->
 	<item component="ComponentInfo{com.fullsix.android.labanquepostale.accountaccess/com.fullsix.android.labanquepostale.accountaccess.BanquePostale}" drawable="labanquepostale"/>
@@ -14221,6 +14395,7 @@
 
 	<!-- Linebit -->
 	<item component="ComponentInfo{com.edzondm.linebit/com.edzondm.linebit.MainActivity}" drawable="linebit"/>
+	<item component="ComponentInfo{com.edzondm.linebitse/com.edzondm.linebitse.MainActivity}" drawable="linebit"/>
 
 	<!-- Linebit Light -->
 	<item component="ComponentInfo{com.edzondm.linebitlight/com.edzondm.linebitwhite.MainActivity}" drawable="linebitlight"/>
@@ -14366,6 +14541,9 @@
 	<!-- LLCrop (lossless) -->
 	<item component="ComponentInfo{de.k3b.android.lossless_jpg_crop/de.k3b.android.lossless_jpg_crop.CropAreasEditActivity}" drawable="llcroplossless"/>
 
+  <!-- LLO.LU -->
+	<item component="ComponentInfo{com.altissia.llo_lu/com.altissia.MainActivity}" drawable="llolu"/>
+
 	<!-- Lloyds Bank -->
 	<item component="ComponentInfo{com.grppl.android.shell.CMBlloydsTSB73/com.halifax.halifax.GrappleActivity}" drawable="lloydsbank"/>
 
@@ -14430,6 +14608,9 @@
 	<!-- Locus Map Pro -->
 	<item component="ComponentInfo{menion.android.locus.pro/com.asamm.locus.core.LauncherActivity}" drawable="locus_map_pro"/>
 	<item component="ComponentInfo{menion.android.locus/com.asamm.locus.core.LauncherActivity}" drawable="locus_map_pro"/>
+	
+	<!-- LOD.lu -->
+	<item component="ComponentInfo{lu.lod.app/lu.lod.app.MainActivity}" drawable="lodlu"/>
 
 	<!-- log28 -->
 	<item component="ComponentInfo{com.log28/com.log28.MainActivity}" drawable="log28"/>
@@ -14514,6 +14695,9 @@
 
 	<!-- Loyalty Card Keychain -->
 	<item component="ComponentInfo{protect.card_locker/protect.card_locker.MainActivity}" drawable="loyaltycardkeychain"/>
+	
+	<!-- LPUTouch -->
+	<item component="ComponentInfo{ums.lovely.university/ums.lovely.university.MainActivity}" drawable="lputouch"/>
 
 	<!-- LRC Editor -->
 	<item component="ComponentInfo{com.cg.lrceditor/com.cg.lrceditor.HomePage}" drawable="lrc_editor"/>
@@ -14579,6 +14763,18 @@
 	<!-- LuX Icons -->
 	<item component="ComponentInfo{com.jndapp.lux.free.iconpack/com.jndapp.lux.free.iconpack.MainActivity}" drawable="lux_icons"/>
 	<item component="ComponentInfo{com.jndapp.lux.iconpack/com.jndapp.lux.iconpack.MainActivity}" drawable="lux_icons"/>
+
+  <!-- Luxauto -->
+	<item component="ComponentInfo{lu.luxauto.v2/lu.luxauto.v2.SplashActivity}" drawable="luxauto"/>
+	
+	<!-- Luxchat -->
+	<item component="ComponentInfo{lu.luxchat4gpe.android/im.vector.application.features.Alias}" drawable="luxchat"/>
+
+	<!-- Luxchat4Gov -->
+	<item component="ComponentInfo{lu.etat.ci.luxchat.gov.android/im.vector.application.features.Alias}" drawable="luxchat4gov"/>
+	
+	<!-- LuxTrust Mobile -->
+	<item component="ComponentInfo{com.LuxTrustMobile/com.luxtrust.mobile.ui.activity.RoutingActivity}" drawable="luxtrust_mobile"/>
 
 	<!-- lWS -->
 	<item component="ComponentInfo{net.basov.lws.fdroid/net.basov.lws.StartActivity}" drawable="lws"/>
@@ -15882,6 +16078,9 @@
 
 	<!-- Mobilism -->
 	<item component="ComponentInfo{demigos.com.mobilism/demigos.com.mobilism.UI.SplashActivity}" drawable="letter_uppercase_square_m"/>
+	
+	<!-- mobiliteit.lu -->
+	<item component="ComponentInfo{de.hafas.android.cdt/de.hafas.main.HafasApp}" drawable="mobiliteitlu"/>
 
 	<!-- Mobility Schweiz -->
 	<item component="ComponentInfo{ch.mobility.mobidroid.main/ch.mobility.mobidroid.main.MainActivity}" drawable="mobility_schweiz"/>
@@ -16829,6 +17028,9 @@
 
 	<!-- MyGP -->
 	<item component="ComponentInfo{com.portonics.mygp/com.portonics.mygp.ui.SplashActivity}" drawable="mygp"/>
+	
+	<!-- MyGuichet.lu -->
+	<item component="ComponentInfo{lu.etat.fp.gun.android/crc64c4c5fca87d8f4eb9.MainActivity}" drawable="myguichetlu"/>
 
 	<!-- MyHaema -->
 	<item component="ComponentInfo{de.haema.myhaema/de.haema.myhaema.WebViewActivity}" drawable="myhaema"/>
@@ -16958,6 +17160,9 @@
 
 	<!-- MyT -->
 	<item component="ComponentInfo{app.mytoyota.toyota.com.mytoyota/com.toyota.myservices.StartingActivity}" drawable="myt"/>
+	
+	<!-- MyTango -->
+	<item component="ComponentInfo{lu.tango/lu.tango.ui.splashscreen.SplashScreenActivity}" drawable="mytango"/>
 
 	<!-- MyTargets -->
 	<item component="ComponentInfo{de.dreier.mytargets/de.dreier.mytargets.features.main.MainActivity}" drawable="mytargets"/>
@@ -17216,12 +17421,36 @@
 	<!-- Nekogram X -->
 	<item component="ComponentInfo{nekox.messenger/org.telegram.ui.LaunchActivity}" drawable="nekogramx"/>
 	<item component="ComponentInfo{nekox.messenger/org.telegram.messenger.DefaultIcon}" drawable="nekogramx"/>
+	<item component="ComponentInfo{nekox.messenger/org.telegram.messenger.NoxIcon}" drawable="nekogramx"/>
+	<item component="ComponentInfo{nekox.messenger/org.telegram.messenger.TurboIcon}" drawable="nekogramx"/>
+	<item component="ComponentInfo{nekox.messenger/org.telegram.messenger.PremiumIcon}" drawable="nekogramx"/>
+	<item component="ComponentInfo{nekox.messenger/org.telegram.messenger.AquaIcon}" drawable="nekogramx"/>
+	<item component="ComponentInfo{nekox.messenger/org.telegram.messenger.MerioIcon}" drawable="nekogramx"/>
+	<item component="ComponentInfo{nekox.messenger/org.telegram.messenger.RainbowIcon}" drawable="nekogramx"/>
+	<item component="ComponentInfo{nekox.messenger/org.telegram.messenger.OldSchoolIcon}" drawable="nekogramx"/>
+	<item component="ComponentInfo{nekox.messenger/org.telegram.messenger.MusheenIcon}" drawable="nekogramx"/>
+	<item component="ComponentInfo{nekox.messenger/org.telegram.messenger.SpaceIcon}" drawable="nekogramx"/>
+	<item component="ComponentInfo{nekox.messenger/org.telegram.messenger.CloudIcon}" drawable="nekogramx"/>
+	<item component="ComponentInfo{nekox.messenger/org.telegram.messenger.NeonIcon}" drawable="nekogramx"/>
+	<item component="ComponentInfo{nekox.messenger/org.telegram.messenger.DarkIcon}" drawable="nekogramx"/>
+	<item component="ComponentInfo{nekox.messenger/org.telegram.messenger.VintageIcon}" drawable="nekogramx"/>
+	<item component="ComponentInfo{nekox.messenger/org.telegram.messenger.MaterialIcon}" drawable="nekogramx"/>
 	<item component="ComponentInfo{tw.nekomimi.nekogram/org.telegram.ui.LaunchActivity}" drawable="nekogramx"/>
 	<item component="ComponentInfo{tw.nekomimi.nekogram/org.telegram.messenger.DefaultIcon}" drawable="nekogramx"/>
-	<item component="ComponentInfo{nekox.messenger/org.telegram.messenger.NoxIcon}" drawable="nekogramx"/>
 	<item component="ComponentInfo{tw.nekomimi.nekogram/org.telegram.messenger.MaterialIcon}" drawable="nekogramx"/>
 	<item component="ComponentInfo{tw.nekomimi.nekogram/org.telegram.messenger.SpaceIcon}" drawable="nekogramx"/>
 	<item component="ComponentInfo{tw.nekomimi.nekogram/org.telegram.messenger.NoxIcon}" drawable="nekogramx"/>
+	<item component="ComponentInfo{tw.nekomimi.nekogram/org.telegram.messenger.TurboIcon}" drawable="nekogramx"/>
+	<item component="ComponentInfo{tw.nekomimi.nekogram/org.telegram.messenger.PremiumIcon}" drawable="nekogramx"/>
+	<item component="ComponentInfo{tw.nekomimi.nekogram/org.telegram.messenger.AquaIcon}" drawable="nekogramx"/>
+	<item component="ComponentInfo{tw.nekomimi.nekogram/org.telegram.messenger.MerioIcon}" drawable="nekogramx"/>
+	<item component="ComponentInfo{tw.nekomimi.nekogram/org.telegram.messenger.RainbowIcon}" drawable="nekogramx"/>
+	<item component="ComponentInfo{tw.nekomimi.nekogram/org.telegram.messenger.OldSchoolIcon}" drawable="nekogramx"/>
+	<item component="ComponentInfo{tw.nekomimi.nekogram/org.telegram.messenger.MusheenIcon}" drawable="nekogramx"/>
+	<item component="ComponentInfo{tw.nekomimi.nekogram/org.telegram.messenger.CloudIcon}" drawable="nekogramx"/>
+	<item component="ComponentInfo{tw.nekomimi.nekogram/org.telegram.messenger.NeonIcon}" drawable="nekogramx"/>
+	<item component="ComponentInfo{tw.nekomimi.nekogram/org.telegram.messenger.DarkIcon}" drawable="nekogramx"/>
+	<item component="ComponentInfo{tw.nekomimi.nekogram/org.telegram.messenger.VintageIcon}" drawable="nekogramx"/>
 
 	<!-- Nekome -->
 	<item component="ComponentInfo{com.chesire.nekome/com.chesire.nekome.Activity}" drawable="nekome"/>
@@ -17813,6 +18042,7 @@
 
 	<!-- Nothing Icon Pack-->
 	<item component="ComponentInfo{com.jndapp.nothing.white.dots.iconpack/com.jndapp.nothing.white.dots.iconpack.MainActivity}" drawable="nothing_icon_pack"/>
+	<item component="ComponentInfo{com.jndapp.nothing.neon.dots.iconpack/com.jndapp.nothing.neon.dots.iconpack.MainActivity}" drawable="nothing_icon_pack"/>
 
 	<!-- Nothing Recorder -->
 	<item component="ComponentInfo{com.nothing.soundrecorder/com.nothing.soundrecorder.view.MainActivity}" drawable="nothing_recorder"/>
@@ -18844,6 +19074,9 @@
 	<item component="ComponentInfo{ru.ozon.app.android/ru.ozon.app.android.ui.start.PreStartActivity}" drawable="ozon"/>
 	<item component="ComponentInfo{ru.ozon.app.android/ru.ozon.app.android.ui.start.AppHostActivity}" drawable="ozon"/>
 
+  <!-- P+R CFL -->
+	<item component="ComponentInfo{pr.cfl.app/com.cflprapp.MainActivity}" drawable="pr_cfl"/>
+
 	<!-- P-SMS -->
 	<item component="ComponentInfo{org.cpartisans.psms/com.moez.QKSMS.feature.main.MainActivity}" drawable="psms"/>
 
@@ -19104,6 +19337,14 @@
 
 	<!-- PayPay -->
 	<item component="ComponentInfo{jp.ne.paypay.android.app/jp.ne.paypay.android.app.MainActivity}" drawable="paypay"/>
+	
+	<!-- Payconiq -->
+	<item component="ComponentInfo{sh.digica.paymentplatform.bilandroid/com.finologee.digicash_app.MainActivity}" drawable="payconiq"/>
+	<item component="ComponentInfo{sh.digica.paymentplatform.bglandroid/com.finologee.digicash_app.MainActivity}" drawable="payconiq"/>
+	<item component="ComponentInfo{mobi.inthepocket.bcmc.bancontact/mobi.inthepocket.bcpq.MainActivity}" drawable="payconiq"/>
+	<item component="ComponentInfo{be.payconiq.go/be.payconiq.go.MainActivity}" drawable="payconiq"/>
+	<item component="ComponentInfo{sh.digica.paymentplatform.ptandroid/com.finologee.digicash_app.MainActivity}" drawable="payconiq"/>
+	<item component="ComponentInfo{lu.raiffeisen.digicash/com.finologee.digicash_app.MainActivity}" drawable="payconiq"/>
 
 	<!-- paysafecard -->
 	<item component="ComponentInfo{at.paysafecard.android/at.paysafecard.android.LauncherActivity}" drawable="paysafecard"/>
@@ -19254,6 +19495,9 @@
 	<!-- Peercoin -->
 	<item component="ComponentInfo{com.coinerella.peercoin/io.flutter.embedding.android.FlutterActivity}" drawable="peercoin"/>
 	<item component="ComponentInfo{com.coinerella.peercoin/com.coinerella.peercoin.MainActivity}" drawable="peercoin"/>
+
+	<!-- PeerTube Redirect -->
+	<item component="ComponentInfo{dev.zwander.peertuberedirect/dev.zwander.peertuberedirect.MainActivity}" drawable="mastodon_redirect"/>
 
 	<!-- Pegasus -->
 	<item component="ComponentInfo{org.pegasus_frontend.android/org.pegasus_frontend.android.MainActivity}" drawable="pegasus"/>
@@ -20050,6 +20294,9 @@
 	<!-- Post & DHL -->
 	<item component="ComponentInfo{de.dhl.paket/de.its_berlin.dhlpaket.base.MainActivity}" drawable="postdhl"/>
 	<item component="ComponentInfo{de.dhl.paket/de.its_berlin.dhlpaket.base.main.MainActivity}" drawable="postdhl"/>
+	
+	<!-- POST Parcels & Mail -->
+	<item component="ComponentInfo{lu.post.courrier.mobile/lu.post.courrier.mobile.MainActivity}" drawable="post_parcels_mail"/>
 
 	<!-- PosteID -->
 	<item component="ComponentInfo{posteitaliane.posteapp.appposteid/posteitaliane.posteapp.appposteid.welcome.WelcomeAct}" drawable="postid"/>
@@ -20226,6 +20473,7 @@
 
 	<!-- Primitive ftpd -->
 	<item component="ComponentInfo{org.primftpd/org.primftpd.PrimitiveFtpdActivity}" drawable="primitiveftpd"/>
+	<item component="ComponentInfo{org.primftpd/org.primftpd.ui.MainTabsActivity}" drawable="primitiveftpd"/>
 
 	<!-- PRINT -->
 	<item component="ComponentInfo{jp.co.canon.bsd.ad.pixmaprint/jp.co.canon.bsd.ad.pixmaprint.EulaActivity}" drawable="mobile_print"/>
@@ -20783,6 +21031,8 @@
 	<item component="ComponentInfo{com.basevelocity.radarscope/com.basevelocity.radarscope.map.RsMapActivity}" drawable="radarscope"/>
 	<item component="ComponentInfo{com.basevelocity.radarscope/com.basevelocity.radarscope.map.MapActivity}" drawable="radarscope"/>
 	<item component="ComponentInfo{com.eclipsim.gpsstatus2/com.eclipsim.gpsstatus2.activity.RadarStartActivity}" drawable="radarscope"/>
+	<item component="ComponentInfo{com.eclipsim.gpsstatus2/com.eclipsim.gpsstatus2.activity.Radar}" drawable="radarscope"/>
+	<item component="ComponentInfo{com.eclipsim.gpsstatus2/com.eclipsim.gpsstatus2.Radar}" drawable="radarscope"/>
 
 	<!-- RadarWeather -->
 	<item component="ComponentInfo{org.woheller69.weather/org.woheller69.weather.activities.SplashActivity}" drawable="simpleweather"/>
@@ -21372,6 +21622,9 @@
 	<item component="ComponentInfo{com.rightmove.android/com.rightmove.android.activity.SplashPageActivity}" drawable="letter_uppercase_square_r"/>
 	<item component="ComponentInfo{com.rightmove.android/com.rightmove.android.activity.SplashPageActivity/com.rightmove.android.modules.splash.SplashPageActivity}" drawable="letter_uppercase_square_r"/>
 	<item component="ComponentInfo{com.rightmove.android/com.rightmove.android.modules.splash.SplashPageActivity}" drawable="letter_uppercase_square_r"/>
+	
+	<!-- RiMusic -->
+	<item component="ComponentInfo{it.fast4x.rimusic/it.vfsfitvnm.vimusic.MainActivity}" drawable="rimusic" />
 
 	<!-- Ring -->
 	<item component="ComponentInfo{cx.ring/cx.ring.client.HomeActivity}" drawable="ring"/>
@@ -22240,6 +22493,7 @@
 
 	<!-- SerialTest -->
 	<item component="ComponentInfo{priv.wh201906.serialtest/priv.wh201906.serialtest.MainActivity}" drawable="serialtest"/>
+	<item component="ComponentInfo{io.github.wh201906.serialpipe/io.github.wh201906.serialpipe.MainActivity}" drawable="android"/>
 
 	<!-- SeriesGuide -->
 	<item component="ComponentInfo{com.battlelancer.seriesguide/com.battlelancer.seriesguide.ui.ShowsActivity}" drawable="seriesguide"/>
@@ -23842,6 +24096,7 @@
 
 	<!-- SolitaireCG -->
 	<item component="ComponentInfo{net.sourceforge.solitaire_cg/net.sourceforge.solitaire_cg.SolitaireCG}" drawable="solitairecg"/>
+	<item component="ComponentInfo{org.lufebe16.freecell/org.kivy.android.PythonActivity}" drawable="solitairecg"/>
 
 	<!-- Sololearn -->
 	<item component="ComponentInfo{com.sololearn/com.sololearn.app.ui.launcher.LauncherActivity}" drawable="sololearn"/>
@@ -25104,50 +25359,274 @@
 
 	<!-- Telegraher -->
 	<item component="ComponentInfo{com.evildayz.code.telegraher/org.telegram.ui.LaunchActivity}" drawable="telegraher"/>
+	<item component="ComponentInfo{com.evildayz.code.telegraher/org.telegram.messenger.DefaultIcon}" drawable="telegraher"/>
+	<item component="ComponentInfo{com.evildayz.code.telegraher/org.telegram.messenger.TurboIcon}" drawable="telegraher"/>
+	<item component="ComponentInfo{com.evildayz.code.telegraher/org.telegram.messenger.NoxIcon}" drawable="telegraher"/>
+	<item component="ComponentInfo{com.evildayz.code.telegraher/org.telegram.messenger.PremiumIcon}" drawable="telegraher"/>
+	<item component="ComponentInfo{com.evildayz.code.telegraher/org.telegram.messenger.AquaIcon}" drawable="telegraher"/>
+	<item component="ComponentInfo{com.evildayz.code.telegraher/org.telegram.messenger.MerioIcon}" drawable="telegraher"/>
+	<item component="ComponentInfo{com.evildayz.code.telegraher/org.telegram.messenger.RainbowIcon}" drawable="telegraher"/>
+	<item component="ComponentInfo{com.evildayz.code.telegraher/org.telegram.messenger.OldSchoolIcon}" drawable="telegraher"/>
+	<item component="ComponentInfo{com.evildayz.code.telegraher/org.telegram.messenger.MusheenIcon}" drawable="telegraher"/>
+	<item component="ComponentInfo{com.evildayz.code.telegraher/org.telegram.messenger.SpaceIcon}" drawable="telegraher"/>
+	<item component="ComponentInfo{com.evildayz.code.telegraher/org.telegram.messenger.CloudIcon}" drawable="telegraher"/>
+	<item component="ComponentInfo{com.evildayz.code.telegraher/org.telegram.messenger.NeonIcon}" drawable="telegraher"/>
+	<item component="ComponentInfo{com.evildayz.code.telegraher/org.telegram.messenger.DarkIcon}" drawable="telegraher"/>
+	<item component="ComponentInfo{com.evildayz.code.telegraher/org.telegram.messenger.VintageIcon}" drawable="telegraher"/>
+	<item component="ComponentInfo{com.evildayz.code.telegraher/org.telegram.messenger.MaterialIcon}" drawable="telegraher"/>
+	<item component="ComponentInfo{com.evildayz.code.telegraher2/org.telegram.ui.LaunchActivity}" drawable="telegraher"/>
+	<item component="ComponentInfo{com.evildayz.code.telegraher2/org.telegram.messenger.DefaultIcon}" drawable="telegraher"/>
+	<item component="ComponentInfo{com.evildayz.code.telegraher2/org.telegram.messenger.TurboIcon}" drawable="telegraher"/>
 	<item component="ComponentInfo{com.evildayz.code.telegraher2/org.telegram.messenger.NoxIcon}" drawable="telegraher"/>
+	<item component="ComponentInfo{com.evildayz.code.telegraher2/org.telegram.messenger.PremiumIcon}" drawable="telegraher"/>
+	<item component="ComponentInfo{com.evildayz.code.telegraher2/org.telegram.messenger.AquaIcon}" drawable="telegraher"/>
+	<item component="ComponentInfo{com.evildayz.code.telegraher2/org.telegram.messenger.MerioIcon}" drawable="telegraher"/>
+	<item component="ComponentInfo{com.evildayz.code.telegraher2/org.telegram.messenger.RainbowIcon}" drawable="telegraher"/>
+	<item component="ComponentInfo{com.evildayz.code.telegraher2/org.telegram.messenger.OldSchoolIcon}" drawable="telegraher"/>
+	<item component="ComponentInfo{com.evildayz.code.telegraher2/org.telegram.messenger.MusheenIcon}" drawable="telegraher"/>
+	<item component="ComponentInfo{com.evildayz.code.telegraher2/org.telegram.messenger.SpaceIcon}" drawable="telegraher"/>
+	<item component="ComponentInfo{com.evildayz.code.telegraher2/org.telegram.messenger.CloudIcon}" drawable="telegraher"/>
+	<item component="ComponentInfo{com.evildayz.code.telegraher2/org.telegram.messenger.NeonIcon}" drawable="telegraher"/>
+	<item component="ComponentInfo{com.evildayz.code.telegraher2/org.telegram.messenger.DarkIcon}" drawable="telegraher"/>
+	<item component="ComponentInfo{com.evildayz.code.telegraher2/org.telegram.messenger.VintageIcon}" drawable="telegraher"/>
+	<item component="ComponentInfo{com.evildayz.code.telegraher2/org.telegram.messenger.MaterialIcon}" drawable="telegraher"/>
 
 	<!-- Telegram -->
 	<item component="ComponentInfo{org.telegram.messenger/org.telegram.ui.LaunchActivity}" drawable="telegram"/>
-	<item component="ComponentInfo{org.telegram.messenger.beta/org.telegram.ui.LaunchActivity}" drawable="telegram"/>
-	<item component="ComponentInfo{org.telegram.messenger.web/org.telegram.ui.LaunchActivity}" drawable="telegram"/>
 	<item component="ComponentInfo{org.telegram.messenger/org.telegram.messenger.DefaultIcon}" drawable="telegram"/>
-	<item component="ComponentInfo{org.telegram.messenger.web/org.telegram.messenger.DefaultIcon}" drawable="telegram"/>
 	<item component="ComponentInfo{org.telegram.messenger/org.telegram.messenger.AquaIcon}" drawable="telegram"/>
-	<item component="ComponentInfo{org.telegram.messenger.beta/org.telegram.messenger.DefaultIcon}" drawable="telegram"/>
 	<item component="ComponentInfo{org.telegram.messenger/org.telegram.messenger.VintageIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{org.telegram.messenger/org.telegram.messenger.MerioIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{org.telegram.messenger/org.telegram.messenger.RainbowIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{org.telegram.messenger/org.telegram.messenger.OldSchoolIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{org.telegram.messenger/org.telegram.messenger.MusheenIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{org.telegram.messenger/org.telegram.messenger.SpaceIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{org.telegram.messenger/org.telegram.messenger.CloudIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{org.telegram.messenger/org.telegram.messenger.NeonIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{org.telegram.messenger/org.telegram.messenger.DarkIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{org.telegram.messenger/org.telegram.messenger.MaterialIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{org.telegram.messenger/org.telegram.messenger.TurboIcon}" drawable="telegram_alt_1"/>
+	<item component="ComponentInfo{org.telegram.messenger/org.telegram.messenger.NoxIcon}" drawable="telegram_alt_2"/>
+	<item component="ComponentInfo{org.telegram.messenger/org.telegram.messenger.PremiumIcon}" drawable="telegram_alt_3"/>
+	<item component="ComponentInfo{org.telegram.messenger.beta/org.telegram.ui.LaunchActivity}" drawable="telegram"/>
+	<item component="ComponentInfo{org.telegram.messenger.beta/org.telegram.messenger.DefaultIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{org.telegram.messenger.beta/org.telegram.messenger.AquaIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{org.telegram.messenger.beta/org.telegram.messenger.TurboIcon}" drawable="telegram_alt_1"/>
+	<item component="ComponentInfo{org.telegram.messenger.beta/org.telegram.messenger.NoxIcon}" drawable="telegram_alt_2"/>
+	<item component="ComponentInfo{org.telegram.messenger.beta/org.telegram.messenger.PremiumIcon}" drawable="telegram_alt_3"/>
+	<item component="ComponentInfo{org.telegram.messenger.beta/org.telegram.messenger.MerioIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{org.telegram.messenger.beta/org.telegram.messenger.RainbowIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{org.telegram.messenger.beta/org.telegram.messenger.OldSchoolIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{org.telegram.messenger.beta/org.telegram.messenger.MusheenIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{org.telegram.messenger.beta/org.telegram.messenger.SpaceIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{org.telegram.messenger.beta/org.telegram.messenger.CloudIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{org.telegram.messenger.beta/org.telegram.messenger.NeonIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{org.telegram.messenger.beta/org.telegram.messenger.DarkIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{org.telegram.messenger.beta/org.telegram.messenger.VintageIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{org.telegram.messenger.beta/org.telegram.messenger.MaterialIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{org.telegram.messenger.web/org.telegram.ui.LaunchActivity}" drawable="telegram"/>
+	<item component="ComponentInfo{org.telegram.messenger.web/org.telegram.messenger.DefaultIcon}" drawable="telegram"/>
 	<item component="ComponentInfo{org.telegram.messenger.web/org.telegram.messenger.AquaIcon}" drawable="telegram"/>
 	<item component="ComponentInfo{org.telegram.messenger.web/org.telegram.messenger.market.DefaultIcon}" drawable="telegram"/>
-	<item component="ComponentInfo{org.telegram.messenger/org.telegram.messenger.NoxIcon}" drawable="telegram_alt_2"/>
-	<item component="ComponentInfo{org.telegram.messenger.web/org.telegram.messenger.NoxIcon}" drawable="telegram_alt_2"/>
-	<item component="ComponentInfo{org.telegram.messenger/org.telegram.messenger.TurboIcon}" drawable="telegram_alt_1"/>
-	<item component="ComponentInfo{org.telegram.messenger.web/org.telegram.messenger.TurboIcon}" drawable="telegram_alt_1"/>
-	<item component="ComponentInfo{org.telegram.messenger.web/org.telegram.messenger.PremiumIcon}" drawable="telegram_alt_3"/>
-	<item component="ComponentInfo{org.telegram.messenger/org.telegram.messenger.PremiumIcon}" drawable="telegram_alt_3"/>
-	<item component="ComponentInfo{org.telegram.messenger.beta/org.telegram.messenger.AquaIcon}" drawable="telegram"/>
 	<item component="ComponentInfo{org.telegram.messenger.web/org.telegram.messenger.VintageIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{org.telegram.messenger.web/org.telegram.messenger.MerioIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{org.telegram.messenger.web/org.telegram.messenger.RainbowIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{org.telegram.messenger.web/org.telegram.messenger.OldSchoolIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{org.telegram.messenger.web/org.telegram.messenger.MusheenIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{org.telegram.messenger.web/org.telegram.messenger.SpaceIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{org.telegram.messenger.web/org.telegram.messenger.CloudIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{org.telegram.messenger.web/org.telegram.messenger.NeonIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{org.telegram.messenger.web/org.telegram.messenger.DarkIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{org.telegram.messenger.web/org.telegram.messenger.MaterialIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{org.telegram.messenger.web/org.telegram.messenger.TurboIcon}" drawable="telegram_alt_1"/>
+	<item component="ComponentInfo{org.telegram.messenger.web/org.telegram.messenger.NoxIcon}" drawable="telegram_alt_2"/>
+	<item component="ComponentInfo{org.telegram.messenger.web/org.telegram.messenger.PremiumIcon}" drawable="telegram_alt_3"/>
 
 	<!-- Telegram (Unofficial) -->
-	<item component="ComponentInfo{it.octogram.android/org.telegram.messenger.AquaIcon}" drawable="telegram"/>
-	<item component="ComponentInfo{com.iMe.android/org.telegram.ui.LaunchActivityBlueLightIcon}" drawable="telegram"/>
-	<item component="ComponentInfo{org.aka.messenger/org.telegram.messenger.DefaultIcon}" drawable="telegram"/>
-	<item component="ComponentInfo{ellipi.messenger/org.telegram.messenger.DefaultIcon}" drawable="telegram"/>
-	<item component="ComponentInfo{org.viento.colibri/org.telegram.ui.LaunchActivity}" drawable="telegram"/>
-	<item component="ComponentInfo{xyz.nextalone.nagram/org.telegram.messenger.DefaultIcon}" drawable="telegram"/>
 	<item component="ComponentInfo{com.c3r5b8.telegram_monet/com.c3r5b8.telegram_monet.MainActivity}" drawable="telegram"/>
-	<item component="ComponentInfo{app.nicegram/org.telegram.messenger.DefaultIcon}" drawable="telegram"/>
-	<item component="ComponentInfo{org.telegram.mdgram/org.telegram.mdgram.DefaultIcon}" drawable="telegram"/>
-	<item component="ComponentInfo{xyz.nextalone.nagram/org.telegram.messenger.NeonIcon}" drawable="telegram"/>
-	<item component="ComponentInfo{com.iMe.android/org.telegram.ui.LaunchActivityBlueIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{com.c3r5b8.telegram_monet/com.c3r5b8.telegram_monet.ui.LaunchActivity}" drawable="telegram"/>
+	<item component="ComponentInfo{com.c3r5b8.telegram_monet/com.c3r5b8.telegram_monet.DefaultIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{com.c3r5b8.telegram_monet/com.c3r5b8.telegram_monet.AquaIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{com.c3r5b8.telegram_monet/com.c3r5b8.telegram_monet.VintageIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{com.c3r5b8.telegram_monet/com.c3r5b8.telegram_monet.MerioIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{com.c3r5b8.telegram_monet/com.c3r5b8.telegram_monet.RainbowIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{com.c3r5b8.telegram_monet/com.c3r5b8.telegram_monet.OldSchoolIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{com.c3r5b8.telegram_monet/com.c3r5b8.telegram_monet.MusheenIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{com.c3r5b8.telegram_monet/com.c3r5b8.telegram_monet.SpaceIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{com.c3r5b8.telegram_monet/com.c3r5b8.telegram_monet.CloudIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{com.c3r5b8.telegram_monet/com.c3r5b8.telegram_monet.NeonIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{com.c3r5b8.telegram_monet/com.c3r5b8.telegram_monet.DarkIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{com.c3r5b8.telegram_monet/com.c3r5b8.telegram_monet.MaterialIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{com.c3r5b8.telegram_monet/com.c3r5b8.telegram_monet.TurboIcon}" drawable="telegram_alt_1"/>
+	<item component="ComponentInfo{com.c3r5b8.telegram_monet/com.c3r5b8.telegram_monet.NoxIcon}" drawable="telegram_alt_2"/>
+	<item component="ComponentInfo{com.c3r5b8.telegram_monet/com.c3r5b8.telegram_monet.PremiumIcon}" drawable="telegram_alt_3"/>
 	<item component="ComponentInfo{com.exteragram.messenger/com.exteragram.messenger.GradientIcon}" drawable="telegram"/>
-	<item component="ComponentInfo{top.qwq2333.nullgram/org.telegram.messenger.DefaultIcon}" drawable="telegram"/>
-	<item component="ComponentInfo{org.telegram.mdgram/org.telegram.mdgram.MaterialYou}" drawable="telegram"/>
-	<item component="ComponentInfo{it.octogram.android/org.telegram.messenger.DefaultIcon}" drawable="telegram"/>
-	<item component="ComponentInfo{org.viento.colibri/org.telegram.messenger.DefaultIcon}" drawable="telegram"/>
-	<item component="ComponentInfo{com.exteragram.messenger/com.exteragram.messenger.Dsgn480Icon}" drawable="telegram"/>
-	<item component="ComponentInfo{com.exteragram.messenger/com.exteragram.messenger.DefaultIcon}" drawable="telegram"/>
 	<item component="ComponentInfo{com.exteragram.messenger/org.telegram.ui.LaunchActivity}" drawable="telegram"/>
+	<item component="ComponentInfo{com.exteragram.messenger/com.exteragram.messenger.LaunchActivity}" drawable="telegram"/>
+	<item component="ComponentInfo{com.exteragram.messenger/com.exteragram.messenger.DefaultIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{com.exteragram.messenger/com.exteragram.messenger.AquaIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{com.exteragram.messenger/com.exteragram.messenger.VintageIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{com.exteragram.messenger/com.exteragram.messenger.MerioIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{com.exteragram.messenger/com.exteragram.messenger.RainbowIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{com.exteragram.messenger/com.exteragram.messenger.OldSchoolIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{com.exteragram.messenger/com.exteragram.messenger.MusheenIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{com.exteragram.messenger/com.exteragram.messenger.SpaceIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{com.exteragram.messenger/com.exteragram.messenger.CloudIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{com.exteragram.messenger/com.exteragram.messenger.NeonIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{com.exteragram.messenger/com.exteragram.messenger.DarkIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{com.exteragram.messenger/com.exteragram.messenger.MaterialIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{com.exteragram.messenger/com.exteragram.messenger.TurboIcon}" drawable="telegram_alt_1"/>
+	<item component="ComponentInfo{com.exteragram.messenger/com.exteragram.messenger.NoxIcon}" drawable="telegram_alt_2"/>
+	<item component="ComponentInfo{com.exteragram.messenger/com.exteragram.messenger.PremiumIcon}" drawable="telegram_alt_3"/>
 	<item component="ComponentInfo{org.thunderdog.challegram/org.thunderdog.challegram.MainActivity}" drawable="telegram"/>
 	<item component="ComponentInfo{me.lucky.wasted/me.lucky.wasted.trigger.application.TelegramActivity}" drawable="telegram"/>
+	<item component="ComponentInfo{it.octogram.android/org.telegram.messenger.AquaIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{it.octogram.android/org.telegram.messenger.DefaultIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{it.octogram.android/org.telegram.ui.LaunchActivity}" drawable="telegram"/>
+	<item component="ComponentInfo{it.octogram.android/org.telegram.messenger.TurboIcon}" drawable="telegram_alt_1"/>
+	<item component="ComponentInfo{it.octogram.android/org.telegram.messenger.NoxIcon}" drawable="telegram_alt_2"/>
+	<item component="ComponentInfo{it.octogram.android/org.telegram.messenger.PremiumIcon}" drawable="telegram_alt_3"/>
+	<item component="ComponentInfo{it.octogram.android/org.telegram.messenger.MerioIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{it.octogram.android/org.telegram.messenger.RainbowIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{it.octogram.android/org.telegram.messenger.OldSchoolIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{it.octogram.android/org.telegram.messenger.MusheenIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{it.octogram.android/org.telegram.messenger.SpaceIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{it.octogram.android/org.telegram.messenger.CloudIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{it.octogram.android/org.telegram.messenger.NeonIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{it.octogram.android/org.telegram.messenger.DarkIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{it.octogram.android/org.telegram.messenger.VintageIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{it.octogram.android/org.telegram.messenger.MaterialIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{com.iMe.android/org.telegram.ui.LaunchActivityBlueLightIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{com.iMe.android/org.telegram.ui.LaunchActivityBlueIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{com.iMe.android/org.telegram.ui.LaunchActivity}" drawable="telegram"/>
+	<item component="ComponentInfo{com.iMe.android/org.telegram.messenger.DefaultIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{com.iMe.android/org.telegram.messenger.TurboIcon}" drawable="telegram_alt_1"/>
+	<item component="ComponentInfo{com.iMe.android/org.telegram.messenger.NoxIcon}" drawable="telegram_alt_2"/>
+	<item component="ComponentInfo{com.iMe.android/org.telegram.messenger.PremiumIcon}" drawable="telegram_alt_3"/>
+	<item component="ComponentInfo{com.iMe.android/org.telegram.messenger.AquaIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{com.iMe.android/org.telegram.messenger.MerioIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{com.iMe.android/org.telegram.messenger.RainbowIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{com.iMe.android/org.telegram.messenger.OldSchoolIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{com.iMe.android/org.telegram.messenger.MusheenIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{com.iMe.android/org.telegram.messenger.SpaceIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{com.iMe.android/org.telegram.messenger.CloudIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{com.iMe.android/org.telegram.messenger.NeonIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{com.iMe.android/org.telegram.messenger.DarkIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{com.iMe.android/org.telegram.messenger.VintageIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{com.iMe.android/org.telegram.messenger.MaterialIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{org.aka.messenger/org.telegram.messenger.DefaultIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{org.aka.messenger/org.telegram.ui.LaunchActivity}" drawable="telegram"/>
+	<item component="ComponentInfo{org.aka.messenger/org.telegram.messenger.TurboIcon}" drawable="telegram_alt_1"/>
+	<item component="ComponentInfo{org.aka.messenger/org.telegram.messenger.NoxIcon}" drawable="telegram_alt_2"/>
+	<item component="ComponentInfo{org.aka.messenger/org.telegram.messenger.PremiumIcon}" drawable="telegram_alt_3"/>
+	<item component="ComponentInfo{org.aka.messenger/org.telegram.messenger.AquaIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{org.aka.messenger/org.telegram.messenger.MerioIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{org.aka.messenger/org.telegram.messenger.RainbowIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{org.aka.messenger/org.telegram.messenger.OldSchoolIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{org.aka.messenger/org.telegram.messenger.MusheenIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{org.aka.messenger/org.telegram.messenger.SpaceIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{org.aka.messenger/org.telegram.messenger.CloudIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{org.aka.messenger/org.telegram.messenger.NeonIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{org.aka.messenger/org.telegram.messenger.DarkIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{org.aka.messenger/org.telegram.messenger.VintageIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{org.aka.messenger/org.telegram.messenger.MaterialIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{ellipi.messenger/org.telegram.messenger.DefaultIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{ellipi.messenger/org.telegram.ui.LaunchActivity}" drawable="telegram"/>
+	<item component="ComponentInfo{ellipi.messenger/org.telegram.messenger.TurboIcon}" drawable="telegram_alt_1"/>
+	<item component="ComponentInfo{ellipi.messenger/org.telegram.messenger.NoxIcon}" drawable="telegram_alt_2"/>
+	<item component="ComponentInfo{ellipi.messenger/org.telegram.messenger.PremiumIcon}" drawable="telegram_alt_3"/>
+	<item component="ComponentInfo{ellipi.messenger/org.telegram.messenger.AquaIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{ellipi.messenger/org.telegram.messenger.MerioIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{ellipi.messenger/org.telegram.messenger.RainbowIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{ellipi.messenger/org.telegram.messenger.OldSchoolIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{ellipi.messenger/org.telegram.messenger.MusheenIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{ellipi.messenger/org.telegram.messenger.SpaceIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{ellipi.messenger/org.telegram.messenger.CloudIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{ellipi.messenger/org.telegram.messenger.NeonIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{ellipi.messenger/org.telegram.messenger.DarkIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{ellipi.messenger/org.telegram.messenger.VintageIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{ellipi.messenger/org.telegram.messenger.MaterialIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{org.viento.colibri/org.telegram.ui.LaunchActivity}" drawable="telegram"/>
+	<item component="ComponentInfo{org.viento.colibri/org.telegram.messenger.DefaultIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{org.viento.colibri/org.telegram.messenger.TurboIcon}" drawable="telegram_alt_1"/>
+	<item component="ComponentInfo{org.viento.colibri/org.telegram.messenger.NoxIcon}" drawable="telegram_alt_2"/>
+	<item component="ComponentInfo{org.viento.colibri/org.telegram.messenger.PremiumIcon}" drawable="telegram_alt_3"/>
+	<item component="ComponentInfo{org.viento.colibri/org.telegram.messenger.AquaIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{org.viento.colibri/org.telegram.messenger.MerioIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{org.viento.colibri/org.telegram.messenger.RainbowIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{org.viento.colibri/org.telegram.messenger.OldSchoolIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{org.viento.colibri/org.telegram.messenger.MusheenIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{org.viento.colibri/org.telegram.messenger.SpaceIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{org.viento.colibri/org.telegram.messenger.CloudIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{org.viento.colibri/org.telegram.messenger.NeonIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{org.viento.colibri/org.telegram.messenger.DarkIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{org.viento.colibri/org.telegram.messenger.VintageIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{org.viento.colibri/org.telegram.messenger.MaterialIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{xyz.nextalone.nagram/org.telegram.messenger.DefaultIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{xyz.nextalone.nagram/org.telegram.ui.LaunchActivity}" drawable="telegram"/>
+	<item component="ComponentInfo{xyz.nextalone.nagram/org.telegram.messenger.TurboIcon}" drawable="telegram_alt_1"/>
+	<item component="ComponentInfo{xyz.nextalone.nagram/org.telegram.messenger.NoxIcon}" drawable="telegram_alt_2"/>
+	<item component="ComponentInfo{xyz.nextalone.nagram/org.telegram.messenger.PremiumIcon}" drawable="telegram_alt_3"/>
+	<item component="ComponentInfo{xyz.nextalone.nagram/org.telegram.messenger.AquaIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{xyz.nextalone.nagram/org.telegram.messenger.MerioIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{xyz.nextalone.nagram/org.telegram.messenger.RainbowIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{xyz.nextalone.nagram/org.telegram.messenger.OldSchoolIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{xyz.nextalone.nagram/org.telegram.messenger.MusheenIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{xyz.nextalone.nagram/org.telegram.messenger.SpaceIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{xyz.nextalone.nagram/org.telegram.messenger.CloudIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{xyz.nextalone.nagram/org.telegram.messenger.NeonIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{xyz.nextalone.nagram/org.telegram.messenger.DarkIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{xyz.nextalone.nagram/org.telegram.messenger.VintageIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{xyz.nextalone.nagram/org.telegram.messenger.MaterialIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{app.nicegram/org.telegram.messenger.DefaultIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{app.nicegram/org.telegram.ui.LaunchActivity}" drawable="telegram"/>
+	<item component="ComponentInfo{app.nicegram/org.telegram.messenger.TurboIcon}" drawable="telegram_alt_1"/>
+	<item component="ComponentInfo{app.nicegram/org.telegram.messenger.NoxIcon}" drawable="telegram_alt_2"/>
+	<item component="ComponentInfo{app.nicegram/org.telegram.messenger.PremiumIcon}" drawable="telegram_alt_3"/>
+	<item component="ComponentInfo{app.nicegram/org.telegram.messenger.AquaIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{app.nicegram/org.telegram.messenger.MerioIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{app.nicegram/org.telegram.messenger.RainbowIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{app.nicegram/org.telegram.messenger.OldSchoolIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{app.nicegram/org.telegram.messenger.MusheenIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{app.nicegram/org.telegram.messenger.SpaceIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{app.nicegram/org.telegram.messenger.CloudIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{app.nicegram/org.telegram.messenger.NeonIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{app.nicegram/org.telegram.messenger.DarkIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{app.nicegram/org.telegram.messenger.VintageIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{app.nicegram/org.telegram.messenger.MaterialIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{org.telegram.mdgram/org.telegram.mdgram.DefaultIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{org.telegram.mdgram/org.telegram.mdgram.MaterialYou}" drawable="telegram"/>
+	<item component="ComponentInfo{org.telegram.mdgram/org.telegram.ui.LaunchActivity}" drawable="telegram"/>
+	<item component="ComponentInfo{org.telegram.mdgram/org.telegram.mdgram.TurboIcon}" drawable="telegram_alt_1"/>
+	<item component="ComponentInfo{org.telegram.mdgram/org.telegram.mdgram.NoxIcon}" drawable="telegram_alt_2"/>
+	<item component="ComponentInfo{org.telegram.mdgram/org.telegram.mdgram.PremiumIcon}" drawable="telegram_alt_3"/>
+	<item component="ComponentInfo{org.telegram.mdgram/org.telegram.mdgram.AquaIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{org.telegram.mdgram/org.telegram.mdgram.MerioIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{org.telegram.mdgram/org.telegram.mdgram.RainbowIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{org.telegram.mdgram/org.telegram.mdgram.OldSchoolIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{org.telegram.mdgram/org.telegram.mdgram.MusheenIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{org.telegram.mdgram/org.telegram.mdgram.SpaceIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{org.telegram.mdgram/org.telegram.mdgram.CloudIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{org.telegram.mdgram/org.telegram.mdgram.NeonIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{org.telegram.mdgram/org.telegram.mdgram.DarkIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{org.telegram.mdgram/org.telegram.mdgram.VintageIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{org.telegram.mdgram/org.telegram.mdgram.MaterialIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{top.qwq2333.nullgram/org.telegram.messenger.DefaultIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{top.qwq2333.nullgram/org.telegram.ui.LaunchActivity}" drawable="telegram"/>
+	<item component="ComponentInfo{top.qwq2333.nullgram/org.telegram.messenger.TurboIcon}" drawable="telegram_alt_1"/>
+	<item component="ComponentInfo{top.qwq2333.nullgram/org.telegram.messenger.NoxIcon}" drawable="telegram_alt_2"/>
+	<item component="ComponentInfo{top.qwq2333.nullgram/org.telegram.messenger.PremiumIcon}" drawable="telegram_alt_3"/>
+	<item component="ComponentInfo{top.qwq2333.nullgram/org.telegram.messenger.AquaIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{top.qwq2333.nullgram/org.telegram.messenger.MerioIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{top.qwq2333.nullgram/org.telegram.messenger.RainbowIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{top.qwq2333.nullgram/org.telegram.messenger.OldSchoolIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{top.qwq2333.nullgram/org.telegram.messenger.MusheenIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{top.qwq2333.nullgram/org.telegram.messenger.SpaceIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{top.qwq2333.nullgram/org.telegram.messenger.CloudIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{top.qwq2333.nullgram/org.telegram.messenger.NeonIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{top.qwq2333.nullgram/org.telegram.messenger.DarkIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{top.qwq2333.nullgram/org.telegram.messenger.VintageIcon}" drawable="telegram"/>
+	<item component="ComponentInfo{top.qwq2333.nullgram/org.telegram.messenger.MaterialIcon}" drawable="telegram"/>
 
 	<!-- Telegram Plus -->
 	<item component="ComponentInfo{org.telegram.plus/org.telegram.ui.LaunchActivity}" drawable="telegram_plus"/>
@@ -25156,11 +25635,37 @@
 	<item component="ComponentInfo{org.telegram.plus/org.telegram.messenger.DarkIcon}" drawable="telegram_plus"/>
 	<item component="ComponentInfo{org.telegram.plus/org.telegram.messenger.PlusIcon}" drawable="telegram_plus"/>
 	<item component="ComponentInfo{org.telegram.plus/org.telegram.messenger.VintageIcon}" drawable="telegram_plus"/>
+	<item component="ComponentInfo{org.telegram.plus/org.telegram.messenger.TurboIcon}" drawable="telegram_plus"/>
+	<item component="ComponentInfo{org.telegram.plus/org.telegram.messenger.PremiumIcon}" drawable="telegram_plus"/>
+	<item component="ComponentInfo{org.telegram.plus/org.telegram.messenger.AquaIcon}" drawable="telegram_plus"/>
+	<item component="ComponentInfo{org.telegram.plus/org.telegram.messenger.MerioIcon}" drawable="telegram_plus"/>
+	<item component="ComponentInfo{org.telegram.plus/org.telegram.messenger.RainbowIcon}" drawable="telegram_plus"/>
+	<item component="ComponentInfo{org.telegram.plus/org.telegram.messenger.OldSchoolIcon}" drawable="telegram_plus"/>
+	<item component="ComponentInfo{org.telegram.plus/org.telegram.messenger.MusheenIcon}" drawable="telegram_plus"/>
+	<item component="ComponentInfo{org.telegram.plus/org.telegram.messenger.SpaceIcon}" drawable="telegram_plus"/>
+	<item component="ComponentInfo{org.telegram.plus/org.telegram.messenger.CloudIcon}" drawable="telegram_plus"/>
+	<item component="ComponentInfo{org.telegram.plus/org.telegram.messenger.NeonIcon}" drawable="telegram_plus"/>
+	<item component="ComponentInfo{org.telegram.plus/org.telegram.messenger.MaterialIcon}" drawable="telegram_plus"/>
 
 	<!-- Telegraph -->
 	<item component="ComponentInfo{ir.ilmili.telegraph/org.telegram.ui.LaunchActivityIcn0}" drawable="telegraph"/>
 	<item component="ComponentInfo{ir.ilmili.telegraph/org.telegram.messenger.DefaultIcon}" drawable="telegraph"/>
 	<item component="ComponentInfo{ir.ilmili.telegraph/org.telegram.messenger.GraphIconRed}" drawable="telegraph"/>
+	<item component="ComponentInfo{ir.ilmili.telegraph/org.telegram.ui.LaunchActivity}" drawable="telegraph"/>
+	<item component="ComponentInfo{ir.ilmili.telegraph/org.telegram.messenger.TurboIcon}" drawable="telegraph"/>
+	<item component="ComponentInfo{ir.ilmili.telegraph/org.telegram.messenger.NoxIcon}" drawable="telegraph"/>
+	<item component="ComponentInfo{ir.ilmili.telegraph/org.telegram.messenger.PremiumIcon}" drawable="telegraph"/>
+	<item component="ComponentInfo{ir.ilmili.telegraph/org.telegram.messenger.AquaIcon}" drawable="telegraph"/>
+	<item component="ComponentInfo{ir.ilmili.telegraph/org.telegram.messenger.MerioIcon}" drawable="telegraph"/>
+	<item component="ComponentInfo{ir.ilmili.telegraph/org.telegram.messenger.RainbowIcon}" drawable="telegraph"/>
+	<item component="ComponentInfo{ir.ilmili.telegraph/org.telegram.messenger.OldSchoolIcon}" drawable="telegraph"/>
+	<item component="ComponentInfo{ir.ilmili.telegraph/org.telegram.messenger.MusheenIcon}" drawable="telegraph"/>
+	<item component="ComponentInfo{ir.ilmili.telegraph/org.telegram.messenger.SpaceIcon}" drawable="telegraph"/>
+	<item component="ComponentInfo{ir.ilmili.telegraph/org.telegram.messenger.CloudIcon}" drawable="telegraph"/>
+	<item component="ComponentInfo{ir.ilmili.telegraph/org.telegram.messenger.NeonIcon}" drawable="telegraph"/>
+	<item component="ComponentInfo{ir.ilmili.telegraph/org.telegram.messenger.DarkIcon}" drawable="telegraph"/>
+	<item component="ComponentInfo{ir.ilmili.telegraph/org.telegram.messenger.VintageIcon}" drawable="telegraph"/>
+	<item component="ComponentInfo{ir.ilmili.telegraph/org.telegram.messenger.MaterialIcon}" drawable="telegraph"/>
 
 	<!-- Telehealth -->
 	<item component="ComponentInfo{com.simplepractice.video/com.simplepractice.video.welcome.WelcomeActivity}" drawable="telehealth"/>
@@ -25653,6 +26158,9 @@
 	<!-- Tiny Travel Tracker -->
 	<item component="ComponentInfo{com.rareventure.gps2/com.rareventure.gps2.reviewer.map.OsmMapGpsTrailerReviewerMapActivity}" drawable="tinytraveltracker"/>
 
+	!-- Tinyview -->
+	<item component="ComponentInfo{com.newput.tinyview/com.newput.tinyview.MainActivity}" drawable="tinyview"/>
+	
 	<!-- TinyBit launcher -->
 	<item component="ComponentInfo{rocks.tbog.tblauncher/rocks.tbog.tblauncher.TBLauncherActivity}" drawable="tinybit"/>
 
@@ -25878,7 +26386,7 @@
 	<item component="ComponentInfo{org.traccar.client/org.traccar.client.Launcher}" drawable="traccarclient"/>
 
 	<!-- Track -->
-	<item component="ComponentInfo{com.nutritionx.nixtrack/com.nutritionx.nixtrack.MainActivity}" drawable="track"/>
+	<item component="ComponentInfo{com.nutritionix.nixtrack/com.nutritionix.nixtrack.MainActivity}" drawable="track"/>
 
 	<!-- Track & Graph -->
 	<item component="ComponentInfo{com.samco.trackandgraph/com.samco.trackandgraph.MainActivity}" drawable="trackgraph"/>
@@ -26332,6 +26840,9 @@
 	<!-- Twilight -->
 	<item component="ComponentInfo{com.urbandroid.lux/com.urbandroid.lux.MainActivity}" drawable="twilight"/>
 
+	<!--  Twin Edge  -->
+	<item component="ComponentInfo{com.Arcy.TwinEdge/com.unity3d.player.UnityPlayerActivity}" drawable="twin_edge"/>	
+	
 	<!-- Twinkly -->
 	<item component="ComponentInfo{com.twinkly/com.android.app.ui.view.splash.SplashScreenActivity}" drawable="twinkly"/>
 
@@ -26925,13 +27436,19 @@
 
 	<!-- VeganRadar -->
 	<item component="ComponentInfo{com.vgnx.veganradar/com.vgnx.veganradar.MainActivity}" drawable="veganradar"/>
+	
+	<!-- vel'oh officiel -->
+	<item component="ComponentInfo{com.jcdecaux.vls.luxembourg/com.jcdecaux.vls.app.navigation.NavigationActivity}" drawable="veloh_officiel"/>
 
 	<!-- Vendetta -->
+	<item component="ComponentInfo{dev.beefers.vendetta/com.discord.app.AppActivity$Main}" drawable="discord_alt_2"/>
+	<item component="ComponentInfo{dev.beefers.vendetta/com.discord.MainActivity}" drawable="discord_alt_2"/>
 	<item component="ComponentInfo{dev.beefers.vendetta/com.discord.main.MainActivity}" drawable="discord_alt_2"/>
 	<item component="ComponentInfo{dev.beefers.vendetta/com.discord.main.MainDefault}" drawable="discord_alt_2"/>
-	<item component="ComponentInfo{dev.beefers.vendetta/com.discord.main.MainBrandDark}" drawable="discord_alt_2"/>
+	<item component="ComponentInfo{dev.beefers.vendetta/com.discord.main.MainBrandInverted}" drawable="discord_alt_2"/>
 	<item component="ComponentInfo{dev.beefers.vendetta/com.discord.main.MainMatteDark}" drawable="discord_alt_2"/>
 	<item component="ComponentInfo{dev.beefers.vendetta/com.discord.main.MainMatteLight}" drawable="discord_alt_2"/>
+	<item component="ComponentInfo{dev.beefers.vendetta/com.discord.main.MainBrandDark}" drawable="discord_alt_2"/>
 	<item component="ComponentInfo{dev.beefers.vendetta/com.discord.main.MainPastel}" drawable="discord_alt_2"/>
 	<item component="ComponentInfo{dev.beefers.vendetta/com.discord.main.MainPirate}" drawable="discord_alt_2"/>
 	<item component="ComponentInfo{dev.beefers.vendetta/com.discord.main.MainCamo}" drawable="discord_alt_2"/>
@@ -26948,6 +27465,10 @@
 	<item component="ComponentInfo{dev.beefers.vendetta/com.discord.main.MainManga}" drawable="discord_alt_2"/>
 	<item component="ComponentInfo{dev.beefers.vendetta/com.discord.main.MainController}" drawable="discord_alt_2"/>
 	<item component="ComponentInfo{dev.beefers.vendetta/com.discord.main.MainMushroom}" drawable="discord_alt_2"/>
+	<item component="ComponentInfo{dev.beefers.vendetta/com.discord.main.MainZombie}" drawable="discord_alt_2"/>
+	<item component="ComponentInfo{dev.beefers.vendetta/com.discord.main.MainClydeStein}" drawable="discord_alt_2"/>
+	<item component="ComponentInfo{dev.beefers.vendetta/com.discord.main.MainSlimy}" drawable="discord_alt_2"/>
+	<item component="ComponentInfo{dev.beefers.vendetta/com.discord.main.MainDrip}" drawable="discord_alt_2"/>
 
 	<!-- Vendetta Manager -->
 	<item component="ComponentInfo{dev.beefers.vendetta.manager/dev.beefers.vendetta.manager.ui.activity.MainActivity}" drawable="vendetta_manager"/>
@@ -27215,6 +27736,9 @@
 
 	<!-- Viscea One -->
 	<item component="ComponentInfo{ch.viseca.visecaone/com.netcetera.visecaone.android.feature.branding.alias_activities.VisecaBrandAliasActivity}" drawable="visecaone"/>
+	
+	<!-- VisitLux -->
+	<item component="ComponentInfo{com.visitluxembourg.app/com.visitluxembourg.app.luxembourg_luci.ui.MainActivity}" drawable="visitluxembourg"/>
 
 	<!-- VITA -->
 	<item component="ComponentInfo{com.snowcorp.vita/com.snow.stuckyi.presentation.splash.SplashActivity}" drawable="vita"/>
@@ -27951,6 +28475,9 @@
 
 	<!-- Wekiwi -->
 	<item component="ComponentInfo{com.wekiwisrl.wekiwi/com.wekiwisrl.wekiwi.CordovaApp}" drawable="wekiwi"/>
+
+	<!-- Welefon -->
+	<item component="ComponentInfo{de.wivewa.dialer/de.wivewa.dialer.ui.dial.MainActivity}" drawable="phone_alt_1"/>
 
 	<!-- Wells Fargo -->
 	<item component="ComponentInfo{com.wf.wellsfargomobile/com.wf.wellsfargomobile.LauncherActivity}" drawable="wells_fargo"/>
@@ -29162,5 +29689,18 @@
 
 	<!-- ﾆｺﾆｺ動画 -->
 	<item component="ComponentInfo{jp.nicovideo.android/jp.nicovideo.android.StartupActivity}" drawable="niconico"/>
+	
+
+	<!-- RWTH-App -->
+	<item component="ComponentInfo{de.rwth_aachen.rz.rwthapp/de.rwth_aachen.rz.rwthapp.MainActivity}" drawable="rwthapp"/>
+
+	<!-- LG qHelp -->    
+	<item component="ComponentInfo{com.lge.qhelp.application/com.lge.qhelp.application.QHelpMain}" drawable="quick_help"/>
+
+	<!-- LG Update Centre -->
+	<item component="ComponentInfo{com.lge.updatecentre/com.lge.updatecentre.UpdateCentrePrfActivity" drawable="update_centre"/>
+
+	<!-- android.stk -->
+	<item component="ComponentInfo{com.android.stk/com.android.stk.StkLauncherActivity1" drawable="android_stk"/>
 
 </resources>
