@@ -38,7 +38,7 @@ You'll notice that the fill color is white and stroke colour is black.
 
 ## Uploading
 
-- Go to the github page <https://github.com/Donnnno/Arcticons/> in a browser
+- Go to the github page <https://github.com/Arcticons-Team/Arcticons/> in a browser
 
 - Turn on desktop mode in the browser
 
@@ -50,7 +50,7 @@ You'll notice that the fill color is white and stroke colour is black.
 
 - Select your masterpiece(s) and Commit changes (optional commit message)
 
-There will be a dialog "... is 1 commit ahead of Donno:Arcticons"
+There will be a dialog "... is 1 commit ahead of Arcticons-Team/Arcticons:main"
 
 - Click "Contribute" > "Open pull request"
 

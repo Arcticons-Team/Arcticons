@@ -5,7 +5,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.1.3'
+        classpath 'com.android.tools.build:gradle:8.1.4'
     }
 }
 
@@ -19,11 +19,20 @@ allprojects {
 
     rootProject.ext {
         MinSdk = 21
-        TargetSdk = 31
-        CompileSdk = 31
+        TargetSdk = 34
+        CompileSdk = 34
     }
 }
 
 task clean(type: Delete) {
     delete rootProject.buildDir
+    delete fileTree(dir:  'app/src/you/res/drawable-anydpi')
+    delete fileTree(dir:  'app/src/light/res/drawable-anydpi')
+    delete fileTree(dir:  'app/src/dark/res/drawable-anydpi')
+    delete fileTree(dir:  'app/src/dayNight/res/drawable-anydpi')
 }
+
+//F-DROID REPRODUCIBLE BUILDS
+
+// NB: Android Studio can't find the imports; this does not affect the
+// actual build since Gradle can find them just fine.

@@ -1,27 +1,169 @@
+### 8.3.0 - Day & Night 
+###### Released: Dec 23, 2023
+* 🎉 108 new and updated icons! (thanks Kaiserdragon, Supertsy5, MikeTheGreat, TotallyAvailable, Xprateek, Alchemiker, NicoWeio, Lavin-Tom)
+* ✨ Updates to make sure lots of apps work again.
+* ☀️🌙 Arcticons Day and Night: A new expirimental flavor that switches between your system themes. (thanks to Kaiserdragon)
+* 🔥 8300 icons in total!
+
+### 8.2.0 - The Renamening
+###### Released: Nov 25, 2023
+* 🔠 Sometimes you have a good idea, and sometimes it just doesn't work that good in practice. That was the case with the Arcticons names. Dark and Light stands for Darkmode and Lightmode, but that was confusing, because it wasn't in the title. We've renamed it to Arcticons, Arcticons Black, and Arcticons Material You.
+* 🎉 150 new and updated icons! (thanks Orbitaldr0p, Supertsy5, MikeTheGreat, TotallyAvailable, Xprateek, Subroutine7901, Ojppe, Lavin-Tom, Quantenzitrone)
+* ✨ Updates to make sure lots of apps work again.
+* 🔥 8200 icons in total!
+
+### 8.0.6 - Anniversary update
+###### Released: Nov 8, 2023
+* 🎈 Arcticons turns 3 years old, thanks everyone for being with us, making this possible!
+* 🎉 550 new and updated icons! (thanks Onuronsekiz, Petlyh, Kaiserdragon2, Starfetch, MikeTheGreat, MrAlpha786)
+* ✨ Updates to make sure lots of apps work again.
+* 🔥 8068 icons in total!
+
+### 7.5.4
+###### Released: Oct 16, 2023
+* 🎉 175 new and updated icons! (thanks Petlyh, Wwwwwwari, Kaiserdragon2, Xprateek, Rbrunt, Dgcampbe, Tieu1991, Onuronsekiz, MikeTheGreat)
+* ✨ Updates to make sure lots of apps work again.
+* 🔥 7542 icons in total!
+
+### 7.3.7
+###### Released: Oct 8, 2023
+* 🎉 118 new and updated icons! (thanks Petlyh, Wwwwwwari, AsankaSovis, Pgaskin, WJehee, Xprateek, Dgcampbe, Ojppe, VPS07, LunaShadowEmpress, Autinerd)
+* ✨ Updates to make sure lots of apps work again.
+* 📱 Dashboard update -> support more launchers.
+* 🔥 7378 icons in total!
+
+### 7.2.6
+###### Released: Sep 18, 2023
+* 🎉 110 new and updated icons! (thanks Npnpatidar, Wwwwwwari, Mmaeusezahl, AsankaSovis)
+* 🔥 7269 icons in total!
+
+### 7.1.6
+###### Released: Sep 9, 2023
+* 🎉 166 new and updated icons! (thanks Npnpatidar, Autinerd, Wwwwwwari, Mmaeusezahl, Crazy-Unicooorn, Ojppe, Dunexus, Dgcampbe, Joelchrono12, Kaiserdragon2, He-Ro, ThatOneCalculator, Zullinsky, Stephenmetcalfe-prodigy)
+* ✨ Updates, updates & updates for existing  apps (including Discord and ChatGPT :)
+* 🔥 7160 icons in total!
+
+### 7.0.0
+###### Released: Aug 18, 2023
+* 🎉 360 new and updated icons! (thanks Petlyl, NablaMetal, Crazy-Unicooorn, Dgcampbe, NobodyForNothing, Mmaeusezahl, Tsuicaa, NicoWeio, Mdapa323, RedAuburn, Dioxias, PixelRuzt, DelayedPrototype, Kport1, kaiserdragon2, Wwwwwwari, KR4U7H3R, Basings, Orbitaldr0p, AsankaSovis, Yetanother-user)
+* 📁 Redesigned folder icons.
+* 🔥 7007 icons in total!
+
+### 6.7.1
+###### Released: Jul 19, 2023
+* 🎉 113 new and updated icons! (thanks Wari, Dgcampbe, Pelyh, Dioxias, Orbitaldr0p, PixelRuzt, AsankaSovis, Lividhen, Tieu1991)
+* 🔥 6714 icons in total!
+
+### 6.6.0
+###### Released: Jul 07, 2023
+* 🕒 Three new clocks to choose from! 
+* 🎉 177 new and updated icons! (thanks Wari, Tunfisch96, 1qq9qq, Redbox3070, Achin, Salmonmon, Maciej-klupp, PixelRuzt, Kaiserdragon2, Dgcampbe, Phampyk, Eeelbrens, Aman9das, AsankaSovis)
+* 🔥 6609 icons in total!
+
+### 6.4.3
+###### Released: Jun 16, 2023
+* 🆕Arcticons You release! A new flavor has arrived, now with Material You themed icons. Available on all platforms! (Special thanks to Kaiserdragon2 for making all of this possible)
+* 🕒 Two new clocks! 
+* 🎉 82 new and updated icons! (thanks Kaiserdragon2, Wari, Skedastically, Tieu1991, Dgcampbe)
+* 💡 Many fixes for icons not applying.
+* 🔥 6438 icons in total!
+
+### 6.3.6
+###### Released: Jun 10, 2023
+* 📱 Dashboard update
+* 🎉 113 new and updated icons! (thanks Redbox3070, Aloxe, Kaiserdragon2, Wari, Joelchrono12, 1qq9qq, Th3Third3ye)
+* 💡 Many fixes for icons not applying.
+* 🔥 6363 icons in total!
+
+### 6.2.5 
+###### Released: May 25, 2023
+* 📱 Dashboard update
+* ✨ Material You theming inside the app!
+* 🎉 84 new and updated icons! (thanks Tieu1991, Dunexus, Saijin-Naib, Bsvka, Wwwwwwwari, kaanelloed, Dimassasin1, Th3Thrid3ye, Aloxe, Dgcampbe, Stephane-74, Ayecptn)
+* 💡 Many fixes for icons not applying.
+* 🔥 6254 icons in total!
+
+### 6.1.7 
+###### Released: May 09, 2023
+* 🎉 137 new and updated icons! (thanks Ayecptn, MrMatrix, Axonym, Dimassasin1, Golden-peaches, Tempomode, Basings)
+* 💡 Many fixes for icons not applying.
+* 🔥 6172 icons in total!
+
+### 6.0.4 
+###### Released: Apr 30, 2023
+* 🎉 Another huge milestone, we've reached 6k icons!
+* 🎉 226 new and updated icons!  (thanks Petlyh, Ojppe, Basings, Heruvetica)
+* 💡 Many fixes for icons not applying.
+* 🔥 6043 icons in total!
+
+### 5.8.2
+###### Released: Apr 21, 2023
+* 🎉 221 new and updated icons!  (thanks Skedastically, Kaiserdragon2, Maskedman99, Basings, Petlyh, Gaenseblume, Cubedsheep, Quantenzitrone, 20brs, KR4U7H3R, Daywalk3r666, A-zurcher)
+* 📁 New folder icons.
+* 🔠 New circular icons for letters and numbers.
+* 💡 Many fixes for icons not applying.
+* 🔥 5821 icons in total!
+
+### 5.6.0
+###### Released: Mar 22, 2023
+* 🎉 209 new and updated icons! (thanks Skedastically, Kaiserdragon2, Maskedman99, NicoWeio, KR4U7H3R, Lavin-Tom,, Trautb, Bsvka, Squ1rr3lly, Mast3rMirror, Basings)
+* 🪙 New icons for lots of different currencies.
+* 💡 Many fixes for icons not applying.
+* 🔥 5605 icons in total!
+
+### 5.4.0
+###### Released: Feb  6, 2023
+* 🎉 140 new and updated icons! (thanks Mast3rMirror, Hal47, RCaled, KR4U7H3R, Basings, Skedastically, Akp37, JoelChrono12, S-dasilva, Lavin-tom, WJehee, Andmagdo)
+* 💡 Many fixes for icons not applying.
+* 🔥 5403 icons in total!
+
+### 5.2.6
+###### Released: Feb  5, 2023
+* 🎉 165 new and updated icons! (thanks Kaiserdragon2, Gitro, JoelChrono12, Akp37, TheLastZombie, Starfetch, Basings, Its-me-ct, Kerioneesh, Gbucar, Andmagdo)
+* 💡 Many fixes for icons not applying.
+* ✨ A special shoutout to Kaiserdragon2 for improving the release workflow!
+* 🔥 5268 icons in total!
+
+### 5.1.0
+###### Released: Jan 5, 2023
+* 📱 Dashboard update (no more crashes (hopefully)) 
+* 🎉 110 new and updated icons! (thanks Zykure, Terumitzu, Kaiserdragon2, Lavin-Tom, Artsuaga, Bbbhltz, Dgcampbe, Kaanelloed)
+* 🔥 5108 icons in total!
+
+
+### 5.0.0
+###### Released: Dec 13, 2022
+* 📱 Dashboard update (lot's of bugs fixed!) 
+* 🎉 161 new and updated icons! (thanks Petlyh, Basings, Lavin-Tom, Quantenzitrone, Aspwil, Kaiserdragon2, GitGitro, Rmpj5, Artem13327, Jakejoh, Tversteeg, Naveenccmsd, Dgcampbe, Joelchrono12, GrantMoyer, Tieu1991, Squ1rr3lly, Aloxe, Joserebelo!)
+* 🔥 5003 icons in total!
+
+
+### 4.8.5 - Anniversary Edition
+###### Released: Nov 3, 2022
+* 🥳 Arcticons turns 2 years old! 
+* 🎉 159 new or updated icons (thanks Kaiserdragon2, Quantenzitrone, JoelChrono12, Dgcampea, Aircan, PoorPocketsMcNewHold, 0slav, Ayecptn, KempfCreative, Petlyh, Tadas32, Lavin-Tom, Kaanelloed, NicoWeio , Ourslfs, Plasmid-zz, Basings, Akp 37!)
+* 🔥 4852 icons in total!
+
 ### 4.7.0
 ###### Released: Sep 23, 2022
 * 📱 Dashboard update
 * 🎉 100 new or updated icons (thanks Kport1, Basings, Actuallyhuman, GitGitro, Maciej-klupp, Joserebelo, Totoroot, Mrandyrew95, GrantMoyer, Ayecptn, Ojppe, Dgcampbe, Lavin-Tom, Yetanother-user and Akp37!)
 * 🔥 4698 icons in total!
 
-
 ### 4.6.3
 ###### Released: Aug 25, 2022
 * 🎉 84 new or updated icons (thanks Yetanother-user, Toxcien, Ojppe, Basings, Kreativ7, Lavin-Tom, Aliervo, Ronaldloyko, Kaiserdragon2, Petlyh, Prirai, Grrrrr, Kerioneesh, Wwwwwwari, MagiX13, Tieu1991 and Totoroot!)
 * 🔥 4606 icons in total!
-
 
 ### 4.6.2
 ###### Released: Jul 26, 2022
 * 🎉 96  new or updated icons (thanks Duese, Aloxe, Yetanother-user, toxcien, prirai, ojppe, andmagdo. Petlyh, Hassancreative, Maciej-klupp!)
 * 🔥 4622 icons in total!
 
-
 ### 4.5.6
 ###### Released: Jul 6, 2022
 * 🎉 126 new or updated icons (thanks Maciej-Klupp, Calciume, Toxcien, Joelchrono12, KristhianX, Dgcampbe, tieu1991, EvysGarden, Lavin-tom, Shreyanshs31, Andmagdo, Endim8, ZuperZeus, Aao-fyi!)
 * 🔥 4560 icons in total!
-
 
 ### 4.3.8
 ###### Released: Jun 6, 2022
@@ -37,7 +179,6 @@
 * ✨ Icon requests should be fixed now.
 * 🎉 38 new or updated icons (thanks Kaiserdragon2, Plasmid-zz, Hassancreative, Ktutsch, Lavin-tim, Jammo2k5)
 * 🔥 4310 icons in total!
-
 
 ### 4.2.8
 ###### Released: May 8, 2022

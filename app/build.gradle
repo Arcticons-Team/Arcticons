@@ -1,14 +1,16 @@
 apply plugin: 'com.android.application'
 
+// build.gradle in the 'app' module
+
 android {
-    compileSdkVersion 32
+    compileSdk 34
 
     defaultConfig {
         applicationId "com.donnnno.arcticons"
         minSdkVersion rootProject.ext.MinSdk
         targetSdkVersion rootProject.ext.TargetSdk
-        versionCode 99
-        versionName '4.7.0'
+        versionCode 127
+        versionName '8.3.1'
         multiDexEnabled true
 
         // Naming app bundles
@@ -18,42 +20,77 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled true
+            minifyEnabled false
             debug {
                 applicationIdSuffix '.debug'
             }
         }
+        applicationVariants.all { variant ->
+
+            if (variant.flavorName == "you" || variant.flavorName == "youPlay") {
+                variant.preBuildProvider.get().dependsOn(":preparehelper:runyou")
+            } else if (variant.flavorName == "black" || variant.flavorName == "blackPlay") {
+                variant.preBuildProvider.get().dependsOn(":preparehelper:runblack")
+            }else if (variant.flavorName == "normal" || variant.flavorName == "normalPlay") {
+                variant.preBuildProvider.get().dependsOn(":preparehelper:runnormal")
+            }else if (variant.flavorName == "dayNight") {
+            variant.preBuildProvider.get().dependsOn(":preparehelper:rundayNight")
+        }
+            // Add more conditions for additional flavors
+        }
     }
 
 
-    flavorDimensions "variant"
+
+    flavorDimensions += "variant"
     productFlavors {
-        dark {
+        normal {
             dimension "variant"
-            resValue "string", "app_name", "Arcticons Dark"
+            resValue "string", "app_name", "Arcticons"
         }
-        darkPlay {
+        normalPlay {
             dimension "variant"
-            resValue "string", "app_name", "Arcticons Dark"
+            resValue "string", "app_name", "Arcticons"
         }
-        light {
+        black {
             dimension "variant"
             //noinspection GradlePath
             applicationIdSuffix '.light'
-            resValue "string", "app_name", "Arcticons Light"
+            resValue "string", "app_name", "Arcticons Black"
         }
-        lightPlay {
+        blackPlay {
             dimension "variant"
             applicationIdSuffix '.light'
-            resValue "string", "app_name", "Arcticons Light"
+            resValue "string", "app_name", "Arcticons Black"
+        }
+        you {
+            dimension "variant"
+            minSdkVersion "26"
+            applicationIdSuffix '.you'
+            resValue "string", "app_name", "Arcticons Material You"
+        }
+        youPlay {
+            dimension "variant"
+            minSdkVersion "26"
+            applicationIdSuffix '.you.play'
+            resValue "string", "app_name", "Arcticons Material You"
+        }
+        dayNight {
+            dimension "variant"
+            minSdkVersion "29"
+            applicationIdSuffix '.daynight'
+            resValue "string", "app_name", "Arcticons Day & Night"
         }
     }
 
     sourceSets {
-        dark { res.srcDirs = ['src/darkFree/res/', 'src/dark/res'] }
-        darkPlay { res.srcDirs = ['src/darkPlay/res/', 'src/dark/res'] }
-        light { res.srcDirs = ['src/lightFree/res/', 'src/light/res'] }
-        lightPlay { res.srcDirs = ['src/lightPlay/res/', 'src/light/res'] }
+        normal { res.srcDirs = ['src/normalFree/res/', 'src/normal/res'] }
+        normalPlay { res.srcDirs = ['src/normalPlay/res/', 'src/normal/res'] }
+        black { res.srcDirs = ['src/blackFree/res/', 'src/black/res'] }
+        blackPlay { res.srcDirs = ['src/blackPlay/res/', 'src/black/res'] }
+		you { res.srcDirs = ['src/youFree/res/', 'src/you/res'] }
+        youPlay { res.srcDirs = ['src/youPlay/res/', 'src/you/res'] }
+        dayNight { res.srcDirs = ['src/dayNightFree/res/', 'src/dayNight/res'] }
     }
 
 
@@ -63,17 +100,49 @@ android {
         targetCompatibility JavaVersion.VERSION_11
     }
 
-    lintOptions {
-        checkReleaseBuilds false
-        abortOnError false
-    }
     buildFeatures {
         viewBinding true
+    }
+    namespace 'com.donnnno.arcticons'
+    lint {
+        abortOnError false
+        checkReleaseBuilds false
     }
 }
 
 dependencies {
 
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    implementation 'com.github.Donnnno:candybar-foss:3.15.0'
+    implementation 'com.github.donnnno:candybar-foss:3.18.6'
+}
+
+import com.android.tools.profgen.ArtProfileKt
+import com.android.tools.profgen.ArtProfileSerializer
+import com.android.tools.profgen.DexFile
+
+// F-Droid Reproducible Build tasks
+
+project.afterEvaluate {
+    tasks.each { task ->
+        if (task.name.startsWith("compile") && task.name.endsWith("ReleaseArtProfile")) {
+            task.doLast {
+                outputs.files.each { file ->
+                    if (file.name.endsWith(".profm")) {
+                        println("Sorting ${file} ...")
+                        def version = ArtProfileSerializer.valueOf("METADATA_0_0_2")
+                        def profile = ArtProfileKt.ArtProfile(file)
+                        def keys = new ArrayList(profile.profileData.keySet())
+                        def sortedData = new LinkedHashMap()
+                        Collections.sort keys, new DexFile.Companion()
+                        keys.each { key -> sortedData[key] = profile.profileData[key] }
+                        new FileOutputStream(file).with {
+                            write(version.magicBytes$profgen)
+                            write(version.versionBytes$profgen)
+                            version.write$profgen(it, sortedData, "")
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

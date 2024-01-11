@@ -1,31 +1,36 @@
-[<img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/Donnnno/Arcticons">](https://github.com/Donnnno/Arcticons/releases/latest) [<img alt="F-Droid" src="https://img.shields.io/f-droid/v/com.donnnno.arcticons">](https://f-droid.org/packages/com.donnnno.arcticons) 
-[<img alt="GitHub" src="https://img.shields.io/github/downloads/donnnno/arcticons/total?label=github%20downloads">](https://github.com/Donnnno/Arcticons/releases/latest) 
-[<img alt="GitHub" src="https://img.shields.io/github/downloads/donnnno/arcticons/latest/total">](https://github.com/Donnnno/Arcticons/releases/latest) 
+[<img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/Donnnno/Arcticons">](https://github.com/Arcticons-Team/Arcticons/releases/latest) 
+[<img alt="F-Droid" src="https://img.shields.io/f-droid/v/com.donnnno.arcticons">](https://f-droid.org/packages/com.donnnno.arcticons) 
+<img alt="Google Play" src="https://img.shields.io/endpoint?color=green&logo=google-play&logoColor=green&url=https%3A%2F%2Fplay.cuzi.workers.dev%2Fplay%3Fi%3Dcom.donnnno.arcticons%26l%3DGoogle%2520Play%26m%3D%24version">
+[<img alt="GitHub" src="https://img.shields.io/github/downloads/donnnno/arcticons/total?label=github%20downloads">](https://github.com/Arcticons-Team/Arcticons/releases/latest) 
+[<img alt="GitHub" src="https://img.shields.io/github/downloads/donnnno/arcticons/latest/total">](https://github.com/Arcticons-Team/Arcticons/releases/latest) 
 
-<img src='https://raw.githubusercontent.com/Donnnno/Arcticons/main/github/header-background.png'>
+<img src='https://raw.githubusercontent.com/Arcticons-Team/Arcticons/main/github/header-background.png'>
 
-Arcticons (Arctic icons) is a line-based icon pack forked from [Frost](https://github.com/dkanada/frost), but rebuilt with consistent sizing and adjustments specifically for lines in mind. Arcticons is FOSS and provides mostly icons for open-source apps on F-Droid (but there are many other apps in this pack too). The design is simple and clean, with minimal lines that give you a nice see-through effect.
-
+# Arcticons is a line-based icon pack for Android devices.
+With **over 8300 icons**, Arcticons is one of the largest free & open source icon-packs available. Featuring consistent and elegant handcrafted icons, giving you a minimalistic clutter-free experience on your phone.
+Powered by a community of icon creators all around the world!
+<br>
+<br>
+<br>
+## Get it from one of these stores
 [<img src="https://f-droid.org/badge/get-it-on.png" alt="Get it on F-Droid" height="90">](https://f-droid.org/packages/com.donnnno.arcticons)
-[<img src="https://camo.githubusercontent.com/35b4ec18c762358fb784f9e973f77cf6eb596f2240e69a4c6c093a836655d889/68747470733a2f2f692e6962622e636f2f71306d6463345a2f6765742d69742d6f6e2d6769746875622e706e67" alt="Get it on F-Droid" height="90">](https://github.com/Donnnno/Arcticons/releases)
-[<img src="https://raw.githubusercontent.com/Etar-Group/Etar-Calendar/master/metadata/en_google_play.png" height="90">](https://play.google.com/store/apps/details?id=com.donnnno.arcticons)
+[<img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" height="90">](https://play.google.com/store/apps/details?id=com.donnnno.arcticons)<br>
+[<img src="https://camo.githubusercontent.com/35b4ec18c762358fb784f9e973f77cf6eb596f2240e69a4c6c093a836655d889/68747470733a2f2f692e6962622e636f2f71306d6463345a2f6765742d69742d6f6e2d6769746875622e706e67" alt="Get it on Github" height="90">](https://github.com/Arcticons-Team/Arcticons/releases)
+[<img src="https://accrescent.app/badges/get-it-on.png" alt="Get it on Accrescent" height="90">](https://accrescent.app/app/com.donnnno.arcticons)
 
-Arcticons includes support for a lot of launchers like Trebuchet, KISS, Nova, Apex, Holo, ZenUI, ADW, and many more. The installation depends on your launcher, it's probably somewhere in the settings. **There are over 4000 icons.**
-
-Submitting icon requests helps a lot, but maintaining the project (as you may imagine) takes a lot of time and effort, so please be patient about adding new icons. Contributions for new icons are always welcome, and no experience with programming is necessary.
 
 ## Screenshots
 
-<img src='https://raw.githubusercontent.com/Donnnno/Arcticons/main/github/phonescreenshotsdark.jpg'>
-<img src='https://raw.githubusercontent.com/Donnnno/Arcticons/main/github/phonescreenshotslight.jpg'>
+<img src='https://raw.githubusercontent.com/Arcticons-Team/Arcticons/main/github/phonescreenshotsdark.jpg'>
+<img src='https://raw.githubusercontent.com/Arcticons-Team/Arcticons/main/github/phonescreenshotslight.jpg'>
 
 ## Donate
 
-Maintaining this icon-pack costs a lot of time, besides making icons I'm curating every single icon if it has the right sizing and other design rules. So if you like the icons and want to support the development, consider supporting. :)
+Providing a free icon-pack for everyone can cost a lot of time and effort. So if you like our work, consider donating!
 
 |Paypal|Liberapay|Ko-Fi|
 |---|---|---|
-|<a href="https://www.paypal.com/paypalme/onnovdd"><img height="40" alt="Donate using Paypal" src="https://github.com/Donnnno/Arcticons/blob/main/github/pp_button.svg"></a>|<a href="https://liberapay.com/Donno/donate"><img height="40" alt="Donate using Liberapay" src="https://github.com/Donnnno/Arcticons/blob/main/github/lp_button.svg"></a>|<a href="https://Ko-fi.com/donno_"><img height="40" alt="Donate using Ko-Fi" src="https://github.com/Donnnno/Arcticons/blob/main/github/kofi_button.svg"></a>
+|<a href="https://www.paypal.com/paypalme/onnovdd"><img height="40" alt="Donate using Paypal" src="https://github.com/Arcticons-Team/Arcticons/blob/main/github/pp_button.svg"></a>|<a href="https://liberapay.com/Donno/donate"><img height="40" alt="Donate using Liberapay" src="https://github.com/Arcticons-Team/Arcticons/blob/main/github/lp_button.svg"></a>|<a href="https://Ko-fi.com/donno_"><img height="40" alt="Donate using Ko-Fi" src="https://github.com/Arcticons-Team/Arcticons/blob/main/github/kofi_button.svg"></a>
 
 ## Contributing
 
@@ -39,7 +44,7 @@ Read the full details here:
 
 **Come chat with us on Matrix:**
 
-<a href="https://matrix.to/#/#arcticons-central:matrix.org"><img height="40" alt="Donate using Paypal" src="https://github.com/Donnnno/Arcticons/blob/main/github/matrix_button.svg"></a>
+<a href="https://matrix.to/#/#arcticons-central:matrix.org"><img height="40" alt="Donate using Paypal" src="https://github.com/Arcticons-Team/Arcticons/blob/main/github/matrix_button.svg"></a>
 
 ## Icon requests
 
@@ -60,10 +65,10 @@ If it's taking too long for you, you can also buy priority requests via <a href=
 
 The current version (2.1.8 and higher) of Arcticons is built with the CandyBar Dashboard, licensed under [Apache License, Version 2.0](https://www.apache.org/licenses/LICENSE-2.0)  which is compatible with the [GNU General Public License, Version 3.0](https://www.gnu.org/licenses/gpl-3.0.en.html) that we use.
 
-All icons are licensed under [Creative Commonns Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) ](https://creativecommons.org/licenses/by-sa/4.0/), with around 900 of the first icons based on [Frost](https://github.com/dkanada/frost)'s icons.
+All icons are licensed under [Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) ](https://creativecommons.org/licenses/by-sa/4.0/), with around 900 of the first icons based on [Frost](https://github.com/dkanada/frost)'s icons.
 
 ### Contributors
 
-- You can find a list of all Arcticons contributors [here](https://github.com/Donnnno/Arcticons/graphs/contributors).
+- You can find a list of all Arcticons contributors [here](https://github.com/Arcticons-Team/Arcticons/graphs/contributors).
 - Frost contributors can be found [here](https://github.com/dkanada/frost/graphs/contributors).
 - ICEcons contributors can be found [here](https://github.com/1C3/ICEcons/graphs/contributors). 
