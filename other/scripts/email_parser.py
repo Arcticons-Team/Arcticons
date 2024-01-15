@@ -205,7 +205,7 @@ Last requested {reqDate}
                         count=values["count"],
                         reqDate=values["requestDate"],
                     )) 
-                    new_apps_set.add(component_info)
+                    new_apps_set.add(values["ComponentInfo"])
                 elif (
                     PackageName in packageName_set
                     and componentInfo not in updatable_set
