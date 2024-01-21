@@ -14,15 +14,16 @@
         android:xlargeScreens="true" />
 
     <application
+        tools:ignore="GoogleAppIndexingWarning,GoogleAppIndexingUrlError"
         android:name=".applications.CandyBar"
+        android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
         android:networkSecurityConfig="@xml/network_config"
+        android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.App.Starting"
-        tools:ignore="GoogleAppIndexingWarning,GoogleAppIndexingUrlError"
-        tools:replace="android:icon"
-        >
+        tools:replace="android:icon">
+
         <activity
             android:name=".activities.MainActivity"
             android:launchMode="singleTop"
