@@ -19,35 +19,22 @@
         android:label="@string/app_name"
         android:networkSecurityConfig="@xml/network_config"
         android:supportsRtl="true"
-        android:theme="@style/CandyBar.Theme.App"
+        android:theme="@style/Theme.App.Starting"
         tools:ignore="GoogleAppIndexingWarning,GoogleAppIndexingUrlError"
         tools:replace="android:icon"
         >
         <activity
-            android:name=".activities.SplashActivity"
+            android:name=".activities.MainActivity"
             android:launchMode="singleTop"
-            android:noHistory="true"
-            android:screenOrientation="fullSensor"
-            android:theme="@style/CandyBar.Theme.Splash"
+            android:theme="@style/Theme.App.Starting"
+            android:configChanges="uiMode|orientation|keyboardHidden|screenSize"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-
             <meta-data
                 android:name="android.app.shortcuts"
                 android:resource="@xml/shortcuts" />
-        </activity>
-        <activity
-            android:name=".activities.MainActivity"
-            android:configChanges="uiMode|orientation|keyboardHidden|screenSize"
-            android:launchMode="singleTop"
-            android:theme="@style/CandyBar.Theme.App"
-            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
