@@ -1,197 +1,242 @@
-"""
-Script Usage:
-python (or python3) delta_email_parser.py ./path/to/emlFolder ./path/to/appfilter.xml (./path/to/requests.txt)
-
-Arguments
-0: Path to folder containing .eml files of requests
-1: Path to existing appfilter.xml to recognize potentially updatable appfilters
-3 (optional): existing requests.txt file to augment with new info
-
-Output
-If only two arguments are given the script will generate 'requests.txt' and 'updatable.txt'.
-If the third argument is given the file will be overwritten with the updated info.
-"""
-
-import datetime
-from email.parser import BytesParser
-from email import policy
-from email.utils import parsedate
-from operator import itemgetter
-# from datetime import strftime
-from datetime import date
-import shutil
-from os import close
-from time import mktime
-import glob
+import email
+import zipfile
+import lxml.etree as ET
 import re
-from sys import argv
-from collections import OrderedDict
-from operator import getitem
+from time import mktime
+from email.utils import parsedate
+import io
+from datetime import date
+from collections import defaultdict, Counter
+from pathlib import Path
+import argparse
 
-# Check for path and add trailing slash
-path = argv[1]
-if not path.endswith('/'):
-	path += '/'
+config = {
+    "request_limit": 50,
+    "months_limit": 6,
+    "min_requests": 5,
+    "date_format": "X%d %B %Y",
+}
+
+def parse_args():
+    parser = argparse.ArgumentParser(description="Script to parse emails and generate/update requests.txt and updatable.txt")
+
+    #parser.add_argument("folder_path", type=str, help="Path to folder containing .eml files of requests")
+    #parser.add_argument("appfilter_path", type=str, help="Path to existing appfilter.xml to recognize potentially updatable appfilters")
+    parser.add_argument("requests_path", nargs="?", type=str, default=None, help="Existing requests.txt file to augment with new info (optional)")
+
+    return parser.parse_args()
+
+class EmailParser:
+    def __init__(self, requests_path=None):
+        self.requests_path = Path(requests_path) if requests_path else None
+
+    
+        self.data = {}
+        self.apps = defaultdict(dict)
+        self.email_count = Counter()
+        self.no_zip = {}
+        self.updatable = []
+        self.new_apps = []
+
+        self.name_pattern = re.compile(r'<!-- (?P<Name>.+) -->', re.M)
+        self.component_pattern = re.compile('ComponentInfo{(?P<ComponentInfo>.+)}')
+        self.package_name_pattern = re.compile(r'(?P<PackageName>[\w\.]+)/')
+
+    def parse_existing(self):
+        request_block_query = re.compile(r'<!-- (?P<Name>.+) -->\s<item component=\"ComponentInfo{(?P<ComponentInfo>.+)}\" drawable=\"(?P<drawable>.+|)\"(/>| />)\s(https:\/\/play.google.com\/store\/apps\/details\?id=.+\shttps:\/\/f-droid\.org\/en\/packages\/.+\s)Requested (?P<count>\d+) times\s?(Last requested (?P<requestDate>\d+\.?\d+?))?', re.M)
+        if not self.requests_path:
+            return
+        with open(self.requests_path, 'r', encoding="utf8") as existing_file:
+            contents = existing_file.read()
+            existing_requests = re.finditer(request_block_query, contents)
+            for req in existing_requests:
+                element_info = req.groupdict()
+                self.apps[element_info['ComponentInfo']] = element_info
+                self.apps[element_info['ComponentInfo']]['requestDate'] = float(element_info['requestDate']) if element_info['requestDate'] is not None else mktime(date.today().timetuple())
+                self.apps[element_info['ComponentInfo']]['count'] = int(element_info['count'])
+                self.apps[element_info['ComponentInfo']]['senders'] = []
+    
+    def filter_old(self):
+        current_date = date.today()
+
+        def diff_month(d1, d2):
+            return (d1.year - d2.year) * 12 + d1.month - d2.month
+
+        self.apps = {
+            k: v for k, v in self.apps.items()
+            if v["count"] > config["min_requests"] or diff_month(current_date, date.fromtimestamp(v['requestDate'])) < config["months_limit"]
+        }
 
 
-# List of e-mail files
-filelist = glob.glob(path + '*.eml')
-# Initialization
-requestlimit = 1 #Limit of requests per person
-apps = {} #Dictionary of requested apps and according info
-addresses = {} #E-Mail addresses with number of requests
-appInfoQuery = re.compile(r'(?<!])(?! )(?P<Name>[\w\d\@\?\(\)\! +.\-:\-|&＆​,]+)\s\n?(?P<ComponentInfo>[\w\.\/\d]+)\s?\n?(https://play\.google\.com/store/apps/details\?id=|https://f-droid\.org/en/packages/)(?P<PackageName>[\w\.]+)(/|)', re.M)
-eMailQuery = re.compile(r'<(.+)>$')
-updatable = []
-newApps = []
+    def find_zip(self, message):
+        for part in message.walk():
+            if part.get_content_maintype() == 'application' and part.get_content_subtype() in ['zip', 'octet-stream']:
+                zip_data = part.get_payload(decode=True)
+                return zipfile.ZipFile(io.BytesIO(zip_data))
+        return None
 
-# Filters to limit backlog
-currentDate = date.today()
-monthsLimit = 6
-minRequests = 5
+    def greedy(self, message):
+        sender = message['From']
+        self.email_count[sender] += 1
+        return self.email_count[sender] > config["request_limit"]
+    
+    def print_greedy_senders(self):
+        for sender, count in self.email_count.items():
+            if count > config["request_limit"]:
+                print(f'---- We have a greedy one: {count} Requests from {sender}')
 
-# Remove people sending more than X requests
-def removeGreedy(address, element):
-	if address in element['senders']:
-		element['count'] = element['count']
-		element['senders'] = [x for x in element['senders'] if x is not address]
-	return element
+    def parse_email(self):
+        for mail in self.filelist:
+            with open(mail, 'rb') as f:
+                message = email.message_from_bytes(f.read())
+                zip_file = self.find_zip(message)
+                if zip_file is None:
+                    sender = message['From']
+                    self.no_zip[sender] = mail
+                    continue
+                try:
+                    with zip_file as zip_ref:
+                        xml_string = zip_ref.read('appfilter.xml')
+                    root = ET.fromstring(xml_string)
+                    self.process_xml(root, message)
+                except Exception as e:
+                    sender = message['From']
+                    self.no_zip[sender] = mail
+                    print(f"Error processing email {mail}: {e}")
 
-def parseExisting():
-	requestBlockQuery = re.compile(r'(?P<Name>.+)\s(?P<ComponentInfo>.+)\s(https:\/\/play.google.com\/store\/apps\/details\?id=.+\shttps:\/\/f-droid\.org\/en\/packages\/.+\s)Requested (?P<count>\d+) times\s?(Last requested (?P<requestDate>\d+\.?\d+?))?',re.M)
-	if len(argv) < 4:
-		return
-	with open(argv[3], 'r', encoding="utf8") as existingFile:
-		contents = existingFile.read()
-		existingRequests = re.finditer(requestBlockQuery, contents)
-		for req in existingRequests:
-			elementInfo = req.groupdict()
-			apps[elementInfo['ComponentInfo']] = elementInfo
-			apps[elementInfo['ComponentInfo']]['requestDate'] = float(elementInfo['requestDate']) if elementInfo['requestDate'] is not None else mktime(currentDate.timetuple())
-			apps[elementInfo['ComponentInfo']]['count'] = int(elementInfo['count'])
-			apps[elementInfo['ComponentInfo']]['senders'] = []
+    def process_xml(self, root, msg):
+        for child in root:
+            self.requests(child, msg)
 
-def parseMails():
-	for mail in filelist:
-		with open(mail, 'rb') as msg:
-			# Convert Message to String
-			msg = BytesParser(policy=policy.default).parse(msg)
-			parsed= msg.get_body(preferencelist=('plain'))
-			# Skip if body is empty
-			if parsed is None:
-				continue
-			emailBody = parsed.get_content()
+    def requests(self, child, msg):
+        data = self.data
+        if child.get('component') is None:
+            self.data = {}
+            data = self.data
+            child_string = ET.tostring(child, encoding='utf-8').decode()
+            name_match = re.search(self.name_pattern, child_string)
+            if name_match:
+                data['Name'] = name_match.group('Name')
+        else:
+            component_name = child.get('component')
+            component_match = re.search(self.component_pattern, component_name)
+            if component_match:
+                data['ComponentInfo'] = component_match.group('ComponentInfo')
 
-			# Check if sender exists
-			sender = re.search(eMailQuery, msg['From'])
-			if sender is None:
-				continue
+            if self.greedy(msg):
+                return
 
-			# check if sender crossed limit
-			if sender.groups()[0] not in addresses:
-				addresses[sender.groups()[0]] = 1
-			elif addresses[sender.groups()[0]] == requestlimit:
-				print('XXXXXX ---- We have a greedy one: ', sender.groups()[0])
-				for key, value in apps.items():
-					value = removeGreedy(sender.groups()[0], value)
-				continue
-			else:
-				addresses[sender.groups()[0]] += 1
+            data['drawable'] = child.get('drawable')
+            if data['ComponentInfo'] in self.apps:
+                self.apps[data['ComponentInfo']]['count'] += 1
+            else:
+                data['count'] = 1
+                self.apps[data['ComponentInfo']] = data
 
-			appInfo = re.search(appInfoQuery, emailBody)
+            if 'requestDate' not in self.apps[data['ComponentInfo']] or self.apps[data['ComponentInfo']]['requestDate'] < mktime(parsedate(msg['Date'])):
+                self.apps[data['ComponentInfo']]['requestDate'] = mktime(parsedate(msg['Date']))
 
-			# AppInfo could not automatically be extracted
-			if appInfo is None:
-				# Search for String appearance of existing ComponentInfos in E-Mail body
-				for key, value in apps.items():
-					if key in emailBody:
-						apps[key]['count'] += 1
-						apps[key]['senders'].append(sender.groups()[0])
-						continue
-				print('\n/// The following message could not be handled:\n',sender,emailBody,'\n')
-				with open('failedmail.txt', 'a', encoding='utf-8') as fileTwo:
-                                        fileTwo.write('\n----------------------------\n')
-                                        fileTwo.write(''.join(emailBody))
-			else:
-				tempDict = appInfo.groupdict()
-				if tempDict['ComponentInfo'] in apps:
-					apps[tempDict['ComponentInfo']]['count'] = apps[tempDict['ComponentInfo']]['count'] + 1
-					apps[tempDict['ComponentInfo']]['senders'].append(sender.groups()[0])
-				else:
-					tempDict['count'] = 0
-					tempDict['count'] = 1
-					tempDict['senders'] = [sender.groups()[0]]
-					apps[tempDict['ComponentInfo']] = tempDict
-				#Update date of last request
-				if 'requestDate' not in apps[tempDict['ComponentInfo']] or apps[tempDict['ComponentInfo']]['requestDate'] < mktime(parsedate(msg['date'])):
-						apps[tempDict['ComponentInfo']]['requestDate'] = mktime(parsedate(msg['Date']))
+    def move_no_zip(self):
+        for failedmail in self.no_zip:
+            normalized_path = Path(self.no_zip[failedmail]).resolve()
+            print(f'--- No zip file found for {failedmail}\n------ File moved to failedmail')
 
-def diffMonth(d1, d2):
-    return (d1.year - d2.year) * 12 + d1.month - d2.month
+            if normalized_path.exists():
+                file_name = normalized_path.name
+                destination_path = Path("failedmail") / file_name
+                destination_path.parent.mkdir(parents=True, exist_ok=True)
 
-def filterOld():
-	global apps
-	apps = {k: v for k, v in apps.items() if v["count"] > minRequests or diffMonth(currentDate, datetime.datetime.fromtimestamp(v['requestDate'])) < monthsLimit}
+                try:
+                    normalized_path.rename(destination_path)
+                except FileNotFoundError:
+                    print(f"Error: File not found during move: {normalized_path}")
+            else:
+                print(f"Error: File not found: {normalized_path}")
 
-def separateupdatable():
-	objectBlock = """
+    def separate_updatable(self):
+        object_block = """
 <!-- {name} -->
-<item component="ComponentInfo{{{component}}}" drawable="{appname}" />
+<item component="ComponentInfo{{{component}}}" drawable="{appname}"/>
 https://play.google.com/store/apps/details?id={packageName}
-https://f-droid.org/en/packages/{packageNames}/
+https://f-droid.org/en/packages/{packageName}/
+https://apt.izzysoft.de/fdroid/index/apk/{packageName}
+https://galaxystore.samsung.com/detail/{packageName}
+https://www.ecosia.org/search?q={packageName}
 Requested {count} times
 Last requested {reqDate}
-	"""
-	with open(argv[2]) as appfilter:
-		appfilter = appfilter.read()
-		for (componentInfo, values) in apps.items():
-                        try:
-                                #print(componentInfo)
-                                #print(values["Name"])
-                                componentInfo = componentInfo[:componentInfo.index('/')]
-                                if appfilter.find(componentInfo) == -1 and ''.join(newApps).find(componentInfo) == -1:
-                                        apprename = re.sub(r"[^a-zA-Z0-9 ]+", r"", values["Name"])
-                                        apprename = re.sub(r"[ ]+",r"_",apprename)
-                                        newApps.append(objectBlock.format(
-                                                name = values["Name"],
-                                                component = values["ComponentInfo"],
-                                                appname = apprename.lower(),
-                                                packageName = values["ComponentInfo"][0:values["ComponentInfo"].index('/')],
-                                                packageNames = values["ComponentInfo"][0:values["ComponentInfo"].index('/')],
-                                                count = values["count"],
-                                                reqDate = values["requestDate"],
-                                        ))
-                                elif appfilter.find(componentInfo) != -1 and ''.join(updatable).find(componentInfo) == -1:
-                                        updatable.append(values['Name'] + '\n' + values['ComponentInfo'] + '\n\n')
-                        except: print('Error',componentInfo)
+    """ 
+        appfilter_set = set()
+        packageName_set = set()
+        new_apps_set = set()
+        updatable_set =set()
+        
 
-def writeOutput():
-	newListHeader = """-------------------------------------------------------
-{totalCount} Requested Apps Pending (Updated {date})
+        for (componentInfo, values) in self.apps.items():
+            try:
+                PackageName = componentInfo[:componentInfo.index('/')]
+
+                if (
+                    componentInfo not in appfilter_set
+                    and componentInfo not in new_apps_set
+                    and PackageName not in packageName_set
+                ):
+                    self.new_apps.append(object_block.format(
+                        name=values["Name"],
+                        component=values["ComponentInfo"],
+                        appname=values["drawable"],
+                        packageName=values["ComponentInfo"][:values["ComponentInfo"].index('/')],
+                        count=values["count"],
+                        reqDate=values["requestDate"],
+                    )) 
+                    new_apps_set.add(values["ComponentInfo"])
+                elif (
+                    PackageName in packageName_set
+                    and componentInfo not in updatable_set
+                    and componentInfo not in appfilter_set
+                ):
+                    self.updatable.append(
+                        f'<!-- {values["Name"]} -->\n'
+                        f'<item component="ComponentInfo{{{values["ComponentInfo"]}}}" drawable="{values["drawable"]}" />\n\n'
+                    )
+                    updatable_set.add(componentInfo)
+            except Exception as e:
+                print(values)
+                print(f'Error: {e}')
+
+
+    def write_output(self):
+        new_list_header = """-------------------------------------------------------
+{total_count} Requested Apps Pending (Updated {date})
 -------------------------------------------------------
 """
-	#newList = newListHeader.format( totalCount = len(apps), date = date.today().strftime("%d %m %Y"))
-	newList = newListHeader.format( totalCount = len(apps), date = date.today().strftime("X%d %B %Y").replace("X0","X").replace("X",""))
-	newList += ''.join(newApps)
+        new_list = new_list_header.format(total_count=len(self.new_apps), date=date.today().strftime(config["date_format"]).replace("X0", "X").replace("X", ""))
+        new_list += ''.join(self.new_apps)
 
-	requestsFilePath = 'requests.txt' if len(argv) < 4 else argv[3]
-	with open(requestsFilePath, 'w', encoding='utf-8') as file:
-		file.write(newList)
-	if len(updatable):
-		with open('updatable.txt', 'w', encoding='utf-8') as fileTwo:
-			fileTwo.write(''.join(updatable))
+        requests_file_path = 'requests.txt' if not self.requests_path else self.requests_path
+        with open(requests_file_path, 'w', encoding='utf-8') as file:
+            file.write(new_list)
+        if len(self.updatable):
+            with open('updatable.txt', 'w', encoding='utf-8') as file_two:
+                file_two.write(''.join(self.updatable))
 
-def main():
-        global apps
-        if len(argv) >= 2:
-                parseExisting()
-        filterOld()
-        #parseMails()
-        apps = dict(sorted(apps.items(), key=lambda item: item[1]['count'], reverse=True))
-        #sorted(apps.values(), key=itemgetter('count'), reverse=True)
-        separateupdatable()
-        writeOutput()
-
+    def main(self):
+        if self.requests_path:
+            print("parse Existing")
+            self.parse_existing()
+        #print("Filter Old")
+        #self.filter_old()
+        #print("Parse Mail")
+        #self.parse_email()
+        print("Sort Apps")
+        self.apps = dict(sorted(self.apps.items(), key=lambda item: item[1]['count'], reverse=True))
+        print("Find Updateable")
+        self.separate_updatable()
+        print("Write Output")
+        self.write_output()
+        self.print_greedy_senders()
+        self.move_no_zip()
 
 if __name__ == "__main__":
-	main()
+    args = parse_args()
+    parser = EmailParser(args.requests_path)
+    parser.main()
