@@ -46,6 +46,7 @@ class EmailParser:
 
     def parse_existing(self):
         request_block_query = re.compile(r'<!-- (?P<Name>.+) -->\s<item component=\"ComponentInfo{(?P<ComponentInfo>.+)}\" drawable=\"(?P<drawable>.+|)\"(/>| />)\s(https:\/\/play.google.com\/store\/apps\/details\?id=.+\shttps:\/\/f-droid\.org\/en\/packages\/.+\shttps:\/\/apt.izzysoft.de\/fdroid\/index\/apk\/.+\shttps:\/\/galaxystore.samsung.com\/detail\/.+\shttps:\/\/www.ecosia.org\/search\?q\=.+\s)Requested (?P<count>\d+) times\s?(Last requested (?P<requestDate>\d+\.?\d+?))?', re.M)
+
         if not self.requests_path:
             return
         with open(self.requests_path, 'r', encoding="utf8") as existing_file:
