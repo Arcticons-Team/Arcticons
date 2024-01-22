@@ -303,6 +303,8 @@ def merge_new_drawables(pathxml: str, pathnewxml:str, assetpath:str):
     drawables = []
     folder = []
     calendar = []
+    google = []
+    microsoft = []
     numbers = []
     symbols = []
     number = []
@@ -329,6 +331,10 @@ def merge_new_drawables(pathxml: str, pathnewxml:str, assetpath:str):
                         folder.append(new.groups(0)[0])
                     elif new.groups(0)[0].startswith('calendar_'):
                         calendar.append(new.groups(0)[0])
+                    elif new.groups(0)[0].startswith('google_'):
+                        google.append(new.groups(0)[0])
+                    elif new.groups(0)[0].startswith('microsoft_') or new.groups(0)[0].startswith('xbox'):
+                        microsoft.append(new.groups(0)[0])
                     elif new.groups(0)[0].startswith('letter_') or new.groups(0)[0].startswith('number_') or new.groups(0)[0].startswith('currency_') or new.groups(0)[0].startswith('symbol_'):
                         symbols.append(new.groups(0)[0])
                     elif new.groups(0)[0].startswith('_'):
@@ -345,7 +351,11 @@ def merge_new_drawables(pathxml: str, pathnewxml:str, assetpath:str):
         folder.sort()
         calendar = list(set(calendar))
         calendar.sort()
-
+        google = list(set(google))
+        google.sort()
+        microsoft = list(set(microsoft))
+        microsoft.sort()
+        
         # build
         output = '<?xml version="1.0" encoding="utf-8"?>\n<resources>\n<version>1</version>\n\n\t<category title="New" />\n\t'
         for newDrawable in newDrawables:
@@ -357,6 +367,14 @@ def merge_new_drawables(pathxml: str, pathnewxml:str, assetpath:str):
 
         output += '\n\t<category title="Calendar" />\n\t'
         for entry in calendar:
+            output += '<item drawable="%s" />\n\t' % entry
+
+        output += '\n\t<category title="Google" />\n\t'
+        for entry in google:
+            output += '<item drawable="%s" />\n\t' % entry
+        
+        output += '\n\t<category title="Microsoft" />\n\t'
+        for entry in microsoft:
             output += '<item drawable="%s" />\n\t' % entry
 
         output += '\n\t<category title="Symbols" />\n\t'
