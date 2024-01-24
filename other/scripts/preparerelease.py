@@ -500,8 +500,10 @@ def check_xml(path:str):
             if not (match):
                 defect.append(line)
     if len(defect) > 0:
+        print('\n\n______ Found defect appfilter entries ______\n\n')
         for line in defect:
             print(line)
+        print("\n\n____ Please check these first before proceeding ____\n\n")
         return True
     return False
 
