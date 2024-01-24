@@ -493,7 +493,7 @@ def create_icons(sizes: List[int], dir:str ,export_dir: str, icon_dir: str , mod
         for size in sizes:
             try:
                 # Convert SVG to PNG
-                cairosvg.svg2png(url=file_path, write_to=export_dir+f'{name}.png',output_width=size, output_height=size,)
+                cairosvg.svg2png(url=file_path, write_to=export_dir+f'/{name}.png',output_width=size, output_height=size,)
             except Exception as e:
                 print(f"Error: {e}")
 
