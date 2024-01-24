@@ -484,12 +484,11 @@ def create_icons_alt(sizes: List[int], dir:str ,export_dir: str, icon_dir: str ,
                     Path(f'{name}.png').unlink()
 
 def create_icons(sizes: List[int], dir:str ,export_dir: str, icon_dir: str , mode:str,inkscape:bool):
-    print(f'Working on {dir} {mode}')
+    print(f'Working on {mode}')
     for file_path in glob.glob(f"{dir}/*.svg"):
         file= os.path.basename(file_path)
         name = file[:-4]
         copy2(file_path, f'{icon_dir}/{file}')
-        print(f'Working on {file} {mode}')
         for size in sizes:
             try:
                 # Convert SVG to PNG
