@@ -1,19 +1,17 @@
 from pathlib import Path
-import shutil
 import re
 import glob
 import subprocess
 from shutil import copy2
 from typing import List
-import sys
 import argparse
 import pathlib
 from lxml import etree
 import os
 from bs4 import BeautifulSoup
 from svgpathtools import svg2paths
+import cairosvg
 
-from shutil import move
 
 parser = argparse.ArgumentParser()
 parser.add_argument('SVG_DIR', type=str, help='directory containing the SVG files')
@@ -471,7 +469,7 @@ def svg_colors(dir:str,stroke:str,fill:str,stroke_alt:str,fill_alt:str,replace_s
             fp.write(content)
 
 #Create PNG of the SVG and Copy to destination
-def create_icons(sizes: List[int], dir:str ,export_dir: str, icon_dir: str , mode:str,inkscape:bool) -> None:
+def create_icons_alt(sizes: List[int], dir:str ,export_dir: str, icon_dir: str , mode:str,inkscape:bool) -> None:
     for file_path in glob.glob(f"{dir}/*.svg"):
         file= os.path.basename(file_path)
         name = file[:-4]
@@ -485,6 +483,19 @@ def create_icons(sizes: List[int], dir:str ,export_dir: str, icon_dir: str , mod
                     copy2(f'{name}.png', export_dir)
                     Path(f'{name}.png').unlink()
 
+def create_icons(sizes: List[int], dir:str ,export_dir: str, icon_dir: str , mode:str,inkscape:bool):
+    print(f'Working on {dir} {mode}')
+    for file_path in glob.glob(f"{dir}/*.svg"):
+        file= os.path.basename(file_path)
+        name = file[:-4]
+        copy2(file_path, f'{icon_dir}/{file}')
+        print(f'Working on {file} {mode}')
+        for size in sizes:
+            try:
+                # Convert SVG to PNG
+                cairosvg.svg2png(url=file_path, write_to=export_dir+f'{name}.png',output_width=size, output_height=size,)
+            except Exception as e:
+                print(f"Error: {e}")
 
 def remove_svg(dir:str):
     for file_path in glob.glob(f"{dir}/*.svg"):
