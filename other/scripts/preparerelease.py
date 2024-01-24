@@ -1,19 +1,17 @@
 from pathlib import Path
-import shutil
 import re
 import glob
 import subprocess
 from shutil import copy2
 from typing import List
-import sys
 import argparse
 import pathlib
 from lxml import etree
 import os
 from bs4 import BeautifulSoup
 from svgpathtools import svg2paths
+import cairosvg
 
-from shutil import move
 
 parser = argparse.ArgumentParser()
 parser.add_argument('SVG_DIR', type=str, help='directory containing the SVG files')
@@ -471,20 +469,18 @@ def svg_colors(dir:str,stroke:str,fill:str,stroke_alt:str,fill_alt:str,replace_s
             fp.write(content)
 
 #Create PNG of the SVG and Copy to destination
-def create_icons(sizes: List[int], dir:str ,export_dir: str, icon_dir: str , mode:str,inkscape:bool) -> None:
+def create_icons(sizes: List[int], dir:str ,export_dir: str, icon_dir: str , mode:str):
+    print(f'Working on {mode}')
     for file_path in glob.glob(f"{dir}/*.svg"):
         file= os.path.basename(file_path)
         name = file[:-4]
         copy2(file_path, f'{icon_dir}/{file}')
-        print(f'Working on {file} {mode}')
-        if inkscape:
-            for size in sizes:
-                subprocess.run(['inkscape', '--export-filename='+f'{name}'+'.png',
-                                f'--export-width={size}', f'--export-height={size}', file_path])
-                if size == 256:
-                    copy2(f'{name}.png', export_dir)
-                    Path(f'{name}.png').unlink()
-
+        for size in sizes:
+            try:
+                # Convert SVG to PNG
+                cairosvg.svg2png(url=file_path, write_to=export_dir+f'/{name}.png',output_width=size, output_height=size,)
+            except Exception as e:
+                print(f"Error: {e}")
 
 def remove_svg(dir:str):
     for file_path in glob.glob(f"{dir}/*.svg"):
@@ -680,10 +676,10 @@ def main():
         return
     create_new_drawables(SVG_DIR,NEWDRAWABLE_PATH)
     svg_colors(SVG_DIR,ORIGINAL_STROKE,ORIGINAL_FILL,ORIGINAL_STROKE_ALT,ORIGINAL_FILL_ALT,REPLACE_STROKE_WHITE,REPLACE_FILL_WHITE,REPLACE_STROKE_WHITE_ALT,REPLACE_FILL_WHITE_ALT)
-    create_icons(SIZES, SVG_DIR ,EXPORT_DARK_DIR, WHITE_DIR, 'Dark Mode',True)
+    create_icons(SIZES, SVG_DIR ,EXPORT_DARK_DIR, WHITE_DIR, 'Dark Mode')
     #svg_xml_exporter(SVG_DIR, EXPORT_YOU_DIR, WHITE_DIR, 'You Mode')
     svg_colors(SVG_DIR,ORIGINAL_STROKE,ORIGINAL_FILL,ORIGINAL_STROKE_ALT,ORIGINAL_FILL_ALT,REPLACE_STROKE_BLACK,REPLACE_FILL_BLACK,REPLACE_STROKE_BLACK_ALT,REPLACE_FILL_BLACK_ALT)
-    create_icons(SIZES, SVG_DIR ,EXPORT_LIGHT_DIR, BLACK_DIR, 'Light Mode',True)
+    create_icons(SIZES, SVG_DIR ,EXPORT_LIGHT_DIR, BLACK_DIR, 'Light Mode')
     remove_svg(SVG_DIR)
     sortxml(APPFILTER_PATH)
     convert_svg_files(WHITE_DIR, RES_XML_PATH,VALUE_PATH,ASSETS_PATH,APPFILTER_PATH) 
