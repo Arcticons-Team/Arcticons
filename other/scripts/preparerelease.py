@@ -492,6 +492,21 @@ def remove_svg(dir:str):
 
 ###### Checks ######
 
+def check_xml(path:str):
+    defect = []
+    with open (path,'r', encoding='utf-8') as f:
+        for line in f:
+            match = re.findall(r'((<!--.*-->)|(<(item|calendar) component=\"(ComponentInfo{.*/.*}|:[A-Z_]*)\" (drawable|prefix)=\".*\"\s?/>)|(^\s$)|(^$)|(</?resources>))',line)
+            if not (match):
+                defect.append(line)
+    if len(defect) > 0:
+        print('\n\n______ Found defect appfilter entries ______\n\n')
+        for line in defect:
+            print(line)
+        print("\n\n____ Please check these first before proceeding ____\n\n")
+        return True
+    return False
+
 # Check Icons
 def checkSVG(dir: str):
 
@@ -655,6 +670,8 @@ def missingDrawable(appfilterpath:str,whitedir:str,otherdir:str):
 ###### Main #####
 # runs everything in necessary order
 def main():
+    if check_xml(APPFILTER_PATH):
+        return
     if checkSVG(SVG_DIR):
         return
     if missingDrawable(APPFILTER_PATH,WHITE_DIR,SVG_DIR):
