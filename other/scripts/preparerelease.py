@@ -85,7 +85,7 @@ def convert_svg_files(iconsdir: str, xmldir: str, valuesdir:str, assetsdir:str,a
     #copy2('iconpack.xml', valuesdir)
     copy2('drawable.xml', xmldir)
     copy2('drawable.xml', assetsdir)
-    os.remove('iconpack.xml')
+    #os.remove('iconpack.xml')
     os.remove('drawable.xml')
 
     copy2(appfilterpath, assetsdir)
