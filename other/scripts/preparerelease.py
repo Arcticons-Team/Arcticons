@@ -119,22 +119,21 @@ def merge_new_drawables(pathxml: str, pathnewxml:str, assetpath:str, iconsdir:st
     for dir_ in sorted(Path(iconsdir).glob('*.svg'), key=natural_sort_key):
         file_ = dir_.name
         new = file_[:file_.rindex('.')]
-        if new:
-            if not new.groups(0)[0] in newDrawables:
-                if new.groups(0)[0].startswith('folder_'):
-                    folder.append(new.groups(0)[0])
-                elif new.groups(0)[0].startswith('calendar_'):
-                    calendar.append(new.groups(0)[0])
-                elif new.groups(0)[0].startswith('google_'):
-                    google.append(new.groups(0)[0])
-                elif new.groups(0)[0].startswith('microsoft_') or new.groups(0)[0].startswith('xbox'):
-                    microsoft.append(new.groups(0)[0])
-                elif new.groups(0)[0].startswith('letter_') or new.groups(0)[0].startswith('number_') or new.groups(0)[0].startswith('currency_') or new.groups(0)[0].startswith('symbol_'):
-                    symbols.append(new.groups(0)[0])
-                elif new.groups(0)[0].startswith('_'):
-                    number.append(new.groups(0)[0])
-                else:
-                    drawables.append(new.groups(0)[0])
+        if not new in newDrawables:
+            if new.startswith('folder_'):
+                folder.append(new)
+            elif new.startswith('calendar_'):
+                calendar.append(new)
+            elif new.startswith('google_'):
+                google.append(new)
+            elif new.startswith('microsoft_') or new.startswith('xbox'):
+                microsoft.append(new)
+            elif new.startswith('letter_') or new.startswith('number_') or new.startswith('currency_') or new.startswith('symbol_'):
+                symbols.append(new)
+            elif new.startswith('_'):
+                number.append(new)
+            else:
+                drawables.append(new)
 
         newIcons= len(newDrawables)
         print("There are %i new icons"% newIcons)
