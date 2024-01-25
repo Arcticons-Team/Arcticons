@@ -57,13 +57,8 @@ REPLACE_FILL_BLACK_ALT = '''fill="#000"'''
 
 # Create differnt xml files and move them to needed place
 def convert_svg_files(iconsdir: str, xmldir: str, valuesdir:str, assetsdir:str,appfilterpath:str) -> None:
-    #icpack_pre = '\t    <item>'
-    #icpack_suf = '</item>\n'
     drawable_pre = '\t  <item drawable="'
     drawable_suf = '" />\n'
-
-    #with open('iconpack.xml', 'w',encoding="utf-8") as fp:
-        #fp.write('<?xml version="1.0" encoding="utf-8"?>\n<resources>\n\t <string-array name="icon_pack" translatable="false">\n')
 
     with open('drawable.xml', 'w',encoding="utf-8") as fp:
         fp.write('<?xml version="1.0" encoding="utf-8"?>\n<resources>\n\t <version>1</version>\n\t  <category title="New" />\n')
@@ -71,23 +66,15 @@ def convert_svg_files(iconsdir: str, xmldir: str, valuesdir:str, assetsdir:str,a
     for dir_ in sorted(Path(iconsdir).glob('*.svg'), key=natural_sort_key):
         file_ = dir_.name
         name = file_[:file_.rindex('.')]
-        #with open('iconpack.xml', 'a',encoding="utf-8") as fp:
-            #fp.write(f"{icpack_pre}{name}{icpack_suf}")
         with open('drawable.xml', 'a',encoding="utf-8") as fp:
             fp.write(f"{drawable_pre}{name}{drawable_suf}")
 
-    #with open('iconpack.xml', 'a') as fp:
-        #fp.write('\t</string-array>\n</resources>\n')
     with open('drawable.xml', 'a') as fp:
         fp.write('</resources>\n')
 
-    #copy2('iconpack.xml', xmldir)
-    #copy2('iconpack.xml', valuesdir)
     copy2('drawable.xml', xmldir)
     copy2('drawable.xml', assetsdir)
-    #os.remove('iconpack.xml')
     os.remove('drawable.xml')
-
     copy2(appfilterpath, assetsdir)
     copy2(appfilterpath, xmldir)
 
