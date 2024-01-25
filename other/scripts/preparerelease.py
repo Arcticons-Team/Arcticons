@@ -1,15 +1,12 @@
 from pathlib import Path
 import re
 import glob
-import subprocess
 from shutil import copy2
 from typing import List
 import argparse
 import pathlib
 from lxml import etree
 import os
-from bs4 import BeautifulSoup
-from svgpathtools import svg2paths
 import cairosvg
 
 
