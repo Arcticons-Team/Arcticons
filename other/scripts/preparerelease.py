@@ -51,29 +51,6 @@ REPLACE_FILL_BLACK_ALT = '''fill="#000"'''
 
 ##### Iconpack stuff #####
 
-# Create differnt xml files and move them to needed place
-def convert_svg_files(iconsdir: str, xmldir: str, assetsdir:str,appfilterpath:str) -> None:
-    drawable_pre = '\t  <item drawable="'
-    drawable_suf = '" />\n'
-
-    with open('drawable.xml', 'w',encoding="utf-8") as fp:
-        fp.write('<?xml version="1.0" encoding="utf-8"?>\n<resources>\n\t <version>1</version>\n\t  <category title="New" />\n')
-
-    for dir_ in sorted(Path(iconsdir).glob('*.svg'), key=natural_sort_key):
-        file_ = dir_.name
-        name = file_[:file_.rindex('.')]
-        with open('drawable.xml', 'a',encoding="utf-8") as fp:
-            fp.write(f"{drawable_pre}{name}{drawable_suf}")
-
-    with open('drawable.xml', 'a') as fp:
-        fp.write('</resources>\n')
-
-    copy2('drawable.xml', xmldir)
-    copy2('drawable.xml', assetsdir)
-    os.remove('drawable.xml')
-    copy2(appfilterpath, assetsdir)
-    copy2(appfilterpath, xmldir)
-
 #helper sort xml creation
 def natural_sort_key(s: str, _nsre=re.compile('([0-9]+)')):
     return [int(text) if text.isdigit() else text.lower()
@@ -478,8 +455,7 @@ def main():
     svg_colors(SVG_DIR,ORIGINAL_STROKE,ORIGINAL_FILL,ORIGINAL_STROKE_ALT,ORIGINAL_FILL_ALT,REPLACE_STROKE_BLACK,REPLACE_FILL_BLACK,REPLACE_STROKE_BLACK_ALT,REPLACE_FILL_BLACK_ALT)
     create_icons(SIZES, SVG_DIR ,EXPORT_LIGHT_DIR, BLACK_DIR, 'Light Mode')
     remove_svg(SVG_DIR)
-    sortxml(APPFILTER_PATH)
-    #convert_svg_files(WHITE_DIR, RES_XML_PATH,ASSETS_PATH,APPFILTER_PATH) 
+    sortxml(APPFILTER_PATH) 
     merge_new_drawables(DRAWABLE_PATH,NEWDRAWABLE_PATH,ASSETS_PATH,WHITE_DIR, RES_XML_PATH,ASSETS_PATH,APPFILTER_PATH)
 
 if __name__ == "__main__":
