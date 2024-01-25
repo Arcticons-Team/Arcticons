@@ -92,6 +92,7 @@ def create_new_drawables(svgdir: str,newdrawables:str) -> None:
             name = file[:-4]
             fp.write(f'{drawable_pre}{name}{drawable_suf}')
         fp.write('</resources>\n')
+        fp.close
 
 def merge_new_drawables(pathxml: str, pathnewxml:str, assetpath:str, iconsdir:str, xmldir: str, assetsdir:str,appfilterpath:str):
 
@@ -135,69 +136,69 @@ def merge_new_drawables(pathxml: str, pathnewxml:str, assetpath:str, iconsdir:st
             else:
                 drawables.append(new)
 
-        newIcons= len(newDrawables)
-        print("There are %i new icons"% newIcons)
-        # remove duplicates and sort
-        drawables = list(set(drawables))
-        drawables.sort()
-        folder = list(set(folder))
-        folder.sort()
-        calendar = list(set(calendar))
-        calendar.sort()
-        google = list(set(google))
-        google.sort()
-        microsoft = list(set(microsoft))
-        microsoft.sort()
-        
-        # build
-        output = '<?xml version="1.0" encoding="utf-8"?>\n<resources>\n<version>1</version>\n\n\t<category title="New" />\n\t'
-        for newDrawable in newDrawables:
-            output += '<item drawable="%s" />\n\t' % newDrawable
+    newIcons= len(newDrawables)
+    print("There are %i new icons"% newIcons)
+    # remove duplicates and sort
+    drawables = list(set(drawables))
+    drawables.sort()
+    folder = list(set(folder))
+    folder.sort()
+    calendar = list(set(calendar))
+    calendar.sort()
+    google = list(set(google))
+    google.sort()
+    microsoft = list(set(microsoft))
+    microsoft.sort()
+    
+    # build
+    output = '<?xml version="1.0" encoding="utf-8"?>\n<resources>\n<version>1</version>\n\n\t<category title="New" />\n\t'
+    for newDrawable in newDrawables:
+        output += '<item drawable="%s" />\n\t' % newDrawable
 
-        output += '\n\t<category title="Folders" />\n\t'
-        for entry in folder:
-            output += '<item drawable="%s" />\n\t' % entry
+    output += '\n\t<category title="Folders" />\n\t'
+    for entry in folder:
+        output += '<item drawable="%s" />\n\t' % entry
 
-        output += '\n\t<category title="Calendar" />\n\t'
-        for entry in calendar:
-            output += '<item drawable="%s" />\n\t' % entry
+    output += '\n\t<category title="Calendar" />\n\t'
+    for entry in calendar:
+        output += '<item drawable="%s" />\n\t' % entry
 
-        output += '\n\t<category title="Google" />\n\t'
-        for entry in google:
-            output += '<item drawable="%s" />\n\t' % entry
-        
-        output += '\n\t<category title="Microsoft" />\n\t'
-        for entry in microsoft:
-            output += '<item drawable="%s" />\n\t' % entry
+    output += '\n\t<category title="Google" />\n\t'
+    for entry in google:
+        output += '<item drawable="%s" />\n\t' % entry
+    
+    output += '\n\t<category title="Microsoft" />\n\t'
+    for entry in microsoft:
+        output += '<item drawable="%s" />\n\t' % entry
 
-        output += '\n\t<category title="Symbols" />\n\t'
-        for entry in symbols:
-            output += '<item drawable="%s" />\n\t' % entry
-        output += '\n\t<category title="Numbers" />\n\t'
-        for entry in numbers:
-            output += '<item drawable="%s" />\n\t' % entry
-        output += '\n\t<category title="0-9" />\n\t'
-        for entry in number:
-            output += '<item drawable="%s" />\n\t' % entry
+    output += '\n\t<category title="Symbols" />\n\t'
+    for entry in symbols:
+        output += '<item drawable="%s" />\n\t' % entry
+    output += '\n\t<category title="Numbers" />\n\t'
+    for entry in numbers:
+        output += '<item drawable="%s" />\n\t' % entry
+    output += '\n\t<category title="0-9" />\n\t'
+    for entry in number:
+        output += '<item drawable="%s" />\n\t' % entry
 
-        output += '\n\t<category title="A" />\n\t'
-        letter = "a"
+    output += '\n\t<category title="A" />\n\t'
+    letter = "a"
 
-        # iterate alphabet
-        for entry in drawables:
-            if not entry.startswith(letter):
-                letter = chr(ord(letter) + 1)
-                output += '\n\t<category title="%s" />\n\t' % letter.upper()
-            output += '<item drawable="%s" />\n\t' % entry
-        output += "\n</resources>"
+    # iterate alphabet
+    for entry in drawables:
+        if not entry.startswith(letter):
+            letter = chr(ord(letter) + 1)
+            output += '\n\t<category title="%s" />\n\t' % letter.upper()
+        output += '<item drawable="%s" />\n\t' % entry
+    output += "\n</resources>"
 
-        # write to new_'filename'.xml in working directory
-        outFile = open(pathxml, "w", encoding='utf-8')
-        outFile.write(output)
-        copy2(pathxml, assetpath)
-        copy2(appfilterpath, assetsdir)
-        copy2(appfilterpath, xmldir)
-        os.remove(pathnewxml)
+    # write to new_'filename'.xml in working directory
+    outFile = open(pathxml, "w", encoding='utf-8')
+    outFile.write(output)
+    copy2(pathxml, assetpath)
+    copy2(appfilterpath, assetsdir)
+    copy2(appfilterpath, xmldir)
+    os.remove(pathnewxml)
 
 #new appfilter sort
 def sortxml(path:str):
