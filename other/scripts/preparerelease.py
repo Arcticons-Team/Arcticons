@@ -78,6 +78,7 @@ def merge_new_drawables(pathxml: str, pathnewxml:str, assetpath:str, iconsdir:st
     calendar = []
     google = []
     microsoft = []
+    emoji = []
     numbers = []
     symbols = []
     number = []
@@ -106,6 +107,8 @@ def merge_new_drawables(pathxml: str, pathnewxml:str, assetpath:str, iconsdir:st
                 google.append(new)
             elif new.startswith('microsoft_') or new.startswith('xbox'):
                 microsoft.append(new)
+            elif new.startswith('emoji_'):
+                emoji.append(new)
             elif new.startswith('letter_') or new.startswith('number_') or new.startswith('currency_') or new.startswith('symbol_'):
                 symbols.append(new)
             elif new.startswith('_'):
@@ -126,6 +129,8 @@ def merge_new_drawables(pathxml: str, pathnewxml:str, assetpath:str, iconsdir:st
     google.sort()
     microsoft = list(set(microsoft))
     microsoft.sort()
+    emoji = list(set(emoji))
+    emoji.sort()
     
     # build
     output = '<?xml version="1.0" encoding="utf-8"?>\n<resources>\n<version>1</version>\n\n\t<category title="New" />\n\t'
