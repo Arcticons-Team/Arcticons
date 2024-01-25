@@ -53,203 +53,17 @@ REPLACE_STROKE_BLACK_ALT = '''stroke="#000"'''
 REPLACE_FILL_BLACK = "fill:#000"
 REPLACE_FILL_BLACK_ALT = '''fill="#000"'''
 
-
-##### Material You Icon Stuff #####
-
-#extractinfo for xmlicons (materialyou) from svg
-def svg_xml_exporter(dir:str,exportpath:str,icon_dir:str,mode:str):
-
-    styles_pattern = re.compile(r'(?s)\..*?}', re.M)
-    name_pattern = re.compile(r'\.(?P<Name>.+?)( ?{|,)', re.M)
-    fill_pattern = re.compile(r'''fill: ?(?P<Fill>.+?)[;']''', re.M)
-    fillO_pattern = re.compile(r'fill-opacity: ?(?P<FillO>\d?\.?\d*)', re.M)
-    stroke_pattern = re.compile(r'''stroke: ?(?P<Stroke>.+?)[;']''', re.M)
-    strokeO_pattern = re.compile(r'stroke-opacity: ?(?P<StrokeO>\d?\.?\d*)', re.M)
-    rotate_pattern = re.compile(r'translate\((?P<X>.+?) (?P<Y>.+?)\).*rotate\((?P<Rotate>.+?)\)', re.M)
-    
-    def extract_style_info(svg_file):
-        all_style ={}
-        with open(svg_file, "r") as f:
-            svg_file = f.read()
-        # parse the SVG file
-        soup = BeautifulSoup(svg_file, "xml")
-        #print(soup.select("style"))
-        for i in soup.select("style"):
-            style_match =  re.finditer(styles_pattern, str(i))
-            for style in style_match:
-                data= {}
-                search_str = style.group()
-                name_match = re.finditer(name_pattern, search_str)
-                for names in name_match:
-                    try:
-                        data = all_style[names.group('Name')]
-                    except:
-                        data= {}
-                    data['Name'] = names.group('Name')
-                    fill_match = re.search(fill_pattern, search_str)
-                    if fill_match:
-                        data['Fill'] = fill_match.group('Fill')
-                        fillO_match = re.search(fillO_pattern, search_str)
-                        if fillO_match:
-                            data['FillOpacity'] = fillO_match.group('FillO')
-                    stroke_match = re.search(stroke_pattern, search_str)
-                    if stroke_match:
-                        data['Stroke'] = stroke_match.group('Stroke')
-                        strokeO_match = re.search(strokeO_pattern, search_str)
-                        if strokeO_match:
-                            data['StrokeOpacity'] = strokeO_match.group('StrokeO')
-                    all_style[data['Name']] = data
-        #print(all_style)
-        return all_style
-    
-    def group_remove(svgfile:str):
-        # Load the SVG file
-        tree = etree.parse(svgfile)
-        root = tree.getroot()
-
-        # Find all <g> elements
-        group_elements = root.findall(".//{http://www.w3.org/2000/svg}g")
-        # Iterate through each <g> element and add its attributes to every <path> element
-        if len(group_elements) > 0:
-            for group in group_elements:
-                #for path in group.findall(".//{http://www.w3.org/2000/svg}path"):
-                for path in group:
-                    # Add all group attributes to the path
-                    for name, value in group.items():
-                        path.set(name, value)
-                    #add path after group
-                    group.addnext(path)
-                #remove group
-                group.getparent().remove(group)
-
-            # Save the modified SVG
-            tree.write(svgfile, encoding='utf-8', xml_declaration=False, pretty_print=False)
-
-    def svg_to_xml(svg_file, xml_file):
-        all_style ={}
-
-        # Extract the path data and style information from the SVG
-        paths, attributes = svg2paths(svg_file)
-        all_style = extract_style_info(svg_file)
-        
-        # Start building the XML file
-        xml = '<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">\n'
-        xml += '\t<background android:drawable="@color/icon_background_color" />\n'
-        xml += '\t<foreground>\n'
-        xml += '\t\t<inset android:inset="25%">\n'
-        xml += '\t\t\t<vector\n'
-        xml += '\t\t\t\tandroid:width="48dp"\n'
-        xml += '\t\t\t\tandroid:height="48dp"\n'
-        xml += '\t\t\t\tandroid:viewportWidth="48"\n'
-        xml += '\t\t\t\tandroid:viewportHeight="48">\n'
-
-        # Add a path for each element in the SVG
-        for path, attr in zip(paths, attributes):
-            rotate = None
-            transX = None
-            transY = None
-            #print(str(attr))
-            class_val = attr.get('class')
-            transform = attr.get('transform')
-            if not transform == None:
-                rotate_match = re.search(rotate_pattern, str(attr))
-                if rotate_match:
-                    rotate = rotate_match.group('Rotate')
-                    transX = rotate_match.group('X')
-                    transY = rotate_match.group('Y')
-            #print(class_val)
-            values = all_style.get(class_val)
-            #print(values)
-            fill = None
-            stroke =None
-            fill_opacity = None
-            stroke_opacity = None
-            if not values == None:
-                fill = attr.get('fill', values.get('Fill'))
-                stroke = attr.get('stroke', values.get("Stroke"))
-                fill_opacity = attr.get('fill-opacity', values.get("FillOpacity",None))
-                stroke_opacity = attr.get('stroke-opacity', values.get("StrokeOpacity",None))
-            if fill == None:
-                fill_match = re.search(fill_pattern, str(attr))
-                if fill_match:
-                    fill = fill_match.group('Fill')
-                else:
-                    fill = attr.get('fill')
-            if stroke == None:
-                stroke_match = re.search(stroke_pattern, str(attr))
-                if stroke_match:
-                    stroke = stroke_match.group('Stroke')
-                else:
-                    stroke = attr.get('stroke')
-
-
-            if not rotate == None:
-                xml +='\t\t\t\t<group\n'
-                xml += f'\t\t\t\t\tandroid:rotation="{rotate}"'
-                if not transX == None:
-                    xml += f'\n\t\t\t\t\tandroid:translateX="{transX}"'
-                if not transY == None:
-                    xml += f'\n\t\t\t\t\tandroid:translateY="{transY}">\n'
-                else:
-                    xml +='>\n'
-            
-            xml += '\t\t\t\t<path\n'
-            if not (fill == 'none' or fill == None):
-                xml += f'\t\t\t\t\tandroid:fillColor="@color/icon_color"\n'
-                if fill_opacity == None:
-                    fillO_match = re.search(fillO_pattern, str(attr))
-                    if fillO_match:
-                        fill_opacity = fillO_match.group('FillO')
-                if not (fill_opacity == None):
-                    xml += f'\t\t\t\t\tandroid:fillAlpha="{fill_opacity}"\n'
-            if not (stroke == 'none' or stroke == None):    
-                xml += f'\t\t\t\t\tandroid:strokeColor="@color/icon_color"\n'
-                if stroke_opacity == None:
-                    strokeO_match = re.search(strokeO_pattern, str(attr))
-                    if strokeO_match:
-                        stroke_opacity = strokeO_match.group('StrokeO')
-                if not (stroke_opacity == None):
-                    xml += f'\t\t\t\t\tandroid:strokeAlpha="{stroke_opacity}"\n'
-            xml += f'\t\t\t\t\tandroid:strokeWidth="1.2"\n'
-            xml +=  '\t\t\t\t\tandroid:strokeLineCap="round"\n'
-            xml +=  '\t\t\t\t\tandroid:strokeLineJoin="round"\n'
-            xml +=  '\t\t\t\t\tandroid:pathData="'
-            xml += path.d()
-            xml += '"/>\n'
-            if not rotate == None:
-                xml +='\t\t\t\t</group>\n'
-
-        # Close the XML file
-        xml += '\t\t\t</vector>\n'
-        xml += '\t\t</inset>\n'
-        xml += '\t</foreground>\n'
-        xml += '</adaptive-icon>\n'
-
-        # Write the XML to the output file
-        with open(xml_file, 'w') as file:
-            file.write(xml)
-    
-    for file_path in glob.glob(f"{dir}/*.svg"):
-        file= os.path.basename(file_path)
-        name = file[:-4]
-        #Don't copy svg to white dir because already done before 
-        #copy2(file_path, f'{icon_dir}/{file}')
-        print(f'Working on {file} {mode}')
-        group_remove(file_path)
-        svg_to_xml(file_path, exportpath +'/' + name +'.xml')
-
-
 ##### Iconpack stuff #####
 
 # Create differnt xml files and move them to needed place
 def convert_svg_files(iconsdir: str, xmldir: str, valuesdir:str, assetsdir:str,appfilterpath:str) -> None:
-    icpack_pre = '\t    <item>'
-    icpack_suf = '</item>\n'
+    #icpack_pre = '\t    <item>'
+    #icpack_suf = '</item>\n'
     drawable_pre = '\t  <item drawable="'
     drawable_suf = '" />\n'
 
-    with open('iconpack.xml', 'w',encoding="utf-8") as fp:
-        fp.write('<?xml version="1.0" encoding="utf-8"?>\n<resources>\n\t <string-array name="icon_pack" translatable="false">\n')
+    #with open('iconpack.xml', 'w',encoding="utf-8") as fp:
+        #fp.write('<?xml version="1.0" encoding="utf-8"?>\n<resources>\n\t <string-array name="icon_pack" translatable="false">\n')
 
     with open('drawable.xml', 'w',encoding="utf-8") as fp:
         fp.write('<?xml version="1.0" encoding="utf-8"?>\n<resources>\n\t <version>1</version>\n\t  <category title="New" />\n')
@@ -257,18 +71,18 @@ def convert_svg_files(iconsdir: str, xmldir: str, valuesdir:str, assetsdir:str,a
     for dir_ in sorted(Path(iconsdir).glob('*.svg'), key=natural_sort_key):
         file_ = dir_.name
         name = file_[:file_.rindex('.')]
-        with open('iconpack.xml', 'a',encoding="utf-8") as fp:
-            fp.write(f"{icpack_pre}{name}{icpack_suf}")
+        #with open('iconpack.xml', 'a',encoding="utf-8") as fp:
+            #fp.write(f"{icpack_pre}{name}{icpack_suf}")
         with open('drawable.xml', 'a',encoding="utf-8") as fp:
             fp.write(f"{drawable_pre}{name}{drawable_suf}")
 
-    with open('iconpack.xml', 'a') as fp:
-        fp.write('\t</string-array>\n</resources>\n')
+    #with open('iconpack.xml', 'a') as fp:
+        #fp.write('\t</string-array>\n</resources>\n')
     with open('drawable.xml', 'a') as fp:
         fp.write('</resources>\n')
 
-    copy2('iconpack.xml', xmldir)
-    copy2('iconpack.xml', valuesdir)
+    #copy2('iconpack.xml', xmldir)
+    #copy2('iconpack.xml', valuesdir)
     copy2('drawable.xml', xmldir)
     copy2('drawable.xml', assetsdir)
     os.remove('iconpack.xml')
