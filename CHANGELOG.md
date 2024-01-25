@@ -1,3 +1,11 @@
+### 8.6.3
+###### Released: Jan 25, 2024
+* 🎉 380 new and updated icons! (thanks Kaiserdragon, AxFo, Elaborendum, Ayecptn, SagXD, Dgcampbe, Npnpatidar, TotallyAvailable, Alchemiker, Dumdus, Dioxias, Dazewell, rahulTPatil, JRBros2346, Plasmid-zz, KR4U7H3R, ThatBlueEnder, Sande-Santhosh, MikeTheGreat, Andrew-aiken, LukeVader-IV, Gaenseblume, DeltriDev, Petlyh
+* 📁 New search categories for Google and Microsoft apps, also some emojis are added.
+* ✨ Updates to make sure lots of apps work again.
+* 🚀 Dashboard updates.
+* 🔥 8673 icons in total!
+
 ### 8.3.0 - Day & Night 
 ###### Released: Dec 23, 2023
 * 🎉 108 new and updated icons! (thanks Kaiserdragon, Supertsy5, MikeTheGreat, TotallyAvailable, Xprateek, Alchemiker, NicoWeio, Lavin-Tom)
