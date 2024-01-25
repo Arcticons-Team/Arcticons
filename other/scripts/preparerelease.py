@@ -93,7 +93,7 @@ def create_new_drawables(svgdir: str,newdrawables:str) -> None:
             fp.write(f'{drawable_pre}{name}{drawable_suf}')
         fp.write('</resources>\n')
 
-def merge_new_drawables(pathxml: str, pathnewxml:str, assetpath:str):
+def merge_new_drawables(pathxml: str, pathnewxml:str, assetpath:str, iconsdir:str):
 
     drawables = []
     folder = []
@@ -116,26 +116,25 @@ def merge_new_drawables(pathxml: str, pathnewxml:str, assetpath:str):
     newDrawables.sort()
 
     # collect existing drawables
-    with open(pathxml) as file:
-        lines = file.readlines()
-        for line in lines:
-            new = re.search(drawable,line)
-            if new:
-                if not new.groups(0)[0] in newDrawables:
-                    if new.groups(0)[0].startswith('folder_'):
-                        folder.append(new.groups(0)[0])
-                    elif new.groups(0)[0].startswith('calendar_'):
-                        calendar.append(new.groups(0)[0])
-                    elif new.groups(0)[0].startswith('google_'):
-                        google.append(new.groups(0)[0])
-                    elif new.groups(0)[0].startswith('microsoft_') or new.groups(0)[0].startswith('xbox'):
-                        microsoft.append(new.groups(0)[0])
-                    elif new.groups(0)[0].startswith('letter_') or new.groups(0)[0].startswith('number_') or new.groups(0)[0].startswith('currency_') or new.groups(0)[0].startswith('symbol_'):
-                        symbols.append(new.groups(0)[0])
-                    elif new.groups(0)[0].startswith('_'):
-                        number.append(new.groups(0)[0])
-                    else:
-                        drawables.append(new.groups(0)[0])
+    for dir_ in sorted(Path(iconsdir).glob('*.svg'), key=natural_sort_key):
+        file_ = dir_.name
+        new = file_[:file_.rindex('.')]
+        if new:
+            if not new.groups(0)[0] in newDrawables:
+                if new.groups(0)[0].startswith('folder_'):
+                    folder.append(new.groups(0)[0])
+                elif new.groups(0)[0].startswith('calendar_'):
+                    calendar.append(new.groups(0)[0])
+                elif new.groups(0)[0].startswith('google_'):
+                    google.append(new.groups(0)[0])
+                elif new.groups(0)[0].startswith('microsoft_') or new.groups(0)[0].startswith('xbox'):
+                    microsoft.append(new.groups(0)[0])
+                elif new.groups(0)[0].startswith('letter_') or new.groups(0)[0].startswith('number_') or new.groups(0)[0].startswith('currency_') or new.groups(0)[0].startswith('symbol_'):
+                    symbols.append(new.groups(0)[0])
+                elif new.groups(0)[0].startswith('_'):
+                    number.append(new.groups(0)[0])
+                else:
+                    drawables.append(new.groups(0)[0])
 
         newIcons= len(newDrawables)
         print("There are %i new icons"% newIcons)
@@ -471,7 +470,7 @@ def main():
         return
     if duplicateEntry(APPFILTER_PATH):
         return
-    create_new_drawables(SVG_DIR,NEWDRAWABLE_PATH)
+    #create_new_drawables(SVG_DIR,NEWDRAWABLE_PATH)
     svg_colors(SVG_DIR,ORIGINAL_STROKE,ORIGINAL_FILL,ORIGINAL_STROKE_ALT,ORIGINAL_FILL_ALT,REPLACE_STROKE_WHITE,REPLACE_FILL_WHITE,REPLACE_STROKE_WHITE_ALT,REPLACE_FILL_WHITE_ALT)
     create_icons(SIZES, SVG_DIR ,EXPORT_DARK_DIR, WHITE_DIR, 'Dark Mode')
     svg_colors(SVG_DIR,ORIGINAL_STROKE,ORIGINAL_FILL,ORIGINAL_STROKE_ALT,ORIGINAL_FILL_ALT,REPLACE_STROKE_BLACK,REPLACE_FILL_BLACK,REPLACE_STROKE_BLACK_ALT,REPLACE_FILL_BLACK_ALT)
@@ -479,7 +478,7 @@ def main():
     remove_svg(SVG_DIR)
     sortxml(APPFILTER_PATH)
     convert_svg_files(WHITE_DIR, RES_XML_PATH,ASSETS_PATH,APPFILTER_PATH) 
-    merge_new_drawables(DRAWABLE_PATH,NEWDRAWABLE_PATH,ASSETS_PATH)
+    merge_new_drawables(DRAWABLE_PATH,NEWDRAWABLE_PATH,ASSETS_PATH,SVG_DIR)
 
 if __name__ == "__main__":
 	main()
