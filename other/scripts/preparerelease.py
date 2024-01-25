@@ -31,7 +31,6 @@ EXPORT_LIGHT_DIR = APP_SRC_DIR +"/black/res/drawable-nodpi"
 EXPORT_YOU_DIR = APP_SRC_DIR +"/you/res/drawable-anydpi-v26"
 RES_XML_PATH = APP_SRC_DIR + "/main/res/xml"
 ASSETS_PATH = APP_SRC_DIR + "/main/assets"
-VALUE_PATH = APP_SRC_DIR + "/main/res/values"
 
 #Export Sizes of the icons
 SIZES = [256]
@@ -53,7 +52,7 @@ REPLACE_FILL_BLACK_ALT = '''fill="#000"'''
 ##### Iconpack stuff #####
 
 # Create differnt xml files and move them to needed place
-def convert_svg_files(iconsdir: str, xmldir: str, valuesdir:str, assetsdir:str,appfilterpath:str) -> None:
+def convert_svg_files(iconsdir: str, xmldir: str, assetsdir:str,appfilterpath:str) -> None:
     drawable_pre = '\t  <item drawable="'
     drawable_suf = '" />\n'
 
@@ -479,7 +478,7 @@ def main():
     create_icons(SIZES, SVG_DIR ,EXPORT_LIGHT_DIR, BLACK_DIR, 'Light Mode')
     remove_svg(SVG_DIR)
     sortxml(APPFILTER_PATH)
-    convert_svg_files(WHITE_DIR, RES_XML_PATH,VALUE_PATH,ASSETS_PATH,APPFILTER_PATH) 
+    convert_svg_files(WHITE_DIR, RES_XML_PATH,ASSETS_PATH,APPFILTER_PATH) 
     merge_new_drawables(DRAWABLE_PATH,NEWDRAWABLE_PATH,ASSETS_PATH)
 
 if __name__ == "__main__":
