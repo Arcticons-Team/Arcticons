@@ -93,7 +93,7 @@ def create_new_drawables(svgdir: str,newdrawables:str) -> None:
             fp.write(f'{drawable_pre}{name}{drawable_suf}')
         fp.write('</resources>\n')
 
-def merge_new_drawables(pathxml: str, pathnewxml:str, assetpath:str, iconsdir:str):
+def merge_new_drawables(pathxml: str, pathnewxml:str, assetpath:str, iconsdir:str, xmldir: str, assetsdir:str,appfilterpath:str):
 
     drawables = []
     folder = []
@@ -196,6 +196,8 @@ def merge_new_drawables(pathxml: str, pathnewxml:str, assetpath:str, iconsdir:st
         outFile = open(pathxml, "w", encoding='utf-8')
         outFile.write(output)
         copy2(pathxml, assetpath)
+        copy2(appfilterpath, assetsdir)
+        copy2(appfilterpath, xmldir)
         os.remove(pathnewxml)
 
 #new appfilter sort
@@ -470,15 +472,15 @@ def main():
         return
     if duplicateEntry(APPFILTER_PATH):
         return
-    #create_new_drawables(SVG_DIR,NEWDRAWABLE_PATH)
+    create_new_drawables(SVG_DIR,NEWDRAWABLE_PATH)
     svg_colors(SVG_DIR,ORIGINAL_STROKE,ORIGINAL_FILL,ORIGINAL_STROKE_ALT,ORIGINAL_FILL_ALT,REPLACE_STROKE_WHITE,REPLACE_FILL_WHITE,REPLACE_STROKE_WHITE_ALT,REPLACE_FILL_WHITE_ALT)
     create_icons(SIZES, SVG_DIR ,EXPORT_DARK_DIR, WHITE_DIR, 'Dark Mode')
     svg_colors(SVG_DIR,ORIGINAL_STROKE,ORIGINAL_FILL,ORIGINAL_STROKE_ALT,ORIGINAL_FILL_ALT,REPLACE_STROKE_BLACK,REPLACE_FILL_BLACK,REPLACE_STROKE_BLACK_ALT,REPLACE_FILL_BLACK_ALT)
     create_icons(SIZES, SVG_DIR ,EXPORT_LIGHT_DIR, BLACK_DIR, 'Light Mode')
     remove_svg(SVG_DIR)
     sortxml(APPFILTER_PATH)
-    convert_svg_files(WHITE_DIR, RES_XML_PATH,ASSETS_PATH,APPFILTER_PATH) 
-    merge_new_drawables(DRAWABLE_PATH,NEWDRAWABLE_PATH,ASSETS_PATH,SVG_DIR)
+    #convert_svg_files(WHITE_DIR, RES_XML_PATH,ASSETS_PATH,APPFILTER_PATH) 
+    merge_new_drawables(DRAWABLE_PATH,NEWDRAWABLE_PATH,ASSETS_PATH,WHITE_DIR, RES_XML_PATH,ASSETS_PATH,APPFILTER_PATH)
 
 if __name__ == "__main__":
 	main()
