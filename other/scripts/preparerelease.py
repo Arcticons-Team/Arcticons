@@ -12,7 +12,7 @@ import cairosvg
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--checkonly", action="store_true", help="Run checks only")
-parser.add_argument('SVG_DIR', type=str, help='directory containing the SVG files')
+parser.add_argument('SVG_DIR', type=str, help='directory containing the new SVG files')
 parser.add_argument('APP_SRC_DIR', type=str, help='main app directory somthing like app/src')
 parser.add_argument('ICONS_DIR', type=str, help='directory that contains the folders for the black and white svg')
 args = parser.parse_args()
@@ -29,7 +29,6 @@ WHITE_DIR = ICONS_DIR + "/white"
 BLACK_DIR = ICONS_DIR + "/black"
 EXPORT_DARK_DIR = APP_SRC_DIR +"/normal/res/drawable-nodpi"
 EXPORT_LIGHT_DIR = APP_SRC_DIR +"/black/res/drawable-nodpi"
-EXPORT_YOU_DIR = APP_SRC_DIR +"/you/res/drawable-anydpi-v26"
 RES_XML_PATH = APP_SRC_DIR + "/main/res/xml"
 ASSETS_PATH = APP_SRC_DIR + "/main/assets"
 
