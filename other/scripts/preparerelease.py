@@ -11,6 +11,7 @@ import cairosvg
 
 
 parser = argparse.ArgumentParser()
+parser.add_argument("--checkonly", action="store_true", help="Run checks only")
 parser.add_argument('SVG_DIR', type=str, help='directory containing the SVG files')
 parser.add_argument('APP_SRC_DIR', type=str, help='main app directory somthing like app/src')
 parser.add_argument('ICONS_DIR', type=str, help='directory that contains the folders for the black and white svg')
@@ -453,6 +454,8 @@ def main():
     if missingDrawable(APPFILTER_PATH,WHITE_DIR,SVG_DIR):
         return
     if duplicateEntry(APPFILTER_PATH):
+        return
+    if args.checkonly:
         return
     create_new_drawables(SVG_DIR,NEWDRAWABLE_PATH)
     svg_colors(SVG_DIR,ORIGINAL_STROKE,ORIGINAL_FILL,ORIGINAL_STROKE_ALT,ORIGINAL_FILL_ALT,REPLACE_STROKE_WHITE,REPLACE_FILL_WHITE,REPLACE_STROKE_WHITE_ALT,REPLACE_FILL_WHITE_ALT)
