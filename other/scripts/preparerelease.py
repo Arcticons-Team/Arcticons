@@ -27,9 +27,9 @@ def check_arcticons_path(path):
     if os.path.exists(arcticons_folder) and os.path.isdir(arcticons_folder):
         return arcticons_folder
     else:
-        parent_path = os.path.dirname(path)
+        app_folder = os.path.join(path, "app")
         other_folder = os.path.join(path, "other")
-        if os.path.exists(other_folder) and os.path.isdir(other_folder):
+        if os.path.exists(other_folder) and os.path.isdir(other_folder) and os.path.exists(app_folder) and os.path.isdir(app_folder):
             return path
         else:
             print(f"The path '{path}' does not include the 'Arcticons' folder.")
