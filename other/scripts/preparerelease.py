@@ -10,25 +10,53 @@ import os
 import cairosvg
 
 
+import argparse
+import os
+
 parser = argparse.ArgumentParser()
-parser.add_argument('SVG_DIR', type=str, help='directory containing the SVG files')
-parser.add_argument('APP_SRC_DIR', type=str, help='main app directory somthing like app/src')
-parser.add_argument('ICONS_DIR', type=str, help='directory that contains the folders for the black and white svg')
+parser.add_argument("--checkonly", action="store_true", help="Run checks only")
+parser.add_argument('ARCTICONS_DIR', type=str, help='Path to the Arcticons directory')
+
 args = parser.parse_args()
 
-SVG_DIR = str(pathlib.Path(args.SVG_DIR).resolve())
-APP_SRC_DIR = str(pathlib.Path(args.APP_SRC_DIR).resolve())
-ICONS_DIR = str(pathlib.Path(args.ICONS_DIR).resolve())
+ARCTICONS_DIR = os.path.abspath(args.ARCTICONS_DIR)
+
+def check_arcticons_path(path):
+    # Check if the given path includes "Arcticons" folder or if it is one level below
+    arcticons_folder = os.path.join(path, "Arcticons")
+    if os.path.exists(arcticons_folder) and os.path.isdir(arcticons_folder):
+        return arcticons_folder
+    else:
+        app_folder = os.path.join(path, "app")
+        other_folder = os.path.join(path, "other")
+        if os.path.exists(other_folder) and os.path.isdir(other_folder) and os.path.exists(app_folder) and os.path.isdir(app_folder):
+            return path
+        else:
+            print(f"The path '{path}' does not include the 'Arcticons' folder.")
+            while True:
+                user_input = input("Do you want to continue? (y/n): ").lower()
+                if user_input == 'y':
+                    break
+                elif user_input == 'n':
+                    exit()  # or raise an exception or take appropriate action
+                else:
+                    print("Invalid input. Please enter 'y' or 'n'.")
+    return path
+
+
+ARCTICONS_PATH = check_arcticons_path(ARCTICONS_DIR)
 
 #Define Path
-APPFILTER_PATH = SVG_DIR + "/appfilter.xml"
+OTHER_PATH = ARCTICONS_PATH +"/other"
+ICONS_PATH = ARCTICONS_PATH +"/icons"
+APP_SRC_DIR = ARCTICONS_PATH + "/app/src"
+APPFILTER_PATH = OTHER_PATH + "/appfilter.xml"
 DRAWABLE_PATH = APP_SRC_DIR + "/main/res/xml/drawable.xml"
-NEWDRAWABLE_PATH = SVG_DIR + "/newdrawables.xml"
-WHITE_DIR = ICONS_DIR + "/white"
-BLACK_DIR = ICONS_DIR + "/black"
+NEWDRAWABLE_PATH = OTHER_PATH + "/newdrawables.xml"
+WHITE_DIR = ICONS_PATH + "/white"
+BLACK_DIR = ICONS_PATH + "/black"
 EXPORT_DARK_DIR = APP_SRC_DIR +"/normal/res/drawable-nodpi"
 EXPORT_LIGHT_DIR = APP_SRC_DIR +"/black/res/drawable-nodpi"
-EXPORT_YOU_DIR = APP_SRC_DIR +"/you/res/drawable-anydpi-v26"
 RES_XML_PATH = APP_SRC_DIR + "/main/res/xml"
 ASSETS_PATH = APP_SRC_DIR + "/main/assets"
 
@@ -448,18 +476,20 @@ def missingDrawable(appfilterpath:str,whitedir:str,otherdir:str):
 def main():
     if check_xml(APPFILTER_PATH):
         return
-    if checkSVG(SVG_DIR):
+    if checkSVG(OTHER_PATH):
         return
-    if missingDrawable(APPFILTER_PATH,WHITE_DIR,SVG_DIR):
+    if missingDrawable(APPFILTER_PATH,WHITE_DIR,OTHER_PATH):
         return
     if duplicateEntry(APPFILTER_PATH):
         return
-    create_new_drawables(SVG_DIR,NEWDRAWABLE_PATH)
-    svg_colors(SVG_DIR,ORIGINAL_STROKE,ORIGINAL_FILL,ORIGINAL_STROKE_ALT,ORIGINAL_FILL_ALT,REPLACE_STROKE_WHITE,REPLACE_FILL_WHITE,REPLACE_STROKE_WHITE_ALT,REPLACE_FILL_WHITE_ALT)
-    create_icons(SIZES, SVG_DIR ,EXPORT_DARK_DIR, WHITE_DIR, 'Dark Mode')
-    svg_colors(SVG_DIR,ORIGINAL_STROKE,ORIGINAL_FILL,ORIGINAL_STROKE_ALT,ORIGINAL_FILL_ALT,REPLACE_STROKE_BLACK,REPLACE_FILL_BLACK,REPLACE_STROKE_BLACK_ALT,REPLACE_FILL_BLACK_ALT)
-    create_icons(SIZES, SVG_DIR ,EXPORT_LIGHT_DIR, BLACK_DIR, 'Light Mode')
-    remove_svg(SVG_DIR)
+    if args.checkonly:
+        return
+    create_new_drawables(OTHER_PATH,NEWDRAWABLE_PATH)
+    svg_colors(OTHER_PATH,ORIGINAL_STROKE,ORIGINAL_FILL,ORIGINAL_STROKE_ALT,ORIGINAL_FILL_ALT,REPLACE_STROKE_WHITE,REPLACE_FILL_WHITE,REPLACE_STROKE_WHITE_ALT,REPLACE_FILL_WHITE_ALT)
+    create_icons(SIZES, OTHER_PATH ,EXPORT_DARK_DIR, WHITE_DIR, 'Dark Mode')
+    svg_colors(OTHER_PATH,ORIGINAL_STROKE,ORIGINAL_FILL,ORIGINAL_STROKE_ALT,ORIGINAL_FILL_ALT,REPLACE_STROKE_BLACK,REPLACE_FILL_BLACK,REPLACE_STROKE_BLACK_ALT,REPLACE_FILL_BLACK_ALT)
+    create_icons(SIZES, OTHER_PATH ,EXPORT_LIGHT_DIR, BLACK_DIR, 'Light Mode')
+    remove_svg(OTHER_PATH)
     sortxml(APPFILTER_PATH) 
     merge_new_drawables(DRAWABLE_PATH,NEWDRAWABLE_PATH,ASSETS_PATH,WHITE_DIR, RES_XML_PATH,ASSETS_PATH,APPFILTER_PATH)
 
