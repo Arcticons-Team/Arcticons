@@ -2,6 +2,7 @@ package com.donnnno.arcticons.helper;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -40,7 +41,10 @@ public class XMLCreator {
                     newDrawables.add(matcher.group(1));
                 }
             }
+        }catch(FileNotFoundException e){
+            System.out.println("XML file: newdrawables.xml not found");
         }
+
 
         // Collect existing drawables
         File iconsDirectory = new File(iconsDir);
@@ -49,14 +53,13 @@ public class XMLCreator {
         if (files != null) {
             for (File file : files) {
                 String fileName = file.getName();
-                String newDrawable = fileName.substring(0, fileName.lastIndexOf('.'));
+                String IconDrawable = fileName.substring(0, fileName.lastIndexOf('.'));
 
-                if (!newDrawables.contains(newDrawable)) {
-                    classifyDrawable(newDrawable);
+                if (!newDrawables.contains(IconDrawable)) {
+                    classifyDrawable(IconDrawable);
                 }
             }
         }
-
         // Remove duplicates and sort
         newDrawables = new ArrayList<>(new HashSet<>(newDrawables));
         Collections.sort(newDrawables);

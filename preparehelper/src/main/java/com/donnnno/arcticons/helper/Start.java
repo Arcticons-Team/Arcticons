@@ -71,6 +71,7 @@ public class Start {
 
         try {
             XMLCreator.mergeNewDrawables(xmlDir+"/drawable.xml",newXML,assetsDir,sourceDir,xmlDir,appFilter);
+            System.out.println("XML task completed");
         } catch (Exception e) {
             e.printStackTrace();
         }
