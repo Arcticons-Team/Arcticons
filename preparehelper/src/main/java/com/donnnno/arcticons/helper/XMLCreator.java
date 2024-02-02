@@ -108,15 +108,9 @@ public class XMLCreator {
         }
 
         // Copy files
-        copyFile(pathXml, assetPath);
-        copyFile(appFilterPath, assetPath);
-        copyFile(appFilterPath, xmlDir);
-
-        // Remove the new xml file
-        File newXmlFile = new File(pathNewXml);
-        if (newXmlFile.exists()) {
-            newXmlFile.delete();
-        }
+        copyFile(pathXml, assetPath+"/drawable.xml");
+        copyFile(appFilterPath, assetPath+"/appfilter.xml");
+        copyFile(appFilterPath, xmlDir+"/appfilter.xml");
     }
 
     private static void appendCategory(StringBuilder output, String title, List<String> entries) {
