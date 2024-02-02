@@ -111,6 +111,9 @@ def create_new_drawables(svgdir: str,newdrawables:str) -> None:
             fp.write(f'{drawable_pre}{drawable}{drawable_suf}')
         fp.write('</resources>\n')
         fp.close
+        
+    newIcons= len(newDrawables)   
+    print("There are %i new icons"% newIcons)
 
 #new appfilter sort
 def sortxml(path:str):
