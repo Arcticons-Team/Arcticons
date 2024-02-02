@@ -16,6 +16,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class XMLCreator {
+    private static List<String> newDrawables = new ArrayList<>();
     private static List<String> drawables = new ArrayList<>();
     private static List<String> folder = new ArrayList<>();
     private static List<String> calendar = new ArrayList<>();
@@ -31,8 +32,6 @@ public class XMLCreator {
     public static void mergeNewDrawables(String pathXml, String pathNewXml, String assetPath, String iconsDir,
                                          String xmlDir, String appFilterPath) throws IOException {
 
-        List<String> newDrawables = new ArrayList<>();
-
         try (BufferedReader reader = new BufferedReader(new FileReader(pathNewXml))) {
             String line;
             while ((line = reader.readLine()) != null) {
@@ -42,7 +41,6 @@ public class XMLCreator {
                 }
             }
         }
-        Collections.sort(newDrawables);
 
         // Collect existing drawables
         File iconsDirectory = new File(iconsDir);
@@ -59,10 +57,9 @@ public class XMLCreator {
             }
         }
 
-        int newIcons = newDrawables.size();
-        System.out.println("There are " + newIcons + " new icons");
-
         // Remove duplicates and sort
+        newDrawables = new ArrayList<>(new HashSet<>(newDrawables));
+        Collections.sort(newDrawables);
         drawables = new ArrayList<>(new HashSet<>(drawables));
         Collections.sort(drawables);
         folder = new ArrayList<>(new HashSet<>(folder));
@@ -78,11 +75,9 @@ public class XMLCreator {
 
 
         // Build output
-        StringBuilder output = new StringBuilder("<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<resources>\n<version>1</version>\n\n\t<category title=\"New\" />\n\t");
-        for (String newDrawable : newDrawables) {
-            output.append("<item drawable=\"").append(newDrawable).append("\" />\n\t");
-        }
+        StringBuilder output = new StringBuilder("<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<resources>\n<version>1</version>\n");
 
+        appendCategory(output, "New", newDrawables);
         appendCategory(output, "Folders", folder);
         appendCategory(output, "Calendar", calendar);
         appendCategory(output, "Google", google);
@@ -90,19 +85,11 @@ public class XMLCreator {
         appendCategory(output, "Symbols", symbols);
         appendCategory(output, "Numbers", numbers);
         appendCategory(output, "0-9", number);
+        appendCategory(output, "A-Z", drawables);
 
-        // Iterate alphabet
-        char letter = 'a';
-        for (String entry : drawables) {
-            if (!entry.startsWith(String.valueOf(letter))) {
-                letter++;
-                output.append("\n\t<category title=\"").append(Character.toUpperCase(letter)).append("\" />\n\t");
-            }
-            output.append("<item drawable=\"").append(entry).append("\" />\n\t");
-        }
         output.append("\n</resources>");
-
-        // Write to new_'filename'.xml in working directory
+        
+        // Write to drawable.xml in res directory
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(pathXml))) {
             writer.write(output.toString());
         }
