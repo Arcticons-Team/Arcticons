@@ -93,12 +93,12 @@ def create_new_drawables(svgdir: str,newdrawables:str) -> None:
                 new = re.search(drawable, line)
                 if new:
                     newDrawables.add(new.group(1))
-    print(newDrawables)
+
     for file_path in glob.glob(f"{svgdir}/*.svg"):
         file = os.path.basename(file_path)
         name = file[:-4]
         newDrawables.add(name)
-    print(newDrawables)
+
     sortedNewDrawables = sorted(newDrawables)
 
     drawable_pre = '\t<item drawable="'
@@ -111,7 +111,7 @@ def create_new_drawables(svgdir: str,newdrawables:str) -> None:
             fp.write(f'{drawable_pre}{drawable}{drawable_suf}')
         fp.write('</resources>\n')
         fp.close
-        
+
     newIcons= len(newDrawables)   
     print("There are %i new icons"% newIcons)
 
