@@ -98,7 +98,7 @@ def create_new_drawables(svgdir: str,newdrawables:str) -> None:
             for line in lines:
                 new = re.search(drawable, line)
                 if new:
-                    newDrawables.add(new.group(0)[0])
+                    newDrawables.add(new.group(1))
     print(newDrawables)
     for file_path in glob.glob(f"{svgdir}/*.svg"):
         file = os.path.basename(file_path)
