@@ -15,6 +15,7 @@ import os
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--checkonly", action="store_true", help="Run checks only")
+parser.add_argument("--new", action="store_true", help="Run a new Release")
 parser.add_argument('ARCTICONS_DIR', type=str, help='Path to the Arcticons directory')
 
 args = parser.parse_args()
@@ -86,16 +87,34 @@ def natural_sort_key(s: str, _nsre=re.compile('([0-9]+)')):
 
 
 def create_new_drawables(svgdir: str,newdrawables:str) -> None:
+
+    drawable = re.compile(r'drawable="([\w_]+)"')
+    
+    # Get all in New
+    newDrawables = set()
+    if not args.new:
+        with open(newdrawables) as file:
+            lines = file.readlines()
+            for line in lines:
+                new = re.search(drawable, line)
+                if new:
+                    newDrawables.add(new.group(0))
+
+    for file_path in glob.glob(f"{svgdir}/*.svg"):
+        file = os.path.basename(file_path)
+        name = file[:-4]
+        newDrawables.add(name)
+
+    sortedNewDrawables = sorted(newDrawables)
+
     drawable_pre = '\t<item drawable="'
     drawable_suf = '" />\n'
     if os.path.exists(newdrawables):
         os.remove(newdrawables)
     with open(newdrawables, 'w',encoding="utf-8") as fp:
         fp.write('<?xml version="1.0" encoding="utf-8"?>\n<resources>\n\t<version>1</version>\n\t<category title="New" />\n')
-        for file_path in glob.glob(f"{svgdir}/*.svg"):
-            file= os.path.basename(file_path)
-            name = file[:-4]
-            fp.write(f'{drawable_pre}{name}{drawable_suf}')
+        for drawable in newDrawables:
+            fp.write(f'{drawable_pre}{drawable}{drawable_suf}')
         fp.write('</resources>\n')
         fp.close
 
