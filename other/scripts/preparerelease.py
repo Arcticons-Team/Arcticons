@@ -99,12 +99,12 @@ def create_new_drawables(svgdir: str,newdrawables:str) -> None:
                 new = re.search(drawable, line)
                 if new:
                     newDrawables.add(new.group(0))
-
+    print(newDrawables)
     for file_path in glob.glob(f"{svgdir}/*.svg"):
         file = os.path.basename(file_path)
         name = file[:-4]
         newDrawables.add(name)
-
+    print(newDrawables)
     sortedNewDrawables = sorted(newDrawables)
 
     drawable_pre = '\t<item drawable="'
@@ -113,7 +113,7 @@ def create_new_drawables(svgdir: str,newdrawables:str) -> None:
         os.remove(newdrawables)
     with open(newdrawables, 'w',encoding="utf-8") as fp:
         fp.write('<?xml version="1.0" encoding="utf-8"?>\n<resources>\n\t<version>1</version>\n\t<category title="New" />\n')
-        for drawable in newDrawables:
+        for drawable in sortedNewDrawables:
             fp.write(f'{drawable_pre}{drawable}{drawable_suf}')
         fp.write('</resources>\n')
         fp.close
