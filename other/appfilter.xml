@@ -2041,17 +2041,22 @@
 
 	<!-- Arcticons -->
 	<item component="ComponentInfo{com.donnnno.arcticons/com.donnnno.arcticons.activities.MainActivity}" drawable="arcticons"/>
+	<item component="ComponentInfo{com.donnnno.arcticons/com.donnnno.arcticons.activities.SplashActivity}" drawable="arcticons"/>
 	<item component="ComponentInfo{com.donnnno.arcticons.debug/com.donnnno.arcticons.activities.MainActivity}" drawable="arcticons_debug"/>
 
 	<!-- Arcticons Black -->
 	<item component="ComponentInfo{com.donnnno.arcticons.light/com.donnnno.arcticons.activities.MainActivity}" drawable="arcticons_black"/>
+	<item component="ComponentInfo{com.donnnno.arcticons.light/com.donnnno.arcticons.activities.SplashActivity}" drawable="arcticons_black"/>
 	<item component="ComponentInfo{com.donnnno.arcticons.light.debug/com.donnnno.arcticons.activities.MainActivity}" drawable="arcticons_debug"/>
 
 	<!-- Arcticons Day & Night -->
 	<item component="ComponentInfo{com.donnnno.arcticons.daynight.debug/com.donnnno.arcticons.activities.MainActivity}" drawable="arcticons_debug"/>
 	<item component="ComponentInfo{com.donnnno.arcticons.daynight/com.donnnno.arcticons.activities.MainActivity}" drawable="arcticons_day_night"/>
+	<item component="ComponentInfo{com.donnnno.arcticons.daynight/com.donnnno.arcticons.activities.SplashActivity}" drawable="arcticons_day_night"/>
 
 	<!-- Arcticons Material You -->
+	<item component="ComponentInfo{com.donnnno.arcticons.you/com.donnnno.arcticons.activities.SplashActivity}" drawable="arcticons_material_you"/>
+	<item component="ComponentInfo{com.donnnno.arcticons.you.play/com.donnnno.arcticons.activities.SplashActivity}" drawable="arcticons_material_you"/>
 	<item component="ComponentInfo{com.donnnno.arcticons.you/com.donnnno.arcticons.activities.MainActivity}" drawable="arcticons_material_you"/>
 	<item component="ComponentInfo{com.donnnno.arcticons.you.play/com.donnnno.arcticons.activities.MainActivity}" drawable="arcticons_material_you"/>
 	<item component="ComponentInfo{com.donnnno.arcticons.you.debug/com.donnnno.arcticons.activities.MainActivity}" drawable="arcticons_debug"/>
@@ -3183,6 +3188,7 @@
 	<!-- BHIM -->
 	<item component="ComponentInfo{in.org.npci.upiapp/in.org.npci.upiapp.HomeActivity}" drawable="bhim"/>
 	<item component="ComponentInfo{in.org.npci.upiapp/yilrfu.s}" drawable="bhim"/>
+	<item component="ComponentInfo{in.org.npci.upiapp/mpacjhvlt.n}" drawable="bhim" />
 
 	<!-- BHIM SBI Pay -->
 	<item component="ComponentInfo{com.sbi.upi/com.sbi.upi.customerMode.modules.initial.splash.SplashActivity}" drawable="bhim_sbi_pay"/>
@@ -3547,6 +3553,7 @@
 	<item component="ComponentInfo{com.grofers.customerapp/com.grofers.customerapp.NAVRATRI}" drawable="blinkit"/>
 	<item component="ComponentInfo{com.grofers.customerapp/com.grofers.customerapp.DIWALI}" drawable="blinkit"/>
 	<item component="ComponentInfo{com.grofers.customerapp/com.grofers.customerapp.NEW_YEAR}" drawable="blinkit"/>
+	<item component="ComponentInfo{com.grofers.customerapp/com.grofers.customerapp.REPUBLIC_DAY}" drawable="blinkit" />
 
 	<!-- Blitzer / CamSam -->
 	<item component="ComponentInfo{de.blitzer/de.blitzer.activity.SplashScreen}" drawable="blitzerde"/>
@@ -3813,6 +3820,7 @@
 	<item component="ComponentInfo{com.infonow.bofa/com.infonow.bofa.Launcher}" drawable="bofa"/>
 	<item component="ComponentInfo{com.infonow.bofa/com.bofa.ecom.marvel.Launcher}" drawable="bofa"/>
 	<item component="ComponentInfo{com.infonow.bofa/com.bofa.ecom.marvel.application.Flagscape}" drawable="bofa"/>
+	<item component="ComponentInfo{com.infonow.bofa/com.bofa.ecom.marvel.application.Black}" drawable="bofa" />
 
 	<!-- BOINC -->
 	<item component="ComponentInfo{edu.berkeley.boinc/edu.berkeley.boinc.SplashActivity}" drawable="boinc"/>
@@ -4842,6 +4850,7 @@
 	<item component="ComponentInfo{com.konylabs.capitalone/com.konylabs.capitalone.EnterpriseMobileBanking.LaunchActivity}" drawable="capitalone"/>
 	<item component="ComponentInfo{com.ie.capitalone.uk/capitalone.com.comobileapp.startup.defaultIcon}" drawable="capitalone"/>
 	<item component="ComponentInfo{com.capitalone.credittracker/com.capitalone.credittracker.ftux.ui.FirstTimeUserExperienceActivity}" drawable="capitalone"/>
+	<item component="ComponentInfo{com.konylabs.capitalone/com.capitalone.ease.app.splash.SplashActivity}" drawable="capitalone" />
 
 	<!-- Capitec -->
 	<item component="ComponentInfo{capitec.acuity.mobile.prod/capitec.acuity.mobile.prod.MainActivity}" drawable="capitec"/>
@@ -6807,6 +6816,8 @@
 	<!-- Delta -->
 	<item component="ComponentInfo{website.leifs.delta/website.leifs.delta.activities.MainActivity}" drawable="delta_icon_pack"/>
 	<item component="ComponentInfo{website.leifs.delta.foss/website.leifs.delta.activities.MainActivity}" drawable="delta_icon_pack"/>
+	<item component="ComponentInfo{website.leifs.delta/website.leifs.delta.activities.SplashActivity}" drawable="delta_icon_pack" />
+	<item component="ComponentInfo{website.leifs.delta.foss/website.leifs.delta.activities.SplashActivity}" drawable="delta_icon_pack"/>
 
 	<!-- Delta Chat -->
 	<item component="ComponentInfo{com.b44t.messenger/org.thoughtcrime.securesms.RoutingActivity}" drawable="delta_chat"/>
@@ -6861,6 +6872,7 @@
 
 	<!-- Desh Tamil Keyboard -->
 	<item component="ComponentInfo{com.clusterdev.tamilkeyboard/com.example.android.softkeyboard.Activities.EasyConfig}" drawable="desh_tamil_keyboard"/>
+	<item component="ComponentInfo{com.clusterdev.tamilkeyboard/com.example.android.softkeyboard.easyconfig.EasyConfig}" drawable="desh_tamil_keyboard" />
 
 	<!-- Design Keyboard -->
 	<item component="ComponentInfo{com.designkeyboard.keyboard/com.designkeyboard.keyboard.activity.MainActivity}" drawable="design_keyboard"/>
@@ -7593,6 +7605,7 @@
 	<item component="ComponentInfo{com.android.providers.downloads.ui/com.android.providers.downloads.ui.DownloadListStock}" drawable="downloads"/>
 	<item component="ComponentInfo{com.android.documentsui/com.android.documentsui.files.LauncherActivity}" drawable="downloads"/>
 	<item component="ComponentInfo{com.ceco.sbdp.pro/com.ceco.sbdp.pro.Settings}" drawable="downloads"/>
+	<item component="ComponentInfo{com.android.providers.downloads.ui/com.android.providers.downloads.ui.activity.DownloadListEntry}" drawable="downloads" />
 
 	<!-- Downwell -->
 	<item component="ComponentInfo{com.devolver.downwell_rerelease/com.devolver.downwell_rerelease.RunnerActivity}" drawable="downwell"/>
@@ -10742,6 +10755,12 @@
 	<item component="ComponentInfo{nodomain.freeyourgadget.gadgetbridge/nodomain.freeyourgadget.gadgetbridge.activities.ControlCenter}" drawable="gadgetbridge"/>
 	<item component="ComponentInfo{nodomain.freeyourgadget.gadgetbridge/nodomain.freeyourgadget.gadgetbridge.activities.ControlCenterv2}" drawable="gadgetbridge"/>
 
+	<!-- Gadgetbridge Nightly -->
+	<item component="ComponentInfo{nodomain.freeyourgadget.gadgetbridge.nightly/nodomain.freeyourgadget.gadgetbridge.activities.ControlCenterv2}" drawable="gadgetbridge"/>
+
+	<!-- Gadgetbridge Nightly No Pebble -->
+	<item component="ComponentInfo{nodomain.freeyourgadget.gadgetbridge.nightly_nopebble/nodomain.freeyourgadget.gadgetbridge.activities.ControlCenterv2}" drawable="gadgetbridge"/>
+
 	<!-- Gaia GPS -->
 	<item component="ComponentInfo{com.trailbehind.android.gaiagps.pro/com.trailbehind.activities.MainActivity}" drawable="gaia_gps"/>
 
@@ -12425,6 +12444,7 @@
 
 	<!-- Homebase -->
 	<item component="ComponentInfo{com.joinhomebase.homebase.homebase/com.joinhomebase.homebase.homebase.feature.splash.StarterActivity}" drawable="homebase"/>
+	<item component="ComponentInfo{com.joinhomebase.homebase.homebase/com.joinhomebase.homebase.homebase.feature.splash.ui.StarterActivity}" drawable="homebase" />
 
 	<!-- homee -->
 	<item component="ComponentInfo{com.codeatelier.homee.smartphone/com.codeatelier.homee.smartphone.fragmentactivity.CheckScreen}" drawable="homee"/>
@@ -13711,6 +13731,7 @@
 
 	<!-- Jupiter -->
 	<item component="ComponentInfo{money.jupiter/com.zoontek.rnbootsplash.RNBootSplashActivity}" drawable="jupiter"/>
+	<item component="ComponentInfo{money.jupiter/money.jupiter.MainActivity}" drawable="jupiter" />
 
 	<!-- Just 24 Hours -->
 	<item component="ComponentInfo{com.chancehorizon.just24hoursplus/com.chancehorizon.just24hoursplus.theClockActivity}" drawable="just24hours"/>
@@ -22731,6 +22752,7 @@
 	<item component="ComponentInfo{com.blizzard.arc/com.appboy.unity.AppboyUnityPlayerActivity}" drawable="rumble"/>
 	<item component="ComponentInfo{com.rumble.battles/com.rumble.battles.landing.LandingActivity}" drawable="rumble"/>
 	<item component="ComponentInfo{com.rumble.battles/com.rumble.battles.ui.preload.SplashActivity}" drawable="rumble"/>
+	<item component="ComponentInfo{com.blizzard.arc/com.blizzard.gryphon.unity.player.GryphonUnityPlayerActivity}" drawable="rumble"/>
 
 	<!-- Runaway Toad -->
 	<item component="ComponentInfo{com.SpikySnail.GrumpyFrog2/com.unity3d.player.UnityPlayerActivity}" drawable="runawaytoad"/>
@@ -23202,6 +23224,7 @@
 	<item component="ComponentInfo{com.linuxauthority.screenrecorder/com.linuxauthority.screenrecorder.ui.main.MainActivity}" drawable="screen_recorder"/>
 	<item component="ComponentInfo{recorder.screenrecorder.videoeditor/com.recorder.screenrecorder.home.splash.pre.PreSplashActivity}" drawable="screen_recorder"/>
 	<item component="ComponentInfo{com.kimcy929.secretvideorecorder/com.kimcy929.secretvideorecorder.LoginActivity_1}" drawable="screen_recorder"/>
+	<item component="ComponentInfo{com.kimcy929.secretvideorecorder/com.kimcy929.secretvideorecorder.LoginActivity_2}" drawable="screen_recorder" />
 
 	<!-- Screen Time -->
 	<item component="ComponentInfo{de.markusfisch.android.screentime/de.markusfisch.android.screentime.activity.MainActivity}" drawable="screentime"/>
@@ -26876,6 +26899,7 @@
 	<item component="ComponentInfo{com.textra/com.mplus.lib.Main_ff000000}" drawable="textra"/>
 	<item component="ComponentInfo{com.textra/com.mplus.lib.Main_ff000000_bare}" drawable="textra"/>
 	<item component="ComponentInfo{com.textra/com.mplus.lib.Main_ff263238}" drawable="textra"/>
+	<item component="ComponentInfo{com.textra/com.mplus.lib.Main_ff3e2723}" drawable="textra" />
 
 	<!-- Tečka -->
 	<item component="ComponentInfo{cz.nakit.eocko.wallet/dgc.app.wallet.system.MainActivity}" drawable="tecka"/>
@@ -28738,6 +28762,7 @@
 
 	<!-- Video to Wallpaper -->
 	<item component="ComponentInfo{com.koncius.video.wallpaper/xyz.alynx.livewallpaper.MainActivity}" drawable="video_to_wallpaper"/>
+	<item component="ComponentInfo{com.koncius.video.wallpaper/com.koncius.video.wallpaper.MainActivity}" drawable="video_to_wallpaper" />
 
 	<!-- Video Transcoder -->
 	<item component="ComponentInfo{protect.videoeditor/protect.videotranscoder.activity.MainActivity}" drawable="videotranscoder"/>
@@ -28900,6 +28925,7 @@
 
 	<!-- Vivint -->
 	<item component="ComponentInfo{com.vivint.vivintsky/com.vivint.vivintsky.ui.SplashActivity}" drawable="vivint"/>
+	<item component="ComponentInfo{com.vivint.vivintsky/com.vivint.vivintsky.login.ui.StartActivity}" drawable="vivint" />
 
 	<!-- Vivo -->
 	<item component="ComponentInfo{br.com.vivo/br.com.vivo.MainActivity}" drawable="vivo"/>
@@ -29723,6 +29749,7 @@
 	<item component="ComponentInfo{com.fmwhatsapp/com.fmwhatsapp.Icon0}" drawable="whatsapp"/>
 	<item component="ComponentInfo{com.aero/com.aero.Icon0}" drawable="whatsapp"/>
 	<item component="ComponentInfo{com.gbwhatsapp3/com.gbwhatsapp3.Icon0}" drawable="whatsapp"/>
+	<item component="ComponentInfo{com.tmwhatsapp/com.tmwhatsapp.Icon14}" drawable="whatsapp" />
 
 	<!-- Whatsapp Business -->
 	<item component="ComponentInfo{com.whatsapp.w4b/com.whatsapp.Main}" drawable="whatsapp_business"/>
@@ -30612,6 +30639,7 @@
 	<item component="ComponentInfo{net.zedge.android/net.zedge.android.MainDiwali}" drawable="zedge"/>
 	<item component="ComponentInfo{net.zedge.android/net.zedge.android.MainBlackFriday}" drawable="zedge"/>
 	<item component="ComponentInfo{net.zedge.android/net.zedge.android.MainNewyear}" drawable="zedge"/>
+	<item component="ComponentInfo{net.zedge.android/net.zedge.android.MainIndiaRepublicDay}" drawable="zedge" />
 
 	<!-- Zee Archiver -->
 	<item component="ComponentInfo{com.mg.zeearchiver/com.mg.zeearchiver.StartupActivity}" drawable="zee_archiver"/>
