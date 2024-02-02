@@ -491,7 +491,7 @@ def main():
     create_icons(SIZES, OTHER_PATH ,EXPORT_LIGHT_DIR, BLACK_DIR, 'Light Mode')
     remove_svg(OTHER_PATH)
     sortxml(APPFILTER_PATH) 
-    merge_new_drawables(DRAWABLE_PATH,NEWDRAWABLE_PATH,ASSETS_PATH,WHITE_DIR, RES_XML_PATH,ASSETS_PATH,APPFILTER_PATH)
+    #merge_new_drawables(DRAWABLE_PATH,NEWDRAWABLE_PATH,ASSETS_PATH,WHITE_DIR, RES_XML_PATH,ASSETS_PATH,APPFILTER_PATH)
 
 if __name__ == "__main__":
 	main()
