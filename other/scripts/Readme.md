@@ -4,9 +4,7 @@
 
 This Python script is designed to manage and modify the Arcticons icon pack. It provides functionality to check, create, and modify various aspects of the icon pack.
 
-### Usage
-
-#### Prerequisites
+### Prerequisites
 
 Make sure you have the following dependencies installed:
 
@@ -20,17 +18,27 @@ Install them using:
 pip install argparse lxml cairosvg
 ```
 
-#### Command Line Arguments
+### Command Line Arguments
 
 - `--checkonly`: Run checks only, without making any modifications.
 - `--new`: Run for a new release. (Deletes previous new drawables XML file and creates a new one.)
 - `ARCTICONS_DIR`: Path to the Arcticons directory.
 
-#### Example
+### How to Run
+
+1. Open a terminal.
+2. Navigate to the directory containing the script.
+3. Run the script with the necessary command line arguments. 
 
 ```bash
 python preparerelease.py --checkonly /path/to/arcticons
 ```
+
+You can also use the --help option to get more information about the script's arguments:
+
+    python preparerelease.py --help
+
+This will display the help message for the script, which provides a brief description of the arguments and their purpose.
 
 ### Functionality
 
@@ -61,11 +69,7 @@ Creates a new drawables XML file with a list of new icons.
 - **Duplicate Appfilter Entries:** Finds and displays duplicate entries in the appfilter XML file.
 - **Missing Drawables:** Identifies non-existent drawables in the appfilter XML file.
 
-### How to Run
 
-1. Open a terminal.
-2. Navigate to the directory containing the script.
-3. Run the script with the necessary command line arguments.
 
 ## 2. Check Drawable
 
