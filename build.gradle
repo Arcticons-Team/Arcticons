@@ -30,7 +30,8 @@ task clean(type: Delete) {
     delete fileTree(dir:  'app/src/light/res/drawable-anydpi')
     delete fileTree(dir:  'app/src/dark/res/drawable-anydpi')
     delete fileTree(dir:  'app/src/dayNight/res/drawable-anydpi')
-    delete files("app/src/main/assets/drawable.xml","app/src/main/assets/appfilter.xml","app/src/main/res/xml/drawable.xml","app/src/main/res/xml/appfilter.xml")
+    delete files('app/src/main/assets/drawable.xml','app/src/main/assets/appfilter.xml'
+            ,'app/src/main/res/xml/drawable.xml','app/src/main/res/xml/appfilter.xml')
 }
 
 //F-DROID REPRODUCIBLE BUILDS
