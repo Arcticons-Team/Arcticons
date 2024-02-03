@@ -1,20 +1,15 @@
-from pathlib import Path
 import re
 import glob
 from shutil import copy2
 from typing import List
 import argparse
-import pathlib
 from lxml import etree
 import os
 import cairosvg
 
-
-import argparse
-import os
-
 parser = argparse.ArgumentParser()
 parser.add_argument("--checkonly", action="store_true", help="Run checks only")
+parser.add_argument("--new", action="store_true", help="Run a new Release")
 parser.add_argument('ARCTICONS_DIR', type=str, help='Path to the Arcticons directory')
 
 args = parser.parse_args()
@@ -86,129 +81,39 @@ def natural_sort_key(s: str, _nsre=re.compile('([0-9]+)')):
 
 
 def create_new_drawables(svgdir: str,newdrawables:str) -> None:
+
+    drawable = re.compile(r'drawable="([\w_]+)"')
+    
+    # Get all in New
+    newDrawables = set()
+    if not args.new:
+        with open(newdrawables) as file:
+            lines = file.readlines()
+            for line in lines:
+                new = re.search(drawable, line)
+                if new:
+                    newDrawables.add(new.group(1))
+
+    for file_path in glob.glob(f"{svgdir}/*.svg"):
+        file = os.path.basename(file_path)
+        name = file[:-4]
+        newDrawables.add(name)
+
+    sortedNewDrawables = sorted(newDrawables)
+
     drawable_pre = '\t<item drawable="'
     drawable_suf = '" />\n'
     if os.path.exists(newdrawables):
         os.remove(newdrawables)
     with open(newdrawables, 'w',encoding="utf-8") as fp:
         fp.write('<?xml version="1.0" encoding="utf-8"?>\n<resources>\n\t<version>1</version>\n\t<category title="New" />\n')
-        for file_path in glob.glob(f"{svgdir}/*.svg"):
-            file= os.path.basename(file_path)
-            name = file[:-4]
-            fp.write(f'{drawable_pre}{name}{drawable_suf}')
+        for drawable in sortedNewDrawables:
+            fp.write(f'{drawable_pre}{drawable}{drawable_suf}')
         fp.write('</resources>\n')
         fp.close
 
-def merge_new_drawables(pathxml: str, pathnewxml:str, assetpath:str, iconsdir:str, xmldir: str, assetsdir:str,appfilterpath:str):
-
-    drawables = []
-    folder = []
-    calendar = []
-    google = []
-    microsoft = []
-    emoji = []
-    numbers = []
-    symbols = []
-    number = []
-    drawable = re.compile(r'drawable="([\w_]+)"')
-    
-    # Get all in New
-    newDrawables = []
-    with open(pathnewxml) as file:
-        lines = file.readlines()
-        for line in lines:
-            new = re.search(drawable,line)
-            if new:
-                newDrawables.append(new.groups(0)[0])
-    newDrawables.sort()
-
-    # collect existing drawables
-    for dir_ in sorted(Path(iconsdir).glob('*.svg'), key=natural_sort_key):
-        file_ = dir_.name
-        new = file_[:file_.rindex('.')]
-        if not new in newDrawables:
-            if new.startswith('folder_'):
-                folder.append(new)
-            elif new.startswith('calendar_'):
-                calendar.append(new)
-            elif new.startswith('google_'):
-                google.append(new)
-            elif new.startswith('microsoft_') or new.startswith('xbox'):
-                microsoft.append(new)
-            elif new.startswith('emoji_'):
-                emoji.append(new)
-            elif new.startswith('letter_') or new.startswith('number_') or new.startswith('currency_') or new.startswith('symbol_'):
-                symbols.append(new)
-            elif new.startswith('_'):
-                number.append(new)
-            else:
-                drawables.append(new)
-
-    newIcons= len(newDrawables)
+    newIcons= len(newDrawables)   
     print("There are %i new icons"% newIcons)
-    # remove duplicates and sort
-    drawables = list(set(drawables))
-    drawables.sort()
-    folder = list(set(folder))
-    folder.sort()
-    calendar = list(set(calendar))
-    calendar.sort()
-    google = list(set(google))
-    google.sort()
-    microsoft = list(set(microsoft))
-    microsoft.sort()
-    emoji = list(set(emoji))
-    emoji.sort()
-    
-    # build
-    output = '<?xml version="1.0" encoding="utf-8"?>\n<resources>\n<version>1</version>\n\n\t<category title="New" />\n\t'
-    for newDrawable in newDrawables:
-        output += '<item drawable="%s" />\n\t' % newDrawable
-
-    output += '\n\t<category title="Folders" />\n\t'
-    for entry in folder:
-        output += '<item drawable="%s" />\n\t' % entry
-
-    output += '\n\t<category title="Calendar" />\n\t'
-    for entry in calendar:
-        output += '<item drawable="%s" />\n\t' % entry
-
-    output += '\n\t<category title="Google" />\n\t'
-    for entry in google:
-        output += '<item drawable="%s" />\n\t' % entry
-    
-    output += '\n\t<category title="Microsoft" />\n\t'
-    for entry in microsoft:
-        output += '<item drawable="%s" />\n\t' % entry
-
-    output += '\n\t<category title="Symbols" />\n\t'
-    for entry in symbols:
-        output += '<item drawable="%s" />\n\t' % entry
-    output += '\n\t<category title="Numbers" />\n\t'
-    for entry in numbers:
-        output += '<item drawable="%s" />\n\t' % entry
-    output += '\n\t<category title="0-9" />\n\t'
-    for entry in number:
-        output += '<item drawable="%s" />\n\t' % entry
-
-    output += '\n\t<category title="A" />\n\t'
-    letter = "a"
-
-    # iterate alphabet
-    for entry in drawables:
-        if not entry.startswith(letter):
-            letter = chr(ord(letter) + 1)
-            output += '\n\t<category title="%s" />\n\t' % letter.upper()
-        output += '<item drawable="%s" />\n\t' % entry
-    output += "\n</resources>"
-
-    # write to new_'filename'.xml in working directory
-    outFile = open(pathxml, "w", encoding='utf-8')
-    outFile.write(output)
-    copy2(pathxml, assetpath)
-    copy2(appfilterpath, assetsdir)
-    copy2(appfilterpath, xmldir)
-    os.remove(pathnewxml)
 
 #new appfilter sort
 def sortxml(path:str):
@@ -491,7 +396,6 @@ def main():
     create_icons(SIZES, OTHER_PATH ,EXPORT_LIGHT_DIR, BLACK_DIR, 'Light Mode')
     remove_svg(OTHER_PATH)
     sortxml(APPFILTER_PATH) 
-    merge_new_drawables(DRAWABLE_PATH,NEWDRAWABLE_PATH,ASSETS_PATH,WHITE_DIR, RES_XML_PATH,ASSETS_PATH,APPFILTER_PATH)
 
 if __name__ == "__main__":
 	main()
