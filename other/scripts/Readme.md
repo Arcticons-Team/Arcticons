@@ -1,6 +1,73 @@
 # Scripts
 
-## 1. Check Drawable
+## 1. Preparerelease
+
+This Python script is designed to manage and modify the Arcticons icon pack. It provides functionality to check, create, and modify various aspects of the icon pack.
+
+### Usage
+
+#### Prerequisites
+
+Make sure you have the following dependencies installed:
+
+- `argparse`
+- `lxml`
+- `cairosvg`
+
+Install them using:
+
+```bash
+pip install argparse lxml cairosvg
+```
+
+#### Command Line Arguments
+
+- `--checkonly`: Run checks only, without making any modifications.
+- `--new`: Run for a new release. (Deletes previous new drawables XML file and creates a new one.)
+- `ARCTICONS_DIR`: Path to the Arcticons directory.
+
+#### Example
+
+```bash
+python preparerelease.py --checkonly /path/to/arcticons
+```
+
+### Functionality
+
+#### 1. Path Verification
+
+Verifies that the given path includes the "Arcticons" folder or if it is one level below. If not, it prompts the user to continue or exit.
+
+#### 2. Icon Color Modification
+
+Changes the color of SVG icons based on predefined rules.
+
+#### 3. SVG to PNG Conversion
+
+Converts SVG icons to PNG images and exports them to specific directories for Dark and Light modes.
+
+#### 4. Appfilter XML Sorting
+
+Sorts the appfilter XML file alphabetically.
+
+#### 5. New Drawables XML Creation
+
+Creates a new drawables XML file with a list of new icons.
+
+#### 6. Checks
+
+- **Defective Appfilter Entries:** Identifies and displays defective entries in the appfilter XML file.
+- **Wrong Line Attributes in SVGs:** Detects SVG files with incorrect line attributes and prompts the user to check them.
+- **Duplicate Appfilter Entries:** Finds and displays duplicate entries in the appfilter XML file.
+- **Missing Drawables:** Identifies non-existent drawables in the appfilter XML file.
+
+### How to Run
+
+1. Open a terminal.
+2. Navigate to the directory containing the script.
+3. Run the script with the necessary command line arguments.
+
+## 2. Check Drawable
 
 ### Summary of the function 
 
@@ -38,7 +105,7 @@ You can also use the --help option to get more information about the script's ar
 
 This will display the help message for the script, which provides a brief description of the arguments and their purpose.
 
-## 2. Duplicates
+## 3. Duplicates
 
 ### Summary of the function 
 
@@ -72,7 +139,7 @@ To use this script, you will need to have Python and the lxml library installed 
 
 4. You can then open the found_duplicates.xml file to see the list of duplicates.
 
-## 3. Compare
+## 4. Compare
 
 ### Summary of the function
 
