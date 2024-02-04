@@ -1,3 +1,9 @@
+### 8.7.1
+###### Released: Feb 04, 2024
+* 🎉 81 new and updated icons! (thanks Kaiserdragon2, ZachIndigo, Sande-Santhosh, Yetanother-user, Alchemiker, Dgcampbe, Knsrinath, Drenat)
+* ✨ Updates to make sure lots of apps work again.
+* 🔥 8710 icons in total!
+
 ### 8.6.3
 ###### Released: Jan 25, 2024
 * 🎉 380 new and updated icons! (thanks Kaiserdragon, AxFo, Elaborendum, Ayecptn, SagXD, Dgcampbe, Npnpatidar, TotallyAvailable, Alchemiker, Dumdus, Dioxias, Dazewell, rahulTPatil, JRBros2346, Plasmid-zz, KR4U7H3R, ThatBlueEnder, Sande-Santhosh, MikeTheGreat, Andrew-aiken, LukeVader-IV, Gaenseblume, DeltriDev, Petlyh
