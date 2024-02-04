@@ -25,6 +25,7 @@ public class XMLCreator {
     private static List<String> microsoft = new ArrayList<>();
     private static List<String> emoji = new ArrayList<>();
     private static List<String> numbers = new ArrayList<>();
+    private static List<String> letters = new ArrayList<>();
     private static List<String> symbols = new ArrayList<>();
     private static List<String> number = new ArrayList<>();
 
@@ -77,6 +78,8 @@ public class XMLCreator {
         Collections.sort(symbols);
         numbers = new ArrayList<>(new HashSet<>(numbers));
         Collections.sort(numbers);
+        letters = new ArrayList<>(new HashSet<>(letters));
+        Collections.sort(letters);
         number = new ArrayList<>(new HashSet<>(number));
         Collections.sort(number);
         emoji = new ArrayList<>(new HashSet<>(emoji));
@@ -91,8 +94,10 @@ public class XMLCreator {
         appendCategory(output, "Calendar", calendar);
         appendCategory(output, "Google", google);
         appendCategory(output, "Microsoft", microsoft);
+        appendCategory(output, "Emoji", emoji);
         appendCategory(output, "Symbols", symbols);
         appendCategory(output, "Numbers", numbers);
+        appendCategory(output, "Letters", letters);
         appendCategory(output, "0-9", number);
         appendCategory(output, "A-Z", drawables);
 
@@ -133,7 +138,9 @@ public class XMLCreator {
             microsoft.add(newDrawable);
         } else if (newDrawable.startsWith("emoji_")) {
             emoji.add(newDrawable);
-        } else if (newDrawable.startsWith("letter_") || newDrawable.startsWith("currency_") || newDrawable.startsWith("symbol_")) {
+        } else if (newDrawable.startsWith("letter_")){
+            letters.add(newDrawable);
+        } else if (newDrawable.startsWith("currency_") || newDrawable.startsWith("symbol_")) {
             symbols.add(newDrawable);
         } else if (newDrawable.startsWith("number_")){
             numbers.add(newDrawable);
