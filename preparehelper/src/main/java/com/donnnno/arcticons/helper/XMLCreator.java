@@ -73,6 +73,12 @@ public class XMLCreator {
         Collections.sort(google);
         microsoft = new ArrayList<>(new HashSet<>(microsoft));
         Collections.sort(microsoft);
+        symbols = new ArrayList<>(new HashSet<>(symbols));
+        Collections.sort(symbols);
+        numbers = new ArrayList<>(new HashSet<>(numbers));
+        Collections.sort(numbers);
+        number = new ArrayList<>(new HashSet<>(number));
+        Collections.sort(number);
         emoji = new ArrayList<>(new HashSet<>(emoji));
         Collections.sort(emoji);
 
@@ -127,9 +133,10 @@ public class XMLCreator {
             microsoft.add(newDrawable);
         } else if (newDrawable.startsWith("emoji_")) {
             emoji.add(newDrawable);
-        } else if (newDrawable.startsWith("letter_") || newDrawable.startsWith("number_")
-                || newDrawable.startsWith("currency_") || newDrawable.startsWith("symbol_")) {
+        } else if (newDrawable.startsWith("letter_") || newDrawable.startsWith("currency_") || newDrawable.startsWith("symbol_")) {
             symbols.add(newDrawable);
+        } else if (newDrawable.startsWith("number_")){
+            numbers.add(newDrawable);
         } else if (newDrawable.startsWith("_")) {
             number.add(newDrawable);
         } else {
