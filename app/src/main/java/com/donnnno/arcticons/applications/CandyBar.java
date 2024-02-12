@@ -56,8 +56,7 @@ public class CandyBar extends CandyBarApplication {
 
         configuration.setShowTabAllIcons(true);
         configuration.setCategoryForTabAllIcons(new String[]{
-                "Folders", "Calendar", "Letters", "Numbers", "A", "B", "C", "D", "E", "F", "G", "H", "I",
-                "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"
+                "New","Folders","Calendar","Google","Microsoft","Emoji","Symbols","Numbers","Letters","0-9","A-Z"
         });
 
         DonationLink[] donationLinks = new DonationLink[]{
