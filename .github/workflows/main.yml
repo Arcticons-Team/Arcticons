@@ -1,5 +1,7 @@
 name: Parse and Combine Pull Request
 
+permissions: write-all read-all
+
 on:
   pull_request:
     branches:
