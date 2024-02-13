@@ -44,7 +44,7 @@ You'll notice that the fill color is white and stroke colour is black.
 
 - On the top-right corner, click the Fork button. You'll get your very own clone of Arcticons!
 
-- Click "other" directory
+- Click "newicons" directory
 
 - Click "Add file" > Upload files > choose your files
 
