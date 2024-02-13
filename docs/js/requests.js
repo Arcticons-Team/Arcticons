@@ -1,5 +1,5 @@
 // Array of Link Images
-const imageNames = ['img/requests/google-play-store.svg', 'img/requests/f-droid.svg', 'img/requests/IzzyOnDroidLogo.svg', 'img/requests/galaxystore.png', 'img/requests/search-globe.svg'];
+const imageNames = ['img/requests/google-play-store.svg', 'img/requests/f-droid.svg', 'img/requests/izzyondroid.svg', 'img/requests/galaxystore.svg', 'img/requests/search-globe.svg'];
 var appEntriesDataGlobal = []; // Store the original data for sorting
 // Lazy loading and virtualization
 const batchSize = 50; // Number of rows to load at a time
