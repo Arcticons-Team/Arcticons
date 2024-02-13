@@ -172,7 +172,7 @@ function updateTable(data) {
 
 // Copy to clipboard function
 function copyToClipboard(index) {
-    const entry = appEntriesData[index];
+    const entry = appEntriesDataGlobal[index];
     const copyText = `${entry.appNameAppfilter}\n${entry.appfilter}`;
     navigator.clipboard.writeText(copyText).then(() => {
         // Show the copy notification
