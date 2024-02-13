@@ -112,6 +112,8 @@ public class XMLCreator {
         copyFile(pathXml, assetPath+"/drawable.xml");
         copyFile(appFilterPath, assetPath+"/appfilter.xml");
         copyFile(appFilterPath, xmlDir+"/appfilter.xml");
+        copyFile(appFilterPath, assetPath+"/icon_config.xml");
+        copyFile(appFilterPath, xmlDir+"/icon_config.xml");
     }
 
     private static void appendCategory(StringBuilder output, String title, List<String> entries) {

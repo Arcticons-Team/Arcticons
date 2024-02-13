@@ -64,9 +64,9 @@ public class Start {
 
 
             xmlDir =rootDir+"/app/src/main/res/xml";
-            newXML = rootDir+"/other/newdrawables.xml";
+            newXML = rootDir+"/generated/newdrawables.xml";
             assetsDir = rootDir + "/app/src/main/assets";
-            appFilter = rootDir + "/other/appfilter.xml";
+            appFilter = rootDir + "/generated/appfilter.xml";
 
 
         try {
