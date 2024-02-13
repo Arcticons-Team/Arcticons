@@ -8,13 +8,13 @@
 
 1. Fork the repository to your GitHub account
 2. Download the templates provided [here](templates) and design the new icons
-3. Upload the SVG icons to the **/other** folder *in your repository*.
+3. Upload the SVG icons to the **/newicons** folder *in your repository*.
 4. Provide the activity names of the new apps, you can gather them easily with [Icon Request](https://github.com/Kaiserdragon2/IconRequest/releases).
    - These should look something like `com.donnnno.arcticons/com.donnnno.arcticons.MainActivity`
-   - Add them to the `appfilter.xml` in the **/other** folder with a code editor like VS Code (LF)
+   - Add them to the `appfilter.xml` in the **/newicons** folder with a code editor like VS Code (LF)
 5. Create a pull request and explain your changes.
 6. Give yourself an entry at the bottom of `app/src/main/res/xml/contributors.xml` to be included in the credits!
-7. If you're interested in doing some icon requests, take a look at our [requests.txt](https://github.com/Arcticons-Team/Arcticons/blob/main/other/requests.txt) list! When you've completed a request, you **don't** need to remove it from the list.
+7. If you're interested in doing some icon requests, take a look at our [requests](https://arcticons-team.github.io/Arcticons/requests.html) list!
 
 ### Basic rules
 
@@ -27,7 +27,7 @@
 - we don't accept files that are directly image traced, they are a mess to work with and look sloppy
 - if you use any letters or numbers make sure to use the font document from the templates folder
 - make sure that your SVG file names do not contain any special characters like +-.,!
-- upload the SVG files into the `/other` directory
+- upload the SVG files into the `/newicons` directory
 
 ### Some features
 
