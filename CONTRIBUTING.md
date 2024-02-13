@@ -9,7 +9,7 @@
 1. Fork the repository to your GitHub account
 2. Download the templates provided [here](templates) and design the new icons
 3. Upload the SVG icons to the **/newicons** folder *in your repository*.
-4. Provide the activity names of the new apps, you can gather them easily with [Icon Request](https://github.com/Kaiserdragon2/IconRequest/releases).
+4. Provide the activity names of the new apps, you can gather them easily with [Icon Request](https://github.com/Kaiserdragon2/IconRequest/).
    - These should look something like `com.donnnno.arcticons/com.donnnno.arcticons.MainActivity`
    - Add them to the `appfilter.xml` in the **/newicons** folder with a code editor like VS Code (LF)
 5. Create a pull request and explain your changes.
@@ -20,7 +20,7 @@
 
 - use the template files as a reference, the document size should be *48px*
 - lines have a thickness of **1px (Inkscape), 1pt (Illustrator)**
-- lines should have a **round cap & round corner﻿**
+- lines should have a **round cap & round corners**
 - the icons should be drawn in **white**
 - dots should be a circle with a **radius of 0,5px** (i.e. total size = 1,5 x 1,5 px)
 - try to be consistent with sizing your icons, make sure it's not to big or small (use the templates as a reference)
