@@ -88,15 +88,23 @@ fetch('https://raw.githubusercontent.com/Arcticons-Team/Arcticons/main/generated
 
 
 
-// Filter existing appfilter
-function filterAppfilter(appEntriesData, appfilterContent) {
-    const appfilterItems = parseAppfilter(appfilterContent);
-    console.log(appEntriesData[0].appfilter.trim().split('"')[1].trim());
-    return appEntriesData.filter(entry => {
-        const entryAppfilter = entry.appfilter.trim().split('"')[1].trim(); // Assuming entry.appfilter has a format like 'component="..."' and we want to extract the content within the double quotes
-        return !appfilterItems.some(component => component === entryAppfilter);
-    });
-}
+    // Filter appEntriesData based on appfilter content
+    function filterAppfilter(appEntriesData, appfilterContent) {
+        const appfilterItems = parseAppfilter(appfilterContent);
+        const filteredOutEntries = [];
+    
+        const filteredData = appEntriesData.filter(entry => {
+            const entryAppfilter = entry.appfilter.trim().split('"')[1].trim();
+            // Check if the entry is filtered out
+            const isFiltered = appfilterItems.some(component => component === entryAppfilter);  
+            if (isFiltered) {
+                filteredOutEntries.push(entryAppfilter);
+            } 
+            return !isFiltered;
+        });
+        console.log("Filtered out entries:", filteredOutEntries); 
+        return filteredData;
+    }
 
 
 // Parse appfilter content
