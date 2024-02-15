@@ -207,9 +207,7 @@ const filterAppEntries = debounce(() => {
     const filteredData = appEntriesData.filter(entry =>
         entry.appName.toLowerCase().includes(searchInput)
     );
-    console.log(filteredData)
-    const appEntriesContainer = document.getElementById('app-entries-container');
-
+    // If no results are found, show a notification
     if (filteredData.length === 0) {
         document.getElementById('search-notification').innerText = `No results found.`;
         document.getElementById('search-notification').style.display = 'block';
