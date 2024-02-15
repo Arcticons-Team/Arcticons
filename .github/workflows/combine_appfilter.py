@@ -21,6 +21,7 @@ def combine_xml_files(input_files, output_file):
     # Iterate through each input file
     for input_file in input_files:
         try:
+            print(f"Processing {input_file}...")
             tree = ET.parse(input_file)
             root = tree.getroot()
 
@@ -33,7 +34,8 @@ def combine_xml_files(input_files, output_file):
                     unique_components.add(component)
                     # Append the item to the output XML tree
                     output_root.append(item)
-        except:
+        except Exception as e:
+            print(f"Error parsing XML file: {e}")
             continue
 
     # Sort the items before writing to the output file
@@ -76,9 +78,13 @@ def combine_all_appfilters():
         
         # Get the files from the pull request
         files = pr.get_files()
+        for file in files:
+            print(f"File: {file.filename}")
         
         # Find the appfilter.xml file
-        appfilter_files = [file.filename for file in files if file.filename == 'appfilter.xml']
+        appfilter_files = [file.filename for file in files if file.filename == 'newicons/appfilter.xml']
+        for appfilter_file in appfilter_files:
+            print(f"Found appfilter.xml: {appfilter_file}")
         appfilter_files.append('newicons/appfilter.xml')  # Add other source file
 
         # Combine the appfilter.xml files
