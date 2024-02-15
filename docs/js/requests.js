@@ -79,6 +79,9 @@ fetch('https://raw.githubusercontent.com/Arcticons-Team/Arcticons/main/generated
                 const filteredData = filterAppfilter(appEntriesData, appfilterContent);
                 appEntriesData = filteredData;
                 appEntriesDataGlobal = filteredData;
+                const table = document.querySelector('table');
+                const headers = table.querySelectorAll('thead th');
+                headers[2].classList.add('desc');
                 // Initial render
                 lazyLoadAndRender();
             })
@@ -216,7 +219,7 @@ const filterAppEntries = debounce(() => {
         document.getElementById('search-notification').style.display = 'none';
         updateTable(filteredData);
     }
-}, 1000);
+}, 500);
 
 // Sort table function
 function sortTable(columnIndex) {
