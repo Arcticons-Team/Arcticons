@@ -120,11 +120,11 @@ body {
 }
 
 .asc::after {
-    border-bottom: 4px solid black;
+    border-bottom: 4px solid #000000;
 }
 
 .desc::after {
-    border-top: 4px solid black;
+    border-top: 4px solid #000000;
 }
 
 table {
@@ -192,5 +192,11 @@ img {
     }
     img {
         filter: none;
+    }
+    .asc::after {
+        border-bottom: 4px solid white;
+    }
+    .desc::after {
+        border-top: 4px solid white;
     }
 }

@@ -4,8 +4,10 @@ var appEntriesDataGlobal = []; // Store the original data for sorting
 // Lazy loading and virtualization
 const batchSize = 50; // Number of rows to load at a time
 let startIndex = 0; // Start index for lazy loading
-
 let appEntriesData = []; // Store the original data for sorting
+// Global variables to track sorting column and direction
+let sortingColumnIndex = 2; 
+let sortingDirection = 'desc';
 
 // Debounce function for search input
 const debounce = (func, delay) => {
@@ -79,6 +81,9 @@ fetch('https://raw.githubusercontent.com/Arcticons-Team/Arcticons/main/generated
                 const filteredData = filterAppfilter(appEntriesData, appfilterContent);
                 appEntriesData = filteredData;
                 appEntriesDataGlobal = filteredData;
+                const table = document.querySelector('table');
+                const headers = table.querySelectorAll('thead th');
+                headers[sortingColumnIndex].classList.add(sortingDirection);
                 // Initial render
                 lazyLoadAndRender();
             })
@@ -88,15 +93,23 @@ fetch('https://raw.githubusercontent.com/Arcticons-Team/Arcticons/main/generated
 
 
 
-// Filter existing appfilter
-function filterAppfilter(appEntriesData, appfilterContent) {
-    const appfilterItems = parseAppfilter(appfilterContent);
-    console.log(appEntriesData[0].appfilter.trim().split('"')[1].trim());
-    return appEntriesData.filter(entry => {
-        const entryAppfilter = entry.appfilter.trim().split('"')[1].trim(); // Assuming entry.appfilter has a format like 'component="..."' and we want to extract the content within the double quotes
-        return !appfilterItems.some(component => component === entryAppfilter);
-    });
-}
+    // Filter appEntriesData based on appfilter content
+    function filterAppfilter(appEntriesData, appfilterContent) {
+        const appfilterItems = parseAppfilter(appfilterContent);
+        const filteredOutEntries = [];
+    
+        const filteredData = appEntriesData.filter(entry => {
+            const entryAppfilter = entry.appfilter.trim().split('"')[1].trim();
+            // Check if the entry is filtered out
+            const isFiltered = appfilterItems.some(component => component === entryAppfilter);  
+            if (isFiltered) {
+                filteredOutEntries.push(entryAppfilter);
+            } 
+            return !isFiltered;
+        });
+        console.log("Filtered out entries:", filteredOutEntries); 
+        return filteredData;
+    }
 
 
 // Parse appfilter content
@@ -194,9 +207,7 @@ const filterAppEntries = debounce(() => {
     const filteredData = appEntriesData.filter(entry =>
         entry.appName.toLowerCase().includes(searchInput)
     );
-    console.log(filteredData)
-    const appEntriesContainer = document.getElementById('app-entries-container');
-
+    // If no results are found, show a notification
     if (filteredData.length === 0) {
         document.getElementById('search-notification').innerText = `No results found.`;
         document.getElementById('search-notification').style.display = 'block';
@@ -206,9 +217,10 @@ const filterAppEntries = debounce(() => {
         }, 5000);
     } else {
         document.getElementById('search-notification').style.display = 'none';
-        updateTable(filteredData);
+        const filteredandsortedData = sortData(sortingDirection, sortingColumnIndex, [...filteredData])
+        updateTable(filteredandsortedData);
     }
-}, 1000);
+}, 500);
 
 // Sort table function
 function sortTable(columnIndex) {
@@ -216,7 +228,7 @@ function sortTable(columnIndex) {
     const headers = table.querySelectorAll('thead th');
 
     // Determine the sorting direction
-    const sortingDirection = headers[columnIndex].classList.contains('asc') ? 'desc' : 'asc';
+    sortingDirection = headers[columnIndex].classList.contains('asc') ? 'desc' : 'asc';
 
     // Remove sorting indicators from all headers
     headers.forEach(header => {
@@ -225,8 +237,14 @@ function sortTable(columnIndex) {
 
     // Add the appropriate sorting class to the clicked header
     headers[columnIndex].classList.add(sortingDirection);
+    sortingColumnIndex = columnIndex;
+    // Sort the data
+    const sortedData = sortData(sortingDirection, columnIndex, [...appEntriesDataGlobal]);
+    
+    updateTable(sortedData);
+}
 
-    const sortedData = [...appEntriesData];
+function sortData(sortingDirection, columnIndex, sortedData){
     sortedData.sort((a, b) => {
         if (columnIndex === 3) { // Check if sorting the 'Last Requested' column
             const cellA = getCellValue(a, columnIndex);
@@ -249,7 +267,7 @@ function sortTable(columnIndex) {
             return sortingDirection === 'asc' ? cellA.localeCompare(cellB) : cellB.localeCompare(cellA);
         }
     });
-    updateTable(sortedData);
+    return sortedData;
 }
 
 // Initial table rendering
