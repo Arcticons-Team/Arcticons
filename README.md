@@ -21,7 +21,10 @@ Powered by a community of icon creators all around the world!
 
 ## Check out our other versions
 
-
+[<img alt="Arcticons" src="github/arcticons.png">](https://arcticons-team.github.io/Arcticons/#dark) 
+[<img alt="Arcticons" src="github/arcticons_black.png">](https://arcticons-team.github.io/Arcticons/#light) 
+[<img alt="Arcticons" src="github/arcticons_you.png">](https://arcticons-team.github.io/Arcticons/#you) 
+[<img alt="Arcticons" src="github/arcticons_day_night.webp">](https://arcticons-team.github.io/Arcticons/#daynight) 
 
 ## Screenshots
 
