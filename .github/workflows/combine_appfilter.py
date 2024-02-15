@@ -21,6 +21,7 @@ def combine_xml_files(input_files, output_file):
     # Iterate through each input file
     for input_file in input_files:
         try:
+            print(f"Processing {input_file}...")
             tree = ET.parse(input_file)
             root = tree.getroot()
 
@@ -33,7 +34,8 @@ def combine_xml_files(input_files, output_file):
                     unique_components.add(component)
                     # Append the item to the output XML tree
                     output_root.append(item)
-        except:
+        except Exception as e:
+            print(f"Error parsing XML file: {e}")
             continue
 
     # Sort the items before writing to the output file
