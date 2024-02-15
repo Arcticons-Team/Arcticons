@@ -4,8 +4,10 @@ var appEntriesDataGlobal = []; // Store the original data for sorting
 // Lazy loading and virtualization
 const batchSize = 50; // Number of rows to load at a time
 let startIndex = 0; // Start index for lazy loading
-
 let appEntriesData = []; // Store the original data for sorting
+// Global variables to track sorting column and direction
+let sortingColumnIndex = 2; 
+let sortingDirection = 'desc';
 
 // Debounce function for search input
 const debounce = (func, delay) => {
@@ -81,7 +83,7 @@ fetch('https://raw.githubusercontent.com/Arcticons-Team/Arcticons/main/generated
                 appEntriesDataGlobal = filteredData;
                 const table = document.querySelector('table');
                 const headers = table.querySelectorAll('thead th');
-                headers[2].classList.add('desc');
+                headers[sortingColumnIndex].classList.add(sortingDirection);
                 // Initial render
                 lazyLoadAndRender();
             })
@@ -217,7 +219,8 @@ const filterAppEntries = debounce(() => {
         }, 5000);
     } else {
         document.getElementById('search-notification').style.display = 'none';
-        updateTable(filteredData);
+        const filteredandsortedData = sortData(sortingDirection, sortingColumnIndex, [...filteredData])
+        updateTable(filteredandsortedData);
     }
 }, 500);
 
@@ -227,7 +230,7 @@ function sortTable(columnIndex) {
     const headers = table.querySelectorAll('thead th');
 
     // Determine the sorting direction
-    const sortingDirection = headers[columnIndex].classList.contains('asc') ? 'desc' : 'asc';
+    sortingDirection = headers[columnIndex].classList.contains('asc') ? 'desc' : 'asc';
 
     // Remove sorting indicators from all headers
     headers.forEach(header => {
@@ -236,8 +239,14 @@ function sortTable(columnIndex) {
 
     // Add the appropriate sorting class to the clicked header
     headers[columnIndex].classList.add(sortingDirection);
+    sortingColumnIndex = columnIndex;
+    // Sort the data
+    const sortedData = sortData(sortingDirection, columnIndex, [...appEntriesDataGlobal]);
+    
+    updateTable(sortedData);
+}
 
-    const sortedData = [...appEntriesData];
+function sortData(sortingDirection, columnIndex, sortedData){
     sortedData.sort((a, b) => {
         if (columnIndex === 3) { // Check if sorting the 'Last Requested' column
             const cellA = getCellValue(a, columnIndex);
@@ -260,7 +269,7 @@ function sortTable(columnIndex) {
             return sortingDirection === 'asc' ? cellA.localeCompare(cellB) : cellB.localeCompare(cellA);
         }
     });
-    updateTable(sortedData);
+    return sortedData;
 }
 
 // Initial table rendering
