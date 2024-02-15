@@ -80,7 +80,7 @@ def combine_all_appfilters():
             print(f"File: {file.filename}")
         
         # Find the appfilter.xml file
-        appfilter_files = [file.filename for file in files if file.filename == 'appfilter.xml']
+        appfilter_files = [file.filename for file in files if file.filename == 'newicons/appfilter.xml']
         for appfilter_file in appfilter_files:
             print(f"Found appfilter.xml: {appfilter_file}")
         appfilter_files.append('newicons/appfilter.xml')  # Add other source file
