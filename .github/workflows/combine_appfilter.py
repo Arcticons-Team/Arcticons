@@ -67,6 +67,12 @@ def calculate_sha1(content):
     return sha1.hexdigest()
 
 def combine_all_appfilters():
+    appfilter_files = ['newicons/appfilter.xml']
+
+    # Combine the appfilter.xml files
+    print(f"Combining {appfilter_files} appfilter.xml files...")
+    combine_xml_files(appfilter_files, 'combined_appfilter.xml')
+
     print("Fetching open pull requests...")
     
     # Get all open pull requests
@@ -78,17 +84,29 @@ def combine_all_appfilters():
         
         # Get the files from the pull request
         files = pr.get_files()
+        
+        # Check if the pull request has an appfilter.xml file
         for file in files:
             print(f"File: {file.filename}")
-        
-        # Find the appfilter.xml file
-        appfilter_files = [file.filename for file in files if file.filename == 'newicons/appfilter.xml']
-        for appfilter_file in appfilter_files:
-            print(f"Found appfilter.xml: {appfilter_file}")
-        appfilter_files.append('newicons/appfilter.xml')  # Add other source file
+            if file.filename == 'newicons/appfilter.xml':
+                print(f"Found appfilter.xml: {file.filename}")
+                try:
+                    response = requests.get(file.raw_url)
+                    if response.status_code == 200:
+                        content = response.content.decode('utf-8')
+                        with open('newicons/new_appfilter.xml', 'w', encoding='utf-8') as f:
+                            f.write(content)
+                        print(f"Downloaded appfilter.xml: {file.filename}")
+                        appfilter_files= ['newicons/new_appfilter.xml']  # Add the appfilter.xml file to the list
+                        appfilter_files.append('combined_appfilter.xml')  # Add the combined_appfilter.xml file to the list
 
-        # Combine the appfilter.xml files
-        combine_xml_files(appfilter_files, 'combined_appfilter.xml')
+                        # Combine the appfilter.xml files
+                        print(f"Combining {appfilter_files} appfilter.xml files...")
+                        combine_xml_files(appfilter_files, 'combined_appfilter.xml')
+
+                except Exception as e:
+                    print(f"Error downloading appfilter.xml: {e}")
+                    continue
         
     print("Combined appfilter.xml from all pull requests.")
     
