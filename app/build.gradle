@@ -3,14 +3,14 @@ apply plugin: 'com.android.application'
 // build.gradle in the 'app' module
 
 android {
-    compileSdk 34
+    compileSdk rootProject.ext.CompileSdk
 
     defaultConfig {
         applicationId "com.donnnno.arcticons"
         minSdkVersion rootProject.ext.MinSdk
         targetSdkVersion rootProject.ext.TargetSdk
-        versionCode 127
-        versionName '8.3.1'
+        versionCode 130
+        versionName '8.7.1-hotfix'
         multiDexEnabled true
 
         // Naming app bundles
@@ -113,7 +113,7 @@ android {
 dependencies {
 
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    implementation 'com.github.donnnno:candybar-foss:3.18.6'
+    implementation 'com.github.donnnno:candybar-foss:3.19.0-hotfix'
 }
 
 import com.android.tools.profgen.ArtProfileKt

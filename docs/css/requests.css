@@ -1,0 +1,202 @@
+@font-face {
+    font-family: 'Inter';
+    font-weight: 100 900;
+    font-display: swap;
+    font-style: oblique 0deg 10deg;
+    font-variation-settings: "slnt" 0deg;
+    src: url("../img/Inter.var.woff2") format("woff2");
+  }
+
+body {
+    font-family: 'Inter', Arial, Helvetica, sans-serif, sans-serif;
+    margin-left: 4vw;
+    margin-right: 4vw;
+    background-color: white;
+}
+
+.app-entry {
+    display: none;
+    /* Hide initially */
+}
+
+.copy-button {
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 5px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-bottom: 10px;
+    border-radius: 100px;
+}
+
+.copy-button:hover {
+    background-color: #409943;
+}
+
+#copy-notification {
+    display: none;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    z-index: 1;
+}
+
+#search-notification {
+    display: none;
+    background-color: #8b1708;
+    color: white;
+    padding: 10px;
+    position: fixed;
+    top: 20px;
+    right: 10px;
+    z-index: 1;
+}
+
+#search-container {
+    display: flex;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#search-input {
+    margin: 1em 0;
+    width: calc(100% - .5rem - 16px);
+    box-sizing: border-box !important;
+    overflow: visible;
+    min-height: 3rem;
+    border-radius: 4em;
+    background-color: #eee;
+    border: 1.5px solid #171717;
+    box-shadow: none;
+    outline: none;
+    padding: 0.8em 1.2em;    
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'Inter', Arial, Helvetica, sans-serif, sans-serif;
+
+}
+
+.table-container {
+    max-height: 1200px;
+    /* Set maximum height for scrollable area */
+    overflow-y: auto;
+    /* Enable vertical scrolling */
+}
+
+.table-container thead th {
+    position: sticky;
+    /* make the table heads sticky */
+    top: 0px;
+    /* table head will be placed from the top of the table and sticks to it */
+}
+
+.sortable-header {
+    cursor: pointer;
+    /* Add cursor style for sorting */
+    position: relative;
+}
+
+.sortable-header::after {
+    content: '';
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+}
+
+.asc::after {
+    border-bottom: 4px solid #000000;
+}
+
+.desc::after {
+    border-top: 4px solid #000000;
+}
+
+table {
+    width: 99.5%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+td:nth-child(1) {
+    width: 35%;
+}
+
+td:nth-child(2) {
+    width: 35%;
+    min-width: 300px;
+}
+
+td:nth-child(3) {
+    width: 10%;
+}
+
+td:nth-child(4) {
+    width: 15%;
+}
+
+td:nth-child(5) {
+    max-width: 100px;
+    ;
+}
+
+tr:nth-child(even) {
+    background-color: #ebebeb;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+img {
+    filter: invert();
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #171717;
+        color: white;
+    }
+    tr:nth-child(even) {
+        background-color: rgb(37, 37, 37);
+    }
+    th {
+        background-color: #0f0f0f;
+    }
+    img {
+        filter: none;
+    }
+    .asc::after {
+        border-bottom: 4px solid white;
+    }
+    .desc::after {
+        border-top: 4px solid white;
+    }
+}

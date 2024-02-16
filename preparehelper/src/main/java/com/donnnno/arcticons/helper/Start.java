@@ -18,6 +18,10 @@ public class Start {
         String sourceDir = rootDir + "/icons/white";
         String resDir;
         String destDir;
+        String xmlDir;
+        String newXML;
+        String assetsDir;
+        String appFilter;
         System.out.println("root Dir: " + rootPath);
         System.out.println("root Dir Name: " + rootDirName);
         if (args.length > 0) {
@@ -57,12 +61,20 @@ public class Start {
             }
             System.out.println("SvgToVector task completed");
             // Read appfilter xml and create icon, drawable xml file.
-                /* try {
-            ConfigProcessor.loadAndCreateConfigs(appFilterFile, resDir);
+
+
+            xmlDir =rootDir+"/app/src/main/res/xml";
+            newXML = rootDir+"/generated/newdrawables.xml";
+            assetsDir = rootDir + "/app/src/main/assets";
+            appFilter = rootDir + "/generated/appfilter.xml";
+
+
+        try {
+            XMLCreator.mergeNewDrawables(xmlDir+"/drawable.xml",newXML,assetsDir,sourceDir,xmlDir,appFilter);
+            System.out.println("XML task completed");
         } catch (Exception e) {
             e.printStackTrace();
         }
-        */
         }
     }
 }

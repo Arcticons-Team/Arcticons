@@ -1,13 +1,13 @@
-[<img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/Donnnno/Arcticons">](https://github.com/Donnnno/Arcticons/releases/latest) 
+[<img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/Donnnno/Arcticons">](https://github.com/Arcticons-Team/Arcticons/releases/latest) 
 [<img alt="F-Droid" src="https://img.shields.io/f-droid/v/com.donnnno.arcticons">](https://f-droid.org/packages/com.donnnno.arcticons) 
 <img alt="Google Play" src="https://img.shields.io/endpoint?color=green&logo=google-play&logoColor=green&url=https%3A%2F%2Fplay.cuzi.workers.dev%2Fplay%3Fi%3Dcom.donnnno.arcticons%26l%3DGoogle%2520Play%26m%3D%24version">
-[<img alt="GitHub" src="https://img.shields.io/github/downloads/donnnno/arcticons/total?label=github%20downloads">](https://github.com/Donnnno/Arcticons/releases/latest) 
-[<img alt="GitHub" src="https://img.shields.io/github/downloads/donnnno/arcticons/latest/total">](https://github.com/Donnnno/Arcticons/releases/latest) 
+[<img alt="GitHub" src="https://img.shields.io/github/downloads/donnnno/arcticons/total?label=github%20downloads">](https://github.com/Arcticons-Team/Arcticons/releases/latest) 
+[<img alt="GitHub" src="https://img.shields.io/github/downloads/donnnno/arcticons/latest/total">](https://github.com/Arcticons-Team/Arcticons/releases/latest) 
 
-<img src='https://raw.githubusercontent.com/Donnnno/Arcticons/main/github/header-background.png'>
+<img src='https://raw.githubusercontent.com/Arcticons-Team/Arcticons/main/github/header-background.png'>
 
 # Arcticons is a line-based icon pack for Android devices.
-With **over 8000 icons**, Arcticons is one of the largest free & open source icon-packs available. Featuring consistent and elegant handcrafted icons, giving you a minimalistic clutter-free experience on your phone.
+With **over 8300 icons**, Arcticons is one of the largest free & open source icon-packs available. Featuring consistent and elegant handcrafted icons, giving you a minimalistic clutter-free experience on your phone.
 Powered by a community of icon creators all around the world!
 <br>
 <br>
@@ -15,14 +15,14 @@ Powered by a community of icon creators all around the world!
 ## Get it from one of these stores
 [<img src="https://f-droid.org/badge/get-it-on.png" alt="Get it on F-Droid" height="90">](https://f-droid.org/packages/com.donnnno.arcticons)
 [<img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" height="90">](https://play.google.com/store/apps/details?id=com.donnnno.arcticons)<br>
-[<img src="https://camo.githubusercontent.com/35b4ec18c762358fb784f9e973f77cf6eb596f2240e69a4c6c093a836655d889/68747470733a2f2f692e6962622e636f2f71306d6463345a2f6765742d69742d6f6e2d6769746875622e706e67" alt="Get it on Github" height="90">](https://github.com/Donnnno/Arcticons/releases)
+[<img src="https://camo.githubusercontent.com/35b4ec18c762358fb784f9e973f77cf6eb596f2240e69a4c6c093a836655d889/68747470733a2f2f692e6962622e636f2f71306d6463345a2f6765742d69742d6f6e2d6769746875622e706e67" alt="Get it on Github" height="90">](https://github.com/Arcticons-Team/Arcticons/releases)
 [<img src="https://accrescent.app/badges/get-it-on.png" alt="Get it on Accrescent" height="90">](https://accrescent.app/app/com.donnnno.arcticons)
 
 
 ## Screenshots
 
-<img src='https://raw.githubusercontent.com/Donnnno/Arcticons/main/github/phonescreenshotsdark.jpg'>
-<img src='https://raw.githubusercontent.com/Donnnno/Arcticons/main/github/phonescreenshotslight.jpg'>
+<img src='https://raw.githubusercontent.com/Arcticons-Team/Arcticons/main/github/phonescreenshotsdark.jpg'>
+<img src='https://raw.githubusercontent.com/Arcticons-Team/Arcticons/main/github/phonescreenshotslight.jpg'>
 
 ## Donate
 
@@ -30,7 +30,7 @@ Providing a free icon-pack for everyone can cost a lot of time and effort. So if
 
 |Paypal|Liberapay|Ko-Fi|
 |---|---|---|
-|<a href="https://www.paypal.com/paypalme/onnovdd"><img height="40" alt="Donate using Paypal" src="https://github.com/Donnnno/Arcticons/blob/main/github/pp_button.svg"></a>|<a href="https://liberapay.com/Donno/donate"><img height="40" alt="Donate using Liberapay" src="https://github.com/Donnnno/Arcticons/blob/main/github/lp_button.svg"></a>|<a href="https://Ko-fi.com/donno_"><img height="40" alt="Donate using Ko-Fi" src="https://github.com/Donnnno/Arcticons/blob/main/github/kofi_button.svg"></a>
+|<a href="https://www.paypal.com/paypalme/onnovdd"><img height="40" alt="Donate using Paypal" src="https://github.com/Arcticons-Team/Arcticons/blob/main/github/pp_button.svg"></a>|<a href="https://liberapay.com/Donno/donate"><img height="40" alt="Donate using Liberapay" src="https://github.com/Arcticons-Team/Arcticons/blob/main/github/lp_button.svg"></a>|<a href="https://Ko-fi.com/donno_"><img height="40" alt="Donate using Ko-Fi" src="https://github.com/Arcticons-Team/Arcticons/blob/main/github/kofi_button.svg"></a>
 
 ## Contributing
 
@@ -44,7 +44,7 @@ Read the full details here:
 
 **Come chat with us on Matrix:**
 
-<a href="https://matrix.to/#/#arcticons-central:matrix.org"><img height="40" alt="Donate using Paypal" src="https://github.com/Donnnno/Arcticons/blob/main/github/matrix_button.svg"></a>
+<a href="https://matrix.to/#/#arcticons-central:matrix.org"><img height="40" alt="Arcticons on Matrix" src="https://github.com/Arcticons-Team/Arcticons/blob/main/github/matrix_button.svg"></a>
 
 ## Icon requests
 
@@ -69,6 +69,6 @@ All icons are licensed under [Creative Commons Attribution-ShareAlike 4.0 Intern
 
 ### Contributors
 
-- You can find a list of all Arcticons contributors [here](https://github.com/Donnnno/Arcticons/graphs/contributors).
+- You can find a list of all Arcticons contributors [here](https://github.com/Arcticons-Team/Arcticons/graphs/contributors).
 - Frost contributors can be found [here](https://github.com/dkanada/frost/graphs/contributors).
 - ICEcons contributors can be found [here](https://github.com/1C3/ICEcons/graphs/contributors). 

@@ -15,30 +15,8 @@
         - dark
     -->
 
-
-
-    <!--
-        CONFIG: MUZEI
-    -->
-    <!-- Muzei art source name -->
-    <string name="muzei_art_source_name">Your Art Source Name</string>
-
-    <!-- Muzei art source description -->
-    <string name="muzei_art_source_desc">Your Art Source Description</string>
-
-    <!-- Muzei base color -->
-    <color name="muzei_color">#404040</color>
-
-
-    <!--
-        CONFIG: KUSTOM
-    -->
-    <!-- Kustom Pack title. Defaults to the app's name -->
-    <string name="kustom_pack_title">@string/app_name</string>
-
-    <!-- Description that would be shown in Kustom apps -->
-    <string name="kustom_pack_description">Cool Kustom presets</string>
-
+    <!-- Whether the Material You theme should be applied by default in supported devices -->
+    <bool name="material_you_by_default">true</bool>
 
     <!-- Home image
         If you want to use an image from url, just put the url here
@@ -100,11 +78,6 @@
         ex: <string name="navigation_view_header">#000000</string>
         -->
     <string name="navigation_view_header">graphic</string>
-
-    <!-- Navigation view header text
-        Leave empty if you don't want to show any text -->
-    <string name="navigation_view_header_title">Arcticons</string>
-
 
     <!--
         CONFIG: APPLY
@@ -269,7 +242,7 @@
         ex: <string-array name="about_social_links"></string-array>
         -->
     <string-array name="about_social_links">
-        <item>info@onnno.nl</item>
+        <item>arcticons@onnno.nl</item>
         <item>https://matrix.to/#/#arcticons-central:matrix.org</item>
         <item>https://github.com/donnnno</item>
         <item>https://instagram.com/onno_onno_onno</item>
@@ -301,5 +274,5 @@
     <string name="config_json"></string>
 
     <!-- Show intro guides on first run -->
-    <bool name="show_intro">false</bool>
+    <bool name="show_intro">true</bool>
 </resources>
