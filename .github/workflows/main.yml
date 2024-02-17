@@ -6,6 +6,10 @@ on:
     branches:
       - main
 
+concurrency:
+  group: 'appfilter'
+  cancel-in-progress: true
+
 jobs:
   parse_and_combine:
     runs-on: ubuntu-latest
