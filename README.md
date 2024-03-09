@@ -13,7 +13,7 @@ Powered by a community of icon creators all around the world!
 <br>
 <br>
 ## Get it from one of these stores
-[<img src="https://f-droid.org/badge/get-it-on.png" alt="Get it on F-Droid" height="90">](https://f-droid.org/packages/com.donnnno.arcticons)
+[<img src="github/fdroid_badge.png" alt="Get it on F-Droid" height="90">](https://f-droid.org/packages/com.donnnno.arcticons)
 [<img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" height="90">](https://play.google.com/store/apps/details?id=com.donnnno.arcticons)<br>
 [<img src="github/github_badge.png" alt="Get it on Github" height="90">](https://github.com/Arcticons-Team/Arcticons/releases)
 [<img src="https://accrescent.app/badges/get-it-on.png" alt="Get it on Accrescent" height="90">](https://accrescent.app/app/com.donnnno.arcticons)<br>
