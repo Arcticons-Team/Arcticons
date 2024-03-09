@@ -85,11 +85,38 @@ function genImageGrid(){
     document.getElementsByClassName('tab')[0].appendChild(im);
   }
 }
+function countDrawableEntries(xmlText) {
+  const parser = new DOMParser();
+  const xmlDoc = parser.parseFromString(xmlText, 'application/xml');
+  const entries = xmlDoc.querySelectorAll('item');
+  return entries.length;
+}
+
+// Function to round down the count to the nearest multiple of 100
+function roundDownToNearest100(count) {
+  return Math.floor(count / 100) * 100;
+}
+
+// Function to update the number in the HTML content without grouping separators
+function updateIconCount(count) {
+  const roundedCount = roundDownToNearest100(count);
+  const iconCountElement = document.querySelector('.grid-content-3 p b');
+  if (iconCountElement) {
+    iconCountElement.textContent = roundedCount.toLocaleString(undefined, { useGrouping: false });
+  }
+}
+
+// Your existing code
 document.addEventListener("DOMContentLoaded", function(){
   document.getElementsByClassName('tab')[1].style.display = 'none';
   document.getElementById('search').oninput = search;
   let a = new XMLHttpRequest();
   a.open('GET', 'https://raw.githubusercontent.com/Donnnno/Arcticons/main/app/src/main/assets/drawable.xml');
-  a.onload = genImageGrid;
+  a.onload = function() {
+    const count = countDrawableEntries(a.responseText);
+    console.log("Number of drawable entries:", count);
+    updateIconCount(count); // Update the count in the HTML content
+    genImageGrid.call(a);
+  };
   a.send();
 });
