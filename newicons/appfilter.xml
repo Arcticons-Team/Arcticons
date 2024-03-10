@@ -71,12 +71,12 @@
 	<!-- Smart Fit -->
 	<item component="ComponentInfo{com.eokoe.smartfitcoach/com.eokoe.smartfitcoach.onboarding.splash.presentation.SplashScreenActivity}" drawable="smart_fit"/>
     <item component="ComponentInfo{com.eokoe.smartfitcoach/com.smartfit.app.smartapp.app.MainActivity}" drawable="smart_fit" />
-	
-	<!-- whoBIRD -->
-	<item component="ComponentInfo{org.woheller69.whobird/org.tensorflow.lite.examples.soundclassifier.DownloadActivity}" drawable="whobird"/>
-	
+
+	<!-- WhoBIRD -->
+	<item component="ComponentInfo{org.tensorflow.lite.examples.soundclassifier.DownloadActivity}" drawable="whobird"/>
+
 	<!-- TSB 2 -->
-	<item component="ComponentInfo{tsb.mobilebanking/tsb.mobilebanking.android.activity.StartActivity}" drawable="tsb"/>
+	<item component="ComponentInfo{tsb.mobilebanking/tsb.mobilebanking.android.activity.StartActivity}" drawable="tsb2"/>
 
 	<!-- WG Tunnel -->
 	<item component="ComponentInfo{com.zaneschepke.wireguardautotunnel/com.zaneschepke.wireguardautotunnel.ui.MainActivity}" drawable="wg_tunnel"/>
@@ -174,8 +174,11 @@
     <!-- Text Master OCR -->
     <item component="ComponentInfo{devesh.app.ocr/devesh.app.ocr.MainActivity}" drawable="text_master_ocr"/>
 
+	<!-- Jupiter -->
     <!-- Tubular -->
     <item component="ComponentInfo{org.polymorphicshade.tubular/org.schabi.newpipe.MainActivity}" drawable="tubular"/>
+
+	<item component="ComponentInfo{money.jupiter/money.jupiter.MainActivity}" drawable="jupiter"/>
 
 	<!-- $HELL -->
 	<item component="ComponentInfo{in.ac.dducollegedu.shell/in.ac.dducollegedu.shell.MainActivity}" drawable="shell_terminal"/>
@@ -3544,6 +3547,7 @@
 	<item component="ComponentInfo{com.azwstudios.theholybible.web/com.azwstudios.theholybible.activities.Activity_Splash}" drawable="bible"/>
 	<item component="ComponentInfo{com.dailyverses/com.dailyverses.MainActivity}" drawable="bible"/>
 	<item component="ComponentInfo{nkjv.biblereader.olivetree/biblereader.olivetree.activities.BibleReaderActivity}" drawable="bible"/>
+	<item component="ComponentInfo{org.missionassist.eebib.bible/org.missionassist.eebib.bible.AppIntroActivity}" drawable="bible"/>
 	<item component="ComponentInfo{king.james.bible.study/king.james.bible.android.activity.LaunchActivity}" drawable="bible"/>
 	<item component="ComponentInfo{org.jesusyouth.poc.activity/org.jesusyouth.poc.activity.SplashScreenActivity}" drawable="bible"/>
 	<item component="ComponentInfo{com.solvus_lab.android.BibleEN_niv/com.solvus_lab.android.BibleEN_niv.IntroActivity}" drawable="bible"/>
@@ -8285,6 +8289,9 @@
 
 	<!-- Dunzo -->
 	<item component="ComponentInfo{com.dunzo.user/in.dunzo.splashScreen.ui.LauncherActivity}" drawable="dunzo"/>
+
+	<!-- Duo -->
+	<item component="ComponentInfo{com.google.android.apps.tachyon/com.google.android.apps.tachyon.MainActivity}" drawable="duomobile"/>
 
 	<!-- Duo Mobile -->
 	<item component="ComponentInfo{com.duosecurity.duomobile/com.duosecurity.duomobile.account_list.AccountListActivity}" drawable="duomobile"/>
@@ -30134,6 +30141,7 @@
 	<!-- Webtoon -->
 	<item component="ComponentInfo{com.naver.linewebtoon/com.naver.linewebtoon.splash.SplashActivity}" drawable="webtoon"/>
 	<item component="ComponentInfo{com.nhn.android.webtoon/com.naver.webtoon.splash.SplashActivity}" drawable="webtoon"/>
+	<item component="ComponentInfo{net.daum.android.webtoon/net.daum.android.WebtoonActivity}" drawable="webtoon"/>
 
 	<!-- WebTube -->
 	<item component="ComponentInfo{cz.martykan.webtube/cz.martykan.webtube.MainActivity}" drawable="youtube"/>
