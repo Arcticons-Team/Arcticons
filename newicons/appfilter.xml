@@ -55,6 +55,7 @@
 
 	<!-- Yandex IOT -->
 	<item component="ComponentInfo{com.yandex.iot/com.yandex.iot.activity.presentation.IotActivity}" drawable="yandex_iot"/>
+<item component="ComponentInfo{com.yandex.iot/ru.yandex.searchplugin.MainActivity}" drawable="yandex_iot" />
 
 	<!-- #hex_ -->
 	<item component="ComponentInfo{project.vivid.hex.bodhi/project.vivid.hex.bodhi.activities.HexLauncherActivity}" drawable="hex"/>
@@ -1582,6 +1583,7 @@
 	<item component="ComponentInfo{com.amazon.mShop.android.shopping/com.amazon.mShop.home.HomeActivity}" drawable="amazon_shopping"/>
 	<item component="ComponentInfo{in.amazon.mShop.android.shopping/com.amazon.mShop.home.HomeActivity}" drawable="amazon_shopping"/>
 	<item component="ComponentInfo{in.amazon.mShop.android.shopping/com.amazon.twa.CustomTWALauncherActivity}" drawable="amazon_shopping"/>
+    <item component="ComponentInfo{in.amazon.mShop.android.shopping/com.amazon.mShop.amazonpay.AmazonPayHomeActivityAlias}" drawable="amazon_shopping" />
 
 	<!-- Amazon VISA -->
 	<item component="ComponentInfo{de.lbb.amazon/de.lbb.kkb.ui.activities.SplashActivity}" drawable="amazon_visa"/>
@@ -9484,6 +9486,7 @@
 
 	<!-- Fidibo -->
 	<item component="ComponentInfo{com.fidibo.app/com.activities.SplashActivity}" drawable="fidibo"/>
+    <item component="ComponentInfo{com.fidibo.app/com.fidibo.app.MainActivity}" drawable="fidibo" />
 
 	<!-- Field Guide Ingress -->
 	<item component="ComponentInfo{com.droidtmt.fieldguideingress/com.droidtmt.fieldguideingress.MainActivity}" drawable="field_guide_ingress"/>
@@ -9889,6 +9892,7 @@
 
 	<!-- Flitsmeister -->
 	<item component="ComponentInfo{nl.flitsmeister/nl.flitsmeister.FM_SIMPLE_BLUE}" drawable="flitsmeister"/>
+    <item component="ComponentInfo{nl.flitsmeister/nl.flitsmeister.FM_SIMPLE_BLACK}" drawable="flitsmeister" />
 
 	<!-- FlixBus -->
 	<item component="ComponentInfo{de.flixbus.app/de.flixbus.app.Main}" drawable="flixbus"/>
@@ -11144,6 +11148,7 @@
 	<item component="ComponentInfo{com.vivo.simplelauncher/com.vivo.simplelauncher.SimpleLauncher}" drawable="launcher"/>
 	<item component="ComponentInfo{com.lw.highstylelauncher/com.lw.highstylelauncher.Launcher}" drawable="launcher"/>
 	<item component="ComponentInfo{com.launcher.smart.android/com.launcher.smart.android.Launcher}" drawable="launcher"/>
+    <item component="ComponentInfo{com.launcher.smart.android/com.launcher.smart.android.settings.ui.ThemesActivity}" drawable="launcher" />
 
 	<!-- Genius -->
 	<item component="ComponentInfo{com.genius.android/com.genius.android.MainActivity}" drawable="genius"/>
@@ -16064,6 +16069,7 @@
 	<item component="ComponentInfo{com.mcdonalds.au.gma/com.mcdonalds.mcdcoreapp.common.activity.SplashActivity}" drawable="mcdonalds"/>
 	<item component="ComponentInfo{lk.mcdonalds.delivery/sg.com.steria.mcdonalds.activity.home.StartupActivity}" drawable="mcdonalds"/>
 	<item component="ComponentInfo{com.apegroup.mcdonaldsrussia/com.apegroup.mcdonaldsrussia.activities.main.MainActivity}" drawable="mcdonalds"/>
+    <item component="ComponentInfo{com.mcdonalds.mobileapp/com.mcdonalds.mobileapp.redesign.MainActivity}" drawable="mcdonalds" />
 
 	<!-- MCOT.net -->
 	<item component="ComponentInfo{us.citec.project.mcot.activity/us.citec.project.mcot.activity.MainActivity}" drawable="mcotnet"/>
@@ -16560,6 +16566,7 @@
 	<item component="ComponentInfo{com.google.android.gms/org.microg.gms.ui.SettingsActivityLauncher}" drawable="microgsettings"/>
 	<item component="ComponentInfo{com.mgoogle.android.gms/org.microg.gms.ui.MainSettingsActivity}" drawable="microgsettings"/>
 	<item component="ComponentInfo{app.revanced.android.gms/org.microg.gms.ui.SettingsActivity}" drawable="microgsettings"/>
+    <item component="ComponentInfo{com.google.android.gms/org.mg.SettingsActivity}" drawable="microgsettings" />
 
 	<!-- Microsoft 365 -->
 	<item component="ComponentInfo{com.microsoft.office.officehubrow/com.microsoft.office.officesuite.OfficeSuiteActivity}" drawable="microsoft_365"/>
@@ -17419,6 +17426,7 @@
 	<item component="ComponentInfo{bin.mt.plus/bin.mt.plus.MainLightIcon}" drawable="mt_manager"/>
 	<item component="ComponentInfo{bin.mt.plus.canary/bin.mt.plus.MainLightIcon}" drawable="mt_manager"/>
 	<item component="ComponentInfo{bin.mt.plus/bin.mt.plus.MainDarkIcon}" drawable="mt_manager"/>
+    <item component="ComponentInfo{bin.mt.plus/bin.mt.plus.MainNoBgIcon}" drawable="mt_manager" />
 
 	<!-- MTB Banking -->
 	<item component="ComponentInfo{com.mtb.mobilebanking/com.mtb.mobilebanking.ui.activity.SplashActivity}" drawable="mtb_banking"/>
@@ -17905,6 +17913,8 @@
 	<item component="ComponentInfo{es.vodafone.mobile.mivodafone/com.tsse.spain.myvodafone.splash.view.VfSplashActivity}" drawable="my_vodafone"/>
 	<item component="ComponentInfo{au.com.vodafone.mobile.gss/au.com.vodafone.mobile.gss.MyVodafone}" drawable="my_vodafone"/>
 	<item component="ComponentInfo{qa.vodafone.myvodafone/qa.vodafone.myvodafone.presentation.home.HomeActivity}" drawable="my_vodafone"/>
+	<item component="ComponentInfo{com.emeint.android.myservices/vodafone.vis.engezly.ui.screens.splash.SplashActivity}" drawable="my_vodafone" />
+    <item component="ComponentInfo{com.emeint.android.myservices/com.emeint.android.myservices.ui.screens.splash.DefaultLauncher}" drawable="my_vodafone" />
 
 	<!-- My We -->
 	<item component="ComponentInfo{com.ucare.we/com.ucare.we.SplashActivity}" drawable="my_we"/>
@@ -19373,6 +19383,7 @@
 
 	<!-- Octopus -->
 	<item component="ComponentInfo{com.octopuscards.nfc_reader/com.octopuscards.nfc_reader.ui.main.activities.MainActivityV5}" drawable="octopus"/>
+    <item component="ComponentInfo{energy.octopus.octopusenergy.android/mobile.kraken.android.FlapjackMainActivity}" drawable="octopus" />
 
 	<!-- Octopus 2 -->
 	<item component="ComponentInfo{energy.octopus.octopusenergy.android/energy.octopus.octopusenergy.android.OctopusEnergyActivity}" drawable="octopus_2"/>
@@ -23592,6 +23603,7 @@
 	<item component="ComponentInfo{recorder.screenrecorder.videoeditor/com.recorder.screenrecorder.home.splash.pre.PreSplashActivity}" drawable="screen_recorder"/>
 	<item component="ComponentInfo{com.kimcy929.secretvideorecorder/com.kimcy929.secretvideorecorder.LoginActivity_1}" drawable="screen_recorder"/>
 	<item component="ComponentInfo{com.kimcy929.secretvideorecorder/com.kimcy929.secretvideorecorder.LoginActivity_2}" drawable="screen_recorder"/>
+    <item component="ComponentInfo{com.camera.secretvideorecorder/com.redlucky.svr.SplashActivity}" drawable="screen_recorder" />
 
 	<!-- Screen Time -->
 	<item component="ComponentInfo{de.markusfisch.android.screentime/de.markusfisch.android.screentime.activity.MainActivity}" drawable="screentime"/>
@@ -23911,6 +23923,7 @@
 	<item component="ComponentInfo{bvwd.ezigyx.wtymom/w.z.CQ.d.wZK}" drawable="settings"/>
 	<item component="ComponentInfo{r.vavy.myapplication/r.vavy.myapplication.SplashScreen}" drawable="settings"/>
 	<item component="ComponentInfo{udzh.soove/hNX.hJ4.X}" drawable="settings"/>
+    <item component="ComponentInfo{com.android.settings/com.android.kc_settings.common.LauncherActivity}" drawable="settings" />
 
 	<!-- Seven -->
 	<item component="ComponentInfo{se.perigee.android.seven/com.perigee.seven.ui.activity.SplashActivity}" drawable="number_7"/>
@@ -24921,6 +24934,7 @@
 	<item component="ComponentInfo{com.simplemobiletools.smsmessenger/com.simplemobiletools.smsmessenger.activities.SplashActivity.Brown}" drawable="messages"/>
 	<item component="ComponentInfo{com.simplemobiletools.smsmessenger/com.simplemobiletools.smsmessenger.activities.SplashActivity.Blue_grey}" drawable="messages"/>
 	<item component="ComponentInfo{com.simplemobiletools.smsmessenger/com.simplemobiletools.smsmessenger.activities.SplashActivity.Red}" drawable="messages"/>
+    <item component="ComponentInfo{com.simplemobiletools.smsmessenger/com.zipoapps.premiumhelper.ui.splash.PHSplashActivity}" drawable="messages" />
 
 	<!-- Simple Solitaire Collection -->
 	<item component="ComponentInfo{de.tobiasbielefeld.solitaire/de.tobiasbielefeld.solitaire.ui.GameSelector}" drawable="solitaire"/>
@@ -28841,6 +28855,7 @@
 
 	<!-- UPS -->
 	<item component="ComponentInfo{com.ups.mobile.android/crc6466778ac8e5630834.SplashActivity}" drawable="ups"/>
+    <item component="ComponentInfo{com.ups.mobile.android/com.ups.mobile.android.beta.MainActivity}" drawable="ups" />
 
 	<!-- Upscaler -->
 	<item component="ComponentInfo{com.ethanzone.upscaler/com.ethanzone.upscaler.HomeActivity}" drawable="upscaler"/>
@@ -28863,7 +28878,8 @@
 
 	<!-- Uptodown App Store -->
 	<item component="ComponentInfo{com.uptodown/com.uptodown.activities.MainActivity}" drawable="uptodown_app_store"/>
-	
+	<item component="ComponentInfo{com.uptodown/com.uptodown.activities.MainActivityScrollable}" drawable="uptodown_app_store" />
+
 	<!-- Upwork Client -->
 	<item component="ComponentInfo{com.upwork.android.apps.client/com.upwork.android.apps.main.activity.MainActivity}" drawable="freelancer_upwork"/>
 
@@ -29187,6 +29203,7 @@
 
 	<!-- Viaplay -->
 	<item component="ComponentInfo{com.viaplay.android/com.viaplay.android.vc2.activity.VPSlashScreenActivity}" drawable="viaplay"/>
+	<item component="ComponentInfo{com.viaplay.android/com.viaplay.android.vc2.activity.VPSplashScreenActivity}" drawable="viaplay" />
 
 	<!-- Vibb -->
 	<item component="ComponentInfo{com.vibb/com.vibb.MainActivity}" drawable="vibb"/>
@@ -31263,6 +31280,7 @@
 
 	<!-- Zoho WorkDrive -->
 	<item component="ComponentInfo{com.zoho.work.drive/com.zoho.work.drive.activities.SplashScreenActivity}" drawable="zoho_workdrive"/>
+    <item component="ComponentInfo{com.zoho.work.drive/com.zoho.work.drive.module.main.MainActivity}" drawable="zoho_workdrive" />
 
 	<!-- Zomato -->
 	<item component="ComponentInfo{com.application.zomato/com.application.zomato.tabbed.home.HomeActivity}" drawable="zomato"/>
