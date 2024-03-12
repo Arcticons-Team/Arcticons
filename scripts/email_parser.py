@@ -9,6 +9,7 @@ from datetime import date
 from collections import defaultdict, Counter
 from pathlib import Path
 import argparse
+import os
 
 config = {
     "request_limit": 50,
@@ -22,14 +23,16 @@ def parse_args():
 
     parser.add_argument("folder_path", type=str, help="Path to folder containing .eml files of requests")
     parser.add_argument("appfilter_path", type=str, help="Path to existing appfilter.xml to recognize potentially updatable appfilters")
+    parser.add_argument("extracted_png_folder_path", type=str, help="Path to folder containing extracted PNGs")
     parser.add_argument("requests_path", nargs="?", type=str, default=None, help="Existing requests.txt file to augment with new info (optional)")
 
     return parser.parse_args()
 
 class EmailParser:
-    def __init__(self, folder_path, appfilter_path, requests_path=None):
+    def __init__(self, folder_path, appfilter_path, extracted_png_folder_path, requests_path=None):
         self.folder_path = Path(folder_path)
         self.appfilter_path = Path(appfilter_path)
+        self.extracted_png_folder_path = Path(extracted_png_folder_path)
         self.requests_path = Path(requests_path) if requests_path else None
 
         self.filelist = list(self.folder_path.glob('*.eml'))
@@ -39,6 +42,7 @@ class EmailParser:
         self.no_zip = {}
         self.updatable = []
         self.new_apps = []
+        self.keep_pngs = set()
 
         self.name_pattern = re.compile(r'<!-- (?P<Name>.+) -->', re.M)
         self.component_pattern = re.compile('ComponentInfo{(?P<ComponentInfo>.+)}')
@@ -100,18 +104,64 @@ class EmailParser:
                 try:
                     with zip_file as zip_ref:
                         xml_string = zip_ref.read('appfilter.xml')
-                    root = ET.fromstring(xml_string)
-                    self.process_xml(root, message)
+                        root = ET.fromstring(xml_string)
+                        self.process_xml(root, message, zip_file)
                 except Exception as e:
                     sender = message['From']
                     self.no_zip[sender] = mail
                     print(f"Error processing email {mail}: {e}")
 
-    def process_xml(self, root, msg):
+    def process_xml(self, root, msg, zip_file):
         for child in root:
-            self.requests(child, msg)
+            self.requests(child, msg, zip_file)
 
-    def requests(self, child, msg):
+    def extract_png(self, child, zip_file,data):
+        component_info = child.get('component')
+        drawable = child.get('drawable')
+        try:
+            if component_info and drawable:
+                # Extract the PNG file from the zip
+                for file_info in zip_file.infolist():
+                    if file_info.filename.endswith(f'{drawable}.png'):
+                        with zip_file.open(file_info.filename) as png_file:
+                            # Save the PNG file
+                            png_content = png_file.read()
+                            png_filename = os.path.join(self.extracted_png_folder_path, f"{drawable}.png")
+                            done = False
+                            number = 0
+                            while not done:
+                                if not os.path.exists(png_filename):
+                                    with open(png_filename, 'wb') as new_png_file:
+                                        new_png_file.write(png_content)
+                                    # Update apps dictionary with the new PNG file path
+                                    #self.apps[component_info][drawable] = png_filename
+                                    if number == 0:
+                                        data["drawable"] = drawable
+                                    else:
+                                        data["drawable"] = f"{drawable}_{number}"
+                                    done = True
+                                else:
+                                    number += 1
+                                    # Rename the PNG file and update the apps dictionary
+                                    png_filename = os.path.join(self.extracted_png_folder_path, f"{drawable}_{number}.png")
+        except Exception as e:
+            print(f"Error extracting PNG file: {e}")
+    
+    def delete_unused_icons(self):
+        extracted_png_folder = self.extracted_png_folder_path
+
+        # Get a list of all files in the extracted_png folder
+        png_files = os.listdir(extracted_png_folder)
+
+        # Iterate over the PNG files and delete those not present in the drawables list
+        for png_file in png_files:
+            if png_file.endswith(".png"):
+                drawable_name = os.path.splitext(png_file)[0]
+                if drawable_name not in self.keep_pngs:
+                    file_path = os.path.join(extracted_png_folder, png_file)
+                    os.remove(file_path)
+
+    def requests(self, child, msg, zip_file):
         data = self.data
         if child.get('component') is None:
             self.data = {}
@@ -133,6 +183,7 @@ class EmailParser:
             if data['ComponentInfo'] in self.apps:
                 self.apps[data['ComponentInfo']]['count'] += 1
             else:
+                self.extract_png(child,zip_file,data)
                 data['count'] = 1
                 self.apps[data['ComponentInfo']] = data
 
@@ -209,6 +260,7 @@ Last requested {reqDate}
                         count=values["count"],
                         reqDate=values["requestDate"],
                     )) 
+                    self.keep_pngs.add(values["drawable"])
                     new_apps_set.add(values["ComponentInfo"])
                 elif (
                     PackageName in packageName_set
@@ -254,10 +306,11 @@ Last requested {reqDate}
         self.separate_updatable()
         print("Write Output")
         self.write_output()
+        self.delete_unused_icons()
         self.print_greedy_senders()
         self.move_no_zip()
 
 if __name__ == "__main__":
     args = parse_args()
-    parser = EmailParser(args.folder_path, args.appfilter_path, args.requests_path)
+    parser = EmailParser(args.folder_path, args.appfilter_path, args.extracted_png_folder_path, args.requests_path)
     parser.main()
