@@ -98,6 +98,7 @@ body {
     position: sticky;
     /* make the table heads sticky */
     top: 0px;
+    z-index: 99;
     /* table head will be placed from the top of the table and sticks to it */
 }
 
@@ -179,8 +180,10 @@ h1 {
     margin-bottom: 20px;
 }
 
-img {
+.links img {
     filter: invert();
+    width:50px;
+    height:50px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -194,7 +197,7 @@ img {
     th {
         background-color: #0f0f0f;
     }
-    img {
+    .links img {
         filter: none;
     }
     .asc::after {
