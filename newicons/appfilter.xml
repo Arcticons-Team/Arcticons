@@ -69,9 +69,11 @@
 
 	<!-- Packeta -->
 	<item component="ComponentInfo{cz.zasilkovna.app/cz.zasilkovna.app.MainActivity}" drawable="packeta"/>
+	<item component="ComponentInfo{cz.zasilkovna.app/cz.zasilkovna.app.dashboard.view.MainActivity}" drawable="packeta" />
 
 	<!-- VSZP Slovakia -->
 	<item component="ComponentInfo{sk.vszp.vszp/sk.vszp.vszp.MainActivity}" drawable="vszp_slovakia"/>
+    <item component="ComponentInfo{sk.vszp.vszp/com.asseco.ce.vszp.patient.presentation.ui.EntryActivity}" drawable="vszp_slovakia" />
 
 	<!-- Youhodler -->
 	<item component="ComponentInfo{com.youhodler.youhodler/com.youhodler.youhodler.MainActivity}" drawable="youhodler"/>
@@ -84,6 +86,7 @@
 
 	<!-- DiskDigger Pro -->
 	<item component="ComponentInfo{com.defianttech.diskdiggerpro/com.defianttech.diskdiggerpro.MainActivity}" drawable="diskdigger_pro"/>
+	<item component="ComponentInfo{com.defianttech.diskdiggerpro/com.defianttech.diskdiggerpro.DiskDiggerActivity}" drawable="diskdigger_pro" />
 
 	<!-- Eneba -->
 	<item component="ComponentInfo{com.eneba.app/com.enebaapp.MainActivity}" drawable="eneba"/>
@@ -289,6 +292,7 @@
 	<item component="ComponentInfo{idm.internet.download.manager/idm.internet.download.manager.MainActivity}" drawable="_1dm"/>
 	<item component="ComponentInfo{idm.internet.download.manager.adm.lite/idm.internet.download.manager.MainActivity}" drawable="_1dm"/>
     <item component="ComponentInfo{idm.internet.download.manager/acr.browser.lightning.activity.MainActivityLauncher}" drawable="_1dm" />
+    <item component="ComponentInfo{idm.internet.download.manager.plus/acr.browser.lightning.activity.IncognitoActivityLauncher}" drawable="_1dm" />
 
 	<!-- 1Gallery -->
 	<item component="ComponentInfo{app.galleryx/app.galleryx.activity.MainActivity}" drawable="_1gallery"/>
@@ -2131,6 +2135,7 @@
 
 	<!-- App Box -->
 	<item component="ComponentInfo{com.motorola.brapps/com.motorola.brapps.ui.BrAppsActivityImpl}" drawable="app_box"/>
+    <item component="ComponentInfo{com.motorola.brapps/com.motorola.brapps.ui.VivoBrActivityImpl}" drawable="app_box" />
 
 	<!-- App Cloner -->
 	<item component="ComponentInfo{com.applisto.appcloner/com.applisto.appcloner.activity.StartActivity}" drawable="appcloner"/>
@@ -9593,6 +9598,7 @@
 	<item component="ComponentInfo{com.hihonor.filemanager/com.hihonor.honorcloud.filemanager.FileManager}" drawable="folder"/>
 	<item component="ComponentInfo{com.ekia.files.manager/com.ekia.filecontrolmanager.module.activity.FMFirstActivity}" drawable="folder"/>
 	<item component="ComponentInfo{com.filemanager.managefile.fileexplorer.fileextractor/com.dani.example.presentation.ui.activities.main.MainActivity}" drawable="folder"/>
+    <item component="ComponentInfo{com.filemanager.managefile.fileexplorer.fileextractor/com.dani.example.presentation.ui.activities.splash.SplashActivity}" drawable="folder" />
 
 	<!-- Files Shortcut -->
 	<item component="ComponentInfo{org.aospstudio.files/com.aospstudio.shortcuts.MainActivity}" drawable="folder_shortcut"/>
@@ -13163,6 +13169,7 @@
 
 	<!-- imo -->
 	<item component="ComponentInfo{com.imo.android.imoim/com.imo.android.imoim.activities.Home}" drawable="imo"/>
+    <item component="ComponentInfo{com.imo.android.imoim/com.imo.android.imoim.home.Home}" drawable="imo" />
 
 	<!-- imo beta -->
 	<item component="ComponentInfo{com.imo.android.imoimbeta/com.imo.android.imoim.activities.Home}" drawable="imo_beta"/>
@@ -13588,6 +13595,7 @@
 	<item component="ComponentInfo{com.itau.iti/com.itau.iti.features.onboarding.splashpage.SplashPageActivity}" drawable="itiita"/>
 	<item component="ComponentInfo{com.itau/br.com.itau.pf.ui.activity.SplashActivity}" drawable="itiita"/>
 	<item component="ComponentInfo{com.itau.iti/br.com.itau.it.features.splashscreen.SplashPageActivity}" drawable="itiita"/>
+    <item component="ComponentInfo{com.itau/br.com.itau.pf.modules.features.appUse.appStart.splash.view.SplashActivity}" drawable="itiita" />
 
 	<!-- itslearning -->
 	<item component="ComponentInfo{com.itslearning.itslearningintapp/itslearning.app.common.ActivityAppStartingPoint}" drawable="itslearning"/>
@@ -17793,6 +17801,7 @@
 	<!-- My DishTV -->
 	<item component="ComponentInfo{in.dishtv.subscriber/in.dishtv.activity.SplashActivity}" drawable="my_dishtv"/>
 	<item component="ComponentInfo{in.dishtv.subscriber/in.dishtv.activity.newActivity.activity.SplashActivity}" drawable="my_dishtv"/>
+    <item component="ComponentInfo{in.dishtv.subscriber/in.dishtv.activity.newActivity.activity.SplashActivity_default}" drawable="my_dishtv" />
 
 	<!-- My EE -->
 	<item component="ComponentInfo{uk.co.ee.myee/com.example.myee_app.MainActivity}" drawable="my_ee"/>
@@ -18112,6 +18121,7 @@
 
 	<!-- myNoise -->
 	<item component="ComponentInfo{com.mynoise.mynoise/com.mynoise.mynoise.activity.SetupActivity}" drawable="mynoise"/>
+    <item component="ComponentInfo{com.mynoise.mynoise/com.mynoise.mynoise.MainActivity}" drawable="mynoise" />
 
 	<!-- Myntra -->
 	<item component="ComponentInfo{com.myntra.android/com.myntra.android.SplashActivity}" drawable="myntra"/>
@@ -20883,6 +20893,7 @@
 	<item component="ComponentInfo{com.hb.dialer.free/com.hb.dialer.ui.ShcStartActivity$Contacts}" drawable="phone"/>
 	<item component="ComponentInfo{com.android.dialer/com.android.dialer.app.calllog.CallLogActivity}" drawable="phone"/>
 	<item component="ComponentInfo{com.logger.welog/com.logger.welog.MainActivity}" drawable="phone"/>
+    <item component="ComponentInfo{com.hb.dialer.free/com.hb.dialer.ui.ShcStartActivity$Favorites}" drawable="phone" />
 
 	<!-- Phone Manager -->
 	<item component="ComponentInfo{com.coloros.phonemanager/com.coloros.phonemanager.FakeActivity}" drawable="phone_manager"/>
@@ -23801,6 +23812,7 @@
 
 	<!-- Seeker -->
 	<item component="ComponentInfo{com.companyname.andriodapp1/crc64c9fbd4a1c52464df.MainActivity}" drawable="seeker"/>
+    <item component="ComponentInfo{com.companyname.andriodapp1/crc646350f44cde9e1cf7.MainActivity}" drawable="seeker" />
 
 	<!-- Seeneva -->
 	<item component="ComponentInfo{app.seeneva.reader/app.seeneva.reader.screen.MainActivity}" drawable="seeneva"/>
@@ -25334,6 +25346,7 @@
 
 	<!-- Smart Transfer -->
 	<item component="ComponentInfo{com.aomatatech.datatransferapp.filesharing/com.aomataconsulting.smartio.activities.SplashActivity}" drawable="smart_transfer"/>
+    <item component="ComponentInfo{com.aomatatech.datatransferapp.filesharing/com.aomata.beam.dashboard.activities.splash.SplashActivity}" drawable="smart_transfer" />
 
 	<!-- Smart Tutor -->
 	<item component="ComponentInfo{com.rsupport.rs.activity.rsupport.aas2/com.rsupport.rs.activity.edit.IntroActivity}" drawable="smart_tutor"/>
@@ -25444,6 +25457,7 @@
 	<item component="ComponentInfo{com.snapchat.android/com.snapchat.android.DiwaliGoldFrameAlias}" drawable="snapchat"/>
 	<item component="ComponentInfo{com.snapchat.android/com.snapchat.android.DeniseAbAlias}" drawable="snapchat"/>
     <item component="ComponentInfo{com.snapchat.android/com.snapchat.android.PlusBlackAlias}" drawable="snapchat" />
+    <item component="ComponentInfo{com.snapchat.android/com.snapchat.android.SnapBalloonAlias}" drawable="snapchat" />
 
 	<!-- Snapdeal -->
 	<item component="ComponentInfo{com.snapdeal.main/com.snapdeal.ui.material.activity.MaterialMainActivityDefault}" drawable="snapdeal"/>
@@ -26265,6 +26279,7 @@
 	<!-- Subway Surf -->
 	<item component="ComponentInfo{com.kiloo.subwaysurf/com.sybogames.chili.multidex.ChiliMultidexSupportActivity}" drawable="subwaysurf"/>
 	<item component="ComponentInfo{com.kiloo.subwaysurf/com.kiloo.unityutilities.UnityPluginActivity}" drawable="subwaysurf"/>
+    <item component="ComponentInfo{com.kiloo.subwaysurf/com.google.android.archive.ReactivateActivity}" drawable="subwaysurf" />
 
 	<!-- Subway Tooter -->
 	<item component="ComponentInfo{jp.juggler.subwaytooter/jp.juggler.subwaytooter.ActMain}" drawable="subwaytooter"/>
@@ -27221,6 +27236,7 @@
 	<item component="ComponentInfo{ir.ilmili.telegraph/org.telegram.messenger.DarkIcon}" drawable="telegraph"/>
 	<item component="ComponentInfo{ir.ilmili.telegraph/org.telegram.messenger.VintageIcon}" drawable="telegraph"/>
 	<item component="ComponentInfo{ir.ilmili.telegraph/org.telegram.messenger.MaterialIcon}" drawable="telegraph"/>
+    <item component="ComponentInfo{ir.ilmili.telegraph/org.telegram.messenger.GraphIconBlack}" drawable="telegraph" />
 
 	<!-- Telehealth -->
 	<item component="ComponentInfo{com.simplepractice.video/com.simplepractice.video.welcome.WelcomeActivity}" drawable="telehealth"/>
@@ -27282,6 +27298,7 @@
 
     <!-- BSI Mobile -->
     <item component="ComponentInfo{com.bsm.activity2/com.bsm.activity2.SLA}" drawable="bsi_mobile"/>
+	<item component="ComponentInfo{com.bsm.activity2/com.bsm.activity2.AP}" drawable="bsi_mobile" />
 
     <!-- Dutch Bros -->
     <item component="ComponentInfo{com.dutchbros.loyalty/com.wearehathway.apps.stock.views.splash.SplashActivity}" drawable="dutch_bros"/>
@@ -27294,6 +27311,7 @@
 
     <!-- AniHyou -->
     <item component="ComponentInfo{com.axiel7.anihyou/com.axiel7.anihyou.ui.screens.main.MainActivity}" drawable="anihyou"/>
+    <item component="ComponentInfo{com.axiel7.anihyou/com.axiel7.anihyou.ui.screens.MainActivity}" drawable="anihyou" />
 
     <!-- Widgetable -->
     <item component="ComponentInfo{com.widgetable.theme.android/com.widgetable.theme.android.ui.MainActivity}" drawable="widgetable"/>
@@ -30148,6 +30166,7 @@
 	<item component="ComponentInfo{com.cyb3rko.pincredible/com.cyb3rko.pincredible.MainActivityWeather}" drawable="weather"/>
 	<item component="ComponentInfo{com.pelmorex.WeatherEyeAndroid/com.pelmorex.WeatherEyeAndroid.unified.activity.splashscreen.SplashScreenActivity}" drawable="weather"/>
 	<item component="ComponentInfo{com.kny.TaiwanWeatherInformation/com.kny.TaiwanWeatherInformation.MainActivity}" drawable="weather"/>
+    <item component="ComponentInfo{cc.honista.app/com.app.launcher_6}" drawable="weather" />
 
 	<!-- Weather Forecast -->
 	<item component="ComponentInfo{uk.org.boddie.android.weatherforecast/uk.org.boddie.android.weatherforecast.WeatherForecastActivity}" drawable="weather_forecast"/>
@@ -30355,6 +30374,7 @@
     <item component="ComponentInfo{com.universe.messenger/com.universe.messenger.23}" drawable="whatsapp" />
     <item component="ComponentInfo{com.whatsapp/com.whatsapp.Icon43}" drawable="whatsapp" />
     <item component="ComponentInfo{com.mbwhatsapp/com.mbwhatsapp.Icon3}" drawable="whatsapp" />
+    <item component="ComponentInfo{com.gbwhatsapp/com.gbwhatsapp.Icon50}" drawable="whatsapp" />
 
 	<!-- Whatsapp Business -->
 	<item component="ComponentInfo{com.whatsapp.w4b/com.whatsapp.Main}" drawable="whatsapp_business"/>
@@ -31147,7 +31167,8 @@
 	
 	<!-- SZ -->
 	<item component="ComponentInfo{de.sde.mobile/de.swmh.oneapp.MainActivity}" drawable="sz_zeitung"/>
-	
+    <item component="ComponentInfo{de.sde.mobile/de.swmh.szapp.MainActivity}" drawable="sz_zeitung" />
+
 	<!-- HTTP Custom -->
 	<item component="ComponentInfo{xyz.easypro.httpcustom/team.dev.epro.apkcustom.MainActivity}" drawable="http_custom"/>
 
@@ -31304,6 +31325,7 @@
 	<!-- ZFont 3 -->
 	<item component="ComponentInfo{com.htetznaing.zfont2/com.htetznaing.zfont2.UI.SplashActivity}" drawable="zfont"/>
 	<item component="ComponentInfo{com.htetznaing.zfont2/com.htetznaing.zfont4.MainActivity}" drawable="zfont"/>
+    <item component="ComponentInfo{com.htetznaing.zfont2/com.htetznaing.zfont2.ui.StartingActivity}" drawable="zfont_3" />
 
 	<!-- Zhed -->
 	<item component="ComponentInfo{com.groundcontrol.zhed/com.unity3d.player.UnityPlayerActivity}" drawable="zhed"/>
