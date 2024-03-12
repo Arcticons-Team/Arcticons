@@ -6,7 +6,7 @@ const batchSize = 50; // Number of rows to load at a time
 let startIndex = 0; // Start index for lazy loading
 let appEntriesData = []; // Store the original data for sorting
 // Global variables to track sorting column and direction
-let sortingColumnIndex = 2; 
+let sortingColumnIndex = 2;
 let sortingDirection = 'desc';
 
 // Debounce function for search input
@@ -48,9 +48,12 @@ fetch('https://raw.githubusercontent.com/Arcticons-Team/Arcticons/main/generated
             const requestedTimestamp = parseInt(lines.slice(lines.length - 2)[1].trim().split(' ')[2]);
             const requestedInfo = lines.slice(lines.length - 2)[0].trim().split(' ')[1].trim();
             const lastRequestedTime = new Date(requestedTimestamp * 1000).toLocaleString();
-
+            const drawable = extractDrawable(appfilter);
+            const appIconPath = drawable ? `extracted_png/${drawable}.png` : 'img/requests/default.svg'; // Adjust path accordingly
+            const appIcon = `<img src="${appIconPath}" alt="App Icon" style="width:50px;height:50px;">`;
             appEntriesData.push({
                 appName,
+                appIcon,
                 appLinks,
                 requestedInfo,
                 lastRequestedTime,
@@ -93,24 +96,34 @@ fetch('https://raw.githubusercontent.com/Arcticons-Team/Arcticons/main/generated
 
 
 
-    // Filter appEntriesData based on appfilter content
-    function filterAppfilter(appEntriesData, appfilterContent) {
-        const appfilterItems = parseAppfilter(appfilterContent);
-        const filteredOutEntries = [];
-    
-        const filteredData = appEntriesData.filter(entry => {
-            const entryAppfilter = entry.appfilter.trim().split('"')[1].trim();
-            // Check if the entry is filtered out
-            const isFiltered = appfilterItems.some(component => component === entryAppfilter);  
-            if (isFiltered) {
-                filteredOutEntries.push(entryAppfilter);
-            } 
-            return !isFiltered;
-        });
-        console.log("Filtered out entries:", filteredOutEntries); 
-        return filteredData;
-    }
+// Filter appEntriesData based on appfilter content
+function filterAppfilter(appEntriesData, appfilterContent) {
+    const appfilterItems = parseAppfilter(appfilterContent);
+    const filteredOutEntries = [];
 
+    const filteredData = appEntriesData.filter(entry => {
+        const entryAppfilter = entry.appfilter.trim().split('"')[1].trim();
+        // Check if the entry is filtered out
+        const isFiltered = appfilterItems.some(component => component === entryAppfilter);
+        if (isFiltered) {
+            filteredOutEntries.push(entryAppfilter);
+        }
+        return !isFiltered;
+    });
+    console.log("Filtered out entries:", filteredOutEntries);
+    return filteredData;
+}
+
+
+// Function to extract the drawable attribute from appfilter
+function extractDrawable(appfilter) {
+    const regex = /drawable="([^"]+)"/;
+    const match = appfilter.match(regex);
+    if (match && match.length > 1) {
+        return match[1]; // Return the value inside the quotes
+    }
+    return null; // Return null if no match found
+}
 
 // Parse appfilter content
 function parseAppfilter(appfilterContent) {
@@ -166,12 +179,14 @@ function renderTable(data) {
         let cell3 = row.insertCell(2);
         let cell4 = row.insertCell(3);
         let cell5 = row.insertCell(4);
+        let cell6 = row.insertCell(5);
         index = index + startIndex;
         cell1.innerHTML = entry.appName;
-        cell2.innerHTML = entry.appLinks;
-        cell3.innerHTML = entry.requestedInfo;
-        cell4.innerHTML = entry.lastRequestedTime;
-        cell5.innerHTML = `<button class="copy-button" onclick="copyToClipboard(${index})">Copy</button>`;
+        cell2.innerHTML = entry.appIcon;
+        cell3.innerHTML = entry.appLinks;
+        cell4.innerHTML = entry.requestedInfo;
+        cell5.innerHTML = entry.lastRequestedTime;
+        cell6.innerHTML = `<button class="copy-button" onclick="copyToClipboard(${index})">Copy</button>`;
     });
 }
 
@@ -240,19 +255,19 @@ function sortTable(columnIndex) {
     sortingColumnIndex = columnIndex;
     // Sort the data
     const sortedData = sortData(sortingDirection, columnIndex, [...appEntriesDataGlobal]);
-    
+
     updateTable(sortedData);
 }
 
-function sortData(sortingDirection, columnIndex, sortedData){
+function sortData(sortingDirection, columnIndex, sortedData) {
     sortedData.sort((a, b) => {
-        if (columnIndex === 3) { // Check if sorting the 'Last Requested' column
+        if (columnIndex === 4) { // Check if sorting the 'Last Requested' column
             const cellA = getCellValue(a, columnIndex);
             const cellB = getCellValue(b, columnIndex);
 
             // Handle dates
             return sortingDirection === 'asc' ? cellA - cellB : cellB - cellA;
-        } else if (columnIndex === 2) {
+        } else if (columnIndex === 3) {
             const cellA = getCellValue(a, columnIndex);
             const cellB = getCellValue(b, columnIndex);
 
