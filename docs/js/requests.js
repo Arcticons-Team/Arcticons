@@ -46,7 +46,7 @@ fetch('https://raw.githubusercontent.com/Arcticons-Team/Arcticons/main/generated
             const appfilter = lines[1].trim().split('\n').join(' ').trim();
             const appLinks = lines.slice(2, lines.length - 2).map((line, index) => {
                 const imageName = index < imageNames.length ? imageNames[index] : 'img/requests/default.svg';
-                return `<a href="${line.trim()}" target="_blank"><img src="${imageName}" alt="Image" style="width:50px;height:50px;"></a>`;
+                return `<a href="${line.trim()}" class="links" target="_blank"><img src="${imageName}" alt="Image"></a>`;
             }).join('\n');
             const requestedTimestamp = parseInt(lines.slice(lines.length - 2)[1].trim().split(' ')[2]);
             const requestedInfo = lines.slice(lines.length - 2)[0].trim().split(' ')[1].trim();
