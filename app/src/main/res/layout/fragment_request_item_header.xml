@@ -84,6 +84,45 @@
 
     <LinearLayout
         android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginBottom="@dimen/content_padding"
+        android:layout_marginStart="@dimen/content_margin"
+        android:layout_marginEnd="@dimen/content_margin"
+        android:id="@+id/earlier_request_container2">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/content_margin"
+            android:layout_marginBottom="@dimen/content_padding"
+            android:layout_marginStart="@dimen/content_margin"
+            android:layout_marginEnd="@dimen/content_margin"
+            android:src="@drawable/ic_idea"
+            android:gravity="start"
+            android:orientation="horizontal" />
+
+        <TextView
+            android:id="@+id/earlier_request_title2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_vertical"
+            android:layout_marginTop="@dimen/content_margin"
+            android:layout_marginBottom="@dimen/content_margin"
+            android:layout_marginEnd="@dimen/content_margin"
+            android:drawablePadding="@dimen/content_margin"
+            android:textColor="?android:attr/textColorPrimary"
+            android:textSize="@dimen/text_content"
+            android:autoLink="web"
+            android:text="@string/third_message"
+            app:fontFamily="@font/medium"
+            android:focusable="true" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:id="@+id/premium_request_container">
