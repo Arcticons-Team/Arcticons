@@ -33,7 +33,10 @@ fetch('https://raw.githubusercontent.com/Arcticons-Team/Arcticons/main/generated
     .then(fileContent => {
         const appEntries = fileContent.split(/(?=<!--[^]*?-->)/).filter(entry => entry.trim() !== '');
         // Call this function to change the header text
-        updateHeaderText(appEntries[0].trim().split('\n')[1].trim());
+        const headertext = appEntries[0].trim().split('\n')[1].trim();
+        const iconcount = headertext.trim().split(' ')[0].trim();
+        updateHeaderText(`${iconcount} Requested Apps Pending`);     
+        document.getElementById('date_header').innerText =headertext.trim().split('(')[1].trim().split(')')[0].trim();   
 
         // Process each entry and store data
         appEntries.slice(1).forEach(entry => {
@@ -84,6 +87,7 @@ fetch('https://raw.githubusercontent.com/Arcticons-Team/Arcticons/main/generated
                 const filteredData = filterAppfilter(appEntriesData, appfilterContent);
                 appEntriesData = filteredData;
                 appEntriesDataGlobal = filteredData;
+                updateHeaderText(`${appEntriesData.length} Requested Apps Pending`);  
                 const table = document.querySelector('table');
                 const headers = table.querySelectorAll('thead th');
                 headers[sortingColumnIndex].classList.add(sortingDirection);
