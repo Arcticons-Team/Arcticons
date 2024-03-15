@@ -24,7 +24,7 @@ def parse_args():
     parser.add_argument("folder_path", type=str, help="Path to folder containing .eml files of requests")
     parser.add_argument("appfilter_path", type=str, help="Path to existing appfilter.xml to recognize potentially updatable appfilters")
     parser.add_argument("extracted_png_folder_path", type=str, help="Path to folder containing extracted PNGs")
-    parser.add_argument("requests_path", nargs="?", type=str, default=None, help="Existing requests.txt file to augment with new info (optional)")
+    parser.add_argument("requests_path", type=str, default=None, help="Path to folder containing the request.txt and updatable.txt")
 
     return parser.parse_args()
 
@@ -33,7 +33,8 @@ class EmailParser:
         self.folder_path = Path(folder_path)
         self.appfilter_path = Path(appfilter_path)
         self.extracted_png_folder_path = Path(extracted_png_folder_path)
-        self.requests_path = Path(requests_path) if requests_path else None
+        self.requests_path = Path(requests_path+'/requests.txt') if requests_path else None
+        self.updatable_path = Path(requests_path+'/updatable.txt') if requests_path else None
 
         self.filelist = list(self.folder_path.glob('*.eml'))
         self.data = {}
@@ -51,7 +52,7 @@ class EmailParser:
     def parse_existing(self):
         request_block_query = re.compile(r'<!-- (?P<Name>.+) -->\s<item component=\"ComponentInfo{(?P<ComponentInfo>.+)}\" drawable=\"(?P<drawable>.+|)\"(/>| />)\s(https:\/\/play.google.com\/store\/apps\/details\?id=.+\shttps:\/\/f-droid\.org\/en\/packages\/.+\shttps:\/\/apt.izzysoft.de\/fdroid\/index\/apk\/.+\shttps:\/\/galaxystore.samsung.com\/detail\/.+\shttps:\/\/www.ecosia.org\/search\?q\=.+\s)Requested (?P<count>\d+) times\s?(Last requested (?P<requestDate>\d+\.?\d+?))?', re.M)
 
-        if not self.requests_path:
+        if not self.requests_path.exists():
             return
         with open(self.requests_path, 'r', encoding="utf8") as existing_file:
             contents = existing_file.read()
@@ -285,11 +286,10 @@ Last requested {reqDate}
         new_list = new_list_header.format(total_count=len(self.new_apps), date=date.today().strftime(config["date_format"]).replace("X0", "X").replace("X", ""))
         new_list += ''.join(self.new_apps)
 
-        requests_file_path = 'requests.txt' if not self.requests_path else self.requests_path
-        with open(requests_file_path, 'w', encoding='utf-8') as file:
+        with open(self.requests_path, 'w', encoding='utf-8') as file:
             file.write(new_list)
         if len(self.updatable):
-            with open('updatable.txt', 'w', encoding='utf-8') as file_two:
+            with open(self.updatable_path, 'w', encoding='utf-8') as file_two:
                 file_two.write(''.join(self.updatable))
 
     def main(self):
