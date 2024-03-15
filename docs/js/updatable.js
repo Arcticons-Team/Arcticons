@@ -1,6 +1,6 @@
 //Edit the following variables
 var RepoOwner = "Arcticons-Team";
-var RepoName = "Icon-Request-Dashboard";
+var RepoName = "Arcticons";
 var RepoBranch = "main";
 
 
@@ -193,7 +193,7 @@ const updatableButton = document.getElementById("updatable-button");
 // Add an event listener to the button
 updatableButton.addEventListener("click", function() {
     // Define the URL to redirect to
-    const updatableURL = `https://${RepoOwner}.github.io/${RepoName}/`;
+    const updatableURL = `https://${RepoOwner}.github.io/${RepoName}/requests.html`;
     // Redirect to the specified URL
     window.location.href = updatableURL;
 });

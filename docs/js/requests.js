@@ -1,6 +1,6 @@
 //Edit the following variables
 var RepoOwner = "Arcticons-Team";
-var RepoName = "Icon-Request-Dashboard";
+var RepoName = "Arcticons";
 var RepoBranch = "main";
 
 
