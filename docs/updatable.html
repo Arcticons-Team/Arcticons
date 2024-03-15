@@ -7,17 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Requested Apps</title>
     <link rel="icon" type="image/png" href="img/arcticons/icon.png" />
-    <link rel="stylesheet" href="css/requests.css" />
+    <link rel="stylesheet" href="css/updatable.css" />
 </head>
 
 <body>
 
     <!-- Header -->
-    <h1 id="header">Requested Apps</h1>
-    <h2 id="date_header">Date</h2>
+    <h1 id="header">Possible Appfilter Updates</h1>
 
     <div class="header-container">
-        <!-- Search Container -->
         <div id="search-container">
             <input type="text" id="search-input" oninput="filterAppEntries()" placeholder="Search">
         </div>
@@ -34,11 +32,7 @@
                 <tr>
                     <th class="sortable-header" onclick="sortTable(0)">App
                         Name</th>
-                    <th>Icon</th>
-                    <th>Links</th>
-                    <th class="sortable-header" onclick="sortTable(3)">Requested times</th>
-                    <th class="sortable-header" onclick="sortTable(4)">Last
-                        Requested</th>
+                    <th>Appfilter Text</th>
                     <th>Appfilter</th>
                 </tr>
             </thead>
@@ -52,7 +46,7 @@
     <!-- Search Notification -->
     <div id="search-notification"></div>
 
-    <script src="js/requests.js"></script>
+    <script src="js/updatable.js"></script>
 </body>
 
 </html>
