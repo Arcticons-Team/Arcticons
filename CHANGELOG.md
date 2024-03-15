@@ -1,3 +1,12 @@
+### 9.0.0
+###### Released: Mar 14, 2024
+* 🎉 253 new and updated icons! (thanks Kaiserdragon2, ZachIndigo, Sande-Santhosh, Yetanother-user, Alchemiker, Dgcampbe, Knsrinath, Drenat)
+* ♾️ Unlimited icon requests 4 all! We did some behind the scenes work to track icon requests better, if you're curious about the progress, [take a look here](https://arcticons-team.github.io/Arcticons/requests.html). Thanks @Kaiserdragon2
+* ✨ Updates to make sure lots of apps work again.
+* 📁 Folder support for Discreet Launcher. Thanks to @falzonv @kaanelloed
+* 🚀 A place to [check launcher compatibility](https://github.com/Arcticons-Team/Arcticons/wiki/Supported-Launchers) for all Arcticons versions.
+* 🔥 9000 icons in total!
+
 ### 8.7.1
 ###### Released: Feb 04, 2024
 * 🎉 81 new and updated icons! (thanks Kaiserdragon2, ZachIndigo, Sande-Santhosh, Yetanother-user, Alchemiker, Dgcampbe, Knsrinath, Drenat)
