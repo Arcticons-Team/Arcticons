@@ -12,7 +12,7 @@ import argparse
 import os
 
 config = {
-    "request_limit": 50,
+    "request_limit": 100,
     "months_limit": 6,
     "min_requests": 5,
     "date_format": "X%d %B %Y",
