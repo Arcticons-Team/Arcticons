@@ -26,6 +26,10 @@ Powered by a community of icon creators all around the world!
 [<img alt="Arcticons You" src="github/arcticons_you.png">](https://arcticons-team.github.io/Arcticons/#you) 
 [<img alt="Arcticons Day & Night" src="github/arcticons_day_night.webp">](https://arcticons-team.github.io/Arcticons/#daynight) 
 
+Arcticons 'You' as well as 'Day & Night' **require** Launcher support.
+- Have a look at the [currently known Launcher Support](https://github.com/Arcticons-Team/Arcticons/wiki/Supported-Launchers#icon-pack-launcher-compatibility).
+- Additional Feedback -> [Supported Launcher](https://github.com/Arcticons-Team/Arcticons/issues/1874).
+
 ## Screenshots
 
 <img src='https://raw.githubusercontent.com/Arcticons-Team/Arcticons/main/github/phonescreenshotsdark.jpg'>
