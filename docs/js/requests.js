@@ -111,7 +111,7 @@ const updatableButton = document.getElementById("updatable-button");
 // Add an event listener to the button
 updatableButton.addEventListener("click", function() {
     // Define the URL to redirect to
-    const updatableURL = `https://${RepoOwner}.github.io/${RepoName}/requests.html`;
+    const updatableURL = `https://${RepoOwner}.github.io/${RepoName}/updatable.html`;
     // Redirect to the specified URL
     window.location.href = updatableURL;
 });
