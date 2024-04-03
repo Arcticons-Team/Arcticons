@@ -7,14 +7,14 @@
 <img src='https://raw.githubusercontent.com/Arcticons-Team/Arcticons/main/github/header-background.png'>
 
 # Arcticons is a line-based icon pack for Android devices.
-With **over 8300 icons**, Arcticons is one of the largest free & open source icon-packs available. Featuring consistent and elegant handcrafted icons, giving you a minimalistic clutter-free experience on your phone.
+With **9000 icons**, Arcticons is one of the largest free & open source icon-packs available. Featuring consistent and elegant handcrafted icons, giving you a minimalistic clutter-free experience on your phone.
 Powered by a community of icon creators all around the world!
 <br>
 <br>
 <br>
 ## Get it from one of these stores
 [<img src="github/fdroid_badge.png" alt="Get it on F-Droid" height="90">](https://f-droid.org/packages/com.donnnno.arcticons)
-[<img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" height="90">](https://play.google.com/store/apps/details?id=com.donnnno.arcticons)<br>
+[<img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it from the Play Store" height="90">](https://play.google.com/store/apps/details?id=com.donnnno.arcticons)<br>
 [<img src="github/github_badge.png" alt="Get it on Github" height="90">](https://github.com/Arcticons-Team/Arcticons/releases)
 [<img src="https://accrescent.app/badges/get-it-on.png" alt="Get it on Accrescent" height="90">](https://accrescent.app/app/com.donnnno.arcticons)<br>
 [<img src="github/obtainium.png" alt="Get it on Obtainium" height="90">](https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22com.donnnno.arcticons%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2Fdonnnno%2Farcticons%22%2C%22author%22%3A%22donnnno%22%2C%22name%22%3A%22Arcticons%22%2C%22preferredApkIndex%22%3A0%2C%22additionalSettings%22%3A%22%7B%5C%22includePrereleases%5C%22%3Afalse%2C%5C%22fallbackToOlderReleases%5C%22%3Atrue%2C%5C%22filterReleaseTitlesByRegEx%5C%22%3A%5C%22%5C%22%2C%5C%22filterReleaseNotesByRegEx%5C%22%3A%5C%22%5C%22%2C%5C%22verifyLatestTag%5C%22%3Afalse%2C%5C%22dontSortReleasesList%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Afalse%2C%5C%22trackOnly%5C%22%3Afalse%2C%5C%22versionExtractionRegEx%5C%22%3A%5C%22%5C%22%2C%5C%22matchGroupToUse%5C%22%3A%5C%22%5C%22%2C%5C%22versionDetection%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Afalse%2C%5C%22useVersionCodeAsOSVersion%5C%22%3Afalse%2C%5C%22apkFilterRegEx%5C%22%3A%5C%22.*-normal-release.*%5C%22%2C%5C%22invertAPKFilter%5C%22%3Afalse%2C%5C%22autoApkFilterByArch%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Arcticons%20White%20%5C%22%2C%5C%22exemptFromBackgroundUpdates%5C%22%3Afalse%2C%5C%22skipUpdateNotifications%5C%22%3Afalse%2C%5C%22about%5C%22%3A%5C%22%5C%22%7D%22%7D)
@@ -22,9 +22,13 @@ Powered by a community of icon creators all around the world!
 ## Check out our other versions
 
 [<img alt="Arcticons" src="github/arcticons.png">](https://arcticons-team.github.io/Arcticons/#dark) 
-[<img alt="Arcticons" src="github/arcticons_black.png">](https://arcticons-team.github.io/Arcticons/#light) 
-[<img alt="Arcticons" src="github/arcticons_you.png">](https://arcticons-team.github.io/Arcticons/#you) 
-[<img alt="Arcticons" src="github/arcticons_day_night.webp">](https://arcticons-team.github.io/Arcticons/#daynight) 
+[<img alt="Arcticons Black" src="github/arcticons_black.png">](https://arcticons-team.github.io/Arcticons/#light) 
+[<img alt="Arcticons You" src="github/arcticons_you.png">](https://arcticons-team.github.io/Arcticons/#you) 
+[<img alt="Arcticons Day & Night" src="github/arcticons_day_night.webp">](https://arcticons-team.github.io/Arcticons/#daynight) 
+
+Arcticons 'You' as well as 'Day & Night' **require** Launcher support.
+- Have a look at the [currently known Launcher Support](https://github.com/Arcticons-Team/Arcticons/wiki/Supported-Launchers#icon-pack-launcher-compatibility).
+- Additional Feedback -> [Supported Launcher](https://github.com/Arcticons-Team/Arcticons/issues/1874).
 
 ## Screenshots
 
