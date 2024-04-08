@@ -52,7 +52,7 @@ fetch(`https://raw.githubusercontent.com/${RepoOwner}/${RepoName}/${RepoBranch}/
         appEntriesDataGlobal = appEntriesData;
 
         // Example usage:
-        fetch(`https://raw.githubusercontent.com/${RepoOwner}/${RepoName}//icon-requests/docs/assets/combined_appfilter.xml`)
+        fetch(`https://raw.githubusercontent.com/${RepoOwner}/${RepoName}/icon-requests/docs/assets/combined_appfilter.xml`)
             .then(response => {
                 if (!response.ok) {
                     // If appfilter.xml cannot be loaded, render appEntriesData as is
@@ -74,7 +74,7 @@ fetch(`https://raw.githubusercontent.com/${RepoOwner}/${RepoName}/${RepoBranch}/
                 appEntriesDataGlobal = filteredData;
                 const table = document.querySelector('table');
                 const headers = table.querySelectorAll('thead th');
-                headers[sortingColumnIndex].classList.add(sortingDirection);
+                // headers[sortingColumnIndex].classList.add(sortingDirection);
                 // Initial render
                 lazyLoadAndRender();
             })
@@ -172,7 +172,7 @@ function updateTable(data) {
 // Copy to clipboard function
 function copyToClipboard(index) {
     const entry = appEntriesDataGlobal[index];
-    const copyText = `${entry.appNameAppfilter}\n${entry.appfilter}`;
+    const copyText = `${entry.appfilter}`;
     navigator.clipboard.writeText(copyText).then(() => {
         // Show the copy notification
         document.getElementById('copy-notification').innerText = `Copied: ${copyText}`;
