@@ -43,10 +43,13 @@ fetch(`https://raw.githubusercontent.com/${RepoOwner}/${RepoName}/${RepoBranch}/
             const appName = lines[0].trim().split('--')[1].trim();
             const appNameAppfilter = lines[0].trim();
             const appfilter = lines[1].trim().split('\n').join(' ').trim();
+            const packageName = appfilter.split('ComponentInfo{')[1].split('/')[0].trim();
+
             appEntriesData.push({
                 appName,
                 appNameAppfilter,
-                appfilter
+                appfilter,
+                packageName
             });
         });
         appEntriesDataGlobal = appEntriesData;
@@ -155,10 +158,12 @@ function renderTable(data) {
         let cell1 = row.insertCell(0);
         let cell2 = row.insertCell(1);
         let cell3 = row.insertCell(2);
+        let cell4 = row.insertCell(3);
         index = index + startIndex;
         cell1.innerHTML = entry.appName;
-        cell2.innerHTML = entry.appfilter.replace('<', '&lt;').replace('>', '&gt;').replace(/"/g, '&quot;').trim();
-        cell3.innerHTML = `<button class="copy-button" onclick="copyToClipboard(${index})">Copy</button>`;
+        cell2.innerHTML = `<div class="package-name"><div id="packagename">`+entry.packageName + `</div><div id="package-copy"><button class="copy-package" onclick="copyToClipboard(${index}, 'package')"><img src="img/requests/copy.svg"></button></div></div>`;
+        cell3.innerHTML = entry.appfilter.replace('<', '&lt;').replace('>', '&gt;').replace(/"/g, '&quot;').trim();
+        cell4.innerHTML = `<button class="copy-button" onclick="copyToClipboard(${index}, 'appfilter')">Copy</button>`;
     });
 }
 
@@ -171,9 +176,16 @@ function updateTable(data) {
 }
 
 // Copy to clipboard function
-function copyToClipboard(index) {
+function copyToClipboard(index, event) {
     const entry = appEntriesDataGlobal[index];
-    const copyText = `${entry.appfilter}`;
+    let copyText = "";
+
+    if (event == "package"){
+         copyText = `${entry.packageName}`;
+    }else if (event == "appfilter"){
+         copyText = `${entry.appfilter}`;
+    }
+    
     navigator.clipboard.writeText(copyText).then(() => {
         // Show the copy notification
         document.getElementById('copy-notification').innerText = `Copied: ${copyText}`;
