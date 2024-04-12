@@ -72,6 +72,7 @@ fetch(`https://raw.githubusercontent.com/${RepoOwner}/${RepoName}/${RepoBranch}/
                 const filteredData = filterAppfilter(appEntriesData, appfilterContent);
                 appEntriesData = filteredData;
                 appEntriesDataGlobal = filteredData;
+                updateHeaderText(`${appEntriesData.length} Possible Appfilter Updates`);
                 const table = document.querySelector('table');
                 const headers = table.querySelectorAll('thead th');
                 // headers[sortingColumnIndex].classList.add(sortingDirection);
