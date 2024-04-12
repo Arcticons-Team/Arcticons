@@ -1,9 +1,3 @@
-//Edit the following variables
-var RepoOwner = "Arcticons-Team";
-var RepoName = "Arcticons";
-var RepoBranch = "main";
-
-
 // Array of Link Images
 const imageNames = ['img/requests/google-play-store.svg', 'img/requests/f-droid.svg', 'img/requests/izzyondroid.svg', 'img/requests/galaxystore.svg', 'img/requests/search-globe.svg'];
 var appEntriesDataGlobal = []; // Store the original data for sorting
@@ -12,7 +6,7 @@ const batchSize = 50; // Number of rows to load at a time
 let startIndex = 0; // Start index for lazy loading
 let appEntriesData = []; // Store the original data for sorting
 // Global variables to track sorting column and direction
-let sortingColumnIndex = 2;
+let sortingColumnIndex = 3;
 let sortingDirection = 'desc';
 
 // Debounce function for search input
@@ -29,7 +23,7 @@ const debounce = (func, delay) => {
 };
 
 // Fetch and process data
-fetch(`https://raw.githubusercontent.com/${RepoOwner}/${RepoName}/${RepoBranch}/generated/requests.txt`)
+fetch(`assets/requests.txt`)
     .then(response => {
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
@@ -111,7 +105,7 @@ const updatableButton = document.getElementById("updatable-button");
 // Add an event listener to the button
 updatableButton.addEventListener("click", function() {
     // Define the URL to redirect to
-    const updatableURL = `https://${RepoOwner}.github.io/${RepoName}/updatable.html`;
+    const updatableURL = `updatable.html`;
     // Redirect to the specified URL
     window.location.href = updatableURL;
 });
