@@ -12,7 +12,7 @@ const batchSize = 50; // Number of rows to load at a time
 let startIndex = 0; // Start index for lazy loading
 let appEntriesData = []; // Store the original data for sorting
 // Global variables to track sorting column and direction
-let sortingColumnIndex = 2;
+let sortingColumnIndex = 3;
 let sortingDirection = 'desc';
 
 // Debounce function for search input
