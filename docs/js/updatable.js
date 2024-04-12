@@ -10,7 +10,7 @@ const batchSize = 50; // Number of rows to load at a time
 let startIndex = 0; // Start index for lazy loading
 let appEntriesData = []; // Store the original data for sorting
 // Global variables to track sorting column and direction
-let sortingColumnIndex = 3; 
+let sortingColumnIndex = 3;
 let sortingDirection = 'desc';
 
 // Debounce function for search input
@@ -53,6 +53,7 @@ fetch(`https://raw.githubusercontent.com/${RepoOwner}/${RepoName}/${RepoBranch}/
             });
         });
         appEntriesDataGlobal = appEntriesData;
+        updateHeaderText(`${appEntriesData.length} Possible Appfilter Updates`);
 
         // Example usage:
         fetch(`https://raw.githubusercontent.com/${RepoOwner}/${RepoName}/icon-requests/docs/assets/combined_appfilter.xml`)
@@ -88,23 +89,23 @@ fetch(`https://raw.githubusercontent.com/${RepoOwner}/${RepoName}/${RepoBranch}/
 
 
 
-    // Filter appEntriesData based on appfilter content
-    function filterAppfilter(appEntriesData, appfilterContent) {
-        const appfilterItems = parseAppfilter(appfilterContent);
-        const filteredOutEntries = [];
-    
-        const filteredData = appEntriesData.filter(entry => {
-            const entryAppfilter = entry.appfilter.trim().split('"')[1].trim();
-            // Check if the entry is filtered out
-            const isFiltered = appfilterItems.some(component => component === entryAppfilter);  
-            if (isFiltered) {
-                filteredOutEntries.push(entryAppfilter);
-            } 
-            return !isFiltered;
-        });
-        console.log("Filtered out entries:", filteredOutEntries); 
-        return filteredData;
-    }
+// Filter appEntriesData based on appfilter content
+function filterAppfilter(appEntriesData, appfilterContent) {
+    const appfilterItems = parseAppfilter(appfilterContent);
+    const filteredOutEntries = [];
+
+    const filteredData = appEntriesData.filter(entry => {
+        const entryAppfilter = entry.appfilter.trim().split('"')[1].trim();
+        // Check if the entry is filtered out
+        const isFiltered = appfilterItems.some(component => component === entryAppfilter);
+        if (isFiltered) {
+            filteredOutEntries.push(entryAppfilter);
+        }
+        return !isFiltered;
+    });
+    console.log("Filtered out entries:", filteredOutEntries);
+    return filteredData;
+}
 
 // Parse appfilter content
 function parseAppfilter(appfilterContent) {
@@ -161,7 +162,7 @@ function renderTable(data) {
         let cell4 = row.insertCell(3);
         index = index + startIndex;
         cell1.innerHTML = entry.appName;
-        cell2.innerHTML = `<div class="package-name"><div id="packagename">`+entry.packageName + `</div><div id="package-copy"><button class="copy-package" onclick="copyToClipboard(${index}, 'package')"><img src="img/requests/copy.svg"></button></div></div>`;
+        cell2.innerHTML = `<div class="package-name"><div id="packagename">` + entry.packageName + `</div><div id="package-copy"><button class="copy-package" onclick="copyToClipboard(${index}, 'package')"><img src="img/requests/copy.svg"></button></div></div>`;
         cell3.innerHTML = entry.appfilter.replace('<', '&lt;').replace('>', '&gt;').replace(/"/g, '&quot;').trim();
         cell4.innerHTML = `<button class="copy-button" onclick="copyToClipboard(${index}, 'appfilter')">Copy</button>`;
     });
@@ -180,12 +181,12 @@ function copyToClipboard(index, event) {
     const entry = appEntriesDataGlobal[index];
     let copyText = "";
 
-    if (event == "package"){
-         copyText = `${entry.packageName}`;
-    }else if (event == "appfilter"){
-         copyText = `${entry.appfilter}`;
+    if (event == "package") {
+        copyText = `${entry.packageName}`;
+    } else if (event == "appfilter") {
+        copyText = `${entry.appfilter}`;
     }
-    
+
     navigator.clipboard.writeText(copyText).then(() => {
         // Show the copy notification
         document.getElementById('copy-notification').innerText = `Copied: ${copyText}`;
@@ -204,7 +205,7 @@ function copyToClipboard(index, event) {
 const updatableButton = document.getElementById("updatable-button");
 
 // Add an event listener to the button
-updatableButton.addEventListener("click", function() {
+updatableButton.addEventListener("click", function () {
     // Define the URL to redirect to
     const updatableURL = `https://${RepoOwner}.github.io/${RepoName}/requests.html`;
     // Redirect to the specified URL
@@ -250,32 +251,16 @@ function sortTable(columnIndex) {
     sortingColumnIndex = columnIndex;
     // Sort the data
     const sortedData = sortData(sortingDirection, columnIndex, [...appEntriesDataGlobal]);
-    
+
     updateTable(sortedData);
 }
 
-function sortData(sortingDirection, columnIndex, sortedData){
+function sortData(sortingDirection, columnIndex, sortedData) {
     sortedData.sort((a, b) => {
-        if (columnIndex === 4) { // Check if sorting the 'Last Requested' column
-            const cellA = getCellValue(a, columnIndex);
-            const cellB = getCellValue(b, columnIndex);
-
-            // Handle dates
-            return sortingDirection === 'asc' ? cellA - cellB : cellB - cellA;
-        } else if (columnIndex === 3) {
-            const cellA = getCellValue(a, columnIndex);
-            const cellB = getCellValue(b, columnIndex);
-
-            // Handle numerical values
-            if (!isNaN(cellA) && !isNaN(cellB)) {
-                return sortingDirection === 'asc' ? cellA - cellB : cellB - cellA;
-            }
-        } else {
-            // Default to string comparison
-            const cellA = a[Object.keys(a)[columnIndex]].toLowerCase();
-            const cellB = b[Object.keys(b)[columnIndex]].toLowerCase();
-            return sortingDirection === 'asc' ? cellA.localeCompare(cellB) : cellB.localeCompare(cellA);
-        }
+        // Default to string comparison
+        const cellA = a[Object.keys(a)[columnIndex]].toLowerCase();
+        const cellB = b[Object.keys(b)[columnIndex]].toLowerCase();
+        return sortingDirection === 'asc' ? cellA.localeCompare(cellB) : cellB.localeCompare(cellA);
     });
     return sortedData;
 }
@@ -283,18 +268,4 @@ function sortData(sortingDirection, columnIndex, sortedData){
 // Initial table rendering
 function initializeTable() {
     renderTable(appEntriesData);
-}
-
-// Helper function to get cell value by column index
-function getCellValue(row, columnIndex) {
-    const key = Object.keys(row)[columnIndex];
-    if (key === 'lastRequestedTime') {
-        // Parse date strings to Date objects for sorting
-        const dateString = row[key].split(',')[0]; // Extract date part from the string
-        const [day, month, year] = dateString.split('/').map(Number); // Split the date string and convert parts to numbers
-        const timeString = row[key].split(',')[1].trim(); // Extract time part from the string
-        const [hour, minute, second] = timeString.split(':').map(Number); // Split the time string and convert parts to numbers
-        return new Date(year, month - 1, day, hour, minute, second); // Return a Date object with year, month, day, hour, minute, second
-    }
-    return isNaN(row[key]) ? row[key] : parseFloat(row[key]);
 }
