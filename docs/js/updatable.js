@@ -56,7 +56,7 @@ fetch(`https://raw.githubusercontent.com/${RepoOwner}/${RepoName}/${RepoBranch}/
         updateHeaderText(`${appEntriesData.length} Possible Appfilter Updates`);
 
         // Example usage:
-        fetch(`https://raw.githubusercontent.com/${RepoOwner}/${RepoName}/icon-requests/docs/assets/combined_appfilter.xml`)
+        fetch(`assets/combined_appfilter.xml`)
             .then(response => {
                 if (!response.ok) {
                     // If appfilter.xml cannot be loaded, render appEntriesData as is
