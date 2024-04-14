@@ -1,9 +1,3 @@
-//Edit the following variables
-var RepoOwner = "Arcticons-Team";
-var RepoName = "Arcticons";
-var RepoBranch = "main";
-
-
 var appEntriesDataGlobal = []; // Store the original data for sorting
 // Lazy loading and virtualization
 const batchSize = 50; // Number of rows to load at a time
@@ -27,7 +21,7 @@ const debounce = (func, delay) => {
 };
 
 // Fetch and process data
-fetch(`https://raw.githubusercontent.com/${RepoOwner}/${RepoName}/${RepoBranch}/generated/updatable.txt`)
+fetch(`assets/updatable.txt`)
     .then(response => {
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
@@ -207,7 +201,7 @@ const updatableButton = document.getElementById("updatable-button");
 // Add an event listener to the button
 updatableButton.addEventListener("click", function () {
     // Define the URL to redirect to
-    const updatableURL = `https://${RepoOwner}.github.io/${RepoName}/requests.html`;
+    const updatableURL = `requests.html`;
     // Redirect to the specified URL
     window.location.href = updatableURL;
 });
