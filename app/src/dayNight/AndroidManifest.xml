@@ -73,9 +73,12 @@
                 <data android:mimeType="image/*" />
             </intent-filter>
             <!-- ADW Launcher -->
-            <intent-filter>
+            <intent-filter tools:node="merge" >
                 <action android:name="org.adw.launcher.THEMES" />
                 <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="org.icontheme.CHANGES_WITH_MATERIAL_YOU_COLORS" />
+                <category android:name="org.icontheme.FALLBACK_TO_THEMED_ICON" />
+                <category android:name="org.icontheme.CHANGES_WITH_DARK_MODE" />
             </intent-filter>
             <!-- ADW Launcher Custom Icon Picker -->
             <intent-filter>
@@ -112,7 +115,7 @@
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-             <!-- Lawnchair Launcher -->
+            <!-- Lawnchair Launcher -->
             <intent-filter>
                 <action android:name="app.lawnchair.icons.THEMED_ICON" />
                 <category android:name="android.intent.category.DEFAULT" />
