@@ -3,8 +3,8 @@ on:
   push:
     branches: [wiki_workflow]
     paths:
-      - wiki/**
-      - .github/workflows/publish-wiki.yml
+      - 'wiki/**'
+      - '.github/workflows/publish-wiki.yml'
 concurrency:
   group: publish-wiki
   cancel-in-progress: true
