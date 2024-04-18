@@ -60,7 +60,7 @@ class EmailParser:
             for req in existing_requests:
                 element_info = req.groupdict()
                 self.apps[element_info['ComponentInfo']] = element_info
-                self.apps[element_info['ComponentInfo']]['drawable'] = int(element_info['drawable'])
+                self.apps[element_info['ComponentInfo']]['drawable'] = str(element_info['drawable'])
                 self.apps[element_info['ComponentInfo']]['requestDate'] = float(element_info['requestDate']) if element_info['requestDate'] is not None else mktime(date.today().timetuple())
                 self.apps[element_info['ComponentInfo']]['count'] = int(element_info['count']) if element_info['count'] is not None else 1
                 self.apps[element_info['ComponentInfo']]['senders'] = []
