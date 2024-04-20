@@ -270,7 +270,7 @@ Last requested {reqDate}
                 ):
                     self.updatable.append(
                         f'<!-- {values["Name"]} -->\n'
-                        f'<item component="ComponentInfo{{{values["ComponentInfo"]}}}" drawable="{values["drawable"]}" />\n\n'
+                        f'<item component="ComponentInfo{{{values["ComponentInfo"]}}}" drawable="{values["drawable"]}"/>\n\n'
                     )
                     updatable_set.add(componentInfo)
             except Exception as e:
