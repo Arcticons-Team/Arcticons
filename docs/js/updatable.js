@@ -38,9 +38,13 @@ fetch(`assets/updatable.txt`)
             const appNameAppfilter = lines[0].trim();
             const appfilter = lines[1].trim().split('\n').join(' ').trim();
             const packageName = appfilter.split('ComponentInfo{')[1].split('/')[0].trim();
+            const drawable = extractDrawable(appfilter);
+            const appIconPath = drawable ? `extracted_png/${drawable}.png` : 'img/requests/default.svg'; // Adjust path accordingly
+            const appIcon = `<img src="${appIconPath}" alt="App Icon" style="width:50px;height:50px;">`;
 
             appEntriesData.push({
                 appName,
+                appIcon,
                 appNameAppfilter,
                 appfilter,
                 packageName
@@ -81,7 +85,15 @@ fetch(`assets/updatable.txt`)
     })
     .catch(error => console.error('Error fetching file:', error));
 
-
+// Function to extract the drawable attribute from appfilter
+function extractDrawable(appfilter) {
+    const regex = /drawable="([^"]+)"/;
+    const match = appfilter.match(regex);
+    if (match && match.length > 1) {
+        return match[1]; // Return the value inside the quotes
+    }
+    return null; // Return null if no match found
+}
 
 // Filter appEntriesData based on appfilter content
 function filterAppfilter(appEntriesData, appfilterContent) {
@@ -154,11 +166,13 @@ function renderTable(data) {
         let cell2 = row.insertCell(1);
         let cell3 = row.insertCell(2);
         let cell4 = row.insertCell(3);
+        let cell5 = row.insertCell(4);
         index = index + startIndex;
         cell1.innerHTML = entry.appName;
-        cell2.innerHTML = `<div class="package-name"><div id="packagename">` + entry.packageName + `</div><div id="package-copy"><button class="copy-package" onclick="copyToClipboard(${index}, 'package')"><img src="img/requests/copy.svg"></button></div></div>`;
-        cell3.innerHTML = entry.appfilter.replace('<', '&lt;').replace('>', '&gt;').replace(/"/g, '&quot;').trim();
-        cell4.innerHTML = `<button class="copy-button" onclick="copyToClipboard(${index}, 'appfilter')">Copy</button>`;
+        cell2.innerHTML = entry.appIcon;
+        cell3.innerHTML = `<div class="package-name"><div id="packagename">` + entry.packageName + `</div><div id="package-copy"><button class="copy-package" onclick="copyToClipboard(${index}, 'package')"><img src="img/requests/copy.svg"></button></div></div>`;
+        cell4.innerHTML = entry.appfilter.replace('<', '&lt;').replace('>', '&gt;').replace(/"/g, '&quot;').trim();
+        cell5.innerHTML = `<button class="copy-button" onclick="copyToClipboard(${index}, 'appfilter')">Copy</button>`;
     });
 }
 
