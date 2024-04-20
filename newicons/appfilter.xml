@@ -64,7 +64,7 @@
     <item component="ComponentInfo{sc.sim.emulator8085/sc.sim.emulator8085.SplashActivity}" drawable="_85"/>
 
     <!-- 85ºC Rewards -->
-    <item component="ComponentInfo{com.wishmobile.cafe85en/com.paytronix.client.android.app.activity.Splash_Screen}" drawable="_8085_simulator"/>
+    <item component="ComponentInfo{com.wishmobile.cafe85en/com.paytronix.client.android.app.activity.Splash_Screen}" drawable="_85"/>
 
     <!-- 90 Day Challenge -->
     <item component="ComponentInfo{nl.browney.nintydayschallenge/nintydayschallenge.MainActivity}" drawable="_90"/>
@@ -6949,13 +6949,13 @@
 	<item component="ComponentInfo{com.android.contacts/com.android.contacts.PeopleActivityAlias}" drawable="contacts"/>
 	<item component="ComponentInfo{com.asus.contacts/com.android.contacts.activities.PeopleActivity}" drawable="contacts"/>
 	<item component="ComponentInfo{com.huawei.contacts/com.android.contacts.activities.DialtactsActivity}" drawable="contacts"/>
-	<item component="ComponentInfo{com.android.contacts/com.android.dialer.DialtactsActivity}" drawable="phone"/>
 	<item component="ComponentInfo{com.android.contacts/com.oppo.contacts.OppoDialtactsActivity}" drawable="contacts"/>
 	<item component="ComponentInfo{com.android.contacts/com.android.contacts.DialtactsContactsEntryActivityForDialpad}" drawable="contacts"/>
 	<item component="ComponentInfo{com.lenovo.ideafriend/com.lenovo.ideafriend.alias.PeopleActivity}" drawable="contacts"/>
 	<item component="ComponentInfo{com.tct.contacts.transfer/com.tct.contacts.transfer.TransferToPhoneActivity}" drawable="contacts"/>
 	<item component="ComponentInfo{com.android.lgcontacts/com.android.lgcontacts.activities.PeopleActivity}" drawable="contacts"/>
 	<item component="ComponentInfo{com.sh.smart.caller/com.android.dialer.ContactMainActivity}" drawable="contacts"/>
+	<item component="ComponentInfo{com.android.dialer/com.android.dialer.app.ContactsTabByAlias}" drawable="contacts" />
 	<item component="ComponentInfo{com.vinsmart.contacts/com.android.contacts.activities.PeopleActivity}" drawable="contacts"/>
 	<item component="ComponentInfo{com.tct.contacts/com.android.contacts.activities.PeopleActivity}" drawable="contacts"/>
 	<item component="ComponentInfo{com.hihonor.contacts/com.android.contacts.activities.PeopleActivity}" drawable="contacts"/>
@@ -18074,7 +18074,7 @@
 	<item component="ComponentInfo{fi.danskebank.mobilepay/dk.danskebank.p2p.ui.login.LoginActivity}" drawable="mobilepay"/>
 	<item component="ComponentInfo{fi.danskebank.mobilepay/com.dnb.vipps.consentcard.activities.SplashActivity}" drawable="mobilepay"/>
 	<item component="ComponentInfo{dk.danskebank.mobilepay/com.dnb.vipps.consentcard.activities.SplashActivity}" drawable="mobilepay" />
-	<item component="ComponentInfo{dk.danskebank.mobilepay/com.dnb.vipps.android.startup.ui.StartupActivity}" drawable="mobilepay_1" />
+	<item component="ComponentInfo{dk.danskebank.mobilepay/com.dnb.vipps.android.startup.ui.StartupActivity}" drawable="mobilepay" />
 
 	<!-- Mobileraker -->
 	<item component="ComponentInfo{com.mobileraker.android/com.mobileraker.MainActivity}" drawable="mobileraker"/>
@@ -19481,7 +19481,7 @@
 	<item component="ComponentInfo{com.t2ksports.nba2k20and/com.t2ksports.nba2k20and.gameactivity}" drawable="nba_2k20"/>
 	<item component="ComponentInfo{com.t2ksports.nba2k20and/cc.ccplay.activity.WelcomeActivity}" drawable="nba_2k20"/>
 	<item component="ComponentInfo{com.t2ksports.nba2k20and/com.Hub.LockActivity}" drawable="nba"/>
-	<item component="ComponentInfo{com.t2ksports.nba2k20and/com.bkgames.api.AAkActivity}" drawable="nba2k20" />
+	<item component="ComponentInfo{com.t2ksports.nba2k20and/com.bkgames.api.AAkActivity}" drawable="nba_2k20" />
 
 	<!-- NBA LIVE -->
 	<item component="ComponentInfo{com.ea.gp.nbamobile/com.ea.game.nba.NBAMainActivity}" drawable="nba_live"/>
@@ -22017,6 +22017,7 @@
 
 	<!-- Phone -->
 	<item component="ComponentInfo{com.android.contacts/com.android.contacts.DialtactsActivityAlias}" drawable="phone"/>
+	<item component="ComponentInfo{com.android.contacts/com.android.dialer.DialtactsActivity}" drawable="phone"/>
 	<item component="ComponentInfo{com.android.contacts/com.prc.activities.ToDialerActivity}" drawable="phone" />
 	<item component="ComponentInfo{com.android.contacts/com.android.contacts.activities.WtDialerActivity}" drawable="phone" />
 	<item component="ComponentInfo{com.android.contacts/com.android.dialer.TwelveKeyDialer}" drawable="phone" />
@@ -22056,7 +22057,6 @@
 	<item component="ComponentInfo{com.android.dialer/com.android.dialer.app.calllog.CallLogActivity}" drawable="phone"/>
 	<item component="ComponentInfo{com.logger.welog/com.logger.welog.MainActivity}" drawable="phone"/>
 	<item component="ComponentInfo{com.hb.dialer.free/com.hb.dialer.ui.ShcStartActivity$Favorites}" drawable="phone"/>
-	<item component="ComponentInfo{com.android.dialer/com.android.dialer.app.ContactsTabByAlias}" drawable="contacts_1" />
 	<item component="ComponentInfo{cn.nubia.contacts/cn.nubia.contacts.DialerActivity}" drawable="phone" />
 
 	<!-- Phone Manager -->
@@ -26833,7 +26833,7 @@
 
 	<!-- Snack Video -->
 	<item component="ComponentInfo{com.kwai.bulldog/com.yxcorp.gifshow.homepage.HomeActivity}" drawable="snackvideo"/>
-	<item component="ComponentInfo{com.kwai.bulldog/com.yxcorp.gifshow.tiny.TinyLaunchActivity}" drawable="snack_video" />
+	<item component="ComponentInfo{com.kwai.bulldog/com.yxcorp.gifshow.tiny.TinyLaunchActivity}" drawable="snackvideo" />
 
 	<!-- SNAP -->
 	<item component="ComponentInfo{com.nvsgames.snap/com.appboy.unity.AppboyUnityPlayerActivity}" drawable="snap"/>
