@@ -1,3 +1,11 @@
+### 9.2.4
+###### Released: Apr 21, 2024
+* 🎉 **243** new and updated icons! (thanks Kaiserdragon2, Albertjohnsonpc, Cequallium, TheLastZombie, TheAngryTurkey, Renomizer, Onuronsekiz, Trautb, GuitareCouture, Npepperlinux, Ayecptn, Dgcampbe)
+* ✨ Updates to make sure lots of apps work again.
+* 🚀 **Moto Launcher** support.
+* 🌐 The beginning of [**a new wiki**](https://github.com/Arcticons-Team/Arcticons/wiki/) page for all your Arcticons questions!
+* 🔥 **9240** icons in total!
+
 ### 9.0.0
 ###### Released: Mar 14, 2024
 * 🎉 253 new and updated icons! (thanks Kaiserdragon2, ZachIndigo, Sande-Santhosh, Yetanother-user, Alchemiker, Dgcampbe, Knsrinath, Drenat)
