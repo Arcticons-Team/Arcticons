@@ -30,5 +30,5 @@ There's this weird bug that shuffles all your icons when using icon packs in com
 ### Updating existing apps
 You can help the project without any knowledge on how to create icons or code, here's how:
 - Add [possible updates](https://arcticons-team.github.io/Arcticons/updatable.html) to the appfilter
-- Search through our [massive request list](https://arcticons-team.github.io/Arcticons/requests.htm) for apps that have similar icons to existing ones
+- Search through our [massive request list](https://arcticons-team.github.io/Arcticons/requests.html) for apps that have similar icons to existing ones
 - Report bugs
