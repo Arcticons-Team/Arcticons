@@ -45,6 +45,7 @@ fetch(`assets/updatable.txt`)
             appEntriesData.push({
                 appName,
                 appIcon,
+                appIconPath,
                 appNameAppfilter,
                 appfilter,
                 packageName
@@ -169,11 +170,40 @@ function renderTable(data) {
         let cell5 = row.insertCell(4);
         index = index + startIndex;
         cell1.innerHTML = entry.appName;
-        cell2.innerHTML = entry.appIcon;
+        cell2.innerHTML = `<a href="#" class="icon-preview" data-index="${index}">${entry.appIcon}</a>`;
         cell3.innerHTML = `<div class="package-name"><div id="packagename">` + entry.packageName + `</div><div id="package-copy"><button class="copy-package" onclick="copyToClipboard(${index}, 'package')"><img src="img/requests/copy.svg"></button></div></div>`;
         cell4.innerHTML = entry.appfilter.replace('<', '&lt;').replace('>', '&gt;').replace(/"/g, '&quot;').trim();
         cell5.innerHTML = `<button class="copy-button" onclick="copyToClipboard(${index}, 'appfilter')">Copy</button>`;
     });
+        // Add event listeners to the icon previews
+        const iconPreviews = document.querySelectorAll('.icon-preview');
+        iconPreviews.forEach(icon => {
+            icon.addEventListener('click', function(event) {
+                event.preventDefault();
+                const index = parseInt(this.getAttribute('data-index'));
+                const entry = appEntriesDataGlobal[index];
+                showIconPreview(entry.appIconPath);
+            });
+        });
+}
+
+
+function showIconPreview(iconSrc) {
+    const previewOverlay = document.getElementById('preview-overlay');
+    const previewImage = document.getElementById('preview-image');
+
+    // Set the preview image source to the clicked icon source
+    previewImage.src = iconSrc;
+
+    // Show the preview overlay
+    previewOverlay.style.display = 'block';
+    // Add click event listener to hide the preview when clicked on the overlay or close button
+previewOverlay.addEventListener('click', function(e) {
+    if (e.target === this || e.target.classList.contains('close-button')) {
+        // Hide the preview overlay
+        this.style.display = 'none';
+    }
+});
 }
 
 // Update the table with filtered or sorted data

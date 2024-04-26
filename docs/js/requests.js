@@ -216,9 +216,6 @@ function renderTable(data) {
     });
 }
 
-
-
-
 function showIconPreview(iconSrc) {
     const previewOverlay = document.getElementById('preview-overlay');
     const previewImage = document.getElementById('preview-image');
@@ -236,10 +233,6 @@ previewOverlay.addEventListener('click', function(e) {
     }
 });
 }
-
-
-
-
 
 // Update the table with filtered or sorted data
 function updateTable(data) {
