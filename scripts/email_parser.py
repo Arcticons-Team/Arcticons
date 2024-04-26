@@ -48,20 +48,20 @@ class EmailParser:
         self.name_pattern = re.compile(r'<!-- (?P<Name>.+) -->', re.M)
         self.component_pattern = re.compile('ComponentInfo{(?P<ComponentInfo>.+)}')
         self.package_name_pattern = re.compile(r'(?P<PackageName>[\w\.]+)/')
-
-    def parse_existing(self):
-        request_block_query = re.compile(r'<!-- (?P<Name>.+) -->\s<item component=\"ComponentInfo{(?P<ComponentInfo>.+)}\" drawable=\"(?P<drawable>.+|)\"(/>| />)\s(https:\/\/play.google.com\/store\/apps\/details\?id=.+\shttps:\/\/f-droid\.org\/en\/packages\/.+\shttps:\/\/apt.izzysoft.de\/fdroid\/index\/apk\/.+\shttps:\/\/galaxystore.samsung.com\/detail\/.+\shttps:\/\/www.ecosia.org\/search\?q\=.+\s)Requested (?P<count>\d+) times\s?(Last requested (?P<requestDate>\d+\.?\d+?))?', re.M)
-
-        if not self.requests_path.exists():
+        self.request_block_query = re.compile(r'<!-- (?P<Name>.+) -->\s<item component=\"ComponentInfo{(?P<ComponentInfo>.+)}\" drawable=\"(?P<drawable>.+|)\"(/>| />)\s(https:\/\/play.google.com\/store\/apps\/details\?id=.+\shttps:\/\/f-droid\.org\/en\/packages\/.+\shttps:\/\/apt.izzysoft.de\/fdroid\/index\/apk\/.+\shttps:\/\/galaxystore.samsung.com\/detail\/.+\shttps:\/\/www.ecosia.org\/search\?q\=.+\s)Requested (?P<count>\d+) times\s?(Last requested (?P<requestDate>\d+\.?\d+?))?', re.M)
+        self.update_block_query = re.compile(r'<!-- (?P<Name>.+) -->\s<item component=\"ComponentInfo{(?P<ComponentInfo>.+)}\" drawable=\"(?P<drawable>.+|)\"(/>| />)', re.M)
+    
+    def parse_existing(self,block_query,path):  
+        if not path.exists():
             return
-        with open(self.requests_path, 'r', encoding="utf8") as existing_file:
+        with open(path, 'r', encoding="utf8") as existing_file:
             contents = existing_file.read()
-            existing_requests = re.finditer(request_block_query, contents)
+            existing_requests = re.finditer(block_query, contents)
             for req in existing_requests:
                 element_info = req.groupdict()
                 self.apps[element_info['ComponentInfo']] = element_info
-                self.apps[element_info['ComponentInfo']]['requestDate'] = float(element_info['requestDate']) if element_info['requestDate'] is not None else mktime(date.today().timetuple())
-                self.apps[element_info['ComponentInfo']]['count'] = int(element_info['count'])
+                self.apps[element_info['ComponentInfo']]['requestDate'] = float(element_info.get('requestDate', mktime(date.today().timetuple()))) if element_info.get('requestDate', mktime(date.today().timetuple())) is not None else mktime(date.today().timetuple())
+                self.apps[element_info['ComponentInfo']]['count'] = int(element_info.get('count',1)) if element_info.get('count',1) is not None else 1
                 self.apps[element_info['ComponentInfo']]['senders'] = []
     
     def filter_old(self):
@@ -270,9 +270,10 @@ Last requested {reqDate}
                 ):
                     self.updatable.append(
                         f'<!-- {values["Name"]} -->\n'
-                        f'<item component="ComponentInfo{{{values["ComponentInfo"]}}}" drawable="{values["drawable"]}" />\n\n'
+                        f'<item component="ComponentInfo{{{values["ComponentInfo"]}}}" drawable="{values["drawable"]}"/>\n\n'
                     )
                     updatable_set.add(componentInfo)
+                    self.keep_pngs.add(values["drawable"])
             except Exception as e:
                 print(values)
                 print(f'Error: {e}')
@@ -293,9 +294,12 @@ Last requested {reqDate}
                 file_two.write(''.join(self.updatable))
 
     def main(self):
+        if self.updatable_path:
+            print("parse Existing Updatable")
+            self.parse_existing(self.update_block_query,self.updatable_path)
         if self.requests_path:
-            print("parse Existing")
-            self.parse_existing()
+            print("parse Existing Requests")
+            self.parse_existing(self.request_block_query,self.requests_path)
         print("Filter Old")
         self.filter_old()
         print("Parse Mail")
