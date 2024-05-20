@@ -13,8 +13,8 @@ import os
 
 config = {
     "request_limit": 1000,
-    "months_limit": 6,
-    "min_requests": 5,
+    "months_limit": 2,
+    "min_requests": 4,
     "date_format": "X%d %B %Y",
 }
 
