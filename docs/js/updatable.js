@@ -45,10 +45,10 @@ fetch(`assets/updatable.txt`)
             appEntriesData.push({
                 appName,
                 appIcon,
-                appIconPath,
+                packageName,
                 appNameAppfilter,
                 appfilter,
-                packageName
+                appIconPath
             });
         });
         appEntriesDataGlobal = appEntriesData;
