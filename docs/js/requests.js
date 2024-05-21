@@ -56,13 +56,13 @@ fetch(`assets/requests.txt`)
             const appIcon = `<img src="${appIconPath}" alt="App Icon" style="width:50px;height:50px;">`;
             appEntriesData.push({
                 appName,
-                appIconPath,
                 appIcon,
                 appLinks,
                 requestedInfo,
                 lastRequestedTime,
                 appNameAppfilter,
-                appfilter
+                appfilter,
+                appIconPath
             });
         });
         appEntriesDataGlobal = appEntriesData;
