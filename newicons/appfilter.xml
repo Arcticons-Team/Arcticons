@@ -2754,10 +2754,12 @@
 
 	<!-- Authenticate -->
 	<item component="ComponentInfo{secureauth.android.token/secureauth.android.token.TokenList}" drawable="authenticate"/>
+	
+	<!-- Authenticator Pro -->
+	<item component="ComponentInfo{me.jmh.authenticatorpro/crc646be539cf0a2d8609.MainActivity}" drawable="authenticator_pro"/>
+	<item component="ComponentInfo{me.jmh.authenticatorpro/crc643c2a2b888a14ec9a.MainActivity}" drawable="authenticator_pro"/>
 
 	<!-- Authenticator -->
-	<item component="ComponentInfo{me.jmh.authenticatorpro/crc646be539cf0a2d8609.MainActivity}" drawable="authenticator"/>
-	<item component="ComponentInfo{me.jmh.authenticatorpro/crc643c2a2b888a14ec9a.MainActivity}" drawable="authenticator"/>
 	<item component="ComponentInfo{com.rsa.securidapp/com.rsa.securidapp.SplashActivityAlias}" drawable="authenticator"/>
 	<item component="ComponentInfo{com.dashlane.authenticator/com.dashlane.authenticator.MainActivity}" drawable="authenticator"/>
 	<item component="ComponentInfo{com.salesforce.authenticator/com.toopher.android.activities.SplashActivity}" drawable="authenticator"/>
@@ -2779,7 +2781,7 @@
 	<item component="ComponentInfo{com.smmservice.authenticator/com.smmservice.authenticator.presentation.ui.activity.MainActivity}" drawable="authenticator"/>
 	<item component="ComponentInfo{two.factor.authenticator.generator.code/two.factor.authenticator.generator.code.Activity.SplashMainActivity}" drawable="authenticator"/>
 
-	<!-- Authenticator -->
+	<!-- Bitwarden Authenticator -->
 	<item component="ComponentInfo{com.bitwarden.authenticator/com.bitwarden.authenticator.MainActivity}" drawable="bitwarden_authenticator"/>
 
 	<!-- AuthPass -->
@@ -18545,6 +18547,7 @@
 
 	<!-- MJ PDF Reader -->
 	<item component="ComponentInfo{com.gitlab.mudlej.MjPdfReader/com.gitlab.mudlej.MjPdfReader.LauncherAlias}" drawable="mj_pdf_reader"/>
+	<item component="ComponentInfo{com.gitlab.mudlej.MjPdfReader/com.gitlab.mudlej.MjPdfReader.ui.main.MainActivity}" drawable="mj_pdf_reader"/>
 
 	<!-- MJ Weather -->
 	<item component="ComponentInfo{com.moji.mjweather/com.moji.mjweather.LauncherActivity}" drawable="mjweather"/>
