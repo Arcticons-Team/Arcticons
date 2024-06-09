@@ -1,3 +1,16 @@
+### 9.7.4
+###### Released: Apr 21, 2024
+* 🌈 It's still pride month!
+* 🎉 **112** new and updated icons! (thanks Kaiserdragon2, Albertjohnsonpc, Cequallium, TheLastZombie, TheAngryTurkey, Renomizer, Onuronsekiz, Trautb, GuitareCouture, Npepperlinux, Ayecptn, Dgcampbe)
+* ✨ Fixes for icons that changed unexpectedly.
+* 🔥 **9740** icons in total!
+
+### 9.6.5
+* 🌈 I want to start this release note with wishing everyone a happy pride month!
+* 🎉 **414** new and updated icons!
+* 🟦 You may notice that square icons have been rounded some more. Over the past month, I have reworked 1400+ icons to make them feel a bit more modern.
+* 🔥 **9649** icons in total!
+*
 ### 9.2.4
 ###### Released: Apr 21, 2024
 * 🎉 **243** new and updated icons! (thanks Kaiserdragon2, Albertjohnsonpc, Cequallium, TheLastZombie, TheAngryTurkey, Renomizer, Onuronsekiz, Trautb, GuitareCouture, Npepperlinux, Ayecptn, Dgcampbe)
