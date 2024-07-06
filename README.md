@@ -18,7 +18,7 @@
 
 <div align="center">
   <br>
-  <a href="https://docs.arcticons.com/"><img height="40" alt="Knowledge base" src="github/knowledgebase.webp"></a>
+  <a href="https://docs.arcticons.com/"><img height="80" alt="Knowledge base" src="github/knowledgebase.webp"></a>
 </div>
 
 ## Donate to the project
@@ -27,7 +27,7 @@
 
 <div align="center">
   <br>
-  <a href="https://www.paypal.com/paypalme/onnovdd"><img height="40" alt="Donate using Paypal" src="github/paypal.webp"></a>   <a href="https://liberapay.com/Donno/donate"><img height="40" alt="Donate using Liberapay" src="github/liberapay.webp"></a>   <a href="https://Ko-fi.com/donno_"><img height="40" alt="Donate using Ko-Fi" src="github/kofi.webp"></a>
+  <a href="https://www.paypal.com/paypalme/onnovdd"><img height="80" alt="Donate using Paypal" src="github/paypal.webp"></a>   <a href="https://liberapay.com/Donno/donate"><img height="80" alt="Donate using Liberapay" src="github/liberapay.webp"></a>   <a href="https://Ko-fi.com/donno_"><img height="80" alt="Donate using Ko-Fi" src="github/kofi.webp"></a>
 </div>
 
 ## Matrix room
@@ -36,5 +36,5 @@
 
 <div align="center">
   <br>
-  <a href="https://matrix.to/#/#arcticons-central:matrix.org"><img height="40" alt="Matrix room" src="github/chat.webp"></a>
+  <a href="https://matrix.to/#/#arcticons-central:matrix.org"><img height="80" alt="Matrix room" src="github/chat.webp"></a>
 </div>
