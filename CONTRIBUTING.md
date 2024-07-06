@@ -1,6 +1,6 @@
 # Super cool graphic guide
 
-![guide](https://user-images.githubusercontent.com/31142286/163720671-d2d2c77b-fdcd-4a69-99f5-f5f260d519f4.jpg)
+![guide](guides/Contributing_Guide_Image.png)
 
 # Text version
 
