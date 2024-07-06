@@ -2,7 +2,7 @@
 
 **Prerequisites**: Android Studio, python3 and Inkscape installed on your device
 
-1. Place the created icons in the `/newicons` folder and add the new ComponentInfo codes in the `appfilter.xml`, you can gather it with [icon request](https://github.com/Kaiserdragon2/IconRequest/releases/). (See [CONTRIBUTING.md](CONTRIBUTING.md))
+1. Place the created icons in the `/other` folder and add the new ComponentInfo codes in the `appfilter.xml`, you can gather it with [icon request](https://github.com/Kaiserdragon2/IconRequest/releases/). (See [CONTRIBUTING.md](CONTRIBUTING.md))
 2. Run the `preparerelease.py` script with the appropriate directories and wait until finished.
 
         python preparerelease.py SVG_DIR APP_SRC_DIR ICONS_DIR
