@@ -20,22 +20,34 @@
 
     <link rel="icon" type="image/png" href="img/arcticons/icon.png" />
     <link rel="stylesheet" href="css/arcticons.css" />
+    <link rel="stylesheet" href="css/header.css" />
+
     <script src="js/arcticonssearch.js"></script>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>  
+      $(function(){
+        $("#header").load("html/header.html"); 
+        $("#footer").load("html/footer.html"); 
+      });
+    </script>
   </head>
   <body>
-    <header>
+
+    <div id="header"></div>
+
+    <div class="splash">
       <img src="img/arcticons/icon.png">
       <h1>Arcticons</h1>
       <p style="color: #fff; text-align: center;"> A monotone line-based icon pack for Android.</p>
       <ul>
         <ul>
-          <button onclick="window.location.href='#dark';">Dark</button>
-          <button onclick="window.location.href='#light';">Light</button>
-          <button onclick="window.location.href='#you';">You</button>
-          <button onclick="window.location.href='#daynight';">Day & Night</button>
+          <a href="#dark"><button>Dark</button></a>
+          <a href="#light"><button>Light</button></a>
+          <a href="#you"><button>You</button></a>
+          <a href="#daynight"><button>Day & Night</button></a>
         </ul>
       </ul>
-    </header>
+    </div>
 
     <hr class="inv2">
 
@@ -251,11 +263,9 @@
       <hr class="inv2">
       <a href="https://github.com/Donnnno/Arcticons/blob/main/Privacy_Policy.md">Privacy Policy</a> • <a href="https://creativecommons.org/licenses/by-sa/4.0/">License</a>
 
-
-      <div>
-        <hr class="inv2">
-        <p><span class="copyleft">&copy;</span><a href="https://www.onnno.nl/"> Onno van den Dungen</a> - <script>document.write(new Date().getFullYear())</script></p>
-      </div> 
+      <hr class="inv2">
+      
+      <div id="footer"></div>
 
     </div>
   </body>

@@ -7,12 +7,7 @@
   font-variation-settings: "slnt" 0deg;
   src: url("../img/Inter.var.woff2") format("woff2");
 }
-*{
-  margin: 0;
-  padding: 0;
-  border: 0;  font-size: 100%;
-  vertical-align: baseline;
-}
+
 html{
   font-family: 'Inter', sans-serif;
   text-align: center;
@@ -22,10 +17,7 @@ body{
   background-color: #fff;
 }
 
-/*header ul, footer ul{
-
-}*/
-header{
+.splash{
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -38,13 +30,13 @@ header{
   background-position: top left, center center;
   background-attachment: fixed;
 }
-header>*{
+.splash>*{
   margin-bottom: 1rem;
 }
-header>p{
+.splash>p{
   font-size: 1.5rem;
 }
-header li, footer li{
+.splash li, footer li{
   display: inline-block;
   list-style-type: none;
 }
@@ -118,7 +110,8 @@ button {
   display: inline-block;
   background-color: #eee;
   border-radius: 40px;
-  padding: 8px 0px;
+  padding: 8px 8px;
+  gap: 8px, 8px;
   width: 120px;
   height: 50px;
 }
@@ -126,6 +119,7 @@ button {
 button:hover {
   background-color: #b1b1b1;
   font-weight: 800;
+  cursor: pointer;
 }
 
 button.dark {
@@ -153,35 +147,6 @@ button.light {
   filter: invert();
 }
 
-.align-right {
-  text-align: right;
-  align-items: center;
-  display: grid;
-  margin-top: 5rem;
-  margin-bottom: 5rem;
-
-}
-
-.align-left {
-  text-align: left;
-  align-items: center;
-  display: grid;
-  margin-top: 5rem;
-  margin-bottom: 5rem;
-}
-
-hr.inv {
-  border: 6px;
-  margin-top: .5em;
-  margin-bottom: .5em;
-}
-
-hr.inv2 {
-  border: 6px;
-  margin-top: 6em;
-  margin-bottom: 6em;
-}
-
 .button{
   display: inline-block;
   padding: 0rem 1.25rem 0rem 1.25rem;
@@ -194,6 +159,8 @@ hr.inv2 {
   align-items: center;
   background-color: #eee;
   line-height: normal; 
+  cursor: pointer;
+
 }
 
 .button:hover{
@@ -225,6 +192,35 @@ hr.inv2 {
 }
 .button.dark a{
   color: #eee;
+}
+
+.align-right {
+  text-align: right;
+  align-items: center;
+  display: grid;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+
+}
+
+.align-left {
+  text-align: left;
+  align-items: center;
+  display: grid;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
+hr.inv {
+  border: 6px;
+  margin-top: .5em;
+  margin-bottom: .5em;
+}
+
+hr.inv2 {
+  border: 6px;
+  margin-top: 6em;
+  margin-bottom: 6em;
 }
 
 

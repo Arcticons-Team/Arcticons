@@ -1,0 +1,50 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 8vw;
+  height: 20px;
+  line-height: 60px;
+  background: #171717;
+  border-bottom: 2px solid #929292;
+}
+
+header.clone {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    transform: translateY(-100%);
+    transition: 0.2s transform cubic-bezier(.3,.73,.3,.74);
+}
+  
+body.down header.clone {
+    transform: translateY(0);
+}
+.logo {
+  width: 160px;
+  height: 60px;
+  top: -50%;
+  fill: #fff;
+}
+
+.navigation {
+    list-style: none;
+  }
+  
+.navigation a {
+    font-weight: 500;
+    font-size: 16px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.navigation li {
+  display: inline-block;
+  padding: 0px 20px;
+}
+  
+li:hover {
+  font-weight: 700;
+  cursor: pointer;
+}
