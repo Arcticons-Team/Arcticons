@@ -13,6 +13,7 @@
   border: 0;  font-size: 100%;
   vertical-align: baseline;
 }
+
 html{
   font-family: 'Inter', sans-serif;
   text-align: center;
@@ -22,31 +23,36 @@ body{
   background-color: #fff;
 }
 
-/*header ul, footer ul{
-
-}*/
-header{
+.splash{
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
   padding: 2.5rem 10% 2.5rem 10%;
-  min-height: 100vh;
+  min-height: 90vh;
   background-color: #171717;
   background-image: url(../img/arcticons/grid.png);
   background-size: 50%;
   background-position: top left, center center;
   background-attachment: fixed;
 }
-header>*{
+.splash>*{
   margin-bottom: 1rem;
 }
-header>p{
+.splash>p{
   font-size: 1.5rem;
 }
-header li, footer li{
+.splash li{
   display: inline-block;
   list-style-type: none;
+}
+
+.button-splash {
+  display: flex; 
+  gap: 10px;
+  justify-content: center; 
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 section{
@@ -54,7 +60,6 @@ section{
   color: #171717;
   font-size: 1.25rem;
 }
-
 
 .dark {
   text-align: right;
@@ -68,7 +73,7 @@ section{
 
 h1{
   color: #fff;
-  font-size: 5rem;
+  font-size: 4rem;
 }
 
 h2{
@@ -92,8 +97,8 @@ p {
 
 a {
   color: #333;
+  cursor: pointer;
 }
-
 
 .actions{
   margin: 0 auto;
@@ -114,21 +119,22 @@ a {
   }
 }
 
-button {
+a > button {
+  font-family: 'Inter', sans-serif;
   display: inline-block;
   background-color: #eee;
   border-radius: 40px;
-  padding: 8px 0px;
   width: 120px;
   height: 50px;
 }
 
-button:hover {
+a > button:hover {
   background-color: #b1b1b1;
   font-weight: 800;
+  cursor: pointer;
 }
 
-button.dark {
+a > button.dark {
   background-color: #171717;
   color: #eee;
   justify-content: left;
@@ -140,7 +146,7 @@ button.dark {
   height: 45;
 }
 
-button.light {
+a > button.light {
   background-color: #171717;
   color: #eee;
   justify-content: left;
@@ -152,6 +158,13 @@ button.light {
   height: 45;
   filter: invert();
 }
+
+.button:hover{
+  display: inline-block;
+  border-radius: 100px;
+  background-color: #b1b1b1;
+}
+
 
 .align-right {
   text-align: right;
@@ -180,51 +193,6 @@ hr.inv2 {
   border: 6px;
   margin-top: 6em;
   margin-bottom: 6em;
-}
-
-.button{
-  display: inline-block;
-  padding: 0rem 1.25rem 0rem 1.25rem;
-  border-radius: 30px;
-  color: #171717;
-  display: inline-flex;
-  padding: 8px 0px;
-  width: 80px;
-  justify-content: center;
-  align-items: center;
-  background-color: #eee;
-  line-height: normal; 
-}
-
-.button:hover{
-  display: inline-block;
-  border-radius: 100px;
-  background-color: #b1b1b1;
-}
-
-.button a{
-  display: inline-block;
-  background-repeat: no-repeat;
-  background-position: left;
-  padding-left: .5rem;
-  padding-right: .5rem;
-}
-
-.button.dark{
-  display: inline-flex; 
-  width: 180px;
-  padding: 8px 0px;
-  border-radius: 100px;
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px; 
-  background-color: #171717;
-  line-height: normal; 
-}
-.button.dark a{
-  color: #eee;
 }
 
 
