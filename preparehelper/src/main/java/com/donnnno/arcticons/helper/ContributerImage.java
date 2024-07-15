@@ -3,9 +3,12 @@ package com.donnnno.arcticons.helper;
 import java.awt.image.BufferedImage;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import javax.imageio.ImageIO;
@@ -29,14 +32,14 @@ public class ContributerImage {
         String contributorsXml = rootDir + "/generated/contributors.xml";
 
         StringBuilder output = new StringBuilder("<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<resources>\n");
-        extractImageUrls(output,contributorsXml,xmlFilePath,assetsDir);
+        extractImageUrls(output,contributorsXml,assetsDir);
         output.append("\n</resources>");
         writeOutput(xmlFilePath,output);
     }
 
     public static void writeOutput(String pathXml, StringBuilder output) throws IOException {
-        // Write to drawable.xml in res directory
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(pathXml))) {
+        // Write to drawable.xml in res directory with UTF-8 encoding
+        try (BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(pathXml), StandardCharsets.UTF_8))) {
             writer.write(output.toString());
         }
     }
@@ -59,7 +62,7 @@ public class ContributerImage {
 
     public static void saveImage(BufferedImage image, String imageName,String imagePath) {
         try {
-            ImageIO.write(image, "png", new File(imagePath+"/"+imageName+".png"));
+            ImageIO.write(image, "png", new File(imagePath+"/"+imageName));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -72,7 +75,7 @@ public class ContributerImage {
                 .append("\"\n\t\tlink=\"").append(link).append("\" />");
     }
 
-    public static void extractImageUrls(StringBuilder output,String contributorsXml,String xmlFilePath,String assetsDir) {
+    public static void extractImageUrls(StringBuilder output,String contributorsXml,String assetsDir) {
         try {
             File inputFile = new File(contributorsXml);
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
@@ -98,11 +101,15 @@ public class ContributerImage {
                     }else {
                         BufferedImage image = downloadImages(imageURL);
                         if (image != null) {
-                            String imageName ="contributor_" + temp;
+                            String imageName ="contributor_" + temp+".png";
                             imageURL = "assets://" + imageName;
                             saveImage(image,imageName,assetsDir);
                             appendCategory(output,name,contribution,imageURL,link);
                         }
+                        else {
+                            imageURL = "";
+                            appendCategory(output, name, contribution, imageURL, link);
+                        };
                     }
                 }
             }
