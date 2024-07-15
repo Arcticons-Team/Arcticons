@@ -1,7 +1,5 @@
 package com.donnnno.arcticons.helper;
 
-import java.awt.Graphics2D;
-import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -10,9 +8,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
 import javax.imageio.ImageIO;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -31,10 +26,10 @@ public class ContributerImage {
         }
         String xmlFilePath = rootDir + "/app/src/main/res/xml/contributors.xml";
         String assetsDir = rootDir + "/app/src/main/assets";
-        String contributersXml = rootDir + "/generated/contributors.xml";
+        String contributorsXml = rootDir + "/generated/contributors.xml";
 
         StringBuilder output = new StringBuilder("<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<resources>\n");
-        extractImageUrls(output,xmlFilePath,assetsDir);
+        extractImageUrls(output,contributorsXml,xmlFilePath,assetsDir);
         output.append("\n</resources>");
         writeOutput(xmlFilePath,output);
     }
@@ -64,8 +59,7 @@ public class ContributerImage {
 
     public static void saveImage(BufferedImage image, String imageName,String imagePath) {
         try {
-            ImageIO.write(image, "png", new File(imagePath+"/"+"collage.png"));
-            System.out.println("Collage created successfully.");
+            ImageIO.write(image, "png", new File(imagePath+"/"+imageName+".png"));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -78,9 +72,9 @@ public class ContributerImage {
                 .append("\"\n\t\tlink=\"").append(link).append("\" />");
     }
 
-    public static void extractImageUrls(StringBuilder output,String xmlFilePath,String assetsDir) {
+    public static void extractImageUrls(StringBuilder output,String contributorsXml,String xmlFilePath,String assetsDir) {
         try {
-            File inputFile = new File(xmlFilePath);
+            File inputFile = new File(contributorsXml);
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
             Document doc = dBuilder.parse(inputFile);
