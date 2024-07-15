@@ -101,7 +101,7 @@ public class ContributerImage {
                     }else {
                         BufferedImage image = downloadImages(imageURL);
                         if (image != null) {
-                            String imageName ="contributor_" + temp+".png";
+                            String imageName ="contributors/contributor_" + temp+".png";
                             imageURL = "assets://" + imageName;
                             saveImage(image,imageName,assetsDir);
                             appendCategory(output,name,contribution,imageURL,link);
