@@ -93,8 +93,10 @@ public class ContributerImage {
                     String contribution = eElement.getAttribute("contribution");
                     String imageURL = eElement.getAttribute("image");
                     String link = eElement.getAttribute("link");
-
                     if (imageURL.isEmpty()) {
+                        if (link.startsWith("https://github.com/")){
+                            imageURL = link +".png";
+                        }
                         appendCategory(output,name,contribution,imageURL,link);
                     }else if (link.startsWith("assets://")) {
                         appendCategory(output,name,contribution,imageURL,link);
