@@ -18,6 +18,7 @@ import java.util.regex.Pattern;
 
 public class XMLCreator {
     private static List<String> newDrawables = new ArrayList<>();
+    private static List<String> games = new ArrayList<>();
     private static List<String> drawables = new ArrayList<>();
     private static List<String> folder = new ArrayList<>();
     private static List<String> calendar = new ArrayList<>();
@@ -31,9 +32,9 @@ public class XMLCreator {
 
     private static final Pattern drawablePattern = Pattern.compile("drawable=\"([\\w_]+)\"");
 
-    public static void mergeNewDrawables(String pathXml, String pathNewXml, String assetPath, String iconsDir,
+    public static void mergeNewDrawables(String pathXml, String pathNewXml,String CatGamePath, String assetPath, String iconsDir,
                                          String xmlDir, String appFilterPath) throws IOException {
-
+        //Read new drawables from File and add to list
         try (BufferedReader reader = new BufferedReader(new FileReader(pathNewXml))) {
             String line;
             while ((line = reader.readLine()) != null) {
@@ -43,9 +44,17 @@ public class XMLCreator {
                 }
             }
         }catch(FileNotFoundException e){
+            System.out.println("XML file: games.xml not found");
+        }
+        //Read games from File and add to list
+        try (BufferedReader reader = new BufferedReader(new FileReader(CatGamePath))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                games.add(line);
+            }
+        }catch(FileNotFoundException e){
             System.out.println("XML file: newdrawables.xml not found");
         }
-
 
         // Collect existing drawables
         File iconsDirectory = new File(iconsDir);
@@ -56,7 +65,7 @@ public class XMLCreator {
                 String fileName = file.getName();
                 String IconDrawable = fileName.substring(0, fileName.lastIndexOf('.'));
 
-                if (!newDrawables.contains(IconDrawable)) {
+                if (!newDrawables.contains(IconDrawable) && !games.contains(IconDrawable)) {
                     classifyDrawable(IconDrawable);
                 }
             }
@@ -64,6 +73,8 @@ public class XMLCreator {
         // Remove duplicates and sort
         newDrawables = new ArrayList<>(new HashSet<>(newDrawables));
         Collections.sort(newDrawables);
+        games = new ArrayList<>(new HashSet<>(games));
+        Collections.sort(games);
         drawables = new ArrayList<>(new HashSet<>(drawables));
         Collections.sort(drawables);
         folder = new ArrayList<>(new HashSet<>(folder));
@@ -94,6 +105,7 @@ public class XMLCreator {
         appendCategory(output, "Calendar", calendar);
         appendCategory(output, "Google", google);
         appendCategory(output, "Microsoft", microsoft);
+        appendCategory(output, "Games", games);
         appendCategory(output, "Emoji", emoji);
         appendCategory(output, "Symbols", symbols);
         appendCategory(output, "Numbers", numbers);
