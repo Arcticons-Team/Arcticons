@@ -12,7 +12,7 @@ public class Start {
         Path rootPath = Paths.get(rootDir);
         // Get the name of the root directory
         String rootDirName = rootPath.getFileName().toString();
-        if (rootDirName.equals("preparehelper")){
+        if (rootDirName.equals("preparehelper")) {
             rootDir = "..";
         }
         String sourceDir = rootDir + "/icons/white";
@@ -63,18 +63,25 @@ public class Start {
             // Read appfilter xml and create icon, drawable xml file.
 
 
-            xmlDir =rootDir+"/app/src/main/res/xml";
-            newXML = rootDir+"/generated/newdrawables.xml";
+            xmlDir = rootDir + "/app/src/main/res/xml";
+            newXML = rootDir + "/generated/newdrawables.xml";
             assetsDir = rootDir + "/app/src/main/assets";
             appFilter = rootDir + "/newicons/appfilter.xml";
+            String contributorsXml = rootDir + "/generated/contributors.xml";
 
 
-        try {
-            XMLCreator.mergeNewDrawables(xmlDir+"/drawable.xml",newXML,assetsDir,sourceDir,xmlDir,appFilter);
-            System.out.println("XML task completed");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+            try {
+                XMLCreator.mergeNewDrawables(xmlDir + "/drawable.xml", newXML, assetsDir, sourceDir, xmlDir, appFilter);
+                System.out.println("XML task completed");
+            } catch (Exception e) {
+                System.out.println("Error occurred: " + e.getMessage());
+            }
+            try {
+                ContributorImage.start(assetsDir, contributorsXml, xmlDir);
+                System.out.println("Contributor Image task completed");
+            } catch (Exception e) {
+                System.out.println("Error occurred: " + e.getMessage());
+            }
         }
     }
 }
