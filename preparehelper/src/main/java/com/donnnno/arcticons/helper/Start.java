@@ -20,6 +20,7 @@ public class Start {
         String destDir;
         String xmlDir;
         String newXML;
+        String categoryGamesXml;
         String assetsDir;
         String appFilter;
         System.out.println("root Dir: " + rootPath);
@@ -63,15 +64,16 @@ public class Start {
             // Read appfilter xml and create icon, drawable xml file.
 
 
-            xmlDir = rootDir + "/app/src/main/res/xml";
-            newXML = rootDir + "/generated/newdrawables.xml";
+            xmlDir =rootDir+"/app/src/main/res/xml";
+            newXML = rootDir+"/generated/newdrawables.xml";
+            categoryGamesXml = rootDir+"/generated/games.xml";
             assetsDir = rootDir + "/app/src/main/assets";
             appFilter = rootDir + "/newicons/appfilter.xml";
             String contributorsXml = rootDir + "/generated/contributors.xml";
 
 
             try {
-                XMLCreator.mergeNewDrawables(xmlDir + "/drawable.xml", newXML, assetsDir, sourceDir, xmlDir, appFilter);
+                XMLCreator.mergeNewDrawables(xmlDir+"/drawable.xml",newXML,categoryGamesXml,assetsDir,sourceDir,xmlDir,appFilter);
                 System.out.println("XML task completed");
             } catch (Exception e) {
                 System.out.println("Error occurred: " + e.getMessage());
