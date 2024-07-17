@@ -205,7 +205,7 @@ def check_xml(path:str):
     defect = []
     with open (path,'r', encoding='utf-8') as f:
         for line in f:
-            match = re.findall(r'((<!--.*-->)|(<(item|calendar) component=\"(ComponentInfo{.*/.*}|:[A-Z_]*)\" (drawable|prefix)=\".*\"\s?/>)|(^\s*$)|(</?resources>))',line)
+            match = re.findall(r'((<!--.*-->)|(<(item|calendar|dynamic-clock) component=\"(ComponentInfo{.*/.*}|:[A-Z_]*)\" (drawable|prefix)=\".*\"\s?/>)|(<dynamic-clock drawable="clock" defaultHour="10" defaultMinute="10" hourLayerIndex="0" minuteLayerIndex="1" />)|(^\s*$)|(</?resources>))', line)            
             if not (match):
                 defect.append(line)
     if len(defect) > 0:
