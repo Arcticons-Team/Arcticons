@@ -1,0 +1,11 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <rotate android:drawable="@drawable/clock_hour" android:fromDegrees="300.0"
+            android:pivotX="50.0%" android:pivotY="50.0%" android:toDegrees="5300.0" />
+    </item>
+    <item>
+        <rotate android:drawable="@drawable/clock_minute" android:fromDegrees="60.0"
+            android:pivotX="50.0%" android:pivotY="50.0%" android:toDegrees="60060.0" />
+    </item>
+    <item android:drawable="@drawable/clock_top" />
+</layer-list>
