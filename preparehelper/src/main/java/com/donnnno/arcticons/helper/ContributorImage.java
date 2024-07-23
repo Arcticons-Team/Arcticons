@@ -80,11 +80,10 @@ public class ContributorImage {
                 .append("\"\n\t\tlink=\"").append(link).append("\" />");
     }
 
-    public static String setPlaceholderImage() {
-        Random random = new Random();
-        int randomImage = random.nextInt(1, 3);
-        return "assets://contributors/face_" + randomImage + ".png";
-
+    public static String setPlaceholderImage(int temp) {
+        //set random image to last digit of temp
+        int lastDigit = Math.abs(temp % 10);
+        return "assets://contributors/face_" + lastDigit + ".png";
     }
 
     public static void extractImageUrls(StringBuilder output, String contributorsXml, String assetsDir) {
@@ -109,7 +108,7 @@ public class ContributorImage {
                         imageURL = link + ".png";
                     }
                     if (imageURL.isEmpty()) {
-                        imageURL = setPlaceholderImage();
+                        imageURL = setPlaceholderImage(temp);
                         appendCategory(output, name, contribution, imageURL, link);
                     } else if (link.startsWith("assets://")) {
                         appendCategory(output, name, contribution, imageURL, link);
@@ -121,7 +120,7 @@ public class ContributorImage {
                             saveImage(image, imageName, assetsDir);
                             appendCategory(output, name, contribution, imageURL, link);
                         } else {
-                            imageURL = setPlaceholderImage();
+                            imageURL = setPlaceholderImage(temp);
                             appendCategory(output, name, contribution, imageURL, link);
                         }
                     }
