@@ -1,3 +1,11 @@
+### 10.0.5
+###### Released: Jul 21, 2024
+* 🌈 Another special release, we've reached the **10k**!
+* 🎉 **332** new and updated icons!
+* 🎮 A new **Game** category.
+* 📖 Our [**Knowledge base**](https://https://docs.arcticons.com/) has been upgraded.
+* 🔥 **10059** icons in total!
+
 ### 9.7.4
 ###### Released: Jun 9, 2024
 * 🌈 It's still pride month!
