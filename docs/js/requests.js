@@ -103,6 +103,7 @@ fetch(`assets/requests.txt`)
 // Accessing the button element by its id
 const updatableButton = document.getElementById("updatable-button");
 const randomButton = document.getElementById("random-button");
+const randomResetButton = document.getElementById(`random-reset-button`);
 const randomNumberInput = document.getElementById("random-number-input");
 
 // Add an event listener to the button
@@ -114,6 +115,10 @@ updatableButton.addEventListener("click", function() {
 });
 randomButton.addEventListener("click", function() {
     randomIcons();
+});
+randomResetButton.addEventListener("click", function() {
+    randomResetButton.style.display = "none";
+    updateTable(appEntriesData);
 });
 randomNumberInput.addEventListener("keypress", function(event) {
     // If the user presses the "Enter" key on the keyboard
@@ -364,6 +369,7 @@ function getCellValue(row, columnIndex) {
 
 // Runs when "I'm feelin' lucky" button is clicked on
 function randomIcons(){
+    const randomResetButton = document.getElementById(`random-reset-button`);
     const randomNumberInput = document.getElementById(`random-number-input`); // Number of requests to select randomly
     const totalRequests = appEntriesData.length; // Total numbers of requests
 
@@ -406,6 +412,7 @@ function randomIcons(){
     }
 
     updateTable(randomizedEntriesData);
+    randomResetButton.style.display = "inline-block";
 }
 
 function shuffle(array) {

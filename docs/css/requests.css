@@ -79,9 +79,9 @@
 
 #random-container{
     margin-right: 50px;
-    width: 300px;
+    width: 400px;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
     display: flex;
 }
 
@@ -97,6 +97,7 @@
     font-size: 16px;
     margin-bottom: 10px;
     border-radius: 100px;
+    width: 35%;
 }
 
 #random-button:hover{
@@ -106,7 +107,7 @@
 
 #random-number-input{
     margin-right: 15px;
-    width: 50%;
+    width: 25%;
     box-sizing: border-box !important;
     overflow: visible;
     min-height: 3rem;
@@ -119,6 +120,21 @@
     font-size: 16px;
     font-weight: bold;
     font-family: 'Inter', Arial, Helvetica, sans-serif, sans-serif;
+}
+
+#random-reset-button{
+    border: 1px solid red;
+    cursor: pointer;
+    background-color: rgba(0,0,0,0);
+    color: red;
+    padding: 5px 15px;
+    text-align: center;
+    display: none;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 100px;
+    height: 100%;
+    margin-right: 15px;
 }
 
 body {
