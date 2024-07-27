@@ -39,16 +39,6 @@ public class CandyBar extends CandyBarApplication {
                         .append("\r\n")
                         .append(request.getActivity())
                         .append("\r\n");
-
-                String installerPackage = packageManager.getInstallerPackageName(request.getPackageName());
-
-                if (installerPackage != null && installerPackage.equals("com.android.vending")) {
-                    emailBody.append("https://play.google.com/store/apps/details?id=")
-                            .append(request.getPackageName());
-                } else {
-                    emailBody.append("https://f-droid.org/en/packages/")
-                            .append(request.getPackageName()).append("/");
-                }
             }
 
             return emailBody.toString();
