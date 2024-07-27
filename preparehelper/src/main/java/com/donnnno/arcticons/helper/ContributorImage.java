@@ -42,13 +42,12 @@ public class ContributorImage {
             URL url = new URL(imageUrl);
             BufferedImage img = ImageIO.read(url);
             if (img != null) {
-                System.out.println("Downloaded image from: " + imageUrl);
+                //System.out.println("Downloaded image from: " + imageUrl);
                 return img;
-            } else {
-                System.err.println("Failed to download image from: " + imageUrl);
             }
         } catch (IOException e) {
-            System.err.println("Failed to download image from: " + imageUrl + " " + e.getMessage());
+            //System.err.println("Failed to download image from: " + imageUrl + " " + e.getMessage());
+            return null;
         }
         return null;
     }

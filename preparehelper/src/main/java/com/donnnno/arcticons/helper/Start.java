@@ -23,8 +23,8 @@ public class Start {
         String categoryGamesXml;
         String assetsDir;
         String appFilter;
-        System.out.println("root Dir: " + rootPath);
-        System.out.println("root Dir Name: " + rootDirName);
+        //System.out.println("root Dir: " + rootPath);
+        //System.out.println("root Dir Name: " + rootDirName);
         if (args.length > 0) {
             String flavor = args[0];
             // Use the flavor as needed
