@@ -26,12 +26,29 @@
         tools:replace="android:icon"
         tools:targetApi="n">
 
+        <meta-data
+            android:name="org.breezyweather.PROVIDER_CONFIG"
+            android:resource="@xml/breezy_icon_provider_config" />
+        <meta-data
+            android:name="org.breezyweather.DRAWABLE_FILTER"
+            android:resource="@xml/breezy_icon_provider_drawable_filter" />
+        <meta-data
+            android:name="org.breezyweather.ANIMATOR_FILTER"
+            android:resource="@xml/breezy_icon_provider_animator_filter" />
+        <meta-data
+            android:name="org.breezyweather.SHORTCUT_FILTER"
+            android:resource="@xml/breezy_icon_provider_shortcut_filter" />
+
         <activity
             android:name=".activities.MainActivity"
             android:launchMode="singleTop"
             android:theme="@style/Theme.App.Starting"
             android:configChanges="uiMode|orientation|keyboardHidden|screenSize"
             android:exported="true">
+            <intent-filter>
+                <action android:name="org.breezyweather.ICON_PROVIDER" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
             <meta-data
                 android:name="android.app.shortcuts"
                 android:resource="@xml/shortcuts" />
