@@ -24,7 +24,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.App.Starting"
         tools:replace="android:icon"
-        tools:targetApi="n">
+        >
 
         <meta-data
             android:name="org.breezyweather.PROVIDER_CONFIG"
@@ -205,23 +205,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <!--
-        <provider
-            android:name=".services.MuzeiService"
-            android:authorities="${applicationId}.ArtProvider"
-            android:description="@string/muzei_art_source_desc"
-            android:exported="true"
-            android:label="@string/muzei_art_source_name"
-            android:permission="com.google.android.apps.muzei.api.ACCESS_PROVIDER">
-            <intent-filter>
-                <action android:name="com.google.android.apps.muzei.api.MuzeiArtProvider" />
-            </intent-filter>
 
-            <meta-data
-                android:name="color"
-                android:value="@color/muzei_color" />
-        </provider>
-        -->
         <receiver
             android:name=".services.ClockWidget"
             android:label="Clock Widget 1"
@@ -339,23 +323,7 @@
                 android:name="android.appwidget.provider"
                 android:resource="@xml/digital_clock_widget_info" />
         </receiver>
-        <!--
-            Uncomment the following code to enable Kustom.
-            Also remove the `<action ... />`s that you don't want.
-        -->
-        <!--
-<provider
-            android:name="org.kustom.api.Provider"
-            android:authorities="${applicationId}.kustom.provider"
-            android:exported="false">
-            <intent-filter>
-                <action android:name="org.kustom.provider.WIDGETS" />
-                <action android:name="org.kustom.provider.WALLPAPERS" />
-                <action android:name="org.kustom.provider.LOCKSCREENS" />
-                <action android:name="org.kustom.provider.KOMPONENTS" />
-            </intent-filter>
-        </provider>
-        -->
+
         <!-- This is important -->
         <provider
             android:name="androidx.core.content.FileProvider"
