@@ -5,7 +5,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:8.3.2'
+        classpath 'com.android.tools.build:gradle:8.5.1'
     }
 }
 
@@ -24,12 +24,12 @@ allprojects {
     }
 }
 
-task clean(type: Delete) {
-    delete rootProject.buildDir
-    delete fileTree(dir:  'app/src/you/res/drawable-anydpi')
-    delete fileTree(dir:  'app/src/light/res/drawable-anydpi')
-    delete fileTree(dir:  'app/src/dark/res/drawable-anydpi')
-    delete fileTree(dir:  'app/src/dayNight/res/drawable-anydpi')
+tasks.register('clean', Delete) {
+    delete rootProject.layout.buildDirectory
+    delete fileTree(dir: 'app/src/you/res/drawable-anydpi')
+    delete fileTree(dir: 'app/src/light/res/drawable-anydpi')
+    delete fileTree(dir: 'app/src/dark/res/drawable-anydpi')
+    delete fileTree(dir: 'app/src/dayNight/res/drawable-anydpi')
 }
 
 //F-DROID REPRODUCIBLE BUILDS
