@@ -32,6 +32,12 @@ jobs:
               run: gradle wrapper
             - name: Grant execute permission for gradlew
               run: chmod +x gradlew
+            - name: Lint Checks
+              run: |
+                gradle app:lintNormalDebug
+                gradle app:lintBlackDebug
+                gradle app:lintDayNightDebug
+                gradle app:lintYouDebug
             - name: Build debug APK
               run: ./gradlew app:assembleDebug
             - name: Upload artifact
@@ -45,6 +51,7 @@ jobs:
                     app/build/outputs/apk/normalPlay/debug/*.apk
                     app/build/outputs/apk/you/debug/*.apk
                     app/build/outputs/apk/youPlay/debug/*.apk
+                    app/build/reports/*
 
 
             
