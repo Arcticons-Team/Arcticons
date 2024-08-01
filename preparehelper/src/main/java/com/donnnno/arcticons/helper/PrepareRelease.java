@@ -4,11 +4,13 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class PrepareRelease {
 
     public static void main(String[] args) throws Exception {
-        String check;
         if (args.length > 0) {
             //String
             String rootDir = System.getProperty("user.dir");
@@ -28,10 +30,11 @@ public class PrepareRelease {
             System.out.println("Processing with task: " + task);
             switch (task) {
                 case "checkonly":
-                    check = "--checkonly";
+
+                    executePythonScript(rootDir + "/scripts/preparerelease.py","--checkonly");
                     break;
                 case "release":
-                    check = "";
+                    executePythonScript(rootDir + "/scripts/preparerelease.py");
                     try {
                         ContributorImage.start(assetsDir, contributorsXml, xmlDir);
                         System.out.println("Contributor Image task completed");
@@ -42,12 +45,18 @@ public class PrepareRelease {
                 default:
                     return;
             }
-            executePythonScript(rootDir + "/scripts/preparerelease.py",check);
+
         }
     }
 
-    public static void executePythonScript(String scriptPath, String check) throws Exception {
-        ProcessBuilder processBuilder = new ProcessBuilder("python", scriptPath, check, ".." );
+    public static void executePythonScript(String... args) throws Exception {
+            List<String> command = new ArrayList<>();
+            command.add("python");
+            // Add all provided argumentsto the command list
+            command.addAll(Arrays.asList(args));
+            command.add("..");
+
+        ProcessBuilder processBuilder = new ProcessBuilder(command);
         processBuilder.redirectErrorStream(true);
 
         Process process = processBuilder.start();

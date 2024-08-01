@@ -18,9 +18,12 @@ import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Iterator;
 import java.util.Random;
 
 import javax.imageio.ImageIO;
+import javax.imageio.ImageReader;
+import javax.imageio.ImageWriter;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
@@ -78,7 +81,7 @@ public class ContributorImage {
             throw new IOException("Failed to create directory: " + e.getMessage(), e);
         }
         try {
-            ImageIO.write(image, "png", new File(imagePath + "/" + imageName));
+            ImageIO.write(image, "webp", new File(imagePath + "/" + imageName));
         } catch (IOException e) {
             System.out.println("Error occurred: " + e.getMessage());
         }
@@ -94,7 +97,7 @@ public class ContributorImage {
     public static String setPlaceholderImage(int temp) {
         //set random image to last digit of temp
         int lastDigit = Math.abs(temp % 10);
-        return "assets://contributors/face_" + lastDigit + ".png";
+        return "assets://contributors/face_" + lastDigit + ".webp";
     }
 
     public static void extractImageUrls(StringBuilder output, String contributorsXml, String assetsDir) {
@@ -126,7 +129,7 @@ public class ContributorImage {
                     } else {
                         BufferedImage image = downloadImages(imageURL);
                         if (image != null) {
-                            String imageName = "contributors/downloaded/contributor_" + temp + ".png";
+                            String imageName = "contributors/downloaded/contributor_" + temp + ".webp";
                             imageURL = "assets://" + imageName;
                             saveImage(image, imageName, assetsDir);
                             appendCategory(output, name, contribution, imageURL, link);
