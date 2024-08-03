@@ -42,8 +42,16 @@ public class PrepareRelease {
                         System.out.println("Error occurred: " + e.getMessage());
                     }
                     break;
+                case "newrelease":
+                    executePythonScript(rootDir + "/scripts/preparerelease.py","--new");
+                    try {
+                        ContributorImage.start(assetsDir, contributorsXml, xmlDir);
+                        System.out.println("Contributor Image task completed");
+                    } catch (Exception e) {
+                        System.out.println("Error occurred: " + e.getMessage());
+                    }
+                    break;
                 default:
-                    return;
             }
 
         }
