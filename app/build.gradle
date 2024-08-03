@@ -11,11 +11,26 @@ android {
         targetSdkVersion rootProject.ext.TargetSdk
         versionCode 1350
         versionName '10.0.5'
-        multiDexEnabled true
+        multiDexEnabled true        // Naming app bundles
+        base {
+            archivesName = "${parent.name}-v${versionName}"
+        }
 
-        // Naming app bundles
-        setArchivesBaseName("${parent.name}-v${versionName}")
+    }
 
+    // Load keystore
+    def keystorePropertiesFile = rootProject.file("keystore.properties");
+    def releaseSigning;
+    if (keystorePropertiesFile.exists()){
+        def keystoreProperties = new Properties()
+        keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+        releaseSigning = signingConfigs.create("release", signingConfig -> {
+            signingConfig.setKeyAlias(keystoreProperties.getProperty("keyAlias"));
+            signingConfig.setKeyPassword(keystoreProperties.getProperty("keyPassword"));
+            signingConfig.setStoreFile(rootProject.file(keystoreProperties.getProperty("storeFile")));
+            signingConfig.setStorePassword(keystoreProperties.getProperty("storePassword"));
+        });
+    } else {releaseSigning = signingConfigs.named("debug"); // Use getByName for safety
     }
 
     buildFeatures {
@@ -23,12 +38,17 @@ android {
     }
 
     buildTypes {
+        configureEach {
+            signingConfig = releaseSigning
+        }
         release {
             minifyEnabled false
-            debug {
-                applicationIdSuffix '.debug'
-            }
         }
+        debug {
+            applicationIdSuffix '.debug'
+        }
+
+
         applicationVariants.all { variant ->
 
             if (variant.flavorName == "you" || variant.flavorName == "youPlay") {
@@ -105,12 +125,14 @@ android {
     }
 
     buildFeatures {
+        buildConfig = true
         viewBinding true
     }
     namespace 'com.donnnno.arcticons'
     lint {
         abortOnError false
         checkReleaseBuilds false
+        lintConfig = file("lint.xml")
     }
 }
 
