@@ -19,19 +19,16 @@
 
 	<!-- /r/Android App store -->
 	<item component="ComponentInfo{subreddit.android.appstore/subreddit.android.appstore.screens.MainActivity}" drawable="r_android_app_store"/>
-
-        <!-- Eurovision -->
-        <item component="ComponentInfo{de.digame.esc/com.choicely.studio.splash.SplashActivity}" drawable="eurovision"/>
-
-        <!-- TUI Poland -->
-        <item component="ComponentInfo{com.softhis.tui/pl.tui.app.main.MainActivity}" drawable="tui_poland"/>
-
-        <!-- Rock Identifier -->
-        <item component="ComponentInfo{com.picturerock.rock/com.glority.android.picturexx.splash.SplashActivity}" drawable="rock_identifier"/>
-
-        <!-- Akebi -->
-        <item component="ComponentInfo{com.craxic.akebifree/com.craxic.akebifree.activities.AkebiActivity}" drawable="akebi"/>
-
+	
+	<!-- Eurovision -->
+	<item component="ComponentInfo{de.digame.esc/com.choicely.studio.splash.SplashActivity}" drawable="eurovision"/>
+	
+	<!-- TUI Poland -->
+	<item component="ComponentInfo{com.softhis.tui/pl.tui.app.main.MainActivity}" drawable="tui_poland"/>
+	
+	<!-- Rock Identifier -->
+	<item component="ComponentInfo{com.picturerock.rock/com.glority.android.picturexx.splash.SplashActivity}" drawable="rock_identifier"/>
+	
 	<!-- Scandit Demo -->
 	<item component="ComponentInfo{com.scandit.demoapp/com.scandit.demoapp.splash.SplashActivity}" drawable="scandit_demo"/>
 
@@ -5945,7 +5942,7 @@
 	<item component="ComponentInfo{com.lemon.lvoverseas/com.google.android.archive.ReactivateActivity}" drawable="capcut"/>
 
 	<!-- Capital One -->
-	<item component="ComponentInfo{com.ie.capitalone.uk/capitalone.com.comobileapp.startup.StartupActivity}" drawable="capital_one"/>
+	<item component="ComponentInfo{com.ie.capitalone.uk/capitalone.com.comobileapp.startup.StartupActivity}" drawable="capitalone"/>
 	<item component="ComponentInfo{com.konylabs.capitalone/com.konylabs.capitalone.EnterpriseMobileBanking.LaunchActivity}" drawable="capitalone"/>
 	<item component="ComponentInfo{com.ie.capitalone.uk/capitalone.com.comobileapp.startup.defaultIcon}" drawable="capitalone"/>
 	<item component="ComponentInfo{com.capitalone.credittracker/com.capitalone.credittracker.ftux.ui.FirstTimeUserExperienceActivity}" drawable="capitalone"/>
@@ -15058,6 +15055,15 @@
 	<!-- Infinitode 2 -->
 	<item component="ComponentInfo{com.prineside.tdi2/com.prineside.tdi2.AndroidLauncher}" drawable="infinitode_2"/>
 
+	<!-- Google Accessibility Scanner -->
+	<item component="ComponentInfo{com.google.android.apps.accessibility.auditor/com.google.android.apps.accessibility.auditor.ui.MainActivity}" drawable="google_accessibility_scanner" />
+
+	<!-- Buy Me a Coffee -->
+	<item component="ComponentInfo{app.buymeacoffee/app.buymeacoffee.MainActivity}" drawable="buy_me_a_coffee" />
+
+	<!-- Minimum -->
+	<item component="ComponentInfo{juniojsv.minimum/juniojsv.minimum.MainActivity}" drawable="minimum_launcher" />
+
 	<!-- Infinity -->
 	<item component="ComponentInfo{ml.docilealligator.infinityforreddit/ml.docilealligator.infinityforreddit.MainActivity}" drawable="infinity"/>
 	<item component="ComponentInfo{ml.docilealligator.infinityforreddit/ml.docilealligator.infinityforreddit.Activity.MainActivity}" drawable="infinity"/>
@@ -15065,6 +15071,7 @@
 	<item component="ComponentInfo{ml.docilealligator.infinityforreddit.plus/ml.docilealligator.infinityforreddit.activities.MainActivity}" drawable="infinity"/>
 	<item component="ComponentInfo{gripe.everything.infinityforeverything/ml.docilealligator.infinityforreddit.activities.MainActivity}" drawable="infinity"/>
 	<item component="ComponentInfo{ml.docilealligator.redditforinfinity/ml.docilealligator.infinityforreddit.activities.MainActivity}" drawable="infinity"/>
+	<item component="ComponentInfo{ml.docilealligator.infinityforreddit.patreon/ml.docilealligator.infinityforreddit.activities.MainActivity}" drawable="infinity" />
 
 	<!-- Inflow -->
 	<item component="ComponentInfo{inflow.adhd.productivity/inflow.adhd.productivity.MainActivity}" drawable="inflow"/>
@@ -18727,11 +18734,11 @@
 
 	<!-- Meizu system apps -->
 	<item component="ComponentInfo{com.meizu.flyme.weather/com.hy.weather.mz.modules.home.WeatherMainActivity}" drawable="weather"/>
-	<item component="ComponentInfo{com.android.calendar/com.meizu.flyme.calendar.AllInOneActivity}" drawable="calendar"/>
+	<item component="ComponentInfo{com.android.calendar/com.meizu.flyme.calendar.AllInOneActivity}" drawable="calendar_31"/>
 	<item component="ComponentInfo{com.meizu.flyme.calculator/com.meizu.flyme.calculator.CalculatorActivity}" drawable="calculator"/>
 	<item component="ComponentInfo{com.meizu.mstore/com.meizu.flyme.appcenter.activitys.AppMainActivity}" drawable="app_market"/>
 	<item component="ComponentInfo{com.meizu.flyme.calculator/com.meizu.flyme.calculator.Calculator}" drawable="calculator"/>
-  <calendar component="ComponentInfo{com.android.calendar/com.meizu.flyme.calendar.AllInOneActivity}" prefix="calendar_"/>
+  	<calendar component="ComponentInfo{com.android.calendar/com.meizu.flyme.calendar.AllInOneActivity}" prefix="calendar_"/>
 	<item component="ComponentInfo{com.android.alarmclock/com.meizu.flyme.alarmclock.DeskClock}" drawable="clock"/>
 	<item component="ComponentInfo{com.android.providers.downloads.ui/com.android.providers.downloads.ui.DownloadActivity}" drawable="downloads"/>
 	<item component="ComponentInfo{com.meizu.filemanager/com.meizu.flyme.filemanager.activity.HomeActivity}" drawable="folder"/>
@@ -36873,6 +36880,12 @@
 
 	<!-- 残高確認 -->
 	<item component="ComponentInfo{digital.cardreader/digital.cardreader.MainActivity}" drawable="zandaka_kakunin"/>
+	
+	<!-- Miasto Zgierz -->
+	<item component="ComponentInfo{pl.zgierz.miasto/com.tns.NativeScriptActivity}" drawable="miasto_zgierz"/>
+	
+	<!-- Słowo Boże -->
+	<item component="ComponentInfo{com.aliado.przewodnikduchowy/com.aliado.przewodnikduchowy.Login}" drawable="sowo_boe"/>
 
 	<!-- 輕小說文庫 -->
 	<item component="ComponentInfo{org.mewx.wenku8/org.mewx.wenku8.activity.MainActivity}" drawable="light_novel_library"/>

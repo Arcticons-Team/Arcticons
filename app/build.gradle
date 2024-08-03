@@ -33,6 +33,10 @@ android {
     } else {releaseSigning = signingConfigs.named("debug"); // Use getByName for safety
     }
 
+    buildFeatures {
+        buildConfig = true
+    }
+
     buildTypes {
         configureEach {
             signingConfig = releaseSigning
