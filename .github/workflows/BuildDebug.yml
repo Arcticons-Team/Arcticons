@@ -20,7 +20,7 @@ jobs:
                 cache: gradle       
             - name: Write sign info
               run: |
-                  echo "Workflow manually triggered by ${{ github.actor }}
+                  echo "Workflow manually triggered by ${{ github.actor }}"
                   if [ ! -z "${{ secrets.KEYSTORE }}" ]; then
                     echo storePassword='${{ secrets.KEYSTORE_PASSWORD }}' >> keystore.properties
                     echo keyAlias='${{ secrets.KEY_ALIAS }}' >> keystore.properties
