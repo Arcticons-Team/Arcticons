@@ -19,8 +19,9 @@ jobs:
                 java-version: 21
                 cache: gradle       
             - name: Write sign info
-              if: github.repository_owner == 'Donnnno'
+              if: ${{ github.actor == 'Donnnno' || github.actor == 'Kaiserdragon2' }}
               run: |
+                  echo "Workflow manually triggered by ${{ github.actor }}
                   if [ ! -z "${{ secrets.KEYSTORE }}" ]; then
                     echo storePassword='${{ secrets.KEYSTORE_PASSWORD }}' >> keystore.properties
                     echo keyAlias='${{ secrets.KEY_ALIAS }}' >> keystore.properties
