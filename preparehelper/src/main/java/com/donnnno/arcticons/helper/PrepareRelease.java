@@ -59,7 +59,7 @@ public class PrepareRelease {
 
     public static void executePythonScript(String... args) throws Exception {
             List<String> command = new ArrayList<>();
-            command.add("python3");
+            command.add("python");
             // Add all provided argumentsto the command list
             command.addAll(Arrays.asList(args));
             command.add("..");
