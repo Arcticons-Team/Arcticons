@@ -14,7 +14,7 @@
 🗺️ Powered by a community of icon creators all around the world!
   
 ## Knowledge base
-📖 Looking to contribute, have questions about Arcticons or anything else? Check outour knowledge base.
+📖 Looking to contribute, have questions about Arcticons or anything else? Check out our knowledge base.
 
 <div align="center">
   <br>
