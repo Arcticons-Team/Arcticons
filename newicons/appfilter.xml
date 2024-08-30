@@ -1,4 +1,4 @@
-<resources>
+ne<resources>
 
 	<!-- #DRIVE -->
 	<item component="ComponentInfo{com.pixelperfectdude.htdrive/com.unity3d.player.UnityPlayerActivity}" drawable="drive"/>
@@ -22185,8 +22185,12 @@
 	<item component="ComponentInfo{com.appmindlab.nano/com.appmindlab.nano.IntroActivity}" drawable="neutrinotes"/>
 
 	<!-- Neutron Player -->
-	<item component="ComponentInfo{com.neutroncode.mp/com.neutroncode.mp.NeutronMPCore}" drawable="mediaplayer"/>
-	<item component="ComponentInfo{com.neutroncode.mpeval/com.neutroncode.mp.NeutronMPCore}" drawable="mediaplayer"/>
+	<item component="ComponentInfo{com.neutroncode.mp/com.neutroncode.mp.NeutronMPCore}" drawable="neutron_player"/>
+	<item component="ComponentInfo{com.neutroncode.mpeval/com.neutroncode.mp.NeutronMPCore}" drawable="neutron_player"/>
+
+	<!-- Neutron Recorder -->
+	<item component="ComponentInfo{com.neutroncode.rc/com.neutroncode.mp.NeutronMPCore}" drawable="neutron_recorder"/>
+	<item component="ComponentInfo{com.neutroncode.rceval/com.neutroncode.mp.NeutronMPCore}" drawable="neutron_recorder"/>
 
 	<!-- NeverTooManyBooks -->
 	<item component="ComponentInfo{com.hardbacknutter.nevertoomanybooks/com.hardbacknutter.nevertoomanybooks.StartupActivity}" drawable="nevertoomanybooks"/>
