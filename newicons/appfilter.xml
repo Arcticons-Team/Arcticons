@@ -12578,6 +12578,13 @@
 
 	<!-- Futo Keyboard -->
 	<item component="ComponentInfo{org.futo.inputmethod.latin/org.futo.inputmethod.latin.uix.settings.SettingsActivity}" drawable="futo_keyboard"/>
+	<item component="ComponentInfo{org.futo.inputmethod.latin.playstore/org.futo.inputmethod.latin.uix.settings.SettingsActivity}" drawable="futo_keyboard"/>
+
+	<!-- Eurofurence -->
+	<item component="ComponentInfo{org.eurofurence.connavigator/org.eurofurence.connavigator.MainActivity}" drawable="eurofurence" />
+
+	<!-- μLauncher -->
+	<item component="ComponentInfo{de.jrpie.android.launcher/de.jrpie.android.launcher.HomeActivity}" drawable="mu_launcher" />
 
 	<!-- Futo Voice Input -->
 	<item component="ComponentInfo{org.futo.voiceinput/org.futo.voiceinput.settings.SettingsActivity}" drawable="futo_voice_input"/>
@@ -13643,6 +13650,7 @@
 	<!-- Google Photos -->
 	<item component="ComponentInfo{com.google.android.apps.photos/com.google.android.apps.photos.home.HomeActivity}" drawable="google_photos"/>
 	<item component="ComponentInfo{com.google.android.apps.photos/com.google.android.archive.ReactivateActivity}" drawable="google_photos"/>
+	<item component="ComponentInfo{app.revanced.android.photos/com.google.android.apps.photos.home.HomeActivity}" drawable="google_photos"/>
 
 	<!-- Google Pinyin Input -->
 	<item component="ComponentInfo{com.google.android.inputmethod.pinyin/com.google.android.apps.inputmethod.libs.framework.core.LauncherActivity}" drawable="google_pinyin_input"/>
@@ -15294,6 +15302,7 @@
 
 	<!-- iHeartRadio -->
 	<item component="ComponentInfo{com.clearchannel.iheartradio.controller/com.iheart.activities.NavDrawerActivity}" drawable="iheartradio"/>
+	<item component="ComponentInfo{com.clearchannel.iheartradio.controller/com.clearchannel.iheartradio.controller.activities.NavDrawerActivity}" drawable="iheartradio"/>
 
 	<!-- iHerb -->
 	<item component="ComponentInfo{com.iherb/com.iherb.mobile.product.splash.view.SplashActivity}" drawable="iherb"/>
@@ -19228,11 +19237,15 @@
 	<item component="ComponentInfo{invo8.meezan.mb/com.inov8.meezanmb.activities.SplashActivity}" drawable="meezanbank"/>
 
 	<!-- Mega -->
-	<item component="ComponentInfo{mega.privacy.android.app/mega.privacy.android.app.LauncherActivity}" drawable="letter_uppercase_square_m"/>
-	<item component="ComponentInfo{mega.privacy.android.app/mega.privacy.android.app.lollipop.ManagerActivityLollipop}" drawable="letter_uppercase_square_m"/>
-	<item component="ComponentInfo{mega.privacy.android.app/mega.privacy.android.app.lollipop.ManagerActivity}" drawable="letter_uppercase_square_m"/>
-	<item component="ComponentInfo{mega.privacy.android.app/mega.privacy.android.app.main.ManagerActivity}" drawable="letter_uppercase_square_m"/>
-	<item component="ComponentInfo{mega.privacy.android.app/com.google.android.archive.ReactivateActivity}" drawable="letter_uppercase_square_m"/>
+	<item component="ComponentInfo{mega.privacy.android.app/mega.privacy.android.app.LauncherActivity}" drawable="mega"/>
+	<item component="ComponentInfo{mega.privacy.android.app/mega.privacy.android.app.lollipop.ManagerActivityLollipop}" drawable="mega"/>
+	<item component="ComponentInfo{mega.privacy.android.app/mega.privacy.android.app.lollipop.ManagerActivity}" drawable="mega"/>
+	<item component="ComponentInfo{mega.privacy.android.app/mega.privacy.android.app.main.ManagerActivity}" drawable="mega"/>
+	<item component="ComponentInfo{mega.privacy.android.app/com.google.android.archive.ReactivateActivity}" drawable="mega"/>
+	<item component="ComponentInfo{mega.privacy.android.app/mega.privacy.android.app.presentation.login.LoginActivity}" drawable="mega" />
+
+	<!-- MEGA VPN -->
+	<item component="ComponentInfo{mega.vpn.android.app/mega.vpn.android.app.presentation.home.MainActivity}" drawable="mega_vpn" />
 
 	<!-- Megaboard -->
 	<item component="ComponentInfo{com.minmaxia.megaboard/com.minmaxia.megaboard.AndroidLauncher}" drawable="megaboard"/>
@@ -27909,6 +27922,7 @@
 
 	<!-- Scotiabank -->
 	<item component="ComponentInfo{com.scotiabank.banking/com.scotiabank.nova.startup.StartupAlias}" drawable="scotiabank"/>
+	<item component="ComponentInfo{com.scotiabank.cca.mobile/com.scotiabank.mobile.Launcher}" drawable="scotiabank"/>
 
 	<!-- SCP Anywhere -->
 	<item component="ComponentInfo{com.tverona.scpanywhere/com.tverona.scpanywhere.ui.MainActivity}" drawable="scp"/>
@@ -29646,6 +29660,96 @@
 
 	<!-- Skullcandy -->
 	<item component="ComponentInfo{app.skullcandy/com.skullcandy_app.MainActivity}" drawable="skullcandy"/>
+
+	<!-- Caribbean -->
+	<item component="ComponentInfo{com.CIBC.FCIB.mobilebanking/com.CIBC.FCIB.mobilebanking.MainActivity}" drawable="caribbean"/>
+
+	<!-- Cielo Home -->
+	<item component="ComponentInfo{com.cielo.app.cielohome/com.cielo.app.cielohome.StartActivity}" drawable="cielo_home"/>
+
+	<!-- Drives -->
+	<item component="ComponentInfo{com.mobile_infographics_tools.mydrive/com.mobile_infographics_tools.mydrive.activities.IntroActivity}" drawable="drives"/>
+
+	<!-- Eight Sleep -->
+	<item component="ComponentInfo{com.eightsleep.eight/com.eightsleep.eight.MainActivity}" drawable="number_circle_8"/>
+
+	<!-- FortiToken Mobile -->
+	<item component="ComponentInfo{com.fortinet.android.ftm/com.fortinet.android.ftm.StartActivity}" drawable="fortitoken_mobile"/>
+
+	<!-- Global Entry -->
+	<item component="ComponentInfo{gov.dhs.cbp.pspd.gem/gov.dhs.cbp.pspd.gem.InitializationActivity}" drawable="global_entry"/>
+
+	<!-- iMPlayer Mobile -->
+	<item component="ComponentInfo{com.myiptvonline.implayerm/com.myiptvonline.implayerm.MainActivity}" drawable="implayer_mobile"/>
+
+	<!-- Island Bargains -->
+	<item component="ComponentInfo{com.island.bargains.android/com.island.bargains.MainActivity}" drawable="island_bargains"/>
+
+	<!-- LandlordStudio -->
+	<item component="ComponentInfo{com.mozzarellalabs.landlordstudio/com.mozzarellalabs.landlordstudio.SplashActivity}" drawable="landlordstudio"/>
+
+	<!-- Now Playing History -->
+	<item component="ComponentInfo{com.appsbybirbeck.android.nowplayinghistory/com.appsbybirbeck.android.nowplayinghistory.activities.MainActivity}" drawable="now_playing_history"/>
+
+	<!-- Pixel Xpert -->
+	<item component="ComponentInfo{sh.siava.pixelxpert/sh.siava.pixelxpert.SplashScreenActivityNormalIcon}" drawable="pixel_xpert"/>
+
+	<!-- PowerPanel -->
+	<item component="ComponentInfo{com.cyberpower.pppe/com.cyberpower.pppe.MainActivity}" drawable="powerpanel"/>
+
+	<!-- Provo Water -->
+	<item component="ComponentInfo{smartgridcis.mobile.myaccount.droid.provo/crc64507c957d740a7bd1.LoginView}" drawable="provo_water"/>
+
+	<!-- Secure SignIn -->
+	<item component="ComponentInfo{com.synology.securesignin/com.synology.securesignin.MainActivity}" drawable="secure_signin"/>
+
+	<!-- Sensibo -->
+	<item component="ComponentInfo{com.sensibo.app/com.sensibo.app.MainActivity}" drawable="sensibo"/>
+
+	<!-- ServiceDesk Plus SaaS HelpDesk -->
+	<item component="ComponentInfo{com.manageengine.sdp.ondemand/com.manageengine.sdp.ondemand.activities.SplashActivity}" drawable="servicedesk_plus_saas_helpdesk"/>
+
+	<!-- Skull-iQ -->
+	<item component="ComponentInfo{com.skullcandy.skulliq/com.bragi.earbuds.presentation.main.MainActivity}" drawable="skulliq"/>
+
+	<!-- Smart Sync -->
+	<item component="ComponentInfo{jp.pioneer.carsync/jp.pioneer.carsync.presentation.view.activity.MainActivity}" drawable="smart_sync"/>
+
+	<!-- TenantCloud Pro -->
+	<item component="ComponentInfo{com.sav.tenantcloud/com.sav.tenantcloud.ui.main.view.MainActivity}" drawable="tenantcloud_pro"/>
+
+	<!-- Transmission Remote -->
+	<item component="ComponentInfo{net.yupol.transmissionremote.app/net.yupol.transmissionremote.app.MainActivity}" drawable="transmission_remote"/>
+
+	<!-- TTLock -->
+	<item component="ComponentInfo{com.tongtongsuo.app/com.scaf.android.client.activity.LoadingActivity}" drawable="ttlock"/>
+
+	<!-- Twingate -->
+	<item component="ComponentInfo{com.twingate/com.twingate.presentation.main.MainActivity}" drawable="twingate"/>
+
+	<!-- VeSync -->
+	<item component="ComponentInfo{com.etekcity.vesyncplatform/com.etekcity.vesyncplatform.presentation.ui.activities.LaunchActivity}" drawable="vesync"/>
+
+	<!-- VIOFO -->
+	<item component="ComponentInfo{com.viofo.viofo/com.viofo.wr1.activity.HomeActivity}" drawable="viofo"/>
+
+	<!-- Alarm.com -->
+	<item component="ComponentInfo{com.alarm.alarmmobile.android/com.alarm.alarmmobile.android.feature.auth.login.LoginActivity}" drawable="alarmcom" />
+
+	<!-- Vivaldi Sopranos -->
+	<item component="ComponentInfo{com.vivaldi.browser.sopranos/com.google.android.apps.chrome.Main}" drawable="vivaldi_sopranos" />
+
+	<!-- Woodforest -->
+	<item component="ComponentInfo{com.woodforest/com.woodforest.MainActivity}" drawable="woodforest" />
+
+	<!-- Airbuds -->
+	<item component="ComponentInfo{com.capp.poplive/com.capp.poplive.MainActivity}" drawable="airbuds" />
+
+	<!-- Wave -->
+	<item component="ComponentInfo{com.waveapps.sales/com.waveapps.argo.ui.splash.SplashActivity}" drawable="wave"/>
+
+	<!-- zygisk-detach -->
+	<item component="ComponentInfo{com.jhc.detach/com.jhc.detach.MainActivity}" drawable="zygiskdetach"/>
 
 	<!-- Skullgirls -->
 	<item component="ComponentInfo{com.autumn.skullgirls/com.prime31.UnityPlayerNativeActivity}" drawable="skullgirls"/>
