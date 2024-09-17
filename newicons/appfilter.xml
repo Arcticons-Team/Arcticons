@@ -275,6 +275,9 @@
 	<!-- 24pay -->
 	<item component="ComponentInfo{com.twentyfourpay/com.twentyfourpay.screens.splashScreen.SplashScreenActivity}" drawable="_24pay"/>
 
+	<!-- 2600.emu -->
+	<item component="ComponentInfo{com.explusalpha.A2600Emu/com.imagine.BaseActivity}" drawable="_2600emu"/>
+
 	<!-- 280blocker -->
 	<item component="ComponentInfo{com.tobila.android_280blocker/com.tobila.android_280blocker.view.MainActivity}" drawable="_280blocker"/>
 
@@ -5525,6 +5528,9 @@
 
 	<!-- C6 Bank -->
 	<item component="ComponentInfo{com.c6bank.app/com.c6bank.android.ui.feature.intro.IntroActivity}" drawable="c6bank"/>
+
+	<!-- C64.emu -->
+	<item component="ComponentInfo{com.explusalpha.C64Emu/com.imagine.BaseActivity}" drawable="c64emu"/>
 
 	<!-- C:Geo -->
 	<item component="ComponentInfo{cgeo.geocaching/cgeo.geocaching.MainActivity}" drawable="cgeo"/>
@@ -13079,8 +13085,14 @@
 	<item component="ComponentInfo{ru.gazprombank.android.mobilebank.app/launcher.metal}" drawable="gazprombank"/>
 	<item component="ComponentInfo{ru.gazprombank.android.mobilebank.app/launcher.premium}" drawable="gazprombank"/>
 
+	<!-- GBA.emu -->
+	<item component="ComponentInfo{com.explusalpha.GbaEmu/com.imagine.BaseActivity}" drawable="gbaemu"/>
+
 	<!-- GBCC -->
 	<item component="ComponentInfo{com.philj56.gbcc/com.philj56.gbcc.MainActivity}" drawable="gbcc"/>
+
+	<!-- GBC.emu -->
+	<item component="ComponentInfo{com.explusalpha.GbcEmu/com.imagine.BaseActivity}" drawable="gbcemu"/>
 
 	<!-- GC Auto Clicker -->
 	<item component="ComponentInfo{com.speed.gc.autoclicker.automatictap/com.speed.gc.autoclicker.automatictap.SplashActivity}" drawable="gc_auto_clicker"/>
@@ -16482,6 +16494,12 @@
 	<!-- JRE POINT -->
 	<item component="ComponentInfo{jp.co.jreast.jrepoint/jp.co.jreast.jrepoint.controller.boot.StartActivity}" drawable="jre_point"/>
 
+	<!-- JRPN 15C -->
+	<item component="ComponentInfo{com.jovial.jrpn15/com.jovial.jrpn15.MainActivity}" drawable="jrpn15c"/>
+
+	<!-- JRPN 16C -->
+	<item component="ComponentInfo{com.jovial.jrpn2/com.jovial.jrpn2.MainActivity}" drawable="jrpn16c"/>
+
 	<!-- JS-Dict -->
 	<item component="ComponentInfo{io.github.petlyh.jsdict/io.github.petlyh.jsdict.MainActivity}" drawable="js_dict"/>
 
@@ -18854,6 +18872,9 @@
 	<!-- Lyne -->
 	<item component="ComponentInfo{com.thomasbowker.lynerelease/com.unity3d.player.UnityPlayerActivity}" drawable="lyne"/>
 
+	<!-- Lynx.emu -->
+	<item component="ComponentInfo{com.explusalpha.LynxEmu/com.imagine.BaseActivity}" drawable="lynxemu"/>
+
 	<!-- Lynx Launcher -->
 	<item component="ComponentInfo{org.n277.lynxlauncher/org.n277.lynxlauncher.HomeActivity}" drawable="lynx_launcher"/>
 
@@ -19419,6 +19440,9 @@
 
 	<!-- MCPEDL -->
 	<item component="ComponentInfo{com.overwolf.mcpedl/com.overwolf.mcpedl.MainActivity}" drawable="mcpedl"/>
+
+	<!-- MD.emu -->
+	<item component="ComponentInfo{com.explusalpha.MdEmu/com.imagine.BaseActivity}" drawable="mdemu"/>
 
 	<!-- MDict -->
 	<item component="ComponentInfo{cn.mdict/cn.mdict.SplashScreen}" drawable="mdict"/>
@@ -21055,8 +21079,8 @@
 	<!-- mPretinac -->
 	<item component="ComponentInfo{hr.apisit.u03.kp/hr.apisit.u03.kp.LoginActivity}" drawable="mpretinac"/>
 
-	<!-- Mpv -->
-	<item component="ComponentInfo{is.xyz.mpv/is.xyz.mpv.MainActivity}" drawable="mediaplayer"/>
+	<!-- mpv-android -->
+	<item component="ComponentInfo{is.xyz.mpv/is.xyz.mpv.MainActivity}" drawable="mpv"/>
 
 	<!-- MRepo -->
 	<item component="ComponentInfo{com.sanmer.mrepo/com.sanmer.mrepo.ui.activity.MainActivity}" drawable="mrepo"/>
@@ -21065,6 +21089,9 @@
 
 	<!-- MSP Wallet -->
 	<item component="ComponentInfo{com.apb.msp_app/com.apb.msp_app.MainActivity}" drawable="msp_wallet"/>
+
+	<!-- MSX.emu -->
+	<item component="ComponentInfo{com.explusalpha.MsxEmu/com.imagine.BaseActivity}" drawable="msxemu"/>
 
 	<!-- MT Manager -->
 	<item component="ComponentInfo{bin.mt.plus/bin.mt.plus.MainLightIcon}" drawable="mt_manager"/>
@@ -22341,6 +22368,9 @@
 	<item component="ComponentInfo{dk.e_nettet.mobilekey.everyone/th.Zx}" drawable="nem_id"/>
 	<item component="ComponentInfo{dk.e_nettet.mobilekey.everyone/th.sH}" drawable="nem_id"/>
 
+	<!-- NEO.emu -->
+	<item component="ComponentInfo{com.explusalpha.MdEmu/com.imagine.BaseActivity}" drawable="neoemu"/>
+
 	<!-- Neo Backup -->
 	<item component="ComponentInfo{com.machiav3lli.backup/com.machiav3lli.backup.activities.SplashActivity}" drawable="neo_backup"/>
 	<item component="ComponentInfo{com.machiav3lli.backup/com.machiav3lli.backup.activities.MainActivityX}" drawable="neo_backup"/>
@@ -22525,8 +22555,12 @@
 	<item component="ComponentInfo{com.appmindlab.nano/com.appmindlab.nano.IntroActivity}" drawable="neutrinotes"/>
 
 	<!-- Neutron Player -->
-	<item component="ComponentInfo{com.neutroncode.mp/com.neutroncode.mp.NeutronMPCore}" drawable="mediaplayer"/>
-	<item component="ComponentInfo{com.neutroncode.mpeval/com.neutroncode.mp.NeutronMPCore}" drawable="mediaplayer"/>
+	<item component="ComponentInfo{com.neutroncode.mp/com.neutroncode.mp.NeutronMPCore}" drawable="neutron_player"/>
+	<item component="ComponentInfo{com.neutroncode.mpeval/com.neutroncode.mp.NeutronMPCore}" drawable="neutron_player"/>
+
+	<!-- Neutron Recorder -->
+	<item component="ComponentInfo{com.neutroncode.rc/com.neutroncode.mp.NeutronMPCore}" drawable="neutron_recorder"/>
+	<item component="ComponentInfo{com.neutroncode.rceval/com.neutroncode.mp.NeutronMPCore}" drawable="neutron_recorder"/>
 
 	<!-- NeverTooManyBooks -->
 	<item component="ComponentInfo{com.hardbacknutter.nevertoomanybooks/com.hardbacknutter.nevertoomanybooks.StartupActivity}" drawable="nevertoomanybooks"/>
@@ -22681,6 +22715,9 @@
 
 	<!-- NGL -->
 	<item component="ComponentInfo{com.nglreactnative/com.nglreactnative.MainActivity}" drawable="ngl"/>
+
+	<!-- NGP.emu -->
+	<item component="ComponentInfo{com.explusalpha.NgpEmu/com.imagine.BaseActivity}" drawable="ngpemu"/>
 
 	<!-- NH Smart -->
 	<item component="ComponentInfo{nh.smart.nhcok/nh.smart.nhcok.MainActivity}" drawable="nh_smart"/>
@@ -24728,6 +24765,9 @@
 	<item component="ComponentInfo{com.emanuelef.remote_capture/com.emanuelef.remote_capture.activities.MainActivity}" drawable="pcapdroid"/>
 	<item component="ComponentInfo{com.pcapdroid.mitm/com.pcapdroid.mitm.MainActivity}" drawable="pcapdroid"/>
 
+	<!-- PCE.emu -->
+	<item component="ComponentInfo{com.explusalpha.PceEmu/com.imagine.BaseActivity}" drawable="pceemu"/>
+
 	<!-- PCI VEN/DEV Database -->
 	<item component="ComponentInfo{aws.apps.pciVenDevDb/aws.apps.pciVenDevDb.Main}" drawable="pcivendevdatabase"/>
 
@@ -25275,6 +25315,9 @@
 
 	<!-- Pinball Map -->
 	<item component="ComponentInfo{com.pbm/com.pbm.MainActivity}" drawable="pinball_map"/>
+
+	<!-- PinOut -->
+	<item component="ComponentInfo{com.mediocre.pinout/com.mediocre.pinout.MainActivity}" drawable="pinout"/>
 
 	<!-- Pinboard -->
 	<item component="ComponentInfo{com.pindroid/com.pindroid.activity.Main}" drawable="sharetopinboard"/>
@@ -30722,7 +30765,7 @@
 
 
 	<!-- Solunar Periods -->
-	<item component="ComponentInfo{com.forrestguice.suntimes.solunar/com.forrestguice.suntimes.solunar.MainActivit}" drawable="solunarperiods"/>
+	<item component="ComponentInfo{com.forrestguice.suntimes.solunar/com.forrestguice.suntimes.solunar.MainActivity}" drawable="solunarperiods"/>
 
 	<!-- SomaFM -->
 	<item component="ComponentInfo{com.dgmltn.radiomg.somafm/com.dgmltn.radiomg.ui.main.MainActivity}" drawable="somafm"/>
@@ -31769,6 +31812,15 @@
 	<!-- Survivor.io -->
 	<item component="ComponentInfo{com.dxx.firenow/com.unity3d.player.UnityPlayerActivityOverride}" drawable="survivor_io"/>
 
+	<!-- Survivalcraft -->
+	<item component="ComponentInfo{com.candyrufusgames.survivalcrafttrial/crc64da6839f08fe39125.EngineActivity}" drawable="survivalcraft"/>
+	<item component="ComponentInfo{com.candyrufusgames.survivalcraft/crc64da6839f08fe39125.EngineActivity}" drawable="survivalcraft"/>
+
+	<!-- Survivalcraft 2 -->
+	<item component="ComponentInfo{com.candyrufusgames.survivalcraft2trial/crc64da6839f08fe39125.EngineActivity}" drawable="survivalcraft"/>
+	<item component="ComponentInfo{com.candyrufusgames.survivalcraft/crc64da6839f08fe39125.EngineActivity}" drawable="survivalcraft"/>
+
+
 	<!-- SUSH -->
 	<item component="ComponentInfo{app.grotinou.sushi/app.grotinou.sushi.MainActivity}" drawable="sush"/>
 
@@ -31802,6 +31854,9 @@
 	<!-- SVT Play -->
 	<item component="ComponentInfo{se.svt.android.svtplay/se.svt.svtplay.ui.LauncherActivity}" drawable="svt_play"/>
 	<item component="ComponentInfo{se.svt.android.svtplay/se.svt.svtplay.ui.mobile.MainActivity}" drawable="svt_play"/>
+
+	<!-- Swan.emu -->
+	<item component="ComponentInfo{com.explusalpha.SwanEmu/com.imagine.BaseActivity}" drawable="swanemu"/>
 
 	<!-- SWAP - No ROOT -->
 	<item component="ComponentInfo{com.allakore.swapnoroot/com.allakore.swapnoroot.ui.activities.SplashActivity}" drawable="swap_no_root"/>
@@ -33309,6 +33364,9 @@
 
 	<!-- TimeTree -->
 	<item component="ComponentInfo{works.jubilee.timetree/works.jubilee.timetree.ui.SplashActivity}" drawable="timetree"/>
+
+	<!-- timeto.me -->
+	<item component="ComponentInfo{me.tineto.app/me.timeto.app.MainActivity}" drawable="timetome"/>
 
 	<!-- Timo -->
 	<item component="ComponentInfo{io.lifestyle.plus/io.lifestyle.plus.login.TimoLoginActivity}" drawable="timo"/>
@@ -37641,6 +37699,9 @@
 
 	<!-- Yuito -->
 	<item component="ComponentInfo{net.accelf.yuito/com.keylesspalace.tusky.SplashActivity}" drawable="yuito"/>
+
+	<!-- Yu-Gi-Oh! NEURON -->
+	<item component="ComponentInfo{jp.konami.YugiohOcgSupports/com.google.firebase.MessagingUnityPlayerActivity}" drawable="yu_gi_oh_neuron"/>
 
 	<!-- Yuka -->
 	<item component="ComponentInfo{io.yuka.android/io.yuka.android.Main.RootActivity}" drawable="yuka"/>
