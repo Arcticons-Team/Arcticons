@@ -1621,6 +1621,9 @@
 	<item component="ComponentInfo{tz.co.documentreader.office.viewer.scaner.pdfreader/tz.co.documentreader.office.LaunchScreenActivity}" drawable="office"/>
 	<item component="ComponentInfo{com.docxreader.documentreader.wordoffice/com.docxreader.documentreader.wordoffice.SplashActivity}" drawable="office"/>
 	<item component="ComponentInfo{documentreader.pdfviewerapp.filereader.word.docs/arr.pdfreader.documentreader.view.launcher.LauncherActivity}" drawable="office"/>
+	<item component="ComponentInfo{com.document.manager.filedocumentmanager/com.document.manager.filedocumentmanager.SplashActivity}" drawable="office"/>
+	<item component="ComponentInfo{com.documentreader.free.viewer.all/com.documentreader.free.viewer.ui.ReaderSplashActivity}" drawable="office"/>
+	<item component="ComponentInfo{alldocumentreader.filereader.office.pdf.word/alldocumentreader.filereader.office.pdf.word.views.SplashActitivity}" drawable="office"/>
 
 	<!-- AllCast -->
 	<item component="ComponentInfo{com.koushikdutta.cast/com.koushikdutta.cast.SearchActivity}" drawable="allcast"/>
@@ -2523,6 +2526,7 @@
 
 	<!-- AppLock -->
 	<item component="ComponentInfo{com.sp.protector.free/com.sp.protector.free.StartActivity}" drawable="app_lock"/>
+	<item component="ComponentInfo{com.bhanu.simpleapplocker/com.bhanu.simpleapplocker.activities.HomeActivity}" drawable="app_locker"/>
 
 	<!-- AppLock -->
 	<item component="ComponentInfo{com.gamemalt.applocker/com.gamemalt.applocker.LauncherActivity_Weather}" drawable="applock"/>
@@ -4888,6 +4892,9 @@
 	<!-- Bluetooth Extension -->
 	<item component="ComponentInfo{org.codeaurora.bluetooth/org.coreaurora.bluetooth.ftp.BluetoothFtpActivity}" drawable="bluetooth"/>
 
+	<!-- Bluetooth File Transfer -->
+	<item component="ComponentInfo{it.medieval.blueftp/it.medieval.blueftp.AMain}" drawable="bluetooth_filetransfer"/>
+
 	<!-- Bluetooth Keyboard & Mouse -->
 	<item component="ComponentInfo{io.appground.blek/io.appground.blek.MainActivity}" drawable="bluetooth_keyboard_mouse"/>
 	<item component="ComponentInfo{io.appground.blekpremium/io.appground.blek.MainActivity}" drawable="bluetooth_keyboard_mouse"/>
@@ -4898,12 +4905,16 @@
 
 	<!-- Bluetooth Scanner -->
 	<item component="ComponentInfo{com.bluetoothscanner/com.bluetoothscanner.MainActivity}" drawable="bluetooth_scanner"/>
+	<item component="ComponentInfo{com.pzolee.bluetoothscanner/com.pzolee.bluetoothscanner.MainActivity}" drawable="bluetooth_scanner"/>
 
 	<!-- Bluetooth Share -->
 	<item component="ComponentInfo{com.android.bluetooth/com.android.bluetooth.opp.BluetoothOppLauncherActivity}" drawable="bluetooth"/>
 
 	<!-- Bluetooth terminal -->
 	<item component="ComponentInfo{ru.sash0k.bluetooth_terminal/ru.sash0k.bluetooth_terminal.activity.DeviceControlActivity}" drawable="bluetoothterminal"/>
+
+	<!-- Bluetooth Volume Controller -->
+	<item component="ComponentInfo{com.sm.bluetoothvolume/com.sm.bluetoothvolume.activities.SplashActivity}" drawable="bluetooth_audio"/>
 
 	<!-- Bluetooth Volume Manager -->
 	<item component="ComponentInfo{eu.darken.bluemusic/eu.darken.bluemusic.main.ui.MainActivity}" drawable="bluetooth_audio"/>
@@ -6264,6 +6275,20 @@
 	<item component="ComponentInfo{com.softwinner.camera/com.softwinner.camera.CameraLauncher}" drawable="camera"/>
 	<item component="ComponentInfo{org.lineageos.aperture.dev/org.lineageos.aperture.CameraLauncher}" drawable="camera"/>
 	<item component="ComponentInfo{com.perracolabs.cp/com.perracolabs.cameringo.Main}" drawable="camera"/>
+	<item component="ComponentInfo{com.hdcamera.ultrazoom.hd100xzoom.ultrazoomcamera/com.hdcamera.ultrazoom.hd100xzoom.ultrazoomcamera.Home_Task}" drawable="camera"/>
+	<item component="ComponentInfo{com.agc.gcam91/com.android.camera.CameraLauncher}" drawable="camera"/>
+	<item component="ComponentInfo{com.ultrazoom.cameraultra.magnifier/com.sdk.mediation.multisdk.SplashActivity}" drawable="camera"/>
+	<item component="ComponentInfo{com.agc.gcam94/com.android.camera.CameraLauncher}" drawable="camera"/>
+	<item component="ComponentInfo{com.hmdglobal.app.litecamera/com.mediatek.camera.CameraLauncher}" drawable="camera"/>
+	<item component="ComponentInfo{jp.co.sony.mc.cameraapp/jp.co.sony.mc.camera.CameraActivity}" drawable="camera"/>
+	<item component="ComponentInfo{photo.hd.video.beauty.camera/com.ijoysoft.camerapro.activity.SplashActivity}" drawable="camera"/>
+	<item component="ComponentInfo{hd.camera.filter/com.coocent.camera11.activity.LaunchActivity}" drawable="camera"/>
+	<item component="ComponentInfo{camera.os.cam.editor/com.camera.function.main.privacy.CoolCameraPrivacyActivity}" drawable="camera"/>
+	<item component="ComponentInfo{com.camera12.iphone12/com.oscamera.library.code.ui.SplashCamera12Activity}" drawable="camera"/>
+	<item component="ComponentInfo{com.zico.opencamera/com.zico.opencamera.MainActivity}" drawable="camera"/>
+	<item component="ComponentInfo{com.shamim.camera/com.android.camera.CameraLauncher}" drawable="camera"/>
+	<item component="ComponentInfo{com.agc.gcam85/com.android.camera.CameraLauncher}" drawable="camera"/>
+	<item component="ComponentInfo{com.camera.one.s10.camera/com.camera.function.main.privacy.CameraPrivacyActivity}" drawable="camera"/>
 
 	<!-- Camera Connect -->
 	<item component="ComponentInfo{jp.co.canon.ic.cameraconnect/jp.co.canon.ic.cameraconnect.top.CCTopActivity}" drawable="cameraconnect"/>
@@ -6305,6 +6330,7 @@
 	<item component="ComponentInfo{eu.chainfire.dslrcontroller/eu.chainfire.dslrcontroller.LiveViewActivity}" drawable="camera_pro"/>
 	<item component="ComponentInfo{com.footej.camera2/com.footej.camera.CameraActivity}" drawable="camera_pro"/>
 	<item component="ComponentInfo{com.appbreakers.hdcamera/com.appbreakers.opencamera.MainScreen}" drawable="camera_pro"/>
+	<item component="ComponentInfo{com.hdcampro.procameralens.photography/com.hdcampro.procameralens.photography.SplashActivity}" drawable="camera_pro"/>
 
 	<!-- Camera Remote -->
 	<item component="ComponentInfo{com.fujifilm_dsc.app.remoteshooter/com.fujifilm_dsc.app.remoteshooter.InitializeActivity}" drawable="cameraremote"/>
@@ -9689,6 +9715,9 @@
 	<!-- Document Scanner -->
 	<item component="ComponentInfo{com.documentscanner.scanpdf/com.cpm.scanner.activity.SplashActivity}" drawable="document_scanner"/>
 	<item component="ComponentInfo{com.akylas.documentscanner/com.akylas.documentscanner.MainActivity}" drawable="document_scanner"/>
+	<item component="ComponentInfo{pdf.scanner.ds/pdf.scanner.ds.views.splash.SplashActivity}" drawable="document_scanner"/>
+	<item component="ComponentInfo{com.mxxtech.easyscan/com.mxxtech.easyscan.activity.SplashActivity}" drawable="document_scanner"/>
+	<item component="ComponentInfo{com.diavostar.documentscanner.scannerapp/com.diavostar.documentscanner.scannerapp.features.common.SplashAct}" drawable="document_scanner"/>
 
 	<!-- Document Viewer -->
 	<item component="ComponentInfo{org.sufficientlysecure.viewer/org.ebookdroid.ui.library.RecentActivity}" drawable="document_viewer"/>
@@ -11008,6 +11037,7 @@
 
 	<!-- eSound -->
 	<item component="ComponentInfo{com.esound/com.esound.MainActivity}" drawable="esound"/>
+	<item component="ComponentInfo{com.player.esound/com.esound.MainActivity}" drawable="esound"/>
 
 	<!-- ESP -->
 	<item component="ComponentInfo{com.ashwhale.sepush.eskom/com.ashwhale.sepush.eskom.MainActivity}" drawable="esp"/>
@@ -11531,6 +11561,9 @@
 
 	<!-- Fast Reset -->
 	<item component="ComponentInfo{au.dja.screenlock.activities/au.dja.fastreset.activities.MainActivity}" drawable="fastreset"/>
+
+	<!-- Fast Scanner -->
+	<item component="ComponentInfo{com.coolmobilesolution.fastscannerfree/com.coolmobilesolution.activity.common.SplashActivity}" drawable="tinyscanner"/>
 
 	<!-- Fast Shopping -->
 	<item component="ComponentInfo{me.wolszon.fastshopping/me.wolszon.fastshopping.MainActivity}" drawable="fast_shopping"/>
@@ -14638,6 +14671,9 @@
 
 	<!-- GPS Map Camera -->
 	<item component="ComponentInfo{com.gpsmapcamera.geotagginglocationonphoto/com.gpsmapcamera.geotagginglocationonphoto.activity.Splash_Screen}" drawable="gps_map_camera"/>
+	<item component="ComponentInfo{com.gpsmapcamera.live.map.geotag.gps/com.gpsmapcamera.live.map.geotag.gps.ui.splash.SplashActivity}" drawable="gps_map_camera"/>
+	<item component="ComponentInfo{com.jkfantasy.gpsmapcamera/com.jkfantasy.gpsmapcamera.activity.MainActivity}" drawable="gps_map_camera"/>
+	<item component="ComponentInfo{com.gpsmapcamera.geotagging.map.gpscamera/com.gpsmapcamera.geotagging.map.gpscamera.ui.splash.SplashActivity}" drawable="gps_map_camera"/>
 
 	<!-- GPS Status -->
 	<item component="ComponentInfo{com.eclipsim.gpsstatus2/com.eclipsim.gpsstatus2.GPSStatus}" drawable="gpsstatus"/>
@@ -15613,6 +15649,9 @@
 	<item component="ComponentInfo{com.miHoYo.bh3oversea/com.miHoYo.overridenativeactivity.OverrideNativeActivity}" drawable="honkai_star_rail"/>
 	<item component="ComponentInfo{com.HoYoverse.hkrpgvn/com.mihoyo.combosdk.ComboSDKActivity}" drawable="honkai_star_rail"/>
 	<item component="ComponentInfo{com.HoYoverse.hkrpgsamsung/com.mihoyo.combosdk.ComboSDKActivity}" drawable="honkai_star_rail"/>
+
+	<!-- HONOR Docs -->
+	<item component="ComponentInfo{com.hihonor.hnoffice/com.yozo.office.LauncherActivity}" drawable="office"/>
 
 	<!-- HONOR Health -->
 	<item component="ComponentInfo{com.hihonor.health/com.hihonor.health.splash.SplashActivity}" drawable="honor_health"/>
@@ -22306,6 +22345,13 @@
 	<item component="ComponentInfo{com.heytap.music/com.allsaints.music.SplashDefaultActivity}" drawable="music"/>
 	<item component="ComponentInfo{com.musicplayer.player.mp3player.white/com.musicplayer.player.mp3player.white.start.MainActivity}" drawable="music"/>
 	<item component="ComponentInfo{com.android.music/com.android.music.MusicScanResultActivity}" drawable="music"/>
+	<item component="ComponentInfo{ringtonesforandroidphonefree.ringtones.ringtonessongs.ringtonesapp/com.android.dev.ringtone.feature.main.MainActivity}" drawable="music"/>
+	<item component="ComponentInfo{com.ringpro.popular.freerings/com.ringpro.popular.freerings.ui.splash.SplashActivity}" drawable="music"/>
+	<item component="ComponentInfo{com.bestringtonesapps.freeringtonesforandroid/com.bra.classes.ConsentActivity}" drawable="music"/>
+	<item component="ComponentInfo{com.herman.ringpod/com.herman.ringpod.MusicPicker}" drawable="music_alt_1"/>
+	<item component="ComponentInfo{com.setcallertune.ringtonesmusicdownload/com.setcallertune.ringtonesmusicdownload.view.Activities.SplashActivity}" drawable="music"/>
+	<item component="ComponentInfo{com.herman.ringtone/com.herman.ringtone.MusicPicker}" drawable="music_alt_1"/>
+	<item component="ComponentInfo{com.bestringtonesapps.bestringtonesfree/com.bra.classes.MainActivity}" drawable="music"/>
 
 	<!-- Music AI -->
 	<item component="ComponentInfo{com.feraset.tune/com.feraset.tune.MainActivity}" drawable="music_ai"/>
@@ -22338,6 +22384,9 @@
 	<item component="ComponentInfo{com.new.descargar.musica.download.mp3.gratis.baixar.music.downloader.free.lagu/ftt.STT}" drawable="music_downloader"/>
 	<item component="ComponentInfo{com.oakapps.mp3musicdownload.app/com.oakapps.mp3musicdownload.app.plyTb_SplashActivity}" drawable="music_downloader"/>
 	<item component="ComponentInfo{com.descargarmusica.abb/com.descargarmusica.abb.ui.EntryActivity}" drawable="music_downloader"/>
+	<item component="ComponentInfo{com.mvxgreen.downloader4soundcloud/com.mvxgreen.downloader4soundcloud.activity.MainActivity}" drawable="music_downloader"/>
+	<item component="ComponentInfo{com.gruebeltech.soundloaderpro/com.gruebeltech.soundloaderpro.CreditActivity}" drawable="music_downloader"/>
+	<item component="ComponentInfo{com.music.free.down.llponi/com.kunminx.mymusic.S_WelcomeActivity}" drawable="music_downloader"/>
 
 	<!-- Music Editor -->
 	<item component="ComponentInfo{com.fragileheart.mp3editor/com.fragileheart.mp3editor.activity.SplashActivity}" drawable="music_editor"/>
@@ -28384,6 +28433,7 @@
 	<item component="ComponentInfo{com.motorola.mobiledesktop/com.motorola.readyfor.display.ui.NearbyDisplaysActivity}" drawable="ready_for"/>
 	<item component="ComponentInfo{com.motorola.mobiledesktop/com.motorola.readyfor.NearbyDisplaysLauncherIconAlias}" drawable="ready_for"/>
 	<item component="ComponentInfo{com.motorola.mobiledesktop/com.motorola.readyfor.MainActivityLauncherIconAlias}" drawable="ready_for"/>
+	<item component="ComponentInfo{com.motorola.readyforassist/com.motorola.readyforassist.ui.activities.ReadyForMainActivity}" drawable="ready_for"/>
 
 	<!-- Real Racing 3 -->
 	<item component="ComponentInfo{com.ea.games.r3_row/com.byfen.archiver.MainActivity}" drawable="real_racing_3"/>
@@ -31207,6 +31257,9 @@
 	<!-- Simple Reboot -->
 	<item component="ComponentInfo{simple.reboot.com/simple.reboot.com.MainActivity}" drawable="simplereboot"/>
 
+	<!-- Simple Scanner -->
+	<item component="ComponentInfo{com.simplescan.scanner/com.simpleapp.tinyscanfree.Activity_Start}" drawable="tinyscanner"/>
+
 	<!-- Simple Search -->
 	<item component="ComponentInfo{de.tobiasbielefeld.searchbar/de.tobiasbielefeld.searchbar.ui.MainActivity}" drawable="simplesearch"/>
 
@@ -31709,6 +31762,7 @@
 
 	<!-- SmartNews -->
 	<item component="ComponentInfo{jp.gocro.smartnews.android/jp.gocro.smartnews.android.activity.SmartNewsActivity}" drawable="smartnews"/>
+	<item component="ComponentInfo{com.nttdocomo.android.mymagazine/jp.gocro.smartnews.android.activity.SmartNewsActivity}" drawable="smartnews"/>
 
 	<!-- SmartPack -->
 	<item component="ComponentInfo{com.smartpack.kernelmanager/com.smartpack.kernelmanager.activities.StartActivity}" drawable="smartpack"/>
@@ -31961,6 +32015,7 @@
 	<!-- Software update -->
 	<item component="ComponentInfo{com.hihonor.ouc/com.hihonor.android.hnouc.ui.activities.MainEntranceActivity}" drawable="software_update"/>
 	<item component="ComponentInfo{com.hihonor.ouc/com.hihonor.android.hwouc.ui.activities.MainEntranceActivity}" drawable="software_update"/>
+	<item component="ComponentInfo{com.oplus.ota/com.oplus.otaui.activity.EntryActivity}" drawable="software_update"/>
 
 	<!-- Sokoban -->
 	<item component="ComponentInfo{com.mobilepearls.sokoban/com.mobilepearls.sokoban.SokobanMenuActivity}" drawable="sokoban"/>
@@ -34772,6 +34827,7 @@
 
 	<!-- Tiny Scanner -->
 	<item component="ComponentInfo{com.appxy.tinyscanner/com.appxy.tinyscanfree.Activity_Start}" drawable="tinyscanner"/>
+	<item component="ComponentInfo{com.appxy.tinyscan/com.appxy.tinyscanfree.Activity_Start}" drawable="tinyscanner"/>
 
 	<!-- Tiny Tiny RSS -->
 	<item component="ComponentInfo{org.fox.tttrss/org.fox.ttrss.LaunchActivity}" drawable="rss"/>
@@ -36178,6 +36234,7 @@
 	<!-- Updater -->
 	<item component="ComponentInfo{com.android.updater/com.android.updater.MainActivity}" drawable="updater"/>
 	<item component="ComponentInfo{net.xiaomiui.miuiupdater/net.xiaomiui.miuiupdater.MainActivity}" drawable="updater"/>
+	<item component="ComponentInfo{com.lge.updatecenter/com.lge.updatecenter.UpdateCenterPrfActivity}" drawable="updater"/>
 
 	<!-- Updater for Spotify -->
 	<item component="ComponentInfo{ru.ra66it.updaterforspotify/ru.ra66it.updaterforspotify.presentation.ui.activity.MainActivity}" drawable="spotiflyer"/>
@@ -36712,6 +36769,17 @@
 	<item component="ComponentInfo{gpm.tnt_premier/one.premier.handheld.presentationlayer.activities.SplashActivity}" drawable="mediaplayer"/>
 	<item component="ComponentInfo{irheral.edge.nowplaying/edge.irheral.nowplaying.MainActivity}" drawable="mediaplayer"/>
 	<item component="ComponentInfo{com.inkamedia.videoplayer/com.inkamedia.videoplayer.MainActivity}" drawable="mediaplayer"/>
+	<item component="ComponentInfo{com.zozoplayer/com.zozoplayer.activity.SplashActivity}" drawable="mediaplayer"/>
+	<item component="ComponentInfo{uplayer.video.player/android.video.player.activity.MainActivity}" drawable="mediaplayer"/>
+	<item component="ComponentInfo{top.cocoteam.cocoplayer/top.cocoteam.cocoplayer.MainActivity}" drawable="mediaplayer"/>
+	<item component="ComponentInfo{iplayer.and.new.com/com.ipbox.player.app.act.LpSplashActivity}" drawable="mediaplayer"/>
+	<item component="ComponentInfo{com.kodarkooperativet.blackplayerfree/com.kodarkooperativet.blackplayerfree.activities.ViewPagerActivity}" drawable="mediaplayer"/>
+	<item component="ComponentInfo{com.venomdino.exonetworkstreamer/com.venomdino.exonetworkstreamer.activities.MainActivity}" drawable="mediaplayer"/>
+	<item component="ComponentInfo{com.songs.bubble.player/com.songs.bubble.player.main.MainActivity}" drawable="mediaplayer"/>
+	<item component="ComponentInfo{com.rocks.music.videoplayer/com.rocks.music.videoplayer.Splash}" drawable="mediaplayer"/>
+	<item component="ComponentInfo{info.t4w.vp/info.t4w.vp.view.MainActivity}" drawable="mediaplayer"/>
+	<item component="ComponentInfo{com.mine.videoplayer/com.ijoysoft.music.activity.video.WelcomeActivity}" drawable="mediaplayer"/>
+	<item component="ComponentInfo{com.softwinner.fireplayer/com.softwinner.fireplayer.ui.FourKMainActivity}" drawable="mediaplayer"/>
 
 	<!-- VideoSummarizer -->
 	<item component="ComponentInfo{com.emote.youtube_summarizer/com.emote.youtube_summarizer.MainActivity}" drawable="videosummarizer"/>
@@ -37055,6 +37123,9 @@
 	<item component="ComponentInfo{com.iprototypes.volume/com.iprototypes.volume.main}" drawable="volume"/>
 	<item component="ComponentInfo{com.treydev.volume/com.zipoapps.premiumhelper.ui.splash.PHSplashActivity}" drawable="volume"/>
 	<item component="ComponentInfo{com.goodev.volume.booster/com.goodev.volume.booster.SpeakerBoost}" drawable="volume"/>
+
+	<!-- VolumeLockr -->
+	<item component="ComponentInfo{com.klee.volumelockr/com.klee.volumelockr.ui.MainActivity}" drawable="lock"/>
 
 	<!-- Volume Notification -->
 	<item component="ComponentInfo{net.hyx.app.volumenotification/net.hyx.app.volumenotification.activity.RecyclerViewActivity}" drawable="volume_notification"/>
@@ -39849,6 +39920,9 @@
 
 	<!-- ∞ ENERGY -->
 	<item component="ComponentInfo{com.infinitygames.loopenergy/com.google.firebase.MessagingUnityPlayerActivity}" drawable="unlimited_energy"/>
+
+	<!-- あんしんセキュリティ -->
+	<item component="ComponentInfo{com.nttdocomo.android.anshinsecurity/com.nttdocomo.android.anshinsecurity.activity.MainActivity}" drawable="shield"/>
 
 	<!-- すごい時間割 -->
 	<item component="ComponentInfo{com.sugojika/com.sugojika.ui.SplashActivity}" drawable="sugoi_jikanwari"/>
