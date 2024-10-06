@@ -9,8 +9,8 @@ android {
         applicationId "com.donnnno.arcticons"
         minSdkVersion rootProject.ext.MinSdk
         targetSdkVersion rootProject.ext.TargetSdk
-        versionCode 1370
-        versionName '10.8.4'
+        versionCode 1380
+        versionName '11.0.5'
         multiDexEnabled true        // Naming app bundles
         base {
             archivesName = "${parent.name}-v${versionName}"
