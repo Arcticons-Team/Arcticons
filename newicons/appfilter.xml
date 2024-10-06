@@ -6049,7 +6049,6 @@
 	<item component="ComponentInfo{com.samvat.calendars/com.calander.samvat.LanguageSelectionActivity}" drawable="calendar_31"/>
 	<item component="ComponentInfo{com.gamemalt.applocker/com.gamemalt.applocker.LauncherActivity_Calendar}" drawable="calendar_31"/>
 	<item component="ComponentInfo{com.skuld.calendario/com.skuld.calendario.ui.splash.SplashScreenActivity}" drawable="calendar_31"/>
-	<item component="ComponentInfo{com.microsoft.office.outlook/com.microsoft.office.outlook.MainCalendarActivity}" drawable="calendar_31"/>
 	<item component="ComponentInfo{com.nhn.android.calendar/com.nhn.android.calendar.feature.main.base.ui.MainActivity}" drawable="calendar_31"/>
 	<item component="ComponentInfo{com.calendar.schedule.event/com.calendar.schedule.event.SplashActivityAlias31}" drawable="calendar_31"/>
 
@@ -6092,7 +6091,6 @@
   <calendar component="ComponentInfo{com.samvat.calendars/com.calander.samvat.LanguageSelectionActivity}" prefix="calendar_"/>
   <calendar component="ComponentInfo{com.gamemalt.applocker/com.gamemalt.applocker.LauncherActivity_Calendar}" prefix="calendar_"/>
   <calendar component="ComponentInfo{com.skuld.calendario/com.skuld.calendario.ui.splash.SplashScreenActivity}" prefix="calendar_"/>
-  <calendar component="ComponentInfo{com.microsoft.office.outlook/com.microsoft.office.outlook.MainCalendarActivity}" prefix="calendar_"/>
   <calendar component="ComponentInfo{com.nhn.android.calendar/com.nhn.android.calendar.feature.main.base.ui.MainActivity}" prefix="calendar_"/>
   <calendar component="ComponentInfo{com.calendar.schedule.event/com.calendar.schedule.event.SplashActivityAlias31}" prefix="calendar_"/>
   <calendar component="ComponentInfo{mikado.bizcalpro/mikado.bizcalpro.main}" prefix="calendar_31"/>
@@ -21411,6 +21409,10 @@
 	<item component="ComponentInfo{com.microsoft.outlooklite/com.microsoft.outlooklite.MainActivity}" drawable="microsoft_outlook"/>
 	<item component="ComponentInfo{com.microsoft.outlooklite/com.microsoft.outlooklite.sms.SmsMainActivity}" drawable="microsoft_outlook"/>
 	<item component="ComponentInfo{com.microsoft.office.outlook/com.microsoft.office.outlook.ui.miit.MiitLauncherActivity}" drawable="microsoft_outlook"/>
+	<item component="ComponentInfo{com.microsoft.office.outlook/com.microsoft.office.outlook.MainCalendarActivity}" drawable="microsoft_outlook"/>
+
+	<!-- Thunderbird -->
+	<item component="ComponentInfo{net.thunderbird.android.beta/com.fsck.k9.activity.MessageList}" drawable="thunderbird"/>
 
 	<!-- Microsoft Planner -->
 	<item component="ComponentInfo{com.microsoft.planner/com.microsoft.planner.login.ConnectActivity}" drawable="microsoft_planner"/>
