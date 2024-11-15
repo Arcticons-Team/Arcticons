@@ -1,11 +1,9 @@
-import re
-import glob
 from shutil import copy2
 from typing import List
-import argparse
 from lxml import etree
-import os
-import cairosvg
+from PIL import Image
+import os, io, re, glob, cairosvg ,argparse
+
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--checkonly", action="store_true", help="Run checks only")
@@ -191,7 +189,14 @@ def create_icons(sizes: List[int], dir:str ,export_dir: str, icon_dir: str , mod
         for size in sizes:
             try:
                 # Convert SVG to PNG
-                cairosvg.svg2png(url=file_path, write_to=export_dir+f'/{name}.png',output_width=size, output_height=size,)
+                png_data = cairosvg.svg2png(url=file_path,output_width=size, output_height=size,)
+
+                # Open the PNG image from the in-memory data
+                image = Image.open(io.BytesIO(png_data))
+
+                # Convert and save it as WebP
+                image.save(export_dir+f'/{name}.webp', format="WEBP")
+
             except Exception as e:
                 print(f"Error: {e}")
 
