@@ -1,14 +1,3 @@
-
-<appfilter>
-  
-  <!-- Light Meter -->
-    <item component="ComponentInfo{live.paleblue.aperture/live.paleblue.aperture.MainActivity}" drawable="light_meter"/>
-    
-  <!-- OSS Kartenetui -->
-    <item component="ComponentInfo{com.akylas.cardwallet/com.akylas.cardwallet.MainActivity}" drawable="oss_kartenetui"/>
-    
-</appfilter>
-
 <resources>
 	<!-- #DRIVE -->
 	<item component="ComponentInfo{com.pixelperfectdude.htdrive/com.unity3d.player.UnityPlayerActivity}" drawable="drive"/>
@@ -132,7 +121,13 @@
 
 	<!-- 001 Taxis -->
 	<item component="ComponentInfo{uk.riide.zerozeroone/com.autocab.premiumapp3.ui.activities.MainActivity}" drawable="_001_taxis"/>
-
+	
+	<!-- Light Meter -->
+	<item component="ComponentInfo{live.paleblue.aperture/live.paleblue.aperture.MainActivity}" drawable="light_meter"/>
+		
+	<!-- OSS Kartenetui -->
+	<item component="ComponentInfo{com.akylas.cardwallet/com.akylas.cardwallet.MainActivity}" drawable="oss_kartenetui"/>
+		
 	<!-- Fpoho SK -->
 	<item component="ComponentInfo{com.aheaditec.hce.doxxcard/com.aheaditec.hce.doxxcard.LauncherActivity}" drawable="fpoho"/>
 
@@ -43221,5 +43216,3 @@
 	<item component="ComponentInfo{jp.nicovideo.android/jp.nicovideo.android.StartupActivity}" drawable="niconico"/>
 
 </resources>
-
-
