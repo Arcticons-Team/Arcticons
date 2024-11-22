@@ -41,7 +41,7 @@
 
 ## Sponsored by
 <div align="center">
-  <a href="https://www.gitbook.com/"><img height="40" alt="GitBook" src="github/gitbook.svg"></a>
+  <a href="https://www.gitbook.com/"><img height="80" alt="GitBook" src="github/gitbook.webp"></a>
 </div>
 
 ## License
