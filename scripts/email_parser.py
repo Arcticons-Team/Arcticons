@@ -67,18 +67,33 @@ class EmailParser:
                 self.apps[element_info['ComponentInfo']]['count'] = int(element_info.get('count',1)) if element_info.get('count',1) is not None else 1
                 self.apps[element_info['ComponentInfo']]['senders'] = []
     
+    def diff_month(self,d1, d2):
+        return (d1.year - d2.year) * 12 + d1.month - d2.month
+    
     def filter_old(self):
         current_date = date.today()
-
-        def diff_month(d1, d2):
-            return (d1.year - d2.year) * 12 + d1.month - d2.month
-
         self.apps = {
             k: v for k, v in self.apps.items()
-            if v["count"] > config["min_requests"] or diff_month(current_date, date.fromtimestamp(v['requestDate'])) < config["months_limit"]
+            if v["count"] > config["min_requests"] or self.diff_month(current_date, date.fromtimestamp(v['requestDate'])) and v["count"] > 0
         }
 
+    def demote(self):
+         current_date = date.today()
+         for k, v in self.apps.items():
+            # Check if the difference in months is greater than or equal to the month limit
+            months_diff = self.diff_month(current_date, date.fromtimestamp(v['requestDate']))
+            
+            if months_diff >= config["months_limit"]:
+                # If month limit is reached, decrement the count and update the request date
+                v['count'] -= config['months_limit']
+                v['requestDate'] = mktime(current_date.timetuple())  # Update to current date as an ordinal date
 
+                # Optional: Ensure count doesn't go below 0
+                if v['count'] < 0:
+                    v['count'] = 0
+                self.apps[k]['count'] = v['count']
+                self.apps[k]['requestDate'] = v['requestDate']
+          
     def find_zip(self, message):
         for part in message.walk():
             if part.get_content_maintype() == 'application' and part.get_content_subtype() in ['zip', 'octet-stream']:
@@ -357,6 +372,8 @@ Last requested {reqDate}
         self.filter_old()
         print("Parse Mail")
         self.parse_email()
+        print("Demote long time not requested")
+        self.demote()
         print("Sort Apps")
         self.apps = dict(sorted(self.apps.items(), key=lambda item: item[1]['count'], reverse=True))
         print("Find Updateable")
