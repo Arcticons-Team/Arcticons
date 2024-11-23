@@ -39,7 +39,7 @@ fetch(`assets/updatable.txt`)
             const appfilter = lines[1].trim().split('\n').join(' ').trim();
             const packageName = appfilter.split('ComponentInfo{')[1].split('/')[0].trim();
             const drawable = extractDrawable(appfilter);
-            const appIconPath = drawable ? `extracted_png/${drawable}.png` : 'img/requests/default.svg'; // Adjust path accordingly
+            const appIconPath = drawable ? `extracted_png/${drawable}.webp` : 'img/requests/default.svg'; // Adjust path accordingly
             const appIcon = `<img src="${appIconPath}" alt="App Icon" style="width:50px;height:50px;">`;
 
             appEntriesData.push({

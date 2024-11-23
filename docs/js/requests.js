@@ -52,7 +52,7 @@ fetch(`assets/requests.txt`)
             const requestedInfo = lines.slice(lines.length - 2)[0].trim().split(' ')[1].trim();
             const lastRequestedTime = new Date(requestedTimestamp * 1000).toLocaleString();
             const drawable = extractDrawable(appfilter);
-            const appIconPath = drawable ? `extracted_png/${drawable}.png` : 'img/requests/default.svg'; // Adjust path accordingly
+            const appIconPath = drawable ? `extracted_png/${drawable}.webp` : 'img/requests/default.svg'; // Adjust path accordingly
             const appIcon = `<img src="${appIconPath}" alt="App Icon" style="width:50px;height:50px;">`;
             appEntriesData.push({
                 appName,
