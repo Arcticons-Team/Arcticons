@@ -132,18 +132,18 @@ randomNumberInput.addEventListener("keypress", function(event) {
 
 // Filter appEntriesData based on appfilter content
 function filterAppfilter(appEntriesData, appfilterContent) {
-    const appfilterItems = parseAppfilter(appfilterContent);
+    const appfilterItems = new Set(parseAppfilter(appfilterContent)); // Convert to Set for fast lookups
     const filteredOutEntries = [];
 
     const filteredData = appEntriesData.filter(entry => {
         const entryAppfilter = entry.appfilter.trim().split('"')[1].trim();
-        // Check if the entry is filtered out
-        const isFiltered = appfilterItems.some(component => component === entryAppfilter);
-        if (isFiltered) {
-            filteredOutEntries.push(entryAppfilter);
+        if (appfilterItems.has(entryAppfilter)) { // Check membership in O(1)
+            filteredOutEntries.push(entryAppfilter); // Track filtered out entries
+            return false; // Exclude from filtered data
         }
-        return !isFiltered;
+        return true; // Include in filtered data
     });
+
     console.log("Filtered out entries:", filteredOutEntries);
     return filteredData;
 }
