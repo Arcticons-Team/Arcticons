@@ -39,7 +39,7 @@ fetch(`assets/updatable.txt`)
             const appfilter = lines[1].trim().split('\n').join(' ').trim();
             const packageName = appfilter.split('ComponentInfo{')[1].split('/')[0].trim();
             const drawable = extractDrawable(appfilter);
-            const appIconPath = drawable ? `extracted_png/${drawable}.png` : 'img/requests/default.svg'; // Adjust path accordingly
+            const appIconPath = drawable ? `extracted_png/${drawable}.webp` : 'img/requests/default.svg'; // Adjust path accordingly
             const appIcon = `<img src="${appIconPath}" alt="App Icon" style="width:50px;height:50px;">`;
 
             appEntriesData.push({
@@ -98,21 +98,22 @@ function extractDrawable(appfilter) {
 
 // Filter appEntriesData based on appfilter content
 function filterAppfilter(appEntriesData, appfilterContent) {
-    const appfilterItems = parseAppfilter(appfilterContent);
+    const appfilterItems = new Set(parseAppfilter(appfilterContent)); // Convert to Set for fast lookups
     const filteredOutEntries = [];
 
     const filteredData = appEntriesData.filter(entry => {
         const entryAppfilter = entry.appfilter.trim().split('"')[1].trim();
-        // Check if the entry is filtered out
-        const isFiltered = appfilterItems.some(component => component === entryAppfilter);
-        if (isFiltered) {
-            filteredOutEntries.push(entryAppfilter);
+        if (appfilterItems.has(entryAppfilter)) { // Check membership in O(1)
+            filteredOutEntries.push(entryAppfilter); // Track filtered out entries
+            return false; // Exclude from filtered data
         }
-        return !isFiltered;
+        return true; // Include in filtered data
     });
+
     console.log("Filtered out entries:", filteredOutEntries);
     return filteredData;
 }
+
 
 // Parse appfilter content
 function parseAppfilter(appfilterContent) {
