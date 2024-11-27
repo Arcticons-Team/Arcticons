@@ -95,7 +95,7 @@ def combine_all_appfilters():
         
         # Check if the pull request has an appfilter.xml file
         for file in files:
-            print(f"File: {file.filename}")
+            #print(f"File: {file.filename}")
             if file.filename == 'newicons/appfilter.xml':
                 print(f"Found appfilter.xml: {file.filename}")
                 try:
@@ -117,55 +117,5 @@ def combine_all_appfilters():
                     continue
         
     print("Combined appfilter.xml from all pull requests.")
-    
-    # Try to get the content of the existing combined_appfilter.xml file
-    try:
-        existing_file = repo.get_contents('docs/assets/combined_appfilter.xml', ref=branchName)
-        print(existing_file)  # Debugging statement
-        if existing_file:
-            try:
-                response = requests.get(existing_file.download_url)
-                if response.status_code == 200:
-                    existing_content = response.content.decode('utf-8')
-                    existing_sha1 = calculate_sha1(existing_content)
-                    existing_sha = existing_file.sha
-            except Exception as e:
-                print(f"Error parsing XML from URL: {e}")
-                return None
-        else:
-            print("The existing_file is None.")
-            existing_content = None
-            existing_sha1 = None
-    except Exception as e:
-        print(f"No existing combined_appfilter.xml file found. {e}")
-        existing_content = None
-        existing_sha1 = None
-
-
-    # Read the content of the new combined file
-    with open('combined_appfilter.xml', 'r') as combined_file:
-        new_content = combined_file.read()
-    
-    # Calculate the SHA-1 hash of the new content
-    new_sha1 = calculate_sha1(new_content)
-    
-    print(f"Existing SHA-1: {existing_sha1}")
-    print(f"New SHA-1: {new_sha1}")
-
-    # Check if the new content is different from the existing content or if the file doesn't exist
-    if existing_sha1 is None or new_sha1 != existing_sha1:
-        try:
-            if existing_content is None:
-                # Create the combined_appfilter.xml file in the repository
-                repo.create_file('docs/assets/combined_appfilter.xml', 'Created combined appfilter.xml from pull requests', new_content, branch=branchName)
-                print("Created combined_appfilter.xml in the repository.")
-            else:
-                # Update the combined_appfilter.xml file in the repository
-                repo.update_file('docs/assets/combined_appfilter.xml', 'Updated combined appfilter.xml from pull requests', new_content, existing_sha, branch=branchName)
-                print("Updated combined_appfilter.xml in the repository.")
-        except Exception as e:
-            print(f"Error updating/creating combined_appfilter.xml in the repository: {e}")
-    else:
-        print("No changes detected in combined_appfilter.xml.")
 
 combine_all_appfilters()
