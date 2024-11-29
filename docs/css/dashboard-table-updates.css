@@ -1,0 +1,192 @@
+
+.table-container {
+    max-height: 1200px;
+    /* Set maximum height for scrollable area */
+    overflow-y: auto;
+    /* Enable vertical scrolling */
+}
+
+.table-container thead th {
+    position: sticky;
+    /* make the table heads sticky */
+    top: 0px;
+    /* table head will be placed from the top of the table and sticks to it */
+}
+
+.sortable-header {
+    cursor: pointer;
+    /* Add cursor style for sorting */
+    position: relative;
+}
+
+.sortable-header::after {
+    content: '';
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+}
+
+.asc::after {
+    border-bottom: 4px solid #000000;
+}
+
+.desc::after {
+    border-top: 4px solid #000000;
+}
+
+table {
+    width: 99.5%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+td:nth-child(1) {
+    width: 10%;
+}
+td:nth-child(2) {
+    max-width: 70px;
+}
+td:nth-child(3) {
+    width: 10%;
+}
+td:nth-child(4) {
+    min-width: 100px;
+}
+td:nth-child(5) {
+    max-width: 70px;
+}
+
+tr:nth-child(even) {
+    background-color: #ebebeb;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+@media (prefers-color-scheme: dark) {
+
+    tr:nth-child(even) {
+        background-color: rgb(37, 37, 37);
+    }
+
+    th {
+        background-color: #0f0f0f;
+    }
+
+    .asc::after {
+        border-bottom: 4px solid white;
+    }
+
+    .desc::after {
+        border-top: 4px solid white;
+    }
+}
+
+/* Style for the preview overlay */
+#preview-overlay {
+    display: none;
+    align-content: center;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%, -50%);
+    width: 100%;
+    max-width: 550px;
+    height: 100%;
+    max-height: 550px;
+    background-color: rgba(0, 0, 0, 0.8); /* semi-transparent black */
+    z-index: 9999;
+    overflow: auto;
+  }
+  
+  /* Style for the preview image */
+  #preview-image {
+    max-width: 80%;
+    max-height: 80%;
+    min-width: 200px;
+  }
+  
+  /* Style for the close button */
+  .close-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+  }
+  
+.app-entry {
+    display: none;
+    /* Hide initially */
+}
+
+.copy-button {
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 5px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-bottom: 10px;
+    border-radius: 100px;
+}
+.copy-package{
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 2px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    
+}
+.package-copy{
+    margin-right: 0%;
+}
+#packagename{
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    padding-left: 34px;
+}
+
+.package-name {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.copy-button:hover {
+    background-color: #409943;
+}
+
+#copy-notification {
+    display: none;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    z-index: 1;
+}
