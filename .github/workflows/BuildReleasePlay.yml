@@ -59,7 +59,7 @@ jobs:
             - name: Upload Normal to Google Play
               uses: r0adkll/upload-google-play@v1
               with:
-                serviceAccountJson: ${{ secrets.GOOGLE_PLAY_SERVICE_ACCOUNT }}
+                serviceAccountJsonPlainText: ${{ secrets.GOOGLE_PLAY_SERVICE_ACCOUNT }}
                 packageName: 'com.donnnno.arcticons'  # Replace with your app's package name
                 releaseFiles: app/build/outputs/bundle/normalPlayRelease/*.aab # Path to your APK/AAB
                 track: production  # Options: production, beta, alpha, internal
@@ -67,7 +67,7 @@ jobs:
             - name: Upload Black to Google Play
               uses: r0adkll/upload-google-play@v1
               with:
-                serviceAccountJson: ${{ secrets.GOOGLE_PLAY_SERVICE_ACCOUNT }}
+                serviceAccountJsonPlainText: ${{ secrets.GOOGLE_PLAY_SERVICE_ACCOUNT }}
                 packageName: 'com.donnnno.arcticons.light'  # Replace with your app's package name
                 releaseFiles: app/build/outputs/bundle/blackPlayRelease/*.aab # Path to your APK/AAB
                 track: production  # Options: production, beta, alpha, internal
@@ -75,7 +75,7 @@ jobs:
             - name: Upload You to Google Play
               uses: r0adkll/upload-google-play@v1
               with:
-                serviceAccountJson: ${{ secrets.GOOGLE_PLAY_SERVICE_ACCOUNT }}
+                serviceAccountJsonPlainText: ${{ secrets.GOOGLE_PLAY_SERVICE_ACCOUNT }}
                 packageName: 'com.donnnno.arcticons.you.play'  # Replace with your app's package name
                 releaseFiles: app/build/outputs/bundle/youPlayRelease/*.aab # Path to your APK/AAB
                 track: production  # Options: production, beta, alpha, internal
