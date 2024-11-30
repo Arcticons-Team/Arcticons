@@ -74,7 +74,7 @@ class EmailParser:
         current_date = date.today()
         self.apps = {
             k: v for k, v in self.apps.items()
-            if v["count"] > config["min_requests"] or self.diff_month(current_date, date.fromtimestamp(v['requestDate'])) and v["count"] > 0
+            if v["count"] > config["min_requests"] or self.diff_month(current_date, date.fromtimestamp(v['requestDate'])) < config["months_limit"] and v["count"] > 0
         }
 
     def demote(self):
