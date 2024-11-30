@@ -1,0 +1,38 @@
+@font-face {
+    font-family: 'Inter';
+    font-weight: 100 900;
+    font-display: swap;
+    font-style: oblique 0deg 10deg;
+    font-variation-settings: "slnt" 0deg;
+    src: url("../img/Inter.var.woff2") format("woff2");
+}
+
+body {
+    font-family: 'Inter', Arial, Helvetica, sans-serif, sans-serif;
+    margin-left: 4vw;
+    margin-right: 4vw;
+    background-color: white;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #171717;
+        color: white;
+    }
+
+    .links img {
+        filter: none;
+    }
+}
