@@ -48,6 +48,19 @@ jobs:
               run: ./gradlew app:bundleBlackPlayRelease
             - name: Build You Bundle
               run: ./gradlew app:bundleYouPlayRelease
+
+            - name: Set up Python
+              uses: actions/setup-python@v5
+              with:
+                python-version: '3.x'
+                cache: 'pip'
+            - run: |
+                  pip install markdown
+                  pip install beautifulsoup4
+            - name: Create Changelog
+              run: |
+                mkdir whatsnew
+                python .github/workflows/mark2text.py
             - name: Upload artifact
               uses: actions/upload-artifact@v4
               with:
@@ -64,6 +77,7 @@ jobs:
                 releaseFiles: app/build/outputs/bundle/normalPlayRelease/*.aab # Path to your APK/AAB
                 track: production  # Options: production, beta, alpha, internal
                 status: completed  # Options: draft, inProgress, halted, completed
+                whatsNewDirectory: whatsnew
             - name: Upload Black to Google Play
               uses: r0adkll/upload-google-play@v1
               with:
@@ -72,6 +86,7 @@ jobs:
                 releaseFiles: app/build/outputs/bundle/blackPlayRelease/*.aab # Path to your APK/AAB
                 track: production  # Options: production, beta, alpha, internal
                 status: completed  # Options: draft, inProgress, halted, completed
+                whatsNewDirectory: whatsnew
             - name: Upload You to Google Play
               uses: r0adkll/upload-google-play@v1
               with:
@@ -80,6 +95,7 @@ jobs:
                 releaseFiles: app/build/outputs/bundle/youPlayRelease/*.aab # Path to your APK/AAB
                 track: production  # Options: production, beta, alpha, internal
                 status: completed  # Options: draft, inProgress, halted, completed
+                whatsNewDirectory: whatsnew
 
 
                   
