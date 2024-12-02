@@ -27,24 +27,76 @@ public class Changelog {
         if (rootDirName.equals("preparehelper")) {
             rootDir = "..";
         }
-        String sourceDir = rootDir + "/icons/white";
-        String resDir;
-        String destDir;
         String xmlDir = rootDir+"/app/src/main/res/xml";
         String valuesDir = rootDir+"/app/src/main/res/values";
-        String newXML = rootDir+"/generated/newdrawables.xml";
-        String categoryGamesXml;
-        String assetsDir;
         String appFilter = rootDir + "/newicons/appfilter.xml";
         String drawableXml = xmlDir +"/drawable.xml";
         String changelogXml = valuesDir +"/changelog.xml";
+        String generatedDir = rootDir +"/generated";
 
+       generateChangelogs(generatedDir, drawableXml, appFilter, changelogXml,false);
+    }
+
+
+
+
+
+    public static void generateChangelogs(String generatedDir, String drawableXml, String appFilter, String changelogXml,boolean newRelease) {
+        String newXML = generatedDir + "/newdrawables.xml";
         int countTotal = countAll(drawableXml);
         int countNew = countAll(newXML);
         int countFilterTotal = countAll(appFilter);
-        int countFilterOld = 19762; //tag11.4.6(21744)
-        int countReused = countFilterTotal-countFilterOld-countNew;
+        int countFilterOld = readCountFilterOld(generatedDir);//19762; //tag11.4.6(21744)
+        int countReused = countFilterTotal - countFilterOld - countNew;
 
+        createChangelogXML(countTotal, countNew, countReused, changelogXml);
+        createChangelogMd(countTotal, countNew, countReused, generatedDir);
+
+        if (newRelease) {
+            //save countFilterTotal to file
+            try {
+                writeToFile(String.valueOf(countFilterTotal), generatedDir + "/countFilterTotal.txt");
+                System.out.println("countFilterTotal saved to: " + generatedDir + "/countFilterTotal.txt");
+            } catch (IOException e) {
+                System.err.println("Error writing to file: " + e.getMessage());
+            }
+        }
+    }
+
+
+
+    public static int readCountFilterOld(String generatedDir) {
+        //read count from File
+        try {
+            Path path = Paths.get(generatedDir + "/countFilterTotal.txt");
+            String content = new String(Files.readAllBytes(path)).strip();
+            return Integer.parseInt(content);
+        } catch (IOException e) {
+            System.err.println("Error reading file: " + e.getMessage());
+        }
+
+      return  0 ;
+    }
+    public static void createChangelogMd(int countTotal, int countNew, int countReused, String changelogMd) {
+        StringBuilder output = new StringBuilder("* \uD83C\uDF89 **");
+                output.append(countNew);
+                output.append("** new and updated icons!\n");
+                output.append("* \uD83D\uDCA1 Added support for **");
+                output.append(countReused);
+                output.append("** apps using existing icons.\n");
+                output.append("* \uD83D\uDD25 **");
+                output.append(countTotal);
+                output.append("** icons in total!");
+
+        try {
+            writeToFile(output.toString(), changelogMd + "/changelog.md");
+            System.out.println("Changelog saved to: " + changelogMd + "/changelog.md");
+        } catch (IOException e) {
+            System.err.println("Error writing to file: " + e.getMessage());
+        }
+    }
+
+    public static void createChangelogXML(int countTotal, int countNew, int countReused, String changelogXml){
         StringBuilder output = new StringBuilder("<?xml version=\"1.0\" encoding=\"utf-8\"?>\n" +
                 "<resources>\n" +
                 "\n" +
