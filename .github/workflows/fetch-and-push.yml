@@ -15,6 +15,7 @@ concurrency:
 
 jobs:
   fetch_and_push_file:
+    if: github.repository == 'Arcticons-Team/Arcticons'
     runs-on: ubuntu-latest
 
     env:
