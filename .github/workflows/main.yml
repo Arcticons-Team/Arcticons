@@ -9,6 +9,10 @@ on:
       - 'newicons/appfilter.xml'
   push:
     branches: ["Arcticons-Pages"]
+  workflow_run:
+    workflows: [Update Requests]
+    types:
+      - completed
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
