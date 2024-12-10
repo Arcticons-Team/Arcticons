@@ -33,6 +33,10 @@ public class PrepareRelease {
             String appFilter = rootDir + "/newicons/appfilter.xml";
             String drawableXml = xmlDir + "/drawable.xml";
             String changelogXml = valuesDir +"/changelog.xml";
+            String sourceDir = rootDir + "/icons/white";
+            String newXML = rootDir+"/generated/newdrawables.xml";
+            String categoryGamesXml = rootDir+"/generated/games.xml";
+
 
             String task = args[0];
             System.out.println("Processing with task: " + task);
@@ -49,6 +53,12 @@ public class PrepareRelease {
                     } catch (Exception e) {
                         System.out.println("Error occurred: " + e.getMessage());
                     }
+                    try {
+                        XMLCreator.mergeNewDrawables(xmlDir+"/drawable.xml",newXML,categoryGamesXml,assetsDir,sourceDir,xmlDir,appFilter);
+                        System.out.println("XML task completed");
+                    } catch (Exception e) {
+                        System.out.println("Error occurred: " + e.getMessage());
+                    }
                     generateChangelogs(generatedDir, drawableXml, appFilter, changelogXml,false);
                     break;
                 case "newrelease":
@@ -56,6 +66,12 @@ public class PrepareRelease {
                     try {
                         ContributorImage.start(assetsDir, contributorsXml, xmlDir);
                         System.out.println("Contributor Image task completed");
+                    } catch (Exception e) {
+                        System.out.println("Error occurred: " + e.getMessage());
+                    }
+                    try {
+                        XMLCreator.mergeNewDrawables(xmlDir+"/drawable.xml",newXML,categoryGamesXml,assetsDir,sourceDir,xmlDir,appFilter);
+                        System.out.println("XML task completed");
                     } catch (Exception e) {
                         System.out.println("Error occurred: " + e.getMessage());
                     }
