@@ -2,7 +2,7 @@ import markdown
 from bs4 import BeautifulSoup
 
 # Read the Markdown file
-with open("changelog.md", "r", encoding="utf-8") as input_file:
+with open("generated/changelog.md", "r", encoding="utf-8") as input_file:
     text = input_file.read()
 
 # Convert Markdown to HTML, then extract plain text
