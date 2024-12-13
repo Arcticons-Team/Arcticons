@@ -1,5 +1,7 @@
 package com.donnnno.arcticons.helper;
 
+import static com.donnnno.arcticons.helper.Changelog.generateChangelogs;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.nio.file.Path;
@@ -26,6 +28,16 @@ public class PrepareRelease {
             xmlDir = rootDir + "/app/src/main/res/xml";
             assetsDir = rootDir + "/app/src/main/assets";
             String contributorsXml = rootDir + "/generated/contributors.xml";
+            String generatedDir = rootDir + "/generated";
+            String valuesDir = rootDir + "/app/src/main/res/values";
+            String appFilter = rootDir + "/newicons/appfilter.xml";
+            String drawableXml = xmlDir + "/drawable.xml";
+            String changelogXml = valuesDir +"/changelog.xml";
+            String sourceDir = rootDir + "/icons/white";
+            String newXML = rootDir+"/generated/newdrawables.xml";
+            String categoryGamesXml = rootDir+"/generated/games.xml";
+
+
             String task = args[0];
             System.out.println("Processing with task: " + task);
             switch (task) {
@@ -41,6 +53,13 @@ public class PrepareRelease {
                     } catch (Exception e) {
                         System.out.println("Error occurred: " + e.getMessage());
                     }
+                    try {
+                        XMLCreator.mergeNewDrawables(xmlDir+"/drawable.xml",newXML,categoryGamesXml,assetsDir,sourceDir,xmlDir,appFilter);
+                        System.out.println("XML task completed");
+                    } catch (Exception e) {
+                        System.out.println("Error occurred: " + e.getMessage());
+                    }
+                    generateChangelogs(generatedDir, drawableXml, appFilter, changelogXml,false);
                     break;
                 case "newrelease":
                     executePythonScript(rootDir + "/scripts/preparerelease.py","--new");
@@ -50,6 +69,13 @@ public class PrepareRelease {
                     } catch (Exception e) {
                         System.out.println("Error occurred: " + e.getMessage());
                     }
+                    try {
+                        XMLCreator.mergeNewDrawables(xmlDir+"/drawable.xml",newXML,categoryGamesXml,assetsDir,sourceDir,xmlDir,appFilter);
+                        System.out.println("XML task completed");
+                    } catch (Exception e) {
+                        System.out.println("Error occurred: " + e.getMessage());
+                    }
+                    generateChangelogs(generatedDir, drawableXml, appFilter, changelogXml,true);
                     break;
                 default:
             }

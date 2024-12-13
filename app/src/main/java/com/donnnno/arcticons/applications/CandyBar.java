@@ -109,7 +109,7 @@ public class CandyBar extends CandyBarApplication {
                         // You can use png file (without extension) inside drawable-nodpi folder or url
                         "arcticons_day_night",
                         "Arcticons Day & Night",
-                        "An expirimental version of Arcticons that switches between dark & light mode.",
+                        "An experimental version of Arcticons that switches between dark & light mode.",
                         "https://github.com/Donnnno/Arcticons/releases")
         };
         configuration.setOtherApps(otherApps);
