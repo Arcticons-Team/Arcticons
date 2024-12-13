@@ -1,0 +1,57 @@
+name: Fetch and Push File
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'newicons/appfilter.xml'
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+concurrency:
+  group: fetch-and-push
+  cancel-in-progress: true
+
+jobs:
+  fetch_and_push_file:
+    if: github.repository == 'Arcticons-Team/Arcticons'
+    runs-on: ubuntu-latest
+
+    env:
+      SOURCE_BRANCH: main
+      TARGET_BRANCH: Arcticons-Pages
+      FILE_PATH: newicons/appfilter.xml
+
+    steps:
+      # Step 1: Checkout the repository
+      - name: Checkout main Repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          path: main
+
+      # Step 2: Checkout the 2. repository
+      - name: Checkout Arcticons-Pages Repository
+        uses: actions/checkout@v4
+        with:
+          ref: Arcticons-Pages
+          path: pages
+
+      # Step 3: Fetch the file from the source branch
+      - name: Copy File from main to Arcticons-Pages
+        run: |
+            rm pages/newicons/appfilter.xml
+            cp main/newicons/appfilter.xml pages/newicons/appfilter.xml
+
+      # Step 4: Commit and push changes
+      - name: Commit and Push Changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          cd pages
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add $FILE_PATH
+          git commit -m "Update $FILE_PATH from $SOURCE_BRANCH to $TARGET_BRANCH"
+          git push

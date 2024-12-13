@@ -1,22 +1,39 @@
-name: Parse and Combine Pull Request
+name: Combine Appfilter and Build Pages
 
 on:
   pull_request_target:
     types: [opened, synchronize, reopened]
     branches:
       - main
+    paths:
+      - 'newicons/appfilter.xml'
+  push:
+    branches: ["Arcticons-Pages"]
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
 
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+  
 concurrency:
-  group: 'appfilter'
+  group: 'pages'
   cancel-in-progress: true
 
 jobs:
   parse_and_combine:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
+        with:
+          ref: Arcticons-Pages
       
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -29,3 +46,15 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python .github/workflows/combine_appfilter.py
+      - name: Move combinded Appfilter
+        run: mv combined_appfilter.xml docs/assets/combined_appfilter.xml
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # Upload docs folder
+          path: 'docs'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
