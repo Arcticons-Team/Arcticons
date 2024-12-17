@@ -3,6 +3,8 @@
     max-height: 1200px;
     /* Set maximum height for scrollable area */
     overflow-y: auto;
+    overflow-x: auto;
+    overflow-wrap: anywhere;
     /* Enable vertical scrolling */
 }
 
@@ -41,6 +43,7 @@
 
 table {
     width: 99.5%;
+    max-width: max-content;
     border-collapse: collapse;
 }
 
@@ -53,20 +56,28 @@ td {
 
 td:nth-child(1) {
     width: 10%;
+    overflow-wrap: normal;
 }
 td:nth-child(2) {
+    width: 5%;
     max-width: 70px;
+    overflow-wrap: normal;
 }
 td:nth-child(3) {
-    width: 10%;
+    min-width: 300px;
+    width:20%;
+    overflow-wrap: anywhere;
 }
 td:nth-child(4) {
-    min-width: 100px;
+    min-width: 300px;
+    width:50%;
+    overflow-wrap: anywhere;
 }
 td:nth-child(5) {
+    width: 5%;
     max-width: 70px;
+    overflow-wrap: normal;
 }
-
 tr:nth-child(even) {
     background-color: #ebebeb;
 }
