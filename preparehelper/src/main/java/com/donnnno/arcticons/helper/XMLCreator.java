@@ -31,12 +31,14 @@ public class XMLCreator {
     private static List<String> symbols = new ArrayList<>();
     private static List<String> number = new ArrayList<>();
 
+    private static int iconCount = 0;
+
     private static final Pattern drawablePattern = Pattern.compile("drawable=\"([\\w_]+)\"");
 
-    public static void mergeNewDrawables(String pathXml, String pathNewXml,String CatGamePath, String assetPath, String iconsDir,
+    public static void mergeNewDrawables(String valuesDir,String generatedDir, String assetPath, String iconsDir,
                                          String xmlDir, String appFilterPath) throws IOException {
         //Read new drawables from File and add to list
-        try (BufferedReader reader = new BufferedReader(new FileReader(pathNewXml))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(generatedDir+"/newdrawables.xml"))) {
             String line;
             while ((line = reader.readLine()) != null) {
                 Matcher matcher = drawablePattern.matcher(line);
@@ -48,7 +50,7 @@ public class XMLCreator {
             System.out.println("XML file: newdrawables.xml not found");
         }
         //Read games from File and add to list
-        try (BufferedReader reader = new BufferedReader(new FileReader(CatGamePath+"/games.xml"))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(generatedDir+"/games.xml"))) {
             String line;
             while ((line = reader.readLine()) != null) {
                 games.add(line);
@@ -57,7 +59,7 @@ public class XMLCreator {
             System.out.println("XML file: games.xml not found");
         }
         //Read games from File and add to list
-        try (BufferedReader reader = new BufferedReader(new FileReader(CatGamePath+"/system.xml"))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(generatedDir+"/system.xml"))) {
             String line;
             while ((line = reader.readLine()) != null) {
                 system.add(line);
@@ -72,6 +74,7 @@ public class XMLCreator {
 
         if (files != null) {
             for (File file : files) {
+                iconCount++;
                 String fileName = file.getName();
                 String IconDrawable = fileName.substring(0, fileName.lastIndexOf('.'));
 
@@ -80,6 +83,10 @@ public class XMLCreator {
                 }
             }
         }
+
+        // Create custom_icons_count.xml
+        createCustomIconCountFile(valuesDir+"/custom_icon_count.xml", iconCount);
+
         // Remove duplicates and sort
         newDrawables = new ArrayList<>(new HashSet<>(newDrawables));
         Collections.sort(newDrawables);
@@ -128,12 +135,12 @@ public class XMLCreator {
         output.append("\n</resources>");
         
         // Write to drawable.xml in res directory
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(pathXml))) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(xmlDir+"/drawable.xml"))) {
             writer.write(output.toString());
         }
 
         // Copy files
-        copyFile(pathXml, assetPath+"/drawable.xml");
+        copyFile(xmlDir+"/drawable.xml", assetPath+"/drawable.xml");
         copyFile(appFilterPath, assetPath+"/appfilter.xml");
         copyFile(appFilterPath, xmlDir+"/appfilter.xml");
         copyFile(appFilterPath, assetPath+"/icon_config.xml");
@@ -174,6 +181,15 @@ public class XMLCreator {
             number.add(newDrawable);
         } else {
             drawables.add(newDrawable);
+        }
+    }
+    private static void createCustomIconCountFile(String path, int count) throws IOException {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(path))) {
+            writer.write("<?xml version=\"1.0\" encoding=\"utf-8\"?>\n" +
+                    "<resources>\n" +
+                    "   <integer name=\"custom_icons_count\">" + count + "</integer>\n" +
+                    "</resources>"
+            );
         }
     }
 }

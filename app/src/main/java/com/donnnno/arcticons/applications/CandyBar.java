@@ -22,7 +22,11 @@ public class CandyBar extends CandyBarApplication {
         Configuration configuration = new Configuration();
 
         configuration.setAutomaticIconsCountEnabled(false); // Enable or disable automatic icons counting
-        configuration.setCustomIconsCount(1);
+        // Get the value from the resources
+        int customIconsCount = getResources().getInteger(R.integer.custom_icons_count);
+        // Set the value to the configuration
+        configuration.setCustomIconsCount(customIconsCount);
+
         configuration.setGenerateAppFilter(true);
 
         configuration.setEmailBodyGenerator(requests -> {

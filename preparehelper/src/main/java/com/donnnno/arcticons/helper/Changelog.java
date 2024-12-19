@@ -1,11 +1,14 @@
 package com.donnnno.arcticons.helper;
 
 import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
@@ -27,23 +30,21 @@ public class Changelog {
         if (rootDirName.equals("preparehelper")) {
             rootDir = "..";
         }
-        String xmlDir = rootDir+"/app/src/main/res/xml";
         String valuesDir = rootDir+"/app/src/main/res/values";
         String appFilter = rootDir + "/newicons/appfilter.xml";
-        String drawableXml = xmlDir +"/drawable.xml";
         String changelogXml = valuesDir +"/changelog.xml";
         String generatedDir = rootDir +"/generated";
 
-       generateChangelogs(generatedDir, drawableXml, appFilter, changelogXml,false);
+       generateChangelogs(generatedDir, valuesDir+"/custom_icon_count.xml", appFilter, changelogXml,false);
     }
 
 
 
 
 
-    public static void generateChangelogs(String generatedDir, String drawableXml, String appFilter, String changelogXml,boolean newRelease) {
+    public static void generateChangelogs(String generatedDir, String customIconCountXml, String appFilter, String changelogXml,boolean newRelease) {
         String newXML = generatedDir + "/newdrawables.xml";
-        int countTotal = countAll(drawableXml);
+        int countTotal = getCustomIconsCount(customIconCountXml);
         int countNew = countAll(newXML);
         int countFilterTotal = countAll(appFilter);
         int countFilterOld = readCountFilterOld(generatedDir);//19762; //tag11.4.6(21744)
@@ -175,4 +176,39 @@ public class Changelog {
         }
         return 0;
     }
+
+    public static int getCustomIconsCount(String XmlIconCount)  {
+        try {
+        // Path to the XML file
+        Path xmlPath = Paths.get(XmlIconCount);
+        // Create a DocumentBuilderFactory
+        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+        // Create a DocumentBuilder
+        DocumentBuilder builder = factory.newDocumentBuilder();
+        // Parse the XML file
+        Document document = builder.parse(xmlPath.toFile());
+        // Normalize the document (optional, but recommended)
+        document.getDocumentElement().normalize();
+        // Get all <item> nodes
+        NodeList itemList = document.getElementsByTagName("integer");
+        // Iterate through the NodeList and retrieve the value of each <integer> element
+            for (int i = 0; i < itemList.getLength(); i++) {
+                // Get the individual node at index i
+                Node node = itemList.item(i);
+
+                // Ensure the node is an element (in case there are other types of nodes)
+                if (node.getNodeType() == Node.ELEMENT_NODE) {
+                    // Cast to an Element
+                    Element element = (Element) node;
+
+                    // Retrieve the text content of the <integer> element
+                    return Integer.parseInt(element.getTextContent());
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("Error occurred: " + e.getMessage());
+        }
+        return 0;
+    }
+
 }
