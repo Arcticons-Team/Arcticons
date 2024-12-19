@@ -125,6 +125,7 @@ public class XMLCreator {
         appendCategory(output, "Google", google);
         appendCategory(output, "Microsoft", microsoft);
         appendCategory(output, "Games", games);
+        appendCategory(output, "System", system);
         appendCategory(output, "Emoji", emoji);
         appendCategory(output, "Symbols", symbols);
         appendCategory(output, "Numbers", numbers);
