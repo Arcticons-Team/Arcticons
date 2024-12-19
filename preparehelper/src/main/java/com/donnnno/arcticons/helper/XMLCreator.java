@@ -19,6 +19,7 @@ import java.util.regex.Pattern;
 public class XMLCreator {
     private static List<String> newDrawables = new ArrayList<>();
     private static List<String> games = new ArrayList<>();
+    private static List<String> system = new ArrayList<>();
     private static List<String> drawables = new ArrayList<>();
     private static List<String> folder = new ArrayList<>();
     private static List<String> calendar = new ArrayList<>();
@@ -44,16 +45,25 @@ public class XMLCreator {
                 }
             }
         }catch(FileNotFoundException e){
-            System.out.println("XML file: games.xml not found");
+            System.out.println("XML file: newdrawables.xml not found");
         }
         //Read games from File and add to list
-        try (BufferedReader reader = new BufferedReader(new FileReader(CatGamePath))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(CatGamePath+"/games.xml"))) {
             String line;
             while ((line = reader.readLine()) != null) {
                 games.add(line);
             }
         }catch(FileNotFoundException e){
-            System.out.println("XML file: newdrawables.xml not found");
+            System.out.println("XML file: games.xml not found");
+        }
+        //Read games from File and add to list
+        try (BufferedReader reader = new BufferedReader(new FileReader(CatGamePath+"/system.xml"))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                system.add(line);
+            }
+        }catch(FileNotFoundException e){
+            System.out.println("XML file: system.xml not found");
         }
 
         // Collect existing drawables
@@ -65,7 +75,7 @@ public class XMLCreator {
                 String fileName = file.getName();
                 String IconDrawable = fileName.substring(0, fileName.lastIndexOf('.'));
 
-                if (!newDrawables.contains(IconDrawable) && !games.contains(IconDrawable)) {
+                if (!newDrawables.contains(IconDrawable) && !games.contains(IconDrawable) && !system.contains(IconDrawable)) {
                     classifyDrawable(IconDrawable);
                 }
             }
@@ -75,6 +85,8 @@ public class XMLCreator {
         Collections.sort(newDrawables);
         games = new ArrayList<>(new HashSet<>(games));
         Collections.sort(games);
+        system = new ArrayList<>(new HashSet<>(system));
+        Collections.sort(system);
         drawables = new ArrayList<>(new HashSet<>(drawables));
         Collections.sort(drawables);
         folder = new ArrayList<>(new HashSet<>(folder));

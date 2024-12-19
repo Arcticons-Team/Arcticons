@@ -20,7 +20,7 @@ public class Start {
         String destDir;
         String xmlDir;
         String newXML;
-        String categoryGamesXml;
+        String generatedDir;
         String assetsDir;
         String appFilter;
         //System.out.println("root Dir: " + rootPath);
@@ -66,14 +66,14 @@ public class Start {
 
             xmlDir =rootDir+"/app/src/main/res/xml";
             newXML = rootDir+"/generated/newdrawables.xml";
-            categoryGamesXml = rootDir+"/generated/games.xml";
+            generatedDir = rootDir+"/generated";
             assetsDir = rootDir + "/app/src/main/assets";
             appFilter = rootDir + "/newicons/appfilter.xml";
 
 
 
             try {
-                XMLCreator.mergeNewDrawables(xmlDir+"/drawable.xml",newXML,categoryGamesXml,assetsDir,sourceDir,xmlDir,appFilter);
+                XMLCreator.mergeNewDrawables(xmlDir+"/drawable.xml",newXML,generatedDir,assetsDir,sourceDir,xmlDir,appFilter);
                 System.out.println("XML task completed");
             } catch (Exception e) {
                 System.out.println("Error occurred: " + e.getMessage());
