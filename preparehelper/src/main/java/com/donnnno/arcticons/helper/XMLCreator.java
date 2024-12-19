@@ -12,6 +12,7 @@ import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -19,6 +20,7 @@ import java.util.regex.Pattern;
 public class XMLCreator {
     private static List<String> newDrawables = new ArrayList<>();
     private static List<String> games = new ArrayList<>();
+    private static List<String> system = new ArrayList<>();
     private static List<String> drawables = new ArrayList<>();
     private static List<String> folder = new ArrayList<>();
     private static List<String> calendar = new ArrayList<>();
@@ -29,13 +31,14 @@ public class XMLCreator {
     private static List<String> letters = new ArrayList<>();
     private static List<String> symbols = new ArrayList<>();
     private static List<String> number = new ArrayList<>();
+    private static HashSet<String> allIcons = new HashSet<>();
 
     private static final Pattern drawablePattern = Pattern.compile("drawable=\"([\\w_]+)\"");
 
-    public static void mergeNewDrawables(String pathXml, String pathNewXml,String CatGamePath, String assetPath, String iconsDir,
+    public static void mergeNewDrawables(String valuesDir,String generatedDir, String assetPath, String iconsDir,
                                          String xmlDir, String appFilterPath) throws IOException {
         //Read new drawables from File and add to list
-        try (BufferedReader reader = new BufferedReader(new FileReader(pathNewXml))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(generatedDir+"/newdrawables.xml"))) {
             String line;
             while ((line = reader.readLine()) != null) {
                 Matcher matcher = drawablePattern.matcher(line);
@@ -44,16 +47,25 @@ public class XMLCreator {
                 }
             }
         }catch(FileNotFoundException e){
-            System.out.println("XML file: games.xml not found");
+            System.out.println("XML file: newdrawables.xml not found");
         }
         //Read games from File and add to list
-        try (BufferedReader reader = new BufferedReader(new FileReader(CatGamePath))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(generatedDir+"/games.xml"))) {
             String line;
             while ((line = reader.readLine()) != null) {
                 games.add(line);
             }
         }catch(FileNotFoundException e){
-            System.out.println("XML file: newdrawables.xml not found");
+            System.out.println("XML file: games.xml not found");
+        }
+        //Read games from File and add to list
+        try (BufferedReader reader = new BufferedReader(new FileReader(generatedDir+"/system.xml"))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                system.add(line);
+            }
+        }catch(FileNotFoundException e){
+            System.out.println("XML file: system.xml not found");
         }
 
         // Collect existing drawables
@@ -64,17 +76,29 @@ public class XMLCreator {
             for (File file : files) {
                 String fileName = file.getName();
                 String IconDrawable = fileName.substring(0, fileName.lastIndexOf('.'));
-
-                if (!newDrawables.contains(IconDrawable) && !games.contains(IconDrawable)) {
+                allIcons.add(IconDrawable);
+                if (!newDrawables.contains(IconDrawable) && !games.contains(IconDrawable) && !system.contains(IconDrawable)) {
                     classifyDrawable(IconDrawable);
                 }
             }
         }
+
+        // Create custom_icons_count.xml
+        createCustomIconCountFile(valuesDir+"/custom_icon_count.xml", allIcons.size());
+
+        // Check if the icon is not in allIcons
+        // Remove it from list
+        system.removeIf(icon -> !allIcons.contains(icon));
+        games.removeIf(icon -> !allIcons.contains(icon));
+
+
         // Remove duplicates and sort
         newDrawables = new ArrayList<>(new HashSet<>(newDrawables));
         Collections.sort(newDrawables);
         games = new ArrayList<>(new HashSet<>(games));
         Collections.sort(games);
+        system = new ArrayList<>(new HashSet<>(system));
+        Collections.sort(system);
         drawables = new ArrayList<>(new HashSet<>(drawables));
         Collections.sort(drawables);
         folder = new ArrayList<>(new HashSet<>(folder));
@@ -106,6 +130,7 @@ public class XMLCreator {
         appendCategory(output, "Google", google);
         appendCategory(output, "Microsoft", microsoft);
         appendCategory(output, "Games", games);
+        appendCategory(output, "System", system);
         appendCategory(output, "Emoji", emoji);
         appendCategory(output, "Symbols", symbols);
         appendCategory(output, "Numbers", numbers);
@@ -116,12 +141,12 @@ public class XMLCreator {
         output.append("\n</resources>");
         
         // Write to drawable.xml in res directory
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(pathXml))) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(xmlDir+"/drawable.xml"))) {
             writer.write(output.toString());
         }
 
         // Copy files
-        copyFile(pathXml, assetPath+"/drawable.xml");
+        copyFile(xmlDir+"/drawable.xml", assetPath+"/drawable.xml");
         copyFile(appFilterPath, assetPath+"/appfilter.xml");
         copyFile(appFilterPath, xmlDir+"/appfilter.xml");
         copyFile(appFilterPath, assetPath+"/icon_config.xml");
@@ -162,6 +187,15 @@ public class XMLCreator {
             number.add(newDrawable);
         } else {
             drawables.add(newDrawable);
+        }
+    }
+    private static void createCustomIconCountFile(String path, int count) throws IOException {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(path))) {
+            writer.write("<?xml version=\"1.0\" encoding=\"utf-8\"?>\n" +
+                    "<resources>\n" +
+                    "   <integer name=\"custom_icons_count\">" + count + "</integer>\n" +
+                    "</resources>"
+            );
         }
     }
 }
