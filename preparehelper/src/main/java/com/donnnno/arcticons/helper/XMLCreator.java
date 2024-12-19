@@ -12,6 +12,7 @@ import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -30,8 +31,7 @@ public class XMLCreator {
     private static List<String> letters = new ArrayList<>();
     private static List<String> symbols = new ArrayList<>();
     private static List<String> number = new ArrayList<>();
-
-    private static int iconCount = 0;
+    private static HashSet<String> allIcons = new HashSet<>();
 
     private static final Pattern drawablePattern = Pattern.compile("drawable=\"([\\w_]+)\"");
 
@@ -74,10 +74,9 @@ public class XMLCreator {
 
         if (files != null) {
             for (File file : files) {
-                iconCount++;
                 String fileName = file.getName();
                 String IconDrawable = fileName.substring(0, fileName.lastIndexOf('.'));
-
+                allIcons.add(IconDrawable);
                 if (!newDrawables.contains(IconDrawable) && !games.contains(IconDrawable) && !system.contains(IconDrawable)) {
                     classifyDrawable(IconDrawable);
                 }
@@ -85,7 +84,13 @@ public class XMLCreator {
         }
 
         // Create custom_icons_count.xml
-        createCustomIconCountFile(valuesDir+"/custom_icon_count.xml", iconCount);
+        createCustomIconCountFile(valuesDir+"/custom_icon_count.xml", allIcons.size());
+
+        // Check if the icon is not in allIcons
+        // Remove it from list
+        system.removeIf(icon -> !allIcons.contains(icon));
+        games.removeIf(icon -> !allIcons.contains(icon));
+
 
         // Remove duplicates and sort
         newDrawables = new ArrayList<>(new HashSet<>(newDrawables));
