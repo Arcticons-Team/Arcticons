@@ -11,6 +11,25 @@
 #search-container {
     display: flex;
     flex: 5;
+    position: relative;
+    /*display: inline-flex;*/
+    align-items: center;
+}
+
+#clear-search {
+    position: absolute;
+    display: block;
+    right: 10px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    color: #fff;
+    background-color: #8b1708;
+    font: 22px monospace;
+    text-align: center;
+    line-height: 1em;
+    cursor: pointer;
+    visibility: hidden;
 }
 
 #search-input {
