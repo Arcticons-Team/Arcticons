@@ -144,9 +144,14 @@ android {
 }
 
 dependencies {
-
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    implementation 'com.github.donnnno:candybar-foss:3.20.4'
+    normalPlayImplementation 'com.github.zixpo:candybar:3.20.3'
+    blackPlayImplementation 'com.github.zixpo:candybar:3.20.3'
+    youPlayImplementation 'com.github.zixpo:candybar:3.20.3'
+    normalImplementation 'com.github.donnnno:candybar-foss:3.20.4'
+    blackImplementation 'com.github.donnnno:candybar-foss:3.20.4'
+    youImplementation 'com.github.donnnno:candybar-foss:3.20.4'
+    dayNightImplementation 'com.github.donnnno:candybar-foss:3.20.4'
 }
 
 import com.android.tools.profgen.ArtProfileKt
