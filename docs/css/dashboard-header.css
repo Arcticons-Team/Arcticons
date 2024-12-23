@@ -117,6 +117,13 @@
     background-color: #409943;
 }
 
+#regex-search-container {
+    flex:1;
+    display: flex;
+    align-items: center;  /* Aligns the label and switch vertically */
+    gap: 10px;  /* Adds space between the label and the switch */
+}
+
 @media screen and (max-width: 1200px) {
     
     .lg-view{
@@ -139,6 +146,9 @@
     }
 
     #random-container{
+        display: none;
+    }
+    #regex-search-container {
         display: none;
     }
   }

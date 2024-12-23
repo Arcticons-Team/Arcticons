@@ -94,6 +94,8 @@ fetch(`assets/requests.txt`)
                 headers[sortingColumnIndex].classList.add(sortingDirection);
                 // Initial render
                 lazyLoadAndRender();
+                // Optionally, trigger the function immediately if needed (e.g., if the page is loaded with a default state):
+                filterAppEntries();
             })
             .catch(error => console.error('Error fetching or processing appfilter:', error));
     })
@@ -281,6 +283,45 @@ function copyToClipboard(index) {
 
 // Search function
 const filterAppEntries = debounce(() => {
+    if (document.getElementById('regex-switch').checked){
+        console.log("true");
+      const searchInput = document.getElementById('search-input').value;
+      
+      // Create a regex from the search input, escaping special characters if necessary
+      let regex;
+      try {
+        // This allows for user input to be interpreted as a regex pattern
+        regex = new RegExp(searchInput, 'i'); // 'i' for case-insensitive matching
+      } catch (e) {
+        // If the input is not a valid regex, treat it as a normal string search
+        regex = new RegExp(searchInput.replace(/[.*+?^=!:${}()|\[\]\/\\]/g, '\\$&'), 'i');
+      }
+  
+      const filteredData = appEntriesData.filter(entry =>
+        regex.test(entry.appfilter) // Use the regex to test the appName
+      );
+  
+      // If no results are found, show a notification
+      if (filteredData.length === 0) {
+        document.getElementById('search-notification').innerText = `No results found.`;
+        document.getElementById('search-notification').style.display = 'block';
+        // Hide the notification after a few seconds
+        setTimeout(
+          () => {
+            document.getElementById('search-notification').style.display = 'none';
+          },
+          5000
+        );
+        updateTable(None);
+      } else {
+        document.getElementById('search-notification').style.display = 'none';
+        const filteredandsortedData = sortData(sortingDirection, sortingColumnIndex, [
+          ...filteredData
+        ])
+        updateTable(filteredandsortedData);
+      }
+}else{
+    console.log("False");
     const searchInput = document.getElementById('search-input').value.toLowerCase();
     const filteredData = appEntriesData.filter(entry =>
         entry.appName.toLowerCase().includes(searchInput)
@@ -293,12 +334,18 @@ const filterAppEntries = debounce(() => {
         setTimeout(() => {
             document.getElementById('search-notification').style.display = 'none';
         }, 5000);
+        const filteredandsortedData = sortData(sortingDirection, sortingColumnIndex, [...filteredData])
+        updateTable(None);
     } else {
         document.getElementById('search-notification').style.display = 'none';
         const filteredandsortedData = sortData(sortingDirection, sortingColumnIndex, [...filteredData])
         updateTable(filteredandsortedData);
     }
+}
 }, 500);
+
+  
+document.getElementById('regex-switch').addEventListener('change', filterAppEntries);
 
 // Sort table function
 function sortTable(columnIndex) {
