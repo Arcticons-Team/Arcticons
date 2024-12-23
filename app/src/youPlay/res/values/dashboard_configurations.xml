@@ -8,5 +8,13 @@ Leave this empty to disable the "Share" button.
 You can use special keyword `{{packageName}}`, `{{packageName}}` will be replaced with your app's package name -->
     <string name="share_link">https://play.google.com/store/apps/details?id=com.donnnno.arcticons.you.play</string>
 
-
+    <!-- Enable/disable in-app review -->
+    <bool name="enable_in_app_review">true</bool>
+    <!-- After how many seconds the dashboard should count that the user visited the app.
+        By default it is set to 30 seconds. If the user opens the app and stays for 30 seconds,
+        it would be counted as a visit -->
+    <integer name="in_app_review_visit_time">10</integer>
+    <!-- After how many visits the in app review dialog should pop up -->
+    <integer name="in_app_review_after_visits">2</integer>
+    
 </resources>
