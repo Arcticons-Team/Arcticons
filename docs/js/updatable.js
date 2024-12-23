@@ -81,6 +81,8 @@ fetch(`assets/updatable.txt`)
                 // headers[sortingColumnIndex].classList.add(sortingDirection);
                 // Initial render
                 lazyLoadAndRender();
+                // Optionally, trigger the function immediately if needed (e.g., if the page is loaded with a default state):
+                filterAppEntries();
             })
             .catch(error => console.error('Error fetching or processing appfilter:', error));
     })
@@ -251,8 +253,27 @@ updatableButton.addEventListener("click", function () {
     window.location.href = updatableURL;
 });
 
+function showClearSearchIcon() {
+    const clearSearch = document.querySelector('#clear-search');
+    if (document.getElementById('search-input').value.trim() === "") {
+        console.log(document.getElementById('search-input').value.trim())
+        clearSearch.style.visibility = 'hidden'; // Hide the icon if the input is empty
+    } else {
+        clearSearch.style.visibility = 'visible'; // Show the icon if the input has text
+        console.log(document.getElementById('search-input').value.trim())
+    }
+}
+
+document.getElementById('clear-search').addEventListener('click',clearSearch );
+
+function clearSearch(){
+    showClearSearchIcon();
+    filterAppEntries();
+}
+
 // Search function
 const filterAppEntries = debounce(() => {
+    showClearSearchIcon();
     const searchInput = document.getElementById('search-input').value.toLowerCase();
     const filteredData = appEntriesData.filter(entry =>
         entry.appName.toLowerCase().includes(searchInput)
@@ -265,6 +286,7 @@ const filterAppEntries = debounce(() => {
         setTimeout(() => {
             document.getElementById('search-notification').style.display = 'none';
         }, 5000);
+        updateTable([]);
     } else {
         document.getElementById('search-notification').style.display = 'none';
         const filteredandsortedData = sortData(sortingDirection, sortingColumnIndex, [...filteredData])
