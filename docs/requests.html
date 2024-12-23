@@ -21,9 +21,10 @@
 
     <div class="header-container">
         <!-- Search Container -->
-        <div id="search-container">
+        <span id="search-container">
             <input type="text" id="search-input" oninput="filterAppEntries()" placeholder="Search">
-        </div> 
+            <span id="clear-search" onclick="var input = this.previousElementSibling; input.value = ''; input.focus();">x</span>
+        </span>
             <div id="regex-search-container">
                 Regex Search
             <span>

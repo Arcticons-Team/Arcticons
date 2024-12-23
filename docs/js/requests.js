@@ -281,10 +281,33 @@ function copyToClipboard(index) {
     });
 }
 
+
+
+
+function showClearSearchIcon() {
+    const clearSearch = document.querySelector('#clear-search');
+    if (document.getElementById('search-input').value.trim() === "") {
+        console.log(document.getElementById('search-input').value.trim())
+        clearSearch.style.visibility = 'hidden'; // Hide the icon if the input is empty
+    } else {
+        clearSearch.style.visibility = 'visible'; // Show the icon if the input has text
+        console.log(document.getElementById('search-input').value.trim())
+    }
+}
+
+document.getElementById('clear-search').addEventListener('click',clearSearch );
+
+function clearSearch(){
+    showClearSearchIcon();
+    filterAppEntries();
+}
+
+
 // Search function
 const filterAppEntries = debounce(() => {
+
+    showClearSearchIcon();
     if (document.getElementById('regex-switch').checked){
-        console.log("true");
       const searchInput = document.getElementById('search-input').value;
       
       // Create a regex from the search input, escaping special characters if necessary
@@ -321,7 +344,6 @@ const filterAppEntries = debounce(() => {
         updateTable(filteredandsortedData);
       }
 }else{
-    console.log("False");
     const searchInput = document.getElementById('search-input').value.toLowerCase();
     const filteredData = appEntriesData.filter(entry =>
         entry.appName.toLowerCase().includes(searchInput)
