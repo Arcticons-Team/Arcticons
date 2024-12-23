@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/dashboard-main.css" />
     <link rel="stylesheet" href="css/dashboard-header.css" />
     <link rel="stylesheet" href="css/dashboard-table-main.css" />
+    <link rel="stylesheet" href="css/slider.css" />
 </head>
 
 <body>
@@ -22,6 +23,16 @@
         <!-- Search Container -->
         <div id="search-container">
             <input type="text" id="search-input" oninput="filterAppEntries()" placeholder="Search">
+        </div> 
+            <div id="regex-search-container">
+                Regex Search
+            <span>
+                <!-- Rounded switch -->
+                    <label class="switch">
+                        <input type="checkbox" id = "regex-switch">
+                        <span class="slider round"></span>
+                    </label>
+                </span>
         </div>
         <div id="random-container">
 			<button id="random-reset-button">Reset &#10006;</button>
@@ -35,6 +46,7 @@
             <button id="updatable-button">Potential Updates</button>
         </div>
     </div>
+
 
     <!-- App Entries -->
     <div class="table-container">
