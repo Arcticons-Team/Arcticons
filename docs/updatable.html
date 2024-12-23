@@ -18,9 +18,11 @@
     <h1 id="header">Possible Appfilter Updates</h1>
 
     <div class="header-container">
-        <div id="search-container">
+        <!-- Search Container -->
+        <span id="search-container">
             <input type="text" id="search-input" oninput="filterAppEntries()" placeholder="Search">
-        </div>
+            <span id="clear-search" onclick="var input = this.previousElementSibling; input.value = ''; input.focus();">x</span>
+        </span>
         <div id="updatable-container">
             <!-- Button for Updatable Site -->
             <button id="updatable-button">Request Dashboard</button>
