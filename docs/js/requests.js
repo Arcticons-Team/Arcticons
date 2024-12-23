@@ -312,7 +312,7 @@ const filterAppEntries = debounce(() => {
           },
           5000
         );
-        updateTable(None);
+        updateTable([]);
       } else {
         document.getElementById('search-notification').style.display = 'none';
         const filteredandsortedData = sortData(sortingDirection, sortingColumnIndex, [
@@ -334,8 +334,7 @@ const filterAppEntries = debounce(() => {
         setTimeout(() => {
             document.getElementById('search-notification').style.display = 'none';
         }, 5000);
-        const filteredandsortedData = sortData(sortingDirection, sortingColumnIndex, [...filteredData])
-        updateTable(None);
+        updateTable([]);
     } else {
         document.getElementById('search-notification').style.display = 'none';
         const filteredandsortedData = sortData(sortingDirection, sortingColumnIndex, [...filteredData])
