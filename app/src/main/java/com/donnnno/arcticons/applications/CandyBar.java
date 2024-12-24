@@ -21,6 +21,12 @@ public class CandyBar extends CandyBarApplication {
     public Configuration onInit() {
         Configuration configuration = new Configuration();
 
+        configuration.setAutomaticIconsCountEnabled(false); // Enable or disable automatic icons counting
+        // Get the value from the resources
+        int customIconsCount = getResources().getInteger(R.integer.custom_icons_count);
+        // Set the value to the configuration
+        configuration.setCustomIconsCount(customIconsCount);
+
         configuration.setGenerateAppFilter(true);
 
         configuration.setEmailBodyGenerator(requests -> {
@@ -46,7 +52,7 @@ public class CandyBar extends CandyBarApplication {
 
         configuration.setShowTabAllIcons(true);
         configuration.setCategoryForTabAllIcons(new String[]{
-                "New","Folders","Calendar","Google","Microsoft","Emoji","Symbols","Numbers","Letters","0-9","A-Z"
+                "New","Folders","Calendar","Google","Microsoft","Games","System","Emoji","Symbols","Numbers","Letters","0-9","A-Z"
         });
 
         DonationLink[] donationLinks = new DonationLink[]{

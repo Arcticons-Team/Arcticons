@@ -18,11 +18,11 @@ public class Start {
         String sourceDir = rootDir + "/icons/white";
         String resDir;
         String destDir;
-        String xmlDir;
-        String newXML;
-        String categoryGamesXml;
-        String assetsDir;
-        String appFilter;
+        String xmlDir = rootDir+"/app/src/main/res/xml";
+        String generatedDir = rootDir+"/generated";
+        String assetsDir = rootDir + "/app/src/main/assets";
+        String appFilter = rootDir + "/newicons/appfilter.xml";;
+        String valuesDir = rootDir+"/app/src/main/res/values";
         //System.out.println("root Dir: " + rootPath);
         //System.out.println("root Dir Name: " + rootDirName);
         if (args.length > 0) {
@@ -61,19 +61,10 @@ public class Start {
                 }
             }
             System.out.println("SvgToVector task completed");
+
             // Read appfilter xml and create icon, drawable xml file.
-
-
-            xmlDir =rootDir+"/app/src/main/res/xml";
-            newXML = rootDir+"/generated/newdrawables.xml";
-            categoryGamesXml = rootDir+"/generated/games.xml";
-            assetsDir = rootDir + "/app/src/main/assets";
-            appFilter = rootDir + "/newicons/appfilter.xml";
-
-
-
             try {
-                XMLCreator.mergeNewDrawables(xmlDir+"/drawable.xml",newXML,categoryGamesXml,assetsDir,sourceDir,xmlDir,appFilter);
+                XMLCreator.mergeNewDrawables(valuesDir,generatedDir,assetsDir,sourceDir,xmlDir,appFilter);
                 System.out.println("XML task completed");
             } catch (Exception e) {
                 System.out.println("Error occurred: " + e.getMessage());
