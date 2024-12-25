@@ -57,13 +57,13 @@
 }
 
 /* I'm feeling lucky container */
-#random-container{
+#random-container {
     flex: 2;
     display: flex;
     gap: 10px;
 }
 
-#random-button{
+#random-button {
     flex: 3;
     width: 100%;
     border: none;
@@ -74,12 +74,12 @@
     text-decoration: none;
 }
 
-#random-button:hover{
-	background: linear-gradient(45deg, rgba(255,0,0,1) 0%, rgba(255,154,0,1) 10%, rgba(208,222,33,1) 20%, rgba(79,220,74,1) 30%, rgba(63,218,216,1) 40%, rgba(47,201,226,1) 50%, rgba(28,127,238,1) 60%, rgba(95,21,242,1) 70%, rgba(186,12,248,1) 80%, rgba(251,7,217,1) 90%, rgba(255,0,0,1) 100%);
-	text-shadow: 1px 1px 2px black;
+#random-button:hover {
+    background: linear-gradient(45deg, rgba(255, 0, 0, 1) 0%, rgba(255, 154, 0, 1) 10%, rgba(208, 222, 33, 1) 20%, rgba(79, 220, 74, 1) 30%, rgba(63, 218, 216, 1) 40%, rgba(47, 201, 226, 1) 50%, rgba(28, 127, 238, 1) 60%, rgba(95, 21, 242, 1) 70%, rgba(186, 12, 248, 1) 80%, rgba(251, 7, 217, 1) 90%, rgba(255, 0, 0, 1) 100%);
+    text-shadow: 1px 1px 2px black;
 }
 
-#random-number-input{
+#random-number-input {
     max-width: 80px;
     box-sizing: border-box !important;
     overflow: visible;
@@ -91,10 +91,10 @@
     padding: 0.8em 1.2em;
 }
 
-#random-reset-button{
+#random-reset-button {
     border: 1px solid red;
     cursor: pointer;
-    background-color: rgba(0,0,0,0);
+    background-color: rgba(0, 0, 0, 0);
     color: red;
     padding: 5px 15px;
     text-align: center;
@@ -104,13 +104,13 @@
 }
 
 /* Span text for the I'm feeling lucky button*/
-.lg-view{
-    display:inline-block;
- }
- 
- .sm-view{
-    display:none;
- }
+.lg-view {
+    display: inline-block;
+}
+
+.sm-view {
+    display: none;
+}
 
 /* Potential updates container */
 
@@ -137,21 +137,28 @@
 }
 
 #regex-search-container {
-    flex:1;
+    flex: 1;
     display: flex;
-    align-items: center;  /* Aligns the label and switch vertically */
-    gap: 10px;  /* Adds space between the label and the switch */
+    align-items: center;
+    /* Aligns the label and switch vertically */
+    width: 100%;
+    border: none;
+    color: white;
+    background-color: #4CAF50;
+    border-radius: 100px;
+    padding: 5px 10px 5px 5px;
+    text-decoration: none;
 }
 
 @media screen and (max-width: 1200px) {
-    
-    .lg-view{
-        display:none;
-     }
- 
-     .sm-view{
-        display:inline-block;
-     }
+
+    .lg-view {
+        display: none;
+    }
+
+    .sm-view {
+        display: inline-block;
+    }
 
 }
 
@@ -164,10 +171,11 @@
         gap: 10px;
     }
 
-    #random-container{
+    #random-container {
         display: none;
     }
+
     #regex-search-container {
         display: none;
     }
-  }
+}
