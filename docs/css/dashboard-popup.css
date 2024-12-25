@@ -1,0 +1,81 @@
+#RegexSearchSettings {
+    width: 100%;
+    border: none;
+    color: white;
+    background-color: #4CAF50;
+    border-radius: 100px;
+    padding: 5px 15px;
+    text-decoration: none;
+}
+
+#RegexSearchSettings:hover {
+    background-color: #409943;
+}
+
+.popup {
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,
+            0,
+            0,
+            0.4);
+    display: none;
+}
+
+.popup-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888888;
+    width: 300px;
+}
+
+.popup-content button {
+    display: block;
+    margin: 0 auto;
+}
+
+.show {
+    display: block;
+    color: black;
+}
+
+.Setting {
+    align-items: center;
+    width: 190px;
+    margin: 5px 0px 5px 0px;
+}
+
+.settings-row {
+    display: flex;
+    align-items: center;
+    column-gap: 50px;
+}
+
+#closePopup {
+    width: 100%;
+    border: none;
+    color: white;
+    background-color: #4CAF50;
+    border-radius: 100px;
+    padding: 5px 15px;
+    text-decoration: none;
+}
+
+#seperator {
+    width: 100%;
+    color: #888888;
+}
+
+/*Dark mode theming */
+@media (prefers-color-scheme: dark) {
+    .popup-content {
+        background-color: #0f0f0f;
+        color: white
+    }
+}
