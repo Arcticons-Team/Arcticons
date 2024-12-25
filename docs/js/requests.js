@@ -287,11 +287,9 @@ function copyToClipboard(index) {
 function showClearSearchIcon() {
     const clearSearch = document.querySelector('#clear-search');
     if (document.getElementById('search-input').value.trim() === "") {
-        console.log(document.getElementById('search-input').value.trim())
         clearSearch.style.visibility = 'hidden'; // Hide the icon if the input is empty
     } else {
         clearSearch.style.visibility = 'visible'; // Show the icon if the input has text
-        console.log(document.getElementById('search-input').value.trim())
     }
 }
 
@@ -314,14 +312,14 @@ const filterAppEntries = debounce(() => {
       let regex;
       try {
         // This allows for user input to be interpreted as a regex pattern
-        regex = new RegExp(searchInput, 'i'); // 'i' for case-insensitive matching
+        regex = new RegExp(searchInput, 'iu'); // 'i' for case-insensitive matching
       } catch (e) {
         // If the input is not a valid regex, treat it as a normal string search
         regex = new RegExp(searchInput.replace(/[.*+?^=!:${}()|\[\]\/\\]/g, '\\$&'), 'i');
       }
   
       const filteredData = appEntriesData.filter(entry =>
-        regex.test(entry.appfilter) // Use the regex to test the appName
+        regex.test(entry.appNameAppfilter + entry.appfilter) // Use the regex to test the appName
       );
   
       // If no results are found, show a notification
