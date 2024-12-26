@@ -484,6 +484,11 @@ function randomIcons() {
     randomResetButton.style.display = "inline-block";
 }
 
+function showInfo() {
+    var popup = document.getElementById("infotext");
+    popup.classList.toggle("show");
+}
+
 function shuffle(array) {
     let currentIndex = array.length;
 

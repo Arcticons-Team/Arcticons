@@ -31,7 +31,16 @@
             <button id="RegexSearchSettings">Regex Search</button>
             <div id="myPopup" class="popup">
                 <div class="popup-content">
-                    <h1>
+                    <div class="info-popup" id="info" onclick="showInfo()">i
+                        <span class="popuptext" id="infotext">
+                            <p style="font-size: 18px; font-weight: bold;">The Regex Search matches against:</p>
+                            <p>&lt;!-- AppName --&ZeroWidthSpace;&#62;&lt;item
+                                component=&quot;ComponentInfo{packageName/activityName}&quot;
+                                drawable=&quot;drawableName&quot;/&gt;
+                            </p>
+                        </span>
+                    </div>
+                    <h1 style="width: 100%;">
                         Regex Flags
                     </h1>
                     <div class="settings-row">
