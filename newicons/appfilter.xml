@@ -1,59 +1,5 @@
 <resources>
 
-	<!-- Flickboard -->
-	<item component="ComponentInfo{se.nullable.flickboard/se.nullable.flickboard.MainActivity}" drawable="flickboard" />
-
-	<!-- Momox -->
-	<item component="ComponentInfo{at.momox/de.momox.inbound.ui.MainActivity}" drawable="momox" />
-
-	<!-- Trilium Notes -->
-	<item component="ComponentInfo{eu.fliegendewurst.triliumdroid/eu.fliegendewurst.triliumdroid.activity.main.MainActivity}" drawable="triliumnotes" />
-
-	<!-- Slovene-English Dictionary -->
-	<item component="ComponentInfo{com.eflasoft.slvengfree/com.eflasoft.slvengfree.MainActivity}" drawable="slovenija" />
-
-	<!-- HKUST QR Code -->
-	<item component="ComponentInfo{hk.ust.ei/hk.ust.ei.MainActivity}" drawable="hkust_qr_code" />
-
-	<!-- HKUST Student -->
-	<item component="ComponentInfo{hk.ust.student/hk.ust.student.MainActivity}" drawable="hkust_student" />
-
-	<!-- OpenRice -->
-	<item component="ComponentInfo{com.openrice.android/com.openrice.android.ui.activity.splashscreen.SplashScreenActivity}" drawable="openrice" />
-
-	<!-- Flow Free -->
-	<item component="ComponentInfo{com.bigduckgames.flowshapes/com.bigduckgames.flow.flow}" drawable="flowfreeshapes"/>
-
-	<!-- Assembly Line 2 -->
-	<item component="ComponentInfo{com.Olympus.AssemblyLine2/com.unity3d.player.UnityPlayerActivity}" drawable="assembly_line_2"/>
-
-	<!-- Asia Miles -->
-	<item component="ComponentInfo{com.am/com.am.amlmobile.splash.SplashActivity}" drawable="asia_miles" />
-
-	<!-- Blue Cross HK -->
-	<item component="ComponentInfo{hk.com.bluecross.mobileapp/com.innopage.bluecross.app.LaunchActivity}" drawable="blue_cross_hk" />
-
-	<!-- HKTaxi -->
-	<item component="ComponentInfo{com.cornermation.calltaxi/com.cornermation.calltaxi.MainActivity}" drawable="hktaxi" />
-
-	<!-- HKTVmall -->
-	<item component="ComponentInfo{com.hktv.android.hktvmall/com.hktv.android.hktvmall.Proguard.ui.activities.SplashActivity}" drawable="hktvmall" />
-
-	<!-- Keeta -->
-	<item component="ComponentInfo{com.sankuai.sailor.afooddelivery/com.sankuai.sailor.shell.SplashActivity}" drawable="keeta" />
-
-	<!-- MoneyBack -->
-	<item component="ComponentInfo{com.asw.moneyback/com.parknshop.moneyback.app_icon_default}" drawable="moneyback" />
-
-	<!-- MyLink -->
-	<item component="ComponentInfo{com.ChinaMobile/com.ChinaMobile.v3.ui.splash.SplashActivity}" drawable="mylink" />
-
-	<!-- SoSIM -->
-	<item component="ComponentInfo{com.hthk.sosim/com.hthk.sosim.MainActivity}" drawable="sosim" />
-
-	<!-- yuu -->
-	<item component="ComponentInfo{com.yuurewards.app/com.dfg.anfield.activity.SplashActivity}" drawable="yuu" />
-
 	<!--  BatLib  -->
 	<item component="ComponentInfo{com.elekon.batlib/com.elekon.batlib.BatLibActivity}" drawable="batlib"/>
 
@@ -408,6 +354,12 @@
 	<!-- 3839 -->
 	<item component="ComponentInfo{com.xmcy.hykb/com.xmcy.hykb.app.ui.splash.SplashActivity}" drawable="_3839"/>
 
+	<!-- 3839 Tool Service -->
+	<item component="ComponentInfo{com.hykb.yuanshenmap/com.hykb.yuanshenmap.cloudgame.guide.GuideActivity}" drawable="_3839_tool_service"/>
+
+	<!-- 3A Cloud Games -->
+	<item component="ComponentInfo{com.sayx.sagame/com.sayx.sagame.MainActivity}" drawable="_3a_cloud_games"/>
+
 	<!-- 3BB -->
 	<item component="ComponentInfo{com.inc.tbb_vip/com.inc.tbb_vip.MainActivity}" drawable="_3bb"/>
 
@@ -535,11 +487,11 @@
 	<!-- 6obcy -->
 	<item component="ComponentInfo{com.timevun.czesc/com.timevun.czesc.MainActivity}" drawable="number_6"/>
 
-	<!-- 7 MINUTE WORKOUT -->
-	<item component="ComponentInfo{com.popularapp.sevenmins/com.popularapp.sevenmins.MainActivity}" drawable="_7_minute_workout"/>
-
 	<!-- 7 Bank -->
 	<item component="ComponentInfo{jp.co.sevenbank.appMysevenbank/jp.co.sevenbank.appMysevenbank.presenter.MainActivity}" drawable="_7bank"/>
+
+	<!-- 7 MINUTE WORKOUT -->
+	<item component="ComponentInfo{com.popularapp.sevenmins/com.popularapp.sevenmins.MainActivity}" drawable="_7_minute_workout"/>
 
 	<!-- 7-Eleven -->
 	<item component="ComponentInfo{com.sei.android/com.sei.android.controllers.activity.SplashActivity}" drawable="_7eleven"/>
@@ -603,6 +555,9 @@
 	<!-- 85ºC Rewards -->
 	<item component="ComponentInfo{com.wishmobile.cafe85en/com.paytronix.client.android.app.activity.Splash_Screen}" drawable="_85"/>
 
+	<!-- 870 Games -->
+	<item component="ComponentInfo{com.mobile.cloudgames/com.mobile.cloudgames.ui.SplashActivity}" drawable="_870_games"/>
+
 	<!-- 8Tracks -->
 	<item component="ComponentInfo{com.e8tracks/com.e8tracks.ui.activities.LauncherActivity}" drawable="_8tracks"/>
 
@@ -617,10 +572,6 @@
 
 	<!-- 9 Patch Editor -->
 	<item component="ComponentInfo{me.denley.android.ninepatch/me.denley.android.ninepatch.EditorActivity}" drawable="_9_patch_editor"/>
-
-	<!-- Ollama -->
-	<item component="ComponentInfo{com.freakurl.apps.ollama/com.example.ollama.MainActivity}" drawable="ollama"/>
-	<item component="ComponentInfo{com.freakurl.apps.ollama/com.freakurl.apps.ollama.MainActivity}" drawable="ollama"/>
 
 	<!-- 90 Day Challenge -->
 	<item component="ComponentInfo{nl.browney.nintydayschallenge/nintydayschallenge.MainActivity}" drawable="_90"/>
@@ -3174,6 +3125,9 @@
 	<!-- aShell You -->
 	<item component="ComponentInfo{in.hridayan.ashell/in.hridayan.ashell.activities.MainActivity}" drawable="ashell_you"/>
 
+	<!-- Asia Miles -->
+	<item component="ComponentInfo{com.am/com.am.amlmobile.splash.SplashActivity}" drawable="asia_miles"/>
+
 	<!-- Ask AI -->
 	<item component="ComponentInfo{com.codeway.chatapp/com.codeway.chatapp.MainActivity}" drawable="ask_ai"/>
 
@@ -3227,6 +3181,9 @@
 
 	<!-- Assembly Line -->
 	<item component="ComponentInfo{com.olympus.assemblyline/com.unity3d.player.UnityPlayerActivity}" drawable="assembly_line"/>
+
+	<!-- Assembly Line 2 -->
+	<item component="ComponentInfo{com.Olympus.AssemblyLine2/com.unity3d.player.UnityPlayerActivity}" drawable="assembly_line_2"/>
 
 	<!-- Assistant -->
 	<item component="ComponentInfo{com.wstxda.gsl/com.wstxda.gsl.AssistantActivity}" drawable="google_assistant"/>
@@ -3446,6 +3403,9 @@
 	<item component="ComponentInfo{com.azefsw.audioconnect/com.azefsw.audioconnect.root.ui.RootActivity}" drawable="audiorelay"/>
 	<item component="ComponentInfo{Orion.Soft/orion.soft.clsVentanaPrevia}" drawable="audiorelay"/>
 
+	<!-- Audioteka -->
+	<item component="ComponentInfo{com.audioteka/com.audioteka.presentation.screen.main.MainActivity}" drawable="audioteka"/>
+
 	<!-- Audio­mack -->
 	<item component="ComponentInfo{com.audiomack/com.audiomack.ui.splash.SplashActivity}" drawable="audiomack"/>
 
@@ -3523,6 +3483,9 @@
 	<!-- AusPost -->
 	<item component="ComponentInfo{au.com.auspost.android/au.com.auspost.android.feature.base.StartActivity}" drawable="auspost"/>
 
+	<!-- Australis -->
+	<item component="ComponentInfo{com.unvoid.australis/com.unvoid.australis.activities.MainActivity}" drawable="australis"/>
+
 	<!-- AusweisApp2 -->
 	<item component="ComponentInfo{com.governikus.ausweisapp2/com.governikus.ausweisapp2.MainActivity}" drawable="ausweisapp"/>
 
@@ -3562,12 +3525,6 @@
 	<item component="ComponentInfo{com.inwebo.near.prod/com.inwebo.near.prod.MainActivity}" drawable="authenticator"/>
 	<item component="ComponentInfo{com.smmservice.authenticator/com.smmservice.authenticator.presentation.ui.activity.MainActivity}" drawable="authenticator"/>
 	<item component="ComponentInfo{two.factor.authenticator.generator.code/two.factor.authenticator.generator.code.Activity.SplashMainActivity}" drawable="authenticator"/>
-
-	<!-- Stratum authenticator -->
-	<item component="ComponentInfo{me.jmh.authenticatorpro/crc646be539cf0a2d8609.MainActivity}" drawable="stratum"/>
-	<item component="ComponentInfo{me.jmh.authenticatorpro/crc643c2a2b888a14ec9a.MainActivity}" drawable="stratum"/>
-	<item component="ComponentInfo{com.stratumauth.app/crc6427d348f39abaf1dd.MainActivity}" drawable="stratum"/>
-	<item component="ComponentInfo{com.stratumauth.app/com.stratumauth.app.MainActivity}" drawable="stratum"/>
 
 	<!-- AuthPass -->
 	<item component="ComponentInfo{design.codeux.authpass.fdroid/design.codeux.authpass.MainActivity}" drawable="authpass"/>
@@ -3699,6 +3656,9 @@
 
 	<!-- Avast Passwords -->
 	<item component="ComponentInfo{com.avast.android.passwordmanager/com.avast.android.passwordmanager.activity.StartActivity}" drawable="avast_passwords"/>
+
+	<!-- Avatar World -->
+	<item component="ComponentInfo{com.pazugames.avatarworld/com.unity3d.player.UnityPlayerActivity}" drawable="avatar_world"/>
 
 	<!-- AVD -->
 	<item component="ComponentInfo{mobidev.apps.avd/mobidev.apps.vd.activity.MasterActivity}" drawable="downloads"/>
@@ -4267,6 +4227,12 @@
 	<!-- BB -->
 	<item component="ComponentInfo{br.com.bb.android/br.com.bb.android.reactnative.ReactLoginActivity}" drawable="bb"/>
 
+	<!-- BB Racing -->
+	<item component="ComponentInfo{com.vectorunit.purple.googleplay/com.vectorunit.purple.googleplay.MainActivity}" drawable="bb_racing"/>
+
+	<!-- BB Racing 2 -->
+	<item component="ComponentInfo{com.vectorunit.cobalt.googleplay/com.vectorunit.cobalt.MainActivity}" drawable="bb_racing_2"/>
+
 	<!-- BBBank Banking -->
 	<item component="ComponentInfo{de.bbbank.banking.app/de.fiduciagad.banking.screens.navigation.NavigationActivity}" drawable="bbbank_banking"/>
 
@@ -4679,22 +4645,25 @@
 	<item component="ComponentInfo{com.sbi.upi/com.sbi.upi.customerMode.modules.initial.splash.SplashActivity}" drawable="bhim_sbi_pay"/>
 	<item component="ComponentInfo{com.sbi.upi/com.sbi.upi.BhimSBIPay}" drawable="bhim_sbi_pay"/>
 
+	<!-- bhop pro -->
+	<item component="ComponentInfo{com.begma.bhoppro/com.unity3d.player.UnityPlayerActivity}" drawable="bhop_pro"/>
+
 	<!-- Bibit -->
 	<item component="ComponentInfo{com.bibit.bibitid/com.bibit.bibitid.ui.BibitActivity}" drawable="bibit"/>
 
 	<!-- Bible -->
-    <item component="ComponentInfo{org.biblesint.pck.bible/org.biblesint.pck.bible.AppMainActivity}" drawable="bible"/>
-    <item component="ComponentInfo{theological.bible.dictionary.offline/org.mainsoft.newbible.activity.LaunchActivity}" drawable="bible"/>
-    <item component="ComponentInfo{ch.joshuah.bibleverseapp/ch.joshuah.bibleverseapp.MainActivity}" drawable="bible"/>
-    <item component="ComponentInfo{org.worldbibleschool.wbslite.release/com.zoontek.rnbootsplash.RNBootSplashActivity}" drawable="bible"/>
-    <item component="ComponentInfo{com.smartbibles.smbathi/com.smartbibles.smbathi.activities.KambaHymnal}" drawable="bible"/>
-    <item component="ComponentInfo{com.oremus.catholic.bible.rosary.prayer/com.offline.bible.ui.splash.LaunchActivity}" drawable="bible"/>
-    <item component="ComponentInfo{com.bibleandjournalapp.freedomlife/com.subsplash.thechurchapp.SplashActivity}" drawable="bible"/>
-    <item component="ComponentInfo{ua.ws.bible.bibleandroid.en/ua.ws.bible.bibleandroid.activities.MainActivity}" drawable="bible"/>
-    <item component="ComponentInfo{com.rcvapp.lsm/com.rcvapp.lsm.MainActivity}" drawable="bible"/>
-    <item component="ComponentInfo{biblia.dela.mujer/biblia.dela.mujer.opiniorecoge.MiraraGuard}" drawable="bible"/>
-    <item component="ComponentInfo{in.dobig.bibledairy/in.dobig.bibledairy.MainActivity}" drawable="bible"/>
-    <item component="ComponentInfo{com.imagen.zulu/com.Thujasmeru.zulu.activity.SplashActivity}" drawable="bible"/>
+	<item component="ComponentInfo{org.biblesint.pck.bible/org.biblesint.pck.bible.AppMainActivity}" drawable="bible"/>
+	<item component="ComponentInfo{theological.bible.dictionary.offline/org.mainsoft.newbible.activity.LaunchActivity}" drawable="bible"/>
+	<item component="ComponentInfo{ch.joshuah.bibleverseapp/ch.joshuah.bibleverseapp.MainActivity}" drawable="bible"/>
+	<item component="ComponentInfo{org.worldbibleschool.wbslite.release/com.zoontek.rnbootsplash.RNBootSplashActivity}" drawable="bible"/>
+	<item component="ComponentInfo{com.smartbibles.smbathi/com.smartbibles.smbathi.activities.KambaHymnal}" drawable="bible"/>
+	<item component="ComponentInfo{com.oremus.catholic.bible.rosary.prayer/com.offline.bible.ui.splash.LaunchActivity}" drawable="bible"/>
+	<item component="ComponentInfo{com.bibleandjournalapp.freedomlife/com.subsplash.thechurchapp.SplashActivity}" drawable="bible"/>
+	<item component="ComponentInfo{ua.ws.bible.bibleandroid.en/ua.ws.bible.bibleandroid.activities.MainActivity}" drawable="bible"/>
+	<item component="ComponentInfo{com.rcvapp.lsm/com.rcvapp.lsm.MainActivity}" drawable="bible"/>
+	<item component="ComponentInfo{biblia.dela.mujer/biblia.dela.mujer.opiniorecoge.MiraraGuard}" drawable="bible"/>
+	<item component="ComponentInfo{in.dobig.bibledairy/in.dobig.bibledairy.MainActivity}" drawable="bible"/>
+	<item component="ComponentInfo{com.imagen.zulu/com.Thujasmeru.zulu.activity.SplashActivity}" drawable="bible"/>
 	<item component="ComponentInfo{net.bible.android.activity/net.bible.android.activity.StartupActivity}" drawable="bible"/>
 	<item component="ComponentInfo{com.biblica.openkiswahilicontemporarversion/com.biblica.openkiswahilicontemporarversion.AppIntroActivity}" drawable="bible"/>
 	<item component="ComponentInfo{com.bzn.christian.quotes/com.bzn.christian.quotes.MainActivity}" drawable="bible"/>
@@ -4917,11 +4886,24 @@
 	<!-- Biblioteket -->
 	<item component="ComponentInfo{app.redia.dk.biblioteket/app.redia.dk.biblioteket.MainActivity}" drawable="biblioteket"/>
 
+	<!-- Bibliotheek Wise -->
+	<item component="ComponentInfo{com.bicat.wise.androidapp/com.bicat.wise.androidapp.LaunchActivity}" drawable="bibliotheek_wise"/>
+
 	<!-- Biccamera -->
 	<item component="ComponentInfo{com.biccamera.android.mobile/com.biccamera.ui.LauncherActivity}" drawable="biccamera"/>
 
 	<!-- BicikeLJ official -->
 	<item component="ComponentInfo{com.jcdecaux.vls.ljubljana/com.jcdecaux.vls.app.navigation.NavigationActivity}" drawable="bicikelj"/>
+
+	<!-- Bicycle games -->
+	<item component="ComponentInfo{se.illusionlabs.touchgrindbmx2/se.illusionlabs.touchgrindbmx2.B2Activity}" drawable="bicycle"/>
+	<item component="ComponentInfo{se.illusionlabs.bmx/se.illusionlabs.bmx.BMXActivityGoogle}" drawable="bicycle"/>
+	<item component="ComponentInfo{com.turborilla.bmx2/com.turborilla.MadSkillsBMX2.MainActivity}" drawable="bicycle"/>
+	<item component="ComponentInfo{life.belt.bmx/com.unity3d.player.UnityPlayerActivity}" drawable="bicycle"/>
+	<item component="ComponentInfo{com.pf.bmx.cycle.games.extreme.bicycle.games/com.unity3d.player.UnityPlayerActivity}" drawable="bicycle"/>
+	<item component="ComponentInfo{jp.drsv.BMXSpace/com.unity3d.player.UnityPlayerActivity}" drawable="bicycle"/>
+	<item component="ComponentInfo{jp.drsv.BMXSpace/jp.drsv.BMXSpace.Ssczuuqmo}" drawable="bicycle"/>
+	<item component="ComponentInfo{com.big.bikelife/com.unity3d.player.UnityPlayerActivity}" drawable="bicycle"/>
 
 	<!-- BIDV SmartBanking -->
 	<item component="ComponentInfo{com.vnpay.bidv/com.vnpay.bidv.ui.activities.splash.SplashActivity}" drawable="smartbanking"/>
@@ -5339,15 +5321,15 @@
 	<item component="ComponentInfo{com.block.juggle/org.cocos2dx.javascript.AppActivity}" drawable="block_blast_adventure_master"/>
 
 	<!-- Block Puzzle -->
-    <item component="ComponentInfo{com.blockblast.adventuremaster.blockpuzzle.samsung/org.cocos2dx.javascript.AppActivity}" drawable="block_puzzle"/>
-    <item component="ComponentInfo{com.puzzleco.blockblastpuzzle/com.unity3d.player.UnityPlayerActivity}" drawable="block_puzzle"/>
-    <item component="ComponentInfo{wood.block.crush.adventure.puzzle.games/com.unity3d.player.UnityPlayerActivity}" drawable="block_puzzle"/>
-    <item component="ComponentInfo{linkdesks.block.puzzle.classic.puzzlegames/com.unity3d.player.UnityPlayerActivity}" drawable="block_puzzle"/>
-    <item component="ComponentInfo{com.hungrystudio.block.puzzle.fun.brain.free/org.cocos2dx.javascript.AppActivity}" drawable="block_puzzle"/>
-    <item component="ComponentInfo{com.bigcake.android.bpdaily/com.firefish.android.colorio.UnityPlayerNativeActivity}" drawable="block_puzzle"/>
-    <item component="ComponentInfo{com.sweetmaple.block.gp/com.unity3d.player.UnityPlayerActivity}" drawable="block_puzzle"/>
-    <item component="ComponentInfo{com.oakever.blockrush/com.beatles.unity.delegate.unity.DelegateActivity}" drawable="block_puzzle"/>
-    <item component="ComponentInfo{com.agedstudio.wood.block.puzzle.sudoku.game/org.cocos2dx.javascript.AppActivity}" drawable="block_puzzle"/>
+	<item component="ComponentInfo{com.blockblast.adventuremaster.blockpuzzle.samsung/org.cocos2dx.javascript.AppActivity}" drawable="block_puzzle"/>
+	<item component="ComponentInfo{com.puzzleco.blockblastpuzzle/com.unity3d.player.UnityPlayerActivity}" drawable="block_puzzle"/>
+	<item component="ComponentInfo{wood.block.crush.adventure.puzzle.games/com.unity3d.player.UnityPlayerActivity}" drawable="block_puzzle"/>
+	<item component="ComponentInfo{linkdesks.block.puzzle.classic.puzzlegames/com.unity3d.player.UnityPlayerActivity}" drawable="block_puzzle"/>
+	<item component="ComponentInfo{com.hungrystudio.block.puzzle.fun.brain.free/org.cocos2dx.javascript.AppActivity}" drawable="block_puzzle"/>
+	<item component="ComponentInfo{com.bigcake.android.bpdaily/com.firefish.android.colorio.UnityPlayerNativeActivity}" drawable="block_puzzle"/>
+	<item component="ComponentInfo{com.sweetmaple.block.gp/com.unity3d.player.UnityPlayerActivity}" drawable="block_puzzle"/>
+	<item component="ComponentInfo{com.oakever.blockrush/com.beatles.unity.delegate.unity.DelegateActivity}" drawable="block_puzzle"/>
+	<item component="ComponentInfo{com.agedstudio.wood.block.puzzle.sudoku.game/org.cocos2dx.javascript.AppActivity}" drawable="block_puzzle"/>
 	<item component="ComponentInfo{com.dxm.nopuzzle/com.dxm.nopuzzle.MainActivity}" drawable="block_puzzle"/>
 	<item component="ComponentInfo{com.ioplus.blockpuzzle.gem.block/com.unity3d.player.UnityPlayerActivity}" drawable="block_puzzle"/>
 	<item component="ComponentInfo{com.wood.block.puzzle.winner.game/com.unity3d.player.UnityPlayerActivity}" drawable="block_puzzle"/>
@@ -5470,6 +5452,9 @@
 
 	<!-- Blue Clover -->
 	<item component="ComponentInfo{bluehorse.clover/org.floens.chan.ui.activity.BoardActivity}" drawable="clover"/>
+
+	<!-- Blue Cross HK -->
+	<item component="ComponentInfo{hk.com.bluecross.mobileapp/com.innopage.bluecross.app.LaunchActivity}" drawable="blue_cross_hk"/>
 
 	<!-- Blue Light Card -->
 	<item component="ComponentInfo{com.bluelightcard.user/co.uk.bluelightcard.androidduo.redirect.RedirectActivity}" drawable="blue_light_card"/>
@@ -6027,6 +6012,9 @@
 	<!-- BRB Bank -->
 	<item component="ComponentInfo{br.com.brb.digitalflamengo/br.com.brb.digital.MainActivity}" drawable="brb_bank"/>
 
+	<!-- Breadboard -->
+	<item component="ComponentInfo{moe.apex.rule34/moe.apex.rule34.MainActivity}" drawable="breadboard"/>
+
 	<!-- Break.Down.Timer -->
 	<item component="ComponentInfo{de.jepfa.bdt/de.jepfa.bdt.MainActivity}" drawable="breakdowntimer"/>
 	<item component="ComponentInfo{de.jepfa.bdt.adfree/de.jepfa.bdt.adfree.MainActivity}" drawable="breakdowntimer"/>
@@ -6450,6 +6438,9 @@
 	<!-- Business Calender -->
 	<item component="ComponentInfo{com.appgenix.bizcal/com.appgenix.bizcal.LaunchActivity}" drawable="business_kalender"/>
 	<item component="ComponentInfo{com.appgenix.bizcal.pro/com.appgenix.bizcal.LaunchActivity}" drawable="business_kalender"/>
+
+	<!-- Business Empire -->
+	<item component="ComponentInfo{com.ttterbagames.businesssimulator/com.unity3d.player.UnityPlayerActivity}" drawable="business_empire"/>
 
 	<!-- Business Suite -->
 	<item component="ComponentInfo{com.facebook.pages.app/com.facebook.pages.app.auth.PagesManagerLoginActivity}" drawable="business_suite"/>
@@ -7314,39 +7305,39 @@
 	<item component="ComponentInfo{com.flavionet.android.camera.lite/com.flavionet.android.camera.MainActivity}" drawable="camera_fv5_lite"/>
 
 	<!-- Camera Pro -->
-    <item component="ComponentInfo{film.camera.vintage.rni/com.zipoapps.premiumhelper.ui.splash.PHSplashActivity}" drawable="camera_pro"/>
-    <item component="ComponentInfo{com.abus.app2camplus.gcm/com.jswpac.app.p2pcamera.activity.ActivitySplash}" drawable="camera_pro"/>
-    <item component="ComponentInfo{media.hd.photo.selfie.camera/com.ijoysoft.camerapro.activity.SplashActivity}" drawable="camera_pro"/>
-    <item component="ComponentInfo{com.camera.iphone11.pro/com.camera.iphone11.pro.ui.S23GalaxyWelcomeNewActivity}" drawable="camera_pro"/>
-    <item component="ComponentInfo{tapstudio.photoremove.unwanted.object/tapstudio.photoremove.unwanted.object.main.privacy.SelfieCamera14PrivacyActivity}" drawable="camera_pro"/>
-    <item component="ComponentInfo{com.iphoneforoscamera.icameraforiphone14/com.iphoneforoscamera.icameraforiphone14.HirdplashCameraActivity}" drawable="camera_pro"/>
-    <item component="ComponentInfo{com.hayhayapps.procamera/com.congvc.recordbackground.home.HomeActivity}" drawable="camera_pro"/>
-    <item component="ComponentInfo{com.vaultmicro.camerafi.live/com.vaultmicro.camerafi.live.ServerSelectActivity}" drawable="camera_pro"/>
-    <item component="ComponentInfo{dev.zwander.cameraxinfo/dev.zwander.cameraxinfo.MainActivity}" drawable="camera_pro"/>
-    <item component="ComponentInfo{com.atomath.camera.neutral/com.atomath.camera.neutral.MainActivity}" drawable="camera_pro"/>
-    <item component="ComponentInfo{com.lm.rolls.gp/com.lm.rolls.gp.activity.HomeActivity}" drawable="camera_pro"/>
-    <item component="ComponentInfo{com.funcamerastudio.videomaker/com.xvideostudio.videoeditor.activity.SplashActivity}" drawable="camera_pro"/>
-    <item component="ComponentInfo{camera.timestamp.gpsmap.photo.gpscamera/com.android.camera.activity.SplashActivity}" drawable="camera_pro"/>
-    <item component="ComponentInfo{com.ocean.gamecamerapro2/com.ocean.gamecamerapro2.MainActivity}" drawable="camera_pro"/>
-    <item component="ComponentInfo{com.photo.hd.camera.beauty.filter/com.photo.hd.camera.beauty.filter.activity.SplashActivity}" drawable="camera_pro"/>
-    <item component="ComponentInfo{camera.johana1/camera.johana1.view.MainActivity}" drawable="camera_pro"/>
-    <item component="ComponentInfo{com.changpeng.pro.camera.hd/com.lightcone.procamera.activity.splash.SplashActivity}" drawable="camera_pro"/>
-    <item component="ComponentInfo{com.jpbrothers.android.polaroid.sub1/com.joeware.android.gpulumera.camera.ActivityCamera}" drawable="camera_pro"/>
-    <item component="ComponentInfo{pl.vipek.camera2_compatibility_test/pl.vipek.camera2_compatibility_test.MainActivity}" drawable="camera_pro"/>
-    <item component="ComponentInfo{com.camera.ultra.zoom.luna.magnifier.zoom.unlimited/com.example.zoomdroid.MainActivity}" drawable="camera_pro"/>
-    <item component="ComponentInfo{com.just4funtools.megazoomcamera.xzoom/com.just4funtools.megazoomcamera.xzoom.PermissionRequestClass}" drawable="camera_pro"/>
-    <item component="ComponentInfo{org.codeaurora.quettre/com.android.camera.CameraLauncher}" drawable="camera_pro"/>
-    <item component="ComponentInfo{com.motioncam/com.motioncam.pro.CameraActivity}" drawable="camera_pro"/>
-    <item component="ComponentInfo{com.motioncam.pro/com.motioncam.pro.CameraActivity}" drawable="camera_pro"/>
-    <item component="ComponentInfo{pl.nextcamera/pl.nextcamera.MainActivity}" drawable="camera_pro"/>
-    <item component="ComponentInfo{purv.holismith.nightmode.nightcamera.hdphoto.cleanphoto/purv.holismith.nightmode.nightcamera.hdphoto.cleanphoto.SplashActivity}" drawable="camera_pro"/>
-    <item component="ComponentInfo{com.intermedia.hd.camera.professional/com.antafunny.burstcamera.MainActivity}" drawable="camera_pro"/>
-    <item component="ComponentInfo{com.peace.TextScanner/com.peace.TextScanner.CameraActivity}" drawable="camera_pro"/>
-    <item component="ComponentInfo{com.jeyluta.timestampcamera/com.example.PermissionActivity}" drawable="camera_pro"/>
-    <item component="ComponentInfo{com.tony.usbcamera.molink/com.serenegiant.usbcamera.SplashActivity1}" drawable="camera_pro"/>
-    <item component="ComponentInfo{com.mediatek.expert.mtkcamhelper/com.android.camera.CameraLauncher}" drawable="camera_pro"/>
-    <item component="ComponentInfo{com.xhey.xcamera/com.xhey.xcamera.ui.camera.SplashActivity}" drawable="camera_pro"/>
-    <item component="ComponentInfo{theindusdeveloper.com.colorcamera/com.theindusdeveloper.colorcamera.MainActivity}" drawable="camera_pro"/>
+	<item component="ComponentInfo{film.camera.vintage.rni/com.zipoapps.premiumhelper.ui.splash.PHSplashActivity}" drawable="camera_pro"/>
+	<item component="ComponentInfo{com.abus.app2camplus.gcm/com.jswpac.app.p2pcamera.activity.ActivitySplash}" drawable="camera_pro"/>
+	<item component="ComponentInfo{media.hd.photo.selfie.camera/com.ijoysoft.camerapro.activity.SplashActivity}" drawable="camera_pro"/>
+	<item component="ComponentInfo{com.camera.iphone11.pro/com.camera.iphone11.pro.ui.S23GalaxyWelcomeNewActivity}" drawable="camera_pro"/>
+	<item component="ComponentInfo{tapstudio.photoremove.unwanted.object/tapstudio.photoremove.unwanted.object.main.privacy.SelfieCamera14PrivacyActivity}" drawable="camera_pro"/>
+	<item component="ComponentInfo{com.iphoneforoscamera.icameraforiphone14/com.iphoneforoscamera.icameraforiphone14.HirdplashCameraActivity}" drawable="camera_pro"/>
+	<item component="ComponentInfo{com.hayhayapps.procamera/com.congvc.recordbackground.home.HomeActivity}" drawable="camera_pro"/>
+	<item component="ComponentInfo{com.vaultmicro.camerafi.live/com.vaultmicro.camerafi.live.ServerSelectActivity}" drawable="camera_pro"/>
+	<item component="ComponentInfo{dev.zwander.cameraxinfo/dev.zwander.cameraxinfo.MainActivity}" drawable="camera_pro"/>
+	<item component="ComponentInfo{com.atomath.camera.neutral/com.atomath.camera.neutral.MainActivity}" drawable="camera_pro"/>
+	<item component="ComponentInfo{com.lm.rolls.gp/com.lm.rolls.gp.activity.HomeActivity}" drawable="camera_pro"/>
+	<item component="ComponentInfo{com.funcamerastudio.videomaker/com.xvideostudio.videoeditor.activity.SplashActivity}" drawable="camera_pro"/>
+	<item component="ComponentInfo{camera.timestamp.gpsmap.photo.gpscamera/com.android.camera.activity.SplashActivity}" drawable="camera_pro"/>
+	<item component="ComponentInfo{com.ocean.gamecamerapro2/com.ocean.gamecamerapro2.MainActivity}" drawable="camera_pro"/>
+	<item component="ComponentInfo{com.photo.hd.camera.beauty.filter/com.photo.hd.camera.beauty.filter.activity.SplashActivity}" drawable="camera_pro"/>
+	<item component="ComponentInfo{camera.johana1/camera.johana1.view.MainActivity}" drawable="camera_pro"/>
+	<item component="ComponentInfo{com.changpeng.pro.camera.hd/com.lightcone.procamera.activity.splash.SplashActivity}" drawable="camera_pro"/>
+	<item component="ComponentInfo{com.jpbrothers.android.polaroid.sub1/com.joeware.android.gpulumera.camera.ActivityCamera}" drawable="camera_pro"/>
+	<item component="ComponentInfo{pl.vipek.camera2_compatibility_test/pl.vipek.camera2_compatibility_test.MainActivity}" drawable="camera_pro"/>
+	<item component="ComponentInfo{com.camera.ultra.zoom.luna.magnifier.zoom.unlimited/com.example.zoomdroid.MainActivity}" drawable="camera_pro"/>
+	<item component="ComponentInfo{com.just4funtools.megazoomcamera.xzoom/com.just4funtools.megazoomcamera.xzoom.PermissionRequestClass}" drawable="camera_pro"/>
+	<item component="ComponentInfo{org.codeaurora.quettre/com.android.camera.CameraLauncher}" drawable="camera_pro"/>
+	<item component="ComponentInfo{com.motioncam/com.motioncam.pro.CameraActivity}" drawable="camera_pro"/>
+	<item component="ComponentInfo{com.motioncam.pro/com.motioncam.pro.CameraActivity}" drawable="camera_pro"/>
+	<item component="ComponentInfo{pl.nextcamera/pl.nextcamera.MainActivity}" drawable="camera_pro"/>
+	<item component="ComponentInfo{purv.holismith.nightmode.nightcamera.hdphoto.cleanphoto/purv.holismith.nightmode.nightcamera.hdphoto.cleanphoto.SplashActivity}" drawable="camera_pro"/>
+	<item component="ComponentInfo{com.intermedia.hd.camera.professional/com.antafunny.burstcamera.MainActivity}" drawable="camera_pro"/>
+	<item component="ComponentInfo{com.peace.TextScanner/com.peace.TextScanner.CameraActivity}" drawable="camera_pro"/>
+	<item component="ComponentInfo{com.jeyluta.timestampcamera/com.example.PermissionActivity}" drawable="camera_pro"/>
+	<item component="ComponentInfo{com.tony.usbcamera.molink/com.serenegiant.usbcamera.SplashActivity1}" drawable="camera_pro"/>
+	<item component="ComponentInfo{com.mediatek.expert.mtkcamhelper/com.android.camera.CameraLauncher}" drawable="camera_pro"/>
+	<item component="ComponentInfo{com.xhey.xcamera/com.xhey.xcamera.ui.camera.SplashActivity}" drawable="camera_pro"/>
+	<item component="ComponentInfo{theindusdeveloper.com.colorcamera/com.theindusdeveloper.colorcamera.MainActivity}" drawable="camera_pro"/>
 	<item component="ComponentInfo{com.mm.android.direct.gdmssphoneLite/com.mm.android.direct.gdmssphone.SplashActivity}" drawable="camera_pro"/>
 	<item component="ComponentInfo{com.mm.android.direct.gdmssphone/com.mm.android.direct.gdmssphone.SplashActivity}" drawable="camera_pro"/>
 	<item component="ComponentInfo{com.appbreakers.hdcamera/com.appbreakers.opencamera.MainActivity}" drawable="camera_pro"/>
@@ -7846,14 +7837,14 @@
 	<!-- Cent Mobile -->
 	<item component="ComponentInfo{com.infrasofttech.CentralBank/com.infrasofttech.centralbank.SplashActivity}" drawable="cent_mobile"/>
 
-	<!-- CenturyLink -->
-	<item component="ComponentInfo{com.centurylink.ctl_droid_wrap/com.centurylink.ctl_droid_wrap.presentation.preLogin.PreLoginActivity}" drawable="centurylink"/>
-
 	<!-- Central -->
 	<item component="ComponentInfo{com.centraldepartment.app/com.centraldepartment.app.MainActivity}" drawable="central"/>
 
 	<!-- Centrelink -->
 	<item component="ComponentInfo{au.gov.dhs.centrelinkexpressplus/au.gov.dhs.centrelink.expressplus.app.activities.anonymous.LauncherActivity}" drawable="centrelink"/>
+
+	<!-- CenturyLink -->
+	<item component="ComponentInfo{com.centurylink.ctl_droid_wrap/com.centurylink.ctl_droid_wrap.presentation.preLogin.PreLoginActivity}" drawable="centurylink"/>
 
 	<!-- Cep Sifrematik -->
 	<item component="ComponentInfo{biz.mobinex.android.apps.cep_sifrematik/biz.mobinex.android.apps.cep_sifrematik.A}" drawable="cep_sifrematik"/>
@@ -7922,6 +7913,9 @@
 
 	<!-- Chanu -->
 	<item component="ComponentInfo{com.chanapps.four.activity/com.chanapps.four.activity.StartupActivity}" drawable="chanu"/>
+
+	<!-- Chaoxing Mobile -->
+	<item component="ComponentInfo{com.chaoxing.mobile/com.chaoxing.mobile.activity.SplashActivity}" drawable="chaoxing_mobile"/>
 
 	<!-- Character Pad -->
 	<item component="ComponentInfo{com.husseinelfeky.characterpad/com.husseinelfeky.characterpad.StartupActivity}" drawable="character_pad"/>
@@ -8199,9 +8193,6 @@
 	<item component="ComponentInfo{de.chadenas.cpudefense/com.example.cpudefense.WelcomeActivity}" drawable="chipdefense"/>
 	<item component="ComponentInfo{de.chadenas.cpudefense/com.example.cpudefense.activities.WelcomeActivity}" drawable="chipdefense"/>
 
-	<!-- RealityScan -->
-	<item component="ComponentInfo{com.epicgames.realityscan/com.epicgames.realityscan.MainActivity}" drawable="realityscan"/>
-
 	<!-- Chipolo -->
 	<item component="ComponentInfo{chipolo.net.v3/net.chipolo.app.ui.main.MainActivity}" drawable="chipolo"/>
 
@@ -8249,6 +8240,9 @@
 
 	<!-- Chrono -->
 	<item component="ComponentInfo{com.vicolo.chrono/com.vicolo.chrono.MainActivity}" drawable="chrono"/>
+
+	<!-- Chrono -->
+	<item component="ComponentInfo{quebec.artm.chrono/quebec.artm.chrono.ui.main.MainActivity}" drawable="artm_chrono"/>
 
 	<!-- Chrono24 -->
 	<item component="ComponentInfo{com.chrono24.mobile/com.chrono24.mobile.MainActivity}" drawable="chrono24"/>
@@ -9495,6 +9489,9 @@
 	<!-- Countries Been -->
 	<item component="ComponentInfo{com.riliclabs.countriesbeen/com.riliclabs.countriesbeen.LoginActivity}" drawable="countries_been"/>
 
+	<!-- Couple Widget -->
+	<item component="ComponentInfo{princ.lifestyle.CoupleWidget/princ.lifestyle.CoupleWidget.LoadingActivity}" drawable="couple_widget"/>
+
 	<!-- Coursera -->
 	<item component="ComponentInfo{org.coursera.android/org.coursera.android.splash.MainActivity}" drawable="coursera"/>
 	<item component="ComponentInfo{org.coursera.android/org.coursera.android.MainActivity}" drawable="coursera"/>
@@ -9835,6 +9832,9 @@
 
 	<!-- Current Activity -->
 	<item component="ComponentInfo{com.willme.topactivity/com.willme.topactivity.MainActivity}" drawable="current_activity"/>
+
+	<!-- Cursed house Multiplayer(GMM) -->
+	<item component="ComponentInfo{com.UnityUserco.EscapeHauntedHouseOnline/com.unity3d.player.UnityPlayerActivity}" drawable="cursed_house_multiplayer_gmm"/>
 
 	<!-- Curve -->
 	<item component="ComponentInfo{com.imaginecurve.curve.prd/com.imaginecurve.curve.startup.launch.LaunchActivity}" drawable="curve"/>
@@ -10487,6 +10487,9 @@
 	<!-- Denkzettel -->
 	<item component="ComponentInfo{com.silli.notizen/com.silli.notizen.main}" drawable="denkzettel"/>
 
+	<!-- Departures live -->
+	<item component="ComponentInfo{com.initka.android.departurelive/com.initka.android.departurelive.MainActivity}" drawable="departures_live"/>
+
 	<!-- Depop -->
 	<item component="ComponentInfo{com.depop/com.depop._v2.splash.app.SplashActivity}" drawable="depop"/>
 
@@ -10568,6 +10571,9 @@
 
 	<!-- DeutschlandCard -->
 	<item component="ComponentInfo{de.deutschlandcard.app/de.deutschlandcard.app.ui.LaunchActivity}" drawable="deutschlandcard"/>
+
+	<!-- DevBytes -->
+	<item component="ComponentInfo{com.candelalabs.devbytes/com.candelalabs.devbytes.ui.main.view.activities.MainActivity}" drawable="devbytes"/>
 
 	<!-- DevCheck -->
 	<item component="ComponentInfo{flar2.devcheck/flar2.devcheck.SplashActivity}" drawable="devcheck"/>
@@ -11308,6 +11314,9 @@
 	<item component="ComponentInfo{co.aospa.dolby.xiaomi/co.aospa.dolby.xiaomi.DolbyActivity}" drawable="dolby"/>
 	<item component="ComponentInfo{co.aospa.settings.dolby/co.aospa.settings.dolby.DolbyActivity}" drawable="dolby"/>
 
+	<!-- Dollar General -->
+	<item component="ComponentInfo{com.dollargeneral.android/dgapp2.dollargeneral.com.dgapp2_android.SplashActivity}" drawable="dollar_general"/>
+
 	<!-- Dollphone Icon Pack -->
 	<item component="ComponentInfo{me.x2gd4.dollphone/me.x2gd4.dollphone.activities.MainActivity}" drawable="dollphone_icon_pack"/>
 
@@ -11376,6 +11385,9 @@
 	<!-- Don't Sleep! -->
 	<item component="ComponentInfo{com.ilieinc.dontsleep/com.ilieinc.dontsleep.MainActivity}" drawable="dont_sleep"/>
 
+	<!-- Dongchedi -->
+	<item component="ComponentInfo{com.ss.android.auto/com.ss.android.auto.policy.AutoPrivacyActivity}" drawable="dongchedi"/>
+
 	<!-- Dont Starve -->
 	<item component="ComponentInfo{com.kleientertainment.doNotStarvePocket/com.kleientertainment.doNotStarvePocket.DoNotStarveActivity}" drawable="dont_starve"/>
 
@@ -11424,6 +11436,9 @@
 
 	<!-- Dots & Co -->
 	<item component="ComponentInfo{com.weplaydots.plus/com.weplaydots.plus.PlusActivity}" drawable="dots_and_co"/>
+
+	<!-- Dott -->
+	<item component="ComponentInfo{com.ridedott.rider/com.ridedott.rider.MainActivity}" drawable="dott"/>
 
 	<!-- dotty -->
 	<item component="ComponentInfo{com.architurk.dotty/com.architurk.dotty.MainActivity}" drawable="dotty_icon"/>
@@ -11642,46 +11657,46 @@
 	<item component="ComponentInfo{com.merryblue.facebookvideodownloader/com.merryblue.facebookvideodownloader.ui.splash.SplashActivity}" drawable="downloads"/>
 
 	<!-- Downloads -->
-    <item component="ComponentInfo{com.shortnetic.downloadershorts/com.shortnetic.downloadershorts.MainActivity}" drawable="downloads"/>
-    <item component="ComponentInfo{pin.pinterest.video.downloader.forpinterest/com.pinterest.video.downloader.act.SplashActivity}" drawable="downloads"/>
-    <item component="ComponentInfo{facebookstorysaver.storysaverforfacebook.fbstorydownloader.fbstorysaver.fb/facebookstorysaver.storysaverforfacebook.fbstorydownloader.fbstorysaver.fb.facebookstorysaver_activities.storysaverforfacebook_SplashScreen}" drawable="downloads"/>
-    <item component="ComponentInfo{com.coloros.phoneclonedownloader/com.coloros.phoneclonedownloader.MainActivity}" drawable="downloads"/>
-    <item component="ComponentInfo{story.saver.photo.video.downloader.tmate/insta.story.saver.download.photo.video.ui.splash.SplashJeddyAppsActivity}" drawable="downloads"/>
-    <item component="ComponentInfo{fb.video.downloader/com.fastvid.fbvideodownloader.activities.SplashScreenActivity}" drawable="downloads"/>
-    <item component="ComponentInfo{uk.co.expresspublishing.ExpressDownloader/uk.co.expresspublishing.ExpressDownloader.MainActivity}" drawable="downloads"/>
-    <item component="ComponentInfo{com.insta.downloader.saver.instake.ig.save.new/com.insta.downloader.saver.instake.ig.save.MainActivity}" drawable="downloads"/>
-    <item component="ComponentInfo{videodownloader.instagram.videosaver/videodownloader.instagram.videosaver.StartupActivity}" drawable="downloads"/>
-    <item component="ComponentInfo{video.player.free.offline.downloader.movie.social.larkplayer.media.mp4/com.dywx.larkplayer.main.MainActivity}" drawable="downloads"/>
-    <item component="ComponentInfo{org.zloy.android.downloader/org.zloy.android.downloader.activities.LoadingListActivity}" drawable="downloads"/>
-    <item component="ComponentInfo{com.tube.music.downloader.download.lagu.mp3.descargar.gratis.baixar.free/filk.TEAT}" drawable="downloads"/>
-    <item component="ComponentInfo{com.video.downloader.vidtube.pro/com.mobz.main.SplashActivity}" drawable="downloads"/>
-    <item component="ComponentInfo{com.tubeplay.music.downloader.mp3.download.snap.app/gandroid.YANDROID}" drawable="downloads"/>
-    <item component="ComponentInfo{com.download.music.mp3.downloader.free.lagu.song.app/fyy.SYY}" drawable="downloads"/>
-    <item component="ComponentInfo{com.simp1emusic.free.music/com.wul.mm.ui.LoadingActivity}" drawable="downloads"/>
-    <item component="ComponentInfo{smart.download.video.gif.forpinterest/smart.download.video.gif.forpinterest.main}" drawable="downloads"/>
-    <item component="ComponentInfo{video.downloader.pinterest.downloader/com.pinterest.video.downloader.act.PPSplashActivity}" drawable="downloads"/>
-    <item component="ComponentInfo{snaptik.snaptok.nowatermark.videodownloader.tiksaver.videosaver.watermark.remover/snaptik.snaptok.nowatermark.videodownloader.tiksaver.videosaver.watermark.remover.ui.main.MainActivity}" drawable="downloads"/>
-    <item component="ComponentInfo{com.snapmate.tiktokdownloadernowatermark/com.example.tiktok.activities.SplashActivity}" drawable="downloads"/>
-    <item component="ComponentInfo{spotdown.spotify.downloader/spotdown.spotify.downloader.MainActivity}" drawable="downloads"/>
-    <item component="ComponentInfo{statussaver.saveit.videodownloader.downloadwhatsappstatus/statussaver.saveit.videodownloader.downloadwhatsappstatus.activities.WelcomeScreenActivity}" drawable="downloads"/>
-    <item component="ComponentInfo{savestatus.downloadstatus.faststatussavingapp.storysaver/com.app.status.saver.ui.activities.starter.SplashActivity}" drawable="downloads"/>
-    <item component="ComponentInfo{com.video.downloader.eopiu/org.schabi.newpipe.WelcomeActivity}" drawable="downloads"/>
-    <item component="ComponentInfo{com.video.downloader.eopiu/com.tube24.j_tube.J_WelcomeActivity}" drawable="downloads"/>
-    <item component="ComponentInfo{ru.codeluck.tiktok.downloader/ru.codeluck.tiktok.downloader.mvvm.main.activity.presentation.MainActivity}" drawable="downloads"/>
-    <item component="ComponentInfo{com.tiktok.downloader.watermark.remover/a.c.ui.activity.SplashActivity}" drawable="downloads"/>
-    <item component="ComponentInfo{com.maherposh.episodes/com.niotron.shafiqanjum056.Sound_Downloader.Screen1}" drawable="downloads"/>
-    <item component="ComponentInfo{tweeload.twitter.video.downloader/tweeload.twitter.video.downloader.MainActivity}" drawable="downloads"/>
-    <item component="ComponentInfo{tweeload.twitter.video.downloader/tweeload.twitter.video.downloader.ui.MainActivity}" drawable="downloads"/>
-    <item component="ComponentInfo{aculix.video.downloader.for.reels/aculix.video.downloader.forreels.ui.MainActivity}" drawable="downloads"/>
-    <item component="ComponentInfo{aculix.viddit.downloader/aculix.viddit.downloader.ui.MainActivity}" drawable="downloads"/>
-    <item component="ComponentInfo{com.videodownload.reels.storysaver.igdownloader/com.videodownload.reels.storysaver.igdownloader.presentation.ui.splash.SplashActivity}" drawable="downloads"/>
-    <item component="ComponentInfo{com.vid_dl.lite/dv.amazinggogo.strong.browser.activity.SplashActivity}" drawable="downloads"/>
-    <item component="ComponentInfo{com.savetok.nowatermark.ttsaver.tiksaver.ttvideodownloader.snaptik/com.savetok.nowatermark.ttsaver.tiksaver.ttvideodownloader.snaptik.presentation.main.MainActivity}" drawable="downloads"/>
-    <item component="ComponentInfo{com.bbmmapp.toolsdownload.videomasters/com.benztools.videomaster.MainActivity}" drawable="downloads"/>
-    <item component="ComponentInfo{com.benztools.mastervideodownload/com.benztools.mastervideodownload.MainActivity}" drawable="downloads"/>
-    <item component="ComponentInfo{com.video.downloader.vidtube.pro/com.mobz.vml.main.AppMainActivity}" drawable="downloads"/>
-    <item component="ComponentInfo{com.video.free.x.play.downloader/com.video.free.x.play.downloader.ui.init.InitActivity}" drawable="downloads"/>
-    <item component="ComponentInfo{twittervideosaver.twittervideodownloader.twimate.savetwittergif/twitter.downloader.twitterdownloader.activity.SplashActivity}" drawable="downloads"/>
+	<item component="ComponentInfo{com.shortnetic.downloadershorts/com.shortnetic.downloadershorts.MainActivity}" drawable="downloads"/>
+	<item component="ComponentInfo{pin.pinterest.video.downloader.forpinterest/com.pinterest.video.downloader.act.SplashActivity}" drawable="downloads"/>
+	<item component="ComponentInfo{facebookstorysaver.storysaverforfacebook.fbstorydownloader.fbstorysaver.fb/facebookstorysaver.storysaverforfacebook.fbstorydownloader.fbstorysaver.fb.facebookstorysaver_activities.storysaverforfacebook_SplashScreen}" drawable="downloads"/>
+	<item component="ComponentInfo{com.coloros.phoneclonedownloader/com.coloros.phoneclonedownloader.MainActivity}" drawable="downloads"/>
+	<item component="ComponentInfo{story.saver.photo.video.downloader.tmate/insta.story.saver.download.photo.video.ui.splash.SplashJeddyAppsActivity}" drawable="downloads"/>
+	<item component="ComponentInfo{fb.video.downloader/com.fastvid.fbvideodownloader.activities.SplashScreenActivity}" drawable="downloads"/>
+	<item component="ComponentInfo{uk.co.expresspublishing.ExpressDownloader/uk.co.expresspublishing.ExpressDownloader.MainActivity}" drawable="downloads"/>
+	<item component="ComponentInfo{com.insta.downloader.saver.instake.ig.save.new/com.insta.downloader.saver.instake.ig.save.MainActivity}" drawable="downloads"/>
+	<item component="ComponentInfo{videodownloader.instagram.videosaver/videodownloader.instagram.videosaver.StartupActivity}" drawable="downloads"/>
+	<item component="ComponentInfo{video.player.free.offline.downloader.movie.social.larkplayer.media.mp4/com.dywx.larkplayer.main.MainActivity}" drawable="downloads"/>
+	<item component="ComponentInfo{org.zloy.android.downloader/org.zloy.android.downloader.activities.LoadingListActivity}" drawable="downloads"/>
+	<item component="ComponentInfo{com.tube.music.downloader.download.lagu.mp3.descargar.gratis.baixar.free/filk.TEAT}" drawable="downloads"/>
+	<item component="ComponentInfo{com.video.downloader.vidtube.pro/com.mobz.main.SplashActivity}" drawable="downloads"/>
+	<item component="ComponentInfo{com.tubeplay.music.downloader.mp3.download.snap.app/gandroid.YANDROID}" drawable="downloads"/>
+	<item component="ComponentInfo{com.download.music.mp3.downloader.free.lagu.song.app/fyy.SYY}" drawable="downloads"/>
+	<item component="ComponentInfo{com.simp1emusic.free.music/com.wul.mm.ui.LoadingActivity}" drawable="downloads"/>
+	<item component="ComponentInfo{smart.download.video.gif.forpinterest/smart.download.video.gif.forpinterest.main}" drawable="downloads"/>
+	<item component="ComponentInfo{video.downloader.pinterest.downloader/com.pinterest.video.downloader.act.PPSplashActivity}" drawable="downloads"/>
+	<item component="ComponentInfo{snaptik.snaptok.nowatermark.videodownloader.tiksaver.videosaver.watermark.remover/snaptik.snaptok.nowatermark.videodownloader.tiksaver.videosaver.watermark.remover.ui.main.MainActivity}" drawable="downloads"/>
+	<item component="ComponentInfo{com.snapmate.tiktokdownloadernowatermark/com.example.tiktok.activities.SplashActivity}" drawable="downloads"/>
+	<item component="ComponentInfo{spotdown.spotify.downloader/spotdown.spotify.downloader.MainActivity}" drawable="downloads"/>
+	<item component="ComponentInfo{statussaver.saveit.videodownloader.downloadwhatsappstatus/statussaver.saveit.videodownloader.downloadwhatsappstatus.activities.WelcomeScreenActivity}" drawable="downloads"/>
+	<item component="ComponentInfo{savestatus.downloadstatus.faststatussavingapp.storysaver/com.app.status.saver.ui.activities.starter.SplashActivity}" drawable="downloads"/>
+	<item component="ComponentInfo{com.video.downloader.eopiu/org.schabi.newpipe.WelcomeActivity}" drawable="downloads"/>
+	<item component="ComponentInfo{com.video.downloader.eopiu/com.tube24.j_tube.J_WelcomeActivity}" drawable="downloads"/>
+	<item component="ComponentInfo{ru.codeluck.tiktok.downloader/ru.codeluck.tiktok.downloader.mvvm.main.activity.presentation.MainActivity}" drawable="downloads"/>
+	<item component="ComponentInfo{com.tiktok.downloader.watermark.remover/a.c.ui.activity.SplashActivity}" drawable="downloads"/>
+	<item component="ComponentInfo{com.maherposh.episodes/com.niotron.shafiqanjum056.Sound_Downloader.Screen1}" drawable="downloads"/>
+	<item component="ComponentInfo{tweeload.twitter.video.downloader/tweeload.twitter.video.downloader.MainActivity}" drawable="downloads"/>
+	<item component="ComponentInfo{tweeload.twitter.video.downloader/tweeload.twitter.video.downloader.ui.MainActivity}" drawable="downloads"/>
+	<item component="ComponentInfo{aculix.video.downloader.for.reels/aculix.video.downloader.forreels.ui.MainActivity}" drawable="downloads"/>
+	<item component="ComponentInfo{aculix.viddit.downloader/aculix.viddit.downloader.ui.MainActivity}" drawable="downloads"/>
+	<item component="ComponentInfo{com.videodownload.reels.storysaver.igdownloader/com.videodownload.reels.storysaver.igdownloader.presentation.ui.splash.SplashActivity}" drawable="downloads"/>
+	<item component="ComponentInfo{com.vid_dl.lite/dv.amazinggogo.strong.browser.activity.SplashActivity}" drawable="downloads"/>
+	<item component="ComponentInfo{com.savetok.nowatermark.ttsaver.tiksaver.ttvideodownloader.snaptik/com.savetok.nowatermark.ttsaver.tiksaver.ttvideodownloader.snaptik.presentation.main.MainActivity}" drawable="downloads"/>
+	<item component="ComponentInfo{com.bbmmapp.toolsdownload.videomasters/com.benztools.videomaster.MainActivity}" drawable="downloads"/>
+	<item component="ComponentInfo{com.benztools.mastervideodownload/com.benztools.mastervideodownload.MainActivity}" drawable="downloads"/>
+	<item component="ComponentInfo{com.video.downloader.vidtube.pro/com.mobz.vml.main.AppMainActivity}" drawable="downloads"/>
+	<item component="ComponentInfo{com.video.free.x.play.downloader/com.video.free.x.play.downloader.ui.init.InitActivity}" drawable="downloads"/>
+	<item component="ComponentInfo{twittervideosaver.twittervideodownloader.twimate.savetwittergif/twitter.downloader.twitterdownloader.activity.SplashActivity}" drawable="downloads"/>
 	<item component="ComponentInfo{net.metareverse.hyperdownloader/net.metareverse.hyperdownloader.MainActivity}" drawable="downloads"/>
 	<item component="ComponentInfo{com.shortsdownloader.app/com.developer.arsltech.github.MainActivity}" drawable="downloads"/>
 	<item component="ComponentInfo{com.natheerapp.downloader/com.natheerapp.downloader.activity.SplashScreen}" drawable="downloads"/>
@@ -12198,6 +12213,12 @@
 
 	<!-- Earmouse -->
 	<item component="ComponentInfo{pk.contender.earmouse/pk.contender.earmouse.Main}" drawable="earmouse"/>
+
+	<!-- Earn to Die 2 -->
+	<item component="ComponentInfo{com.notdoppler.earntodie2/com.notdoppler.earntodie2.AppActivity}" drawable="earn_to_die_2"/>
+
+	<!-- Earn to Die Rogue -->
+	<item component="ComponentInfo{com.notdoppler.earntodierogue/com.unity3d.player.UnityPlayerActivity}" drawable="earn_to_die_rogue"/>
 
 	<!-- Earth & Moon -->
 	<item component="ComponentInfo{com.afkettler.earth/com.afkettler.earth.LauncherActivity}" drawable="earthmoon"/>
@@ -12722,11 +12743,11 @@
 	<!-- Endel -->
 	<item component="ComponentInfo{com.endel.endel/com.endel.endel.use_cases.root.RootActivity}" drawable="endel"/>
 
-	<!-- Endlos Quiz -->
-	<item component="ComponentInfo{com.timleg.quiz/com.timleg.quiz.Game}" drawable="symbol_question_mark"/>
-
 	<!-- Endless Sky -->
 	<item component="ComponentInfo{com.github.thewierdnut.endless_mobile/com.github.thewierdnut.endless_mobile.ESActivity}" drawable="endless_sky"/>
+
+	<!-- Endlos Quiz -->
+	<item component="ComponentInfo{com.timleg.quiz/com.timleg.quiz.Game}" drawable="symbol_question_mark"/>
 
 	<!-- Eneba -->
 	<item component="ComponentInfo{com.eneba.app/com.enebaapp.MainActivity}" drawable="eneba"/>
@@ -13568,6 +13589,9 @@
 	<item component="ComponentInfo{com.aniplex.fategrandorder.en/jp.delightworks.Fgo.player.AndroidPlugin}" drawable="fate_go"/>
 	<item component="ComponentInfo{com.aniplex.fategrandorder/jp.delightworks.Fgo.player.AndroidPlugin}" drawable="fate_go"/>
 
+	<!-- FatSecret -->
+	<item component="ComponentInfo{com.fatsecret.android/com.fatsecret.android.ui.activity.StartupActivity}" drawable="fatsecret"/>
+
 	<!-- Fawry -->
 	<item component="ComponentInfo{com.mode.fib.ui/com.mode.fib.ui.SplashScreen}" drawable="fawry"/>
 
@@ -13766,6 +13790,13 @@
 
 	<!-- FHCode -->
 	<item component="ComponentInfo{com.fredhappyface.fhcode/com.fredhappyface.fhcode.ActivityMain}" drawable="fhcode"/>
+
+	<!-- FHS Russia apps -->
+	<item component="ComponentInfo{com.gnivts.selfemployed/com.crpt.samoz.samozan.new_arch.MainActivity}" drawable="fhs_russia"/>
+	<item component="ComponentInfo{ru.fns.lkfl/ru.fns.lkfl.MainActivity}" drawable="fhs_russia"/>
+	<item component="ComponentInfo{com.gnivts.ausn/com.gnivts.ausn.MainActivity}" drawable="fhs_russia"/>
+	<item component="ComponentInfo{ru.gnivc.lkip/ru.gnivc.lkip.MainActivity}" drawable="fhs_russia"/>
+	<item component="ComponentInfo{es.hol.ing.zagsr/com.zoontek.rnbootsplash.RNBootSplashActivity}" drawable="fhs_russia"/>
 
 	<!-- Fi -->
 	<item component="ComponentInfo{com.epifi.paisa/com.epifi.paisa.MainActivityAliasDefault}" drawable="fi"/>
@@ -14272,6 +14303,9 @@
 	<!-- Flick Launcher -->
 	<item component="ComponentInfo{com.universallauncher.universallauncher/com.android.launcher3.Launcher}" drawable="flick_launcher"/>
 
+	<!-- Flickboard -->
+	<item component="ComponentInfo{se.nullable.flickboard/se.nullable.flickboard.MainActivity}" drawable="flickboard"/>
+
 	<!-- Flickr -->
 	<item component="ComponentInfo{com.yahoo.mobile.client.android.flickr/com.yahoo.mobile.client.android.flickr.ui.misc.LoginActivity}" drawable="flickr"/>
 	<item component="ComponentInfo{com.flickr.android/com.yahoo.mobile.client.android.flickr.ui.misc.LoginActivity}" drawable="flickr"/>
@@ -14385,6 +14419,9 @@
 	<item component="ComponentInfo{me.rutrackersearch.app/me.rutrackersearch.app.MainActivity}" drawable="flow"/>
 
 	<!-- Flow Free -->
+	<item component="ComponentInfo{com.bigduckgames.flowshapes/com.bigduckgames.flow.flow}" drawable="flowfreeshapes"/>
+
+	<!-- Flow Free -->
 	<item component="ComponentInfo{com.bigduckgames.flow/com.bigduckgames.flow.flow}" drawable="flowfree"/>
 
 	<!-- Flow Free Bridges -->
@@ -14411,6 +14448,9 @@
 
 	<!-- FlowX -->
 	<item component="ComponentInfo{com.enzuredigital.weatherbomb/com.enzuredigital.weatherbomb.WeatherActivity}" drawable="flowx"/>
+
+	<!-- FLTR -->
+	<item component="ComponentInfo{com.feelty/com.feelty.activity.MainActivity}" drawable="fltr"/>
 
 	<!-- Flud -->
 	<item component="ComponentInfo{com.delphicoder.flud.paid/com.delphicoder.flud.MainActivity}" drawable="flud"/>
@@ -14807,25 +14847,25 @@
 	<item component="ComponentInfo{org.fossify.calendar/org.fossify.calendar.activities.SplashActivity.Red}" drawable="fossify_calendar"/>
 
 	<!-- Fossify Calendar -->
-	<calendar component="ComponentInfo{org.fossify.calendar/org.fossify.calendar.activities.SplashActivity.Pink}" prefix="calendar_fossify_"/>
-	<calendar component="ComponentInfo{org.fossify.calendar/org.fossify.calendar.activities.SplashActivity.Purple}" prefix="calendar_fossify_"/>
-	<calendar component="ComponentInfo{org.fossify.calendar/org.fossify.calendar.activities.SplashActivity.Deep_purple}" prefix="calendar_fossify_"/>
-	<calendar component="ComponentInfo{org.fossify.calendar/org.fossify.calendar.activities.SplashActivity.Indigo}" prefix="calendar_fossify_"/>
-	<calendar component="ComponentInfo{org.fossify.calendar/org.fossify.calendar.activities.SplashActivity.Blue}" prefix="calendar_fossify_"/>
-	<calendar component="ComponentInfo{org.fossify.calendar/org.fossify.calendar.activities.SplashActivity.Light_blue}" prefix="calendar_fossify_"/>
-	<calendar component="ComponentInfo{org.fossify.calendar/org.fossify.calendar.activities.SplashActivity.Cyan}" prefix="calendar_fossify_"/>
-	<calendar component="ComponentInfo{org.fossify.calendar/org.fossify.calendar.activities.SplashActivity.Teal}" prefix="calendar_fossify_"/>
-	<calendar component="ComponentInfo{org.fossify.calendar/org.fossify.calendar.activities.SplashActivity.Green}" prefix="calendar_fossify_"/>
-	<calendar component="ComponentInfo{org.fossify.calendar/org.fossify.calendar.activities.SplashActivity.Light_green}" prefix="calendar_fossify_"/>
-	<calendar component="ComponentInfo{org.fossify.calendar/org.fossify.calendar.activities.SplashActivity.Lime}" prefix="calendar_fossify_"/>
-	<calendar component="ComponentInfo{org.fossify.calendar/org.fossify.calendar.activities.SplashActivity.Yellow}" prefix="calendar_fossify_"/>
-	<calendar component="ComponentInfo{org.fossify.calendar/org.fossify.calendar.activities.SplashActivity.Amber}" prefix="calendar_fossify_"/>
-	<calendar component="ComponentInfo{org.fossify.calendar/org.fossify.calendar.activities.SplashActivity.Orange}" prefix="calendar_fossify_"/>
-	<calendar component="ComponentInfo{org.fossify.calendar/org.fossify.calendar.activities.SplashActivity.Deep_orange}" prefix="calendar_fossify_"/>
-	<calendar component="ComponentInfo{org.fossify.calendar/org.fossify.calendar.activities.SplashActivity.Brown}" prefix="calendar_fossify_"/>
-	<calendar component="ComponentInfo{org.fossify.calendar/org.fossify.calendar.activities.SplashActivity.Blue_grey}" prefix="calendar_fossify_"/>
-	<calendar component="ComponentInfo{org.fossify.calendar/org.fossify.calendar.activities.SplashActivity.Grey_black}" prefix="calendar_fossify_"/>
-	<calendar component="ComponentInfo{org.fossify.calendar/org.fossify.calendar.activities.SplashActivity.Red}" prefix="calendar_fossify_"/>
+  <calendar component="ComponentInfo{org.fossify.calendar/org.fossify.calendar.activities.SplashActivity.Pink}" prefix="calendar_fossify_"/>
+  <calendar component="ComponentInfo{org.fossify.calendar/org.fossify.calendar.activities.SplashActivity.Purple}" prefix="calendar_fossify_"/>
+  <calendar component="ComponentInfo{org.fossify.calendar/org.fossify.calendar.activities.SplashActivity.Deep_purple}" prefix="calendar_fossify_"/>
+  <calendar component="ComponentInfo{org.fossify.calendar/org.fossify.calendar.activities.SplashActivity.Indigo}" prefix="calendar_fossify_"/>
+  <calendar component="ComponentInfo{org.fossify.calendar/org.fossify.calendar.activities.SplashActivity.Blue}" prefix="calendar_fossify_"/>
+  <calendar component="ComponentInfo{org.fossify.calendar/org.fossify.calendar.activities.SplashActivity.Light_blue}" prefix="calendar_fossify_"/>
+  <calendar component="ComponentInfo{org.fossify.calendar/org.fossify.calendar.activities.SplashActivity.Cyan}" prefix="calendar_fossify_"/>
+  <calendar component="ComponentInfo{org.fossify.calendar/org.fossify.calendar.activities.SplashActivity.Teal}" prefix="calendar_fossify_"/>
+  <calendar component="ComponentInfo{org.fossify.calendar/org.fossify.calendar.activities.SplashActivity.Green}" prefix="calendar_fossify_"/>
+  <calendar component="ComponentInfo{org.fossify.calendar/org.fossify.calendar.activities.SplashActivity.Light_green}" prefix="calendar_fossify_"/>
+  <calendar component="ComponentInfo{org.fossify.calendar/org.fossify.calendar.activities.SplashActivity.Lime}" prefix="calendar_fossify_"/>
+  <calendar component="ComponentInfo{org.fossify.calendar/org.fossify.calendar.activities.SplashActivity.Yellow}" prefix="calendar_fossify_"/>
+  <calendar component="ComponentInfo{org.fossify.calendar/org.fossify.calendar.activities.SplashActivity.Amber}" prefix="calendar_fossify_"/>
+  <calendar component="ComponentInfo{org.fossify.calendar/org.fossify.calendar.activities.SplashActivity.Orange}" prefix="calendar_fossify_"/>
+  <calendar component="ComponentInfo{org.fossify.calendar/org.fossify.calendar.activities.SplashActivity.Deep_orange}" prefix="calendar_fossify_"/>
+  <calendar component="ComponentInfo{org.fossify.calendar/org.fossify.calendar.activities.SplashActivity.Brown}" prefix="calendar_fossify_"/>
+  <calendar component="ComponentInfo{org.fossify.calendar/org.fossify.calendar.activities.SplashActivity.Blue_grey}" prefix="calendar_fossify_"/>
+  <calendar component="ComponentInfo{org.fossify.calendar/org.fossify.calendar.activities.SplashActivity.Grey_black}" prefix="calendar_fossify_"/>
+  <calendar component="ComponentInfo{org.fossify.calendar/org.fossify.calendar.activities.SplashActivity.Red}" prefix="calendar_fossify_"/>
 
 	<!-- Fossify Camera -->
 	<item component="ComponentInfo{org.fossify.camera/org.fossify.camera.activities.SplashActivity.Pink}" drawable="fossify_camera"/>
@@ -15367,6 +15407,9 @@
 	<item component="ComponentInfo{io.friendly.instagram/io.friendly.client.view.activity.SplashActivity}" drawable="friendly_iq"/>
 	<item component="ComponentInfo{io.friendly/io.friendly.activity.SplashActivity}" drawable="friendly_iq"/>
 
+	<!-- Frigate Wrapper -->
+	<item component="ComponentInfo{de.kaiserdragon.frigatewrapper/de.kaiserdragon.frigatewrapper.MainActivity}" drawable="frigate"/>
+
 	<!-- Fritter -->
 	<item component="ComponentInfo{com.jonjomckay.fritter/com.jonjomckay.fritter.MainActivity}" drawable="fritter"/>
 
@@ -15457,6 +15500,9 @@
 	<!-- Full Term -->
 	<item component="ComponentInfo{com.mustansir.fullterm/com.mustansir.fullterm.contractiontimer.activity.ContractionTimerActivity}" drawable="full_term"/>
 
+	<!-- FullRoid -->
+	<item component="ComponentInfo{com.fulldive.extension.fullroid/com.swordfish.lemuroid.app.mobile.feature.main.MainActivity}" drawable="fullroid"/>
+
 	<!-- Fun Habit -->
 	<item component="ComponentInfo{com.habits.todolist.plan.wish/com.habits.todolist.plan.wish.ui.activity.LaunchActivity}" drawable="fun_habit"/>
 
@@ -15534,6 +15580,9 @@
 	<!-- G-MoN Pro -->
 	<item component="ComponentInfo{de.carknue.gmonpro/de.carknue.gmonpro.MainActivity}" drawable="g_mon_pro"/>
 
+	<!-- G2A -->
+	<item component="ComponentInfo{com.g2a.marketplace/com.g2a.marketplace.main.MainActivity}" drawable="g2a"/>
+
 	<!-- Gaana -->
 	<item component="ComponentInfo{com.gaana/com.gaana.SplashScreenActivity}" drawable="gaana"/>
 
@@ -15595,15 +15644,15 @@
 	<item component="ComponentInfo{com.miui.gallery/com.miui.gallery.activity.HomePageActivity}" drawable="gallery"/>
 
 	<!-- Gallery -->
-    <item component="ComponentInfo{picture.gallery.media.photo.album/com.ijoysoft.gallery.activity.WelcomeActivity}" drawable="gallery"/>
-    <item component="ComponentInfo{gal.galleria.galleryapp.gallery/gal.galleria.galleryapp.gallery.superactivity.SplashActivity}" drawable="gallery"/>
-    <item component="ComponentInfo{com.mobsnake.verticalgallery/com.android.gallery3d.app.GalleryActivity}" drawable="gallery"/>
-    <item component="ComponentInfo{media.album.photo.gallery/com.ijoysoft.gallery.activity.WelcomeActivity}" drawable="gallery"/>
-    <item component="ComponentInfo{gallerylocker.hideapps.apphider.vault.applock/gallerylocker.hideapps.apphider.vault.applock.activity.LockHomeActivity4}" drawable="gallery"/>
-    <item component="ComponentInfo{gallery.photomanager.photogallery.hidepictures.pro/gallery.photomanager.photogallery.hidepictures.MainActivity}" drawable="gallery"/>
-    <item component="ComponentInfo{com.easy.apps.easygallerypro/com.easy.apps.easygallery.activity.Splash}" drawable="gallery"/>
-    <item component="ComponentInfo{com.gallery.photogallery.picturegallery.imagegallery.hidepictures.lockgallery.video/com.dani.gallery.ui.activity.main.MainActivity}" drawable="gallery"/>
-    <item component="ComponentInfo{gallery.gallerylock.vaultgallery.hidepictures/gallery.gallerylock.vaultgallery.hidepictures.SplashActivity}" drawable="gallery"/>
+	<item component="ComponentInfo{picture.gallery.media.photo.album/com.ijoysoft.gallery.activity.WelcomeActivity}" drawable="gallery"/>
+	<item component="ComponentInfo{gal.galleria.galleryapp.gallery/gal.galleria.galleryapp.gallery.superactivity.SplashActivity}" drawable="gallery"/>
+	<item component="ComponentInfo{com.mobsnake.verticalgallery/com.android.gallery3d.app.GalleryActivity}" drawable="gallery"/>
+	<item component="ComponentInfo{media.album.photo.gallery/com.ijoysoft.gallery.activity.WelcomeActivity}" drawable="gallery"/>
+	<item component="ComponentInfo{gallerylocker.hideapps.apphider.vault.applock/gallerylocker.hideapps.apphider.vault.applock.activity.LockHomeActivity4}" drawable="gallery"/>
+	<item component="ComponentInfo{gallery.photomanager.photogallery.hidepictures.pro/gallery.photomanager.photogallery.hidepictures.MainActivity}" drawable="gallery"/>
+	<item component="ComponentInfo{com.easy.apps.easygallerypro/com.easy.apps.easygallery.activity.Splash}" drawable="gallery"/>
+	<item component="ComponentInfo{com.gallery.photogallery.picturegallery.imagegallery.hidepictures.lockgallery.video/com.dani.gallery.ui.activity.main.MainActivity}" drawable="gallery"/>
+	<item component="ComponentInfo{gallery.gallerylock.vaultgallery.hidepictures/gallery.gallerylock.vaultgallery.hidepictures.SplashActivity}" drawable="gallery"/>
 	<item component="ComponentInfo{com.android.gallery3d/com.amazon.gallery3d.app.AmazonGalleryActivity}" drawable="gallery"/>
 	<item component="ComponentInfo{com.ebook.imagemanager/com.xrz.photo.ImageFolderAt}" drawable="gallery"/>
 	<item component="ComponentInfo{com.beresnevgames.gallerycoloringbook/com.unity3d.player.UnityPlayerActivity}" drawable="gallery"/>
@@ -16464,6 +16513,9 @@
 	<!-- GLMark2 -->
 	<item component="ComponentInfo{org.linaro.glmark2/org.linaro.glmark2.MainActivity}" drawable="glmark2"/>
 
+	<!-- Glo Cafe -->
+	<item component="ComponentInfo{net.one97.selfcare.globacom/net.one97.selfcare.globacom.authentication.SplashScreen}" drawable="glo_cafe"/>
+
 	<!-- GLO Lottery -->
 	<item component="ComponentInfo{th.or.glo.glolotteryapp/com.glo.lottery.glolottery.Main.SplashScreenActivity}" drawable="glo_lottery"/>
 
@@ -16864,9 +16916,6 @@
 
 	<!-- Google Lens -->
 	<item component="ComponentInfo{com.google.ar.lens/com.google.vr.apps.ornament.app.lens.LensLauncherActivity}" drawable="google_lens"/>
-
-	<!-- Lens -->
-	<item component="ComponentInfo{com.wstxda.gsl/com.wstxda.gsl.shortcut.LensActivity}" drawable="google_lens"/>
 
 	<!-- Google Maps -->
 	<item component="ComponentInfo{com.google.android.apps.maps/com.google.android.maps.MapsActivity}" drawable="google_maps"/>
@@ -17721,6 +17770,9 @@
 	<!-- heat it -->
 	<item component="ComponentInfo{de.ka.kamedi.heat_it/de.ka.kamedi.heat_it.android.MainActivity}" drawable="heat_it"/>
 
+	<!-- heatzy -->
+	<item component="ComponentInfo{com.gizwits.heatzy/com.gizwits.heatzy.ui.main.MainActivity}" drawable="heatzy"/>
+
 	<!-- Heavens-Above -->
 	<item component="ComponentInfo{com.heavens_above.viewer/com.heavens_above.viewer.ViewerActivity}" drawable="heavensabove"/>
 	<item component="ComponentInfo{com.heavens_above.viewer_pro/com.heavens_above.viewer.ViewerActivity}" drawable="heavensabove"/>
@@ -17991,8 +18043,20 @@
 	<!-- HiwatchPro -->
 	<item component="ComponentInfo{com.legend.hiwatchpro.app/xfkj.fitpro.activity.SplashActivity}" drawable="hiwatchpro"/>
 
+	<!-- HKTaxi -->
+	<item component="ComponentInfo{com.cornermation.calltaxi/com.cornermation.calltaxi.MainActivity}" drawable="hktaxi"/>
+
+	<!-- HKTVmall -->
+	<item component="ComponentInfo{com.hktv.android.hktvmall/com.hktv.android.hktvmall.Proguard.ui.activities.SplashActivity}" drawable="hktvmall"/>
+
 	<!-- hKtweaks -->
 	<item component="ComponentInfo{com.hades.hKtweaks/com.hades.hKtweaks.activities.StartActivity}" drawable="hktweaks"/>
+
+	<!-- HKUST QR Code -->
+	<item component="ComponentInfo{hk.ust.ei/hk.ust.ei.MainActivity}" drawable="hkust_qr_code"/>
+
+	<!-- HKUST Student -->
+	<item component="ComponentInfo{hk.ust.student/hk.ust.student.MainActivity}" drawable="hkust_student"/>
 
 	<!-- HL -->
 	<item component="ComponentInfo{com.mubaloo.android.hargreaveslansdown/com.mubaloo.android.hargreaveslansdown.activity.SplashActivity}" drawable="hl"/>
@@ -18012,6 +18076,9 @@
 
 	<!-- Ho. -->
 	<item component="ComponentInfo{it.homobile.ho/it.nttdata.vodafonelean.splash.SplashActivity}" drawable="ho"/>
+
+	<!-- Hoarder App -->
+	<item component="ComponentInfo{app.hoarder.hoardermobile/app.hoarder.hoardermobile.MainActivity}" drawable="hoarder_app"/>
 
 	<!-- Hobi -->
 	<item component="ComponentInfo{com.hobi.android/com.hobi.android.MainActivity}" drawable="hobi"/>
@@ -18146,6 +18213,9 @@
 	<!-- Honor of Kings -->
 	<item component="ComponentInfo{com.levelinfinite.sgameGlobal/com.levelinfinite.sgameGlobal.SGameGlobalActivity}" drawable="honor_of_kings"/>
 
+	<!-- HONOR Store -->
+	<item component="ComponentInfo{com.hihonor.hstore.global/com.honor.global.activity.LandingActivity}" drawable="honor_store"/>
+
 	<!-- Honor Suite -->
 	<item component="ComponentInfo{com.hihonor.systemmanager/com.hihonor.systemmanager.mainscreen.MainScreenActivity}" drawable="hihonor_systemmanager"/>
 
@@ -18203,6 +18273,9 @@
 
 	<!-- HouseSigma -->
 	<item component="ComponentInfo{com.housesigma.android/com.housesigma.android.ui.splash.SplashActivity}" drawable="housesigma"/>
+
+	<!-- Housing -->
+	<item component="ComponentInfo{com.locon.housing/com.locon.housing.presentation.MainActivity}" drawable="housing"/>
 
 	<!-- Houzz -->
 	<item component="ComponentInfo{com.houzz.app/com.houzz.app.HouzzSplashScreenActivity}" drawable="houzz"/>
@@ -18487,6 +18560,9 @@
 
 	<!-- Hutch App -->
 	<item component="ComponentInfo{com.omobio.etisalatone/com.omobio.etisalatone.MainActivity}" drawable="hutch_app"/>
+
+	<!-- Huya Live -->
+	<item component="ComponentInfo{com.duowan.kiwi/com.duowan.kiwi.simpleactivity.SplashActivity}" drawable="huya_live"/>
 
 	<!-- hvv -->
 	<item component="ComponentInfo{de.eos.uptrade.android.fahrinfo.hamburg/de.hvv.info.AppActivity}" drawable="hvv"/>
@@ -18931,9 +19007,6 @@
 	<item component="ComponentInfo{com.crossbowffs.quotelock/com.crossbowffs.quotelock.app.MainActivity}" drawable="lock"/>
 	<item component="ComponentInfo{com.lockdown.lockedtouchapp/com.lockdown.lockedtouchapp.main.LoadingActivity}" drawable="lock"/>
 	<item component="ComponentInfo{com.nemesis.droidcrypt/com.nemesis.droidcrypt.MainActivity}" drawable="lock"/>
-
-	<!-- Play Now -->
-	<item component="ComponentInfo{com.play.playnow/com.n7mobile.playnow.ui.MainActivity}" drawable="play_now"/>
 
 	<!-- Icon - Power -->
 	<item component="ComponentInfo{co.offtime.kit/co.offtime.lifestyle.activities.StartActivity}" drawable="power"/>
@@ -20249,6 +20322,10 @@
 	<!-- JuiceSSH -->
 	<item component="ComponentInfo{com.sonelli.juicessh/com.sonelli.juicessh.activities.MainActivity}" drawable="juicessh"/>
 
+	<!-- Julian's Editor -->
+	<item component="ComponentInfo{com.hortor.julianseditor/com.hortor.creator.MainActivity}" drawable="julians_editor"/>
+	<item component="ComponentInfo{com.hortor.juliancysj/com.hortor.creator.MainActivity}" drawable="julians_editor"/>
+
 	<!-- Jumbo extras  -->
 	<item component="ComponentInfo{com.jumbo.extras/com.jumbo.extras.MainActivity}" drawable="jumbo_extras"/>
 
@@ -20535,6 +20612,9 @@
 	<!-- KAYAC's Number Master -->
 	<item component="ComponentInfo{com.kayac.level_up_number/com.unity3d.player.UnityPlayerActivity}" drawable="kayac_number_master"/>
 
+	<!-- KAYAK -->
+	<item component="ComponentInfo{com.kayak.android/com.kayak.android.splash.SplashActivity}" drawable="letter_uppercase_square_k"/>
+
 	<!-- KazanExpress -->
 	<item component="ComponentInfo{com.kazanexpress.ke_app/ru.kazanexpress.feature.splash.presentation.SplashScreenActivity}" drawable="letter_uppercase_square_k"/>
 
@@ -20606,6 +20686,9 @@
 	<item component="ComponentInfo{com.kii.safe/com.kii.safe.Default}" drawable="keepsafe"/>
 	<item component="ComponentInfo{com.kii.safe/com.kii.safe.Castle.Dark}" drawable="keepsafe"/>
 	<item component="ComponentInfo{com.kii.safe/com.kii.safe.Keyway.Dark}" drawable="keepsafe"/>
+
+	<!-- Keeta -->
+	<item component="ComponentInfo{com.sankuai.sailor.afooddelivery/com.sankuai.sailor.shell.SplashActivity}" drawable="keeta"/>
 
 	<!-- KEKS Pay -->
 	<item component="ComponentInfo{agency.sevenofnine.erstewallet.production/agency.sevenofnine.erstewallet.presentation.activities.OnboardActivity}" drawable="keks_pay"/>
@@ -21365,18 +21448,18 @@
 	<item component="ComponentInfo{org.kustom.widget.huawei/org.kustom.widget.picker.WidgetPicker}" drawable="kwgt"/>
 
 	<!-- KWGT generic app -->
-    <item component="ComponentInfo{dolphie.kwgt.app/dolphie.kwgt.app.MainActivity}" drawable="kwgt_generic_app"/>
-    <item component="ComponentInfo{fiction.kustom.pack/fiction.kustom.pack.MainActivity}" drawable="kwgt_generic_app"/>
-    <item component="ComponentInfo{com.kustom.android13.search/com.kustom.android13.search.MainActivity}" drawable="kwgt_generic_app"/>
-    <item component="ComponentInfo{com.pixelvibe.cursed/org.kustom.api.dashboard.DashboardActivity}" drawable="kwgt_generic_app"/>
-    <item component="ComponentInfo{com.nothingwidgets.kwgt.app/com.nothingwidgets.kwgt.app.MainActivity}" drawable="kwgt_generic_app"/>
-    <item component="ComponentInfo{passionkwgt.kustom.pack/org.kustom.api.dashboard.DashboardActivity}" drawable="kwgt_generic_app"/>
-    <item component="ComponentInfo{crown.dd.kwgt/com.example.novel.MainActivity}" drawable="kwgt_generic_app"/>
-    <item component="ComponentInfo{com.orangekwgt.pack/com.orangekwgt.pack.MainActivity}" drawable="kwgt_generic_app"/>
-    <item component="ComponentInfo{peacock.cnt.kwgt/com.example.novel.MainActivity}" drawable="kwgt_generic_app"/>
-    <item component="ComponentInfo{specials.dd.kwgt/com.example.novel.MainActivity}" drawable="kwgt_generic_app"/>
-    <item component="ComponentInfo{com.dev.dopekwgt.app/com.dev.dopekwgt.app.MainActivity}" drawable="kwgt_generic_app"/>
-    <item component="ComponentInfo{dev.potion.kwgt.app/dev.potion.kwgt.app.MainActivity}" drawable="kwgt_generic_app"/>
+	<item component="ComponentInfo{dolphie.kwgt.app/dolphie.kwgt.app.MainActivity}" drawable="kwgt_generic_app"/>
+	<item component="ComponentInfo{fiction.kustom.pack/fiction.kustom.pack.MainActivity}" drawable="kwgt_generic_app"/>
+	<item component="ComponentInfo{com.kustom.android13.search/com.kustom.android13.search.MainActivity}" drawable="kwgt_generic_app"/>
+	<item component="ComponentInfo{com.pixelvibe.cursed/org.kustom.api.dashboard.DashboardActivity}" drawable="kwgt_generic_app"/>
+	<item component="ComponentInfo{com.nothingwidgets.kwgt.app/com.nothingwidgets.kwgt.app.MainActivity}" drawable="kwgt_generic_app"/>
+	<item component="ComponentInfo{passionkwgt.kustom.pack/org.kustom.api.dashboard.DashboardActivity}" drawable="kwgt_generic_app"/>
+	<item component="ComponentInfo{crown.dd.kwgt/com.example.novel.MainActivity}" drawable="kwgt_generic_app"/>
+	<item component="ComponentInfo{com.orangekwgt.pack/com.orangekwgt.pack.MainActivity}" drawable="kwgt_generic_app"/>
+	<item component="ComponentInfo{peacock.cnt.kwgt/com.example.novel.MainActivity}" drawable="kwgt_generic_app"/>
+	<item component="ComponentInfo{specials.dd.kwgt/com.example.novel.MainActivity}" drawable="kwgt_generic_app"/>
+	<item component="ComponentInfo{com.dev.dopekwgt.app/com.dev.dopekwgt.app.MainActivity}" drawable="kwgt_generic_app"/>
+	<item component="ComponentInfo{dev.potion.kwgt.app/dev.potion.kwgt.app.MainActivity}" drawable="kwgt_generic_app"/>
 	<item component="ComponentInfo{appleforkwgt.kustom.pack/appleforkwgt.kustom.pack.MainActivity}" drawable="kwgt_generic_app"/>
 	<item component="ComponentInfo{trident3forkwgt.kustom.pack/org.kustom.api.dashboard.DashboardActivity}" drawable="kwgt_generic_app"/>
 	<item component="ComponentInfo{beehomie.typogacy.kwgt/beehomie.typogacy.kwgt.MainActivity}" drawable="kwgt_generic_app"/>
@@ -21770,15 +21853,6 @@
 	<item component="ComponentInfo{app.lawnchair/app.lawnchair.LawnchairLauncherQuickstep}" drawable="lawnchair"/>
 	<item component="ComponentInfo{app.lawnchair.play/app.lawnchair.LawnchairLauncher}" drawable="lawnchair"/>
 
-	<!-- Leaks -->
-	<item component="ComponentInfo{com.taptap.global/leakcanary.internal.activity.LeakLauncherActivity}" drawable="leaks"/>
-
-	<!-- Linn -->
-	<item component="ComponentInfo{uk.co.linn.Linn/crc64016f19fa21a7761e.SplashScreen}" drawable="linn"/>
-
-	<!-- Frigate Wrapper -->
-	<item component="ComponentInfo{de.kaiserdragon.frigatewrapper/de.kaiserdragon.frigatewrapper.MainActivity}" drawable="frigate"/>
-
 	<!-- Lawnchair Notes -->
 	<item component="ComponentInfo{launcher.libre.dev/ch.deletescape.lawnchair.notes.NotesActivity}" drawable="standardnotes"/>
 
@@ -21810,6 +21884,9 @@
 	<!-- Lazada Seller Center -->
 	<item component="ComponentInfo{com.sc.lazada/com.sc.lazada.app.activity.ad.SplashActivity}" drawable="lazada_seller_center"/>
 
+	<!-- LazyPay -->
+	<item component="ComponentInfo{com.citrus.citruspay/com.citrus.citruspay.Onboarding.view.activities.SplashActivity}" drawable="lazypay"/>
+
 	<!-- LBRY -->
 	<item component="ComponentInfo{io.lbry.browser/io.lbry.browser.MainActivity}" drawable="lbry"/>
 
@@ -21825,6 +21902,9 @@
 
 	<!-- Le Monde -->
 	<item component="ComponentInfo{com.lemonde.androidapp/com.lemonde.androidapp.MainActivity}" drawable="le_monde"/>
+
+	<!-- Le Xiang Kuai You -->
+	<item component="ComponentInfo{com.cts6.nice.xbrc9ob/com.lt.app.MainActivity}" drawable="le_xiang_kuai_you"/>
 
 	<!-- Leaflet -->
 	<item component="ComponentInfo{com.potatoproject.notes/com.potatoproject.notes.MainActivity}" drawable="leaflet"/>
@@ -21845,6 +21925,9 @@
 
 	<!-- League+ -->
 	<item component="ComponentInfo{com.riotgames.mobile.leagueconnect/com.riotgames.mobile.leagueconnect.ui.MainActivity}" drawable="league"/>
+
+	<!-- Leaks -->
+	<item component="ComponentInfo{com.taptap.global/leakcanary.internal.activity.LeakLauncherActivity}" drawable="leaks"/>
 
 	<!-- Lean Remote -->
 	<item component="ComponentInfo{co.leanremote.universalremotecontrol.remotecontrol/co.leanremote.universalremotecontrol.remotecontrol.SplashActivity}" drawable="lean_remote"/>
@@ -21874,6 +21957,9 @@
 
 	<!-- LED Icon Editor -->
 	<item component="ComponentInfo{com.samsung.android.app.ledcoverdream/com.samsung.android.app.ledcover.app.LCoverMainLauncher}" drawable="led_icon_editor"/>
+
+	<!-- LED Scroller -->
+	<item component="ComponentInfo{com.xapp.ledscroller/com.zipoapps.premiumhelper.ui.splash.PHSplashActivity}" drawable="led_scroller"/>
 
 	<!-- Ledger Live -->
 	<item component="ComponentInfo{com.ledger.live/com.ledger.live.MainActivity}" drawable="ledger_live"/>
@@ -21934,11 +22020,17 @@
 	<!-- Lemuroid -->
 	<item component="ComponentInfo{com.swordfish.lemuroid/com.swordfish.lemuroid.app.mobile.feature.main.MainActivity}" drawable="lemuroid"/>
 
+	<!-- Lena Adaptive -->
+	<item component="ComponentInfo{one4studio.iconpack.lenaadaptive/com.candybar.dev.activities.SplashActivity}" drawable="lena_adaptive"/>
+
 	<!-- Lenovo Life -->
 	<item component="ComponentInfo{com.hyst.base.feverhealthy/com.hyst.base.feverhealthy.ui.Activities.GuideActivity}" drawable="lenovo_life"/>
 
 	<!-- Lenovo Link Pro -->
 	<item component="ComponentInfo{com.lenovo.linkapppro1/com.smart.TuyaSplashActivity}" drawable="lenovo_link_pro"/>
+
+	<!-- Lens -->
+	<item component="ComponentInfo{com.wstxda.gsl/com.wstxda.gsl.shortcut.LensActivity}" drawable="google_lens"/>
 
 	<!-- Lens Launcher -->
 	<item component="ComponentInfo{nickrout.lenslauncher/nickrout.lenslauncher.ui.SettingsActivity}" drawable="lens_launcher"/>
@@ -21961,6 +22053,9 @@
 
 	<!-- Leobank -->
 	<item component="ComponentInfo{com.ftfarm.leo/com.middleware.fintech.LeoBlackWhite}" drawable="leobank"/>
+
+	<!-- Leroy Merlin -->
+	<item component="ComponentInfo{com.adeo.android.app/com.lmfr.applm.onboarding.activities.onboarding.OnBoardingActivity}" drawable="leroy_merlin"/>
 
 	<!-- Les Pas -->
 	<item component="ComponentInfo{site.leos.apps.lespas/site.leos.apps.lespas.LesPas}" drawable="lespas"/>
@@ -22571,6 +22666,9 @@
 	<!-- LinkWall -->
 	<item component="ComponentInfo{com.swarajyadev.linkprotector/com.swarajyadev.linkprotector.core.splash.view.SplashActivity}" drawable="linkwall"/>
 
+	<!-- Linn -->
+	<item component="ComponentInfo{uk.co.linn.Linn/crc64016f19fa21a7761e.SplashScreen}" drawable="linn"/>
+
 	<!-- Linphone -->
 	<item component="ComponentInfo{org.linphone/org.linphone.LinphoneLauncherActivity}" drawable="linphone"/>
 	<item component="ComponentInfo{org.linphone/org.linphone.activities.main.MainActivity}" drawable="linphone"/>
@@ -22991,13 +23089,6 @@
 	<item component="ComponentInfo{com.lufthansa.android.lufthansa/com.lufthansa.android.lufthansa.ui.activity.HomeActivity}" drawable="lufthansa"/>
 	<item component="ComponentInfo{com.lufthansa.android.lufthansa/com.lhgroup.lhgroupapp.MainActivity}" drawable="lufthansa"/>
 
-	<!-- Bibliotheek Wise -->
-	<item component="ComponentInfo{com.bicat.wise.androidapp/com.bicat.wise.androidapp.LaunchActivity}" drawable="bibliotheek_wise"/>
-
-	<!-- online Bibliotheek -->
-	<item component="ComponentInfo{nl.bibliotheek.android.luisterboeken/nl.bibliotheek.android.luisterboeken.activities.SplashActivity}" drawable="online_bibliotheek"/>
-	<item component="ComponentInfo{com.odilo.bibliotheek/odilo.reader_kotlin.ui.splash.views.SplashActivity}" drawable="online_bibliotheek"/>
-
 	<!-- Lukoil Filling Station -->
 	<item component="ComponentInfo{ru.serebryakovas.lukoilmobileapp/ru.serebryakovas.lukoilmobileapp.activities.StartUpActivity}" drawable="lukoil_filling_station"/>
 	<item component="ComponentInfo{ru.serebryakovas.lukoilmobileapp/ru.lukoil.b2c.ui.lukoil.LukoilActivity}" drawable="lukoil_filling_station"/>
@@ -23369,6 +23460,9 @@
 	<!-- Manga UP! -->
 	<item component="ComponentInfo{com.square_enix.android_googleplay.mangaup_global/jp.co.link_u.glenwood.ui.MainActivity}" drawable="manga_up"/>
 
+	<!-- MangaLib -->
+	<item component="ComponentInfo{ru.libapp/ru.libapp.ui.main.MainActivity}" drawable="mangalib"/>
+
 	<!-- MANGATOON -->
 	<item component="ComponentInfo{mobi.mangatoon.comics.aphone/com.weex.app.MTSplashActivity}" drawable="mangatoon"/>
 
@@ -23657,6 +23751,9 @@
 	<!-- Max -->
 	<item component="ComponentInfo{com.wbd.stream/com.wbd.stream.MainActivity}" drawable="max"/>
 	<item component="ComponentInfo{com.wbd.stream/com.wbd.fuse.appcore.FuseActivity}" drawable="max"/>
+
+	<!-- Max Fashion -->
+	<item component="ComponentInfo{com.applications.max/com.landmarkgroup.landmarkshops.module.splash.activity.SplashActivityV2}" drawable="max_fashion"/>
 
 	<!-- Maxi Zoo -->
 	<item component="ComponentInfo{com.fressnapf.mobileapp/com.fressnapf.app.ui.main.MainActivity}" drawable="maxi_zoo"/>
@@ -25275,6 +25372,9 @@
 	<item component="ComponentInfo{com.mservice.momotransfer/vn.momo.platform.MainActivity}" drawable="momo"/>
 	<item component="ComponentInfo{com.mservice.momotransfer/vn.momo.platform.entry.MainActivity}" drawable="momo"/>
 
+	<!-- Momox -->
+	<item component="ComponentInfo{at.momox/de.momox.inbound.ui.MainActivity}" drawable="momox"/>
+
 	<!-- momox -->
 	<item component="ComponentInfo{fr.momox/de.momox.ui.component.splash.SplashActivity}" drawable="momox"/>
 	<item component="ComponentInfo{de.momox/de.momox.inbound.ui.MainActivity}" drawable="momox"/>
@@ -25348,6 +25448,9 @@
 
 	<!-- Money Tracker -->
 	<item component="ComponentInfo{com.blogspot.e_kanivets.moneytracker/com.blogspot.e_kanivets.moneytracker.activity.record.MainActivity}" drawable="moneytracker"/>
+
+	<!-- MoneyBack -->
+	<item component="ComponentInfo{com.asw.moneyback/com.parknshop.moneyback.app_icon_default}" drawable="moneyback"/>
 
 	<!-- Moneybox -->
 	<item component="ComponentInfo{com.moneyboxapp/com.moneyboxapp.app.REGULAR}" drawable="moneybox"/>
@@ -25615,6 +25718,9 @@
 	<!-- Mouser EIU Magazine -->
 	<item component="ComponentInfo{com.entour.mouser/com.entour.mouser.MainActivity}" drawable="mouser_eiu_magazine"/>
 
+	<!-- Move It -->
+	<item component="ComponentInfo{com.moveit.app.customer/com.grab.pax.newface.common.alias.DefaultLauncherAlias}" drawable="move_it"/>
+
 	<!-- Movie DB -->
 	<item component="ComponentInfo{org.notabug.lifeuser.moviedb/org.notabug.lifeuser.moviedb.activity.MainActivity}" drawable="moviedb"/>
 
@@ -25735,9 +25841,6 @@
 	<item component="ComponentInfo{fi.mtvkatsomo/fi.mtvkatsomo.activities.MainActivity}" drawable="mtv_katsomo"/>
 	<item component="ComponentInfo{fi.mtvkatsomo/se.tv4.tv4play.ui.common.startup.SplashActivity}" drawable="mtv_katsomo"/>
 
-	<!-- Můj ČEZ -->
-	<item component="ComponentInfo{cz.cez.cpr.mc/cz.cez.cpr.col.MainActivity}" drawable="mj_ez"/>
-
 	<!-- Mubi -->
 	<item component="ComponentInfo{com.mubi/com.mubi.ui.MainActivity}" drawable="mubi"/>
 
@@ -25814,67 +25917,67 @@
 	<item component="ComponentInfo{com.nectec.dmi.museums_pool/com.nectec.dmi.museums_pool.ui.home.activity.FirebaseUiActivity}" drawable="museumpool"/>
 
 	<!-- Music -->
-    <item component="ComponentInfo{sound.beautifier.bluetooth.music.more.bass.low.volume/sound.beautifier.bluetooth.music.more.bass.low.volume.MiserableUseless}" drawable="music"/>
-    <item component="ComponentInfo{mediaplayer.mp3.audio.musicplayer/com.ijoysoft.music.activity.WelcomeActivity}" drawable="music"/>
-    <item component="ComponentInfo{erika.app.ymusic/erika.app.ymusic.ui.MainActivity}" drawable="music"/>
-    <item component="ComponentInfo{qijaz221.github.io.musicplayer/qijaz221.github.io.musicplayer.startup.SplashActivity}" drawable="music"/>
-    <item component="ComponentInfo{qijaz221.github.io.musicplayer.premium/qijaz221.github.io.musicplayer.startup.SplashActivity}" drawable="music"/>
-    <item component="ComponentInfo{cheddar.music.player/yos.music.player.MainActivity}" drawable="music"/>
-    <item component="ComponentInfo{com.libraryideas.freegalmusic/com.libraryideas.freegalmusic.activities.SplashActivity}" drawable="music"/>
-    <item component="ComponentInfo{com.MMBO.GitaMM/com.ryanheise.audioservice.AudioServiceActivity}" drawable="music"/>
-    <item component="ComponentInfo{com.generalmobile.app.musicplayer/com.generalmobile.app.musicplayer.SplashActivity}" drawable="music"/>
-    <item component="ComponentInfo{com.jiubang.go.music/com.jiubang.go.music.activity.common.startup.GOMusicStartupActivity}" drawable="music"/>
-    <item component="ComponentInfo{com.kyant.music/com.kyant.music.MainActivity}" drawable="music"/>
-    <item component="ComponentInfo{com.tencent.ibg.joox/com.tencent.wemusic.ui.main.LauncherUI}" drawable="music"/>
-    <item component="ComponentInfo{com.melodista.music/code.name.monkey.retromusic.activities.MainActivity}" drawable="music"/>
-    <item component="ComponentInfo{com.metrolist.music/com.metrolist.music.MainActivity}" drawable="music"/>
-    <item component="ComponentInfo{com.revenge.gramophone/com.kabouzeid.gramophone.ui.activities.MainActivity}" drawable="music"/>
-    <item component="ComponentInfo{music.musicplayer/com.android.music.SplashActivity}" drawable="music"/>
-    <item component="ComponentInfo{com.fcmusicplayer.app/com.music.echoom.ui.activity.PrivacyConsentActivity}" drawable="music"/>
-    <item component="ComponentInfo{com.inglesdivino.musicjoiner/com.inglesdivino.musicjoiner.MainActivity}" drawable="music"/>
-    <item component="ComponentInfo{com.magix.android.mmjam/com.magix.android.mmj.start.StartActivity}" drawable="music"/>
-    <item component="ComponentInfo{music.player.mp3.play.mplayer/music.player.mp3.app.ui.main.activity.SplashActivity}" drawable="music"/>
-    <item component="ComponentInfo{com.play.music.musicplayer/com.play.music.ui.activity.SplashScreenActivity}" drawable="music"/>
-    <item component="ComponentInfo{com.musica.eterna/hdf.xjydf.ynlk.qehsbtcgg.igowxhzdvz.ozprr.bvcccrvkkw483}" drawable="music"/>
-    <item component="ComponentInfo{com.musicho.andro/com.music.player.ui.act.PrivacyConsentActivity}" drawable="music"/>
-    <item component="ComponentInfo{fun.upup.musicfree/fun.upup.musicfree.MainActivity}" drawable="music"/>
-    <item component="ComponentInfo{com.yamaha.av.musiccastcontroller/com.yamaha.av.musiccastcontroller.activity.MainActivity}" drawable="music"/>
-    <item component="ComponentInfo{com.musiko.music/com.music.musiko.MainActivity}" drawable="music"/>
-    <item component="ComponentInfo{com.musixmusicx/com.musixmusicx.ui.SplashActivity}" drawable="music"/>
-    <item component="ComponentInfo{com.pure.music.player/com.pure.music.player.main.MainActivity}" drawable="music"/>
-    <item component="ComponentInfo{com.pearl.music/com.pearl.music.activities.MainActivity}" drawable="music"/>
-    <item component="ComponentInfo{com.musicplayer.mp3player.musicplaylist/com.musicplayer.mp3player.musicplaylist.ui.splash.MpSplashActivity}" drawable="music"/>
-    <item component="ComponentInfo{power.amp.musicplayer.pi.audioplayer/xsoftstudio.musicplayer.ActivityMain}" drawable="music"/>
-    <item component="ComponentInfo{com.qnap.qmusic/com.qnap.qmusic.InitialSplash}" drawable="music"/>
-    <item component="ComponentInfo{com.meizu.media.music/com.meizu.media.music.MusicActivity}" drawable="music"/>
-    <item component="ComponentInfo{radios.de.paraguay.am.fm/com.appmind.countryradios.screens.splash.SplashActivity}" drawable="music"/>
-    <item component="ComponentInfo{jp.co.rakuten.music/jp.co.rakuten.r_music.activity.InitialActivity}" drawable="music"/>
-    <item component="ComponentInfo{mp3.music.download.player.music.search/mp3.music.download.player.music.search.activity.MainActivity}" drawable="music"/>
-    <item component="ComponentInfo{com.musicmuni.riyaz/com.musicmuni.riyaz.ui.features.splash_screen.SplashScreenActivity}" drawable="music"/>
-    <item component="ComponentInfo{com.rvx.android.apps.youtube.music/com.google.android.apps.youtube.music.activities.MusicActivity}" drawable="music"/>
-    <item component="ComponentInfo{com.salt.music/com.salt.music.ui.MainActivity}" drawable="music"/>
-    <item component="ComponentInfo{com.cleveroad.sample/com.cleveroad.sample.MusicListActivity}" drawable="music"/>
-    <item component="ComponentInfo{com.sharp.jiotune.jiomusic.callertune.yeejsavmus.tipalo/com.sharp.jiotune.jiomusic.callertune.yeejsavmus.tipalo.Activity.SplashActivity}" drawable="music"/>
-    <item component="ComponentInfo{fm.mystage.note_recognition/fm.mystage.note_recognition.MainActivity}" drawable="music"/>
-    <item component="ComponentInfo{shinemusicpro.freetubemusic.enjoymusic/shinemusicpro.freetubemusic.enjoymusic.activity.SplashActivity}" drawable="music"/>
-    <item component="ComponentInfo{ai.music.generator.song.maker/org.aiby.aimusic.app.view.activity.main.MainActivity}" drawable="music"/>
-    <item component="ComponentInfo{com.sumyapplications.musickeys/com.sumyapplications.musickeys.MainActivity}" drawable="music"/>
-    <item component="ComponentInfo{io.stellio.music/air.stellio.player.MainActivity}" drawable="music"/>
-    <item component="ComponentInfo{suamusica.suamusicaapp/suamusica.suamusicaapp.MainActivity}" drawable="music"/>
-    <item component="ComponentInfo{com.total.music.and/music.misery.zzyy.cube.ui.T1OpenActivity}" drawable="music"/>
-    <item component="ComponentInfo{com.tunecho.music/com.music.player.ui.act.PrivacyConsentActivity}" drawable="music"/>
-    <item component="ComponentInfo{com.jackthakar.musicwidget/com.jackthakar.musicwidget.MainActivity}" drawable="music"/>
-    <item component="ComponentInfo{com.yiken.operationmusic/com.yiken.operationmusic.ui.activity.SplashActivity}" drawable="music"/>
-    <item component="ComponentInfo{com.vapp.vmanager/com.maxrave.simpmusic.ui.MainActivity}" drawable="music"/>
-    <item component="ComponentInfo{br.com.music.wlisten2.app/br.com.fabiano.developer.appmusic.Main}" drawable="music"/>
-    <item component="ComponentInfo{com.weezerlite.and/music.tzh.zzyy.weezer.ui.acti.SplashActi}" drawable="music"/>
-    <item component="ComponentInfo{com.audio.voicechanger.music.editor/com.voicechanger.activity.SplashActivity}" drawable="music"/>
-    <item component="ComponentInfo{com.amapps.media.music/com.amapps.media.music.ui.splash.SplashActivity}" drawable="music"/>
-    <item component="ComponentInfo{com.simplemobiletools.alaba.music.audio.player.sam18/com.simplemobiletools.musicplayer.activities.SplashActivity.Orange}" drawable="music"/>
-    <item component="ComponentInfo{com.bbmusic/com.ryanheise.audioservice.AudioServiceActivity}" drawable="music"/>
-    <item component="ComponentInfo{com.netease.cloudmusic.lite/com.netease.cloudmusic.activity.LoadingActivity}" drawable="music"/>
-    <item component="ComponentInfo{com.shixin.musicsearci/com.shixin.musicsearch.StartActivity}" drawable="music"/>
-    <item component="ComponentInfo{com.hihonor.cloudmusic/com.netease.cloudmusic.activity.MainActivity}" drawable="music"/>
+	<item component="ComponentInfo{sound.beautifier.bluetooth.music.more.bass.low.volume/sound.beautifier.bluetooth.music.more.bass.low.volume.MiserableUseless}" drawable="music"/>
+	<item component="ComponentInfo{mediaplayer.mp3.audio.musicplayer/com.ijoysoft.music.activity.WelcomeActivity}" drawable="music"/>
+	<item component="ComponentInfo{erika.app.ymusic/erika.app.ymusic.ui.MainActivity}" drawable="music"/>
+	<item component="ComponentInfo{qijaz221.github.io.musicplayer/qijaz221.github.io.musicplayer.startup.SplashActivity}" drawable="music"/>
+	<item component="ComponentInfo{qijaz221.github.io.musicplayer.premium/qijaz221.github.io.musicplayer.startup.SplashActivity}" drawable="music"/>
+	<item component="ComponentInfo{cheddar.music.player/yos.music.player.MainActivity}" drawable="music"/>
+	<item component="ComponentInfo{com.libraryideas.freegalmusic/com.libraryideas.freegalmusic.activities.SplashActivity}" drawable="music"/>
+	<item component="ComponentInfo{com.MMBO.GitaMM/com.ryanheise.audioservice.AudioServiceActivity}" drawable="music"/>
+	<item component="ComponentInfo{com.generalmobile.app.musicplayer/com.generalmobile.app.musicplayer.SplashActivity}" drawable="music"/>
+	<item component="ComponentInfo{com.jiubang.go.music/com.jiubang.go.music.activity.common.startup.GOMusicStartupActivity}" drawable="music"/>
+	<item component="ComponentInfo{com.kyant.music/com.kyant.music.MainActivity}" drawable="music"/>
+	<item component="ComponentInfo{com.tencent.ibg.joox/com.tencent.wemusic.ui.main.LauncherUI}" drawable="music"/>
+	<item component="ComponentInfo{com.melodista.music/code.name.monkey.retromusic.activities.MainActivity}" drawable="music"/>
+	<item component="ComponentInfo{com.metrolist.music/com.metrolist.music.MainActivity}" drawable="music"/>
+	<item component="ComponentInfo{com.revenge.gramophone/com.kabouzeid.gramophone.ui.activities.MainActivity}" drawable="music"/>
+	<item component="ComponentInfo{music.musicplayer/com.android.music.SplashActivity}" drawable="music"/>
+	<item component="ComponentInfo{com.fcmusicplayer.app/com.music.echoom.ui.activity.PrivacyConsentActivity}" drawable="music"/>
+	<item component="ComponentInfo{com.inglesdivino.musicjoiner/com.inglesdivino.musicjoiner.MainActivity}" drawable="music"/>
+	<item component="ComponentInfo{com.magix.android.mmjam/com.magix.android.mmj.start.StartActivity}" drawable="music"/>
+	<item component="ComponentInfo{music.player.mp3.play.mplayer/music.player.mp3.app.ui.main.activity.SplashActivity}" drawable="music"/>
+	<item component="ComponentInfo{com.play.music.musicplayer/com.play.music.ui.activity.SplashScreenActivity}" drawable="music"/>
+	<item component="ComponentInfo{com.musica.eterna/hdf.xjydf.ynlk.qehsbtcgg.igowxhzdvz.ozprr.bvcccrvkkw483}" drawable="music"/>
+	<item component="ComponentInfo{com.musicho.andro/com.music.player.ui.act.PrivacyConsentActivity}" drawable="music"/>
+	<item component="ComponentInfo{fun.upup.musicfree/fun.upup.musicfree.MainActivity}" drawable="music"/>
+	<item component="ComponentInfo{com.yamaha.av.musiccastcontroller/com.yamaha.av.musiccastcontroller.activity.MainActivity}" drawable="music"/>
+	<item component="ComponentInfo{com.musiko.music/com.music.musiko.MainActivity}" drawable="music"/>
+	<item component="ComponentInfo{com.musixmusicx/com.musixmusicx.ui.SplashActivity}" drawable="music"/>
+	<item component="ComponentInfo{com.pure.music.player/com.pure.music.player.main.MainActivity}" drawable="music"/>
+	<item component="ComponentInfo{com.pearl.music/com.pearl.music.activities.MainActivity}" drawable="music"/>
+	<item component="ComponentInfo{com.musicplayer.mp3player.musicplaylist/com.musicplayer.mp3player.musicplaylist.ui.splash.MpSplashActivity}" drawable="music"/>
+	<item component="ComponentInfo{power.amp.musicplayer.pi.audioplayer/xsoftstudio.musicplayer.ActivityMain}" drawable="music"/>
+	<item component="ComponentInfo{com.qnap.qmusic/com.qnap.qmusic.InitialSplash}" drawable="music"/>
+	<item component="ComponentInfo{com.meizu.media.music/com.meizu.media.music.MusicActivity}" drawable="music"/>
+	<item component="ComponentInfo{radios.de.paraguay.am.fm/com.appmind.countryradios.screens.splash.SplashActivity}" drawable="music"/>
+	<item component="ComponentInfo{jp.co.rakuten.music/jp.co.rakuten.r_music.activity.InitialActivity}" drawable="music"/>
+	<item component="ComponentInfo{mp3.music.download.player.music.search/mp3.music.download.player.music.search.activity.MainActivity}" drawable="music"/>
+	<item component="ComponentInfo{com.musicmuni.riyaz/com.musicmuni.riyaz.ui.features.splash_screen.SplashScreenActivity}" drawable="music"/>
+	<item component="ComponentInfo{com.rvx.android.apps.youtube.music/com.google.android.apps.youtube.music.activities.MusicActivity}" drawable="music"/>
+	<item component="ComponentInfo{com.salt.music/com.salt.music.ui.MainActivity}" drawable="music"/>
+	<item component="ComponentInfo{com.cleveroad.sample/com.cleveroad.sample.MusicListActivity}" drawable="music"/>
+	<item component="ComponentInfo{com.sharp.jiotune.jiomusic.callertune.yeejsavmus.tipalo/com.sharp.jiotune.jiomusic.callertune.yeejsavmus.tipalo.Activity.SplashActivity}" drawable="music"/>
+	<item component="ComponentInfo{fm.mystage.note_recognition/fm.mystage.note_recognition.MainActivity}" drawable="music"/>
+	<item component="ComponentInfo{shinemusicpro.freetubemusic.enjoymusic/shinemusicpro.freetubemusic.enjoymusic.activity.SplashActivity}" drawable="music"/>
+	<item component="ComponentInfo{ai.music.generator.song.maker/org.aiby.aimusic.app.view.activity.main.MainActivity}" drawable="music"/>
+	<item component="ComponentInfo{com.sumyapplications.musickeys/com.sumyapplications.musickeys.MainActivity}" drawable="music"/>
+	<item component="ComponentInfo{io.stellio.music/air.stellio.player.MainActivity}" drawable="music"/>
+	<item component="ComponentInfo{suamusica.suamusicaapp/suamusica.suamusicaapp.MainActivity}" drawable="music"/>
+	<item component="ComponentInfo{com.total.music.and/music.misery.zzyy.cube.ui.T1OpenActivity}" drawable="music"/>
+	<item component="ComponentInfo{com.tunecho.music/com.music.player.ui.act.PrivacyConsentActivity}" drawable="music"/>
+	<item component="ComponentInfo{com.jackthakar.musicwidget/com.jackthakar.musicwidget.MainActivity}" drawable="music"/>
+	<item component="ComponentInfo{com.yiken.operationmusic/com.yiken.operationmusic.ui.activity.SplashActivity}" drawable="music"/>
+	<item component="ComponentInfo{com.vapp.vmanager/com.maxrave.simpmusic.ui.MainActivity}" drawable="music"/>
+	<item component="ComponentInfo{br.com.music.wlisten2.app/br.com.fabiano.developer.appmusic.Main}" drawable="music"/>
+	<item component="ComponentInfo{com.weezerlite.and/music.tzh.zzyy.weezer.ui.acti.SplashActi}" drawable="music"/>
+	<item component="ComponentInfo{com.audio.voicechanger.music.editor/com.voicechanger.activity.SplashActivity}" drawable="music"/>
+	<item component="ComponentInfo{com.amapps.media.music/com.amapps.media.music.ui.splash.SplashActivity}" drawable="music"/>
+	<item component="ComponentInfo{com.simplemobiletools.alaba.music.audio.player.sam18/com.simplemobiletools.musicplayer.activities.SplashActivity.Orange}" drawable="music"/>
+	<item component="ComponentInfo{com.bbmusic/com.ryanheise.audioservice.AudioServiceActivity}" drawable="music"/>
+	<item component="ComponentInfo{com.netease.cloudmusic.lite/com.netease.cloudmusic.activity.LoadingActivity}" drawable="music"/>
+	<item component="ComponentInfo{com.shixin.musicsearci/com.shixin.musicsearch.StartActivity}" drawable="music"/>
+	<item component="ComponentInfo{com.hihonor.cloudmusic/com.netease.cloudmusic.activity.MainActivity}" drawable="music"/>
 	<item component="ComponentInfo{com.dreamtechnologies.music8d/com.dreamtechnologies.music8d.views.activities.Splash}" drawable="music"/>
 	<item component="ComponentInfo{kgs.com.addmusictovideos/com.kgs.splash.SplashActivity}" drawable="music"/>
 	<item component="ComponentInfo{freemusic.player/com.atplayer.MainActivity}" drawable="music"/>
@@ -26313,6 +26416,9 @@
 	<!-- My HONOR -->
 	<item component="ComponentInfo{com.hihonor.phoneservice/com.hihonor.phoneservice.LaunchActivity}" drawable="my_honor"/>
 
+	<!-- My Irancell -->
+	<item component="ComponentInfo{com.myirancell/com.myirancell.MainActivity}" drawable="my_irancell"/>
+
 	<!-- My ISUZU -->
 	<item component="ComponentInfo{com.isuzu.viewer/com.unity32.player.UnityPlayerActivity}" drawable="isuzu"/>
 
@@ -26398,6 +26504,9 @@
 
 	<!-- My School Diary -->
 	<item component="ComponentInfo{ru.mes.dnevnik.fgis/ru.mes.dnevnik.MainActivity}" drawable="my_school_diary"/>
+
+	<!-- My Singing Monsters -->
+	<item component="ComponentInfo{com.bigbluebubble.singingmonsters.full/com.bigbluebubble.singingmonsters.MyActivity}" drawable="my_singing_monsters"/>
 
 	<!-- My Skoda -->
 	<item component="ComponentInfo{cz.skodaauto.connect/cz.eman.oneconnect.wrapper.system.MainActivity}" drawable="my_skoda"/>
@@ -26667,6 +26776,9 @@
 	<item component="ComponentInfo{com.lebara.wallet/com.lebara.wallet.ui.main.MainActivity}" drawable="mylebara"/>
 	<item component="ComponentInfo{com.lebara.wallet/com.storybookmobile.MainActivity}" drawable="mylebara"/>
 
+	<!-- MyLink -->
+	<item component="ComponentInfo{com.ChinaMobile/com.ChinaMobile.v3.ui.splash.SplashActivity}" drawable="mylink"/>
+
 	<!-- MyMail -->
 	<item component="ComponentInfo{ru.mail.mailapp/ru.mail.gamification.alias.DarkLauncherAlias}" drawable="mymail"/>
 	<item component="ComponentInfo{ru.mail.mailapp/com.google.android.archive.ReactivateActivity}" drawable="mymail"/>
@@ -26910,6 +27022,9 @@
 
 	<!-- Můj vlak -->
 	<item component="ComponentInfo{cz.cd.mujvlak.an/com.circlegate.cd.app.activity.MainActivity}" drawable="muj_vlak"/>
+
+	<!-- Můj ČEZ -->
+	<item component="ComponentInfo{cz.cez.cpr.mc/cz.cez.cpr.col.MainActivity}" drawable="mj_ez"/>
 
 	<!-- N Dial -->
 	<item component="ComponentInfo{com.hearthborn.studios.ndial/com.hearthborn.studios.ndial.ndialguide.NDialGuide}" drawable="n_dial"/>
@@ -27731,6 +27846,9 @@
 	<!-- NIMC Personal ID -->
 	<item component="ComponentInfo{com.nimcmobile/com.nimcmobile.MainActivity}" drawable="nimc_personal_id"/>
 
+	<!-- Nimo TV -->
+	<item component="ComponentInfo{com.huya.nimo/com.huya.nimo.homepage.ui.activity.SplashActivity}" drawable="nimo_tv"/>
+
 	<!-- NINA -->
 	<item component="ComponentInfo{de.materna.bbk.mobile.app/de.materna.bbk.mobile.app.ui.SplashScreenActivity}" drawable="nina"/>
 	<item component="ComponentInfo{de.materna.bbk.mobile.app/de.materna.bbk.mobile.app.ui.MainActivity}" drawable="nina"/>
@@ -28216,9 +28334,9 @@
 	<item component="ComponentInfo{com.teslacoilsw.launcher.prime/android.app.AppDetailsActivity}" drawable="nova_launcher_prime"/>
 
 	<!-- Nova Post -->
-	<item component="ComponentInfo{eu.novapost/com.example.novaposhta.ui.splash.SplashActivity}" drawable="nova_post"/>
+	<item component="ComponentInfo{eu.novapost/eu.novaposhta.ui.splash.SplashActivity}" drawable="nova_post"/>
 	<item component="ComponentInfo{ua.novaposhtaa/ua.novaposhtaa.activity.StarterActivity}" drawable="nova_post"/>
-	<item component="ComponentInfo{eu.novapost/com.example.novaposhta.ui.main.MainActivity}" drawable="nova_post"/>
+	<item component="ComponentInfo{eu.novapost/eu.novaposhta.ui.main.MainActivity}" drawable="nova_post"/>
 
 	<!-- Nova Video Player -->
 	<item component="ComponentInfo{org.courville.nova/org.courville.nova.browser.BrowserActivityVideo}" drawable="nova_video_player"/>
@@ -28660,6 +28778,10 @@
 	<item component="ComponentInfo{com.colendi.oldubil/com.colendi.oldubil.BASE}" drawable="oldubil"/>
 	<item component="ComponentInfo{com.colendi.oldubil/com.colendi.MainActivity}" drawable="oldubil"/>
 
+	<!-- Ollama -->
+	<item component="ComponentInfo{com.freakurl.apps.ollama/com.example.ollama.MainActivity}" drawable="ollama"/>
+	<item component="ComponentInfo{com.freakurl.apps.ollama/com.freakurl.apps.ollama.MainActivity}" drawable="ollama"/>
+
 	<!-- OLX -->
 	<item component="ComponentInfo{com.schibsted.bomnegocio.androidApp/com.schibsted.scm.nextgenapp.main.MainActivity}" drawable="olx"/>
 	<item component="ComponentInfo{ba.pik.v2.android/ba.pik.v2.android.ui.SplashScreenActivity}" drawable="olx"/>
@@ -28831,6 +28953,10 @@
 
 	<!-- Onleihe -->
 	<item component="ComponentInfo{de.etecture.ekz.onleihe/de.etecture.ekz.onleihe.activity.SplashScreenActivity}" drawable="onleihe"/>
+
+	<!-- online Bibliotheek -->
+	<item component="ComponentInfo{nl.bibliotheek.android.luisterboeken/nl.bibliotheek.android.luisterboeken.activities.SplashActivity}" drawable="online_bibliotheek"/>
+	<item component="ComponentInfo{com.odilo.bibliotheek/odilo.reader_kotlin.ui.splash.views.SplashActivity}" drawable="online_bibliotheek"/>
 
 	<!-- Onsen Search -->
 	<item component="ComponentInfo{com.olivesystem.onsen_map/com.olivesystem.onsen_map.MainActivity}" drawable="onsen"/>
@@ -29021,6 +29147,9 @@
 	<!-- OPENREC.tv -->
 	<item component="ComponentInfo{jp.co.cyber_z.openrecviewapp/jp.co.cyber_z.openrecviewapp.feature.discover.ui.top.TopActivity}" drawable="openrectv"/>
 	<item component="ComponentInfo{jp.co.cyber_z.openrecviewapp/jp.co.cyber_z.openrecviewapp.feature.main.ui.MainActivity}" drawable="openrectv"/>
+
+	<!-- OpenRice -->
+	<item component="ComponentInfo{com.openrice.android/com.openrice.android.ui.activity.splashscreen.SplashScreenActivity}" drawable="openrice"/>
 
 	<!-- OpenScale -->
 	<item component="ComponentInfo{com.health.openscale/com.health.openscale.gui.MainActivity}" drawable="openscale"/>
@@ -29492,12 +29621,12 @@
 	<item component="ComponentInfo{eu.bandainamcoent.pacman256/com.unity3d.player.UnityPlayerNativeActivity}" drawable="pacman"/>
 	<item component="ComponentInfo{eu.bandainamcoent.pacman256/com.unity3d.player.UnityPlayerActivity}" drawable="pacman"/>
 
+	<!-- pachirobo -->
+	<item component="ComponentInfo{jp.co.bravesoft.pachiroboStore/jp.co.genki.example_browser.MainActivity}" drawable="pachirobo"/>
+
 	<!-- Pachli -->
 	<item component="ComponentInfo{app.pachli/app.pachli.SplashActivity}" drawable="pachli"/>
 	<item component="ComponentInfo{app.pachli/app.pachli.MainActivity}" drawable="pachli"/>
-
-	<!-- pachirobo -->
-	<item component="ComponentInfo{jp.co.bravesoft.pachiroboStore/jp.co.genki.example_browser.MainActivity}" drawable="pachirobo"/>
 
 	<!-- Package Manager -->
 	<item component="ComponentInfo{com.smartpack.packagemanager/com.smartpack.packagemanager.activities.StartActivity}" drawable="packagemanager"/>
@@ -29806,6 +29935,9 @@
 
 	<!-- Password Keeper -->
 	<item component="ComponentInfo{com.blackberry.passwordkeeper/com.blackberry.passwordkeeper.WhatsNewActivity}" drawable="passwordkeeper"/>
+
+	<!-- Password Safe -->
+	<item component="ComponentInfo{com.reneph.passwordsafe/com.reneph.passwordsafe.login.LoginActivity}" drawable="password_safe"/>
 
 	<!-- Password Store -->
 	<item component="ComponentInfo{com.zeapo.pwdstore/com.zeapo.pwdstore.PasswordStore}" drawable="passwordstore"/>
@@ -30892,7 +31024,7 @@
 	<item component="ComponentInfo{it.dbtecno.pizzaboy/it.dbtecno.pizzaboy.MainActivity}" drawable="pizza_boy_gbc"/>
 
 	<!-- Pizza Hut -->
-	<item component="ComponentInfo{com.pizzahut.app/com.pizzahut.app.MainActivity}" drawable="pizzahut" />
+	<item component="ComponentInfo{com.pizzahut.app/com.pizzahut.app.MainActivity}" drawable="pizzahut"/>
 	<item component="ComponentInfo{com.yum.pizzahut/com.isobar.pizzahut.android.MainActivity}" drawable="pizzahut"/>
 	<item component="ComponentInfo{com.yum.pizzahut/com.yum.pizzahut.MainActivity}" drawable="pizzahut"/>
 	<item component="ComponentInfo{lk.gamma.pizzakraft.PizzaHut/lk.gamma.pizzakraft.PizzaHut.MainActivity}" drawable="pizzahut"/>
@@ -30979,6 +31111,12 @@
 	<item component="ComponentInfo{com.ea.game.pvzfree_row/com.ea.game.pvzfree_row.PvZActivity}" drawable="plants_vs_zombies"/>
 	<item component="ComponentInfo{com.ea.game.pvzfree_row/com.fiveplay.mod.RMS.Recovery}" drawable="plants_vs_zombies"/>
 
+	<!-- Plants vs Zombies Grafted -->
+	<item component="ComponentInfo{com.example.pvzjjb/com.godot.game.GodotApp}" drawable="plants_vs_zombies_grafted"/>
+
+	<!-- Plants vs Zombies Hybrid -->
+	<item component="ComponentInfo{com.xwg.pvzzjb/com.unity3d.player.UnityPlayerActivity}" drawable="plants_vs_zombies_hybrid"/>
+
 	<!-- PlantsVsZombiesRH -->
 	<item component="ComponentInfo{com.LanPiaoPiao.PlantsVsZombiesRH/com.unity3d.player.UnityPlayerActivity}" drawable="plantsvszombiesrh"/>
 
@@ -30993,6 +31131,9 @@
 
 	<!-- Play Integrity API Checker -->
 	<item component="ComponentInfo{gr.nikolasspyr.integritycheck/gr.nikolasspyr.integritycheck.MainActivity}" drawable="play_integrity_api_checker"/>
+
+	<!-- Play Now -->
+	<item component="ComponentInfo{com.play.playnow/com.n7mobile.playnow.ui.MainActivity}" drawable="play_now"/>
 
 	<!-- Play Services Info -->
 	<item component="ComponentInfo{com.weberdo.apps.serviceinfo/com.weberdo.apps.serviceinfo.MainActivity}" drawable="settings"/>
@@ -31382,6 +31523,9 @@
 	<!-- PortDroid -->
 	<item component="ComponentInfo{com.stealthcopter.portdroid/com.stealthcopter.portdroid.activities.StartActivity}" drawable="portdroid"/>
 
+	<!-- Porter -->
+	<item component="ComponentInfo{com.theporter.android.customerapp/com.theporter.android.customerapp.RootActivity}" drawable="porter"/>
+
 	<!-- PortScanner -->
 	<item component="ComponentInfo{com.portscanner.superredstone/org.gioui.GioActivity}" drawable="portscanner"/>
 
@@ -31463,6 +31607,9 @@
 
 	<!-- Power Marathon -->
 	<item component="ComponentInfo{com.transsion.batterylab.icon/com.transsion.batterylab.icon.MainActivity}" drawable="power_marathon"/>
+
+	<!-- Power Shortcuts -->
+	<item component="ComponentInfo{com.ss.powershortcuts/com.ss.powershortcuts.MainActivity}" drawable="power_shortcuts"/>
 
 	<!-- Poweramp -->
 	<item component="ComponentInfo{com.maxmpz.audioplayer/com.maxmpz.audioplayer.standard_adaptive}" drawable="poweramp"/>
@@ -32201,6 +32348,9 @@
 	<!-- Qudelix -->
 	<item component="ComponentInfo{com.qudelix.qudelix/com.qudelix.qudelix.App.Main.MainActivity}" drawable="qudelix"/>
 
+	<!-- Qudianyun -->
+	<item component="ComponentInfo{com.qudian.qudianyun/com.qudian.qudianyun.activities.InitialActivity}" drawable="qudianyun"/>
+
 	<!-- Quebec 511 -->
 	<item component="ComponentInfo{ca.qc.gouv.mtq.Quebec511/crc646174e497c870c4a0.MainActivity}" drawable="quebec511"/>
 
@@ -32312,38 +32462,38 @@
 	<item component="ComponentInfo{com.github.jameshnsears.quoteunquote/com.github.jameshnsears.quoteunquote.QuoteUnquoteInstructions}" drawable="quoteunquote"/>
 
 	<!-- Quran -->
-    <item component="ComponentInfo{com.logicdev.quran_reader/com.ryanheise.audioservice.AudioServiceActivity}" drawable="quran"/>
-    <item component="ComponentInfo{com.maher4web.quran/com.simppro.lib.mushaf.simple.Main}" drawable="quran"/>
-    <item component="ComponentInfo{com.simppro.quran/com.simppro.lib.mushaf.advanced.Main}" drawable="quran"/>
-    <item component="ComponentInfo{com.tmkeen.alquran/com.tmkeen.alquran.SplashActivity}" drawable="quran"/>
-    <item component="ComponentInfo{com.masnoon.qurani.duain.hisnul.muslim/com.tahajjud.all.dua.MenuActivity}" drawable="quran"/>
-    <item component="ComponentInfo{kw.gov.qsa.quranapp/kw.gov.qsa.qeraat_moshaf_kwait.MainActivity}" drawable="quran"/>
-    <item component="ComponentInfo{com.quranmajeed.abdelbasetabdessamad.quranmp3offlinecomplete/com.quranmajeed.abdelbasetabdessamad.quranmp3offlinecomplete.activities.SplashActivity}" drawable="quran"/>
-    <item component="ComponentInfo{com.chaks.quran/com.chaks.quran.activities.SplashActivity}" drawable="quran"/>
-    <item component="ComponentInfo{com.quran.mushaf.mecca/com.developer.quran.ui.splash.SplashActivity}" drawable="quran"/>
-    <item component="ComponentInfo{org.crcis.quran/org.crcis.quran.MainActivity}" drawable="quran"/>
-    <item component="ComponentInfo{faraj.faraj_quran_waresh_mojwad/faraj.faraj_quran_waresh_mojwad.IntroActivity}" drawable="quran"/>
-    <item component="ComponentInfo{com.khalnadj.khaledhabbachi.quranhafs/com.khalnadj.khaledhabbachi.quranhafs.HafsActivity}" drawable="quran"/>
-    <item component="ComponentInfo{com.superwyi.quranalkarem/com.superwyi.quranalkarem.Splash}" drawable="quran"/>
-    <item component="ComponentInfo{com.necmieker.quran/com.necmieker.quran.SplashActivity}" drawable="quran"/>
-    <item component="ComponentInfo{com.abdo.quran/com.abdo.quran.ui.activity.SplashScreen}" drawable="quran"/>
-    <item component="ComponentInfo{se.anwar.quran/se.anwar.quran.QuranDataActivity}" drawable="quran"/>
-    <item component="ComponentInfo{sa.QuranComplex.QuranHafs/com.embarcadero.firemonkey.FMXNativeActivity}" drawable="quran"/>
-    <item component="ComponentInfo{net.alquran.hassanalwajidioffline/com.ryanheise.audioservice.AudioServiceActivity}" drawable="quran"/>
-    <item component="ComponentInfo{quran.tilawatequran.OmarHishamAlArabi/quran.tilawatequran.OmarHishamAlArabi.Dashboard_000}" drawable="quran"/>
-    <item component="ComponentInfo{com.simppro.quran.tafseer.offline/com.simppro.lib.mushaf.advanced.Main}" drawable="quran"/>
-    <item component="ComponentInfo{online.smartech.mukhtasar/com.developer.quran.ui.splash.SplashActivity}" drawable="quran"/>
-    <item component="ComponentInfo{net.alquran.muhammadluhaidanoffline/com.ryanheise.audioservice.AudioServiceActivity}" drawable="quran"/>
-    <item component="ComponentInfo{com.quranemajeedapp.org.dbdemo/com.quranemajeedapp.org.dbdemo.activities.Splash}" drawable="quran"/>
-    <item component="ComponentInfo{com.madarsoft.quran/com.madarsoft.quran.activities.splash.SplashScreenActivity}" drawable="quran"/>
-    <item component="ComponentInfo{com.atq.quranemajeedapp.org.tafheemenglish/com.atq.quranemajeedapp.org.tafheemenglish.activities.main.Splash}" drawable="quran"/>
-    <item component="ComponentInfo{com.mushtakshif.quran.prayertime.qibla.athan/com.mushtakshif.quran.prayertime.qibla.athan.MainActivity}" drawable="quran"/>
-    <item component="ComponentInfo{com.tfoa.AbdBasitAbdSamad/com.andromo.MainActivity}" drawable="quran"/>
-    <item component="ComponentInfo{islamic.apps.abdul.rahman.al.sudais.mp3.quran.offline.full/com.app.anchor.kids.lullaby.activity.HomeActivity}" drawable="quran"/>
-    <item component="ComponentInfo{com.sudais.audioquran/com.appzard.anifahmolawale.ARS_versebyverse_quran2.Screen1}" drawable="quran"/>
-    <item component="ComponentInfo{com.quran.labs.androidquran.naskh/com.quran.labs.androidquran.QuranDataActivity}" drawable="quran"/>
-    <item component="ComponentInfo{com.muslimappassistant.Islampro.qiblafinder.quranprayerdua/com.muslimappassistant.activities.StartActivity}" drawable="quran"/>
-    <item component="ComponentInfo{com.QuranReading.qurannow/com.QuranReading.englishquran.SplashActivity}" drawable="quran"/>
+	<item component="ComponentInfo{com.logicdev.quran_reader/com.ryanheise.audioservice.AudioServiceActivity}" drawable="quran"/>
+	<item component="ComponentInfo{com.maher4web.quran/com.simppro.lib.mushaf.simple.Main}" drawable="quran"/>
+	<item component="ComponentInfo{com.simppro.quran/com.simppro.lib.mushaf.advanced.Main}" drawable="quran"/>
+	<item component="ComponentInfo{com.tmkeen.alquran/com.tmkeen.alquran.SplashActivity}" drawable="quran"/>
+	<item component="ComponentInfo{com.masnoon.qurani.duain.hisnul.muslim/com.tahajjud.all.dua.MenuActivity}" drawable="quran"/>
+	<item component="ComponentInfo{kw.gov.qsa.quranapp/kw.gov.qsa.qeraat_moshaf_kwait.MainActivity}" drawable="quran"/>
+	<item component="ComponentInfo{com.quranmajeed.abdelbasetabdessamad.quranmp3offlinecomplete/com.quranmajeed.abdelbasetabdessamad.quranmp3offlinecomplete.activities.SplashActivity}" drawable="quran"/>
+	<item component="ComponentInfo{com.chaks.quran/com.chaks.quran.activities.SplashActivity}" drawable="quran"/>
+	<item component="ComponentInfo{com.quran.mushaf.mecca/com.developer.quran.ui.splash.SplashActivity}" drawable="quran"/>
+	<item component="ComponentInfo{org.crcis.quran/org.crcis.quran.MainActivity}" drawable="quran"/>
+	<item component="ComponentInfo{faraj.faraj_quran_waresh_mojwad/faraj.faraj_quran_waresh_mojwad.IntroActivity}" drawable="quran"/>
+	<item component="ComponentInfo{com.khalnadj.khaledhabbachi.quranhafs/com.khalnadj.khaledhabbachi.quranhafs.HafsActivity}" drawable="quran"/>
+	<item component="ComponentInfo{com.superwyi.quranalkarem/com.superwyi.quranalkarem.Splash}" drawable="quran"/>
+	<item component="ComponentInfo{com.necmieker.quran/com.necmieker.quran.SplashActivity}" drawable="quran"/>
+	<item component="ComponentInfo{com.abdo.quran/com.abdo.quran.ui.activity.SplashScreen}" drawable="quran"/>
+	<item component="ComponentInfo{se.anwar.quran/se.anwar.quran.QuranDataActivity}" drawable="quran"/>
+	<item component="ComponentInfo{sa.QuranComplex.QuranHafs/com.embarcadero.firemonkey.FMXNativeActivity}" drawable="quran"/>
+	<item component="ComponentInfo{net.alquran.hassanalwajidioffline/com.ryanheise.audioservice.AudioServiceActivity}" drawable="quran"/>
+	<item component="ComponentInfo{quran.tilawatequran.OmarHishamAlArabi/quran.tilawatequran.OmarHishamAlArabi.Dashboard_000}" drawable="quran"/>
+	<item component="ComponentInfo{com.simppro.quran.tafseer.offline/com.simppro.lib.mushaf.advanced.Main}" drawable="quran"/>
+	<item component="ComponentInfo{online.smartech.mukhtasar/com.developer.quran.ui.splash.SplashActivity}" drawable="quran"/>
+	<item component="ComponentInfo{net.alquran.muhammadluhaidanoffline/com.ryanheise.audioservice.AudioServiceActivity}" drawable="quran"/>
+	<item component="ComponentInfo{com.quranemajeedapp.org.dbdemo/com.quranemajeedapp.org.dbdemo.activities.Splash}" drawable="quran"/>
+	<item component="ComponentInfo{com.madarsoft.quran/com.madarsoft.quran.activities.splash.SplashScreenActivity}" drawable="quran"/>
+	<item component="ComponentInfo{com.atq.quranemajeedapp.org.tafheemenglish/com.atq.quranemajeedapp.org.tafheemenglish.activities.main.Splash}" drawable="quran"/>
+	<item component="ComponentInfo{com.mushtakshif.quran.prayertime.qibla.athan/com.mushtakshif.quran.prayertime.qibla.athan.MainActivity}" drawable="quran"/>
+	<item component="ComponentInfo{com.tfoa.AbdBasitAbdSamad/com.andromo.MainActivity}" drawable="quran"/>
+	<item component="ComponentInfo{islamic.apps.abdul.rahman.al.sudais.mp3.quran.offline.full/com.app.anchor.kids.lullaby.activity.HomeActivity}" drawable="quran"/>
+	<item component="ComponentInfo{com.sudais.audioquran/com.appzard.anifahmolawale.ARS_versebyverse_quran2.Screen1}" drawable="quran"/>
+	<item component="ComponentInfo{com.quran.labs.androidquran.naskh/com.quran.labs.androidquran.QuranDataActivity}" drawable="quran"/>
+	<item component="ComponentInfo{com.muslimappassistant.Islampro.qiblafinder.quranprayerdua/com.muslimappassistant.activities.StartActivity}" drawable="quran"/>
+	<item component="ComponentInfo{com.QuranReading.qurannow/com.QuranReading.englishquran.SplashActivity}" drawable="quran"/>
 	<item component="ComponentInfo{com.NMSQ.quran/com.niotron.anifahmolawale.NMSQ.Screen1}" drawable="quran"/>
 	<item component="ComponentInfo{com.ihadis.ihadis/com.ihadis.ihadis.MainActivity}" drawable="quran"/>
 	<item component="ComponentInfo{com.mkkh.aljummal/com.mkkh.aljummal.MainActivity}" drawable="quran"/>
@@ -32968,6 +33118,9 @@
 	<!-- RealCalc -->
 	<item component="ComponentInfo{uk.co.nickfines.RealCalcPlus/uk.co.nickfines.RealCalcPlus.Calculator}" drawable="realcalc"/>
 
+	<!-- RealityScan -->
+	<item component="ComponentInfo{com.epicgames.realityscan/com.epicgames.realityscan.MainActivity}" drawable="realityscan"/>
+
 	<!-- Really Bad Chess -->
 	<item component="ComponentInfo{com.noodlecake.reallybadchess/com.izaron.androideffects.vibration.MyMainActivity}" drawable="reallybadchess"/>
 	<item component="ComponentInfo{com.noodlecake.reallybadchess/com.unity3d.player.UnityPlayerActivity}" drawable="reallybadchess"/>
@@ -33310,6 +33463,73 @@
 	<!-- Removed -->
 	<item component="ComponentInfo{com.humzaman.removed/com.humzaman.removed.activity.MainActivity}" drawable="removed"/>
 
+	<!-- Ren.py games -->
+	<item component="ComponentInfo{com.kompasproductions.summertimesaga/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
+	<item component="ComponentInfo{com.tw60.mta/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
+	<item component="ComponentInfo{com.tw60mta.mta/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
+	<item component="ComponentInfo{com.unveilingtheunknown/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
+	<item component="ComponentInfo{su.sovietgames.everlasting_summer/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
+	<item component="ComponentInfo{horny.craft/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
+	<item component="ComponentInfo{su.viende.tinybunny/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
+	<item component="ComponentInfo{com.dirgtrats.atcradar/org.renpy.android.PythonActivity}" drawable="renpy"/>
+	<item component="ComponentInfo{com.terletski.alt/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
+	<item component="ComponentInfo{com.sensitiveusername.lisasday/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
+	<item component="ComponentInfo{com.app.milfyleoo/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
+	<item component="ComponentInfo{com.nomnomnami.badendtheater/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
+	<item component="ComponentInfo{uk.co.ptgames.lunarschosen2/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
+	<item component="ComponentInfo{what.a.legend.c18/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
+	<item component="ComponentInfo{com.tpoh/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
+	<item component="ComponentInfo{com.ps3.higurashi/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
+	<item component="ComponentInfo{com.whitezap.hokkaidofox051/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
+	<item component="ComponentInfo{com.joyfuldays/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
+	<item component="ComponentInfo{lustful.society/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
+	<item component="ComponentInfo{cavemanon.snootgame/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
+	<item component="ComponentInfo{com.fapfapgames.jumpharem/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
+	<item component="ComponentInfo{mybestdeal.hotzone18.com/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
+	<item component="ComponentInfo{com.thelastyear.th/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
+	<item component="ComponentInfo{com.choices.distantshores2/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
+	<item component="ComponentInfo{re.dreamer/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
+	<item component="ComponentInfo{com.goddesseswhim.rus/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
+	<item component="ComponentInfo{com.loveatfirsttail.rus/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
+	<item component="ComponentInfo{com.maevesacademy.rus/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
+	<item component="ComponentInfo{com.takeisjourney.rus/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
+	<item component="ComponentInfo{com.unexpected.rus/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
+	<item component="ComponentInfo{com.wolfcomplex.rus/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
+	<item component="ComponentInfo{com.silverstudiogames.wts/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
+	<item component="ComponentInfo{com.dd.murmur/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
+	<item component="ComponentInfo{cwg.com/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
+	<item component="ComponentInfo{ghost.dirty.cases/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
+	<item component="ComponentInfo{com.pornoapk.dreamsofdesire/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
+	<item component="ComponentInfo{galaxyofscum_androidmo.im/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
+	<item component="ComponentInfo{ozecat.games/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
+	<item component="ComponentInfo{be.lovesucks/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
+	<item component="ComponentInfo{games.manka.tameit/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
+	<item component="ComponentInfo{com.likhogames.wetsand/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
+	<item component="ComponentInfo{com.witchhunter.prog/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
+	<item component="ComponentInfo{something.unlimited.themyscira/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
+	<item component="ComponentInfo{com.tinybunny.unoffportbychristopher/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
+	<item component="ComponentInfo{gr.pornoisland.site/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
+	<item component="ComponentInfo{school.game/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
+	<item component="ComponentInfo{com.otorhin.ddlc/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
+	<item component="ComponentInfo{isekai_brothel_rus.pornoisland.site/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
+	<item component="ComponentInfo{hlc.com/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
+	<item component="ComponentInfo{mhr.com/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
+	<item component="ComponentInfo{pokesluts.android/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
+	<item component="ComponentInfo{io.itch.promisestokeep/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
+	<item component="ComponentInfo{restaurant_rus.pornoisland.site/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
+	<item component="ComponentInfo{com.fingercrossedteam.tbos/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
+	<item component="ComponentInfo{com.eddacafe.nsaid/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
+	<item component="ComponentInfo{com.ebihime.lonely/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
+	<item component="ComponentInfo{com.isekaigames.isekaibrothel/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
+	<item component="ComponentInfo{com.dinaki.kt/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
+	<item component="ComponentInfo{summer.time.saga/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
+	<item component="ComponentInfo{mystic_valley_rus.pornoisland.site/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
+	<item component="ComponentInfo{randeltales_ru.kasatik/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
+	<item component="ComponentInfo{com.pastryirl.adventurertrainer/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
+	<item component="ComponentInfo{com.pirotking.mbd/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
+	<item component="ComponentInfo{oppai_odyssey_rus.pornoisland.site/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
+	<item component="ComponentInfo{fet_rus.islandofpleasure.site/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
+
 	<!-- Renpho -->
 	<item component="ComponentInfo{com.qingniu.renpho/com.kingnew.foreign.main.view.activity.LauncherActivity}" drawable="renpho"/>
 	<item component="ComponentInfo{com.qingniu.renpho/com.renpho.app.main.view.activity.LauncherActivity}" drawable="renpho"/>
@@ -33440,6 +33660,9 @@
 	<item component="ComponentInfo{app.revanced.manager.flutter/app.revanced.manager.flutter.MainActivity}" drawable="revanced_manager"/>
 	<item component="ComponentInfo{com.revanced.net.revancedmanager/com.revanced.net.revancedmanager.MainActivity}" drawable="revanced_manager"/>
 	<item component="ComponentInfo{app.revanced.manager.flutter.debug/app.revanced.manager.flutter.MainActivity}" drawable="revanced_manager"/>
+
+	<!-- Revenge -->
+	<item component="ComponentInfo{app.revenge/com.discord.main.MainDefault}" drawable="discord"/>
 
 	<!-- Revenge Manager -->
 	<item component="ComponentInfo{app.revenge.manager/dev.beefers.vendetta.manager.ui.activity.MainActivity}" drawable="revenge_manager"/>
@@ -34744,6 +34967,9 @@
 
 	<!-- Sendo -->
 	<item component="ComponentInfo{com.sendo/com.sendo.module.home.view.SplashScreen1Activity}" drawable="sendo"/>
+
+	<!-- Seneca -->
+	<item component="ComponentInfo{com.senecalearning.app/com.senecalearning.app.LauncherActivity}" drawable="seneca"/>
 
 	<!-- Sense -->
 	<item component="ComponentInfo{in.sensemusic.sense/in.sensemusic.sense.activities.SplashScreenActivity}" drawable="music_alt_2"/>
@@ -36226,6 +36452,9 @@
 	<item component="ComponentInfo{sg.com.transitlink/com.thoughtworks.ezlink.workflows.main.SplashActivity}" drawable="simplygo"/>
 	<item component="ComponentInfo{sg.com.transitlink/sg.com.transitlink.main.activity.SplashActivity}" drawable="simplygo"/>
 
+	<!-- SimplyPiano -->
+	<item component="ComponentInfo{com.joytunes.simplypiano/com.joytunes.simplypiano.ui.SplashScreen}" drawable="simplypiano"/>
+
 	<!-- SimpMusic -->
 	<item component="ComponentInfo{com.maxrave.simpmusic/com.maxrave.simpmusic.ui.MainActivity}" drawable="simpmusic"/>
 
@@ -36254,6 +36483,9 @@
 
 	<!-- Sixty60 -->
 	<item component="ComponentInfo{za.co.shoprite.sixty60/za.co.shoprite.sixty60.MainActivity}" drawable="sixty60"/>
+
+	<!-- SiYuan -->
+	<item component="ComponentInfo{org.b3log.siyuan/org.b3log.siyuan.BootActivity}" drawable="siyuan"/>
 
 	<!-- Sizzle -->
 	<item component="ComponentInfo{ai.szl.mobileapp/ai.szl.mobileapp.MainActivity}" drawable="sizzle"/>
@@ -36482,6 +36714,9 @@
 	<!-- Slopes -->
 	<item component="ComponentInfo{com.consumedbycode.slopes/com.consumedbycode.slopes.MainActivity}" drawable="slopes"/>
 
+	<!-- Slovene-English Dictionary -->
+	<item component="ComponentInfo{com.eflasoft.slvengfree/com.eflasoft.slvengfree.MainActivity}" drawable="slovenija"/>
+
 	<!-- Slowly -->
 	<item component="ComponentInfo{com.slowlyapp/com.slowlyapp.MainActivity}" drawable="slowly"/>
 
@@ -36502,6 +36737,9 @@
 
 	<!-- Smart Control -->
 	<item component="ComponentInfo{com.sennheiser.control/com.tns.NativeScriptActivity}" drawable="smartcontrol"/>
+
+	<!-- Smart Dock -->
+	<item component="ComponentInfo{cu.axel.smartdock/cu.axel.smartdock.activities.MainActivity}" drawable="smart_dock"/>
 
 	<!-- Smart Edge -->
 	<item component="ComponentInfo{com.abh80.smartedge/com.abh80.smartedge.activities.MainActivity}" drawable="smart_edge"/>
@@ -36835,6 +37073,9 @@
 	<!-- social -->
 	<item component="ComponentInfo{de.monocles.social/de.monocles.social.MainActivity}" drawable="social"/>
 
+	<!-- Social Deal -->
+	<item component="ComponentInfo{app.nl.socialdeal/app.nl.socialdeal.SplashActivity}" drawable="social_deal"/>
+
 	<!-- Société Générale -->
 	<item component="ComponentInfo{mobi.societegenerale.mobile.lappli/mobi.societegenerale.mobile.lappli.react.MainActivity}" drawable="socitgnrale"/>
 
@@ -36986,18 +37227,12 @@
 	<item component="ComponentInfo{com.artxdev.songtube/com.artxdev.songtube.MainActivity}" drawable="songtube"/>
 	<item component="ComponentInfo{com.artxdev.songtube/com.ryanheise.audioservice.AudioServiceActivity}" drawable="songtube"/>
 
+	<!-- Sonic 2 -->
+	<item component="ComponentInfo{com.sega.sonic2.runner/com.sega.sonic2px.MainActivity}" drawable="sonic_the_hedgehog_2"/>
+
 	<!-- SONIC Restaurant -->
 	<item component="ComponentInfo{com.sonic.sonicdrivein/com.sonic.sonicdrivein.ui.screen.splash.SplashActivity}" drawable="sonic_restaurant"/>
 	<item component="ComponentInfo{com.sonic.sonicdrivein/com.inspirebrandsapp.MainActivity}" drawable="sonic_restaurant"/>
-
-	<!-- Departures live -->
-	<item component="ComponentInfo{com.initka.android.departurelive/com.initka.android.departurelive.MainActivity}" drawable="departures_live" />
-
-	<!-- Breadboard -->
-	<item component="ComponentInfo{moe.apex.rule34/moe.apex.rule34.MainActivity}" drawable="breadboard" />
-
-	<!-- Sonic 2 -->
-	<item component="ComponentInfo{com.sega.sonic2.runner/com.sega.sonic2px.MainActivity}" drawable="sonic_the_hedgehog_2"/>
 
 	<!-- Sonic Robo Blast 2 -->
 	<item component="ComponentInfo{org.stjr.srb2/org.stjr.srb2.SRB2Game}" drawable="sonic"/>
@@ -37053,6 +37288,9 @@
 	<!-- SOS Alarm -->
 	<item component="ComponentInfo{se.sos.soslive/se.sos.soslive.activities.SplashActivity}" drawable="sosalarm"/>
 	<item component="ComponentInfo{se.sos.soslive/se.sos.soslive.activities.RoutingActivity}" drawable="sosalarm"/>
+
+	<!-- SoSIM -->
+	<item component="ComponentInfo{com.hthk.sosim/com.hthk.sosim.MainActivity}" drawable="sosim"/>
 
 	<!-- SotN -->
 	<item component="ComponentInfo{jp.konami.epjCastlevania2/com.dotemu.castlevania.LaunchActivity}" drawable="castlevania"/>
@@ -37273,6 +37511,14 @@
 	<!-- SpeakingPal -->
 	<item component="ComponentInfo{com.speakingpal.speechtrainer.sp/com.speakingpal.speechtrainer.sp_new_client.splash_screen.SpMainUiActivity}" drawable="speakingpal"/>
 
+	<!-- SpecialForcesGroup2 -->
+	<item component="ComponentInfo{com.ForgeGames.SpecialForcesGroup2/com.epicgames.ue4.SplashActivity}" drawable="specialforcesgroup2"/>
+	<item component="ComponentInfo{com.ForgeGames.SpecialForcesGroup2/com.gamein.i.a.WelcomeActivity}" drawable="specialforcesgroup2"/>
+	<item component="ComponentInfo{com.ForgeGames.SpecialForcesGroup2/com.me.game.pmupdatesdk.MainActivity}" drawable="specialforcesgroup2"/>
+
+	<!-- SpecialForcesGroup3 -->
+	<item component="ComponentInfo{com.ForgeGames.sfg3/com.epicgames.ue4.SplashActivity}" drawable="specialforcesgroup3"/>
+
 	<!-- Spectroid -->
 	<item component="ComponentInfo{org.intoorbit.spectrum/org.intoorbit.spectrum.SpectrumActivity}" drawable="spectroid"/>
 
@@ -37370,8 +37616,8 @@
 	<item component="ComponentInfo{com.shabinder.spotiflyer/com.shabinder.spotiflyer.ui.SplashScreenActivity}" drawable="spotiflyer"/>
 
 	<!-- Spotify -->
-    <item component="ComponentInfo{com.spotify.musicx/com.spotify.music.MainActivity}" drawable="spotify"/>
-    <item component="ComponentInfo{spoti.plus/com.spotify.music.MainActivity}" drawable="spotify"/>
+	<item component="ComponentInfo{com.spotify.musicx/com.spotify.music.MainActivity}" drawable="spotify"/>
+	<item component="ComponentInfo{spoti.plus/com.spotify.music.MainActivity}" drawable="spotify"/>
 	<item component="ComponentInfo{com.spotify.music/com.spotify.music.ToastActivity}" drawable="spotify"/>
 	<item component="ComponentInfo{com.spotify.music/com.spotify.music.MainActivity}" drawable="spotify"/>
 	<item component="ComponentInfo{com.spotify.s4a/com.spotify.s4a.SplashActivity}" drawable="spotify"/>
@@ -37487,66 +37733,6 @@
 	<item component="ComponentInfo{ssb.flex/via.rider.activities.HomeActivity}" drawable="ssb_flex"/>
 	<item component="ComponentInfo{ssb.flex/via.rider.features.splash.SplashActivityKt}" drawable="ssb_flex"/>
 
-    <!-- Cursed house Multiplayer(GMM) -->
-    <item component="ComponentInfo{com.UnityUserco.EscapeHauntedHouseOnline/com.unity3d.player.UnityPlayerActivity}" drawable="cursed_house_multiplayer_gmm"/>
-
-    <!-- FatSecret -->
-    <item component="ComponentInfo{com.fatsecret.android/com.fatsecret.android.ui.activity.StartupActivity}" drawable="fatsecret"/>
-
-    <!-- G2A -->
-    <item component="ComponentInfo{com.g2a.marketplace/com.g2a.marketplace.main.MainActivity}" drawable="g2a"/>
-
-    <!-- VoiceGPT -->
-    <item component="ComponentInfo{com.wstxda.voicegpt/com.wstxda.voicegpt.VoiceGptActivity}" drawable="voicegpt"/>
-
-    <!-- MangaLib -->
-    <item component="ComponentInfo{ru.libapp/ru.libapp.ui.main.MainActivity}" drawable="mangalib"/>
-
-    <!-- Porter -->
-    <item component="ComponentInfo{com.theporter.android.customerapp/com.theporter.android.customerapp.RootActivity}" drawable="porter"/>
-
-    <!-- SimplyPiano -->
-    <item component="ComponentInfo{com.joytunes.simplypiano/com.joytunes.simplypiano.ui.SplashScreen}" drawable="simplypiano"/>
-
-    <!-- Couple Widget -->
-    <item component="ComponentInfo{princ.lifestyle.CoupleWidget/princ.lifestyle.CoupleWidget.LoadingActivity}" drawable="couple_widget"/>
-
-    <!-- Move It -->
-    <item component="ComponentInfo{com.moveit.app.customer/com.grab.pax.newface.common.alias.DefaultLauncherAlias}" drawable="move_it"/>
-
-    <!-- Lena Adaptive -->
-    <item component="ComponentInfo{one4studio.iconpack.lenaadaptive/com.candybar.dev.activities.SplashActivity}" drawable="lena_adaptive"/>
-
-    <!-- Leroy Merlin -->
-    <item component="ComponentInfo{com.adeo.android.app/com.lmfr.applm.onboarding.activities.onboarding.OnBoardingActivity}" drawable="leroy_merlin"/>
-
-    <!-- Дикси -->
-    <item component="ComponentInfo{com.ru.dixy/com.dixy.MainActivity}" drawable="dixy"/>
-
-    <!-- XAPKS Installer -->
-    <item component="ComponentInfo{io.apkmody.sai/com.aefyr.sai.ui.activities.MainActivity}" drawable="xapks_installer"/>
-
-    <!-- LazyPay -->
-    <item component="ComponentInfo{com.citrus.citruspay/com.citrus.citruspay.Onboarding.view.activities.SplashActivity}" drawable="lazypay"/>
-
-    <!-- FullRoid -->
-    <item component="ComponentInfo{com.fulldive.extension.fullroid/com.swordfish.lemuroid.app.mobile.feature.main.MainActivity}" drawable="fullroid"/>
-
-    <!-- Chrono -->
-    <item component="ComponentInfo{quebec.artm.chrono/quebec.artm.chrono.ui.main.MainActivity}" drawable="artm_chrono"/>
-
-    <!-- HONOR Store -->
-    <item component="ComponentInfo{com.hihonor.hstore.global/com.honor.global.activity.LandingActivity}" drawable="honor_store"/>
-
-    <!-- VRChat -->
-    <item component="ComponentInfo{com.vrchat.mobile.playstore/com.vrchat.app.MainActivity}" drawable="vrchat"/>
-
-    <!-- Password Safe -->
-    <item component="ComponentInfo{com.reneph.passwordsafe/com.reneph.passwordsafe.login.LoginActivity}" drawable="password_safe"/>
-
-    <!-- Dollar General -->
-    <item component="ComponentInfo{com.dollargeneral.android/dgapp2.dollargeneral.com.dgapp2_android.SplashActivity}" drawable="dollar_general"/>
-
 	<!-- SSB Move -->
 	<item component="ComponentInfo{de.eos.uptrade.android.fahrinfo.stuttgart/de.eos.uptrade.android.fahrinfo.activity.tabs.MainTabActivity}" drawable="ssb_move"/>
 
@@ -37622,7 +37808,7 @@
 	<item component="ComponentInfo{com.disney.starplus/com.google.android.archive.ReactivateActivity}" drawable="star"/>
 
 	<!-- Starbucks -->
-	<item component="ComponentInfo{com.starbucks.hk/com.starbucks.MainActivity}" drawable="starbucks" />
+	<item component="ComponentInfo{com.starbucks.hk/com.starbucks.MainActivity}" drawable="starbucks"/>
 	<item component="ComponentInfo{com.starbucks.mobilecard/com.starbucks.mobilecard.main.activity.LandingPageActivity}" drawable="starbucks"/>
 	<item component="ComponentInfo{com.starbucks.ar/com.starbucks.emea.features.splash.SplashActivity}" drawable="starbucks"/>
 	<item component="ComponentInfo{com.starbucks.jp/com.appunite.sbj.splash.SplashActivity}" drawable="starbucks"/>
@@ -37817,6 +38003,9 @@
 	<!-- Storage Saver -->
 	<item component="ComponentInfo{com.samsung.memorysaver/com.samsung.memorysaver.zipunzipapps.ui.activities.ZipLauncherActivity}" drawable="storage_saver"/>
 
+	<!-- Stori -->
+	<item component="ComponentInfo{ai.powerup.stori/ai.powerup.stori.home.mvp.ui.activity.NewSplashActivity}" drawable="stori"/>
+
 	<!-- Stork IM -->
 	<item component="ComponentInfo{org.tigase.messenger.phone.pro/org.tigase.messenger.phone.pro.MainActivity}" drawable="storkim"/>
 
@@ -37831,6 +38020,12 @@
 
 	<!-- STOU SISA -->
 	<item component="ComponentInfo{com.project.stouandroid/com.voutlook.stouandroid.SplashScreenActivity}" drawable="stou_sisa"/>
+
+	<!-- Stratum authenticator -->
+	<item component="ComponentInfo{me.jmh.authenticatorpro/crc646be539cf0a2d8609.MainActivity}" drawable="stratum"/>
+	<item component="ComponentInfo{me.jmh.authenticatorpro/crc643c2a2b888a14ec9a.MainActivity}" drawable="stratum"/>
+	<item component="ComponentInfo{com.stratumauth.app/crc6427d348f39abaf1dd.MainActivity}" drawable="stratum"/>
+	<item component="ComponentInfo{com.stratumauth.app/com.stratumauth.app.MainActivity}" drawable="stratum"/>
 
 	<!-- Strava -->
 	<item component="ComponentInfo{com.strava/com.google.android.archive.ReactivateActivity}" drawable="strava"/>
@@ -37914,74 +38109,6 @@
 
 	<!-- StudentVUE -->
 	<item component="ComponentInfo{com.FreeLance.StudentVUE/com.FreeLance.StudentVUE.MainActivity}" drawable="studentvue"/>
-
-    <!-- KAYAK -->
-    <item component="ComponentInfo{com.kayak.android/com.kayak.android.splash.SplashActivity}" drawable="letter_uppercase_square_k"/>
-
-    <!-- Smart Dock -->
-    <item component="ComponentInfo{cu.axel.smartdock/cu.axel.smartdock.activities.MainActivity}" drawable="smart_dock"/>
-
-    <!-- LED Scroller -->
-    <item component="ComponentInfo{com.xapp.ledscroller/com.zipoapps.premiumhelper.ui.splash.PHSplashActivity}" drawable="led_scroller"/>
-
-    <!-- Glo Cafe -->
-    <item component="ComponentInfo{net.one97.selfcare.globacom/net.one97.selfcare.globacom.authentication.SplashScreen}" drawable="glo_cafe"/>
-
-    <!-- Dott -->
-    <item component="ComponentInfo{com.ridedott.rider/com.ridedott.rider.MainActivity}" drawable="dott"/>
-
-    <!-- Tigad -->
-    <item component="ComponentInfo{com.indigomadina.tigadpro/com.indigomadina.tigadpro.activities.MainActivity}" drawable="tigad"/>
-
-    <!-- My Irancell -->
-    <item component="ComponentInfo{com.myirancell/com.myirancell.MainActivity}" drawable="my_irancell"/>
-
-    <!-- Telda -->
-	<item component="ComponentInfo{io.telda.app/io.telda.app.SplashPalestine}" drawable="telda"/>
-    <item component="ComponentInfo{io.telda.app/io.telda.app.ui.SplashActivity}" drawable="telda"/>
-
-    <!-- Max Fashion -->
-    <item component="ComponentInfo{com.applications.max/com.landmarkgroup.landmarkshops.module.splash.activity.SplashActivityV2}" drawable="max_fashion"/>
-
-    <!-- heatzy -->
-    <item component="ComponentInfo{com.gizwits.heatzy/com.gizwits.heatzy.ui.main.MainActivity}" drawable="heatzy"/>
-
-    <!-- Australis -->
-    <item component="ComponentInfo{com.unvoid.australis/com.unvoid.australis.activities.MainActivity}" drawable="australis"/>
-
-    <!-- Stori -->
-    <item component="ComponentInfo{ai.powerup.stori/ai.powerup.stori.home.mvp.ui.activity.NewSplashActivity}" drawable="stori"/>
-
-    <!-- Ventra -->
-    <item component="ComponentInfo{com.ventrachicago.riderapp/com.cmtventra.MainActivity}" drawable="ventra"/>
-
-    <!-- Seneca -->
-    <item component="ComponentInfo{com.senecalearning.app/com.senecalearning.app.LauncherActivity}" drawable="seneca"/>
-
-    <!-- Housing -->
-    <item component="ComponentInfo{com.locon.housing/com.locon.housing.presentation.MainActivity}" drawable="housing"/>
-
-    <!-- Audioteka -->
-    <item component="ComponentInfo{com.audioteka/com.audioteka.presentation.screen.main.MainActivity}" drawable="audioteka"/>
-
-    <!-- Social Deal -->
-    <item component="ComponentInfo{app.nl.socialdeal/app.nl.socialdeal.SplashActivity}" drawable="social_deal"/>
-
-    <!-- DevBytes -->
-    <item component="ComponentInfo{com.candelalabs.devbytes/com.candelalabs.devbytes.ui.main.view.activities.MainActivity}" drawable="devbytes"/>
-
-	<!-- Power Shortcuts -->
-	<item component="ComponentInfo{com.ss.powershortcuts/com.ss.powershortcuts.MainActivity}" drawable="power_shortcuts"/>
-
-    <!-- Revenge -->
-    <item component="ComponentInfo{app.revenge/com.discord.main.MainDefault}" drawable="discord"/>
-
-    <!-- FLTR -->
-    <item component="ComponentInfo{com.feelty/com.feelty.activity.MainActivity}" drawable="fltr"/>
-
-    <!-- Toolbox -->
-    <item component="ComponentInfo{io.mrarm.mctoolbox/io.mrarm.mctoolbox.MinecraftActivity}" drawable="minecraft_toolbox"/>
-    <item component="ComponentInfo{io.mrarm.mctoolbox/io.mrarm.mctoolbox.MainActivity}" drawable="minecraft_toolbox"/>
 
 	<!-- Studierendenwerk Heidelberg -->
 	<item component="ComponentInfo{de.stergatos.studentenwerk.hd/de.stergatos.studentenwerk.hd.SplashScreenActivity}" drawable="studierendenwerkheidelberg"/>
@@ -38083,73 +38210,6 @@
 	<item component="ComponentInfo{jp.juggler.subwaytooter/jp.juggler.subwaytooter.ActMain}" drawable="subwaytooter"/>
 	<item component="ComponentInfo{jp.juggler.subwaytooter.noFcm/jp.juggler.subwaytooter.ActMain}" drawable="subwaytooter"/>
 
-	<!-- Ren.py games -->
-    <item component="ComponentInfo{com.kompasproductions.summertimesaga/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
-    <item component="ComponentInfo{com.tw60.mta/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
-    <item component="ComponentInfo{com.tw60mta.mta/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
-    <item component="ComponentInfo{com.unveilingtheunknown/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
-    <item component="ComponentInfo{su.sovietgames.everlasting_summer/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
-    <item component="ComponentInfo{horny.craft/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
-    <item component="ComponentInfo{su.viende.tinybunny/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
-    <item component="ComponentInfo{com.dirgtrats.atcradar/org.renpy.android.PythonActivity}" drawable="renpy"/>
-    <item component="ComponentInfo{com.terletski.alt/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
-    <item component="ComponentInfo{com.sensitiveusername.lisasday/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
-    <item component="ComponentInfo{com.app.milfyleoo/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
-    <item component="ComponentInfo{com.nomnomnami.badendtheater/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
-    <item component="ComponentInfo{uk.co.ptgames.lunarschosen2/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
-    <item component="ComponentInfo{what.a.legend.c18/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
-    <item component="ComponentInfo{com.tpoh/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
-    <item component="ComponentInfo{com.ps3.higurashi/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
-    <item component="ComponentInfo{com.whitezap.hokkaidofox051/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
-    <item component="ComponentInfo{com.joyfuldays/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
-    <item component="ComponentInfo{lustful.society/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
-    <item component="ComponentInfo{cavemanon.snootgame/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
-    <item component="ComponentInfo{com.fapfapgames.jumpharem/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
-    <item component="ComponentInfo{mybestdeal.hotzone18.com/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
-    <item component="ComponentInfo{com.thelastyear.th/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
-    <item component="ComponentInfo{com.choices.distantshores2/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
-    <item component="ComponentInfo{re.dreamer/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
-    <item component="ComponentInfo{com.goddesseswhim.rus/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
-    <item component="ComponentInfo{com.loveatfirsttail.rus/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
-    <item component="ComponentInfo{com.maevesacademy.rus/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
-    <item component="ComponentInfo{com.takeisjourney.rus/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
-    <item component="ComponentInfo{com.unexpected.rus/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
-    <item component="ComponentInfo{com.wolfcomplex.rus/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
-    <item component="ComponentInfo{com.silverstudiogames.wts/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
-    <item component="ComponentInfo{com.dd.murmur/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
-    <item component="ComponentInfo{cwg.com/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
-    <item component="ComponentInfo{ghost.dirty.cases/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
-    <item component="ComponentInfo{com.pornoapk.dreamsofdesire/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
-    <item component="ComponentInfo{galaxyofscum_androidmo.im/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
-    <item component="ComponentInfo{ozecat.games/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
-    <item component="ComponentInfo{be.lovesucks/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
-    <item component="ComponentInfo{games.manka.tameit/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
-    <item component="ComponentInfo{com.likhogames.wetsand/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
-    <item component="ComponentInfo{com.witchhunter.prog/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
-    <item component="ComponentInfo{something.unlimited.themyscira/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
-    <item component="ComponentInfo{com.tinybunny.unoffportbychristopher/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
-    <item component="ComponentInfo{gr.pornoisland.site/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
-    <item component="ComponentInfo{school.game/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
-    <item component="ComponentInfo{com.otorhin.ddlc/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
-    <item component="ComponentInfo{isekai_brothel_rus.pornoisland.site/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
-    <item component="ComponentInfo{hlc.com/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
-    <item component="ComponentInfo{mhr.com/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
-    <item component="ComponentInfo{pokesluts.android/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
-    <item component="ComponentInfo{io.itch.promisestokeep/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
-    <item component="ComponentInfo{restaurant_rus.pornoisland.site/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
-    <item component="ComponentInfo{com.fingercrossedteam.tbos/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
-    <item component="ComponentInfo{com.eddacafe.nsaid/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
-    <item component="ComponentInfo{com.ebihime.lonely/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
-    <item component="ComponentInfo{com.isekaigames.isekaibrothel/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
-    <item component="ComponentInfo{com.dinaki.kt/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
-    <item component="ComponentInfo{summer.time.saga/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
-    <item component="ComponentInfo{mystic_valley_rus.pornoisland.site/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
-    <item component="ComponentInfo{randeltales_ru.kasatik/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
-    <item component="ComponentInfo{com.pastryirl.adventurertrainer/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
-    <item component="ComponentInfo{com.pirotking.mbd/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
-    <item component="ComponentInfo{oppai_odyssey_rus.pornoisland.site/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
-    <item component="ComponentInfo{fet_rus.islandofpleasure.site/org.renpy.android.PythonSDLActivity}" drawable="renpy"/>
-
 	<!-- Subz -->
 	<item component="ComponentInfo{com.flasskamp.subz/com.flasskamp.subz.MainActivity}" drawable="subz"/>
 
@@ -38161,10 +38221,10 @@
 	<item component="ComponentInfo{org.sudachi.sudachi_emu/org.sudachi.sudachi_emu.ui.main.MainActivity}" drawable="sudachi"/>
 
 	<!-- Sudoku -->
-    <item component="ComponentInfo{com.ansangha.drsudoku/com.ansangha.drsudoku.GameActivity}" drawable="sudoku"/>
-    <item component="ComponentInfo{free.elemob.classic.sudoku.puzzle.games/com.elemobtech.sudoku.ui.SplashActivity}" drawable="sudoku"/>
-    <item component="ComponentInfo{com.theangrykraken.sudoku/com.unity3d.player.UnityPlayerActivity}" drawable="sudoku"/>
-    <item component="ComponentInfo{info.nullhouse.sudoku/info.nullhouse.sudoku.ui.top.TopActivity}" drawable="sudoku"/>
+	<item component="ComponentInfo{com.ansangha.drsudoku/com.ansangha.drsudoku.GameActivity}" drawable="sudoku"/>
+	<item component="ComponentInfo{free.elemob.classic.sudoku.puzzle.games/com.elemobtech.sudoku.ui.SplashActivity}" drawable="sudoku"/>
+	<item component="ComponentInfo{com.theangrykraken.sudoku/com.unity3d.player.UnityPlayerActivity}" drawable="sudoku"/>
+	<item component="ComponentInfo{info.nullhouse.sudoku/info.nullhouse.sudoku.ui.top.TopActivity}" drawable="sudoku"/>
 	<item component="ComponentInfo{com.netiapps.sudokukiller/com.netiapps.sudokukiller.SplashActivity}" drawable="sudoku"/>
 	<item component="ComponentInfo{techmasterplus.sudokupuzzlepro/techmasterplus.sudokupuzzlepro.SplashActivity}" drawable="sudoku"/>
 	<item component="ComponentInfo{com.aol.philipphofer/com.aol.philipphofer.logic.StartActivity}" drawable="sudoku"/>
@@ -38676,11 +38736,11 @@
 	<!-- tabii -->
 	<item component="ComponentInfo{com.trt.tabii.android/com.trt.tabii.android.mobile.feature.MainActivity}" drawable="tabii"/>
 
-	<!-- Tableau -->
-	<item component="ComponentInfo{com.Tableau.TableauApp/com.tableau.TableauPhoenix.SplashActivity}" drawable="tableau"/>
-
 	<!-- Table Habit  -->
 	<item component="ComponentInfo{io.github.friesi23.mhabit/io.github.friesi23.mhabit.MainActivity}" drawable="table_habit"/>
+
+	<!-- Tableau -->
+	<item component="ComponentInfo{com.Tableau.TableauApp/com.tableau.TableauPhoenix.SplashActivity}" drawable="tableau"/>
 
 	<!-- Tablet Center -->
 	<item component="ComponentInfo{com.tblenovo.center/com.tblenovo.center.SplashActivity}" drawable="tablet"/>
@@ -39049,6 +39109,10 @@
 
 	<!-- Telcel -->
 	<item component="ComponentInfo{com.telcel.contenedor/com.speedymovil.contenedor.gui.activities.AppsContainerActivity}" drawable="telcel"/>
+
+	<!-- Telda -->
+	<item component="ComponentInfo{io.telda.app/io.telda.app.SplashPalestine}" drawable="telda"/>
+	<item component="ComponentInfo{io.telda.app/io.telda.app.ui.SplashActivity}" drawable="telda"/>
 
 	<!-- TeleBox -->
 	<item component="ComponentInfo{com.linkbox.plus.android/com.linkbox.app.LauncherActivity}" drawable="telebox"/>
@@ -39919,6 +39983,9 @@
 	<item component="ComponentInfo{net.thunderbird.android/com.fsck.k9.activity.MessageList}" drawable="thunderbird"/>
 	<item component="ComponentInfo{net.thunderbird.android.beta/com.fsck.k9.activity.MessageList}" drawable="thunderbird"/>
 
+	<!-- Tianyancha -->
+	<item component="ComponentInfo{com.tianyancha.skyeye/com.tianyancha.skyeye.MainActivity}" drawable="tianyancha"/>
+
 	<!-- Tibber -->
 	<item component="ComponentInfo{com.tibber.android/com.tibber.android.app.activity.link.MagicLinkActivity}" drawable="tibber"/>
 
@@ -39996,6 +40063,9 @@
 	<!-- TIER -->
 	<item component="ComponentInfo{com.tier.app/com.tier.app.ui.splash.SplashActivity}" drawable="tier"/>
 	<item component="ComponentInfo{com.tier.app/com.tier.legacy.ui.splash.SplashActivity}" drawable="tier"/>
+
+	<!-- Tigad -->
+	<item component="ComponentInfo{com.indigomadina.tigadpro/com.indigomadina.tigadpro.activities.MainActivity}" drawable="tigad"/>
 
 	<!-- TIGPS -->
 	<item component="ComponentInfo{com.affinityinfosoft.tigps/com.affinityinfosoft.tigps.Launcher}" drawable="tigps"/>
@@ -40248,6 +40318,11 @@
 	<!-- toby -->
 	<item component="ComponentInfo{com.toby/com.toby.MainActivity}" drawable="toby"/>
 
+	<!-- Toca World -->
+	<item component="ComponentInfo{com.tocaboca.tocalifeworld/com.me.game.pmupdatesdk.MainActivity}" drawable="toca_world"/>
+	<item component="ComponentInfo{com.tocaboca.tocalifeworld/com.tocaboca.tocalifeworld.activity.WelcomeActivity}" drawable="toca_world"/>
+	<item component="ComponentInfo{com.tocaboca.tocalifeworld/com.tocaboca.activity.TocaBocaMainActivity}" drawable="toca_world"/>
+
 	<!-- Tochi Wallet -->
 	<item component="ComponentInfo{org.toshi/com.toshi.application.MainActivity}" drawable="tochi_wallet"/>
 	<item component="ComponentInfo{org.toshi/org.toshi.MainActivity}" drawable="tochi_wallet"/>
@@ -40363,6 +40438,10 @@
 	<!-- Too Good To Go -->
 	<item component="ComponentInfo{com.app.tgtg/com.app.tgtg.activities.SplashActivity}" drawable="toogoodtogo"/>
 	<item component="ComponentInfo{com.app.tgtg/com.app.tgtg.activities.login.SplashActivity}" drawable="toogoodtogo"/>
+
+	<!-- Toolbox -->
+	<item component="ComponentInfo{io.mrarm.mctoolbox/io.mrarm.mctoolbox.MinecraftActivity}" drawable="minecraft_toolbox"/>
+	<item component="ComponentInfo{io.mrarm.mctoolbox/io.mrarm.mctoolbox.MainActivity}" drawable="minecraft_toolbox"/>
 
 	<!-- Tools -->
 	<item component="ComponentInfo{org.lds.ldstools/org.lds.ldstools.ux.main.MainActivity}" drawable="church"/>
@@ -40827,6 +40906,9 @@
 	<item component="ComponentInfo{com.example.trigger/com.example.trigger.MainActivity}" drawable="trigger"/>
 	<item component="ComponentInfo{com.example.trigger/app.trigger.MainActivity}" drawable="trigger"/>
 
+	<!-- Trilium Notes -->
+	<item component="ComponentInfo{eu.fliegendewurst.triliumdroid/eu.fliegendewurst.triliumdroid.activity.main.MainActivity}" drawable="triliumnotes"/>
+
 	<!-- Trilium Sender -->
 	<item component="ComponentInfo{io.github.zadam.triliumsender/io.github.zadam.triliumsender.MainActivity}" drawable="trilium_sender"/>
 
@@ -40885,6 +40967,18 @@
 
 	<!-- TRT İzle -->
 	<item component="ComponentInfo{com.trt.trttelevizyon/com.trt.trttelevizyon.MainActivity}" drawable="trt_izle"/>
+
+	<!-- Truck Games -->
+	<item component="ComponentInfo{com.WandaSoftware.TruckersofEurope3/com.unity3d.player.UnityPlayerActivity}" drawable="truck"/>
+	<item component="ComponentInfo{com.WandaSoftware.TruckersofEurope3/io.unity.sdk.droid.UnitySdkLauncher}" drawable="truck"/>
+	<item component="ComponentInfo{com.zuuks.truck.simulator.ultimate/com.google.firebase.MessagingUnityPlayerActivity}" drawable="truck"/>
+	<item component="ComponentInfo{com.zuuks.truck.simulator.ultimate/com.me.game.pmupdatesdk.MainActivity}" drawable="truck"/>
+	<item component="ComponentInfo{com.zuuks.truck.simulator.ultimate/com.bmgame.install.mount}" drawable="truck"/>
+	<item component="ComponentInfo{com.zuuks.truck.simulator.ultimate/com.gamein.i.a.WelcomeActivity}" drawable="truck"/>
+	<item component="ComponentInfo{com.Pulsar.GrandTruckSimulator2/com.unity3d.player.UnityPlayerActivity}" drawable="truck"/>
+	<item component="ComponentInfo{com.dualcarbon.universaltrucksimulator/com.unity3d.player.UnityPlayerActivity}" drawable="truck"/>
+	<item component="ComponentInfo{com.mytruckingskills.v2/com.godot.game.GodotApp}" drawable="truck"/>
+	<item component="ComponentInfo{com.pgs.truck.game.truck.driving/com.unity3d.player.UnityPlayerActivity}" drawable="truck"/>
 
 	<!-- True iService -->
 	<item component="ComponentInfo{com.truelife.mobile.android.trueiservice/com.iservice.MainActivity}" drawable="true_iservice"/>
@@ -41812,15 +41906,15 @@
 	<item component="ComponentInfo{au.com.up.money/au.com.up.money.MainActivity}" drawable="up_banking"/>
 	<item component="ComponentInfo{au.com.up.money/au.com.up.money.MainActivityDefault}" drawable="up_banking"/>
 
-	<!-- Upanishads & Vedas -->
-	<item component="ComponentInfo{com.javandroidaholic.upnishads/com.javandroidaholic.upanishads.activity.SplashActivity}" drawable="om_mantra"/>
-
 	<!-- UP-FCM Distributor -->
 	<item component="ComponentInfo{org.unifiedpush.distributor.fcm/org.unifiedpush.distributor.fcm.activities.MainActivity}" drawable="upfcm_distributor"/>
 	<item component="ComponentInfo{org.unifiedpush.example/org.unifiedpush.example.activities.MainActivity}" drawable="upfcm_distributor"/>
 
 	<!-- up7723 -->
 	<item component="ComponentInfo{com.upgadata.up7723/com.upgadata.up7723.main.activity.SplashActivity}" drawable="number_7"/>
+
+	<!-- Upanishads & Vedas -->
+	<item component="ComponentInfo{com.javandroidaholic.upnishads/com.javandroidaholic.upanishads.activity.SplashActivity}" drawable="om_mantra"/>
 
 	<!-- Update Me -->
 	<item component="ComponentInfo{com.updateme/com.updateme.MainActivity}" drawable="update_me"/>
@@ -42193,6 +42287,9 @@
 	<item component="ComponentInfo{com.venmo/com.venmo.TabCentralActivity}" drawable="venmo"/>
 	<item component="ComponentInfo{com.venmo/com.venmo.tabcentral.TabCentralActivity}" drawable="venmo"/>
 	<item component="ComponentInfo{com.venmo/com.venmo.AppExperienceLauncherActivity}" drawable="venmo"/>
+
+	<!-- Ventra -->
+	<item component="ComponentInfo{com.ventrachicago.riderapp/com.cmtventra.MainActivity}" drawable="ventra"/>
 
 	<!-- Ventusky -->
 	<item component="ComponentInfo{cz.ackee.ventusky/cz.ackee.ventusky.screens.MainActivity}" drawable="ventusky"/>
@@ -42673,6 +42770,9 @@
 	<item component="ComponentInfo{com.bbk.cloud/com.bbk.cloud.activities.BBKCloudHomeScreen}" drawable="vivo_cloud"/>
 	<item component="ComponentInfo{com.bbk.cloud/com.bbk.cloud.ui.BBKCloudHomeScreen}" drawable="vivo_cloud"/>
 
+	<!-- Vivo Console -->
+	<item component="ComponentInfo{com.vivo.vivoconsole/com.vivo.vivoconsole.MainActivity}" drawable="vivo_console"/>
+
 	<!-- Vivo Easy -->
 	<item component="ComponentInfo{br.com.vivo.vivoeasy/br.com.zup.vivoeasy3.presentation.MainActivity}" drawable="vivo_easy"/>
 
@@ -42817,6 +42917,9 @@
 	<!-- Voice Tools -->
 	<item component="ComponentInfo{com.DevExtras.VoiceTools/crc6424aa7cfad14660ae.SplashActivity}" drawable="voice_tools"/>
 
+	<!-- VoiceGPT -->
+	<item component="ComponentInfo{com.wstxda.voicegpt/com.wstxda.voicegpt.VoiceGptActivity}" drawable="voicegpt"/>
+
 	<!-- Voicemail -->
 	<item component="ComponentInfo{com.samsung.vvm/com.samsung.vvm.vvmapp.VVMApplication}" drawable="voicemail"/>
 	<item component="ComponentInfo{com.samsung.vvm/com.samsung.vvm.ui.VVMActivity}" drawable="voicemail"/>
@@ -42926,37 +43029,37 @@
 	<item component="ComponentInfo{com.vphonegaga.titan/com.vphonegaga.titan.StartActivity}" drawable="vphonegaga"/>
 
 	<!-- VPN -->
-    <item component="ComponentInfo{com.vpn.amtunnelplus/com.vpn.amtunnelplus.SplashActivity}" drawable="shield"/>
-    <item component="ComponentInfo{app.vpn.amtunnelpro/prince.udp.vpn.activities.SplashActivity}" drawable="shield"/>
-    <item component="ComponentInfo{com.jm.apnatunnel/prince.open.vpn.activities.SpashActivity}" drawable="shield"/>
-    <item component="ComponentInfo{com.apnatunnel.lite/prince.open.vpn.activities.SpashActivity}" drawable="shield"/>
-    <item component="ComponentInfo{me.bitvpn.app/skyvpn.ui.activity.BitSplashActivity}" drawable="shield"/>
-    <item component="ComponentInfo{com.vpn.proxy.unblock.privatevpn.fastvpn.securevpn/com.vpn.proxy.unblock.privatevpn.fastvpn.presentation_layer.core.activities.VPNActivity}" drawable="shield"/>
-    <item component="ComponentInfo{com.CheckPoint.SSLVpn/com.CheckPoint.SSLVpn.UI.CPMobile}" drawable="shield"/>
-    <item component="ComponentInfo{com.checkpoint.VPN/com.checkpoint.VPN.MainHandler}" drawable="shield"/>
-    <item component="ComponentInfo{com.lausny.ocvpnaiofree/com.lausny.ocvpnaio.EmptyActivity}" drawable="shield"/>
-    <item component="ComponentInfo{org.hola.play/org.hola.splash_activity}" drawable="shield"/>
-    <item component="ComponentInfo{com.hxtunnel.vpn/hx.tunnel.vpn.activities.SpashActivity}" drawable="shield"/>
-    <item component="ComponentInfo{store.gdagetwolf.app.storearound/com.lemon.vpnable.Activity.NetworkActivity}" drawable="shield"/>
-    <item component="ComponentInfo{org.librevpn.android/app.MainActivity}" drawable="shield"/>
-    <item component="ComponentInfo{vpn247.com.free/vpn247.software.activity.startup.FirstActivity}" drawable="shield"/>
-    <item component="ComponentInfo{com.monkey.cute.safeproxy/com.monkey.cute.safeproxy.feature.StartActivity}" drawable="shield"/>
-    <item component="ComponentInfo{com.mtmtunnel.lite/prince.open.vpn.activities.SpashActivity}" drawable="shield"/>
-    <item component="ComponentInfo{free.vpn.myiphide/free.vpn.myiphide.MainActivity}" drawable="shield"/>
-    <item component="ComponentInfo{io.papervpn.android.client/io.papervpn.android.client.MainActivity}" drawable="shield"/>
-    <item component="ComponentInfo{com.safeshellvpn/com.safeshellvpn.activity.LaunchActivity}" drawable="shield"/>
-    <item component="ComponentInfo{vpn.freevpn.red.ukvpn.proxy/vpn.freevpn.red.ukvpn.proxy.ui.SplashActivity}" drawable="shield"/>
-    <item component="ComponentInfo{com.atomx.veeevpn/com.atomx.veeevpn.MainActivity}" drawable="shield"/>
-    <item component="ComponentInfo{com.vpnproxy.connect/com.vpnproxy.connect.MainActivity}" drawable="shield"/>
-    <item component="ComponentInfo{com.bgpworks.vpn/com.bgpworks.vpn.MainActivity}" drawable="shield"/>
-    <item component="ComponentInfo{com.free.vpn.unlimited.hotpotshield.vpnmaster/com.volio.vn.ui.MainActivity}" drawable="shield"/>
-    <item component="ComponentInfo{com.giamping.devpn/com.giamping.devpn.LoadingActivity}" drawable="shield"/>
-    <item component="ComponentInfo{com.steganos.onlineshield2/com.steganos.onlineshield.main.MainActivity2}" drawable="shield"/>
-    <item component="ComponentInfo{moe.vb/io.nekohasekai.sagernet.ui.MainActivity}" drawable="shield"/>
-    <item component="ComponentInfo{com.my.vpn/com.my.vpn.WelcomeActivity}" drawable="shield"/>
-    <item component="ComponentInfo{com.zoogvpn.android/com.zoogvpn.android.activity.SplashActivity}" drawable="shield"/>
-    <item component="ComponentInfo{com.daxia.app/com.junjun.ToyVpnClient}" drawable="shield"/>
-    <item component="ComponentInfo{com.asinosoft.vpn/com.asinosoft.vpn.MainActivity}" drawable="shield"/>
+	<item component="ComponentInfo{com.vpn.amtunnelplus/com.vpn.amtunnelplus.SplashActivity}" drawable="shield"/>
+	<item component="ComponentInfo{app.vpn.amtunnelpro/prince.udp.vpn.activities.SplashActivity}" drawable="shield"/>
+	<item component="ComponentInfo{com.jm.apnatunnel/prince.open.vpn.activities.SpashActivity}" drawable="shield"/>
+	<item component="ComponentInfo{com.apnatunnel.lite/prince.open.vpn.activities.SpashActivity}" drawable="shield"/>
+	<item component="ComponentInfo{me.bitvpn.app/skyvpn.ui.activity.BitSplashActivity}" drawable="shield"/>
+	<item component="ComponentInfo{com.vpn.proxy.unblock.privatevpn.fastvpn.securevpn/com.vpn.proxy.unblock.privatevpn.fastvpn.presentation_layer.core.activities.VPNActivity}" drawable="shield"/>
+	<item component="ComponentInfo{com.CheckPoint.SSLVpn/com.CheckPoint.SSLVpn.UI.CPMobile}" drawable="shield"/>
+	<item component="ComponentInfo{com.checkpoint.VPN/com.checkpoint.VPN.MainHandler}" drawable="shield"/>
+	<item component="ComponentInfo{com.lausny.ocvpnaiofree/com.lausny.ocvpnaio.EmptyActivity}" drawable="shield"/>
+	<item component="ComponentInfo{org.hola.play/org.hola.splash_activity}" drawable="shield"/>
+	<item component="ComponentInfo{com.hxtunnel.vpn/hx.tunnel.vpn.activities.SpashActivity}" drawable="shield"/>
+	<item component="ComponentInfo{store.gdagetwolf.app.storearound/com.lemon.vpnable.Activity.NetworkActivity}" drawable="shield"/>
+	<item component="ComponentInfo{org.librevpn.android/app.MainActivity}" drawable="shield"/>
+	<item component="ComponentInfo{vpn247.com.free/vpn247.software.activity.startup.FirstActivity}" drawable="shield"/>
+	<item component="ComponentInfo{com.monkey.cute.safeproxy/com.monkey.cute.safeproxy.feature.StartActivity}" drawable="shield"/>
+	<item component="ComponentInfo{com.mtmtunnel.lite/prince.open.vpn.activities.SpashActivity}" drawable="shield"/>
+	<item component="ComponentInfo{free.vpn.myiphide/free.vpn.myiphide.MainActivity}" drawable="shield"/>
+	<item component="ComponentInfo{io.papervpn.android.client/io.papervpn.android.client.MainActivity}" drawable="shield"/>
+	<item component="ComponentInfo{com.safeshellvpn/com.safeshellvpn.activity.LaunchActivity}" drawable="shield"/>
+	<item component="ComponentInfo{vpn.freevpn.red.ukvpn.proxy/vpn.freevpn.red.ukvpn.proxy.ui.SplashActivity}" drawable="shield"/>
+	<item component="ComponentInfo{com.atomx.veeevpn/com.atomx.veeevpn.MainActivity}" drawable="shield"/>
+	<item component="ComponentInfo{com.vpnproxy.connect/com.vpnproxy.connect.MainActivity}" drawable="shield"/>
+	<item component="ComponentInfo{com.bgpworks.vpn/com.bgpworks.vpn.MainActivity}" drawable="shield"/>
+	<item component="ComponentInfo{com.free.vpn.unlimited.hotpotshield.vpnmaster/com.volio.vn.ui.MainActivity}" drawable="shield"/>
+	<item component="ComponentInfo{com.giamping.devpn/com.giamping.devpn.LoadingActivity}" drawable="shield"/>
+	<item component="ComponentInfo{com.steganos.onlineshield2/com.steganos.onlineshield.main.MainActivity2}" drawable="shield"/>
+	<item component="ComponentInfo{moe.vb/io.nekohasekai.sagernet.ui.MainActivity}" drawable="shield"/>
+	<item component="ComponentInfo{com.my.vpn/com.my.vpn.WelcomeActivity}" drawable="shield"/>
+	<item component="ComponentInfo{com.zoogvpn.android/com.zoogvpn.android.activity.SplashActivity}" drawable="shield"/>
+	<item component="ComponentInfo{com.daxia.app/com.junjun.ToyVpnClient}" drawable="shield"/>
+	<item component="ComponentInfo{com.asinosoft.vpn/com.asinosoft.vpn.MainActivity}" drawable="shield"/>
 	<item component="ComponentInfo{ru.dedvpn.android/ru.dedvpn.android.activity.MainActivity}" drawable="shield"/>
 	<item component="ComponentInfo{com.abilvcha.main/com.lvcha.main.activity.WelcomeActivity}" drawable="shield"/>
 	<item component="ComponentInfo{com.vpn.weiver/michael.code.dev.sshsslopenvpn.MainActivity}" drawable="shield"/>
@@ -43332,6 +43435,9 @@
 	<!-- VRadio -->
 	<item component="ComponentInfo{com.ilv.vradio/com.ilv.vradio.MainActivity}" drawable="vradio"/>
 
+	<!-- VRChat -->
+	<item component="ComponentInfo{com.vrchat.mobile.playstore/com.vrchat.app.MainActivity}" drawable="vrchat"/>
+
 	<!-- VRN eTarif -->
 	<item component="ComponentInfo{com.sevenre.linear/com.sevenre.linear.MainActivity}" drawable="vrnetarif"/>
 
@@ -43482,12 +43588,12 @@
 	<item component="ComponentInfo{com.wallpaperscraft.wallpaper/com.wallpaperscraft.wallpaper.feature.main.MainActivity}" drawable="wallcraft"/>
 
 	<!-- Wallet -->
-    <item component="ComponentInfo{com.ncwallet/com.ncwallet.MainActivity}" drawable="wallet"/>
-    <item component="ComponentInfo{io.oneinch.android/io.oneinch.android.presentation.ui.LaunchActivity}" drawable="wallet"/>
-    <item component="ComponentInfo{com.debank.rabbymobile/com.debank.rabbymobile.MainActivity}" drawable="wallet"/>
-    <item component="ComponentInfo{defisuisse.thorwallet/defisuisse.thorwallet.MainActivity}" drawable="wallet"/>
-    <item component="ComponentInfo{gr.gov.dcc.wallet/gr.gov.dcc.wallet.MainActivity}" drawable="wallet"/>
-    <item component="ComponentInfo{org.awallet.free/org.awallet.ui.HomeActivity}" drawable="wallet"/>
+	<item component="ComponentInfo{com.ncwallet/com.ncwallet.MainActivity}" drawable="wallet"/>
+	<item component="ComponentInfo{io.oneinch.android/io.oneinch.android.presentation.ui.LaunchActivity}" drawable="wallet"/>
+	<item component="ComponentInfo{com.debank.rabbymobile/com.debank.rabbymobile.MainActivity}" drawable="wallet"/>
+	<item component="ComponentInfo{defisuisse.thorwallet/defisuisse.thorwallet.MainActivity}" drawable="wallet"/>
+	<item component="ComponentInfo{gr.gov.dcc.wallet/gr.gov.dcc.wallet.MainActivity}" drawable="wallet"/>
+	<item component="ComponentInfo{org.awallet.free/org.awallet.ui.HomeActivity}" drawable="wallet"/>
 	<item component="ComponentInfo{com.app.emvnfccard.emv.nfc.creditcardreader/com.app.emvnfccard.emv.nfc.creditcardreader.ui.activities.SplashActivity}" drawable="wallet"/>
 	<item component="ComponentInfo{com.blockabc.cctip/com.spectras.MainActivity}" drawable="wallet"/>
 	<item component="ComponentInfo{com.defi.wallet/com.defi.wallet.feature.SplashActivity}" drawable="wallet"/>
@@ -43587,31 +43693,31 @@
 	<item component="ComponentInfo{com.github.cvzi.wallpaperexport/com.github.cvzi.wallpaperexport.MainActivity}" drawable="wallpaperexport"/>
 
 	<!-- Wallpapers -->
-    <item component="ComponentInfo{gorapp.germancar.wallpaper/com.andromo.MainActivity}" drawable="wallpapers"/>
-    <item component="ComponentInfo{com.gi.aihomelockscreenwallpaperengine/com.gi.aihomelockscreenwallpaperengine.Video_Layout}" drawable="wallpapers"/>
-    <item component="ComponentInfo{com.ariaulia.blackandwhitewallpaper/com.ariaulia.blackandwhitewallpaper.presentation.main.SplashActivity}" drawable="wallpapers"/>
-    <item component="ComponentInfo{jp.main.kurousa.android.livewallpaper.DeviceInfoR/jp.main.kurousa.android.livewallpaper.DeviceInfoR.MainActivity}" drawable="wallpapers"/>
+	<item component="ComponentInfo{gorapp.germancar.wallpaper/com.andromo.MainActivity}" drawable="wallpapers"/>
+	<item component="ComponentInfo{com.gi.aihomelockscreenwallpaperengine/com.gi.aihomelockscreenwallpaperengine.Video_Layout}" drawable="wallpapers"/>
+	<item component="ComponentInfo{com.ariaulia.blackandwhitewallpaper/com.ariaulia.blackandwhitewallpaper.presentation.main.SplashActivity}" drawable="wallpapers"/>
+	<item component="ComponentInfo{jp.main.kurousa.android.livewallpaper.DeviceInfoR/jp.main.kurousa.android.livewallpaper.DeviceInfoR.MainActivity}" drawable="wallpapers"/>
 	<item component="ComponentInfo{de.j4velin.wallpaperChanger/de.j4velin.wallpaperChanger.settings.Settings}" drawable="wallpapers"/>
-    <item component="ComponentInfo{com.minimal.wallpaper/com.minimal.wallpaper.Activitys.SplashActivity}" drawable="wallpapers"/>
-    <item component="ComponentInfo{com.barryzea.wallhaven/com.barryzea.wallhaven.Activities.MainActivity}" drawable="wallpapers"/>
-    <item component="ComponentInfo{com.aastacks.infinixnote30prowallpaper/com.aastacks.infinixnote30prowallpaper.Splash_screen}" drawable="wallpapers"/>
-    <item component="ComponentInfo{top.sillysmiless.livewallpaperss/sillysmiless.keyboard.wallpaper.livewallpaperss.cmp.CMPActivity}" drawable="wallpapers"/>
-    <item component="ComponentInfo{com.wallpaperhdarto.animewallpaper4k/com.wallpaperhdarto.animewallpaper4k.activity.ActivitySplash}" drawable="wallpapers"/>
-    <item component="ComponentInfo{com.homm3.livewallpaper/com.homm3.livewallpaper.android.MainActivity}" drawable="wallpapers"/>
-    <item component="ComponentInfo{com.Another_girl_in_the_wall/com.godot.game.GodotApp}" drawable="wallpapers"/>
-    <item component="ComponentInfo{com.wallpapers.samsunggalaxyapp/com.wallpapers.samsunggalaxyapp.SplashScreen}" drawable="wallpapers"/>
-    <item component="ComponentInfo{com.BinaryCores.One10T/com.BinaryCores.One10T.activities.ActivityStart}" drawable="wallpapers"/>
-    <item component="ComponentInfo{com.entitydev.wallhavener/com.entitydev.wallhavener.MainActivity}" drawable="wallpapers"/>
-    <item component="ComponentInfo{com.unicornwallpaper.unicornsbackgrounds.offlinewallpaper.wallpapers.cutewallpaper/com.andromo.MainActivity}" drawable="wallpapers"/>
-    <item component="ComponentInfo{com.livephoto.live_wallpaper.matrix3d/com.livephoto.live_wallpaper.matrix3d.SplashScreenActivity}" drawable="wallpapers"/>
-    <item component="ComponentInfo{com.hacker.wallpaper/com.hacker.wallpaper.activity.ActivitySplash}" drawable="wallpapers"/>
-    <item component="ComponentInfo{com.smartdesignpro.water.live.wallpaper.animation.amazing/com.smartdesignpro.water.live.wallpaper.animation.amazing.SDP_SplashActivity}" drawable="wallpapers"/>
-    <item component="ComponentInfo{com.bakur30.muhammed/com.bakur30.muhammed.PrivacyActivity}" drawable="wallpapers"/>
-    <item component="ComponentInfo{com.thmobile.transparentwallpaper/com.thmobile.transparentwallpaper.ui.SplashActivity}" drawable="wallpapers"/>
-    <item component="ComponentInfo{wallgem.rad.walls/wallgem.rad.walls.MainActivity}" drawable="wallpapers"/>
-    <item component="ComponentInfo{com.stark.meraki/com.stark.meraki.MainActivity}" drawable="wallpapers"/>
-    <item component="ComponentInfo{ir.wallex.app/ir.wallex.app.ui.main.MainActivity}" drawable="wallpapers"/>
-    <item component="ComponentInfo{maa.minitools.series.gif_as_live_wallpapers/maa.minitools.series.gif_as_live_wallpapers.ui.MainActivity}" drawable="wallpapers"/>
+	<item component="ComponentInfo{com.minimal.wallpaper/com.minimal.wallpaper.Activitys.SplashActivity}" drawable="wallpapers"/>
+	<item component="ComponentInfo{com.barryzea.wallhaven/com.barryzea.wallhaven.Activities.MainActivity}" drawable="wallpapers"/>
+	<item component="ComponentInfo{com.aastacks.infinixnote30prowallpaper/com.aastacks.infinixnote30prowallpaper.Splash_screen}" drawable="wallpapers"/>
+	<item component="ComponentInfo{top.sillysmiless.livewallpaperss/sillysmiless.keyboard.wallpaper.livewallpaperss.cmp.CMPActivity}" drawable="wallpapers"/>
+	<item component="ComponentInfo{com.wallpaperhdarto.animewallpaper4k/com.wallpaperhdarto.animewallpaper4k.activity.ActivitySplash}" drawable="wallpapers"/>
+	<item component="ComponentInfo{com.homm3.livewallpaper/com.homm3.livewallpaper.android.MainActivity}" drawable="wallpapers"/>
+	<item component="ComponentInfo{com.Another_girl_in_the_wall/com.godot.game.GodotApp}" drawable="wallpapers"/>
+	<item component="ComponentInfo{com.wallpapers.samsunggalaxyapp/com.wallpapers.samsunggalaxyapp.SplashScreen}" drawable="wallpapers"/>
+	<item component="ComponentInfo{com.BinaryCores.One10T/com.BinaryCores.One10T.activities.ActivityStart}" drawable="wallpapers"/>
+	<item component="ComponentInfo{com.entitydev.wallhavener/com.entitydev.wallhavener.MainActivity}" drawable="wallpapers"/>
+	<item component="ComponentInfo{com.unicornwallpaper.unicornsbackgrounds.offlinewallpaper.wallpapers.cutewallpaper/com.andromo.MainActivity}" drawable="wallpapers"/>
+	<item component="ComponentInfo{com.livephoto.live_wallpaper.matrix3d/com.livephoto.live_wallpaper.matrix3d.SplashScreenActivity}" drawable="wallpapers"/>
+	<item component="ComponentInfo{com.hacker.wallpaper/com.hacker.wallpaper.activity.ActivitySplash}" drawable="wallpapers"/>
+	<item component="ComponentInfo{com.smartdesignpro.water.live.wallpaper.animation.amazing/com.smartdesignpro.water.live.wallpaper.animation.amazing.SDP_SplashActivity}" drawable="wallpapers"/>
+	<item component="ComponentInfo{com.bakur30.muhammed/com.bakur30.muhammed.PrivacyActivity}" drawable="wallpapers"/>
+	<item component="ComponentInfo{com.thmobile.transparentwallpaper/com.thmobile.transparentwallpaper.ui.SplashActivity}" drawable="wallpapers"/>
+	<item component="ComponentInfo{wallgem.rad.walls/wallgem.rad.walls.MainActivity}" drawable="wallpapers"/>
+	<item component="ComponentInfo{com.stark.meraki/com.stark.meraki.MainActivity}" drawable="wallpapers"/>
+	<item component="ComponentInfo{ir.wallex.app/ir.wallex.app.ui.main.MainActivity}" drawable="wallpapers"/>
+	<item component="ComponentInfo{maa.minitools.series.gif_as_live_wallpapers/maa.minitools.series.gif_as_live_wallpapers.ui.MainActivity}" drawable="wallpapers"/>
 	<item component="ComponentInfo{amoled.wall7Fon/ru.wall7Fon.ui.activities.SplashActivity}" drawable="wallpapers"/>
 	<item component="ComponentInfo{amoled.wall7Fon/ru.wall7Fon.ui.activities.SplashActivty}" drawable="wallpapers"/>
 	<item component="ComponentInfo{ru.wall7Fon/ru.wall7Fon.ui.activities.SplashActivty}" drawable="wallpapers"/>
@@ -45245,6 +45351,9 @@
 	<!-- XAPK Installer -->
 	<item component="ComponentInfo{com.wuliang.xapkinstaller/com.wuliang.xapkinstaller.SplashActivity}" drawable="xapk_installer"/>
 
+	<!-- XAPKS Installer -->
+	<item component="ComponentInfo{io.apkmody.sai/com.aefyr.sai.ui.activities.MainActivity}" drawable="xapks_installer"/>
+
 	<!-- XArena -->
 	<item component="ComponentInfo{com.transsion.smartpanel/com.transsion.gamemode.activity.GameSpaceActivity}" drawable="games_2"/>
 	<item component="ComponentInfo{com.transsion.smartpanel/com.transsion.gamespace.activity.GameSpaceActivity}" drawable="games_2"/>
@@ -45314,6 +45423,9 @@
 
 	<!-- Xianyu -->
 	<item component="ComponentInfo{com.taobao.idlefish/com.taobao.fleamarket.home.activity.InitActivity}" drawable="xianyu"/>
+
+	<!-- Xiao Yi Guanjia -->
+	<item component="ComponentInfo{com.yueme.itv/com.chinatelecom.smarthome.module.mainpage.ui.CoverActivity}" drawable="xiao_yi_guanjia"/>
 
 	<!-- Xiaoheihe -->
 	<item component="ComponentInfo{com.max.xiaoheihe/com.max.xiaoheihe.SplashActivity}" drawable="xiaoheihe"/>
@@ -45865,125 +45977,6 @@
 	<item component="ComponentInfo{com.deniscerri.ytdl/com.deniscerri.ytdl.DarkIcon}" drawable="ytdlnis"/>
 	<item component="ComponentInfo{com.deniscerri.ytdl/com.deniscerri.ytdl.LightIcon}" drawable="ytdlnis"/>
 
-	<!-- Truck Games -->
-	<item component="ComponentInfo{com.WandaSoftware.TruckersofEurope3/com.unity3d.player.UnityPlayerActivity}" drawable="truck"/>
-	<item component="ComponentInfo{com.WandaSoftware.TruckersofEurope3/io.unity.sdk.droid.UnitySdkLauncher}" drawable="truck"/>
-	<item component="ComponentInfo{com.zuuks.truck.simulator.ultimate/com.google.firebase.MessagingUnityPlayerActivity}" drawable="truck"/>
-	<item component="ComponentInfo{com.zuuks.truck.simulator.ultimate/com.me.game.pmupdatesdk.MainActivity}" drawable="truck"/>
-	<item component="ComponentInfo{com.zuuks.truck.simulator.ultimate/com.bmgame.install.mount}" drawable="truck"/>
-	<item component="ComponentInfo{com.zuuks.truck.simulator.ultimate/com.gamein.i.a.WelcomeActivity}" drawable="truck"/>
-	<item component="ComponentInfo{com.Pulsar.GrandTruckSimulator2/com.unity3d.player.UnityPlayerActivity}" drawable="truck"/>
-	<item component="ComponentInfo{com.dualcarbon.universaltrucksimulator/com.unity3d.player.UnityPlayerActivity}" drawable="truck"/>
-	<item component="ComponentInfo{com.mytruckingskills.v2/com.godot.game.GodotApp}" drawable="truck"/>
-	<item component="ComponentInfo{com.pgs.truck.game.truck.driving/com.unity3d.player.UnityPlayerActivity}" drawable="truck"/>
-
-	<!-- BB Racing -->
-	<item component="ComponentInfo{com.vectorunit.purple.googleplay/com.vectorunit.purple.googleplay.MainActivity}" drawable="bb_racing"/>
-
-	<!-- BB Racing 2 -->
-	<item component="ComponentInfo{com.vectorunit.cobalt.googleplay/com.vectorunit.cobalt.MainActivity}" drawable="bb_racing_2"/>
-
-	<!-- Zombie Tsunami -->
-	<item component="ComponentInfo{net.mobigame.zombietsunami/cn.releasedata.ReleaseDataActivity.SplashActivityKing}" drawable="zombie_tsunami"/>
-	<item component="ComponentInfo{net.mobigame.zombietsunami/net.mobigame.zombietsunami.ZombieActivity}" drawable="zombie_tsunami"/>
-
-	<!-- Toca World -->
-	<item component="ComponentInfo{com.tocaboca.tocalifeworld/com.me.game.pmupdatesdk.MainActivity}" drawable="toca_world"/>
-	<item component="ComponentInfo{com.tocaboca.tocalifeworld/com.tocaboca.tocalifeworld.activity.WelcomeActivity}" drawable="toca_world"/>
-	<item component="ComponentInfo{com.tocaboca.tocalifeworld/com.tocaboca.activity.TocaBocaMainActivity}" drawable="toca_world"/>
-
-	<!-- My Singing Monsters -->
-	<item component="ComponentInfo{com.bigbluebubble.singingmonsters.full/com.bigbluebubble.singingmonsters.MyActivity}" drawable="my_singing_monsters"/>
-
-	<!-- SpecialForcesGroup2 -->
-	<item component="ComponentInfo{com.ForgeGames.SpecialForcesGroup2/com.epicgames.ue4.SplashActivity}" drawable="specialforcesgroup2"/>
-	<item component="ComponentInfo{com.ForgeGames.SpecialForcesGroup2/com.gamein.i.a.WelcomeActivity}" drawable="specialforcesgroup2"/>
-	<item component="ComponentInfo{com.ForgeGames.SpecialForcesGroup2/com.me.game.pmupdatesdk.MainActivity}" drawable="specialforcesgroup2"/>
-
-	<!-- SpecialForcesGroup3 -->
-	<item component="ComponentInfo{com.ForgeGames.sfg3/com.epicgames.ue4.SplashActivity}" drawable="specialforcesgroup3"/>
-
-	<!-- Avatar World -->
-	<item component="ComponentInfo{com.pazugames.avatarworld/com.unity3d.player.UnityPlayerActivity}" drawable="avatar_world"/>
-
-	<!-- Earn to Die Rogue -->
-	<item component="ComponentInfo{com.notdoppler.earntodierogue/com.unity3d.player.UnityPlayerActivity}" drawable="earn_to_die_rogue"/>
-
-	<!-- Earn to Die 2 -->
-	<item component="ComponentInfo{com.notdoppler.earntodie2/com.notdoppler.earntodie2.AppActivity}" drawable="earn_to_die_2"/>
-
-	<!-- Business Empire -->
-	<item component="ComponentInfo{com.ttterbagames.businesssimulator/com.unity3d.player.UnityPlayerActivity}" drawable="business_empire"/>
-
-	<!-- bhop pro -->
-	<item component="ComponentInfo{com.begma.bhoppro/com.unity3d.player.UnityPlayerActivity}" drawable="bhop_pro"/>
-
-	<!-- FHS Russia apps -->
-	<item component="ComponentInfo{com.gnivts.selfemployed/com.crpt.samoz.samozan.new_arch.MainActivity}" drawable="fhs_russia"/>
-	<item component="ComponentInfo{ru.fns.lkfl/ru.fns.lkfl.MainActivity}" drawable="fhs_russia"/>
-	<item component="ComponentInfo{com.gnivts.ausn/com.gnivts.ausn.MainActivity}" drawable="fhs_russia"/>
-	<item component="ComponentInfo{ru.gnivc.lkip/ru.gnivc.lkip.MainActivity}" drawable="fhs_russia"/>
-	<item component="ComponentInfo{es.hol.ing.zagsr/com.zoontek.rnbootsplash.RNBootSplashActivity}" drawable="fhs_russia"/>
-
-	<!-- Bicycle games -->
-	<item component="ComponentInfo{se.illusionlabs.touchgrindbmx2/se.illusionlabs.touchgrindbmx2.B2Activity}" drawable="bicycle"/>
-	<item component="ComponentInfo{se.illusionlabs.bmx/se.illusionlabs.bmx.BMXActivityGoogle}" drawable="bicycle"/>
-	<item component="ComponentInfo{com.turborilla.bmx2/com.turborilla.MadSkillsBMX2.MainActivity}" drawable="bicycle"/>
-	<item component="ComponentInfo{life.belt.bmx/com.unity3d.player.UnityPlayerActivity}" drawable="bicycle"/>
-	<item component="ComponentInfo{com.pf.bmx.cycle.games.extreme.bicycle.games/com.unity3d.player.UnityPlayerActivity}" drawable="bicycle"/>
-	<item component="ComponentInfo{jp.drsv.BMXSpace/com.unity3d.player.UnityPlayerActivity}" drawable="bicycle"/>
-	<item component="ComponentInfo{jp.drsv.BMXSpace/jp.drsv.BMXSpace.Ssczuuqmo}" drawable="bicycle"/>
-	<item component="ComponentInfo{com.big.bikelife/com.unity3d.player.UnityPlayerActivity}" drawable="bicycle"/>
-
-	<!-- Nimo TV -->
-	<item component="ComponentInfo{com.huya.nimo/com.huya.nimo.homepage.ui.activity.SplashActivity}" drawable="nimo_tv"/>
-
-	<!-- Huya Live -->
-	<item component="ComponentInfo{com.duowan.kiwi/com.duowan.kiwi.simpleactivity.SplashActivity}" drawable="huya_live"/>
-
-	<!-- Julian's Editor -->
-	<item component="ComponentInfo{com.hortor.julianseditor/com.hortor.creator.MainActivity}" drawable="julians_editor"/>
-	<item component="ComponentInfo{com.hortor.juliancysj/com.hortor.creator.MainActivity}" drawable="julians_editor"/>
-
-	<!-- Chaoxing Mobile -->
-	<item component="ComponentInfo{com.chaoxing.mobile/com.chaoxing.mobile.activity.SplashActivity}" drawable="chaoxing_mobile"/>
-
-	<!-- Plants vs Zombies Grafted -->
-	<item component="ComponentInfo{com.example.pvzjjb/com.godot.game.GodotApp}" drawable="plants_vs_zombies_grafted"/>
-
-	<!-- Plants vs Zombies Hybrid -->
-	<item component="ComponentInfo{com.xwg.pvzzjb/com.unity3d.player.UnityPlayerActivity}" drawable="plants_vs_zombies_hybrid"/>
-
-	<!-- 3839 Tool Service -->
-	<item component="ComponentInfo{com.hykb.yuanshenmap/com.hykb.yuanshenmap.cloudgame.guide.GuideActivity}" drawable="_3839_tool_service"/>
-
-	<!-- Vivo Console -->
-	<item component="ComponentInfo{com.vivo.vivoconsole/com.vivo.vivoconsole.MainActivity}" drawable="vivo_console"/>
-
-	<!-- Dongchedi -->
-	<item component="ComponentInfo{com.ss.android.auto/com.ss.android.auto.policy.AutoPrivacyActivity}" drawable="dongchedi"/>
-
-	<!-- 3A Cloud Games -->
-	<item component="ComponentInfo{com.sayx.sagame/com.sayx.sagame.MainActivity}" drawable="_3a_cloud_games"/>
-
-	<!-- Tianyancha -->
-	<item component="ComponentInfo{com.tianyancha.skyeye/com.tianyancha.skyeye.MainActivity}" drawable="tianyancha"/>
-
-	<!-- Xiao Yi Guanjia -->
-	<item component="ComponentInfo{com.yueme.itv/com.chinatelecom.smarthome.module.mainpage.ui.CoverActivity}" drawable="xiao_yi_guanjia"/>
-
-	<!-- Zhuan Zhuan -->
-	<item component="ComponentInfo{com.wuba.zhuanzhuan/com.wuba.zhuanzhuan.presentation.view.activity.LaunchActivity}" drawable="zhuan_zhuan"/>
-
-	<!-- 870 Games -->
-	<item component="ComponentInfo{com.mobile.cloudgames/com.mobile.cloudgames.ui.SplashActivity}" drawable="_870_games"/>
-
-	<!-- Le Xiang Kuai You -->
-	<item component="ComponentInfo{com.cts6.nice.xbrc9ob/com.lt.app.MainActivity}" drawable="le_xiang_kuai_you"/>
-
-	<!-- Qudianyun -->
-	<item component="ComponentInfo{com.qudian.qudianyun/com.qudian.qudianyun.activities.InitialActivity}" drawable="qudianyun"/>
-
 	<!-- Yu-Gi-Oh! NEURON -->
 	<item component="ComponentInfo{jp.konami.YugiohOcgSupports/com.google.firebase.MessagingUnityPlayerActivity}" drawable="yu_gi_oh_neuron"/>
 
@@ -46006,6 +45999,9 @@
 
 	<!-- Yummly -->
 	<item component="ComponentInfo{com.yummly.android/com.yummly.android.feature.splash.SplashActivity}" drawable="yummly"/>
+
+	<!-- yuu -->
+	<item component="ComponentInfo{com.yuurewards.app/com.dfg.anfield.activity.SplashActivity}" drawable="yuu"/>
 
 	<!-- yuzu -->
 	<item component="ComponentInfo{org.yuzu.yuzu_emu.ea/org.yuzu.yuzu_emu.ui.main.MainActivity}" drawable="yuzu"/>
@@ -46194,6 +46190,9 @@
 	<!-- Zhihuishu Treenity -->
 	<item component="ComponentInfo{com.able.wisdomtree/com.able.wisdomtree.jpush.OutLineActivity}" drawable="zhihuishu_treenity"/>
 
+	<!-- Zhuan Zhuan -->
+	<item component="ComponentInfo{com.wuba.zhuanzhuan/com.wuba.zhuanzhuan.presentation.view.activity.LaunchActivity}" drawable="zhuan_zhuan"/>
+
 	<!-- Zillow Rental -->
 	<item component="ComponentInfo{com.zillow.android.rentals/com.zillow.android.re.ui.SplashScreenActivity}" drawable="zillow"/>
 	<item component="ComponentInfo{com.zillow.android.zillowmap/com.zillow.android.re.ui.SplashScreenActivity}" drawable="zillow"/>
@@ -46292,6 +46291,10 @@
 	<!-- Zombie Catchers -->
 	<item component="ComponentInfo{fi.twomenandadog.zombiecatchers/com.byfen.archiver.MainActivity}" drawable="zombie_catchers"/>
 	<item component="ComponentInfo{fi.twomenandadog.zombiecatchers/fi.twomenandadog.zombiecatchers.ZCGoogleAcitivty}" drawable="zombie_catchers"/>
+
+	<!-- Zombie Tsunami -->
+	<item component="ComponentInfo{net.mobigame.zombietsunami/cn.releasedata.ReleaseDataActivity.SplashActivityKing}" drawable="zombie_tsunami"/>
+	<item component="ComponentInfo{net.mobigame.zombietsunami/net.mobigame.zombietsunami.ZombieActivity}" drawable="zombie_tsunami"/>
 
 	<!-- Zombieville -->
 	<item component="ComponentInfo{com.MikaMobile.ZombievilleUSA/com.unity3d.player.UnityPlayerNativeActivity}" drawable="zombieville"/>
@@ -46457,6 +46460,9 @@
 	<!-- Дзен -->
 	<item component="ComponentInfo{ru.zen.android/com.yandex.zen.ZenMainActivity}" drawable="zen"/>
 
+	<!-- Дикси -->
+	<item component="ComponentInfo{com.ru.dixy/com.dixy.MainActivity}" drawable="dixy"/>
+
 	<!-- Кошелёк (Russian Discount Card Wallet) -->
 	<item component="ComponentInfo{ru.cardsmobile.mw3/ru.cardsmobile.mw3.splash.StartActivity}" drawable="rucardsmobile"/>
 	<item component="ComponentInfo{ru.cardsmobile.mw3/ru.cardsmobile.mw3.product.cardholder.main.presentation.ui.MainActivity}" drawable="rucardsmobile"/>
@@ -46469,9 +46475,6 @@
 	<!-- Литрес: Книги (Litres: Books) -->
 	<item component="ComponentInfo{ru.litres.android/ru.litres.android.splash.MainSplashAlias}" drawable="litres"/>
 	<item component="ComponentInfo{ru.litres.android.global/ru.litres.android.splash.MainSplashAlias}" drawable="litres"/>
-
-	<!-- Hoarder App -->
-	<item component="ComponentInfo{app.hoarder.hoardermobile/app.hoarder.hoardermobile.MainActivity}" drawable="hoarder_app"/>
 
 	<!-- Моu MTC -->
 	<item component="ComponentInfo{ru.mts.mymts/ru.mts.core.ActivitySplash}" drawable="mon_mtc"/>
@@ -46499,9 +46502,6 @@
 
 	<!-- РЖД Пассажирам -->
 	<item component="ComponentInfo{ru.rzd.pass/ru.rzd.pass.feature.appstarter.SplashActivity}" drawable="russian_railway_passengers"/>
-
-	<!-- SiYuan -->
-	<item component="ComponentInfo{org.b3log.siyuan/org.b3log.siyuan.BootActivity}" drawable="siyuan"/>
 
 	<!-- СберKids -->
 	<item component="ComponentInfo{ru.sberbank.sberkids/ru.sberbank.sberkids.main.MainActivity}" drawable="sber_kids"/>
