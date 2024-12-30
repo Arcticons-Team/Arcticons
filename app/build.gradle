@@ -11,11 +11,7 @@ android {
         targetSdkVersion rootProject.ext.TargetSdk
         versionCode 1410
         versionName '11.8.8'
-        multiDexEnabled true        // Naming app bundles
-        base {
-            archivesName = "${parent.name}-v${versionName}"
-        }
-
+        multiDexEnabled true
     }
 
     // Load keystore
@@ -63,8 +59,6 @@ android {
             // Add more conditions for additional flavors
         }
     }
-
-
 
     flavorDimensions += "variant"
     productFlavors {
@@ -117,11 +111,14 @@ android {
         dayNight { res.srcDirs = ['src/dayNightFree/res/', 'src/dayNight/res'] }
     }
 
-
-    compileOptions {
-        encoding = 'UTF-8'
-        sourceCompatibility JavaVersion.VERSION_11
-        targetCompatibility JavaVersion.VERSION_11
+    base {
+        // Output file name
+        archivesName = "${parent.name}-${android.defaultConfig.versionCode}"
+    }
+    java {
+        toolchain {
+            languageVersion = JavaLanguageVersion.of(11)
+        }
     }
 
     buildFeatures {
@@ -145,13 +142,13 @@ android {
 
 dependencies {
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    normalPlayImplementation 'com.github.zixpo:candybar:3.21.0'
-    blackPlayImplementation 'com.github.zixpo:candybar:3.21.0'
-    youPlayImplementation 'com.github.zixpo:candybar:3.21.0'
-    normalImplementation 'com.github.donnnno:candybar-foss:3.20.4'
-    blackImplementation 'com.github.donnnno:candybar-foss:3.20.4'
-    youImplementation 'com.github.donnnno:candybar-foss:3.20.4'
-    dayNightImplementation 'com.github.donnnno:candybar-foss:3.20.4'
+    normalPlayImplementation 'com.github.zixpo:candybar:3.21.1'
+    blackPlayImplementation 'com.github.zixpo:candybar:3.21.1'
+    youPlayImplementation 'com.github.zixpo:candybar:3.21.1'
+    normalImplementation 'com.github.donnnno:candybar-foss:3.21.1'
+    blackImplementation 'com.github.donnnno:candybar-foss:3.21.1'
+    youImplementation 'com.github.donnnno:candybar-foss:3.21.1'
+    dayNightImplementation 'com.github.donnnno:candybar-foss:3.21.1'
 }
 
 import com.android.tools.profgen.ArtProfileKt
