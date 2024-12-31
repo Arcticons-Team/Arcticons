@@ -319,10 +319,19 @@ const filterAppEntries = debounce(() => {
             // If the input is not a valid regex, treat it as a normal string search
             regex = new RegExp(searchInput.replace(/[.*+?^=!:${}()|\[\]\/\\]/g, '\\$&'), 'i');
         }
+        let filteredData; // Declare filteredData outside of the if-else block
+        if (document.getElementById('reverse-switch').checked) {
+            //Put entries that don't match into filteredData
+             filteredData = appEntriesData.filter(entry =>
+                !regex.test(entry.appNameAppfilter + entry.appfilter) // Use the regex to test the appName
 
-        const filteredData = appEntriesData.filter(entry =>
-            regex.test(entry.appNameAppfilter + entry.appfilter) // Use the regex to test the appName
-        );
+            );
+        } else {
+             filteredData = appEntriesData.filter(entry =>
+                regex.test(entry.appNameAppfilter + entry.appfilter) // Use the regex to test the appName
+
+            );
+        }
 
         // If no results are found, show a notification
         if (filteredData.length === 0) {
