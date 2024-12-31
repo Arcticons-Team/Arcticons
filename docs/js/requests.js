@@ -54,6 +54,7 @@ fetch(`assets/requests.txt`)
             const drawable = extractDrawable(appfilter);
             const appIconPath = drawable ? `extracted_png/${drawable}.webp` : 'img/requests/default.svg'; // Adjust path accordingly
             const appIcon = `<img src="${appIconPath}" alt="App Icon" style="width:50px;height:50px;">`;
+            const appIconColor = 0;
             appEntriesData.push({
                 appName,
                 appIcon,
@@ -62,7 +63,8 @@ fetch(`assets/requests.txt`)
                 lastRequestedTime,
                 appNameAppfilter,
                 appfilter,
-                appIconPath
+                appIconPath,
+                appIconColor
             });
         });
         appEntriesDataGlobal = appEntriesData;
@@ -92,6 +94,8 @@ fetch(`assets/requests.txt`)
                 const table = document.querySelector('table');
                 const headers = table.querySelectorAll('thead th');
                 headers[sortingColumnIndex].classList.add(sortingDirection);
+
+                LoadColorData();
                 // Initial render
                 lazyLoadAndRender();
                 // Optionally, trigger the function immediately if needed (e.g., if the page is loaded with a default state):
@@ -416,6 +420,14 @@ function sortData(sortingDirection, columnIndex, sortedData) {
             if (!isNaN(cellA) && !isNaN(cellB)) {
                 return sortingDirection === 'asc' ? cellA - cellB : cellB - cellA;
             }
+        } else if (columnIndex === 1){
+            const offset = 7;
+            const cellA = getCellValue(a, columnIndex + offset);
+            const cellB = getCellValue(b, columnIndex + offset);
+            // Handle numerical values
+            if (!isNaN(cellA) && !isNaN(cellB)) {
+                return sortingDirection === 'asc' ? cellA - cellB : cellB - cellA;
+            }
         } else {
             // Default to string comparison
             const cellA = a[Object.keys(a)[columnIndex]].toLowerCase();
@@ -523,6 +535,73 @@ function notifyMessage(message) {
     }, 5000);
 }
 
+// Function to parse XML and return color data as an object
+function loadColorsFromXML(xmlFilePath, callback) {
+    // Fetch the XML file
+    fetch(xmlFilePath)
+        .then(response => response.text())  // Get the text content of the XML file
+        .then(xmlText => {
+            // Parse the XML text into a DOM object
+            const parser = new DOMParser();
+            const xmlDoc = parser.parseFromString(xmlText, "application/xml");
+
+            const colorData = {};
+
+            // Loop through each <image> element in the XML
+            const images = xmlDoc.getElementsByTagName('image');
+            for (let i = 0; i < images.length; i++) {
+                const image = images[i];
+                const filename = image.getElementsByTagName('filename')[0].textContent;
+                const uniqueColors = image.getElementsByTagName('unique_colors')[0].textContent;
+                colorData[filename] = uniqueColors; // Store the color by filename
+            }
+
+            // Call the callback with the color data
+            callback(colorData);
+        })
+        .catch(error => {
+            console.error('Error loading XML:', error);
+        });
+}
+
+function LoadColorData() {
+    const xmlFilePath = 'assets/image_color_counts.xml';
+
+    // Load the color data from the XML file
+    loadColorsFromXML(xmlFilePath, function(colorData) {
+        if (!colorData) {
+            console.error('No color data available.');
+            return;
+        }
+        // Now that we have the color data, we can process the app entries
+
+        // Assuming appEntriesDataGlobal is an array of objects with `appIconPath` and `appIconColor` properties
+        const promises = appEntriesDataGlobal.map(entry => {
+            // Extract the app icon filename from the path (assuming appIconPath is the full path or URL)
+            const appIconName = entry.appIconPath.split('/').pop();  // Get the filename from the path
+
+            // Look up the color in the loaded color data
+            const newColor = colorData[appIconName];
+
+            // If a color exists in the XML data, assign it
+            if (newColor) {
+                entry.appIconColor = newColor;
+            } else {
+                // Default or error handling if color is not found in XML
+                entry.appIconColor = 0; // Or some default value
+            }
+        });
+
+        // Wait for all promises to resolve
+        Promise.all(promises)
+            .then(() => {
+                console.log('All app entries have been updated with colors.');
+            })
+            .catch(error => {
+                console.error('Error processing entries:', error);
+            });
+    });
+}
 
 RegexSearchSettings.addEventListener(
     "click",
