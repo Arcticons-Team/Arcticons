@@ -1,12 +1,9 @@
-
 @font-face {
-  font-family: 'Inter';
-  font-weight: 100 900;
-  font-display: swap;
-  font-style: oblique 0deg 10deg;
-  font-variation-settings: "slnt" 0deg;
-  src: url("../img/Inter.var.woff2") format("woff2");
+  font-family: 'Arcticons-Sans';
+  font-weight: 400;
+  src: url("../img/ArcticonsSans-Regular.woff2") format("woff2");
 }
+
 *{
   margin: 0;
   padding: 0;
@@ -15,7 +12,7 @@
 }
 
 html{
-  font-family: 'Inter', sans-serif;
+  font-family: 'Arcticons-Sans', sans-serif;
   text-align: center;
 }
 
@@ -53,6 +50,11 @@ body{
   justify-content: center; 
   align-items: center;
   flex-wrap: wrap;
+}
+
+button {
+  font-family: 'Arcticons-Sans', Arial, Helvetica, sans-serif, sans-serif;
+  font-size: 10px;
 }
 
 section{
@@ -120,7 +122,7 @@ a {
 }
 
 a > button {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Arcticons-Sans', sans-serif;
   display: inline-block;
   background-color: #eee;
   border-radius: 40px;
