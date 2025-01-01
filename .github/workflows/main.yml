@@ -9,6 +9,10 @@ on:
       - 'newicons/appfilter.xml'
   push:
     branches: ["Arcticons-Pages"]
+    paths:
+      - 'docs/**'
+      - '!docs/extracted_png/**'
+
   workflow_run:
     workflows: [Update Requests]
     types:
