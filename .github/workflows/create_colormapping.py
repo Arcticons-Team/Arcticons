@@ -50,6 +50,9 @@ def main():
     # Process images and get results
     results = process_images_in_folder(folder_path)
     
+    # Sort results by filename alphabetically
+    results.sort(key=lambda x: x[0])  # Sort by the filename (first element of the tuple)
+    
     # Create XML output
     create_xml_output(results, output_file)
     print(f"XML output saved to {output_file}")
