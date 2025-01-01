@@ -1,6 +1,7 @@
 package com.donnnno.arcticons.helper;
 
 import static com.donnnno.arcticons.helper.Changelog.generateChangelogs;
+import static com.donnnno.arcticons.helper.ImageCollageGenerator.generateReleaseImage;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -57,6 +58,7 @@ public class PrepareRelease {
                         System.out.println("Error occurred: " + e.getMessage());
                     }
                     generateChangelogs(generatedDir, valuesDir+"/custom_icon_count.xml", appFilter, changelogXml,false);
+                    generateReleaseImage( generatedDir + "/newdrawables.xml", sourceDir, generatedDir + "/releaseImage.webp");
                     break;
                 case "newrelease":
                     executePythonScript(rootDir + "/scripts/preparerelease.py","--new");
@@ -73,6 +75,7 @@ public class PrepareRelease {
                         System.out.println("Error occurred: " + e.getMessage());
                     }
                     generateChangelogs(generatedDir, valuesDir+"/custom_icon_count.xml", appFilter, changelogXml,true);
+                    generateReleaseImage( generatedDir + "/newdrawables.xml", sourceDir, generatedDir + "/releaseImage.webp");
                     break;
                 default:
             }
@@ -83,7 +86,7 @@ public class PrepareRelease {
     public static void executePythonScript(String... args) throws Exception {
             List<String> command = new ArrayList<>();
             command.add("python");
-            // Add all provided argumentsto the command list
+            // Add all provided arguments to the command list
             command.addAll(Arrays.asList(args));
             command.add("..");
 

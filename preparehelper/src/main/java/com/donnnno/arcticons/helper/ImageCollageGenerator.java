@@ -42,13 +42,11 @@ public class ImageCollageGenerator {
         String changelogXml = valuesDir +"/changelog.xml";
         String generatedDir = rootDir +"/generated";
         String IconsPath = rootDir+"/icons/white";       // Path to your icons folder
-        String releaseImagePath = generatedDir + "/releaseImage.webp"; // Path for the output image
-
         // Assume there are 5 new icons in the XML
-        generateReleaseImage(170, generatedDir + "/newdrawables.xml", IconsPath, releaseImagePath);
+        generateReleaseImage( generatedDir + "/newdrawables.xml", IconsPath, generatedDir + "/releaseImage.webp");
     }
 
-    public static void generateReleaseImage(int countNew, String newIconsXml, String IconsPath, String releaseImagePath) {
+    public static void generateReleaseImage(String newIconsXml, String IconsPath, String releaseImagePath) {
         try {
             // Step 1: Parse the XML to extract icon names/paths
             File xmlFile = new File(newIconsXml);
@@ -79,6 +77,8 @@ public class ImageCollageGenerator {
 
             int iconSpacing = 10; // Spacing between icons, adjust as needed
             int pageSpacing = 200;
+            int countNew = images.size();
+
             // Step 3: Create a collage image with black background (square-like size)
             int collageWidth = pageSpacing + (iconSize + iconSpacing ) * (int) Math.ceil(Math.sqrt(countNew)); // Square-like width
             int collageHeight =pageSpacing + (iconSize + iconSpacing ) * (int) Math.sqrt(countNew); // Square-like height
