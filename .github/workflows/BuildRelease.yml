@@ -47,9 +47,8 @@ jobs:
             - name: Get Release Notes
               id: image
               run: |
-                name=$(< ./generated/releaseName.txt)
-                name=$(echo $name | tr '\n' ' ')
-                image="![releaseImage](https://github.com/Arcticons-Team/Arcticons/blob/$GITHUB_REF_NAME/generated/releaseImage.jpg)"
+                name="$GITHUB_REF_NAME Release"
+                image="![releaseImage](https://github.com/Arcticons-Team/Arcticons/blob/$GITHUB_REF_NAME/generated/releaseImage.webp)"
                 changelog=$(< ./generated/changelog.md)
                 changelog="$changelog
 
