@@ -44,6 +44,9 @@
 
 #search-input {
     width: 100%;
+}
+
+.textinput {
     box-sizing: border-box !important;
     overflow: visible;
     border-radius: 100px;
@@ -52,6 +55,15 @@
     box-shadow: none;
     outline: none;
     padding: 0.8em 1.2em;
+    font-size: 16px;
+}
+
+#renamer-overlay {
+    text-align: center;
+}
+
+#rename-button {
+    height: 45px;
     font-size: 16px;
 }
 

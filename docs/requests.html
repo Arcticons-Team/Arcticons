@@ -27,7 +27,8 @@
         <!-- Search Container -->
         <div id="search-container">
             <span id="search-input-container">
-                <input type="text" id="search-input" oninput="filterAppEntries()" placeholder="Search">
+                <input class="textinput" type="text" id="search-input" oninput="filterAppEntries()"
+                    placeholder="Search">
                 <span id="clear-search"
                     onclick="var input = this.previousElementSibling; input.value = ''; input.focus();">x</span>
             </span>
@@ -97,7 +98,7 @@
                     class="sm-view">✨</span></button>
         </div>
         <div class="header-elements">
-            <button class="green-button" id="copy-selected-button"><img src="img/requests/copy.svg"></button>
+            <button class="green-button" id="copy-selected-button"> <img src="img/requests/copy.svg"></button>
         </div>
         <div id="updatable-container">
             <!-- Button for Updatable Site -->
@@ -129,6 +130,17 @@
         <span class="close-button-class">&times;</span>
         <!-- Preview image will be inserted here -->
         <img class="preview-image-class" id="preview-image" src="" alt="Preview">
+    </div>
+
+    <div class="popup" id="renamer-overlay">
+        <div class="popup-content">
+            <!-- Preview image will be inserted here -->
+            <p>Enter a new drawable name</p>
+            <input class=textinput id="drawableName-input" type="text" placeholder="drawableName" 
+                title="Change drawable name  to ..." />
+            <hr width="100%" size="2" class="separator" noshade>
+            <button class="green-button" id="rename-button"> Rename drawable </button>
+        </div>
     </div>
 
     <!-- Copy Notification -->

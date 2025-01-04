@@ -12,3 +12,18 @@
 .green-button:hover {
     background-color: #409943;
 }
+
+.longpress {
+    -webkit-animation: 1s longpress;
+            animation: 1s longpress;
+}
+
+@-webkit-keyframes longpress {
+    0%, 20% { background: #4CAF50; }
+    100% { background: yellow; }
+}
+
+@keyframes longpress {
+    0%, 20% { background: #4CAF50; }
+    100% { background: yellow; }
+}
