@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="css/slider.css" />
     <link rel="stylesheet" href="css/dashboard-popup.css" />
     <link rel="stylesheet" href="css/green-button.css" />
+    <link rel="stylesheet" href="css/image-preview.css" />
+    <link rel="stylesheet" href="css/notification.css" />
 </head>
 
 <body>
@@ -123,17 +125,17 @@
         </table>
     </div>
 
-    <div id="preview-overlay">
-        <span class="close-button">&times;</span>
+    <div class="preview-overlay-class" id="preview-overlay">
+        <span class="close-button-class">&times;</span>
         <!-- Preview image will be inserted here -->
-        <img id="preview-image" src="" alt="Preview">
+        <img class="preview-image-class" id="preview-image" src="" alt="Preview">
     </div>
 
     <!-- Copy Notification -->
-    <div id="copy-notification"></div>
+    <div class="notification" id="copy-notification"></div>
 
     <!-- Search Notification -->
-    <div id="search-notification"></div>
+    <div class="notification" id="search-notification"></div>
 
     <script src="js/requests.js"></script>
 </body>

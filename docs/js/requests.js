@@ -266,7 +266,7 @@ function showIconPreview(iconSrc) {
     previewOverlay.style.display = 'block';
     // Add click event listener to hide the preview when clicked on the overlay or close button
     previewOverlay.addEventListener('click', function (e) {
-        if (e.target === this || e.target.classList.contains('close-button')) {
+        if (e.target === this || e.target.classList.contains('close-button-class')) {
             // Hide the preview overlay
             this.style.display = 'none';
         }
