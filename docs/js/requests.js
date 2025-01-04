@@ -240,7 +240,7 @@ function renderTable(data) {
         cell3.innerHTML = entry.appLinks;
         cell4.innerHTML = entry.requestedInfo;
         cell5.innerHTML = entry.lastRequestedTime;
-        cell6.innerHTML = `<button class="copy-button" onclick="copyToClipboard(${index})">Copy</button>`;
+        cell6.innerHTML = `<button class="green-button" id="copy-button" onclick="copyToClipboard(${index})">Copy</button>`;
     });
 
     // Add event listeners to the icon previews
@@ -306,373 +306,373 @@ function copySelectedToClipboard() {
         const entry = appEntriesDataGlobal[index];
         copyText += `${entry.appNameAppfilter}\n${entry.appfilter}\n`;
     }
-        clearSelected();
+    clearSelected();
 
-        navigator.clipboard.writeText(copyText).then(() => {
-            // Show the copy notification
-            document.getElementById('copy-notification').innerText = `Copied: ${copyText}`;
-            document.getElementById('copy-notification').style.display = 'block';
+    navigator.clipboard.writeText(copyText).then(() => {
+        // Show the copy notification
+        document.getElementById('copy-notification').innerText = `Copied: ${copyText}`;
+        document.getElementById('copy-notification').style.display = 'block';
 
-            // Hide the notification after a few seconds
-            setTimeout(() => {
-                document.getElementById('copy-notification').style.display = 'none';
-            }, 3000);
-        }).catch(error => {
-            console.error('Unable to copy to clipboard:', error);
-        });
-    }
-
-    function clearSelected(){
-        const table = document.querySelector('table');
-
-        selectedRows.forEach((rowIndex) => {
-            const row = table.tBodies[0].rows[rowIndex]; // Adjust index if needed
-            row.classList.remove("row-glow");
-        });
-        selectedRows.clear();
-        console.log("All rows deselected.");
-    }
-
-
-
-
-    function showClearSearchIcon() {
-        const clearSearch = document.querySelector('#clear-search');
-        if (document.getElementById('search-input').value.trim() === "") {
-            clearSearch.style.visibility = 'hidden'; // Hide the icon if the input is empty
-        } else {
-            clearSearch.style.visibility = 'visible'; // Show the icon if the input has text
-        }
-    }
-
-    document.getElementById('clear-search').addEventListener('click', clearSearch);
-
-    function clearSearch() {
-        showClearSearchIcon();
-        filterAppEntries();
-    }
-
-
-    // Search function
-    const filterAppEntries = debounce(() => {
-
-        showClearSearchIcon();
-        if (document.getElementById('regex-switch').checked) {
-            const searchInput = document.getElementById('search-input').value;
-            const regexFlagInsensitive = document.getElementById('caseInsensitive-switch').checked ? 'i' : '';
-            const regexFlagUnicode = document.getElementById('caseUnicode-switch').checked ? 'u' : '';
-            const regexFlags = regexFlagInsensitive + regexFlagUnicode;
-            // Create a regex from the search input, escaping special characters if necessary
-            let regex;
-            try {
-                // This allows for user input to be interpreted as a regex pattern
-                regex = new RegExp(searchInput, regexFlags); // 'i' for case-insensitive matching
-            } catch (e) {
-                // If the input is not a valid regex, treat it as a normal string search
-                regex = new RegExp(searchInput.replace(/[.*+?^=!:${}()|\[\]\/\\]/g, '\\$&'), 'i');
-            }
-            let filteredData; // Declare filteredData outside of the if-else block
-            if (document.getElementById('reverse-switch').checked) {
-                //Put entries that don't match into filteredData
-                filteredData = appEntriesData.filter(entry =>
-                    !regex.test(entry.appNameAppfilter + entry.appfilter) // Use the regex to test the appName
-
-                );
-            } else {
-                filteredData = appEntriesData.filter(entry =>
-                    regex.test(entry.appNameAppfilter + entry.appfilter) // Use the regex to test the appName
-
-                );
-            }
-
-            // If no results are found, show a notification
-            if (filteredData.length === 0) {
-                document.getElementById('search-notification').innerText = `No results found.`;
-                document.getElementById('search-notification').style.display = 'block';
-                // Hide the notification after a few seconds
-                setTimeout(
-                    () => {
-                        document.getElementById('search-notification').style.display = 'none';
-                    },
-                    5000
-                );
-                updateTable([]);
-            } else {
-                document.getElementById('search-notification').style.display = 'none';
-                const filteredandsortedData = sortData(sortingDirection, sortingColumnIndex, [
-                    ...filteredData
-                ])
-                updateTable(filteredandsortedData);
-            }
-        } else {
-            const searchInput = document.getElementById('search-input').value.toLowerCase();
-            const filteredData = appEntriesData.filter(entry =>
-                entry.appName.toLowerCase().includes(searchInput)
-            );
-            // If no results are found, show a notification
-            if (filteredData.length === 0) {
-                document.getElementById('search-notification').innerText = `No results found.`;
-                document.getElementById('search-notification').style.display = 'block';
-                // Hide the notification after a few seconds
-                setTimeout(() => {
-                    document.getElementById('search-notification').style.display = 'none';
-                }, 5000);
-                updateTable([]);
-            } else {
-                document.getElementById('search-notification').style.display = 'none';
-                const filteredandsortedData = sortData(sortingDirection, sortingColumnIndex, [...filteredData])
-                updateTable(filteredandsortedData);
-            }
-        }
-    }, 500);
-
-
-    document.getElementById('regex-switch').addEventListener('change', filterAppEntries);
-    document.getElementById('closePopup').addEventListener('click', filterAppEntries);
-    document.getElementById('copy-selected-button').addEventListener('click', copySelectedToClipboard);
-
-    // Sort table function
-    function sortTable(columnIndex) {
-        const table = document.querySelector('table');
-        const headers = table.querySelectorAll('thead th');
-
-        // Determine the sorting direction
-        sortingDirection = headers[columnIndex].classList.contains('asc') ? 'desc' : 'asc';
-
-        // Remove sorting indicators from all headers
-        headers.forEach(header => {
-            header.classList.remove('asc', 'desc');
-        });
-
-        // Add the appropriate sorting class to the clicked header
-        headers[columnIndex].classList.add(sortingDirection);
-        sortingColumnIndex = columnIndex;
-        // Sort the data
-        const sortedData = sortData(sortingDirection, columnIndex, [...appEntriesDataGlobal]);
-
-        updateTable(sortedData);
-    }
-
-    function sortData(sortingDirection, columnIndex, sortedData) {
-        sortedData.sort((a, b) => {
-            if (columnIndex === 4) { // Check if sorting the 'Last Requested' column
-                const cellA = getCellValue(a, columnIndex);
-                const cellB = getCellValue(b, columnIndex);
-
-                // Handle dates
-                return sortingDirection === 'asc' ? cellA - cellB : cellB - cellA;
-            } else if (columnIndex === 3) {
-                const cellA = getCellValue(a, columnIndex);
-                const cellB = getCellValue(b, columnIndex);
-
-                // Handle numerical values
-                if (!isNaN(cellA) && !isNaN(cellB)) {
-                    return sortingDirection === 'asc' ? cellA - cellB : cellB - cellA;
-                }
-            } else if (columnIndex === 1) {
-                const offset = 7;
-                const cellA = getCellValue(a, columnIndex + offset);
-                const cellB = getCellValue(b, columnIndex + offset);
-                // Handle numerical values
-                if (!isNaN(cellA) && !isNaN(cellB)) {
-                    return sortingDirection === 'asc' ? cellA - cellB : cellB - cellA;
-                }
-            } else {
-                // Default to string comparison
-                const cellA = a[Object.keys(a)[columnIndex]].toLowerCase();
-                const cellB = b[Object.keys(b)[columnIndex]].toLowerCase();
-                return sortingDirection === 'asc' ? cellA.localeCompare(cellB) : cellB.localeCompare(cellA);
-            }
-        });
-        return sortedData;
-    }
-
-    // Initial table rendering
-    function initializeTable() {
-        renderTable(appEntriesData);
-    }
-
-    // Helper function to get cell value by column index
-    function getCellValue(row, columnIndex) {
-        const key = Object.keys(row)[columnIndex];
-        if (key === 'lastRequestedTime') {
-            // Parse date strings to Date objects for sorting
-            const dateString = row[key].split(',')[0]; // Extract date part from the string
-            const [day, month, year] = dateString.split('/').map(Number); // Split the date string and convert parts to numbers
-            const timeString = row[key].split(',')[1].trim(); // Extract time part from the string
-            const [hour, minute, second] = timeString.split(':').map(Number); // Split the time string and convert parts to numbers
-            return new Date(year, month - 1, day, hour, minute, second); // Return a Date object with year, month, day, hour, minute, second
-        }
-        return isNaN(row[key]) ? row[key] : parseFloat(row[key]);
-    }
-
-    // Runs when "I'm feelin' lucky" button is clicked on
-    function randomIcons() {
-        const randomResetButton = document.getElementById(`random-reset-button`);
-        const randomNumberInput = document.getElementById(`random-number-input`); // Number of requests to select randomly
-        const totalRequests = appEntriesData.length; // Total numbers of requests
-
-        const defaultRandomCnt = 10;
-        const minRandomCnt = 1;
-
-        if (defaultRandomCnt >= totalRequests) {
-            notifyMessage(`There are TOO FEW requests! (Yay!)`);
-            return;
-        }
-
-        let randomCnt = defaultRandomCnt; // Default is used when the number in the input box is not numeric
-
-        if (!isNaN(parseInt(randomNumberInput.value)) && isFinite(randomNumberInput.value)) {
-            randomNumberInput.value = parseInt(randomNumberInput.value);
-            if (randomNumberInput.value == totalRequests) {
-                return;
-            }
-            if (randomNumberInput.value > totalRequests) {
-                notifyMessage(`There are fewer requests than ` + randomNumberInput.value);
-                randomNumberInput.value = defaultRandomCnt;
-            }
-            // If value is too low (e.g. 0, -1), set to default
-            if (randomNumberInput.value < minRandomCnt)
-                randomNumberInput.value = defaultRandomCnt;
-
-            randomCnt = randomNumberInput.value;
-        }
-        else {
-            randomNumberInput.value = defaultRandomCnt;
-        }
-
-        // Randomization part
-        const numArr = Array(totalRequests).fill().map((element, index) => index + minRandomCnt - 1); // Initialize an array of 0 to the total number of requests
-        shuffle(numArr); // Shuffle the entire array
-        let slicedRandomNumArr = numArr.slice(0, randomCnt); // Choose the first N as the random indices
-        let randomizedEntriesData = [];
-        for (let i = 0; i < slicedRandomNumArr.length; i++) {
-            randomizedEntriesData.push(appEntriesData[slicedRandomNumArr[i]]);
-        }
-
-        updateTable(randomizedEntriesData);
-        randomResetButton.style.display = "inline-block";
-    }
-
-    function showInfo() {
-        var popup = document.getElementById("infotext");
-        popup.classList.toggle("show");
-    }
-
-    function shuffle(array) {
-        let currentIndex = array.length;
-
-        // While there remain elements to shuffle...
-        while (currentIndex != 0) {
-
-            // Pick a remaining element...
-            let randomIndex = Math.floor(Math.random() * currentIndex);
-            currentIndex--;
-
-            // And swap it with the current element.
-            [array[currentIndex], array[randomIndex]] = [
-                array[randomIndex], array[currentIndex]];
-        }
-    }
-
-    function notifyMessage(message) {
-        document.getElementById('search-notification').innerText = message;
-        document.getElementById('search-notification').style.display = 'block';
         // Hide the notification after a few seconds
         setTimeout(() => {
+            document.getElementById('copy-notification').style.display = 'none';
+        }, 3000);
+    }).catch(error => {
+        console.error('Unable to copy to clipboard:', error);
+    });
+}
+
+function clearSelected() {
+    const table = document.querySelector('table');
+
+    selectedRows.forEach((rowIndex) => {
+        const row = table.tBodies[0].rows[rowIndex]; // Adjust index if needed
+        row.classList.remove("row-glow");
+    });
+    selectedRows.clear();
+    console.log("All rows deselected.");
+}
+
+
+
+
+function showClearSearchIcon() {
+    const clearSearch = document.querySelector('#clear-search');
+    if (document.getElementById('search-input').value.trim() === "") {
+        clearSearch.style.visibility = 'hidden'; // Hide the icon if the input is empty
+    } else {
+        clearSearch.style.visibility = 'visible'; // Show the icon if the input has text
+    }
+}
+
+document.getElementById('clear-search').addEventListener('click', clearSearch);
+
+function clearSearch() {
+    showClearSearchIcon();
+    filterAppEntries();
+}
+
+
+// Search function
+const filterAppEntries = debounce(() => {
+
+    showClearSearchIcon();
+    if (document.getElementById('regex-switch').checked) {
+        const searchInput = document.getElementById('search-input').value;
+        const regexFlagInsensitive = document.getElementById('caseInsensitive-switch').checked ? 'i' : '';
+        const regexFlagUnicode = document.getElementById('caseUnicode-switch').checked ? 'u' : '';
+        const regexFlags = regexFlagInsensitive + regexFlagUnicode;
+        // Create a regex from the search input, escaping special characters if necessary
+        let regex;
+        try {
+            // This allows for user input to be interpreted as a regex pattern
+            regex = new RegExp(searchInput, regexFlags); // 'i' for case-insensitive matching
+        } catch (e) {
+            // If the input is not a valid regex, treat it as a normal string search
+            regex = new RegExp(searchInput.replace(/[.*+?^=!:${}()|\[\]\/\\]/g, '\\$&'), 'i');
+        }
+        let filteredData; // Declare filteredData outside of the if-else block
+        if (document.getElementById('reverse-switch').checked) {
+            //Put entries that don't match into filteredData
+            filteredData = appEntriesData.filter(entry =>
+                !regex.test(entry.appNameAppfilter + entry.appfilter) // Use the regex to test the appName
+
+            );
+        } else {
+            filteredData = appEntriesData.filter(entry =>
+                regex.test(entry.appNameAppfilter + entry.appfilter) // Use the regex to test the appName
+
+            );
+        }
+
+        // If no results are found, show a notification
+        if (filteredData.length === 0) {
+            document.getElementById('search-notification').innerText = `No results found.`;
+            document.getElementById('search-notification').style.display = 'block';
+            // Hide the notification after a few seconds
+            setTimeout(
+                () => {
+                    document.getElementById('search-notification').style.display = 'none';
+                },
+                5000
+            );
+            updateTable([]);
+        } else {
             document.getElementById('search-notification').style.display = 'none';
-        }, 5000);
+            const filteredandsortedData = sortData(sortingDirection, sortingColumnIndex, [
+                ...filteredData
+            ])
+            updateTable(filteredandsortedData);
+        }
+    } else {
+        const searchInput = document.getElementById('search-input').value.toLowerCase();
+        const filteredData = appEntriesData.filter(entry =>
+            entry.appName.toLowerCase().includes(searchInput)
+        );
+        // If no results are found, show a notification
+        if (filteredData.length === 0) {
+            document.getElementById('search-notification').innerText = `No results found.`;
+            document.getElementById('search-notification').style.display = 'block';
+            // Hide the notification after a few seconds
+            setTimeout(() => {
+                document.getElementById('search-notification').style.display = 'none';
+            }, 5000);
+            updateTable([]);
+        } else {
+            document.getElementById('search-notification').style.display = 'none';
+            const filteredandsortedData = sortData(sortingDirection, sortingColumnIndex, [...filteredData])
+            updateTable(filteredandsortedData);
+        }
+    }
+}, 500);
+
+
+document.getElementById('regex-switch').addEventListener('change', filterAppEntries);
+document.getElementById('closePopup').addEventListener('click', filterAppEntries);
+document.getElementById('copy-selected-button').addEventListener('click', copySelectedToClipboard);
+
+// Sort table function
+function sortTable(columnIndex) {
+    const table = document.querySelector('table');
+    const headers = table.querySelectorAll('thead th');
+
+    // Determine the sorting direction
+    sortingDirection = headers[columnIndex].classList.contains('asc') ? 'desc' : 'asc';
+
+    // Remove sorting indicators from all headers
+    headers.forEach(header => {
+        header.classList.remove('asc', 'desc');
+    });
+
+    // Add the appropriate sorting class to the clicked header
+    headers[columnIndex].classList.add(sortingDirection);
+    sortingColumnIndex = columnIndex;
+    // Sort the data
+    const sortedData = sortData(sortingDirection, columnIndex, [...appEntriesDataGlobal]);
+
+    updateTable(sortedData);
+}
+
+function sortData(sortingDirection, columnIndex, sortedData) {
+    sortedData.sort((a, b) => {
+        if (columnIndex === 4) { // Check if sorting the 'Last Requested' column
+            const cellA = getCellValue(a, columnIndex);
+            const cellB = getCellValue(b, columnIndex);
+
+            // Handle dates
+            return sortingDirection === 'asc' ? cellA - cellB : cellB - cellA;
+        } else if (columnIndex === 3) {
+            const cellA = getCellValue(a, columnIndex);
+            const cellB = getCellValue(b, columnIndex);
+
+            // Handle numerical values
+            if (!isNaN(cellA) && !isNaN(cellB)) {
+                return sortingDirection === 'asc' ? cellA - cellB : cellB - cellA;
+            }
+        } else if (columnIndex === 1) {
+            const offset = 7;
+            const cellA = getCellValue(a, columnIndex + offset);
+            const cellB = getCellValue(b, columnIndex + offset);
+            // Handle numerical values
+            if (!isNaN(cellA) && !isNaN(cellB)) {
+                return sortingDirection === 'asc' ? cellA - cellB : cellB - cellA;
+            }
+        } else {
+            // Default to string comparison
+            const cellA = a[Object.keys(a)[columnIndex]].toLowerCase();
+            const cellB = b[Object.keys(b)[columnIndex]].toLowerCase();
+            return sortingDirection === 'asc' ? cellA.localeCompare(cellB) : cellB.localeCompare(cellA);
+        }
+    });
+    return sortedData;
+}
+
+// Initial table rendering
+function initializeTable() {
+    renderTable(appEntriesData);
+}
+
+// Helper function to get cell value by column index
+function getCellValue(row, columnIndex) {
+    const key = Object.keys(row)[columnIndex];
+    if (key === 'lastRequestedTime') {
+        // Parse date strings to Date objects for sorting
+        const dateString = row[key].split(',')[0]; // Extract date part from the string
+        const [day, month, year] = dateString.split('/').map(Number); // Split the date string and convert parts to numbers
+        const timeString = row[key].split(',')[1].trim(); // Extract time part from the string
+        const [hour, minute, second] = timeString.split(':').map(Number); // Split the time string and convert parts to numbers
+        return new Date(year, month - 1, day, hour, minute, second); // Return a Date object with year, month, day, hour, minute, second
+    }
+    return isNaN(row[key]) ? row[key] : parseFloat(row[key]);
+}
+
+// Runs when "I'm feelin' lucky" button is clicked on
+function randomIcons() {
+    const randomResetButton = document.getElementById(`random-reset-button`);
+    const randomNumberInput = document.getElementById(`random-number-input`); // Number of requests to select randomly
+    const totalRequests = appEntriesData.length; // Total numbers of requests
+
+    const defaultRandomCnt = 10;
+    const minRandomCnt = 1;
+
+    if (defaultRandomCnt >= totalRequests) {
+        notifyMessage(`There are TOO FEW requests! (Yay!)`);
+        return;
     }
 
-    // Function to parse XML and return color data as an object
-    function loadColorsFromXML(xmlFilePath, callback) {
-        // Fetch the XML file
-        fetch(xmlFilePath)
-            .then(response => response.text())  // Get the text content of the XML file
-            .then(xmlText => {
-                // Parse the XML text into a DOM object
-                const parser = new DOMParser();
-                const xmlDoc = parser.parseFromString(xmlText, "application/xml");
+    let randomCnt = defaultRandomCnt; // Default is used when the number in the input box is not numeric
 
-                const colorData = {};
+    if (!isNaN(parseInt(randomNumberInput.value)) && isFinite(randomNumberInput.value)) {
+        randomNumberInput.value = parseInt(randomNumberInput.value);
+        if (randomNumberInput.value == totalRequests) {
+            return;
+        }
+        if (randomNumberInput.value > totalRequests) {
+            notifyMessage(`There are fewer requests than ` + randomNumberInput.value);
+            randomNumberInput.value = defaultRandomCnt;
+        }
+        // If value is too low (e.g. 0, -1), set to default
+        if (randomNumberInput.value < minRandomCnt)
+            randomNumberInput.value = defaultRandomCnt;
 
-                // Loop through each <image> element in the XML
-                const images = xmlDoc.getElementsByTagName('image');
-                for (let i = 0; i < images.length; i++) {
-                    const image = images[i];
-                    const filename = image.getElementsByTagName('filename')[0].textContent;
-                    const uniqueColors = image.getElementsByTagName('unique_colors')[0].textContent;
-                    colorData[filename] = uniqueColors; // Store the color by filename
-                }
+        randomCnt = randomNumberInput.value;
+    }
+    else {
+        randomNumberInput.value = defaultRandomCnt;
+    }
 
-                // Call the callback with the color data
-                callback(colorData);
+    // Randomization part
+    const numArr = Array(totalRequests).fill().map((element, index) => index + minRandomCnt - 1); // Initialize an array of 0 to the total number of requests
+    shuffle(numArr); // Shuffle the entire array
+    let slicedRandomNumArr = numArr.slice(0, randomCnt); // Choose the first N as the random indices
+    let randomizedEntriesData = [];
+    for (let i = 0; i < slicedRandomNumArr.length; i++) {
+        randomizedEntriesData.push(appEntriesData[slicedRandomNumArr[i]]);
+    }
+
+    updateTable(randomizedEntriesData);
+    randomResetButton.style.display = "inline-block";
+}
+
+function showInfo() {
+    var popup = document.getElementById("infotext");
+    popup.classList.toggle("show");
+}
+
+function shuffle(array) {
+    let currentIndex = array.length;
+
+    // While there remain elements to shuffle...
+    while (currentIndex != 0) {
+
+        // Pick a remaining element...
+        let randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+
+        // And swap it with the current element.
+        [array[currentIndex], array[randomIndex]] = [
+            array[randomIndex], array[currentIndex]];
+    }
+}
+
+function notifyMessage(message) {
+    document.getElementById('search-notification').innerText = message;
+    document.getElementById('search-notification').style.display = 'block';
+    // Hide the notification after a few seconds
+    setTimeout(() => {
+        document.getElementById('search-notification').style.display = 'none';
+    }, 5000);
+}
+
+// Function to parse XML and return color data as an object
+function loadColorsFromXML(xmlFilePath, callback) {
+    // Fetch the XML file
+    fetch(xmlFilePath)
+        .then(response => response.text())  // Get the text content of the XML file
+        .then(xmlText => {
+            // Parse the XML text into a DOM object
+            const parser = new DOMParser();
+            const xmlDoc = parser.parseFromString(xmlText, "application/xml");
+
+            const colorData = {};
+
+            // Loop through each <image> element in the XML
+            const images = xmlDoc.getElementsByTagName('image');
+            for (let i = 0; i < images.length; i++) {
+                const image = images[i];
+                const filename = image.getElementsByTagName('filename')[0].textContent;
+                const uniqueColors = image.getElementsByTagName('unique_colors')[0].textContent;
+                colorData[filename] = uniqueColors; // Store the color by filename
+            }
+
+            // Call the callback with the color data
+            callback(colorData);
+        })
+        .catch(error => {
+            console.error('Error loading XML:', error);
+        });
+}
+
+function LoadColorData() {
+    const xmlFilePath = 'assets/image_color_counts.xml';
+
+    // Load the color data from the XML file
+    loadColorsFromXML(xmlFilePath, function (colorData) {
+        if (!colorData) {
+            console.error('No color data available.');
+            return;
+        }
+        // Now that we have the color data, we can process the app entries
+
+        // Assuming appEntriesDataGlobal is an array of objects with `appIconPath` and `appIconColor` properties
+        const promises = appEntriesDataGlobal.map(entry => {
+            // Extract the app icon filename from the path (assuming appIconPath is the full path or URL)
+            const appIconName = entry.appIconPath.split('/').pop();  // Get the filename from the path
+
+            // Look up the color in the loaded color data
+            const newColor = colorData[appIconName];
+
+            // If a color exists in the XML data, assign it
+            if (newColor) {
+                entry.appIconColor = newColor;
+            } else {
+                // Default or error handling if color is not found in XML
+                entry.appIconColor = 0; // Or some default value
+            }
+        });
+
+        // Wait for all promises to resolve
+        Promise.all(promises)
+            .then(() => {
+                console.log('All app entries have been updated with colors.');
             })
             .catch(error => {
-                console.error('Error loading XML:', error);
+                console.error('Error processing entries:', error);
             });
+    });
+}
+
+RegexSearchSettings.addEventListener(
+    "click",
+    function () {
+        myPopup.classList.add("show");
     }
-
-    function LoadColorData() {
-        const xmlFilePath = 'assets/image_color_counts.xml';
-
-        // Load the color data from the XML file
-        loadColorsFromXML(xmlFilePath, function (colorData) {
-            if (!colorData) {
-                console.error('No color data available.');
-                return;
-            }
-            // Now that we have the color data, we can process the app entries
-
-            // Assuming appEntriesDataGlobal is an array of objects with `appIconPath` and `appIconColor` properties
-            const promises = appEntriesDataGlobal.map(entry => {
-                // Extract the app icon filename from the path (assuming appIconPath is the full path or URL)
-                const appIconName = entry.appIconPath.split('/').pop();  // Get the filename from the path
-
-                // Look up the color in the loaded color data
-                const newColor = colorData[appIconName];
-
-                // If a color exists in the XML data, assign it
-                if (newColor) {
-                    entry.appIconColor = newColor;
-                } else {
-                    // Default or error handling if color is not found in XML
-                    entry.appIconColor = 0; // Or some default value
-                }
-            });
-
-            // Wait for all promises to resolve
-            Promise.all(promises)
-                .then(() => {
-                    console.log('All app entries have been updated with colors.');
-                })
-                .catch(error => {
-                    console.error('Error processing entries:', error);
-                });
-        });
+);
+closePopup.addEventListener(
+    "click",
+    function () {
+        myPopup.classList.remove(
+            "show"
+        );
     }
-
-    RegexSearchSettings.addEventListener(
-        "click",
-        function () {
-            myPopup.classList.add("show");
-        }
-    );
-    closePopup.addEventListener(
-        "click",
-        function () {
+);
+window.addEventListener(
+    "click",
+    function (event) {
+        if (event.target == myPopup) {
             myPopup.classList.remove(
                 "show"
             );
         }
-    );
-    window.addEventListener(
-        "click",
-        function (event) {
-            if (event.target == myPopup) {
-                myPopup.classList.remove(
-                    "show"
-                );
-            }
-        }
-    );
+    }
+);
