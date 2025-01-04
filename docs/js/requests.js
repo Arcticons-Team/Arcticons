@@ -8,6 +8,8 @@ let appEntriesData = []; // Store the original data for sorting
 // Global variables to track sorting column and direction
 let sortingColumnIndex = 3;
 let sortingDirection = 'desc';
+var selectedRows = new Set();
+
 
 // Debounce function for search input
 const debounce = (func, delay) => {
@@ -220,7 +222,19 @@ function renderTable(data) {
         let cell5 = row.insertCell(4);
         let cell6 = row.insertCell(5);
         index = index + startIndex;
-        cell1.innerHTML = entry.appName;
+        // Make cell1 clickable
+        cell1.textContent = entry.appName;
+        cell1.style.cursor = "pointer";
+        cell1.addEventListener("click", () => {
+            if (selectedRows.has(index)) {
+                selectedRows.delete(index);
+                row.classList.remove("row-glow");
+            } else {
+                selectedRows.add(index);
+                row.classList.add("row-glow");
+            }
+            console.log("Selected Rows:", Array.from(selectedRows));
+        });
         // Render the app icon as a clickable image
         cell2.innerHTML = `<a href="#" class="icon-preview" data-index="${index}">${entry.appIcon}</a>`;
         cell3.innerHTML = entry.appLinks;
