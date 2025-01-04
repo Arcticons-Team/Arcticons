@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="css/dashboard-table-main.css" />
     <link rel="stylesheet" href="css/slider.css" />
     <link rel="stylesheet" href="css/dashboard-popup.css" />
+    <link rel="stylesheet" href="css/green-button.css" />
 </head>
 
 <body>
@@ -29,7 +30,7 @@
                     onclick="var input = this.previousElementSibling; input.value = ''; input.focus();">x</span>
             </span>
             <div id="regex-search-container">
-                <button id="RegexSearchSettings">Regex Search</button>
+                <button class="green-button" id="RegexSearchSettings">Regex Search</button>
                 <div id="myPopup" class="popup">
                     <div class="popup-content">
                         <div class="info-popup" id="info" onclick="showInfo()">i
@@ -90,15 +91,15 @@
             <!-- Number of icons to random -->
             <input id="random-number-input" type="number" value="10" title="Number of icons to randomly select" />
             <!-- Button for Random Icons -->
-            <button id="random-button"><span class="lg-view">✨ I'm feelin' lucky ✨</span><span
+            <button class="green-button" id="random-button"><span class="lg-view">✨ I'm feelin' lucky ✨</span><span
                     class="sm-view">✨</span></button>
         </div>
         <div class="header-elements">
-            <button class="green-button" id="copy-selected-button">Copy</button>
+            <button class="green-button" id="copy-selected-button"><img src="img/requests/copy.svg"></button>
         </div>
         <div id="updatable-container">
             <!-- Button for Updatable Site -->
-            <button id="updatable-button">Potential Updates</button>
+            <button class="green-button" id="updatable-button">Potential Updates</button>
         </div>
     </div>
 
