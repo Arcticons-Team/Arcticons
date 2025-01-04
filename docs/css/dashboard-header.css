@@ -161,6 +161,28 @@
     text-decoration: none;
 }
 
+.green-button {
+    width: 100%;
+    border: none;
+    color: white;
+    background-color: #4CAF50;
+    border-radius: 100px;
+    padding: 5px 15px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.green-button:hover {
+    background-color: #409943;
+}
+
+.header-elements {
+    display: flex;
+    flex: 1;
+
+}
+
+
 @media screen and (max-width: 1200px) {
 
     .lg-view {
