@@ -266,7 +266,7 @@ function showIconPreview(iconSrc) {
     previewOverlay.style.display = 'block';
     // Add click event listener to hide the preview when clicked on the overlay or close button
     previewOverlay.addEventListener('click', function (e) {
-        if (e.target === this || e.target.classList.contains('close-button')) {
+        if (e.target === this || e.target.classList.contains('close-button-class')) {
             // Hide the preview overlay
             this.style.display = 'none';
         }
@@ -429,7 +429,51 @@ const filterAppEntries = debounce(() => {
 
 document.getElementById('regex-switch').addEventListener('change', filterAppEntries);
 document.getElementById('closePopup').addEventListener('click', filterAppEntries);
-document.getElementById('copy-selected-button').addEventListener('click', copySelectedToClipboard);
+document.getElementById('rename-button').addEventListener('click', renameAndCopySelectedToClipboard);
+
+
+function renameAndCopySelectedToClipboard() {
+    // Get the text from the input field
+    const node = document.getElementById("drawableName-input");
+    const text = node.value; // This is the text to use for replacement
+    let copyText = "";
+
+    // Regular expression to find the part inside drawable="..."
+    const regex = new RegExp('(?<=drawable=")(.*)(?="\/>)');
+
+    // Loop over the selected rows
+    for (const index of selectedRows) {
+        const entry = appEntriesDataGlobal[index];
+
+        // Apply regex to replace the relevant part in entry.appfilter with the text
+        const appfiltermod = entry.appfilter.replace(regex, text);
+
+        // Append the formatted result to copyText
+        copyText += `${entry.appNameAppfilter}\n${appfiltermod}\n`;
+    }
+
+    // Clear selected rows (implement the clearSelected function if necessary)
+    clearSelected();
+
+    // Copy the resulting text to clipboard
+    navigator.clipboard.writeText(copyText).then(() => {
+        // Show the copy notification
+        const notification = document.getElementById('copy-notification');
+        notification.innerText = `Copied: ${copyText}`;
+        notification.style.display = 'block';
+
+        // Hide the notification after a few seconds
+        setTimeout(() => {
+            notification.style.display = 'none';
+        }, 3000);
+    }).catch(error => {
+        console.error('Unable to copy to clipboard:', error);
+    });
+
+    // Hide the renamer overlay (implement the class removal as per your setup)
+    document.getElementById("renamer-overlay").classList.remove("show");
+}
+
 
 // Sort table function
 function sortTable(columnIndex) {
@@ -674,5 +718,70 @@ window.addEventListener(
                 "show"
             );
         }
+        if (event.target == document.getElementById("renamer-overlay")) {
+            document.getElementById("renamer-overlay").classList.remove("show");
+        }
     }
 );
+
+var node = document.getElementById("copy-selected-button");
+var longpress = false;
+var presstimer = null;
+var longtarget = null;
+
+var cancel = function (e) {
+    console.log("cancel");
+
+    if (presstimer !== null) {
+        clearTimeout(presstimer);
+        presstimer = null;
+    }
+
+    this.classList.remove("longpress");
+};
+
+var click = function (e) {
+    console.log("click");
+    if (presstimer !== null) {
+        clearTimeout(presstimer);
+        presstimer = null;
+    }
+
+    this.classList.remove("longpress");
+
+    if (longpress) {
+        return false;
+    }
+
+    copySelectedToClipboard();
+};
+
+var start = function (e) {
+    console.log("start");
+    console.log(e);
+
+    if (e.type === "click" && e.button !== 0) {
+        return;
+    }
+
+    longpress = false;
+
+    this.classList.add("longpress");
+
+    if (presstimer === null) {
+        presstimer = setTimeout(function () {
+            document.getElementById("renamer-overlay").classList.add("show");
+            longpress = true;
+        }, 600);
+    }
+
+    return false;
+};
+
+node.addEventListener("mousedown", start);
+node.addEventListener("touchstart", start);
+node.addEventListener("click", click);
+node.addEventListener("mouseout", cancel);
+node.addEventListener("touchend", cancel);
+node.addEventListener("touchleave", cancel);
+node.addEventListener("touchcancel", cancel);

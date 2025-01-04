@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="css/dashboard-main.css" />
     <link rel="stylesheet" href="css/dashboard-header.css" />
     <link rel="stylesheet" href="css/dashboard-table-updates.css" />
+    <link rel="stylesheet" href="css/green-button.css" />
+    <link rel="stylesheet" href="css/image-preview.css" />
+    <link rel="stylesheet" href="css/notification.css" />
 </head>
 
 <body>
@@ -20,12 +23,13 @@
     <div class="header-container">
         <!-- Search Container -->
         <span id="search-container">
-            <input type="text" id="search-input" oninput="filterAppEntries()" placeholder="Search">
-            <span id="clear-search" onclick="var input = this.previousElementSibling; input.value = ''; input.focus();">x</span>
+            <input class=textinput type="text" id="search-input" oninput="filterAppEntries()" placeholder="Search">
+            <span id="clear-search"
+                onclick="var input = this.previousElementSibling; input.value = ''; input.focus();">x</span>
         </span>
         <div id="updatable-container">
             <!-- Button for Updatable Site -->
-            <button id="updatable-button">Request Dashboard</button>
+            <button class="green-button" id="updatable-button">Request Dashboard</button>
         </div>
     </div>
 
@@ -46,17 +50,17 @@
         </table>
     </div>
 
-    <div id="preview-overlay">
-        <span class="close-button">&times;</span>
+    <div class="preview-overlay-class" id="preview-overlay">
+        <span class="close-button-class">&times;</span>
         <!-- Preview image will be inserted here -->
-        <img id="preview-image" src="" alt="Preview">
-      </div>
+        <img class="preview-image-class" id="preview-image" src="" alt="Preview">
+    </div>
 
     <!-- Copy Notification -->
-    <div id="copy-notification"></div>
+    <div class="notification" id="copy-notification"></div>
 
     <!-- Search Notification -->
-    <div id="search-notification"></div>
+    <div class="notification" id="search-notification"></div>
 
     <script src="js/updatable.js"></script>
 </body>

@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="css/slider.css" />
     <link rel="stylesheet" href="css/dashboard-popup.css" />
     <link rel="stylesheet" href="css/green-button.css" />
+    <link rel="stylesheet" href="css/image-preview.css" />
+    <link rel="stylesheet" href="css/notification.css" />
 </head>
 
 <body>
@@ -25,7 +27,8 @@
         <!-- Search Container -->
         <div id="search-container">
             <span id="search-input-container">
-                <input type="text" id="search-input" oninput="filterAppEntries()" placeholder="Search">
+                <input class="textinput" type="text" id="search-input" oninput="filterAppEntries()"
+                    placeholder="Search">
                 <span id="clear-search"
                     onclick="var input = this.previousElementSibling; input.value = ''; input.focus();">x</span>
             </span>
@@ -72,7 +75,7 @@
                             </label>
                         </div>
                         <hr width="100%" size="2" class="separator" noshade>
-                        <button id="closePopup">
+                        <button class="green-button" id="closePopup">
                             Close
                         </button>
                     </div>
@@ -95,7 +98,7 @@
                     class="sm-view">✨</span></button>
         </div>
         <div class="header-elements">
-            <button class="green-button" id="copy-selected-button"><img src="img/requests/copy.svg"></button>
+            <button class="green-button" id="copy-selected-button"> <img src="img/requests/copy.svg"></button>
         </div>
         <div id="updatable-container">
             <!-- Button for Updatable Site -->
@@ -123,17 +126,28 @@
         </table>
     </div>
 
-    <div id="preview-overlay">
-        <span class="close-button">&times;</span>
+    <div class="preview-overlay-class" id="preview-overlay">
+        <span class="close-button-class">&times;</span>
         <!-- Preview image will be inserted here -->
-        <img id="preview-image" src="" alt="Preview">
+        <img class="preview-image-class" id="preview-image" src="" alt="Preview">
+    </div>
+
+    <div class="popup" id="renamer-overlay">
+        <div class="popup-content">
+            <!-- Preview image will be inserted here -->
+            <p>Enter a new drawable name</p>
+            <input class=textinput id="drawableName-input" type="text" placeholder="drawableName" 
+                title="Change drawable name  to ..." />
+            <hr width="100%" size="2" class="separator" noshade>
+            <button class="green-button" id="rename-button"> Rename drawable </button>
+        </div>
     </div>
 
     <!-- Copy Notification -->
-    <div id="copy-notification"></div>
+    <div class="notification" id="copy-notification"></div>
 
     <!-- Search Notification -->
-    <div id="search-notification"></div>
+    <div class="notification" id="search-notification"></div>
 
     <script src="js/requests.js"></script>
 </body>

@@ -176,18 +176,18 @@ function renderTable(data) {
         cell2.innerHTML = `<a href="#" class="icon-preview" data-index="${index}">${entry.appIcon}</a>`;
         cell3.innerHTML = `<div class="package-name"><div id="packagename">` + entry.packageName + `</div><div id="package-copy"><button class="copy-package" onclick="copyToClipboard(${index}, 'package')"><img src="img/requests/copy.svg"></button></div></div>`;
         cell4.innerHTML = entry.appfilter.replace('<', '&lt;').replace('>', '&gt;').replace(/"/g, '&quot;').trim();
-        cell5.innerHTML = `<button class="copy-button" onclick="copyToClipboard(${index}, 'appfilter')">Copy</button>`;
+        cell5.innerHTML = `<button class="green-button" id="copy-button" onclick="copyToClipboard(${index}, 'appfilter')">Copy</button>`;
     });
-        // Add event listeners to the icon previews
-        const iconPreviews = document.querySelectorAll('.icon-preview');
-        iconPreviews.forEach(icon => {
-            icon.addEventListener('click', function(event) {
-                event.preventDefault();
-                const index = parseInt(this.getAttribute('data-index'));
-                const entry = appEntriesDataGlobal[index];
-                showIconPreview(entry.appIconPath);
-            });
+    // Add event listeners to the icon previews
+    const iconPreviews = document.querySelectorAll('.icon-preview');
+    iconPreviews.forEach(icon => {
+        icon.addEventListener('click', function (event) {
+            event.preventDefault();
+            const index = parseInt(this.getAttribute('data-index'));
+            const entry = appEntriesDataGlobal[index];
+            showIconPreview(entry.appIconPath);
         });
+    });
 }
 
 
@@ -201,12 +201,12 @@ function showIconPreview(iconSrc) {
     // Show the preview overlay
     previewOverlay.style.display = 'block';
     // Add click event listener to hide the preview when clicked on the overlay or close button
-previewOverlay.addEventListener('click', function(e) {
-    if (e.target === this || e.target.classList.contains('close-button')) {
-        // Hide the preview overlay
-        this.style.display = 'none';
-    }
-});
+    previewOverlay.addEventListener('click', function (e) {
+        if (e.target === this || e.target.classList.contains('close-button-class')) {
+            // Hide the preview overlay
+            this.style.display = 'none';
+        }
+    });
 }
 
 // Update the table with filtered or sorted data
@@ -264,9 +264,9 @@ function showClearSearchIcon() {
     }
 }
 
-document.getElementById('clear-search').addEventListener('click',clearSearch );
+document.getElementById('clear-search').addEventListener('click', clearSearch);
 
-function clearSearch(){
+function clearSearch() {
     showClearSearchIcon();
     filterAppEntries();
 }

@@ -44,6 +44,9 @@
 
 #search-input {
     width: 100%;
+}
+
+.textinput {
     box-sizing: border-box !important;
     overflow: visible;
     border-radius: 100px;
@@ -55,15 +58,13 @@
     font-size: 16px;
 }
 
-#search-notification {
-    display: none;
-    background-color: #8b1708;
-    color: white;
-    padding: 10px;
-    position: fixed;
-    top: 20px;
-    right: 10px;
-    z-index: 1;
+#renamer-overlay {
+    text-align: center;
+}
+
+#rename-button {
+    height: 45px;
+    font-size: 16px;
 }
 
 /* I'm feeling lucky container */
