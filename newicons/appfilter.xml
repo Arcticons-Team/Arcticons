@@ -1931,6 +1931,7 @@
 	<!-- Always On AMOLED -->
 	<item component="ComponentInfo{com.tomer.alwayson/com.zipoapps.premiumhelper.ui.splash.PHSplashActivity}" drawable="smartphone"/>
 	<item component="ComponentInfo{com.tomer.alwayson/com.tomer.alwayson.activities.redesign.MainActivity}" drawable="smartphone"/>
+	<item component="ComponentInfo{com.lazyqr.alwayson.amoled.alwayson.display.digitalclock.liveclock.wallpaper/com.zipoapps.premiumhelper.ui.splash.PHSplashActivity}" drawable="smartphone"/>
 
 	<!-- Always On Clock -->
 	<item component="ComponentInfo{io.github.aoc_normal/com.raiden.aoc_normal.MainActivity}" drawable="clock"/>
@@ -2481,9 +2482,6 @@
 
 	<!-- AntennaPod -->
 	<item component="ComponentInfo{de.danoeh.antennapod/de.danoeh.antennapod.activity.SplashActivity}" drawable="antennapod"/>
-
-	<!-- AntiCovid -->
-	<item component="ComponentInfo{fr.gouv.android.stopcovid/com.lunabeestudio.stopcovid.activity.SplashScreenActivity}" drawable="qr"/>
 
 	<!-- Antidote -->
 	<item component="ComponentInfo{net.sekg.antidote/net.sekg.antidote.MainActivity}" drawable="antidote"/>
@@ -12325,6 +12323,13 @@
 	<item component="ComponentInfo{io.mapgenie.dyinglightmap/io.mapgenie.rdr2map.ui.SplashScreenActivity}" drawable="letter_uppercase_square_d"/>
 
 	<!-- Dynamic Island -->
+    <item component="ComponentInfo{com.devzkorean.dynamic.island/com.devzkorean.dynamic.island.views.activity.OSDynamicActivitySplash}" drawable="dynamic_island"/>
+    <item component="ComponentInfo{com.callcenter.dynamic.notch/com.zipoapps.premiumhelper.ui.splash.PHSplashActivity}" drawable="dynamic_island"/>
+    <item component="ComponentInfo{com.dynamicisland.notchscreenview/com.dynamicisland.notchscreenview.activity.SplashActivity}" drawable="dynamic_island"/>
+    <item component="ComponentInfo{com.roshan.apps.dynamic.notch/com.lock.activites.StartActivity}" drawable="dynamic_island"/>
+    <item component="ComponentInfo{com.dynamic.island.dynamicisland.phone.ios/com.dynamic.island.dynamicisland.phone.ios.SplashActivity}" drawable="dynamic_island"/>
+    <item component="ComponentInfo{com.dynamicnotification.bar.notch/com.dynamicnotification.bar.notch.ui.SplashActivity}" drawable="dynamic_island"/>
+    <item component="ComponentInfo{com.appsgenz.dynamicisland.phone.ios/com.appsgenz.dynamicisland.phone.ios.views.activity.SplashActivity}" drawable="dynamic_island"/>
 	<item component="ComponentInfo{com.jamworks.dynamicspot/com.jamworks.dynamicspot.SettingsHome}" drawable="dynamic_island"/>
 	<item component="ComponentInfo{com.jamworks.dynamicspot/com.me.game.pmupdatesdk.MainActivity}" drawable="dynamic_island"/>
 	<item component="ComponentInfo{com.grice.di/com.mobile.oneui.presentation.OneUIActivity}" drawable="dynamic_island"/>
@@ -14846,6 +14851,8 @@
 	<item component="ComponentInfo{com.traffy2.traffy_report/com.traffy2.traffy_report.MainActivity}" drawable="fondue_manager"/>
 
 	<!-- Fonts -->
+    <item component="ComponentInfo{com.art.cool.wallpapers.themes.background/com.art.wallpaper.ui.splash.SplashActivity}" drawable="fonts"/>
+    <item component="ComponentInfo{app.artfonts/com.zipoapps.premiumhelper.ui.splash.PHSplashActivity}" drawable="fonts"/>
 	<item component="ComponentInfo{com.ignates.allFonts/com.luminarlab.fonts3.ui.MainActivity}" drawable="fonts"/>
 	<item component="ComponentInfo{com.ignates.allFonts/com.luminarlab.fonts.ui.screen.MainActivity}" drawable="fonts"/>
 	<item component="ComponentInfo{com.neupanedinesh.fonts.fontskeyboard/com.neupanedinesh.fonts.fontskeyboard.Activities.SplashActivity}" drawable="fonts"/>
@@ -28707,6 +28714,14 @@
 	<!-- noti -->
 	<item component="ComponentInfo{com.gustavoas.noti/com.gustavoas.noti.SettingsActivity}" drawable="noti"/>
 
+	<!-- Notifications -->
+    <item component="ComponentInfo{com.edgepro.notificationcenter/com.edgepro.notificationcenter.activity.MainActivity}" drawable="notifications"/>
+    <item component="ComponentInfo{com.ikvaesolutions.notificationhistorylog/com.ikvaesolutions.notificationhistorylog.views.activity.SplashScreenActivity}" drawable="notifications"/>
+    <item component="ComponentInfo{com.balda.notificationlistener/com.balda.notificationlistener.ui.MainActivity}" drawable="notifications"/>
+    <item component="ComponentInfo{com.kuma.notificationwidget/com.kuma.notificationwidget.MainActivity}" drawable="notifications"/>
+    <item component="ComponentInfo{com.alftendev.notlistener/com.android.alftendev.activities.MainActivity}" drawable="notifications"/>
+    <item component="ComponentInfo{com.luutinhit.lockscreennotificationsios/com.luutinhit.activity.SplashActivity}" drawable="notifications"/>
+
 	<!-- Notification Cron -->
 	<item component="ComponentInfo{com.github.fi3te.notificationcron/com.github.fi3te.notificationcron.ui.MainActivity}" drawable="notificationcron"/>
 
@@ -30631,6 +30646,25 @@
 	<item component="ComponentInfo{pdf.scanner.editor.cam/pdf.scanner.editor.cam.ui.main.MainActivity}" drawable="pdf_scan"/>
 
 	<!-- PDF Viewer -->
+    <item component="ComponentInfo{tz.co.wadau.allpdf/tz.co.wadau.allpdf.LaunchScreenActivity}" drawable="pdf_file"/>
+    <item component="ComponentInfo{tz.co.documentapp.pdfreader.pdfviewer.documentreader/tz.co.reader.pdf.LaunchScreenActivity}" drawable="pdf_file"/>
+    <item component="ComponentInfo{sign.fill.pdf/sign.fill.pdf.presentation.activities.StartActivity}" drawable="pdf_file"/>
+    <item component="ComponentInfo{com.pdfapp.ezpdf/com.pdfapp.ezpdf.view.act.EzLaunchAct}" drawable="pdf_file"/>
+    <item component="ComponentInfo{com.tapuniverse.phototopdf/com.tapuniverse.phototopdf.MainActivity}" drawable="pdf_file"/>
+    <item component="ComponentInfo{com.contactstopdfconverter.app.androidx/com.contactstopdfconverter.app.androidx.SplashScreen}" drawable="pdf_file"/>
+    <item component="ComponentInfo{com.ocrscanner.pdfreader.pdfcreator/com.ocrscanner.pdfreader.pdfcreator.view.activity.common.MySplashAct}" drawable="pdf_file"/>
+    <item component="ComponentInfo{com.pdf.converter.editor.jpgtopdf.maker/com.pdf.converter.editor.jpgtopdf.maker.activities.SplashActivity}" drawable="pdf_file"/>
+    <item component="ComponentInfo{com.pdfconvertonline.pdfconvert/com.pdfconvertonline.pdfconvert.MainActivityNew}" drawable="pdf_file"/>
+    <item component="ComponentInfo{com.devcraftteam.pdfeditorpro/com.aapszonestudios.pdfeditorpro.activity.SplashActivity}" drawable="pdf_file"/>
+    <item component="ComponentInfo{pdfscanner.scan.pdf.scanner.free/pdfscanner.scan.pdf.scanner.free.splash.SplashActivity}" drawable="pdf_file"/>
+    <item component="ComponentInfo{smartapps38.pdftoword.converter/smartapps38.pdftoword.converter.main}" drawable="pdf_file"/>
+    <item component="ComponentInfo{com.xsdev.pdfreader.pdfeditor.pdf.document/com.rpdev.docreadermain.SplashActivity}" drawable="pdf_file"/>
+    <item component="ComponentInfo{the.pdfviewer3/the.pdfviewer3.RecentActivity}" drawable="pdf_file"/>
+    <item component="ComponentInfo{com.wondershare.pdfelement/com.wondershare.pdfelement.features.welcome.WelcomeActivity}" drawable="pdf_file"/>
+    <item component="ComponentInfo{com.tingniu.pdfreader/com.tingniu.pdfreader.ui.SplashActivity}" drawable="pdf_file"/>
+    <item component="ComponentInfo{com.smoothpdf.converter/com.smoothpdf.converter.MainActivity}" drawable="pdf_file"/>
+    <item component="ComponentInfo{com.samsung.android.spdfnote/spdfnote.control.ui.filemanager.MainHomeActivity}" drawable="pdf_file"/>
+    <item component="ComponentInfo{sign.pdf.document/sign.pdf.document.presentation.StartActivity}" drawable="pdf_file"/>
 	<item component="ComponentInfo{org.grapheneos.pdfviewer/org.grapheneos.pdfviewer.PdfViewer}" drawable="pdfviewerplus"/>
 	<item component="ComponentInfo{org.grapheneos.pdfviewer/app.grapheneos.pdfviewer.PdfViewer}" drawable="pdf_viewer"/>
 	<item component="ComponentInfo{app.grapheneos.pdfviewer/app.grapheneos.pdfviewer.PdfViewer}" drawable="pdf_viewer"/>
@@ -32746,9 +32780,6 @@
 	<!-- QQ Reader -->
 	<item component="ComponentInfo{com.qq.reader/com.qq.reader.activity.DefaultAliasActivity}" drawable="qq_reader"/>
 
-	<!-- QR Code Scanner -->
-	<item component="ComponentInfo{com.scanteam.qrcodereader/com.gamma.barcodeapp.ui.BarcodeCaptureActivity}" drawable="qr"/>
-
 	<!-- QR Droid -->
 	<item component="ComponentInfo{la.droid.qr/la.droid.qr.DeCamara}" drawable="qrforkeepass"/>
 
@@ -32756,6 +32787,25 @@
 	<item component="ComponentInfo{keepass2android.plugin.qr/keepass2android.plugin.qr.MainActivity}" drawable="qrforkeepass"/>
 
 	<!-- QR Scanner -->
+    <item component="ComponentInfo{com.kokoschka.michael.qrtools/com.kokoschka.michael.qrtools.activities.SplashActivity}" drawable="qr"/>
+    <item component="ComponentInfo{qrscanner.barcodescanner.barcodereader.qrcodereader/qrscanner.barcodescanner.barcodereader.qrcodereader.page.WelcomeActivity}" drawable="qr"/>
+    <item component="ComponentInfo{com.application_4u.qrcode.barcode.scanner.reader.flashlight/com.application_4u.qrcode.barcode.scanner.reader.flashlight.CaptureActivity}" drawable="qr"/>
+    <item component="ComponentInfo{net.basov.lws.qr.fdroid/net.basov.lws.qr.MainActivity}" drawable="qr"/>
+    <item component="ComponentInfo{com.qrcodescanner.barcodereader.qrcode/com.qrcodescanner.barcodereader.qrcode.ui.activity.WelcomeActivity}" drawable="qr"/>
+    <item component="ComponentInfo{com.ls.qrcodeapplication3/com.ls.qrcodeapplication3.ui.activities.main.MainActivity}" drawable="qr"/>
+    <item component="ComponentInfo{com.geekslab.qrbarcodescanner.pro/com.geekslab.qrbarcodescanner.GuideActivity}" drawable="qr"/>
+    <item component="ComponentInfo{com.networkapps.qrcode/com.networkapps.qrcode.activities.MainActivity}" drawable="qr"/>
+    <item component="ComponentInfo{com.simprosys.scan.qrcode.barcode.reader/com.zipoapps.premiumhelper.ui.splash.PHSplashActivity}" drawable="qr"/>
+    <item component="ComponentInfo{com.qrcode.qrscanner.barcode.barcodescanner.qrcodereader/com.qrcode.qrscanner.barcode.barcodescan.qrreader.MainActivity}" drawable="qr"/>
+    <item component="ComponentInfo{qrcodegenerator.qrcreator.qrmaker.createqrcode/qrcodegenerator.qrcreator.qrmaker.createqrcode.activity.SplashActivity}" drawable="qr"/>
+    <item component="ComponentInfo{com.wchung.qrshare/com.wchung.qrshare.MainActivity}" drawable="qr"/>
+    <item component="ComponentInfo{com.qrx2.barcodescanner.qrcodereader/com.qrx2.barcodescanner.qrcodereader.feature.splash.SplashActivity}" drawable="qr"/>
+    <item component="ComponentInfo{com.lysyolo.scan/com.ysd.scan.ui.launc.QRLauncherAty}" drawable="qr"/>
+    <item component="ComponentInfo{com.digitalchemy.barcodeplus/com.digitalchemy.barcodeplus.ui.screen.MainScreenActivity}" drawable="qr"/>
+	<item component="ComponentInfo{de.t_dankworth.secscanqr/de.t_dankworth.secscanqr.activities.MainActivity}" drawable="qr"/>
+	<item component="ComponentInfo{com.tomfong.simpleqr/com.tomfong.simpleqr.MainActivity}" drawable="qr"/>
+	<item component="ComponentInfo{fr.gouv.android.stopcovid/com.lunabeestudio.stopcovid.activity.SplashScreenActivity}" drawable="qr"/>
+	<item component="ComponentInfo{com.scanteam.qrcodereader/com.gamma.barcodeapp.ui.BarcodeCaptureActivity}" drawable="qr"/>
 	<item component="ComponentInfo{tw.taoyuan.datamartix.isbn.qrcode.reader.barcode.scanner.flashligh/tw.taoyuan.datamartix.isbn.qrcode.reader.barcode.scanner.flashlight.MainActivity}" drawable="qr"/>
 	<item component="ComponentInfo{net.qrbot/net.qrbot.ui.main.MainActivity}" drawable="qr"/>
 	<item component="ComponentInfo{ve.jmtsolutiontechnologyca.veqr/ve.jmtsolutiontechnologyca.veqr.activities.IntroActivity}" drawable="qr"/>
@@ -32973,6 +33023,9 @@
 	<item component="ComponentInfo{com.github.jameshnsears.quoteunquote/com.github.jameshnsears.quoteunquote.QuoteUnquoteInstructions}" drawable="quoteunquote"/>
 
 	<!-- Quran -->
+    <item component="ComponentInfo{com.deeniyat.quraan15liner/com.deeniyat.quraan15liner.ui.activities.SplashActivity}" drawable="quran"/>
+    <item component="ComponentInfo{codeztalk.quraan.salahbukhatir/codeztalk.quraan.salahbukhatir.activities.MainActivity}" drawable="quran"/>
+    <item component="ComponentInfo{uz.hilolnashr.quran_word_by_word/uz.hilolnashr.quran_word_by_word.MainActivity}" drawable="quran"/>
 	<item component="ComponentInfo{com.quran.words.vocubulary/com.quran.words.vocubulary.MainActivity}" drawable="quran"/>
 	<item component="ComponentInfo{quran.abdelrahman.mosaad/com.ryanheise.audioservice.AudioServiceActivity}" drawable="quran"/>
 	<item component="ComponentInfo{com.logicdev.quran_reader/com.ryanheise.audioservice.AudioServiceActivity}" drawable="quran"/>
@@ -33145,6 +33198,7 @@
 
 	<!-- Rabobank -->
 	<item component="ComponentInfo{nl.rabomobiel/nl.rabobank.bankierenplus.URActivity}" drawable="rabobank"/>
+	<item component="ComponentInfo{com.rabobank.prod.nz/com.rabobank.rosandroid.ui.splash.SplashActivity}" drawable="rabobank"/>
 
 	<!-- rabot.charge -->
 	<item component="ComponentInfo{de.rabot.charge/de.rabot.charge.MainActivity}" drawable="rabotcharge"/>
@@ -33154,6 +33208,18 @@
 	<item component="ComponentInfo{com.github.diegoberaldin.raccoonforlemmy.android/com.github.diegoberaldin.raccoonforlemmy.android.MainActivityAlias1}" drawable="raccoon_monochrome"/>
 
 	<!-- Racing Games -->
+    <item component="ComponentInfo{com.Batiisoft.StuntRace/com.unity3d.player.UnityPlayerActivity}" drawable="racing_car"/>
+    <item component="ComponentInfo{com.semeevs.driftyrace3d/com.unity3d.player.UnityPlayerActivity}" drawable="racing_car"/>
+    <item component="ComponentInfo{racearena.io/com.unity3d.player.UnityPlayerActivity}" drawable="racing_car"/>
+    <item component="ComponentInfo{com.v02c.car.race.city.real.simulation/com.unity3d.player.UnityPlayerActivity}" drawable="racing_car"/>
+    <item component="ComponentInfo{com.Protucte.FulminantRacer/com.unity3d.player.UnityPlayerActivity}" drawable="racing_car"/>
+    <item component="ComponentInfo{com.vive.riderleague/com.unity3d.player.UnityPlayerActivity}" drawable="raceio"/>
+    <item component="ComponentInfo{com.CandyGaming.FormulaGrandPrixRaceStartReflexTest/com.CandyGaming.FormulaGrandPrixRaceStartReflexTest.MainActivity}" drawable="racing_car"/>
+    <item component="ComponentInfo{com.pixel.pixelxracer.pixelracer/com.unity3d.player.UnityPlayerActivity}" drawable="racing_car"/>
+    <item component="ComponentInfo{com.parkourrace.game/com.unity3d.player.UnityPlayerActivity}" drawable="racing_car"/>
+    <item component="ComponentInfo{com.chennaigames.mrracer.premium/com.google.firebase.MessagingUnityPlayerActivity}" drawable="racing_car"/>
+    <item component="ComponentInfo{com.netease.dfjsjp/com.netease.race.SplashActivity}" drawable="racing_car"/>
+    <item component="ComponentInfo{com.longe.racehmt/com.netease.ntunisdk.external.protocol.ProtocolLauncher}" drawable="racing_car"/>
 	<item component="ComponentInfo{com0.Company.ProductName1/com.unity3d.player.UnityPlayerActivity}" drawable="racing_car"/>
 	<item component="ComponentInfo{com.feralinteractive.gridas/com.feralinteractive.gridas.MainActivity}" drawable="racing_car"/>
 	<item component="ComponentInfo{com.feralinteractive.gridas/com.fiveplay.mod.RMS.Recovery}" drawable="racing_car"/>
@@ -35373,9 +35439,6 @@
 	<!-- Secret Codes -->
 	<item component="ComponentInfo{fr.simon.marquis.secretcodes/fr.simon.marquis.secretcodes.MainActivity}" drawable="secretcodes"/>
 
-	<!-- SecScanQR -->
-	<item component="ComponentInfo{de.t_dankworth.secscanqr/de.t_dankworth.secscanqr.activities.MainActivity}" drawable="qr"/>
-
 	<!-- Sectograph -->
 	<item component="ComponentInfo{prox.lab.calclock/laboratory27.sectograph.MainActivity}" drawable="sectograph"/>
 
@@ -36823,9 +36886,6 @@
 
 	<!-- Simple Photo Widget -->
 	<item component="ComponentInfo{net.alph4.photowidget/net.alph4.photowidget.activities.MainActivity}" drawable="simple_photo_widget"/>
-
-	<!-- Simple QR -->
-	<item component="ComponentInfo{com.tomfong.simpleqr/com.tomfong.simpleqr.MainActivity}" drawable="qr"/>
 
 	<!-- Simple Radio -->
 	<item component="ComponentInfo{com.streema.simpleradio/com.streema.simpleradio.MainActivity}" drawable="simple_radio"/>
@@ -44370,6 +44430,13 @@
 	<item component="ComponentInfo{com.github.cvzi.wallpaperexport/com.github.cvzi.wallpaperexport.MainActivity}" drawable="wallpaperexport"/>
 
 	<!-- Wallpapers -->
+    <item component="ComponentInfo{com.wallpaper3d.parallax.hd/com.wallpaper3d.parallax.hd.ui.main.MainActivity}" drawable="wallpapers"/>
+    <item component="ComponentInfo{com.stealthcopter.nexusrevamped/com.stealthcopter.nexusrevamped.SetWallpaperActivity}" drawable="wallpapers"/>
+    <item component="ComponentInfo{com.italiano.stockai/com.italiano.stockai.MainActivity}" drawable="wallpapers"/>
+    <item component="ComponentInfo{com.dxn.wallpaperx.ui/com.dxn.wallpaperx.ui.MainActivity}" drawable="wallpapers"/>
+    <item component="ComponentInfo{com.wallspot.wallpapers/com.wallspot.wallpapers.main.SplashActivity}" drawable="wallpapers"/>
+    <item component="ComponentInfo{ecotone.xiaomi.poco.x6pro2024.xiaomiwallpaper.pocothemes.x6pronew2024icon/ecotone.xiaomi.poco.x6pro2024.xiaomiwallpaper.pocothemes.x6pronew2024icon.EcoOpenAd.SplashEcoActivity}" drawable="wallpapers"/>
+    <item component="ComponentInfo{com.screensavers_store.matrixtvlivewallpaper/com.screensavers_store.matrixtvlivewallpaper.MainActivity}" drawable="wallpapers"/>	
 	<item component="ComponentInfo{com.vinwap.parallaxwallpaper/com.vinwap.parallaxwallpaper.OpenActivity}" drawable="wallpapers"/>
 	<item component="ComponentInfo{com.wallpapers4u.hdwallpapers/com.wallpapers4u.hdwallpapers.activities.SplashActivity}" drawable="wallpapers"/>
 	<item component="ComponentInfo{aesthetic.wallpaper/aesthetic.wallpaper.Activity.Splash}" drawable="wallpapers"/>
@@ -46922,6 +46989,9 @@
 	<item component="ComponentInfo{ru.zdevs.zflasherstm32/ru.zdevs.zflasherstm32.activity.MainActivity}" drawable="zflasher_stm32"/>
 
 	<!-- ZFont 3 -->
+    <item component="ComponentInfo{com.htetznaing.fonttools/com.htetznaing.fonttools.MainActivity}" drawable="zfont"/>
+    <item component="ComponentInfo{com.htetznaing.fonttools/com.htetznaing.zfonttool.UI.SplashActivity}" drawable="zfont"/>
+    <item component="ComponentInfo{com.kapp.ifont/com.kapp.ifont.ui.SplashScreenActivity}" drawable="zfont"/>
 	<item component="ComponentInfo{com.htetznaing.zfont2/com.htetznaing.zfont2.UI.SplashActivity}" drawable="zfont"/>
 	<item component="ComponentInfo{com.htetznaing.zfont2/com.htetznaing.zfont4.MainActivity}" drawable="zfont"/>
 	<item component="ComponentInfo{com.htetznaing.zfont2/com.htetznaing.zfont2.ui.StartingActivity}" drawable="zfont"/>
