@@ -22,7 +22,8 @@
 
     <div class="header-container">
         <!-- Search Container -->
-        <span id="search-container">
+         <div id="search-container">
+        <span id="search-input-container">
             <input type="text" id="search-input" oninput="filterAppEntries()" placeholder="Search">
             <span id="clear-search"
                 onclick="var input = this.previousElementSibling; input.value = ''; input.focus();">x</span>
@@ -83,6 +84,7 @@
                 </label>
             </span>
         </div>
+    </div>
         <div id="random-container">
             <button id="random-reset-button">Reset &#10006;</button>
             <!-- Number of icons to random -->

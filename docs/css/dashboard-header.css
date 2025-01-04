@@ -16,6 +16,16 @@
     align-items: center;
 }
 
+/* Searchbar container */
+#search-input-container {
+    display: flex;
+    flex: 5;
+    position: relative;
+    padding-right: 5px;
+    /*display: inline-flex;*/
+    align-items: center;
+}
+
 #clear-search {
     position: absolute;
     display: block;
