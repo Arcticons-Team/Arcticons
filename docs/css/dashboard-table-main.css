@@ -164,6 +164,16 @@ th {
     right: 10px;
     z-index: 1;
 }
+
+
+/* Row Glow Persistent Effect */
+tr.row-glow {
+    background-color: #5a975c !important; /* Green glow color */
+    transition: background-color 0.5s ease-in;
+}
+
+
+
 /*Dark mode theming */
 @media (prefers-color-scheme: dark) {
 

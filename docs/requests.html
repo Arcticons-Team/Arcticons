@@ -22,66 +22,68 @@
 
     <div class="header-container">
         <!-- Search Container -->
-        <span id="search-container">
-            <input type="text" id="search-input" oninput="filterAppEntries()" placeholder="Search">
-            <span id="clear-search"
-                onclick="var input = this.previousElementSibling; input.value = ''; input.focus();">x</span>
-        </span>
-        <div id="regex-search-container">
-            <button id="RegexSearchSettings">Regex Search</button>
-            <div id="myPopup" class="popup">
-                <div class="popup-content">
-                    <div class="info-popup" id="info" onclick="showInfo()">i
-                        <span class="popuptext" id="infotext">
-                            <p style="font-size: 18px; font-weight: bold;">The Regex Search matches against:</p>
-                            <p>&lt;!-- AppName --&ZeroWidthSpace;&#62;&lt;item
-                                component=&quot;ComponentInfo{packageName/activityName}&quot;
-                                drawable=&quot;drawableName&quot;/&gt;
-                            </p>
-                        </span>
-                    </div>
-                    <h1 style="width: 100%;">
-                        Regex Settings
-                    </h1>
-                    <div class="settings-row">
-                        <p class="Setting">Insensitive <br> Case insensitive match</p>
-                        <!-- Rounded switch -->
-                        <label class="switch">
-                            <input type="checkbox" id="caseInsensitive-switch" checked="true">
-                            <span class="slider round"></span>
-                        </label>
-                    </div>
-                    <hr width="100%" size="2" class="separator" noshade>
-                    <div class="settings-row">
-                        <p class="Setting">Unicode <br> Match with full unicode</p>
-                        <!-- Rounded switch -->
-                        <label class="switch">
-                            <input type="checkbox" id="caseUnicode-switch" checked="true">
-                            <span class="slider round"></span>
-                        </label>
-                    </div>
-                    <hr width="100%" size="2" class="separator" noshade>
-                    <div class="settings-row">
-                        <p class="Setting">Reverse Search <br> Don't match search</p>
-                        <!-- Rounded switch -->
-                        <label class="switch">
-                            <input type="checkbox" id="reverse-switch">
-                            <span class="slider round"></span>
-                        </label>
-                    </div>
-                    <hr width="100%" size="2" class="separator" noshade>
-                    <button id="closePopup">
-                        Close
-                    </button>
-                </div>
-            </div>
-            <span>
-                <!-- Rounded switch -->
-                <label class="switch">
-                    <input type="checkbox" id="regex-switch">
-                    <span class="slider round"></span>
-                </label>
+        <div id="search-container">
+            <span id="search-input-container">
+                <input type="text" id="search-input" oninput="filterAppEntries()" placeholder="Search">
+                <span id="clear-search"
+                    onclick="var input = this.previousElementSibling; input.value = ''; input.focus();">x</span>
             </span>
+            <div id="regex-search-container">
+                <button id="RegexSearchSettings">Regex Search</button>
+                <div id="myPopup" class="popup">
+                    <div class="popup-content">
+                        <div class="info-popup" id="info" onclick="showInfo()">i
+                            <span class="popuptext" id="infotext">
+                                <p style="font-size: 18px; font-weight: bold;">The Regex Search matches against:</p>
+                                <p>&lt;!-- AppName --&ZeroWidthSpace;&#62;&lt;item
+                                    component=&quot;ComponentInfo{packageName/activityName}&quot;
+                                    drawable=&quot;drawableName&quot;/&gt;
+                                </p>
+                            </span>
+                        </div>
+                        <h1 style="width: 100%;">
+                            Regex Settings
+                        </h1>
+                        <div class="settings-row">
+                            <p class="Setting">Insensitive <br> Case insensitive match</p>
+                            <!-- Rounded switch -->
+                            <label class="switch">
+                                <input type="checkbox" id="caseInsensitive-switch" checked="true">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                        <hr width="100%" size="2" class="separator" noshade>
+                        <div class="settings-row">
+                            <p class="Setting">Unicode <br> Match with full unicode</p>
+                            <!-- Rounded switch -->
+                            <label class="switch">
+                                <input type="checkbox" id="caseUnicode-switch" checked="true">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                        <hr width="100%" size="2" class="separator" noshade>
+                        <div class="settings-row">
+                            <p class="Setting">Reverse Search <br> Don't match search</p>
+                            <!-- Rounded switch -->
+                            <label class="switch">
+                                <input type="checkbox" id="reverse-switch">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                        <hr width="100%" size="2" class="separator" noshade>
+                        <button id="closePopup">
+                            Close
+                        </button>
+                    </div>
+                </div>
+                <span>
+                    <!-- Rounded switch -->
+                    <label class="switch">
+                        <input type="checkbox" id="regex-switch">
+                        <span class="slider round"></span>
+                    </label>
+                </span>
+            </div>
         </div>
         <div id="random-container">
             <button id="random-reset-button">Reset &#10006;</button>
@@ -90,6 +92,9 @@
             <!-- Button for Random Icons -->
             <button id="random-button"><span class="lg-view">✨ I'm feelin' lucky ✨</span><span
                     class="sm-view">✨</span></button>
+        </div>
+        <div class="header-elements">
+            <button class="green-button" id="copy-selected-button">Copy</button>
         </div>
         <div id="updatable-container">
             <!-- Button for Updatable Site -->
