@@ -27,3 +27,50 @@
     0%, 20% { background: #4CAF50; }
     100% { background: yellow; }
 }
+
+button {
+  position: relative;
+  transition: all .4s 0s ease;
+}
+
+button,
+button:before,
+button:after {
+  box-sizing: border-box;
+}
+button:hover:before,
+button:hover:after {
+  visibility: visible;
+  opacity: 1;
+  transition: all 0.4s 1s ease; /** that's the magic **/
+}
+
+button:before,
+button:after {
+  content: "";
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  transform: translate3d(0,-50%, 0);
+  transition: all 0.4s 0s ease;
+  z-index: 2;
+}
+
+button:before {
+  width: 0;
+  height: 0;
+  right: -8px;
+  border: 16px solid transparent;
+  border-right-color: #181818;
+}
+
+button:after {
+  content: attr(aria-label);
+  width: 120%;
+  left: calc(100% + 16px);
+  padding:10px;
+  background-color: #181818;
+  color: #fff;
+  border-radius: 8px;
+}

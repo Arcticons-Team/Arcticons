@@ -772,7 +772,7 @@ var start = function (e) {
         presstimer = setTimeout(function () {
             document.getElementById("renamer-overlay").classList.add("show");
             longpress = true;
-        }, 600);
+        }, 500);
     }
 
     return false;
