@@ -16,6 +16,7 @@ concurrency:
 
 jobs:
   Update_Requests:
+    if: github.repository == 'Arcticons-Team/Arcticons'
     environment:
       name: Request-Update
     runs-on: ubuntu-latest
