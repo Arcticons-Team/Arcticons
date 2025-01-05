@@ -1,63 +1,79 @@
 .green-button {
-    border: none;
-    color: white;
-    background-color: #4CAF50;
-    border-radius: 100px;
-    padding: 5px 15px;
-    text-decoration: none;
-    text-align: center;
-    cursor: pointer;
+  border: none;
+  color: white;
+  background-color: #4CAF50;
+  border-radius: 100px;
+  padding: 5px 15px;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
 }
 
 .green-button:hover {
-    background-color: #409943;
+  background-color: #409943;
 }
 
 .longpress {
-    -webkit-animation: 1s longpress;
-            animation: 1s longpress;
+  -webkit-animation: 1s longpress;
+  animation: 1s longpress;
 }
 
 @-webkit-keyframes longpress {
-    0%, 20% { background: #4CAF50; }
-    100% { background: yellow; }
+
+  0%,
+  20% {
+    background: #4CAF50;
+  }
+
+  100% {
+    background: yellow;
+  }
 }
 
 @keyframes longpress {
-    0%, 20% { background: #4CAF50; }
-    100% { background: yellow; }
+
+  0%,
+  20% {
+    background: #4CAF50;
+  }
+
+  100% {
+    background: yellow;
+  }
 }
 
-button {
+#copy-selected-button {
   position: relative;
   transition: all .4s 0s ease;
 }
 
-button,
-button:before,
-button:after {
+#copy-selected-button,
+#copy-selected-button:before,
+#copy-selected-button:after {
   box-sizing: border-box;
 }
-button:hover:before,
-button:hover:after {
+
+#copy-selected-button:hover:before,
+#copy-selected-button:hover:after {
   visibility: visible;
   opacity: 1;
-  transition: all 0.4s 1s ease; /** that's the magic **/
+  transition: all 0.4s 1s ease;
+  /** that's the magic **/
 }
 
-button:before,
-button:after {
+#copy-selected-button:before,
+#copy-selected-button:after {
   content: "";
   visibility: hidden;
   opacity: 0;
   position: absolute;
   top: 50%;
-  transform: translate3d(0,-50%, 0);
+  transform: translate3d(0, -50%, 0);
   transition: all 0.4s 0s ease;
   z-index: 2;
 }
 
-button:before {
+#copy-selected-button:before {
   width: 0;
   height: 0;
   right: -8px;
@@ -65,11 +81,11 @@ button:before {
   border-right-color: #181818;
 }
 
-button:after {
+#copy-selected-button:after {
   content: attr(aria-label);
   width: 120%;
   left: calc(100% + 16px);
-  padding:10px;
+  padding: 10px;
   background-color: #181818;
   color: #fff;
   border-radius: 8px;
