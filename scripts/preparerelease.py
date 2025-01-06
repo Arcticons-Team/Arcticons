@@ -371,7 +371,7 @@ def missingDrawable(appfilterpath:str,whitedir:str,otherdir:str):
 
     if len(drawables) > 0:
         print('\n\n______ Found non existent drawables ______\n')
-        print('Possible causes are typos or completly different naming of the icon\n\n')
+        print('Possible causes are typos or completely different naming of the icon\n\n')
         for item in drawables:
             toprint = etree.tostring(item,encoding='unicode',method='xml')
             print(f'{toprint}')
