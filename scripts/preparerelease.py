@@ -21,8 +21,8 @@ def check_arcticons_path(path):
         return arcticons_folder
     else:
         app_folder = os.path.join(path, "app")
-        other_folder = os.path.join(path, "other")
-        if os.path.exists(other_folder) and os.path.isdir(other_folder) and os.path.exists(app_folder) and os.path.isdir(app_folder):
+        newicons_folder = os.path.join(path, "newicons")
+        if os.path.exists(newicons_folder) and os.path.isdir(newicons_folder) and os.path.exists(app_folder) and os.path.isdir(app_folder):
             return path
         else:
             print(f"The path '{path}' does not include the 'Arcticons' folder.")
