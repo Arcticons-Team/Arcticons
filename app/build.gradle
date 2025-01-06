@@ -113,7 +113,7 @@ android {
 
     base {
         // Output file name
-        archivesName = "${parent.name}-${android.defaultConfig.versionCode}"
+        archivesName = "${parent.name}-${android.defaultConfig.versionName}"
     }
     java {
         toolchain {
