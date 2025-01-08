@@ -66,7 +66,12 @@ jobs:
 
   parse_and_combine:
     needs: parse_appfilter
-    if: ('!failure()' && (${{ github.event.workflow_run.conclusion == 'success' }} || ${{ github.event_name != 'workflow_run' }} ))
+    if: |
+      !failure() &&
+      (
+        (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success') ||
+        github.event_name != 'workflow_run'
+      )
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
