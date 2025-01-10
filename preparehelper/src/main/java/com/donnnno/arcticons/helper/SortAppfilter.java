@@ -99,6 +99,8 @@ public class SortAppfilter {
     public static String convertDocumentToString(Document doc) throws Exception {
         TransformerFactory transformerFactory = TransformerFactory.newInstance();
         Transformer transformer = transformerFactory.newTransformer();
+        transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
+        transformer.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
         transformer.setOutputProperty(OutputKeys.INDENT, "yes");
         transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "0");
 
@@ -129,7 +131,7 @@ public class SortAppfilter {
 
     // Utility method to add new lines before occurrences of a pattern
     public static String addNewlineBeforeOccurrences(String input, String pattern) {
-        return input.replaceAll(pattern, "\n$0");
+        return input.replaceAll(pattern, "\r\n$0");
     }
 
     // Utility method to add tabs before occurrences of a pattern
