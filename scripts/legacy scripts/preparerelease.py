@@ -384,22 +384,22 @@ def missingDrawable(appfilterpath:str,whitedir:str,otherdir:str):
 ###### Main #####
 # runs everything in necessary order
 def main():
-    #if check_xml(APPFILTER_PATH):
-    #    return
-    #if checkSVG(NEWICONS_PATH):
-    #    return
-    #if missingDrawable(APPFILTER_PATH,WHITE_DIR,NEWICONS_PATH):
-    #    return
-    #if duplicateEntry(APPFILTER_PATH):
-    #    return
+    if check_xml(APPFILTER_PATH):
+        return
+    if checkSVG(NEWICONS_PATH):
+        return
+    if missingDrawable(APPFILTER_PATH,WHITE_DIR,NEWICONS_PATH):
+        return
+    if duplicateEntry(APPFILTER_PATH):
+        return
     if args.checkonly:
         return
-    #create_new_drawables(NEWICONS_PATH,NEWDRAWABLE_PATH)
-    #svg_colors(NEWICONS_PATH,ORIGINAL_STROKE,ORIGINAL_FILL,ORIGINAL_STROKE_ALT,ORIGINAL_FILL_ALT,REPLACE_STROKE_WHITE,REPLACE_FILL_WHITE,REPLACE_STROKE_WHITE_ALT,REPLACE_FILL_WHITE_ALT)
-    #create_icons(SIZES, NEWICONS_PATH ,EXPORT_DARK_DIR, WHITE_DIR, 'Dark Mode')
-    #svg_colors(NEWICONS_PATH,ORIGINAL_STROKE,ORIGINAL_FILL,ORIGINAL_STROKE_ALT,ORIGINAL_FILL_ALT,REPLACE_STROKE_BLACK,REPLACE_FILL_BLACK,REPLACE_STROKE_BLACK_ALT,REPLACE_FILL_BLACK_ALT)
-    #create_icons(SIZES, NEWICONS_PATH ,EXPORT_LIGHT_DIR, BLACK_DIR, 'Light Mode')
-    #remove_svg(NEWICONS_PATH)
+    create_new_drawables(NEWICONS_PATH,NEWDRAWABLE_PATH)
+    svg_colors(NEWICONS_PATH,ORIGINAL_STROKE,ORIGINAL_FILL,ORIGINAL_STROKE_ALT,ORIGINAL_FILL_ALT,REPLACE_STROKE_WHITE,REPLACE_FILL_WHITE,REPLACE_STROKE_WHITE_ALT,REPLACE_FILL_WHITE_ALT)
+    create_icons(SIZES, NEWICONS_PATH ,EXPORT_DARK_DIR, WHITE_DIR, 'Dark Mode')
+    svg_colors(NEWICONS_PATH,ORIGINAL_STROKE,ORIGINAL_FILL,ORIGINAL_STROKE_ALT,ORIGINAL_FILL_ALT,REPLACE_STROKE_BLACK,REPLACE_FILL_BLACK,REPLACE_STROKE_BLACK_ALT,REPLACE_FILL_BLACK_ALT)
+    create_icons(SIZES, NEWICONS_PATH ,EXPORT_LIGHT_DIR, BLACK_DIR, 'Light Mode')
+    remove_svg(NEWICONS_PATH)
     sortxml(APPFILTER_PATH) 
 
 if __name__ == "__main__":

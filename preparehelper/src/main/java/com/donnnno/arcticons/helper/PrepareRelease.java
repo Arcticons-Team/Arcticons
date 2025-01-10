@@ -4,6 +4,7 @@ import static com.donnnno.arcticons.helper.Changelog.generateChangelogs;
 import static com.donnnno.arcticons.helper.Checks.startChecks;
 import static com.donnnno.arcticons.helper.ImageCollageGenerator.generateReleaseImage;
 import static com.donnnno.arcticons.helper.NewDrawableXmlCreator.createNewDrawables;
+import static com.donnnno.arcticons.helper.SortAppfilter.sortXML;
 import static com.donnnno.arcticons.helper.WebpCreator.createWebpIcons;
 
 import java.io.BufferedReader;
@@ -53,7 +54,7 @@ public class PrepareRelease {
                     startChecks(appFilter, sourceDir, newIconsDir);
                     createNewDrawables(newIconsDir, generatedDir+"/newDrawables.xml", false);
                     createWebpIcons(newIconsDir,sourceDir, blackDir, exportWhiteDir, exportBlackDir);
-                    executePythonScript(rootDir + "/scripts/preparerelease.py");
+                    sortXML(appFilter);
                     try {
                         ContributorImage.start(assetsDir, contributorsXml, xmlDir);
                         System.out.println("Contributor Image task completed");
@@ -73,7 +74,7 @@ public class PrepareRelease {
                     startChecks(appFilter, sourceDir, newIconsDir);
                     createNewDrawables(newIconsDir, generatedDir+"/newDrawables.xml", true);
                     createWebpIcons(newIconsDir,sourceDir, blackDir, exportWhiteDir, exportBlackDir);
-                    executePythonScript(rootDir + "/scripts/preparerelease.py","--new");
+                    sortXML(appFilter);
                     try {
                         ContributorImage.start(assetsDir, contributorsXml, xmlDir);
                         System.out.println("Contributor Image task completed");
@@ -91,30 +92,6 @@ public class PrepareRelease {
                     break;
                 default:
             }
-
-        }
-    }
-
-    public static void executePythonScript(String... args) throws Exception {
-            List<String> command = new ArrayList<>();
-            command.add("python");
-            // Add all provided arguments to the command list
-            command.addAll(Arrays.asList(args));
-            command.add("..");
-
-        ProcessBuilder processBuilder = new ProcessBuilder(command);
-        processBuilder.redirectErrorStream(true);
-
-        Process process = processBuilder.start();
-        BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
-        String line;
-        while ((line = reader.readLine()) != null) {
-            System.out.println(line);
-        }
-
-        int exitCode = process.waitFor();
-        if (exitCode != 0) {
-            System.err.println("Python script execution failed with exit code: " + exitCode);
         }
     }
 }
