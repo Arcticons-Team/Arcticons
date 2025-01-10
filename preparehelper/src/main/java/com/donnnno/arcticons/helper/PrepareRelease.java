@@ -4,6 +4,7 @@ import static com.donnnno.arcticons.helper.Changelog.generateChangelogs;
 import static com.donnnno.arcticons.helper.Checks.startChecks;
 import static com.donnnno.arcticons.helper.ImageCollageGenerator.generateReleaseImage;
 import static com.donnnno.arcticons.helper.NewDrawableXmlCreator.createNewDrawables;
+import static com.donnnno.arcticons.helper.WebpCreator.createWebpIcons;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -38,6 +39,9 @@ public class PrepareRelease {
             String drawableXml = xmlDir + "/drawable.xml";
             String changelogXml = valuesDir +"/changelog.xml";
             String sourceDir = rootDir + "/icons/white";
+            String blackDir = rootDir + "/icons/black";
+            String exportWhiteDir = rootDir + "/app/src/normal/res/drawable-nodpi";
+            String exportBlackDir = rootDir + "/app/src/black/res/drawable-nodpi";
 
             String task = args[0];
             System.out.println("Processing with task: " + task);
@@ -48,6 +52,7 @@ public class PrepareRelease {
                 case "release":
                     startChecks(appFilter, sourceDir, newIconsDir);
                     createNewDrawables(newIconsDir, generatedDir+"/newDrawables.xml", false);
+                    createWebpIcons(newIconsDir,sourceDir, blackDir, exportWhiteDir, exportBlackDir);
                     executePythonScript(rootDir + "/scripts/preparerelease.py");
                     try {
                         ContributorImage.start(assetsDir, contributorsXml, xmlDir);
@@ -67,6 +72,7 @@ public class PrepareRelease {
                 case "newrelease":
                     startChecks(appFilter, sourceDir, newIconsDir);
                     createNewDrawables(newIconsDir, generatedDir+"/newDrawables.xml", true);
+                    createWebpIcons(newIconsDir,sourceDir, blackDir, exportWhiteDir, exportBlackDir);
                     executePythonScript(rootDir + "/scripts/preparerelease.py","--new");
                     try {
                         ContributorImage.start(assetsDir, contributorsXml, xmlDir);
