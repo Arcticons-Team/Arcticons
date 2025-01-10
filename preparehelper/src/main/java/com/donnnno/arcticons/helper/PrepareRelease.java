@@ -3,6 +3,7 @@ package com.donnnno.arcticons.helper;
 import static com.donnnno.arcticons.helper.Changelog.generateChangelogs;
 import static com.donnnno.arcticons.helper.Checks.startChecks;
 import static com.donnnno.arcticons.helper.ImageCollageGenerator.generateReleaseImage;
+import static com.donnnno.arcticons.helper.NewDrawableXmlCreator.createNewDrawables;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -46,6 +47,7 @@ public class PrepareRelease {
                     break;
                 case "release":
                     startChecks(appFilter, sourceDir, newIconsDir);
+                    createNewDrawables(newIconsDir, generatedDir+"/newDrawables.xml", false);
                     executePythonScript(rootDir + "/scripts/preparerelease.py");
                     try {
                         ContributorImage.start(assetsDir, contributorsXml, xmlDir);
@@ -64,6 +66,7 @@ public class PrepareRelease {
                     break;
                 case "newrelease":
                     startChecks(appFilter, sourceDir, newIconsDir);
+                    createNewDrawables(newIconsDir, generatedDir+"/newDrawables.xml", true);
                     executePythonScript(rootDir + "/scripts/preparerelease.py","--new");
                     try {
                         ContributorImage.start(assetsDir, contributorsXml, xmlDir);
