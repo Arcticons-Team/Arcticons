@@ -1,6 +1,7 @@
 package com.donnnno.arcticons.helper;
 
 import static com.donnnno.arcticons.helper.Changelog.generateChangelogs;
+import static com.donnnno.arcticons.helper.Checks.startChecks;
 import static com.donnnno.arcticons.helper.ImageCollageGenerator.generateReleaseImage;
 
 import java.io.BufferedReader;
@@ -32,6 +33,7 @@ public class PrepareRelease {
             String generatedDir = rootDir + "/generated";
             String valuesDir = rootDir + "/app/src/main/res/values";
             String appFilter = rootDir + "/newicons/appfilter.xml";
+            String newIconsDir = rootDir + "/newicons";
             String drawableXml = xmlDir + "/drawable.xml";
             String changelogXml = valuesDir +"/changelog.xml";
             String sourceDir = rootDir + "/icons/white";
@@ -40,10 +42,10 @@ public class PrepareRelease {
             System.out.println("Processing with task: " + task);
             switch (task) {
                 case "checkonly":
-
-                    executePythonScript(rootDir + "/scripts/preparerelease.py","--checkonly");
+                    startChecks(appFilter, sourceDir, newIconsDir);
                     break;
                 case "release":
+                    startChecks(appFilter, sourceDir, newIconsDir);
                     executePythonScript(rootDir + "/scripts/preparerelease.py");
                     try {
                         ContributorImage.start(assetsDir, contributorsXml, xmlDir);
@@ -61,6 +63,7 @@ public class PrepareRelease {
                     generateReleaseImage( generatedDir + "/newdrawables.xml", sourceDir, generatedDir + "/releaseImage.webp");
                     break;
                 case "newrelease":
+                    startChecks(appFilter, sourceDir, newIconsDir);
                     executePythonScript(rootDir + "/scripts/preparerelease.py","--new");
                     try {
                         ContributorImage.start(assetsDir, contributorsXml, xmlDir);

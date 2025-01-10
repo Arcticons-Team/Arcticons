@@ -384,14 +384,14 @@ def missingDrawable(appfilterpath:str,whitedir:str,otherdir:str):
 ###### Main #####
 # runs everything in necessary order
 def main():
-    if check_xml(APPFILTER_PATH):
-        return
-    if checkSVG(NEWICONS_PATH):
-        return
-    if missingDrawable(APPFILTER_PATH,WHITE_DIR,NEWICONS_PATH):
-        return
-    if duplicateEntry(APPFILTER_PATH):
-        return
+    #if check_xml(APPFILTER_PATH):
+    #    return
+    #if checkSVG(NEWICONS_PATH):
+    #    return
+    #if missingDrawable(APPFILTER_PATH,WHITE_DIR,NEWICONS_PATH):
+    #    return
+    #if duplicateEntry(APPFILTER_PATH):
+    #    return
     if args.checkonly:
         return
     create_new_drawables(NEWICONS_PATH,NEWDRAWABLE_PATH)
