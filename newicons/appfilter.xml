@@ -6483,6 +6483,10 @@
 	<item component="ComponentInfo{no.bulder.bank/no.bulder.bank.start.StartComposeActivity}" drawable="bulder"/>
 
 	<!-- Icon - gun -->
+    <item component="ComponentInfo{com.gun.shot/by.saygames.SayKitActivity}" drawable="gun"/>
+    <item component="ComponentInfo{com.miniplay.gunspin/com.unity3d.player.UnityPlayerActivity}" drawable="gun"/>
+    <item component="ComponentInfo{com.gun.simulator.lightsaber.gunsound.weapon/com.gun.simulator.lightsaber.gunsound.weapon.activity.SplashActivity}" drawable="gun"/>
+    <item component="ComponentInfo{com.SKITLSE.StandRise/com.google.firebase.MessagingUnityPlayerActivity}" drawable="gun"/>
     <item component="ComponentInfo{com.gunclans.shooter.run.hero.war.survival.game/com.unity3d.player.CustomUnityPlayerActivity}" drawable="gun"/>
     <item component="ComponentInfo{com.ImaginativeGames.GunUp2048/com.unity3d.player.UnityPlayerActivity}" drawable="gun"/>
     <item component="ComponentInfo{com.cheddarbox.gundealer/com.onevcat.uniwebview.UnityPlayerActivityExtended}" drawable="gun"/>
@@ -6498,6 +6502,9 @@
     <item component="ComponentInfo{com.SevenBulls.CounterAttackShooter/com.unity3d.player.UnityPlayerActivity}" drawable="gun"/>
     <item component="ComponentInfo{com.funplus.st.build/com.funplus.st.build.UnityPlayerActivity}" drawable="gun"/>
 	<item component="ComponentInfo{com.zeptolab.bulletecho.google/com.zf3.GameActivity}" drawable="gun"/>
+
+	<!-- Icon - Smartphone -->
+    <item component="ComponentInfo{com.shybox.ntrphone/com.godot.game.GodotApp}" drawable="smartphone"/>
 
 	<!-- Bully -->
 	<item component="ComponentInfo{com.rockstargames.bully/com.rockstargames.bully.bully}" drawable="bully_2"/>
@@ -7595,6 +7602,9 @@
 	<item component="ComponentInfo{com.camera.lmc84/com.android.camera.CameraLauncher}" drawable="camera_pro"/>
 	<item component="ComponentInfo{com.meitu.meiyancamera/com.meitu.myxj.home.activity.NewHomeActivity}" drawable="camera_pro"/>
 	<item component="ComponentInfo{com.meitu.meiyancamera/com.android.camera.CameraLauncher}" drawable="camera_pro"/>
+
+	<!-- The Forest of Love -->
+	<item component="ComponentInfo{com.NotSafeFurWork.TheForestOfLove/com.unity3d.player.UnityPlayerActivity}" drawable="the_forest_of_love"/>
 
 	<!-- Camera Remote -->
 	<item component="ComponentInfo{com.fujifilm_dsc.app.remoteshooter/com.fujifilm_dsc.app.remoteshooter.InitializeActivity}" drawable="cameraremote"/>
@@ -19707,6 +19717,8 @@
 	<item component="ComponentInfo{com.thomasgallinari.bus31/com.thomasgallinari.bus31.app.SplashScreenActivity}" drawable="bus"/>
 
 	<!-- Icon - Heart -->
+    <item component="ComponentInfo{ru.mail.love/ru.mamba.client.v3.ui.splash.SplashActivity}" drawable="heart"/>
+    <item component="ComponentInfo{de.sourcedev.lovecounterV2/de.sourcedev.lovecounterV2.OnboardingActivity}" drawable="heart"/>
     <item component="ComponentInfo{com.weartools.hscomplications/com.weartools.hscomplications.MainActivity}" drawable="heart"/>
     <item component="ComponentInfo{com.healthgodsense.twilightmin/com.healthgodsense.twilightmin.MainActivity}" drawable="heart"/>
     <item component="ComponentInfo{com.vivo.health/com.vivo.health.main.activity.GuideActivity}" drawable="heart"/>
@@ -22672,6 +22684,40 @@
 	<item component="ComponentInfo{de.devmx.lawdroid/de.devmx.lawdroid.activities.MainActivity}" drawable="lawdroid_de"/>
 	<item component="ComponentInfo{de.devmx.lawdroid.at/de.devmx.lawdroid.activities.MainActivity}" drawable="lawdroid_de"/>
 
+    <!-- Buckshot Roulette -->
+    <item component="ComponentInfo{org.godotengine.buckshot/com.godot.game.GodotApp}" drawable="buckshot_roulette"/>
+    <item component="ComponentInfo{org.godotengine.BuckshotRoulette/com.godot.game.GodotApp}" drawable="buckshot_roulette"/>
+    <item component="ComponentInfo{com.Tazik05.Leosa002.BuckshotRoulette/com.godot.game.GodotApp}" drawable="buckshot_roulette"/>
+    <item component="ComponentInfo{ru.markplay.buckshotroulettemobile/com.godot.game.GodotApp}" drawable="buckshot_roulette"/>
+
+    <!-- Luck be a Landlord -->
+    <item component="ComponentInfo{com.trampolinetales.lbal/com.godot.game.GodotApp}" drawable="luck_be_a_landlord"/>
+    <item component="ComponentInfo{org.luckbealandlord/com.godot.game.GodotApp}" drawable="luck_be_a_landlord"/>
+
+	<!-- AQUA -->
+	<item component="ComponentInfo{io.aquawallet.android/io.aquawallet.MainActivity}" drawable="aqua"/>
+
+	<!-- Fountain -->
+	<item component="ComponentInfo{fm.fountain.apps/fm.fountain.apps.MainActivity}" drawable="fountain"/>
+
+	<!-- Minibits -->
+	<item component="ComponentInfo{com.minibits_wallet/com.minibits_wallet.MainActivity}" drawable="minibits"/>
+
+	<!-- Pokey -->
+	<item component="ComponentInfo{com.koalasat.pokey/com.koalasat.pokey.MainActivity}" drawable="pokey"/>
+
+	<!-- Stacker News -->
+	<item component="ComponentInfo{news.stacker.app/news.stacker.app.MainActivity}" drawable="stacker_news"/>
+
+	<!-- Wavlake -->
+	<item component="ComponentInfo{com.wavlake.mobile/com.wavlake.mobile.MainActivity}" drawable="wavlake"/>
+
+	<!-- YakiHonne -->
+	<item component="ComponentInfo{com.yakihonne.yakihonne/com.yakihonne.yakihonne.MainActivity}" drawable="yakihonne"/>
+
+	<!-- Zapstore -->
+	<item component="ComponentInfo{dev.zapstore.app/dev.zapstore.app.MainActivity}" drawable="zapstore"/>
+
 	<!-- Lawnchair -->
 	<item component="ComponentInfo{ch.deletescape.lawnchair.plah/ch.deletescape.lawnchair.Launcher}" drawable="lawnchair"/>
 	<item component="ComponentInfo{ch.deletescape.lawnchair.plah/ch.deletescape.lawnchair.LawnchairLauncher}" drawable="lawnchair"/>
@@ -22684,16 +22730,14 @@
 	<item component="ComponentInfo{app.lawnchair.debug/leakcanary.internal.activity.LeakLauncherActivity}" drawable="lawnchair"/>
 	<item component="ComponentInfo{app.lawnchair/app.lawnchair.LawnchairLauncherQuickstep}" drawable="lawnchair"/>
 	<item component="ComponentInfo{app.lawnchair.play/app.lawnchair.LawnchairLauncher}" drawable="lawnchair"/>
-
-	<!-- Lawnchair -->
 	<item component="ComponentInfo{app.lawnchair.nightly/app.lawnchair.LawnchairLauncher}" drawable="lawnchair"/>
+	<item component="ComponentInfo{ch.deletescape.lawnchair.plah/app.lawnchair.LawnchairLauncher}" drawable="lawnchair"/>
 
 	<!-- Lawnchair Notes -->
 	<item component="ComponentInfo{launcher.libre.dev/ch.deletescape.lawnchair.notes.NotesActivity}" drawable="standardnotes"/>
 
 	<!-- Lawnchair Settings -->
 	<item component="ComponentInfo{ch.deletescape.lawnchair.plah/ch.deletescape.lawnchair.settings.ui.SettingsLauncherActivity}" drawable="lawnchair_settings"/>
-	<item component="ComponentInfo{ch.deletescape.lawnchair.plah/app.lawnchair.LawnchairLauncher}" drawable="lawnchair_settings"/>
 	<item component="ComponentInfo{launcher.libre.dev/ch.deletescape.lawnchair.settings.ui.SettingsLauncherActivity}" drawable="lawnchair_settings"/>
 	<item component="ComponentInfo{ch.deletescape.lawnchair.ci/ch.deletescape.lawnchair.settings.ui.SettingsLauncherActivity}" drawable="lawnchair_settings"/>
 	<item component="ComponentInfo{ch.deletescape.lawnchair.dev/ch.deletescape.lawnchair.settings.ui.SettingsLauncherActivity}" drawable="lawnchair_settings"/>
