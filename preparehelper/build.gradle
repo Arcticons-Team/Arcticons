@@ -40,7 +40,7 @@ tasks.register('rundayNight', JavaExec) {
 
 dependencies {
     // SDK and tools required for Android and other general tasks
-    implementation("com.android.tools:sdk-common:31.7.3")
+    implementation("com.android.tools:sdk-common:31.8.0")
 
     // XML parsing (you are using dom4j here)
     implementation("org.dom4j:dom4j:2.1.4")
@@ -58,6 +58,7 @@ dependencies {
 
     // Optional: If you want to work with BufferedImage in Java 2D
     implementation("org.apache.xmlgraphics:batik-svggen:1.14")  // To generate image from SVGs
+    implementation("org.apache.xmlgraphics:batik-codec:1.17")
 
 }
 
