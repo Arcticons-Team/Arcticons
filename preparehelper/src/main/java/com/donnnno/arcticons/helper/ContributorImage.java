@@ -14,6 +14,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
@@ -53,7 +55,7 @@ public class ContributorImage {
 
     public static BufferedImage downloadImages(String imageUrl) {
         try {
-            URL url = new URL(imageUrl);
+            URL url = new URI(imageUrl).toURL();
             BufferedImage img = ImageIO.read(url);
             if (img != null) {
                 //System.out.println("Downloaded image from: " + imageUrl);
@@ -62,6 +64,8 @@ public class ContributorImage {
         } catch (IOException e) {
             //System.err.println("Failed to download image from: " + imageUrl + " " + e.getMessage());
             return null;
+        } catch (URISyntaxException e) {
+            throw new RuntimeException(e);
         }
         return null;
     }
