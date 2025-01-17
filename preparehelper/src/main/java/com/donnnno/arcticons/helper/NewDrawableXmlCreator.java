@@ -41,7 +41,7 @@ public class NewDrawableXmlCreator {
         // Set to hold new drawables
         Set<String> newDrawables = new HashSet<>();
 
-        if (newRelease) {
+        if (!newRelease) {
             // Read existing drawables from the newDrawables file if it exists
             File newDrawablesFile = new File(newDrawablesPath);
             if (newDrawablesFile.exists()) {
