@@ -81,7 +81,7 @@ public class ImageCollageGenerator {
 
             // Step 3: Create a collage image with black background (square-like size)
             int collageWidth = pageSpacing + (iconSize + iconSpacing ) * (int) Math.ceil(Math.sqrt(countNew)); // Square-like width
-            int collageHeight =pageSpacing + (iconSize + iconSpacing ) * (int) Math.sqrt(countNew); // Square-like height
+            int collageHeight =pageSpacing + (iconSize + iconSpacing ) * (int) Math.round(Math.sqrt(countNew)); // Square-like height
             BufferedImage collageImage = new BufferedImage(collageWidth, collageHeight, BufferedImage.TYPE_INT_ARGB);
             Graphics2D g2d = collageImage.createGraphics();
 
