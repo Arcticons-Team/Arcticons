@@ -58,7 +58,7 @@ public class XMLCreator {
         }catch(FileNotFoundException e){
             System.out.println("XML file: games.xml not found");
         }
-        //Read games from File and add to list
+        //Read system from File and add to list
         try (BufferedReader reader = new BufferedReader(new FileReader(generatedDir+"/system.xml"))) {
             String line;
             while ((line = reader.readLine()) != null) {
