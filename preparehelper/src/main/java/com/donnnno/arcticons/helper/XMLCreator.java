@@ -77,20 +77,12 @@ public class XMLCreator {
                 String fileName = file.getName();
                 String IconDrawable = fileName.substring(0, fileName.lastIndexOf('.'));
                 allIcons.add(IconDrawable);
-                if (!newDrawables.contains(IconDrawable) && !games.contains(IconDrawable) && !system.contains(IconDrawable)) {
-                    classifyDrawable(IconDrawable);
-                }
+                classifyDrawable(IconDrawable);
             }
         }
 
         // Create custom_icons_count.xml
         createCustomIconCountFile(valuesDir+"/custom_icon_count.xml", allIcons.size());
-
-        // Check if the icon is not in allIcons
-        // Remove it from list
-        system.removeIf(icon -> !allIcons.contains(icon));
-        games.removeIf(icon -> !allIcons.contains(icon));
-
 
         // Remove duplicates and sort
         newDrawables = new ArrayList<>(new HashSet<>(newDrawables));
@@ -121,6 +113,8 @@ public class XMLCreator {
         Collections.sort(emoji);
 
 
+        writeSortedCategory(generatedDir+"/games.xml", games);
+        writeSortedCategory(generatedDir+"/system.xml", system);
         // Build output
         StringBuilder output = new StringBuilder("<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<resources>\n<version>1</version>\n");
 
@@ -196,6 +190,14 @@ public class XMLCreator {
                     "   <integer name=\"custom_icons_count\">" + count + "</integer>\n" +
                     "</resources>"
             );
+        }
+    }
+
+    private static void writeSortedCategory(String path, List<String> list) throws IOException {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(path))) {
+            for (String item : list) {
+                writer.write(item + "\n");
+            }
         }
     }
 }
