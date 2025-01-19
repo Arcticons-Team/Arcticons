@@ -35,14 +35,15 @@ public class Changelog {
         String changelogXml = valuesDir +"/changelog.xml";
         String generatedDir = rootDir +"/generated";
 
-       generateChangelogs(generatedDir, valuesDir+"/custom_icon_count.xml", appFilter, changelogXml,false);
+
+       generateChangelogs(generatedDir, valuesDir+"/custom_icon_count.xml", appFilter, changelogXml,rootDir, false);
     }
 
 
 
 
 
-    public static void generateChangelogs(String generatedDir, String customIconCountXml, String appFilter, String changelogXml,boolean newRelease) {
+    public static void generateChangelogs(String generatedDir, String customIconCountXml, String appFilter, String changelogXml,String rootDir, boolean newRelease) {
         String newXML = generatedDir + "/newdrawables.xml";
         int countTotal = getCustomIconsCount(customIconCountXml);
         int countNew = countAll(newXML);
@@ -52,6 +53,7 @@ public class Changelog {
 
         createChangelogXML(countTotal, countNew, countReused, changelogXml,generatedDir);
         createChangelogMd(countTotal, countNew, countReused, generatedDir,generatedDir);
+        createChangelogTXT(countTotal, countNew, countReused, generatedDir,generatedDir,rootDir);
 
         if (newRelease) {
             //save countFilterTotal to file
@@ -131,6 +133,37 @@ public class Changelog {
         try {
             writeToFile(output.toString(), changelogMd + "/changelog.md");
             System.out.println("Changelog saved to: " + changelogMd + "/changelog.md");
+        } catch (IOException e) {
+            System.err.println("Error writing to file: " + e.getMessage());
+        }
+    }
+
+    public static void createChangelogTXT(int countTotal, int countNew, int countReused, String changelogMd,String generatedDir,String rootDir) {
+        String TripleTYouNotes = rootDir +"/app/src/you/play/release-notes/en-US/default.txt";
+        String TripleTNormalNotes = rootDir +"/app/src/normal/play/release-notes/en-US/default.txt";
+        String TripleTBlackNotes = rootDir +"/app/src/black/play/release-notes/en-US/default.txt";
+        String TripleTDayNightNotes = rootDir +"/app/src/dayNight/play/release-notes/en-US/default.txt";
+        StringBuilder output = new StringBuilder("\uD83C\uDF89 ");
+        output.append(countNew);
+        output.append(" new and updated icons!\n");
+        output.append("\uD83D\uDCA1 Added support for ");
+        output.append(countReused);
+        output.append(" apps using existing icons.\n");
+        output.append("\uD83D\uDD25 ");
+        output.append(countTotal);
+        output.append(" icons in total!");
+        readReleaseNotes(generatedDir,output);
+        output.append("\n\n\uD83D\uDD17 You can find a detailed list of changes on our Github: https://github.com/Donnnno/Arcticons/releases  \uD83D\uDCC4");
+
+        try {
+            writeToFile(output.toString(), TripleTYouNotes);
+            System.out.println("Changelog saved to: " + TripleTYouNotes);
+            writeToFile(output.toString(), TripleTNormalNotes);
+            System.out.println("Changelog saved to: " + TripleTNormalNotes);
+            writeToFile(output.toString(), TripleTBlackNotes);
+            System.out.println("Changelog saved to: " + TripleTBlackNotes);
+            writeToFile(output.toString(), TripleTDayNightNotes);
+            System.out.println("Changelog saved to: " + TripleTDayNightNotes);
         } catch (IOException e) {
             System.err.println("Error writing to file: " + e.getMessage());
         }
