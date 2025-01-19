@@ -82,7 +82,7 @@ public class Changelog {
     public static void readReleaseNotes(String generatedDir,StringBuilder output) {
         //read count from File
         try {
-            Path path = Paths.get(generatedDir + "/aditionalReleaseNotes.txt");
+            Path path = Paths.get(generatedDir + "/additionalReleaseNotes.txt");
             String content = new String(Files.readAllBytes(path)).strip();
             if (!content.isEmpty()) {
                 output.append("\n\n");
@@ -96,7 +96,7 @@ public class Changelog {
     public static void readReleaseNotesLines(String generatedDir, StringBuilder output) {
         // Read content from the file
         try {
-            Path path = Paths.get(generatedDir + "/aditionalReleaseNotes.txt");
+            Path path = Paths.get(generatedDir + "/additionalReleaseNotes.txt");
             String content = new String(Files.readAllBytes(path)).strip();
 
             // Split the content into lines
