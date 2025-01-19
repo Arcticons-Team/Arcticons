@@ -50,8 +50,8 @@ public class Changelog {
         int countFilterOld = readCountFilterOld(generatedDir);//19762; //tag11.4.6(21744)
         int countReused = countFilterTotal - countFilterOld - countNew;
 
-        createChangelogXML(countTotal, countNew, countReused, changelogXml);
-        createChangelogMd(countTotal, countNew, countReused, generatedDir);
+        createChangelogXML(countTotal, countNew, countReused, changelogXml,generatedDir);
+        createChangelogMd(countTotal, countNew, countReused, generatedDir,generatedDir);
 
         if (newRelease) {
             //save countFilterTotal to file
@@ -78,7 +78,45 @@ public class Changelog {
 
       return  0 ;
     }
-    public static void createChangelogMd(int countTotal, int countNew, int countReused, String changelogMd) {
+
+    public static void readReleaseNotes(String generatedDir,StringBuilder output) {
+        //read count from File
+        try {
+            Path path = Paths.get(generatedDir + "/aditionalReleaseNotes.txt");
+            String content = new String(Files.readAllBytes(path)).strip();
+            if (!content.isEmpty()) {
+                output.append("\n\n");
+                output.append(content);
+            }
+        } catch (IOException e) {
+            System.err.println("Error reading file: " + e.getMessage());
+        }
+    }
+
+    public static void readReleaseNotesLines(String generatedDir, StringBuilder output) {
+        // Read content from the file
+        try {
+            Path path = Paths.get(generatedDir + "/aditionalReleaseNotes.txt");
+            String content = new String(Files.readAllBytes(path)).strip();
+
+            // Split the content into lines
+            String[] lines = content.split("\n");
+
+            for (String line : lines) {
+                if (!line.isEmpty()) {
+                    output.append("        <item>");
+                    output.append(line);
+                    output.append("</item>");
+                    output.append("\n"); // Add a new line after each item
+                }
+            }
+        } catch (IOException e) {
+            System.err.println("Error reading file: " + e.getMessage());
+        }
+    }
+
+
+    public static void createChangelogMd(int countTotal, int countNew, int countReused, String changelogMd,String generatedDir) {
         StringBuilder output = new StringBuilder("* \uD83C\uDF89 **");
                 output.append(countNew);
                 output.append("** new and updated icons!\n");
@@ -88,6 +126,7 @@ public class Changelog {
                 output.append("* \uD83D\uDD25 **");
                 output.append(countTotal);
                 output.append("** icons in total!");
+                readReleaseNotes(generatedDir,output);
 
         try {
             writeToFile(output.toString(), changelogMd + "/changelog.md");
@@ -97,7 +136,7 @@ public class Changelog {
         }
     }
 
-    public static void createChangelogXML(int countTotal, int countNew, int countReused, String changelogXml){
+    public static void createChangelogXML(int countTotal, int countNew, int countReused, String changelogXml,String generatedDir){
         StringBuilder output = new StringBuilder("<?xml version=\"1.0\" encoding=\"utf-8\"?>\n" +
                 "<resources>\n" +
                 "\n" +
@@ -120,6 +159,7 @@ public class Changelog {
         output.append("        <item>🔥 <b>");
         output.append(countTotal);
         output.append("</b> icons in total!</item>\n");
+        readReleaseNotesLines(generatedDir,output);
         output.append("    </string-array>\n");
         output.append("</resources>");
 
