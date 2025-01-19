@@ -67,7 +67,7 @@ public class PrepareRelease {
                     } catch (Exception e) {
                         System.out.println("Error occurred: " + e.getMessage());
                     }
-                    generateChangelogs(generatedDir, valuesDir+"/custom_icon_count.xml", appFilter, changelogXml,false);
+                    generateChangelogs(generatedDir, valuesDir+"/custom_icon_count.xml", appFilter, changelogXml,rootDir,false);
                     generateReleaseImage( generatedDir + "/newdrawables.xml", sourceDir, generatedDir + "/releaseImage.webp");
                     break;
                 case "newrelease":
@@ -87,7 +87,7 @@ public class PrepareRelease {
                     } catch (Exception e) {
                         System.out.println("Error occurred: " + e.getMessage());
                     }
-                    generateChangelogs(generatedDir, valuesDir+"/custom_icon_count.xml", appFilter, changelogXml,true);
+                    generateChangelogs(generatedDir, valuesDir+"/custom_icon_count.xml", appFilter, changelogXml,rootDir,true);
                     generateReleaseImage( generatedDir + "/newdrawables.xml", sourceDir, generatedDir + "/releaseImage.webp");
                     break;
                 default:

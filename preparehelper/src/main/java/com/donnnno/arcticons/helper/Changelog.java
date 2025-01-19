@@ -35,14 +35,15 @@ public class Changelog {
         String changelogXml = valuesDir +"/changelog.xml";
         String generatedDir = rootDir +"/generated";
 
-       generateChangelogs(generatedDir, valuesDir+"/custom_icon_count.xml", appFilter, changelogXml,false);
+
+       generateChangelogs(generatedDir, valuesDir+"/custom_icon_count.xml", appFilter, changelogXml,rootDir, false);
     }
 
 
 
 
 
-    public static void generateChangelogs(String generatedDir, String customIconCountXml, String appFilter, String changelogXml,boolean newRelease) {
+    public static void generateChangelogs(String generatedDir, String customIconCountXml, String appFilter, String changelogXml,String rootDir, boolean newRelease) {
         String newXML = generatedDir + "/newdrawables.xml";
         int countTotal = getCustomIconsCount(customIconCountXml);
         int countNew = countAll(newXML);
@@ -50,8 +51,9 @@ public class Changelog {
         int countFilterOld = readCountFilterOld(generatedDir);//19762; //tag11.4.6(21744)
         int countReused = countFilterTotal - countFilterOld - countNew;
 
-        createChangelogXML(countTotal, countNew, countReused, changelogXml);
-        createChangelogMd(countTotal, countNew, countReused, generatedDir);
+        createChangelogXML(countTotal, countNew, countReused, changelogXml,generatedDir);
+        createChangelogMd(countTotal, countNew, countReused, generatedDir,generatedDir);
+        createChangelogTXT(countTotal, countNew, countReused, generatedDir,generatedDir,rootDir);
 
         if (newRelease) {
             //save countFilterTotal to file
@@ -78,7 +80,45 @@ public class Changelog {
 
       return  0 ;
     }
-    public static void createChangelogMd(int countTotal, int countNew, int countReused, String changelogMd) {
+
+    public static void readReleaseNotes(String generatedDir,StringBuilder output) {
+        //read count from File
+        try {
+            Path path = Paths.get(generatedDir + "/additionalReleaseNotes.txt");
+            String content = new String(Files.readAllBytes(path)).strip();
+            if (!content.isEmpty()) {
+                output.append("\n\n");
+                output.append(content);
+            }
+        } catch (IOException e) {
+            System.err.println("Error reading file: " + e.getMessage());
+        }
+    }
+
+    public static void readReleaseNotesLines(String generatedDir, StringBuilder output) {
+        // Read content from the file
+        try {
+            Path path = Paths.get(generatedDir + "/additionalReleaseNotes.txt");
+            String content = new String(Files.readAllBytes(path)).strip();
+
+            // Split the content into lines
+            String[] lines = content.split("\n");
+
+            for (String line : lines) {
+                if (!line.isEmpty()) {
+                    output.append("        <item>");
+                    output.append(line);
+                    output.append("</item>");
+                    output.append("\n"); // Add a new line after each item
+                }
+            }
+        } catch (IOException e) {
+            System.err.println("Error reading file: " + e.getMessage());
+        }
+    }
+
+
+    public static void createChangelogMd(int countTotal, int countNew, int countReused, String changelogMd,String generatedDir) {
         StringBuilder output = new StringBuilder("* \uD83C\uDF89 **");
                 output.append(countNew);
                 output.append("** new and updated icons!\n");
@@ -88,6 +128,7 @@ public class Changelog {
                 output.append("* \uD83D\uDD25 **");
                 output.append(countTotal);
                 output.append("** icons in total!");
+                readReleaseNotes(generatedDir,output);
 
         try {
             writeToFile(output.toString(), changelogMd + "/changelog.md");
@@ -97,7 +138,38 @@ public class Changelog {
         }
     }
 
-    public static void createChangelogXML(int countTotal, int countNew, int countReused, String changelogXml){
+    public static void createChangelogTXT(int countTotal, int countNew, int countReused, String changelogMd,String generatedDir,String rootDir) {
+        String TripleTYouNotes = rootDir +"/app/src/you/play/release-notes/en-US/default.txt";
+        String TripleTNormalNotes = rootDir +"/app/src/normal/play/release-notes/en-US/default.txt";
+        String TripleTBlackNotes = rootDir +"/app/src/black/play/release-notes/en-US/default.txt";
+        String TripleTDayNightNotes = rootDir +"/app/src/dayNight/play/release-notes/en-US/default.txt";
+        StringBuilder output = new StringBuilder("\uD83C\uDF89 ");
+        output.append(countNew);
+        output.append(" new and updated icons!\n");
+        output.append("\uD83D\uDCA1 Added support for ");
+        output.append(countReused);
+        output.append(" apps using existing icons.\n");
+        output.append("\uD83D\uDD25 ");
+        output.append(countTotal);
+        output.append(" icons in total!");
+        readReleaseNotes(generatedDir,output);
+        output.append("\n\n\uD83D\uDD17 You can find a detailed list of changes on our Github: https://github.com/Donnnno/Arcticons/releases  \uD83D\uDCC4");
+
+        try {
+            writeToFile(output.toString(), TripleTYouNotes);
+            System.out.println("Changelog saved to: " + TripleTYouNotes);
+            writeToFile(output.toString(), TripleTNormalNotes);
+            System.out.println("Changelog saved to: " + TripleTNormalNotes);
+            writeToFile(output.toString(), TripleTBlackNotes);
+            System.out.println("Changelog saved to: " + TripleTBlackNotes);
+            writeToFile(output.toString(), TripleTDayNightNotes);
+            System.out.println("Changelog saved to: " + TripleTDayNightNotes);
+        } catch (IOException e) {
+            System.err.println("Error writing to file: " + e.getMessage());
+        }
+    }
+
+    public static void createChangelogXML(int countTotal, int countNew, int countReused, String changelogXml,String generatedDir){
         StringBuilder output = new StringBuilder("<?xml version=\"1.0\" encoding=\"utf-8\"?>\n" +
                 "<resources>\n" +
                 "\n" +
@@ -120,6 +192,7 @@ public class Changelog {
         output.append("        <item>🔥 <b>");
         output.append(countTotal);
         output.append("</b> icons in total!</item>\n");
+        readReleaseNotesLines(generatedDir,output);
         output.append("    </string-array>\n");
         output.append("</resources>");
 
