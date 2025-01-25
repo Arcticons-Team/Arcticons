@@ -46,7 +46,7 @@ fetch(`assets/requests.json`)
             const appName = entry.Name;
             const drawable = entry.drawable;
             const appIconPath = drawable ? `extracted_png/${drawable}.webp` : 'img/requests/default.svg';
-            const appIcon = `<img src="${appIconPath}" alt="${appName}" style="width:50px;height:50px;">`;
+            const appIcon = `<img src="${appIconPath}" alt="Icon" style="width:50px;height:50px;">`;
             const playStoreDownloads = entry.PlayStore.Downloads;
             const playStoreCategories = entry.PlayStore.Categories;
             const filteredCategories = playStoreCategories.filter(category => {
