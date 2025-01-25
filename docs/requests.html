@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="css/green-button.css" />
     <link rel="stylesheet" href="css/image-preview.css" />
     <link rel="stylesheet" href="css/notification.css" />
+    <link rel="stylesheet" href="css/categories.css" />
 </head>
 
 <body>
@@ -29,7 +30,7 @@
             <span id="search-input-container">
                 <input class="textinput" type="text" id="search-input" oninput="filterAppEntries()"
                     placeholder="Search">
-                <span id="clear-search"
+                <span class="clear-search" id="clear-search"
                     onclick="var input = this.previousElementSibling; input.value = ''; input.focus();">x</span>
             </span>
             <div id="regex-search-container">
@@ -98,7 +99,8 @@
                     class="sm-view">✨</span></button>
         </div>
         <div class="header-elements">
-            <button class="green-button" type ="button" id="copy-selected-button" aria-label="Long press to change drawable names"> <img src="img/requests/copy.svg"></button>
+            <button class="green-button" type="button" id="copy-selected-button"
+                aria-label="Long press to change drawable names"> <img src="img/requests/copy.svg"></button>
         </div>
         <div id="updatable-container">
             <!-- Button for Updatable Site -->
@@ -124,7 +126,18 @@
             <tbody id="app-entries"></tbody>
         </table>
     </div>
+    <hr width="100%" size="2" class="separator" noshade>
+    <div class="category-container">
+        <span id="search-input-container">
+            <input class="textinput" type="text" id="search-input_category" oninput="findCategory()"
+                placeholder="Search Category">
+            <span class="clear-search" id="clear-search_category"
+                onclick="var input = this.previousElementSibling; input.value = ''; input.focus();">x</span>
+        </span>
+        <div class="categories">
 
+        </div>
+    </div>
     <div class="preview-overlay-class" id="preview-overlay">
         <span class="close-button-class">&times;</span>
         <!-- Preview image will be inserted here -->
@@ -135,7 +148,7 @@
         <div class="popup-content">
             <!-- Preview image will be inserted here -->
             <p>Enter a new drawable name</p>
-            <input class=textinput id="drawableName-input" type="text" placeholder="drawableName" 
+            <input class=textinput id="drawableName-input" type="text" placeholder="drawableName"
                 title="Change drawable name  to ..." />
             <hr width="100%" size="2" class="separator" noshade>
             <button class="green-button" id="rename-button"> Rename drawable </button>

@@ -1,0 +1,37 @@
+.categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+.category-container{
+    height: 600px;
+
+}
+
+.category-button {
+    padding: 10px 15px;
+    border: 1px solid #007bff;
+    background-color: #ffffff;
+    color: #007bff;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 30px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#category-button:active {
+    transform: scale(0.95);
+}
+
+/* Style for activated buttons */
+#category-button[activated] {
+    background-color: #007bff;
+    color: #ffffff;
+    border-color: #0056b3;
+    font-weight: bold;
+}
+
+#search-input_category {
+    width: 100%;
+}

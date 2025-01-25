@@ -25,54 +25,6 @@ const debounce = (func, delay) => {
     };
 };
 
-// Fetch and process data
-/*
-fetch(`assets/requests.txt`)
-    .then(response => {
-        if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        return response.text();
-    })
-    .then(fileContent => {
-        const appEntries = fileContent.split(/(?=<!--[^]*?-->)/).filter(entry => entry.trim() !== '');
-        // Call this function to change the header text
-        const headertext = appEntries[0].trim().split('\n')[1].trim();
-        const iconcount = headertext.trim().split(' ')[0].trim();
-        updateHeaderText(`${iconcount} Requested Apps Pending`);
-        document.getElementById('date_header').innerText = headertext.trim().split('(')[1].trim().split(')')[0].trim();
-
-        // Process each entry and store data
-        appEntries.slice(1).forEach(entry => {
-            const lines = entry.trim().split('\n');
-            const appName = lines[0].trim().split('--')[1].trim();
-            const appNameAppfilter = lines[0].trim();
-            const appfilter = lines[1].trim().split('\n').join(' ').trim();
-            const appLinks = lines.slice(2, lines.length - 2).map((line, index) => {
-                const imageName = index < imageNames.length ? imageNames[index] : 'img/requests/default.svg';
-                return `<a href="${line.trim()}" class="links" target="_blank"><img src="${imageName}" alt="Image"></a>`;
-            }).join('\n');
-            const requestedTimestamp = parseInt(lines.slice(lines.length - 2)[1].trim().split(' ')[2]);
-            const requestedInfo = lines.slice(lines.length - 2)[0].trim().split(' ')[1].trim();
-            const lastRequestedTime = new Date(requestedTimestamp * 1000).toLocaleString();
-            const drawable = extractDrawable(appfilter);
-            const appIconPath = drawable ? `extracted_png/${drawable}.webp` : 'img/requests/default.svg'; // Adjust path accordingly
-            const appIcon = `<img src="${appIconPath}" alt="App Icon" style="width:50px;height:50px;">`;
-            const appIconColor = 0;
-            appEntriesData.push({
-                appName,
-                appIcon,
-                appLinks,
-                requestedInfo,
-                lastRequestedTime,
-                appNameAppfilter,
-                appfilter,
-                appIconPath,
-                appIconColor
-            });
-        });
-        appEntriesDataGlobal = appEntriesData;
-        */
 fetch(`assets/requests.json`)
     .then(response => {
         if (!response.ok) {
@@ -80,10 +32,10 @@ fetch(`assets/requests.json`)
         }
         return response.json();
     })
-    .then(JsonContent => {       
+    .then(JsonContent => {
         const iconcount = JsonContent.iconcount;
-         // Set the latest request date
-         const latestRequestDate = Object.values(JsonContent).reduce((latest, entry) => {
+        // Set the latest request date
+        const latestRequestDate = Object.values(JsonContent).reduce((latest, entry) => {
             const requestDate = new Date(parseFloat(entry.requestDate) * 1000); // Convert to milliseconds
             return requestDate > latest ? requestDate : latest;
         }, new Date(0));
@@ -98,9 +50,9 @@ fetch(`assets/requests.json`)
             const playStoreDownloads = entry.PlayStore.Downloads;
             const playStoreCategories = entry.PlayStore.Categories;
             const filteredCategories = playStoreCategories.filter(category => {
-                return !/^#\d top\b/.test(category); // Exclude based on the regex
-              });
-              filteredCategories.forEach(category => AllCategories.add(category));
+                return !/^#\d* top\b/.test(category); // Exclude based on the regex
+            });
+            filteredCategories.forEach(category => AllCategories.add(category));
 
             // Generate links (if available)
             const appLinks = [
@@ -167,11 +119,43 @@ fetch(`assets/requests.json`)
                 lazyLoadAndRender();
                 // Optionally, trigger the function immediately if needed (e.g., if the page is loaded with a default state):
                 filterAppEntries();
+                setCategory();
             })
             .catch(error => console.error('Error fetching or processing appfilter:', error));
     })
     .catch(error => console.error('Error fetching file:', error));
 
+function setCategory() {
+    // Find the div where the buttons will be added
+    const categoriesDiv = document.querySelector('.categories');
+
+    // Add each category as a button
+    AllCategories.forEach(category => {
+        const button = document.createElement('button'); // Create a button element
+        button.textContent = category; // Set button text to the category name
+        button.id = 'category-button'; // Add a class for styling
+        button.className = 'green-button'; // Add a class for styling
+        button.onclick = () => toggleCategory(button, category); // Set an onclick handler
+        categoriesDiv.appendChild(button); // Add the button to the div
+    });
+
+}
+
+// Function to toggle button activation
+function toggleCategory(button, category) {
+    const isActive = button.hasAttribute('activated');
+
+    if (isActive) {
+        // Deactivate the button if already active
+        button.removeAttribute('activated');
+        console.log(`Deactivated category: ${category}`);
+    } else {
+        // Activate the button if not active
+        button.setAttribute('activated', 'true');
+        console.log(`Activated category: ${category}`);
+    }
+    filterCategory()
+}
 
 // Accessing the button element by its id
 const updatableButton = document.getElementById("updatable-button");
@@ -400,6 +384,25 @@ function clearSelected() {
     console.log("All rows deselected.");
 }
 
+function findCategory() {
+    showClearSearchCategory(); // Assuming this function clears previous results or manages the UI
+
+    // Get the search input value and convert it to lowercase
+    const searchInput = document.getElementById('search-input_category').value.toLowerCase();
+
+    // Select all category buttons
+    const categoryButtons = document.querySelectorAll('#category-button');
+
+    // Loop through the buttons and toggle visibility based on the search input
+    categoryButtons.forEach(button => {
+        const categoryText = button.textContent.toLowerCase(); // Get the category text
+        if (categoryText.includes(searchInput)) {
+            button.style.display = 'inline-block'; // Show the button if it matches
+        } else {
+            button.style.display = 'none'; // Hide the button if it doesn't match
+        }
+    });
+}
 
 
 
@@ -417,6 +420,22 @@ document.getElementById('clear-search').addEventListener('click', clearSearch);
 function clearSearch() {
     showClearSearchIcon();
     filterAppEntries();
+}
+
+function showClearSearchCategory() {
+    const clearSearch = document.querySelector('#clear-search_category');
+    if (document.getElementById('search-input_category').value.trim() === "") {
+        clearSearch.style.visibility = 'hidden'; // Hide the icon if the input is empty
+    } else {
+        clearSearch.style.visibility = 'visible'; // Show the icon if the input has text
+    }
+}
+
+document.getElementById('clear-search_category').addEventListener('click', clearSearchCategory);
+
+function clearSearchCategory() {
+    console.log("Clearing search category");
+    showClearSearchCategory();
 }
 
 
@@ -492,6 +511,9 @@ const filterAppEntries = debounce(() => {
         }
     }
 }, 500);
+
+
+
 
 
 document.getElementById('regex-switch').addEventListener('change', filterAppEntries);
@@ -589,7 +611,7 @@ function sortData(sortingDirection, columnIndex, sortedData) {
                 return sortingDirection === 'asc' ? cellA - cellB : cellB - cellA;
             }
 
-        }else if (columnIndex === 3) {
+        } else if (columnIndex === 3) {
             const cellA = parseDownloadValue(getCellValue(a, columnIndex));
             const cellB = parseDownloadValue(getCellValue(b, columnIndex));
             // Handle numerical values
@@ -614,7 +636,61 @@ function parseDownloadValue(value) {
     if (value.endsWith("M")) return parseFloat(value) * 1_000_000; // Convert "M" to 1,000,000
     if (value.endsWith("B")) return parseFloat(value) * 1_000_000_000; // Convert "B" to 1,000,000,000
     return parseFloat(value); // Return the numeric value for simple numbers like "100"
-  }
+}
+
+
+function filterCategory() {
+    let filteredData;
+
+    // Get all the activated categories
+    const activatedCategories = Array.from(
+        document.querySelectorAll('#category-button[activated]')
+    ).map(button => button.textContent);
+
+    // Show apps that have one of the activated categories in playStoreCategories
+    /*
+    filteredData = appEntriesData.filter(entry =>
+        entry.playStoreCategories.some(category =>
+            activatedCategories.includes(category)
+        )
+    );
+    */
+    // Show apps that have all of the activated categories in playStoreCategories
+    filteredData = appEntriesData.filter(entry =>
+        activatedCategories.every(category =>
+            entry.playStoreCategories.includes(category)
+        )
+    );
+
+
+    // If no results are found, show a notification
+    if (filteredData.length === 0) {
+        const notification = document.getElementById('search-notification');
+        notification.innerText = `No results found.`;
+        notification.style.display = 'block';
+
+        // Hide the notification after a few seconds
+        setTimeout(() => {
+            notification.style.display = 'none';
+        }, 5000);
+
+        // Update table with empty data
+        updateTable([]);
+    } else {
+        document.getElementById('search-notification').style.display = 'none';
+
+        // Sort the filtered data (replace sortData with your sorting logic)
+        const filteredAndSortedData = sortData(
+            sortingDirection,
+            sortingColumnIndex,
+            [...filteredData]
+        );
+
+        // Update the table with the sorted data
+        updateTable(filteredAndSortedData);
+    }
+}
+
 
 
 // Initial table rendering
