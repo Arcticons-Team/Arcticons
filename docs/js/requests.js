@@ -440,6 +440,28 @@ function clearSearchCategory() {
 }
 
 
+//todo: Add a function 
+function showClearCategory() {
+    const clearSearch = document.querySelector('#clear-category');
+    const activatedCategories = Array.from(document.querySelectorAll('#category-button[activated]'))
+
+    if (activatedCategories.length === 0) {
+        clearSearch.style.visibility = 'hidden'; // Hide the icon if the input is empty
+    } else {
+        clearSearch.style.visibility = 'visible'; // Show the icon if the input has text
+    }
+}
+
+document.getElementById('clear-category').addEventListener('click', clearCategory);
+
+function clearCategory() {
+    showClearCategory();
+    document.querySelectorAll('#category-button').forEach(btn => {
+        btn.removeAttribute('activated');
+      });
+      filterCategory();
+    }
+
 // Search function
 const filterAppEntries = debounce(() => {
 
@@ -642,6 +664,7 @@ function parseDownloadValue(value, sortingDirection) {
 
 
 function filterCategory() {
+    showClearCategory();
     let filteredData;
 
     // Get all the activated categories
