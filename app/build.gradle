@@ -113,7 +113,7 @@ android {
 
     base {
         // Output file name
-        archivesName = "${parent.name}-${android.defaultConfig.versionCode}"
+        archivesName = "${parent.name}-${android.defaultConfig.versionName}"
     }
     java {
         toolchain {
@@ -145,10 +145,10 @@ dependencies {
     normalPlayImplementation 'com.github.zixpo:candybar:3.21.1'
     blackPlayImplementation 'com.github.zixpo:candybar:3.21.1'
     youPlayImplementation 'com.github.zixpo:candybar:3.21.1'
-    normalImplementation 'com.github.donnnno:candybar-foss:3.21.1'
-    blackImplementation 'com.github.donnnno:candybar-foss:3.21.1'
-    youImplementation 'com.github.donnnno:candybar-foss:3.21.1'
-    dayNightImplementation 'com.github.donnnno:candybar-foss:3.21.1'
+    normalImplementation 'com.github.donnnno:candybar-foss:3.21.2'
+    blackImplementation 'com.github.donnnno:candybar-foss:3.21.2'
+    youImplementation 'com.github.donnnno:candybar-foss:3.21.2'
+    dayNightImplementation 'com.github.donnnno:candybar-foss:3.21.2'
 }
 
 import com.android.tools.profgen.ArtProfileKt

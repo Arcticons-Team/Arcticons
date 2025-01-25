@@ -6,31 +6,19 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 import java.awt.image.BufferedImage;
-import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.Iterator;
-import java.util.Random;
 
 import javax.imageio.ImageIO;
-import javax.imageio.ImageReader;
-import javax.imageio.ImageWriter;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
-
-import java.io.IOException;
-import java.lang.ProcessBuilder;
-import java.util.List;
-
 
 public class ContributorImage {
 
@@ -53,7 +41,7 @@ public class ContributorImage {
 
     public static BufferedImage downloadImages(String imageUrl) {
         try {
-            URL url = new URL(imageUrl);
+            URL url = new URI(imageUrl).toURL();
             BufferedImage img = ImageIO.read(url);
             if (img != null) {
                 //System.out.println("Downloaded image from: " + imageUrl);
@@ -62,6 +50,8 @@ public class ContributorImage {
         } catch (IOException e) {
             //System.err.println("Failed to download image from: " + imageUrl + " " + e.getMessage());
             return null;
+        } catch (URISyntaxException e) {
+            throw new RuntimeException(e);
         }
         return null;
     }
