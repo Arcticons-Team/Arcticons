@@ -6,9 +6,10 @@ const batchSize = 50; // Number of rows to load at a time
 let startIndex = 0; // Start index for lazy loading
 let appEntriesData = []; // Store the original data for sorting
 // Global variables to track sorting column and direction
-let sortingColumnIndex = 3;
+let sortingColumnIndex = 4;
 let sortingDirection = 'desc';
 var selectedRows = new Set();
+var AllCategories = new Set();
 
 
 // Debounce function for search input
@@ -25,6 +26,7 @@ const debounce = (func, delay) => {
 };
 
 // Fetch and process data
+/*
 fetch(`assets/requests.txt`)
     .then(response => {
         if (!response.ok) {
@@ -70,6 +72,69 @@ fetch(`assets/requests.txt`)
             });
         });
         appEntriesDataGlobal = appEntriesData;
+        */
+fetch(`assets/requests.json`)
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then(JsonContent => {       
+        const iconcount = JsonContent.iconcount;
+         // Set the latest request date
+         const latestRequestDate = Object.values(JsonContent).reduce((latest, entry) => {
+            const requestDate = new Date(parseFloat(entry.requestDate) * 1000); // Convert to milliseconds
+            return requestDate > latest ? requestDate : latest;
+        }, new Date(0));
+        document.getElementById('date_header').innerText = latestRequestDate.toLocaleString();
+
+        // Process each app entry
+        Object.entries(JsonContent).forEach(([componentInfo, entry]) => {
+            const appName = entry.Name;
+            const drawable = entry.drawable;
+            const appIconPath = drawable ? `extracted_png/${drawable}.webp` : 'img/requests/default.svg';
+            const appIcon = `<img src="${appIconPath}" alt="${appName}" style="width:50px;height:50px;">`;
+            const playStoreDownloads = entry.PlayStore.Downloads;
+            const playStoreCategories = entry.PlayStore.Categories;
+            const filteredCategories = playStoreCategories.filter(category => {
+                return !/^#\d top\b/.test(category); // Exclude based on the regex
+              });
+              filteredCategories.forEach(category => AllCategories.add(category));
+
+            // Generate links (if available)
+            const appLinks = [
+                `<a href="https://play.google.com/store/apps/details?id=${componentInfo.split('/')[0]}" class="links" target="_blank"><img src="img/requests/google-play-store.svg" alt="Image"></a>`,
+                `<a href="https://f-droid.org/en/packages/${componentInfo.split('/')[0]}/" class="links" target="_blank"><img src="img/requests/f-droid.svg" alt="Image"></a>`,
+                `<a href="https://apt.izzysoft.de/fdroid/index/apk/${componentInfo.split('/')[0]}" class="links" target="_blank"><img src="img/requests/izzyondroid.svg" alt="Image"></a>`,
+                `<a href="https://galaxystore.samsung.com/detail/${componentInfo.split('/')[0]}" class="links" target="_blank"><img src="img/requests/galaxystore.svg" alt="Image"></a>`,
+                `<a href="https://www.ecosia.org/search?q=c${componentInfo.split('/')[0]}" class="links" target="_blank"><img src="img/requests/search-globe.svg" alt="Image"></a>`
+            ].join('\n');
+        // Process each entry and store data    
+       
+            const appNameAppfilter = entry.appNameAppfilter;
+            const appfilter = `<item component="ComponentInfo{${componentInfo}}" drawable="${drawable}"/>`;
+            const requestedInfo = entry.count;
+            const lastRequestedTime = new Date(parseFloat(entry.requestDate) * 1000).toLocaleString();
+            const appIconColor = 0;
+            appEntriesData.push({
+                appName,
+                appIcon,
+                appLinks,
+                playStoreDownloads,
+                requestedInfo,
+                lastRequestedTime,
+                appNameAppfilter,
+                appfilter,
+                appIconPath,
+                appIconColor,
+                playStoreCategories
+            });
+        });
+        appEntriesDataGlobal = appEntriesData;
+        console.log("All Categories:", AllCategories);
+
+
 
         // Example usage:
         fetch(`assets/combined_appfilter.xml`)
@@ -221,6 +286,7 @@ function renderTable(data) {
         let cell4 = row.insertCell(3);
         let cell5 = row.insertCell(4);
         let cell6 = row.insertCell(5);
+        let cell7 = row.insertCell(6);
         index = index + startIndex;
         // Make cell1 clickable
         cell1.textContent = entry.appName;
@@ -238,9 +304,10 @@ function renderTable(data) {
         // Render the app icon as a clickable image
         cell2.innerHTML = `<a href="#" class="icon-preview" data-index="${index}">${entry.appIcon}</a>`;
         cell3.innerHTML = entry.appLinks;
-        cell4.innerHTML = entry.requestedInfo;
-        cell5.innerHTML = entry.lastRequestedTime;
-        cell6.innerHTML = `<button class="green-button" id="copy-button" onclick="copyToClipboard(${index})">Copy</button>`;
+        cell4.innerHTML = entry.playStoreDownloads;
+        cell5.innerHTML = entry.requestedInfo;
+        cell6.innerHTML = entry.lastRequestedTime;
+        cell7.innerHTML = `<button class="green-button" id="copy-button" onclick="copyToClipboard(${index})">Copy</button>`;
     });
 
     // Add event listeners to the icon previews
@@ -499,13 +566,13 @@ function sortTable(columnIndex) {
 
 function sortData(sortingDirection, columnIndex, sortedData) {
     sortedData.sort((a, b) => {
-        if (columnIndex === 4) { // Check if sorting the 'Last Requested' column
+        if (columnIndex === 5) { // Check if sorting the 'Last Requested' column
             const cellA = getCellValue(a, columnIndex);
             const cellB = getCellValue(b, columnIndex);
 
             // Handle dates
             return sortingDirection === 'asc' ? cellA - cellB : cellB - cellA;
-        } else if (columnIndex === 3) {
+        } else if (columnIndex === 4) {
             const cellA = getCellValue(a, columnIndex);
             const cellB = getCellValue(b, columnIndex);
 
@@ -514,9 +581,17 @@ function sortData(sortingDirection, columnIndex, sortedData) {
                 return sortingDirection === 'asc' ? cellA - cellB : cellB - cellA;
             }
         } else if (columnIndex === 1) {
-            const offset = 7;
+            const offset = 8;
             const cellA = getCellValue(a, columnIndex + offset);
             const cellB = getCellValue(b, columnIndex + offset);
+            // Handle numerical values
+            if (!isNaN(cellA) && !isNaN(cellB)) {
+                return sortingDirection === 'asc' ? cellA - cellB : cellB - cellA;
+            }
+
+        }else if (columnIndex === 3) {
+            const cellA = parseDownloadValue(getCellValue(a, columnIndex));
+            const cellB = parseDownloadValue(getCellValue(b, columnIndex));
             // Handle numerical values
             if (!isNaN(cellA) && !isNaN(cellB)) {
                 return sortingDirection === 'asc' ? cellA - cellB : cellB - cellA;
@@ -530,6 +605,17 @@ function sortData(sortingDirection, columnIndex, sortedData) {
     });
     return sortedData;
 }
+
+// Convert download string to a numeric value for sorting
+function parseDownloadValue(value) {
+    if (value === "no_data") return -1; // Assign a low value for "AppNotFound" to push it to the end
+    if (value.endsWith("+")) value = value.slice(0, -1); // Remove the "+" at the end
+    if (value.endsWith("k")) return parseFloat(value) * 1_000; // Convert "k" to 1000
+    if (value.endsWith("M")) return parseFloat(value) * 1_000_000; // Convert "M" to 1,000,000
+    if (value.endsWith("B")) return parseFloat(value) * 1_000_000_000; // Convert "B" to 1,000,000,000
+    return parseFloat(value); // Return the numeric value for simple numbers like "100"
+  }
+
 
 // Initial table rendering
 function initializeTable() {
