@@ -9,17 +9,6 @@
 
 }
 
-.category-button {
-    padding: 10px 15px;
-    border: 1px solid #007bff;
-    background-color: #ffffff;
-    color: #007bff;
-    border-radius: 5px;
-    cursor: pointer;
-    height: 30px;
-    transition: background-color 0.3s, color 0.3s;
-}
-
 #category-button:active {
     transform: scale(0.95);
 }
@@ -35,3 +24,15 @@
 #search-input_category {
     width: 100%;
 }
+
+#clear-category{
+    background-color: #8b1708;
+    visibility: hidden;
+    right: 10px;
+    aspect-ratio: 1 / 1;
+}
+
+#clear-category:hover{
+    background-color: #be1d07;
+}
+

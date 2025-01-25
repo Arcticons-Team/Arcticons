@@ -128,12 +128,15 @@
     </div>
     <hr width="100%" size="2" class="separator" noshade>
     <div class="category-container">
-        <span id="search-input-container">
-            <input class="textinput" type="text" id="search-input_category" oninput="findCategory()"
-                placeholder="Search Category">
-            <span class="clear-search" id="clear-search_category"
-                onclick="var input = this.previousElementSibling; input.value = ''; input.focus();">x</span>
-        </span>
+        <div class="header-container">
+            <span id="search-input-container">
+                <input class="textinput" type="text" id="search-input_category" oninput="findCategory()"
+                    placeholder="Search Category">
+                <span class="clear-search" id="clear-search_category"
+                    onclick="var input = this.previousElementSibling; input.value = ''; input.focus();">x</span>
+            </span>
+            <button class="green-button" id="clear-category">x</button>
+        </div>
         <div class="categories">
 
         </div>
