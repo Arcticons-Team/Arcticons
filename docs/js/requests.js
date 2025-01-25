@@ -110,9 +110,9 @@ fetch(`assets/requests.json`)
                 `<a href="https://galaxystore.samsung.com/detail/${componentInfo.split('/')[0]}" class="links" target="_blank"><img src="img/requests/galaxystore.svg" alt="Image"></a>`,
                 `<a href="https://www.ecosia.org/search?q=c${componentInfo.split('/')[0]}" class="links" target="_blank"><img src="img/requests/search-globe.svg" alt="Image"></a>`
             ].join('\n');
-        // Process each entry and store data    
-       
-            const appNameAppfilter = entry.appNameAppfilter;
+            // Process each entry and store data    
+
+            const appNameAppfilter = `<!-- ${entry.Name} -->`;
             const appfilter = `<item component="ComponentInfo{${componentInfo}}" drawable="${drawable}"/>`;
             const requestedInfo = entry.count;
             const lastRequestedTime = new Date(parseFloat(entry.requestDate) * 1000).toLocaleString();
