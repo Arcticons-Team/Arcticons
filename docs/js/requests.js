@@ -436,6 +436,7 @@ document.getElementById('clear-search_category').addEventListener('click', clear
 function clearSearchCategory() {
     console.log("Clearing search category");
     showClearSearchCategory();
+    findCategory();
 }
 
 
