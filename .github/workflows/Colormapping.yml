@@ -5,6 +5,7 @@ on:
     branches: ["Arcticons-Pages"]
     paths:
       - 'docs/extracted_png/*'
+      - 'docs/assets/request.txt'
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -42,4 +43,31 @@ jobs:
           git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add -A
           git commit -m "Automated Colormapping Update"
+          git push
+  Create_requestjson:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          ref: Arcticons-Pages
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+          cache: 'pip'
+      - run: pip install -r .github/workflows/requirements.txt
+      
+      - name: Execute Python Script
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python .github/workflows/getGPlayData.py
+      - name: Commit changes
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m "Automated Requestjson Update"
           git push

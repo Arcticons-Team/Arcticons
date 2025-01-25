@@ -608,7 +608,7 @@ function sortData(sortingDirection, columnIndex, sortedData) {
 
 // Convert download string to a numeric value for sorting
 function parseDownloadValue(value) {
-    if (value === "App not found") return -1; // Assign a low value for "AppNotFound" to push it to the end
+    if (value === "no_data") return -1; // Assign a low value for "AppNotFound" to push it to the end
     if (value.endsWith("+")) value = value.slice(0, -1); // Remove the "+" at the end
     if (value.endsWith("k")) return parseFloat(value) * 1_000; // Convert "k" to 1000
     if (value.endsWith("M")) return parseFloat(value) * 1_000_000; // Convert "M" to 1,000,000
