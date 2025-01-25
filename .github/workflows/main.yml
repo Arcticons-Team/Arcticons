@@ -11,10 +11,11 @@ on:
     branches: ["Arcticons-Pages"]
     paths:
       - 'docs/**'
-      - '!docs/extracted_png/**'
+      - '!docs/extracted_png/*'
+      - '!docs/assets/request.txt'
 
   workflow_run:
-    workflows: [Update Requests]
+    workflows: [Update Colormapping]
     types:
       - completed
   # Allows you to run this workflow manually from the Actions tab
