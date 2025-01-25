@@ -53,6 +53,19 @@ fetch(`assets/requests.json`)
                 return !/^#\d* top\b/.test(category); // Exclude based on the regex
             });
             filteredCategories.forEach(category => AllCategories.add(category));
+            // Convert Set to Array
+            let categoriesArray = Array.from(AllCategories);
+            // Extract 'App' and 'Game' from the array
+            let specialCategories = categoriesArray.filter(cat => cat === "App" || cat === "Game");
+            specialCategories.sort(); // Sort 'App' and 'Game' alphabetically
+            // Remove 'App' and 'Game' from the original array
+            categoriesArray = categoriesArray.filter(cat => cat !== "App" && cat !== "Game");
+            // Shuffle the remaining categories
+            categoriesArray = shuffleArray(categoriesArray);
+            // Combine 'App' and 'Game' at the front
+            categoriesArray = [...specialCategories, ...categoriesArray];
+            // Convert the array back to a Set
+            AllCategories = new Set(categoriesArray);
 
             // Generate links (if available)
             const appLinks = [
@@ -139,6 +152,15 @@ function setCategory() {
         categoriesDiv.appendChild(button); // Add the button to the div
     });
 
+}
+
+// Function to shuffle an array
+function shuffleArray(arr) {
+    for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]]; // Swap elements
+    }
+    return arr;
 }
 
 // Function to toggle button activation
@@ -458,9 +480,9 @@ function clearCategory() {
     showClearCategory();
     document.querySelectorAll('#category-button').forEach(btn => {
         btn.removeAttribute('activated');
-      });
-      filterCategory();
-    }
+    });
+    filterCategory();
+}
 
 // Search function
 const filterAppEntries = debounce(() => {
@@ -635,8 +657,8 @@ function sortData(sortingDirection, columnIndex, sortedData) {
             }
 
         } else if (columnIndex === 3) {
-            const cellA = parseDownloadValue(getCellValue(a, columnIndex),sortingDirection);
-            const cellB = parseDownloadValue(getCellValue(b, columnIndex),sortingDirection);
+            const cellA = parseDownloadValue(getCellValue(a, columnIndex), sortingDirection);
+            const cellB = parseDownloadValue(getCellValue(b, columnIndex), sortingDirection);
             // Handle numerical values
             if (!isNaN(cellA) && !isNaN(cellB)) {
                 return sortingDirection === 'asc' ? cellA - cellB : cellB - cellA;
@@ -654,7 +676,7 @@ function sortData(sortingDirection, columnIndex, sortedData) {
 // Convert download string to a numeric value for sorting
 function parseDownloadValue(value, sortingDirection) {
     console
-    if (value === "no_data") return sortingDirection === 'asc' ?  9999999999999999999999: -1; // Assign a low value for "AppNotFound" to push it to the end
+    if (value === "no_data") return sortingDirection === 'asc' ? 9999999999999999999999 : -1; // Assign a low value for "AppNotFound" to push it to the end
     if (value.endsWith("+")) value = value.slice(0, -1); // Remove the "+" at the end
     if (value.endsWith("K")) return parseFloat(value) * 1000; // Convert "k" to 1000
     if (value.endsWith("M")) return parseFloat(value) * 1000000; // Convert "M" to 1,000,000

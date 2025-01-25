@@ -6,7 +6,7 @@ from collections import defaultdict
 import json
 from pathlib import Path
 import random
-from lxml import html
+from bs4 import BeautifulSoup
 
 # Regular expression for parsing blocks
 request_block_query = re.compile(
@@ -57,6 +57,24 @@ def extract_spans_below_div(page_content, parent_class, target_class):
         print(f"Error while extracting spans: {e}")
         return []
 
+def app_or_game(page_content):
+    soup = BeautifulSoup(page_content, 'html.parser')
+
+    # Locate the element using a CSS selector or XPath-equivalent in BeautifulSoup
+    element = soup.select_one('.qZmL0 > div:nth-child(1) > c-wiz:nth-child(2) > div:nth-child(1) > section:nth-child(1) > header:nth-child(1) > div:nth-child(1) > div:nth-child(1) > h2:nth-child(1)')
+
+    # Check if the element exists
+    if element:
+        if element.text.__contains__("game"):
+            return "Game"
+        elif element.text.__contains__("app"):
+            return "App"
+        else:
+            print(element.text)
+            return None
+    else:
+        print("Element not found.")
+        return None
 
 # Asynchronous function to fetch app data
 async def fetch_app_data(app_id, session):
@@ -87,7 +105,7 @@ async def fetch_app_data(app_id, session):
                 categories = extract_spans_below_div(
                     page_content, "Uc6QCc", "VfPpkd-vQzf8d"
                 )
-
+                categories.append(app_or_game(page_content))
                 return {"Downloads": downloads, "Categories": categories}
             else:
                 print(f"HTTP Error {response.status} for app_id={app_id}")
@@ -109,8 +127,8 @@ async def fetch_all_app_data(app_list):
 
         # Process tasks in batches
         results = []
-        for i in range(0, len(tasks), 500):  # Batch size of 10
-            batch = tasks[i : i + 500]
+        for i in range(0, len(tasks), 400):  # Batch size of 10
+            batch = tasks[i : i + 400]
             batch_results = await asyncio.gather(*batch)  # Await batch execution
             results.extend(batch_results)
             await asyncio.sleep(
