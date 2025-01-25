@@ -436,6 +436,7 @@ document.getElementById('clear-search_category').addEventListener('click', clear
 function clearSearchCategory() {
     console.log("Clearing search category");
     showClearSearchCategory();
+    findCategory();
 }
 
 
@@ -612,8 +613,8 @@ function sortData(sortingDirection, columnIndex, sortedData) {
             }
 
         } else if (columnIndex === 3) {
-            const cellA = parseDownloadValue(getCellValue(a, columnIndex));
-            const cellB = parseDownloadValue(getCellValue(b, columnIndex));
+            const cellA = parseDownloadValue(getCellValue(a, columnIndex),sortingDirection);
+            const cellB = parseDownloadValue(getCellValue(b, columnIndex),sortingDirection);
             // Handle numerical values
             if (!isNaN(cellA) && !isNaN(cellB)) {
                 return sortingDirection === 'asc' ? cellA - cellB : cellB - cellA;
@@ -629,12 +630,13 @@ function sortData(sortingDirection, columnIndex, sortedData) {
 }
 
 // Convert download string to a numeric value for sorting
-function parseDownloadValue(value) {
-    if (value === "no_data") return -1; // Assign a low value for "AppNotFound" to push it to the end
+function parseDownloadValue(value, sortingDirection) {
+    console
+    if (value === "no_data") return sortingDirection === 'asc' ?  9999999999999999999999: -1; // Assign a low value for "AppNotFound" to push it to the end
     if (value.endsWith("+")) value = value.slice(0, -1); // Remove the "+" at the end
-    if (value.endsWith("k")) return parseFloat(value) * 1_000; // Convert "k" to 1000
-    if (value.endsWith("M")) return parseFloat(value) * 1_000_000; // Convert "M" to 1,000,000
-    if (value.endsWith("B")) return parseFloat(value) * 1_000_000_000; // Convert "B" to 1,000,000,000
+    if (value.endsWith("K")) return parseFloat(value) * 1000; // Convert "k" to 1000
+    if (value.endsWith("M")) return parseFloat(value) * 1000000; // Convert "M" to 1,000,000
+    if (value.endsWith("B")) return parseFloat(value) * 1000000000; // Convert "B" to 1,000,000,000
     return parseFloat(value); // Return the numeric value for simple numbers like "100"
 }
 
