@@ -87,7 +87,7 @@ async def fetch_app_data(app_id, session):
             "/html/body/c-wiz[2]/div/div/div[1]/div/div[1]/div/div/c-wiz/div[2]/div[2]/div/div/div[2]/div[1]",
             "/html/body/c-wiz[2]/div/div/div[1]/div/div[1]/div/div/c-wiz/div[2]/div[2]/div/div/div[3]/div[1]",
         ]
-        async with session.get(play_store_url, timeout=30) as response:
+        async with session.get(play_store_url, timeout=60) as response:
             if response.status == 200:
                 page_content = await response.text()
                 tree = html.fromstring(page_content)
@@ -108,7 +108,8 @@ async def fetch_app_data(app_id, session):
                 categories.append(app_or_game(page_content))
                 return {"Downloads": downloads, "Categories": categories}
             else:
-                print(f"HTTP Error {response.status} for app_id={app_id}")
+                if response.status != 404:
+                    print(f"HTTP Error {response.status} for app_id={app_id}")
                 return {"Downloads": "no_data", "Categories": []}
     except Exception as e:
         # Log the full exception traceback for debugging
