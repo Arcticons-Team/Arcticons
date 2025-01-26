@@ -2625,9 +2625,13 @@
 	<item component="ComponentInfo{org.liberty.android.fantastischmemo/org.liberty.android.fantastischmemo.ui.AnyMemo}" drawable="anymemo"/>
 
 	<!-- AnySoftKeyboard -->
-	<item component="ComponentInfo{com.menny.android.anysoftkeyboard/com.menny.android.anysoftkeyboard.LauncherSettingsActivity}" drawable="keyboard"/>
-	<item component="ComponentInfo{com.anysoftkeyboard.languagepack.russian2/com.anysoftkeyboard.languagepack.russian2.MainActivity}" drawable="keyboard"/>
-	<item component="ComponentInfo{com.anysoftkeyboard.languagepack.german/com.anysoftkeyboard.languagepack.german.MainActivity}" drawable="keyboard"/>
+	<item component="ComponentInfo{com.menny.android.anysoftkeyboard/com.menny.android.anysoftkeyboard.LauncherSettingsActivity}" drawable="anysoftkeyboard"/>
+	<item component="ComponentInfo{com.anysoftkeyboard.languagepack.dutch/com.anysoftkeyboard.languagepack.dutch.MainActivity}" drawable="anysoftkeyboard_dutch"/>
+	<item component="ComponentInfo{com.anysoftkeyboard.languagepack.russian2/com.anysoftkeyboard.languagepack.russian2.MainActivity}" drawable="anysoftkeyboard_dutch"/>
+	<item component="ComponentInfo{com.anysoftkeyboard.languagepack.german/com.anysoftkeyboard.languagepack.german.MainActivity}" drawable="anysoftkeyboard_dutch"/>
+	<item component="ComponentInfo{org.herrlado.ask.languagepack.czech/org.herrlado.ask.languagepack.czech.MainActivity}" drawable="anysoftkeyboard_czech"/>
+	<item component="ComponentInfo{com.anysoftkeyboard.languagepack.arabic/com.anysoftkeyboard.languagepack.arabic.MainActivity}" drawable="anysoftkeyboard_arabic"/>
+	<item component="ComponentInfo{com.anysoftkeyboard.languagepack.tamazight/com.anysoftkeyboard.languagepack.tamazight.MainActivity}" drawable="anysoftkeyboard_tamazight"/>
 
 	<!-- Anything to PiP -->
 	<item component="ComponentInfo{com.vitolaminafra.imagetopip/com.vitolaminafra.imagetopip.MainActivity}" drawable="anythingtopip"/>
@@ -5619,6 +5623,8 @@
 	<!-- Blue Archive -->
 	<item component="ComponentInfo{com.nexon.bluearchive/com.nexon.bluearchive.MxUnityPlayerActivity}" drawable="blue_archive"/>
 	<item component="ComponentInfo{com.YostarJP.BlueArchive/com.yostarjp.bluearchive.MxUnityPlayerActivity}" drawable="blue_archive"/>
+	<item component="ComponentInfo{com.nexon.bluearchivegalaxy/com.nexon.bluearchivegalaxy.MxUnityPlayerActivity}" drawable="blue_archive"/>
+	<item component="ComponentInfo{com.nexon.bluearchiveone/com.nexon.bluearchiveone.MxUnityPlayerActivity}" drawable="blue_archive"/>
 
 	<!-- blue Cinema -->
 	<item component="ComponentInfo{pl.lsisoftware.bluecinema.prod/pl.lsisoftware.bluecinema.activities.splash.SplashActivity}" drawable="blue_cinema"/>
@@ -19035,9 +19041,12 @@
 
 	<!-- Honor of Kings -->
 	<item component="ComponentInfo{com.levelinfinite.sgameGlobal/com.levelinfinite.sgameGlobal.SGameGlobalActivity}" drawable="honor_of_kings"/>
+	<item component="ComponentInfo{com.levelinfinite.sgameGlobal.midaspay/com.levelinfinite.sgameGlobal.SGameGlobalActivity}" drawable="honor_of_kings"/>
+	<item component="ComponentInfo{com.levelinfinite.sgameGlobalTY/com.levelinfinite.sgameGlobalTY.SGameGlobalTYActivity}" drawable="honor_of_kings"/>
 
 	<!-- HONOR Store -->
 	<item component="ComponentInfo{com.hihonor.hstore.global/com.honor.global.activity.LandingActivity}" drawable="honor_store"/>
+	<item component="ComponentInfo{com.honor.global/com.honor.global.activity.LandingActivity}" drawable="honor_store"/>
 
 	<!-- Honor Suite -->
 	<item component="ComponentInfo{com.hihonor.systemmanager/com.hihonor.systemmanager.mainscreen.MainScreenActivity}" drawable="hihonor_systemmanager"/>
@@ -19373,6 +19382,8 @@
 
 	<!-- Hungry Shark -->
 	<item component="ComponentInfo{com.fgol.HungrySharkEvolution/com.unity3d.player.UnityPlayerActivity}" drawable="hungry_shark"/>
+	<item component="ComponentInfo{com.ubisoft.hungrysharkworld/com.unity3d.player.UnityPlayerActivity}" drawable="hungry_shark"/>
+	<item component="ComponentInfo{com.ubisoft.hungrysharkworld/com.releasedata.ReleaseDataActivity.SplashActivityKing}" drawable="hungry_shark"/>
 
 	<!-- Huntington -->
 	<item component="ComponentInfo{com.huntington.m/com.huntington.mobile.mobile.MainActivity}" drawable="huntington"/>
@@ -31791,6 +31802,7 @@
 
 	<!-- PeerTube -->
 	<item component="ComponentInfo{org.framasoft.peertube/org.framasoft.peertube.MainActivity}" drawable="peertube"/>
+	<item component="ComponentInfo{org.framasoft.peertube.nightly/org.framasoft.peertube.MainActivity}" drawable="peertube"/>
 
 	<!-- PeerTube Redirect -->
 	<item component="ComponentInfo{dev.zwander.peertuberedirect/dev.zwander.peertuberedirect.MainActivity}" drawable="mastodon_redirect"/>
@@ -34638,6 +34650,7 @@
 
 	<!-- Rakuten Kobo -->
 	<item component="ComponentInfo{com.kobobooks.android.orbile/com.kobobooks.android.screens.AppLoading}" drawable="rakuten_kobo"/>
+	<item component="ComponentInfo{jp.co.rakuten.kobo/com.kobobooks.android.screens.AppLoading}" drawable="rakuten_kobo"/>
 
 	<!-- Rakuten Link -->
 	<item component="ComponentInfo{jp.co.rakuten.mobile.rcs/jp.co.rakuten.mobile.rcs.main.launcher.LauncherActivity}" drawable="rakuten_link"/>
@@ -34756,6 +34769,7 @@
 
 	<!-- Rboard Theme Manager V3 -->
 	<item component="ComponentInfo{de.dertyp7214.rboardthememanager.debug/de.dertyp7214.rboardthememanager.screens.MainActivity}" drawable="rboard_theme_manager_v3"/>
+	<item component="ComponentInfo{de.dertyp7214.rboardthememanager/de.dertyp7214.rboardthememanager.screens.MainActivity}" drawable="rboard_theme_manager_v3"/>
 
 	<!-- RBRU App -->
 	<item component="ComponentInfo{com.ktbuniversity.rbrumobile/com.ktb_uapp.MainActivity}" drawable="rbru_app"/>
