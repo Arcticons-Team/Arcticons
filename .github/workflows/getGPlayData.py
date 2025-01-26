@@ -1,12 +1,13 @@
 import re
+import re
 import aiohttp
 import asyncio
 from lxml import html
 from collections import defaultdict
 import json
 from pathlib import Path
-import random
 from bs4 import BeautifulSoup
+from aiohttp import ClientTimeout
 
 # Regular expression for parsing blocks
 request_block_query = re.compile(
@@ -57,11 +58,14 @@ def extract_spans_below_div(page_content, parent_class, target_class):
         print(f"Error while extracting spans: {e}")
         return []
 
+
 def app_or_game(page_content):
-    soup = BeautifulSoup(page_content, 'html.parser')
+    soup = BeautifulSoup(page_content, "html.parser")
 
     # Locate the element using a CSS selector or XPath-equivalent in BeautifulSoup
-    element = soup.select_one('.qZmL0 > div:nth-child(1) > c-wiz:nth-child(2) > div:nth-child(1) > section:nth-child(1) > header:nth-child(1) > div:nth-child(1) > div:nth-child(1) > h2:nth-child(1)')
+    element = soup.select_one(
+        ".qZmL0 > div:nth-child(1) > c-wiz:nth-child(2) > div:nth-child(1) > section:nth-child(1) > header:nth-child(1) > div:nth-child(1) > div:nth-child(1) > h2:nth-child(1)"
+    )
 
     # Check if the element exists
     if element:
@@ -76,18 +80,17 @@ def app_or_game(page_content):
         print("Element not found.")
         return None
 
-# Asynchronous function to fetch app data
-async def fetch_app_data(app_id, session):
 
+# Asynchronous function to fetch app data
+async def fetch_app_data(app_id, session, retries=3, delay=1):
+    play_store_url = f"https://play.google.com/store/apps/details?id={app_id}"
     try:
-        # Construct the URL
-        play_store_url = f"https://play.google.com/store/apps/details?id={app_id}"
         xpaths = [
             "/html/body/c-wiz[2]/div/div/div[1]/div/div[1]/div/div/c-wiz/div[2]/div[2]/div/div/div[1]/div[1]",
             "/html/body/c-wiz[2]/div/div/div[1]/div/div[1]/div/div/c-wiz/div[2]/div[2]/div/div/div[2]/div[1]",
             "/html/body/c-wiz[2]/div/div/div[1]/div/div[1]/div/div/c-wiz/div[2]/div[2]/div/div/div[3]/div[1]",
         ]
-        async with session.get(play_store_url, timeout=60) as response:
+        async with session.get(play_store_url) as response:
             if response.status == 200:
                 page_content = await response.text()
                 tree = html.fromstring(page_content)
@@ -99,7 +102,8 @@ async def fetch_app_data(app_id, session):
                         downloads = data[0].text
                         break
                 else:
-                    downloads = "Data not found"
+                    print(f"Downloads not found for app_id={app_id}")
+                    downloads = "no_data"
 
                 # Extract Categories
                 categories = extract_spans_below_div(
@@ -112,31 +116,27 @@ async def fetch_app_data(app_id, session):
                     print(f"HTTP Error {response.status} for app_id={app_id}")
                 return {"Downloads": "no_data", "Categories": []}
     except Exception as e:
-        # Log the full exception traceback for debugging
-        print(f"Exception occurred while fetching app_id={app_id} : {str(e)}")
-        return {"Downloads": "no_data", "Categories": []}
+        if retries > 0:
+            await asyncio.sleep(delay)
+            return await fetch_app_data(app_id, session, retries - 1, delay * 2)
+        print(f"Failed for app_id={app_id}: {e}")
+        return {"Downloads": "no_data"}
 
 
 # Asynchronous task manager
-async def fetch_all_app_data(app_list):
-    async with aiohttp.ClientSession() as session:
-        tasks = []
-        for app in app_list:
-            app_id = app["ComponentInfo"].split("/")[0]
-            # Append coroutine task to the task list
-            tasks.append(fetch_app_data(app_id, session))
+async def fetch_all_app_data(app_list, concurrency=10):
+    timeout = ClientTimeout(total=60)
+    semaphore = asyncio.Semaphore(concurrency)  # Limit concurrent requests
 
-        # Process tasks in batches
-        results = []
-        for i in range(0, len(tasks), 400):  # Batch size of 10
-            batch = tasks[i : i + 400]
-            batch_results = await asyncio.gather(*batch)  # Await batch execution
-            results.extend(batch_results)
-            await asyncio.sleep(
-                random.uniform(1, 3)
-            )  # Add delay to avoid rate limiting
+    async with aiohttp.ClientSession(timeout=timeout) as session:
 
-        return results
+        async def sem_task(app):
+            async with semaphore:
+                app_id = app["ComponentInfo"].split("/")[0]
+                return await fetch_app_data(app_id, session)
+
+        tasks = [sem_task(app) for app in app_list]
+        return await asyncio.gather(*tasks)
 
 
 # Save results to a JSON file
