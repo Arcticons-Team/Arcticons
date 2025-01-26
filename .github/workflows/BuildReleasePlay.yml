@@ -104,6 +104,8 @@ jobs:
 
     build:
       name: Build Arcticons APK
+      environment:
+        name: ReleaseGithub
       if: startsWith(github.ref, 'refs/tags/') && (github.event_name != 'workflow_dispatch' || inputs.run_debug == 'false')
       runs-on: ubuntu-latest
       steps:
