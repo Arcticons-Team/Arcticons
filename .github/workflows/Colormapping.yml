@@ -84,7 +84,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: requestjson
-          path: docs/assets/request.json
+          path: docs/assets/requests.json
 
   Push_Files:
     needs: [Create_Colormappping, Create_requestjson]
@@ -97,6 +97,9 @@ jobs:
       
       - name: Download Colormapping and Requestjson
         uses: actions/download-artifact@v4
+        with:
+          path: docs/assets
+          merge-multiple: true
 
       - name: Commit and Push Changes
         run: |
