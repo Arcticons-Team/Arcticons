@@ -156,30 +156,15 @@
     <string name="regular_request_email_subject"></string>
     <string name="premium_request_email_subject"></string>
 
-    <!--
-        CONFIG: WALLPAPERS
-    -->
-    <!-- Wallpaper JSON link
-        If your icon pack doesn't contain any wallpaper, just leave this empty
-        <string name="wallpaper_json"></string>
-
-        If you want to separate wallpaper app from icon pack and keep wallpapers section shown in navigation drawer,
-        just put your wallpaper app's package name here
-        ex: com.dm.wallpaper.board.demo
-        <string name="wallpaper_json">com.dm.wallpaper.board.demo</string>
-        Now when "Wallpaper" section is selected in your icon pack app's navigation drawer,
-        your wallpaper app will be launched if it's installed. If it's not installed, then the Play Store page
-        will be opened to install your wallpaper app. -->
-    <string name="wallpaper_json"></string>
 
     <!-- Enable wallpaper downloading
         If disabled, your users will only be able to apply wallpapers from the dashboard.
         They will not be able to to download wallpapers.  -->
-    <bool name="enable_wallpaper_download">false</bool>
+    <bool name="enable_wallpaper_download">true</bool>
 
     <!-- Show name and author below wallpapers
         If you don't want to show name and author below wallpapers, just disable it (set it to `false`) -->
-    <bool name="wallpaper_show_name_author">false</bool>
+    <bool name="wallpaper_show_name_author">true</bool>
 
     <!-- Wallpapers grid preview style
         Available choices:
@@ -187,7 +172,7 @@
         - landscape
         - portrait
     -->
-    <string name="wallpaper_grid_preview_style">square</string>
+    <string name="wallpaper_grid_preview_style">portrait</string>
 
 
     <!--
