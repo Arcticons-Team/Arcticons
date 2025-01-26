@@ -21,7 +21,7 @@ jobs:
         environment:
           name: Release-Play
         name: Build Arcticons Bundle
-        if: startsWith(github.ref, 'refs/tags/') && ${{ github.event_name != 'workflow_dispatch' || inputs.run_debug == 'false' }}
+        if: startsWith(github.ref, 'refs/tags/') && (github.event_name != 'workflow_dispatch' || inputs.run_debug == 'false')
 
         runs-on: ubuntu-latest
         steps:
@@ -104,7 +104,7 @@ jobs:
 
     build:
       name: Build Arcticons APK
-      if: startsWith(github.ref, 'refs/tags/') && ${{ github.event_name != 'workflow_dispatch' || inputs.run_debug == 'false' }}
+      if: startsWith(github.ref, 'refs/tags/') && (github.event_name != 'workflow_dispatch' || inputs.run_debug == 'false')
       runs-on: ubuntu-latest
       steps:
           - name: Checking out branch
