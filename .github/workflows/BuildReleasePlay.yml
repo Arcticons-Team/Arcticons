@@ -152,7 +152,7 @@ jobs:
               GH_TOKEN: ${{ github.token }}
 
     debug:
-      name: Build Arcticons APK
+      name: Build Arcticons Debug APK
       runs-on: ubuntu-latest
       if: ${{ github.event_name == 'workflow_dispatch' && inputs.run_debug == 'true' }}
       steps:
