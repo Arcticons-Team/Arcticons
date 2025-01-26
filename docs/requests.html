@@ -7,7 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Requested Apps</title>
     <link rel="icon" type="image/png" href="img/arcticons/icon.png" />
-    <link rel="stylesheet" href="css/requests.css" />
+    <link rel="stylesheet" href="css/dashboard-main.css" />
+    <link rel="stylesheet" href="css/dashboard-header.css" />
+    <link rel="stylesheet" href="css/dashboard-table-main.css" />
 </head>
 
 <body>
@@ -20,6 +22,13 @@
         <!-- Search Container -->
         <div id="search-container">
             <input type="text" id="search-input" oninput="filterAppEntries()" placeholder="Search">
+        </div>
+        <div id="random-container">
+			<button id="random-reset-button">Reset &#10006;</button>
+			<!-- Number of icons to random -->
+			<input id="random-number-input" type="number" value="10" title="Number of icons to randomly select"/>
+            <!-- Button for Random Icons -->
+            <button id="random-button"><span class="lg-view">✨ I'm feelin' lucky ✨</span><span class="sm-view">✨</span></button>
         </div>
         <div id="updatable-container">
             <!-- Button for Updatable Site -->
@@ -45,6 +54,12 @@
             <tbody id="app-entries"></tbody>
         </table>
     </div>
+
+    <div id="preview-overlay">
+        <span class="close-button">&times;</span>
+        <!-- Preview image will be inserted here -->
+        <img id="preview-image" src="" alt="Preview">
+      </div>
 
     <!-- Copy Notification -->
     <div id="copy-notification"></div>

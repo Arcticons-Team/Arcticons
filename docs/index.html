@@ -21,21 +21,33 @@
     <link rel="icon" type="image/png" href="img/arcticons/icon.png" />
     <link rel="stylesheet" href="css/arcticons.css" />
     <script src="js/arcticonssearch.js"></script>
+
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>  
+      $(function(){
+        $("#header").load("html/header.html"); 
+        $("#footer").load("html/footer.html"); 
+      });
+    </script>
   </head>
   <body>
-    <header>
+
+    <div id="header"></div>
+
+    <div class="splash">
       <img src="img/arcticons/icon.png">
       <h1>Arcticons</h1>
       <p style="color: #fff; text-align: center;"> A monotone line-based icon pack for Android.</p>
-      <ul>
-        <ul>
-          <button onclick="window.location.href='#dark';">Dark</button>
-          <button onclick="window.location.href='#light';">Light</button>
-          <button onclick="window.location.href='#you';">You</button>
-          <button onclick="window.location.href='#daynight';">Day & Night</button>
-        </ul>
-      </ul>
-    </header>
+      <div class="button-splash">
+          <a href="#dark"><button>Dark</button></a>
+          <a href="#light"><button>Light</button></a>
+          <a href="#you"><button>You</button></a>
+          <a href="#daynight"><button>Day & Night</button></a>
+      </div>
+    </div>
 
     <hr class="inv2">
 
@@ -59,29 +71,45 @@
             <h2><span style="font-weight: 400;">Arcticons</span></h2>
             <p>The first flavor to release in the Arcticons collection.<br>A must have for your dark-themed setup. </p>
           </div>
+
           <ul>
             <p>Get it on:</p>
-            <button class="dark" onclick="window.open('https://play.google.com/store/apps/details?id=com.donnnno.arcticons')">
-              <img src="img/play.svg">
-              Google Play
-            </button><hr class="inv">
-            <button class="dark" onclick="window.open('https://f-droid.org/packages/com.donnnno.arcticons/')">
-              <img src="img/fdroid.svg">
-              F-Droid
-            </button><hr class="inv">
-            <button class="dark" onclick="window.open('https://github.com/Donnnno/Arcticons/releases/')">
-              <img src="img/github.svg">
-              GitHub
-            </button><hr class="inv">
-            <button class="dark" onclick="window.open('https://accrescent.app/app/com.donnnno.arcticons')">
-              <img src="img/accrescent.svg">
-              Accrescent
-            </button><hr class="inv">
-            <button class="dark" onclick="window.open('https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22com.donnnno.arcticons%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2Fdonnnno%2Farcticons%22%2C%22author%22%3A%22donnnno%22%2C%22name%22%3A%22Arcticons%22%2C%22preferredApkIndex%22%3A0%2C%22additionalSettings%22%3A%22%7B%5C%22includePrereleases%5C%22%3Afalse%2C%5C%22fallbackToOlderReleases%5C%22%3Atrue%2C%5C%22filterReleaseTitlesByRegEx%5C%22%3A%5C%22%5C%22%2C%5C%22filterReleaseNotesByRegEx%5C%22%3A%5C%22%5C%22%2C%5C%22verifyLatestTag%5C%22%3Afalse%2C%5C%22dontSortReleasesList%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Afalse%2C%5C%22trackOnly%5C%22%3Afalse%2C%5C%22versionExtractionRegEx%5C%22%3A%5C%22%5C%22%2C%5C%22matchGroupToUse%5C%22%3A%5C%22%5C%22%2C%5C%22versionDetection%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Afalse%2C%5C%22useVersionCodeAsOSVersion%5C%22%3Afalse%2C%5C%22apkFilterRegEx%5C%22%3A%5C%22.*-normal-release.*%5C%22%2C%5C%22invertAPKFilter%5C%22%3Afalse%2C%5C%22autoApkFilterByArch%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Arcticons%20White%20%5C%22%2C%5C%22exemptFromBackgroundUpdates%5C%22%3Afalse%2C%5C%22skipUpdateNotifications%5C%22%3Afalse%2C%5C%22about%5C%22%3A%5C%22%5C%22%7D%22%7D')">
-              <img src="img/obtainium.svg">
-              Obtainium
-            </button>
+            <a href="https://play.google.com/store/apps/details?id=com.donnnno.arcticons">
+              <button class="dark">
+                <img src="img/play.svg">
+                Google Play
+              </button>
+            </a>
+            <hr class="inv">
+            <a href="https://f-droid.org/packages/com.donnnno.arcticons">
+              <button class="dark">
+                <img src="img/fdroid.svg">
+                F-Droid
+              </button>
+            </a>
+            <hr class="inv">
+            <a href="https://accrescent.app/app/com.donnnno.arcticons">
+              <button class="dark">
+                <img src="img/accrescent.svg">
+                Accrescent
+              </button>
+            </a>
+            <hr class="inv">
+            <a href="https://github.com/Donnnno/Arcticons/releases">
+              <button class="dark">
+                <img src="img/github.svg">
+                Github
+              </button>
+            </a>
+            <hr class="inv">
+            <a href="https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22com.donnnno.arcticons%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2Fdonnnno%2Farcticons%22%2C%22author%22%3A%22donnnno%22%2C%22name%22%3A%22Arcticons%22%2C%22preferredApkIndex%22%3A0%2C%22additionalSettings%22%3A%22%7B%5C%22includePrereleases%5C%22%3Afalse%2C%5C%22fallbackToOlderReleases%5C%22%3Atrue%2C%5C%22filterReleaseTitlesByRegEx%5C%22%3A%5C%22%5C%22%2C%5C%22filterReleaseNotesByRegEx%5C%22%3A%5C%22%5C%22%2C%5C%22verifyLatestTag%5C%22%3Afalse%2C%5C%22dontSortReleasesList%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Afalse%2C%5C%22trackOnly%5C%22%3Afalse%2C%5C%22versionExtractionRegEx%5C%22%3A%5C%22%5C%22%2C%5C%22matchGroupToUse%5C%22%3A%5C%22%5C%22%2C%5C%22versionDetection%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Afalse%2C%5C%22useVersionCodeAsOSVersion%5C%22%3Afalse%2C%5C%22apkFilterRegEx%5C%22%3A%5C%22.*-normal-release.*%5C%22%2C%5C%22invertAPKFilter%5C%22%3Afalse%2C%5C%22autoApkFilterByArch%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Arcticons%20White%20%5C%22%2C%5C%22exemptFromBackgroundUpdates%5C%22%3Afalse%2C%5C%22skipUpdateNotifications%5C%22%3Afalse%2C%5C%22about%5C%22%3A%5C%22%5C%22%7D%22%7D">
+              <button class="dark">
+                <img src="img/obtainium.svg">
+                Obtainium
+              </button>
+            </a>
           </ul>
+
         </div>  
       </div>
 
@@ -99,30 +127,45 @@
               <h2 class="dark"><span style="font-weight: 400;">Arcticons</span> Black</h2>
               <p class="dark">Light mode users, we didn't forget you! Light brings the excact same icons to you, but in black</p>
             </div>
-          
+            
             <ul>
-              <p class="dark">Get it on:</p>
-              <button class="light" onclick="window.open('https://play.google.com/store/apps/details?id=com.donnnno.arcticons.light')">
+            <p>Get it on:</p>
+            <a href="https://play.google.com/store/apps/details?id=com.donnnno.arcticons.light">
+              <button class="light">
                 <img src="img/play.svg">
                 Google Play
-              </button><hr class="inv">
-              <button class="light" onclick="window.open('https://f-droid.org/packages/com.donnnno.arcticons.light/')">
+              </button>
+            </a>
+            <hr class="inv">
+            <a href="https://f-droid.org/packages/com.donnnno.arcticons.light">
+              <button class="light">
                 <img src="img/fdroid.svg">
                 F-Droid
-              </button><hr class="inv">
-              <button class="light" onclick="window.open('https://github.com/Donnnno/Arcticons/releases/')">
-                <img src="img/github.svg">
-                GitHub
-              </button><hr class="inv">
-              <button class="light" onclick="window.open('https://accrescent.app/app/com.donnnno.arcticons.light')">
+              </button>
+            </a>
+            <hr class="inv">
+            <a href="https://accrescent.app/app/com.donnnno.arcticons.light">
+              <button class="light">
                 <img src="img/accrescent.svg">
                 Accrescent
-              </button><hr class="inv">
-              <button class="light" onclick="window.open('https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22com.donnnno.arcticons.light%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2Fdonnnno%2Farcticons%22%2C%22author%22%3A%22donnnno%22%2C%22name%22%3A%22Arcticons%20Black%22%2C%22preferredApkIndex%22%3A0%2C%22additionalSettings%22%3A%22%7B%5C%22includePrereleases%5C%22%3Afalse%2C%5C%22fallbackToOlderReleases%5C%22%3Atrue%2C%5C%22filterReleaseTitlesByRegEx%5C%22%3A%5C%22%5C%22%2C%5C%22filterReleaseNotesByRegEx%5C%22%3A%5C%22%5C%22%2C%5C%22verifyLatestTag%5C%22%3Afalse%2C%5C%22dontSortReleasesList%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Afalse%2C%5C%22trackOnly%5C%22%3Afalse%2C%5C%22versionExtractionRegEx%5C%22%3A%5C%22%5C%22%2C%5C%22matchGroupToUse%5C%22%3A%5C%22%5C%22%2C%5C%22versionDetection%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Afalse%2C%5C%22useVersionCodeAsOSVersion%5C%22%3Afalse%2C%5C%22apkFilterRegEx%5C%22%3A%5C%22.*-black-release.*%5C%22%2C%5C%22invertAPKFilter%5C%22%3Afalse%2C%5C%22autoApkFilterByArch%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22%Arcticons%20Black5C%22%2C%5C%22exemptFromBackgroundUpdates%5C%22%3Afalse%2C%5C%22skipUpdateNotifications%5C%22%3Afalse%2C%5C%22about%5C%22%3A%5C%22%5C%22%7D%22%7D')">
+              </button>
+            </a>
+            <hr class="inv">
+            <a href="https://github.com/Donnnno/Arcticons/releases">
+              <button class="light">
+                <img src="img/github.svg">
+                Github
+              </button>
+            </a>
+            <hr class="inv">
+            <a href="https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22com.donnnno.arcticons.light%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2Fdonnnno%2Farcticons%22%2C%22author%22%3A%22donnnno%22%2C%22name%22%3A%22Arcticons%20Black%22%2C%22preferredApkIndex%22%3A0%2C%22additionalSettings%22%3A%22%7B%5C%22includePrereleases%5C%22%3Afalse%2C%5C%22fallbackToOlderReleases%5C%22%3Atrue%2C%5C%22filterReleaseTitlesByRegEx%5C%22%3A%5C%22%5C%22%2C%5C%22filterReleaseNotesByRegEx%5C%22%3A%5C%22%5C%22%2C%5C%22verifyLatestTag%5C%22%3Afalse%2C%5C%22dontSortReleasesList%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Afalse%2C%5C%22trackOnly%5C%22%3Afalse%2C%5C%22versionExtractionRegEx%5C%22%3A%5C%22%5C%22%2C%5C%22matchGroupToUse%5C%22%3A%5C%22%5C%22%2C%5C%22versionDetection%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Afalse%2C%5C%22useVersionCodeAsOSVersion%5C%22%3Afalse%2C%5C%22apkFilterRegEx%5C%22%3A%5C%22.*-black-release.*%5C%22%2C%5C%22invertAPKFilter%5C%22%3Afalse%2C%5C%22autoApkFilterByArch%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22%Arcticons%20Black5C%22%2C%5C%22exemptFromBackgroundUpdates%5C%22%3Afalse%2C%5C%22skipUpdateNotifications%5C%22%3Afalse%2C%5C%22about%5C%22%3A%5C%22%5C%22%7D%22%7D">
+              <button class="light">
                 <img src="img/obtainium.svg">
                 Obtainium
               </button>
-            </ul>
+            </a>
+          </ul>
+
           </div>  
           <div><img src="img/phone_light.webp" width="80%" class="phone"></div>  
 
@@ -146,27 +189,42 @@
 
             <ul>
               <p>Get it on:</p>
-              <button class="dark" onclick="window.open('https://play.google.com/store/apps/details?id=com.donnnno.arcticons.you.play')">
-                <img src="img/play.svg">
-                Google Play
-              </button><hr class="inv">
-              <button class="dark" onclick="window.open('https://f-droid.org/packages/com.donnnno.arcticons.you/')">
-                <img src="img/fdroid.svg">
-                F-Droid
-              </button><hr class="inv">
-              <button class="dark" onclick="window.open('https://github.com/Donnnno/Arcticons/releases/')">
-                <img src="img/github.svg">
-                GitHub
-              </button><hr class="inv">
-              <button class="dark" onclick="window.open('https://accrescent.app/app/com.donnnno.arcticons.you')">
-                <img src="img/accrescent.svg">
-                Accrescent
-              </button><hr class="inv">
-              <button class="dark" onclick="window.open('https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22com.donnnno.arcticons.you%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2Fdonnnno%2Farcticons%22%2C%22author%22%3A%22donnnno%22%2C%22name%22%3A%22Arcticons%20Material%20You%22%2C%22preferredApkIndex%22%3A0%2C%22additionalSettings%22%3A%22%7B%5C%22includePrereleases%5C%22%3Afalse%2C%5C%22fallbackToOlderReleases%5C%22%3Atrue%2C%5C%22filterReleaseTitlesByRegEx%5C%22%3A%5C%22%5C%22%2C%5C%22filterReleaseNotesByRegEx%5C%22%3A%5C%22%5C%22%2C%5C%22verifyLatestTag%5C%22%3Afalse%2C%5C%22dontSortReleasesList%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Afalse%2C%5C%22trackOnly%5C%22%3Afalse%2C%5C%22versionExtractionRegEx%5C%22%3A%5C%22%5C%22%2C%5C%22matchGroupToUse%5C%22%3A%5C%22%5C%22%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22releaseDateAsVersion%5C%22%3Afalse%2C%5C%22useVersionCodeAsOSVersion%5C%22%3Afalse%2C%5C%22apkFilterRegEx%5C%22%3A%5C%22.*you.*%5C%22%2C%5C%22invertAPKFilter%5C%22%3Afalse%2C%5C%22autoApkFilterByArch%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Arcticons%20You%5C%22%2C%5C%22exemptFromBackgroundUpdates%5C%22%3Afalse%2C%5C%22skipUpdateNotifications%5C%22%3Afalse%2C%5C%22about%5C%22%3A%5C%22%5C%22%7D%22%7D')">
-                <img src="img/obtainium.svg">
-                Obtainium
-              </button>
+              <a href="https://play.google.com/store/apps/details?id=com.donnnno.arcticons.you.play">
+                <button class="dark">
+                  <img src="img/play.svg">
+                  Google Play
+                </button>
+              </a>
+              <hr class="inv">
+              <a href="https://f-droid.org/packages/com.donnnno.arcticons.you/">
+                <button class="dark">
+                  <img src="img/fdroid.svg">
+                  F-Droid
+                </button>
+              </a>
+              <hr class="inv">
+              <a href="https://accrescent.app/app/com.donnnno.arcticons.you">
+                <button class="dark">
+                  <img src="img/accrescent.svg">
+                  Accrescent
+                </button>
+              </a>
+              <hr class="inv">
+              <a href="https://github.com/Donnnno/Arcticons/releases">
+                <button class="dark">
+                  <img src="img/github.svg">
+                  Github
+                </button>
+              </a>
+              <hr class="inv">
+              <a href="https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22com.donnnno.arcticons.you%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2Fdonnnno%2Farcticons%22%2C%22author%22%3A%22donnnno%22%2C%22name%22%3A%22Arcticons%20Material%20You%22%2C%22preferredApkIndex%22%3A0%2C%22additionalSettings%22%3A%22%7B%5C%22includePrereleases%5C%22%3Afalse%2C%5C%22fallbackToOlderReleases%5C%22%3Atrue%2C%5C%22filterReleaseTitlesByRegEx%5C%22%3A%5C%22%5C%22%2C%5C%22filterReleaseNotesByRegEx%5C%22%3A%5C%22%5C%22%2C%5C%22verifyLatestTag%5C%22%3Afalse%2C%5C%22dontSortReleasesList%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Afalse%2C%5C%22trackOnly%5C%22%3Afalse%2C%5C%22versionExtractionRegEx%5C%22%3A%5C%22%5C%22%2C%5C%22matchGroupToUse%5C%22%3A%5C%22%5C%22%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22releaseDateAsVersion%5C%22%3Afalse%2C%5C%22useVersionCodeAsOSVersion%5C%22%3Afalse%2C%5C%22apkFilterRegEx%5C%22%3A%5C%22.*you.*%5C%22%2C%5C%22invertAPKFilter%5C%22%3Afalse%2C%5C%22autoApkFilterByArch%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Arcticons%20You%5C%22%2C%5C%22exemptFromBackgroundUpdates%5C%22%3Afalse%2C%5C%22skipUpdateNotifications%5C%22%3Afalse%2C%5C%22about%5C%22%3A%5C%22%5C%22%7D%22%7D">
+                <button class="dark">
+                  <img src="img/obtainium.svg">
+                  Obtainium
+                </button>
+              </a>
             </ul>
+
           </div>  
       </div>
 
@@ -186,20 +244,29 @@
               </div>
             
               <ul>
-                <p class="dark">Get it on:</p>
-                <button class="light" onclick="window.open('https://f-droid.org/packages/com.donnnno.arcticons.daynight/')">
-                  <img src="img/fdroid.svg">
-                  F-Droid
-                </button><hr class="inv">
-                <button class="light" onclick="window.open('https://github.com/Donnnno/Arcticons/releases/')">
-                  <img src="img/github.svg">
-                  GitHub
-                </button><hr class="inv">
-                <button class="light" onclick="window.open('obtainium://app/%7B%22id%22%3A%22com.donnnno.arcticons.daynight%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FArcticons-Team%2FArcticons%22%2C%22author%22%3A%22Arcticons-Team%22%2C%22name%22%3A%22Arcticons%20Day%20%26%20Night%22%2C%22preferredApkIndex%22%3A0%2C%22additionalSettings%22%3A%22%7B%5C%22includePrereleases%5C%22%3Afalse%2C%5C%22fallbackToOlderReleases%5C%22%3Atrue%2C%5C%22filterReleaseTitlesByRegEx%5C%22%3A%5C%22%5C%22%2C%5C%22filterReleaseNotesByRegEx%5C%22%3A%5C%22%5C%22%2C%5C%22verifyLatestTag%5C%22%3Afalse%2C%5C%22dontSortReleasesList%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Afalse%2C%5C%22trackOnly%5C%22%3Afalse%2C%5C%22versionExtractionRegEx%5C%22%3A%5C%22%5C%22%2C%5C%22matchGroupToUse%5C%22%3A%5C%22%5C%22%2C%5C%22versionDetection%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Afalse%2C%5C%22useVersionCodeAsOSVersion%5C%22%3Afalse%2C%5C%22apkFilterRegEx%5C%22%3A%5C%22.*-dayNight-release.*%5C%22%2C%5C%22invertAPKFilter%5C%22%3Afalse%2C%5C%22autoApkFilterByArch%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Arcticons%20Day%20%26%20Night%5C%22%2C%5C%22exemptFromBackgroundUpdates%5C%22%3Afalse%2C%5C%22skipUpdateNotifications%5C%22%3Afalse%2C%5C%22about%5C%22%3A%5C%22%5C%22%7D%22%7D')">
-                  <img src="img/obtainium.svg">
-                  Obtainium
-                </button>
+                <p>Get it on:</p>
+                <a href="https://f-droid.org/packages/com.donnnno.arcticons.light">
+                  <button class="light">
+                    <img src="img/fdroid.svg">
+                    F-Droid
+                  </button>
+                </a>
+                <hr class="inv">
+                <a href="https://github.com/Donnnno/Arcticons/releases">
+                  <button class="light">
+                    <img src="img/github.svg">
+                    Github
+                  </button>
+                </a>
+                <hr class="inv">
+                <a href="obtainium://app/%7B%22id%22%3A%22com.donnnno.arcticons.daynight%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FArcticons-Team%2FArcticons%22%2C%22author%22%3A%22Arcticons-Team%22%2C%22name%22%3A%22Arcticons%20Day%20%26%20Night%22%2C%22preferredApkIndex%22%3A0%2C%22additionalSettings%22%3A%22%7B%5C%22includePrereleases%5C%22%3Afalse%2C%5C%22fallbackToOlderReleases%5C%22%3Atrue%2C%5C%22filterReleaseTitlesByRegEx%5C%22%3A%5C%22%5C%22%2C%5C%22filterReleaseNotesByRegEx%5C%22%3A%5C%22%5C%22%2C%5C%22verifyLatestTag%5C%22%3Afalse%2C%5C%22dontSortReleasesList%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Afalse%2C%5C%22trackOnly%5C%22%3Afalse%2C%5C%22versionExtractionRegEx%5C%22%3A%5C%22%5C%22%2C%5C%22matchGroupToUse%5C%22%3A%5C%22%5C%22%2C%5C%22versionDetection%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Afalse%2C%5C%22useVersionCodeAsOSVersion%5C%22%3Afalse%2C%5C%22apkFilterRegEx%5C%22%3A%5C%22.*-dayNight-release.*%5C%22%2C%5C%22invertAPKFilter%5C%22%3Afalse%2C%5C%22autoApkFilterByArch%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Arcticons%20Day%20%26%20Night%5C%22%2C%5C%22exemptFromBackgroundUpdates%5C%22%3Afalse%2C%5C%22skipUpdateNotifications%5C%22%3Afalse%2C%5C%22about%5C%22%3A%5C%22%5C%22%7D%22%7D">
+                  <button class="light">
+                    <img src="img/obtainium.svg">
+                    Obtainium
+                  </button>
+                </a>
               </ul>
+
             </div>  
             <div><img src="img/phone_daynight.webp" width="80%" class="phone"></div>  
   
@@ -219,18 +286,24 @@
           <h2 style="text-align: center;">Donate</h2>
           <hr class="inv">
           <p>Providing a free icon-pack for everyone can cost a lot of time and effort. So if you like our work, consider donating!</p>
-          <button class="dark" onclick="window.open('https://http://paypal.me/onnovdd/')" style="justify-content: center; padding-left: 0px; margin-bottom: 10px;">
-            <img src="img/paypal.svg">
-            PayPal
-          </button>
-          <button class="dark" onclick="window.open('https://ko-fi.com/donno_/')" style="justify-content: center; padding-left: 0px; margin-bottom: 10px;">
-            <img src="img/kofi.svg">
-            Ko-Fi
-          </button>
-          <button class="dark" onclick="window.open('https://liberapay.com/Donno/')"style="justify-content: center; padding-left: 0px; margin-bottom: 10px;">
-            <img src="img/liberapay.svg">
-            Liberapay
-          </button><br>
+          <a href="https://www.paypal.com/paypalme/onnovdd/">
+            <button class="dark" style="justify-content: center; padding-left: 0px; margin-bottom: 10px;">
+              <img src="img/paypal.svg">
+              PayPal
+            </button>
+          </a>
+          <a href="https://ko-fi.com/donno_/">
+            <button class="dark" style="justify-content: center; padding-left: 0px; margin-bottom: 10px;">
+              <img src="img/kofi.svg">
+              Ko-Fi
+            </button>         
+          </a>
+          <a href="https://liberapay.com/Donno/">
+            <button class="dark" style="justify-content: center; padding-left: 0px; margin-bottom: 10px;">
+              <img src="img/liberapay.svg">
+              Liberapay
+            </button>
+          </a>
         </div>
         <div></div>
       </div>
@@ -251,12 +324,12 @@
       <hr class="inv2">
       <a href="https://github.com/Donnnno/Arcticons/blob/main/Privacy_Policy.md">Privacy Policy</a> • <a href="https://creativecommons.org/licenses/by-sa/4.0/">License</a>
 
-
-      <div>
-        <hr class="inv2">
-        <p><span class="copyleft">&copy;</span><a href="https://www.onnno.nl/"> Onno van den Dungen</a> - <script>document.write(new Date().getFullYear())</script></p>
-      </div> 
+      <hr class="inv2">
+      
 
     </div>
+
+    <div id="footer"></div>
+
   </body>
 </html>

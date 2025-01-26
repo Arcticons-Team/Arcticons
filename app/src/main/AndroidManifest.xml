@@ -3,10 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:installLocation="auto">
 
-    <uses-permission android:name="android.permission.INTERNET" tools:node="remove" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" tools:node="remove"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" tools:node="remove" />
-
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" tools:node="remove" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" tools:node="remove" />
+    <uses-permission android:name="${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" tools:node="remove" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" tools:node="remove" />
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
     <supports-screens
         android:largeScreens="true"
         android:normalScreens="true"
@@ -22,8 +25,20 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.App.Starting"
-        tools:replace="android:icon"
-        tools:targetApi="n">
+        >
+
+        <meta-data
+            android:name="org.breezyweather.PROVIDER_CONFIG"
+            android:resource="@xml/breezy_icon_provider_config" />
+        <meta-data
+            android:name="org.breezyweather.DRAWABLE_FILTER"
+            android:resource="@xml/breezy_icon_provider_drawable_filter" />
+        <meta-data
+            android:name="org.breezyweather.ANIMATOR_FILTER"
+            android:resource="@xml/breezy_icon_provider_animator_filter" />
+        <meta-data
+            android:name="org.breezyweather.SHORTCUT_FILTER"
+            android:resource="@xml/breezy_icon_provider_shortcut_filter" />
 
         <activity
             android:name=".activities.MainActivity"
@@ -31,6 +46,10 @@
             android:theme="@style/Theme.App.Starting"
             android:configChanges="uiMode|orientation|keyboardHidden|screenSize"
             android:exported="true">
+            <intent-filter>
+                <action android:name="org.breezyweather.ICON_PROVIDER" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
             <meta-data
                 android:name="android.app.shortcuts"
                 android:resource="@xml/shortcuts" />
@@ -186,23 +205,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <!--
-        <provider
-            android:name=".services.MuzeiService"
-            android:authorities="${applicationId}.ArtProvider"
-            android:description="@string/muzei_art_source_desc"
-            android:exported="true"
-            android:label="@string/muzei_art_source_name"
-            android:permission="com.google.android.apps.muzei.api.ACCESS_PROVIDER">
-            <intent-filter>
-                <action android:name="com.google.android.apps.muzei.api.MuzeiArtProvider" />
-            </intent-filter>
 
-            <meta-data
-                android:name="color"
-                android:value="@color/muzei_color" />
-        </provider>
-        -->
         <receiver
             android:name=".services.ClockWidget"
             android:label="Clock Widget 1"
@@ -320,23 +323,7 @@
                 android:name="android.appwidget.provider"
                 android:resource="@xml/digital_clock_widget_info" />
         </receiver>
-        <!--
-            Uncomment the following code to enable Kustom.
-            Also remove the `<action ... />`s that you don't want.
-        -->
-        <!--
-<provider
-            android:name="org.kustom.api.Provider"
-            android:authorities="${applicationId}.kustom.provider"
-            android:exported="false">
-            <intent-filter>
-                <action android:name="org.kustom.provider.WIDGETS" />
-                <action android:name="org.kustom.provider.WALLPAPERS" />
-                <action android:name="org.kustom.provider.LOCKSCREENS" />
-                <action android:name="org.kustom.provider.KOMPONENTS" />
-            </intent-filter>
-        </provider>
-        -->
+
         <!-- This is important -->
         <provider
             android:name="androidx.core.content.FileProvider"

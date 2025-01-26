@@ -21,6 +21,12 @@ public class CandyBar extends CandyBarApplication {
     public Configuration onInit() {
         Configuration configuration = new Configuration();
 
+        configuration.setAutomaticIconsCountEnabled(false); // Enable or disable automatic icons counting
+        // Get the value from the resources
+        int customIconsCount = getResources().getInteger(R.integer.custom_icons_count);
+        // Set the value to the configuration
+        configuration.setCustomIconsCount(customIconsCount);
+
         configuration.setGenerateAppFilter(true);
 
         configuration.setEmailBodyGenerator(requests -> {
@@ -39,16 +45,6 @@ public class CandyBar extends CandyBarApplication {
                         .append("\r\n")
                         .append(request.getActivity())
                         .append("\r\n");
-
-                String installerPackage = packageManager.getInstallerPackageName(request.getPackageName());
-
-                if (installerPackage != null && installerPackage.equals("com.android.vending")) {
-                    emailBody.append("https://play.google.com/store/apps/details?id=")
-                            .append(request.getPackageName());
-                } else {
-                    emailBody.append("https://f-droid.org/en/packages/")
-                            .append(request.getPackageName()).append("/");
-                }
             }
 
             return emailBody.toString();
@@ -56,7 +52,7 @@ public class CandyBar extends CandyBarApplication {
 
         configuration.setShowTabAllIcons(true);
         configuration.setCategoryForTabAllIcons(new String[]{
-                "New","Folders","Calendar","Google","Microsoft","Emoji","Symbols","Numbers","Letters","0-9","A-Z"
+                "New","Folders","Calendar","Google","Microsoft","Games","System","Emoji","Symbols","Numbers","Letters","0-9","A-Z"
         });
 
         DonationLink[] donationLinks = new DonationLink[]{
@@ -89,7 +85,7 @@ public class CandyBar extends CandyBarApplication {
 
             String pkg = request.getPackageName();
             if (pkg == null) return true;
-            if (pkg.startsWith("org.chromium.webapk") || pkg.startsWith("com.sec.android.app.sbrowser.webapk")) {
+            if (pkg.startsWith("org.chromium.webapk") || pkg.startsWith("com.sec.android.app.sbrowser.webapk") || pkg.endsWith("com.google.android.archive.ReactivateActivity") ) {
                 request.setAvailableForRequest(false);
                 request.setInfoText("This icon is a web shortcut and not associated with an Android app. Unfortunately it cannot be requested at this time.\n\nIn many launchers, you can long-press the app icon in the drawer and pick an existing icon from the icon pack.");
             }
@@ -119,7 +115,7 @@ public class CandyBar extends CandyBarApplication {
                         // You can use png file (without extension) inside drawable-nodpi folder or url
                         "arcticons_day_night",
                         "Arcticons Day & Night",
-                        "An expirimental version of Arcticons that switches between dark & light mode.",
+                        "An experimental version of Arcticons that switches between dark & light mode.",
                         "https://github.com/Donnnno/Arcticons/releases")
         };
         configuration.setOtherApps(otherApps);

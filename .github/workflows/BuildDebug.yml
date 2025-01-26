@@ -1,0 +1,59 @@
+name: Build Debug APK
+
+on: 
+  workflow_dispatch:
+
+jobs:
+    build:
+        name: Build Arcticons APK
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checking out branch
+              uses: actions/checkout@v4
+            
+            - name: Setup Java
+              uses: actions/setup-java@v4
+              with:
+                distribution: 'zulu'
+                java-version: 21
+                cache: gradle       
+            - name: Write sign info
+              run: |
+                  echo "Workflow manually triggered by ${{ github.actor }}"
+                  if [ ! -z "${{ secrets.KEYSTORE }}" ]; then
+                    echo storePassword='${{ secrets.KEYSTORE_PASSWORD }}' >> keystore.properties
+                    echo keyAlias='${{ secrets.KEY_ALIAS }}' >> keystore.properties
+                    echo keyPassword='${{ secrets.KEY_PASSWORD }}' >> keystore.properties
+                    echo storeFile='${{ github.workspace }}/key.jks' >> keystore.properties
+                    echo ${{ secrets.KEYSTORE }} | base64 --decode > ${{ github.workspace }}/key.jks
+                  fi   
+            - name: Get Gradle
+              run: gradle wrapper
+            - name: Grant execute permission for gradlew
+              run: chmod +x gradlew
+            - name: Lint Checks
+              run: |
+                gradle app:lintNormalDebug
+                gradle app:lintBlackDebug
+                gradle app:lintDayNightDebug
+                gradle app:lintYouDebug
+            - name: Build debug APK
+              run: ./gradlew app:assembleDebug
+            - name: Upload artifact
+              uses: actions/upload-artifact@v4
+              with:
+                  path: |
+                    app/build/outputs/apk/black/debug/*.apk
+                    app/build/outputs/apk/blackPlay/debug/*.apk
+                    app/build/outputs/apk/dayNight/debug/*.apk
+                    app/build/outputs/apk/normal/debug/*.apk
+                    app/build/outputs/apk/normalPlay/debug/*.apk
+                    app/build/outputs/apk/you/debug/*.apk
+                    app/build/outputs/apk/youPlay/debug/*.apk
+                    app/build/reports/*
+
+
+            
+
+                  

@@ -9,22 +9,42 @@ android {
         applicationId "com.donnnno.arcticons"
         minSdkVersion rootProject.ext.MinSdk
         targetSdkVersion rootProject.ext.TargetSdk
-        versionCode 131
-        versionName '9.0.0'
+        versionCode 1420
+        versionName '12.0.5'
         multiDexEnabled true
+    }
 
-        // Naming app bundles
-        setArchivesBaseName("${parent.name}-v${versionName}")
+    // Load keystore
+    def keystorePropertiesFile = rootProject.file("keystore.properties");
+    def releaseSigning;
+    if (keystorePropertiesFile.exists()){
+        def keystoreProperties = new Properties()
+        keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+        releaseSigning = signingConfigs.create("release", signingConfig -> {
+            signingConfig.setKeyAlias(keystoreProperties.getProperty("keyAlias"));
+            signingConfig.setKeyPassword(keystoreProperties.getProperty("keyPassword"));
+            signingConfig.setStoreFile(rootProject.file(keystoreProperties.getProperty("storeFile")));
+            signingConfig.setStorePassword(keystoreProperties.getProperty("storePassword"));
+        });
+    } else {releaseSigning = signingConfigs.getByName("debug"); // Use getByName for safety
+}
 
+    buildFeatures {
+        buildConfig = true
     }
 
     buildTypes {
+        configureEach {
+            signingConfig = releaseSigning
+        }
         release {
             minifyEnabled false
-            debug {
-                applicationIdSuffix '.debug'
-            }
         }
+        debug {
+            applicationIdSuffix '.debug'
+        }
+
+
         applicationVariants.all { variant ->
 
             if (variant.flavorName == "you" || variant.flavorName == "youPlay") {
@@ -39,8 +59,6 @@ android {
             // Add more conditions for additional flavors
         }
     }
-
-
 
     flavorDimensions += "variant"
     productFlavors {
@@ -93,27 +111,44 @@ android {
         dayNight { res.srcDirs = ['src/dayNightFree/res/', 'src/dayNight/res'] }
     }
 
-
-    compileOptions {
-        encoding = 'UTF-8'
-        sourceCompatibility JavaVersion.VERSION_11
-        targetCompatibility JavaVersion.VERSION_11
+    base {
+        // Output file name
+        archivesName = "${parent.name}-${android.defaultConfig.versionName}"
+    }
+    java {
+        toolchain {
+            languageVersion = JavaLanguageVersion.of(11)
+        }
     }
 
     buildFeatures {
+        buildConfig = true
         viewBinding true
     }
     namespace 'com.donnnno.arcticons'
     lint {
         abortOnError false
         checkReleaseBuilds false
+        lintConfig = file("lint.xml")
+    }
+
+    dependenciesInfo {
+        // Disables dependency metadata when building APKs.
+        includeInApk = false
+        // Disables dependency metadata when building Android App Bundles.
+        includeInBundle = false
     }
 }
 
 dependencies {
-
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    implementation 'com.github.donnnno:candybar-foss:3.19.0-hotfix'
+    normalPlayImplementation 'com.github.zixpo:candybar:3.21.1'
+    blackPlayImplementation 'com.github.zixpo:candybar:3.21.1'
+    youPlayImplementation 'com.github.zixpo:candybar:3.21.1'
+    normalImplementation 'com.github.donnnno:candybar-foss:3.21.2'
+    blackImplementation 'com.github.donnnno:candybar-foss:3.21.2'
+    youImplementation 'com.github.donnnno:candybar-foss:3.21.2'
+    dayNightImplementation 'com.github.donnnno:candybar-foss:3.21.2'
 }
 
 import com.android.tools.profgen.ArtProfileKt

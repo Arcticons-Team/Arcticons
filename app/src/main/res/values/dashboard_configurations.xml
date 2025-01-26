@@ -35,22 +35,6 @@
 
     -->
     <string name="home_image_style">card_square</string>
-    <!-- Description which will be shown in the home page.
-        Put your markup/text inside of `<![CDATA[` and `]]>`
-        ex: `<![CDATA[ There are - <b>Bold</b> <i>Italic</i> <u>Underline</u> <a href="url">Link</a> ]]>`
-
-        If you don't want to show any description, just leave this empty
-        ex: <string name="home_description"></string>
-        -->
-    <string name="home_description">
-        <![CDATA[
-            <p>Arcticons is a line based <a href="https://github.com/Donnnno/Arcticons/">open-source</a> icon-pack, brought to you by contributors all over the world!</p>
-            <br>
-            <p>You can get priority icon requests <a href="https://ko-fi.com/donno_">on Ko-fi</a></p>
-            <br>
-            <p>Follow me on <a href="https://fosstodon.org/@donno">Mastodon</a> for Arcticons updates!.</p>
-        ]]>
-    </string>
 
     <!-- Enable "Check for update" button.
         It needs the option "config_json" to be configured in order to work -->
@@ -113,13 +97,19 @@
         The number of icon a user can request should be specified in the "icon_request_limit" section -->
     <bool name="enable_icon_request_limit">true</bool>
 
+    <!-- Enable multiple requests for same icon
+        When enabled, users will be able to request the same icon twice. This can be useful if you
+        offer free and premium requests, so a free request doesn't prevent the user from submitting
+        a premium request for the same icon. Can also be useful for a voting system. -->
+    <bool name="enable_icon_request_multiple">false</bool>
+
     <!-- Limit the numbers of icon a user can request
         IGNORE if "enable_icon_request_limit" option is disabled
         ex: If you set icon request limit to 10, a user will able to request only 10 icons in total
         After making 10 icon request the user will not be able to request again.
 
         See "reset_icon_request_limit" option to learn how to reset the limit. -->
-    <integer name="icon_request_limit">1000</integer>
+    <integer name="icon_request_limit">100</integer>
 
     <!-- Reset regular icon request limit every update
         IGNORE if "enable_icon_request_limit" option is disabled
@@ -166,30 +156,15 @@
     <string name="regular_request_email_subject"></string>
     <string name="premium_request_email_subject"></string>
 
-    <!--
-        CONFIG: WALLPAPERS
-    -->
-    <!-- Wallpaper JSON link
-        If your icon pack doesn't contain any wallpaper, just leave this empty
-        <string name="wallpaper_json"></string>
-
-        If you want to separate wallpaper app from icon pack and keep wallpapers section shown in navigation drawer,
-        just put your wallpaper app's package name here
-        ex: com.dm.wallpaper.board.demo
-        <string name="wallpaper_json">com.dm.wallpaper.board.demo</string>
-        Now when "Wallpaper" section is selected in your icon pack app's navigation drawer,
-        your wallpaper app will be launched if it's installed. If it's not installed, then the Play Store page
-        will be opened to install your wallpaper app. -->
-    <string name="wallpaper_json"></string>
 
     <!-- Enable wallpaper downloading
         If disabled, your users will only be able to apply wallpapers from the dashboard.
         They will not be able to to download wallpapers.  -->
-    <bool name="enable_wallpaper_download">false</bool>
+    <bool name="enable_wallpaper_download">true</bool>
 
     <!-- Show name and author below wallpapers
         If you don't want to show name and author below wallpapers, just disable it (set it to `false`) -->
-    <bool name="wallpaper_show_name_author">false</bool>
+    <bool name="wallpaper_show_name_author">true</bool>
 
     <!-- Wallpapers grid preview style
         Available choices:
@@ -197,7 +172,7 @@
         - landscape
         - portrait
     -->
-    <string name="wallpaper_grid_preview_style">square</string>
+    <string name="wallpaper_grid_preview_style">portrait</string>
 
 
     <!--
@@ -228,7 +203,7 @@
         <![CDATA[
                 <p>Arcticons is a line-based icon pack for Android devices.</p>
                 <p>Created by a world-wide community of icon makers and curated for consistency.</p>
-                <p><a href="https://github.com/Donnnno/Arcticons#contributing">You are welcome to join the party to create a distraction-free home screen </a>that\'s available for everyone to enjoy.</p>
+                <p><a href="https://docs.arcticons.com/contribute">You are welcome to join the party to create a distraction-free home screen </a>that\'s available for everyone to enjoy.</p>
         ]]>
     </string>
 
@@ -242,11 +217,12 @@
         ex: <string-array name="about_social_links"></string-array>
         -->
     <string-array name="about_social_links">
-        <item>arcticons@onnno.nl</item>
+        <item>arcticons-support@onnno.nl</item>
         <item>https://matrix.to/#/#arcticons-central:matrix.org</item>
-        <item>https://github.com/donnnno</item>
+        <item>https://github.com/Arcticons-Team</item>
         <item>https://instagram.com/onno_onno_onno</item>
         <item>https://fosstodon.org/@donno</item>
+        <item>https://ko-fi.com/donno_</item>
     </string-array>
 
     <!-- Contributors dialog
@@ -254,14 +230,10 @@
         Take a look inside res/xml/contributors.xml to add contributors -->
     <bool name="show_contributors_dialog">true</bool>
 
-    <!-- Privacy policy link.
-        Leave empty to disable this.
-        You can generate one from https://app-privacy-policy-generator.firebaseapp.com/ -->
-    <string name="privacy_policy_link">https://github.com/Donnnno/Arcticons/blob/main/Privacy_Policy.md</string>
+    <!-- Privacy policy link. -->
+    <string name="privacy_policy_link">https://github.com/Arcticons-Team/Arcticons/blob/main/Privacy_Policy.md</string>
 
-    <!-- Terms and Conditions link.
-        Leave empty to disable this.
-        You can generate one from https://app-privacy-policy-generator.firebaseapp.com/ -->
+    <!-- Terms and Conditions link. -->
     <string name="terms_and_conditions_link"></string>
 
     <!--

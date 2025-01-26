@@ -52,7 +52,7 @@ fetch(`assets/requests.txt`)
             const requestedInfo = lines.slice(lines.length - 2)[0].trim().split(' ')[1].trim();
             const lastRequestedTime = new Date(requestedTimestamp * 1000).toLocaleString();
             const drawable = extractDrawable(appfilter);
-            const appIconPath = drawable ? `extracted_png/${drawable}.png` : 'img/requests/default.svg'; // Adjust path accordingly
+            const appIconPath = drawable ? `extracted_png/${drawable}.webp` : 'img/requests/default.svg'; // Adjust path accordingly
             const appIcon = `<img src="${appIconPath}" alt="App Icon" style="width:50px;height:50px;">`;
             appEntriesData.push({
                 appName,
@@ -61,7 +61,8 @@ fetch(`assets/requests.txt`)
                 requestedInfo,
                 lastRequestedTime,
                 appNameAppfilter,
-                appfilter
+                appfilter,
+                appIconPath
             });
         });
         appEntriesDataGlobal = appEntriesData;
@@ -101,6 +102,9 @@ fetch(`assets/requests.txt`)
 
 // Accessing the button element by its id
 const updatableButton = document.getElementById("updatable-button");
+const randomButton = document.getElementById("random-button");
+const randomResetButton = document.getElementById(`random-reset-button`);
+const randomNumberInput = document.getElementById("random-number-input");
 
 // Add an event listener to the button
 updatableButton.addEventListener("click", function() {
@@ -109,21 +113,37 @@ updatableButton.addEventListener("click", function() {
     // Redirect to the specified URL
     window.location.href = updatableURL;
 });
+randomButton.addEventListener("click", function() {
+    randomIcons();
+});
+randomResetButton.addEventListener("click", function() {
+    randomResetButton.style.display = "none";
+    updateTable(appEntriesData);
+});
+randomNumberInput.addEventListener("keypress", function(event) {
+    // If the user presses the "Enter" key on the keyboard
+    if (event.key === "Enter") {
+        // Cancel the default action, if needed
+        event.preventDefault();
+        // Trigger the button element with a click
+        randomButton.click();
+    }
+});
 
 // Filter appEntriesData based on appfilter content
 function filterAppfilter(appEntriesData, appfilterContent) {
-    const appfilterItems = parseAppfilter(appfilterContent);
+    const appfilterItems = new Set(parseAppfilter(appfilterContent)); // Convert to Set for fast lookups
     const filteredOutEntries = [];
 
     const filteredData = appEntriesData.filter(entry => {
         const entryAppfilter = entry.appfilter.trim().split('"')[1].trim();
-        // Check if the entry is filtered out
-        const isFiltered = appfilterItems.some(component => component === entryAppfilter);
-        if (isFiltered) {
-            filteredOutEntries.push(entryAppfilter);
+        if (appfilterItems.has(entryAppfilter)) { // Check membership in O(1)
+            filteredOutEntries.push(entryAppfilter); // Track filtered out entries
+            return false; // Exclude from filtered data
         }
-        return !isFiltered;
+        return true; // Include in filtered data
     });
+
     console.log("Filtered out entries:", filteredOutEntries);
     return filteredData;
 }
@@ -183,7 +203,6 @@ function clearTable() {
     }
 }
 
-// Function to render the table based on provided data
 function renderTable(data) {
     const table = document.getElementById("app-entries");
     data.forEach((entry, index) => {
@@ -196,12 +215,42 @@ function renderTable(data) {
         let cell6 = row.insertCell(5);
         index = index + startIndex;
         cell1.innerHTML = entry.appName;
-        cell2.innerHTML = entry.appIcon;
+        // Render the app icon as a clickable image
+        cell2.innerHTML = `<a href="#" class="icon-preview" data-index="${index}">${entry.appIcon}</a>`;
         cell3.innerHTML = entry.appLinks;
         cell4.innerHTML = entry.requestedInfo;
         cell5.innerHTML = entry.lastRequestedTime;
         cell6.innerHTML = `<button class="copy-button" onclick="copyToClipboard(${index})">Copy</button>`;
     });
+
+    // Add event listeners to the icon previews
+    const iconPreviews = document.querySelectorAll('.icon-preview');
+    iconPreviews.forEach(icon => {
+        icon.addEventListener('click', function(event) {
+            event.preventDefault();
+            const index = parseInt(this.getAttribute('data-index'));
+            const entry = appEntriesDataGlobal[index];
+            showIconPreview(entry.appIconPath);
+        });
+    });
+}
+
+function showIconPreview(iconSrc) {
+    const previewOverlay = document.getElementById('preview-overlay');
+    const previewImage = document.getElementById('preview-image');
+
+    // Set the preview image source to the clicked icon source
+    previewImage.src = iconSrc;
+
+    // Show the preview overlay
+    previewOverlay.style.display = 'block';
+    // Add click event listener to hide the preview when clicked on the overlay or close button
+previewOverlay.addEventListener('click', function(e) {
+    if (e.target === this || e.target.classList.contains('close-button')) {
+        // Hide the preview overlay
+        this.style.display = 'none';
+    }
+});
 }
 
 // Update the table with filtered or sorted data
@@ -316,4 +365,77 @@ function getCellValue(row, columnIndex) {
         return new Date(year, month - 1, day, hour, minute, second); // Return a Date object with year, month, day, hour, minute, second
     }
     return isNaN(row[key]) ? row[key] : parseFloat(row[key]);
+}
+
+// Runs when "I'm feelin' lucky" button is clicked on
+function randomIcons(){
+    const randomResetButton = document.getElementById(`random-reset-button`);
+    const randomNumberInput = document.getElementById(`random-number-input`); // Number of requests to select randomly
+    const totalRequests = appEntriesData.length; // Total numbers of requests
+
+    const defaultRandomCnt = 10;
+    const minRandomCnt = 1;
+
+    if (defaultRandomCnt >= totalRequests){
+        notifyMessage(`There are TOO FEW requests! (Yay!)`);
+        return;
+    }
+
+    let randomCnt = defaultRandomCnt; // Default is used when the number in the input box is not numeric
+
+    if (!isNaN(parseInt(randomNumberInput.value)) && isFinite(randomNumberInput.value)){
+        randomNumberInput.value = parseInt(randomNumberInput.value);
+        if (randomNumberInput.value == totalRequests){
+            return;
+        }
+        if (randomNumberInput.value > totalRequests){
+            notifyMessage(`There are fewer requests than ` + randomNumberInput.value);
+            randomNumberInput.value = defaultRandomCnt;
+        }
+        // If value is too low (e.g. 0, -1), set to default
+        if (randomNumberInput.value < minRandomCnt)
+            randomNumberInput.value = defaultRandomCnt;
+
+        randomCnt = randomNumberInput.value;
+    }
+    else{
+        randomNumberInput.value = defaultRandomCnt;
+    }
+
+    // Randomization part
+    const numArr = Array(totalRequests).fill().map((element, index) => index + minRandomCnt - 1); // Initialize an array of 0 to the total number of requests
+    shuffle(numArr); // Shuffle the entire array
+    let slicedRandomNumArr = numArr.slice(0, randomCnt); // Choose the first N as the random indices
+    let randomizedEntriesData = [];
+    for (let i=0; i<slicedRandomNumArr.length; i++){
+        randomizedEntriesData.push(appEntriesData[slicedRandomNumArr[i]]);
+    }
+
+    updateTable(randomizedEntriesData);
+    randomResetButton.style.display = "inline-block";
+}
+
+function shuffle(array) {
+    let currentIndex = array.length;
+
+  // While there remain elements to shuffle...
+  while (currentIndex != 0) {
+
+    // Pick a remaining element...
+    let randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    // And swap it with the current element.
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex], array[currentIndex]];
+  }
+}
+
+function notifyMessage(message){
+    document.getElementById('search-notification').innerText = message;
+    document.getElementById('search-notification').style.display = 'block';
+    // Hide the notification after a few seconds
+    setTimeout(() => {
+        document.getElementById('search-notification').style.display = 'none';
+    }, 5000);
 }

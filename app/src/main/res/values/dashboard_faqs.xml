@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="base">
+        <!-- What is a launcher -->
+        <!-- What is an icon pack -->
+        <!-- How do i use an icon pack? -->
+        <!-- How do i apply an icon pack? -->
+        <!-- How do i see all icons included? -->
+        <!-- I can\'t see a complete icon name -->
+        <!-- How can i replace icons with an alternate icon? -->
+        <!-- How do i request an icon? -->
+        <!-- How can i restore remaining Premium Requests after reinstalling the app? -->
+        <!-- After restarting my phone, the icon pack is not applied, it restore to defaults? -->
+        <!-- Why do the icons looks jaggy or pixelated on my phone? -->
+        <!-- I can see the icon included in all icons,
+            but why isn\'t the actual icon on app drawer changed? -->
+        <!-- What is the \"report bugs\" option? -->
+        <!-- My launcher is listed in the google play description, but why isn\'t it included in apply section? -->
+        <!-- Wallpaper can\'t be applied, just showing black screen? -->
+        <!-- Muzei: How to load downloaded wallpapers only? -->
+        <!-- Muzei: I don\'t want to keep downloading wallpapers each time the wallpaper changes? -->
+        <!-- Muzei: I only want to use specific wallpapers? -->
+        <!-- Why are Read &amp; Write External Storage permission needed? -->
+        <!-- Why is Internet permission needed? -->
+        <!-- Why is Access Network State permission needed? -->
+        <!-- Why is Access Wifi State permission needed? -->
+        <!-- Why is Set Wallpaper permission needed? -->
+        <!-- Why is Wake Lock Permission needed? -->
+    </string-array>
+
+    <string-array name="questions">
+        <item>What is a launcher?</item>
+        <item>What is an icon pack?</item>
+        <item>How do I use an icon pack?</item>
+        <item>How do I apply an icon pack?</item>
+        <item>How do I see all icons included?</item>
+        <item>Why can\'t I see the complete icon name?</item>
+        <item>How can I replace icons with an alternate icon?</item>
+<!--        <item>How do i request an icon?</item>-->
+<!--        <item>How can i restore remaining Premium Requests after reinstalling the app?</item>-->
+        <item>After restarting my phone, why is the icon pack not applied?</item>
+        <item>Why do the icons looks jaggy or pixelated on my phone?</item>
+        <item>I can see the icon included in the dashboard,
+            but why isn\'t it changed on the app drawer?</item>
+        <item>What is the \"Report Bugs\" option?</item>
+        <item>My launcher is listed in the Google Play description, but why isn\'t it included in the \"Apply\" section?</item>
+        <item>Why is my wallpaper a black screen when I apply it from the app?</item>
+        <item>Muzei: How do I load downloaded wallpapers only?</item>
+        <item>Muzei: How do I only use specific wallpapers?</item>
+        <item>Why is Read and Write External Storage permission needed?</item>
+        <item>Why is Internet permission needed?</item>
+        <item>Why is Set Wallpaper permission needed?</item>
+    </string-array>
+
+    <string-array name="answers">
+        <item>The launcher is the part of the Android user interface that lets users customize their home screen,
+            launch applications, make phone calls, and perform other tasks on Android devices.</item>
+        <item>An icon pack is a set of graphics that will change the look of your app drawer icons.</item>
+        <item>You will need a launcher that supports custom icon packs.
+            Supported launchers are listed in Delta\'s Play Store description.
+            If you are confused on which launchers should be used, just go to the \"Apply\" section, and install a launcher from there.</item>
+        <item>You can open the navigation drawer, click on \"Apply\", and choose your launcher from the list.
+            If your launcher is not listed but Delta is compatible with it
+            (see Play Store description for supported launchers),
+            you can apply Delta manually from your launcher settings.</item>
+        <item>You can open the navigation drawer then open \"Icons\".</item>
+        <item>Just tap the icon. A preview dialog will appear with a bigger image and the complete icon name.</item>
+        <item>It depends on which launcher you used. Not every launcher supports icon editing.
+       	    Mostly, you can edit an icon by tapping and holding the icon, or double tapping it.</item>
+<!--        <item>You can open navigation drawer then open \"Icon Request\".</item>-->
+<!--        <item>You can open navigation drawer then open \"Settings\", choose \"Restore Purchases\".-->
+<!--            If you had remaining Premium Requests before reinstalling, they will be restored.</item>-->
+        <item>This occurred because Delta was moved to SD Card storage. You should install it into internal memory.</item>
+        <item>The problem might come from the way your launcher handles large icon resolutions.
+       	    You can fix it by increasing the icon size to 115-120%.
+       	    Alternatively, you can change your launcher.</item>
+        <item>Open settings, scroll down, and choose \"Report Bugs\".</item>
+        <item>\"Report Bugs\" is used to report bugs related to the icon pack, not the dashboard.</item>
+        <item>Not every launcher supports direct application, and some of them can\'t be accessed directly from the dashboard.
+      	    You can apply this icon pack manually from your launcher\'s settings.</item>
+        <item>When you use \"Set Wallpaper\" directly from the app, it will be downloaded to the application\'s cache,
+      	    then the dashboard app will try to apply it. Applying will take some time, and needs a huge amount of RAM for a short time.
+      	    Black screen errors may appear because your phone doesn\'t have enough free RAM to process the wallpaper.
+      	    Restarting your phone will fix this problem. After restarting, your phone will have more RAM available.
+            Alternatively, you can open the downloaded wallpaper from your gallery and set it as your wallpaper from there.</item>
+        <item>If a wallpaper is already downloaded, it will be loaded from your phone\'s memory automatically.
+            Muzei won\'t keep downloading it when the wallpaper changes, but you will need to download wallpapers from the dashboard first.</item>
+        <item>Open Dashboard and download the wallpapers that you want to use in Muzei.
+            Open Muzei settings, then choose Load Downloaded Wallpapers Only.</item>
+        <item>Read and Write External Storage permission is needed to read and write cache, and collect icon request data.</item>
+        <item>Internet permission is needed to download Cloud-Based Wallpapers.</item>
+        <item>Set Wallpaper permission is needed to apply wallpapers directly from the dashboard app.</item>
+    </string-array>
+</resources>

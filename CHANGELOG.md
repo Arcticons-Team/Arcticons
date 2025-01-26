@@ -1,3 +1,33 @@
+### 10.0.5
+###### Released: Jul 21, 2024
+* 🌈 Another special release, we've reached the **10k**!
+* 🎉 **332** new and updated icons!
+* 🎮 A new **Game** category.
+* 📖 Our [**Knowledge base**](https://https://docs.arcticons.com/) has been upgraded.
+* 🔥 **10059** icons in total!
+
+### 9.7.4
+###### Released: Jun 9, 2024
+* 🌈 It's still pride month!
+* 🎉 **112** new and updated icons!
+* ✨ Fixes for icons that changed unexpectedly.
+* 🔥 **9740** icons in total!
+
+### 9.6.5
+###### Released: Jun 2, 2024
+* 🌈 I want to start this release note with wishing everyone a happy pride month!
+* 🎉 **414** new and updated icons!
+* 🟦 You may notice that square icons have been rounded some more. Over the past month, I have reworked 1400+ icons to make them feel a bit more modern.
+* 🔥 **9649** icons in total!
+
+### 9.2.4
+###### Released: Apr 21, 2024
+* 🎉 **243** new and updated icons! (thanks Kaiserdragon2, Albertjohnsonpc, Cequallium, TheLastZombie, TheAngryTurkey, Renomizer, Onuronsekiz, Trautb, GuitareCouture, Npepperlinux, Ayecptn, Dgcampbe)
+* ✨ Updates to make sure lots of apps work again.
+* 🚀 **Moto Launcher** support.
+* 🌐 The beginning of [**a new wiki**](https://github.com/Arcticons-Team/Arcticons/wiki/) page for all your Arcticons questions!
+* 🔥 **9240** icons in total!
+
 ### 9.0.0
 ###### Released: Mar 14, 2024
 * 🎉 253 new and updated icons! (thanks Kaiserdragon2, ZachIndigo, Sande-Santhosh, Yetanother-user, Alchemiker, Dgcampbe, Knsrinath, Drenat)

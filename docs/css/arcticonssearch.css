@@ -7,12 +7,6 @@
   src: url("../img/Inter.var.woff2") format("woff2");
 }
 
-*{
-  margin: 0;
-  padding: 0;
-  border: 0;  font-size: 100%;
-  vertical-align: baseline;
-}
 html{
   font-family: 'Inter', sans-serif;
   font-size: 16px;
@@ -20,50 +14,15 @@ html{
   text-align: center;
 }
 body{
-  margin-top: 4vw;
   background-color: #1e1e1e;
-}
-/*header ul, footer ul{
-
-}*/
-header{
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  padding: 2.5rem 10% 2.5rem 10%;
-  min-height: 100vh;
-  color: #eee;
-  background-color: #000000;
-  background-image: url(../img/arcticons/grid.png);
-  background-size: 50%;
-  background-position: top left, center center;
-  background-attachment: fixed;
-}
-header>*{
-  margin-bottom: 1rem;
-}
-header>p{
-  font-size: 1.5rem;
-}
-header li, footer li{
-  display: inline-block;
-  list-style-type: none;
-}
-
-section{
-  padding: 2.5rem 10% 2.5rem 10%;
-  color: #000;
-  font-size: 1.25rem;
-}
-section:nth-child(odd){
-  background-color: #eee;
 }
 
 p{
   margin-bottom: 2rem;
 }
+
 h1{
+  padding-top: 2vw;
   font-size: 3rem;
 }
 
@@ -107,7 +66,6 @@ h3{
   overflow: visible;
   min-height: 3rem;
   border-radius: 4em;
-  background-color: #eee;
   border: 1.5px solid #171717;
   box-shadow: none;
   outline: none;
