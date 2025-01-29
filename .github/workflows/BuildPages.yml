@@ -1,0 +1,210 @@
+name: Build Pages
+on:
+  pull_request_target:
+    types: [opened, synchronize, reopened]
+    branches:
+      - main
+    paths:
+      - 'newicons/appfilter.xml'
+  push:
+    branches: ['Arcticons-Pages']
+    paths:
+      - 'docs/**'
+  workflow_dispatch:
+    inputs:
+      run_colormapping:
+        description: "Run Create_Colormappping job (true/false)"
+        required: false
+        default: "true"
+      run_requestjson:
+        description: "Run Create_requestjson job (true/false)"
+        required: false
+        default: "true"
+env:
+  Branch: Arcticons-Pages
+jobs:
+  check_appfilter:
+    name: Check appfilter.xml from pull_request
+    if: github.event_name == 'pull_request_target'
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write # Required to comment on PRs
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.event.pull_request.user.login }}/${{ github.event.pull_request.head.ref }}
+      cancel-in-progress: true
+    steps:
+      - name: Checkout Repository ${{ github.event.pull_request.user.login }}/${{ github.event.pull_request.head.ref }}
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          sparse-checkout: |
+            newicons/appfilter.xml
+          sparse-checkout-cone-mode: false
+      - name: Install xmllint
+        shell: bash
+        run: |
+          sudo apt update
+          sudo apt install -y libxml2-utils
+      - name: Validate appfilter.xml
+        id: validate
+        run: |
+          if ! PARSE_OUTPUT=$(xmllint --noout newicons/appfilter.xml 2>&1) ; then
+            echo "Parsing appfilter.xml failed."
+            echo -e "Parsing of 'newicons/appfilter.xml' failed. Please fix the XML syntax errors. \n \`\`\` \n $PARSE_OUTPUT \n \`\`\`" >> comment_markdown.md
+            exit 1
+          else
+            echo "Parsing succeeded."
+          fi
+      - name: Post failure comment to PR
+        if: failure()
+        run: |
+          gh pr comment ${{ github.event.pull_request.number }} --body-file comment_markdown.md
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  Check_FilePath:
+    name: Check File Path changes
+    if: ${{ github.event_name == 'push'}}
+    runs-on: ubuntu-latest
+    outputs:
+      imagechange: ${{ steps.changes.outputs.images }}
+      requestchange: ${{ steps.changes.outputs.requests }}
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{env.Branch}}
+      - uses: dorny/paths-filter@v3
+        id: changes
+        with:
+          filters: |
+            images:
+              - 'docs/extracted_png/**'
+            requests:
+              - 'docs/assets/requests.txt'
+          base: ${{env.Branch}}
+  Create_Colormappping:
+    name: Create Colormapping
+    needs: [Check_FilePath]
+    if: ${{ ((needs.Check_FilePath.outputs.imagechange == 'true' && github.event_name == 'push') || inputs.run_colormapping == 'true'  ) && !failure() }}
+    runs-on: ubuntu-latest
+    concurrency:
+      group: 'colormapping'
+      cancel-in-progress: true
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{env.Branch}}
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+          cache: 'pip'
+      - run: pip install -r .github/workflows/requirements.txt
+      - name: Execute Python Script
+        id: colormapping_done
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python .github/workflows/create_colormapping.py
+      - name: Upload Colormapping
+        uses: actions/upload-artifact@v4
+        with:
+          name: colormapping
+          path: docs/assets/image_color_counts.xml
+  Create_requestjson:
+    name: Create Requestjson
+    needs: [Check_FilePath]
+    if: ${{ ((needs.Check_FilePath.outputs.requestchange == 'true' && github.event_name == 'push')  || inputs.run_requestjson == 'true' ) && !failure() }}
+    runs-on: ubuntu-latest
+    concurrency:
+      group: 'requestjson'
+      cancel-in-progress: true
+    outputs:
+      requestjson_done: ${{ steps.requestjson_done.outcome }}
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{env.Branch}}
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+          cache: 'pip'
+      - run: pip install -r .github/workflows/requirements.txt
+      - name: Execute Python Script
+        id: requestjson_done
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python .github/workflows/getGPlayData.py
+      - name: Upload Requestjson
+        uses: actions/upload-artifact@v4
+        with:
+          name: requestjson
+          path: docs/assets/requests.json
+  Push_Files:
+    needs: [Create_Colormappping, Create_requestjson]
+    runs-on: ubuntu-latest
+    concurrency:
+      group: 'push'
+    if: ${{(needs.Create_Colormappping.result == 'success' || needs.Create_requestjson.result == 'success') && !failure()}}
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{env.Branch}}
+      - name: Download Colormapping and Requestjson
+        uses: actions/download-artifact@v4
+        with:
+          path: docs/assets
+          merge-multiple: true
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m "Automated updates from Colormappping and Requestjson jobs"
+          git push
+  parse_and_combine:
+    name: Parse and Combine Appfilter
+    needs: [check_appfilter, Push_Files]
+    if: '!failure()'
+    permissions:
+      pages: write # Required to deploy to GitHub Pages
+      id-token: write # Required to deploy to GitHub Pages
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    concurrency:
+      group: 'pages'
+      cancel-in-progress: true
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{env.Branch}}
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+          cache: 'pip'
+      - run: pip install -r .github/workflows/requirements.txt
+      - name: Execute Python Script
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python .github/workflows/combine_appfilter.py
+      - name: Move combinded Appfilter
+        run: mv combined_appfilter.xml docs/assets/combined_appfilter.xml
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # Upload docs folder
+          path: 'docs'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
