@@ -1,8 +1,8 @@
-let lazyImageObserver = new IntersectionObserver(function(entries, observer){
-  entries.forEach(function(entry){
+let lazyImageObserver = new IntersectionObserver(function (entries, observer) {
+  entries.forEach(function (entry) {
     if (entry.isIntersecting) {
       let lazyImage = entry.target;
-      lazyImage.addEventListener('error', function(){this.src = this.src.replace('icons/black', 'todo').replace('icons/white', 'todo');});
+      lazyImage.addEventListener('error', function () { this.src = this.src.replace('icons/black', 'todo').replace('icons/white', 'todo'); });
       lazyImage.src = lazyImage.dataset.src;
       lazyImage.className = '';
       lazyImageObserver.unobserve(lazyImage);
@@ -10,52 +10,58 @@ let lazyImageObserver = new IntersectionObserver(function(entries, observer){
   });
 });
 
-function openPopup(){
+function openPopup() {
   let fig = document.createElement('figure');
   let title = document.createElement('figcaption');
   title.appendChild(document.createTextNode(this.title));
   let img = document.createElement('img');
   img.src = this.src;
   img.alt = this.alt;
-  fig.addEventListener('click', closePopup); 
+  fig.addEventListener('click', closePopup);
   fig.appendChild(title);
   fig.appendChild(img);
   document.body.appendChild(fig);
 }
 
-function closePopup(){
+function closePopup() {
   let fig = document.getElementsByTagName('figure')[0];
   fig.parentNode.removeChild(fig);
 }
 
-function search(){
+function search() {
   document.getElementById('results').setAttribute('aria-disabled', 'false');
-  let busq = '.tab img[title*="'+this.value.toLocaleLowerCase()+'"]';
-  let todo = '.tab img';
-  let validos = Array.prototype.slice.call(document.querySelectorAll(busq));
-  let todos = Array.prototype.slice.call(document.querySelectorAll(todo));
-  for (let i of todos){
-    if (this.value){
-      if (validos.indexOf(i) == -1){
-        i.style.display = 'none';
-      }else{
-        i.style.display = 'inline-block';
-      }
-    }else{
-      i.style.display = 'inline-block';
+
+  let searchTerm = this.value.toLowerCase();
+  let allImages = Array.from(document.querySelectorAll('.tab img')); // Convert NodeList to Array
+  let uniqueTitles = new Set(); // Store unique titles
+  let validImages = new Set(); // Store unique images
+
+  allImages.forEach(img => {
+    let title = img.title.toLowerCase();
+    if ((!searchTerm || title.includes(searchTerm)) && !uniqueTitles.has(title)) {
+      uniqueTitles.add(title); // Add title to Set to ensure uniqueness
+      validImages.add(img); // Add corresponding image
     }
-  }
+  });
+
+  // Update visibility of images
+  allImages.forEach(img => {
+    img.style.display = validImages.has(img) ? 'inline-block' : 'none';
+  });
 }
 
-function sortIcons(a, b){
+
+
+
+function sortIcons(a, b) {
   let nameA = a.getAttribute('drawable');
   let nameB = b.getAttribute('drawable');
-  if (nameA < nameB){ return -1; }
-  if (nameA > nameB){ return 1; }
+  if (nameA < nameB) { return -1; }
+  if (nameA > nameB) { return 1; }
   return 0;
 }
 
-function genImageGrid(){
+function genImageGrid() {
   let parse = new DOMParser();
   let xmldoc = parse.parseFromString(this.responseText, 'application/xml');
   // Generate carrousel
@@ -64,16 +70,16 @@ function genImageGrid(){
   let carrousel = document.createElement('section');
   carrousel.id = 'carrousel';
   carrousel.innerHTML = '<h2>Latest icons</h2><div class="latest content"></div>';
-  for (let i of latest){
+  for (let i of latest) {
     let im = document.createElement('img');
     im.src = 'https://raw.githubusercontent.com/Donnnno/Arcticons/main/icons/black/' + i.attributes.drawable.value + '.svg';
-    im.addEventListener('error', function(){this.src = this.src.replace('icons/black', 'todo');});
+    im.addEventListener('error', function () { this.src = this.src.replace('icons/black', 'todo'); });
     im.alt = i.attributes.drawable.value;
     im.title = i.attributes.drawable.value;
     carrousel.children[1].appendChild(im);
   }
 
-  for (let i of docs.sort(sortIcons)){
+  for (let i of docs.sort(sortIcons)) {
     let im = document.createElement('img');
     im.className = 'lazy';
     lazyImageObserver.observe(im);
@@ -88,8 +94,15 @@ function genImageGrid(){
 function countDrawableEntries(xmlText) {
   const parser = new DOMParser();
   const xmlDoc = parser.parseFromString(xmlText, 'application/xml');
-  const entries = xmlDoc.querySelectorAll('item');
-  return entries.length;
+  const items = xmlDoc.querySelectorAll('item');
+  // Create a Set to store unique entries
+  const uniqueEntries = new Set();
+  // Iterate through the items and add their unique value to the Set
+  items.forEach((item) => {
+    const uniqueValue = item.getAttribute('drawable'); 
+    uniqueEntries.add(uniqueValue);
+  });
+  return uniqueEntries.size;
 }
 
 // Function to round down the count to the nearest multiple of 100
@@ -106,13 +119,13 @@ function updateIconCount(count) {
   }
 }
 
-// Your existing code
-document.addEventListener("DOMContentLoaded", function(){
+
+document.addEventListener("DOMContentLoaded", function () {
   document.getElementsByClassName('tab')[1].style.display = 'none';
   document.getElementById('search').oninput = search;
   let a = new XMLHttpRequest();
   a.open('GET', 'https://raw.githubusercontent.com/Donnnno/Arcticons/main/app/src/main/assets/drawable.xml');
-  a.onload = function() {
+  a.onload = function () {
     const count = countDrawableEntries(a.responseText);
     console.log("Number of drawable entries:", count);
     updateIconCount(count); // Update the count in the HTML content
