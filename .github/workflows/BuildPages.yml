@@ -36,6 +36,11 @@ on:
         type: boolean
         required: false
         default: false
+      run_build_pages:
+        description: "Run parse_and_combine job"
+        type: boolean
+        required: false
+        default: false
 
 jobs:
   fetch_and_push_file:
@@ -320,8 +325,8 @@ jobs:
           git push
   parse_and_combine:
     name: Parse and Combine Appfilter
-    needs: [check_appfilter, Push_Files,fetch_and_push_file,Update_Requests]
-    if: ${{(needs.check_appfilter.result == 'success' || needs.Push_Files.result == 'success' || needs.fetch_and_push_file.result == 'success' ||(needs.Update_Requests.result == 'success'  && needs.Update_Requests.outputs.changes_detected == 'true' )) && !failure()}}
+    needs: [check_appfilter, Push_Files,fetch_and_push_file,Update_Requests,Check_FilePath]
+    if: ${{(needs.Check_FilePath.result == 'success' ||needs.check_appfilter.result == 'success' || needs.Push_Files.result == 'success' || needs.fetch_and_push_file.result == 'success' ||(needs.Update_Requests.result == 'success'  && needs.Update_Requests.outputs.changes_detected == 'true' )||inputs.run_build_pages == true) && !failure()}}
     permissions:
       pages: write # Required to deploy to GitHub Pages
       id-token: write # Required to deploy to GitHub Pages
