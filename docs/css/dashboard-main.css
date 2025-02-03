@@ -14,10 +14,30 @@ body {
     background-color: white;
 }
 
+.logo {
+    width: 160px;
+    height: 60px;
+    top: -50%;
+    fill: #000;
+    flex-shrink: 0;
+    filter: invert();
+}
+
+.pagetop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
 h1 {
     text-align: center;
+    flex-grow: 1;
     margin-top: 20px;
     margin-bottom: 20px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 h2 {
@@ -35,4 +55,10 @@ h2 {
     .links img {
         filter: none;
     }
+
+    .logo {
+        fill: #fff;
+        filter: none;
+    }
+
 }

@@ -4,7 +4,7 @@
     height: 50px;
     display: flex;
     margin-bottom: 20px;
-    gap: 50px;
+    gap: 20px;
 }
 
 /* Searchbar container */
@@ -127,7 +127,9 @@
 }
 
 #updatable-button {
-    width: 100%;
+    /*width: 100%;*/
+    text-align: end;
+    height: 45px;
 }
 
 #regex-search-container {

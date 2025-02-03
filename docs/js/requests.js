@@ -39,7 +39,9 @@ fetch(`assets/requests.json`)
             const requestDate = new Date(parseFloat(entry.requestDate) * 1000); // Convert to milliseconds
             return requestDate > latest ? requestDate : latest;
         }, new Date(0));
-        document.getElementById('date_header').innerText = latestRequestDate.toLocaleString();
+        document.getElementById('date_header').innerText = latestRequestDate.toLocaleString(undefined, {
+   day: 'numeric', year: 'numeric', month: 'long'
+});
 
         // Process each app entry
         Object.entries(JsonContent).forEach(([componentInfo, entry]) => {
@@ -47,7 +49,7 @@ fetch(`assets/requests.json`)
             const drawable = entry.drawable;
             const appIconPath = drawable ? `extracted_png/${drawable}.webp` : 'img/requests/default.svg';
             const appIcon = `<img src="${appIconPath}" alt="Icon" style="width:50px;height:50px;">`;
-            const playStoreDownloads = entry.PlayStore.Downloads;
+            const playStoreDownloads = entry.PlayStore.Downloads.replace("no_data", "X");
             const playStoreCategories = entry.PlayStore.Categories;
             const filteredCategories = playStoreCategories.filter(category => {
                 return !/^#\d* top\b/.test(category); // Exclude based on the regex
@@ -80,7 +82,7 @@ fetch(`assets/requests.json`)
             const appNameAppfilter = `<!-- ${entry.Name} -->`;
             const appfilter = `<item component="ComponentInfo{${componentInfo}}" drawable="${drawable}"/>`;
             const requestedInfo = entry.count;
-            const lastRequestedTime = new Date(parseFloat(entry.requestDate) * 1000).toLocaleString();
+            const lastRequestedTime = new Date(parseFloat(entry.requestDate) * 1000).toLocaleString().replace(',', '');
             const appIconColor = 0;
             appEntriesData.push({
                 appName,
@@ -122,7 +124,7 @@ fetch(`assets/requests.json`)
                 const filteredData = filterAppfilter(appEntriesData, appfilterContent);
                 appEntriesData = filteredData;
                 appEntriesDataGlobal = filteredData;
-                updateHeaderText(`${appEntriesData.length} Requested Apps Pending`);
+                updateHeaderText(`${appEntriesData.length} Requested Apps`);
                 const table = document.querySelector('table');
                 const headers = table.querySelectorAll('thead th');
                 headers[sortingColumnIndex].classList.add(sortingDirection);
@@ -677,6 +679,7 @@ function sortData(sortingDirection, columnIndex, sortedData) {
 function parseDownloadValue(value, sortingDirection) {
     console
     if (value === "no_data") return sortingDirection === 'asc' ? 9999999999999999999999 : -1; // Assign a low value for "AppNotFound" to push it to the end
+    if (value === "X") return sortingDirection === 'asc' ? 9999999999999999999999 : -1; // Assign a low value for "AppNotFound" to push it to the end
     if (value.endsWith("+")) value = value.slice(0, -1); // Remove the "+" at the end
     if (value.endsWith("K")) return parseFloat(value) * 1000; // Convert "k" to 1000
     if (value.endsWith("M")) return parseFloat(value) * 1000000; // Convert "M" to 1,000,000
@@ -750,9 +753,9 @@ function getCellValue(row, columnIndex) {
     const key = Object.keys(row)[columnIndex];
     if (key === 'lastRequestedTime') {
         // Parse date strings to Date objects for sorting
-        const dateString = row[key].split(',')[0]; // Extract date part from the string
+        const dateString = row[key].split(' ')[0]; // Extract date part from the string
         const [day, month, year] = dateString.split('/').map(Number); // Split the date string and convert parts to numbers
-        const timeString = row[key].split(',')[1].trim(); // Extract time part from the string
+        const timeString = row[key].split(' ')[1].trim(); // Extract time part from the string
         const [hour, minute, second] = timeString.split(':').map(Number); // Split the time string and convert parts to numbers
         return new Date(year, month - 1, day, hour, minute, second); // Return a Date object with year, month, day, hour, minute, second
     }
