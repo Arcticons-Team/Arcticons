@@ -177,3 +177,30 @@ tr.row-glow {
         display: none;
     }
 }
+
+@media screen and (max-width: 770px) {
+    #galaxy{
+        display: none;
+    }
+    td:nth-child(3) {
+        min-width: 150px;
+    }
+}
+
+@media screen and (max-width: 730px) {
+    #izzy{
+        display: none;
+    }
+    td:nth-child(3) {
+        min-width: 110px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    #fdroid{
+        display: none;
+    }
+    td:nth-child(3) {
+        min-width: 70px;
+    }
+}
