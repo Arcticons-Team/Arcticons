@@ -29,6 +29,9 @@ body {
     align-items: center;
     width: 100%;
 }
+#smallheader{
+    display: none;
+}
 
 h1 {
     text-align: center;
@@ -61,4 +64,13 @@ h2 {
         filter: none;
     }
 
+}
+
+@media screen and (max-width: 800px) {
+    #header {
+        display: none;
+    }
+    #smallheader{
+        display: block;
+    }
 }

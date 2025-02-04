@@ -259,6 +259,7 @@ function parseAppfilter(appfilterContent) {
 function updateHeaderText(newHeader) {
     header = newHeader;
     document.getElementById('header').innerText = newHeader;
+    document.getElementById('smallheader').innerText = newHeader;
 }
 
 function lazyLoadAndRender() {
