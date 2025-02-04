@@ -76,6 +76,12 @@ h3 {
 }
 
 @media screen and (max-width: 800px) {
+   h1 {
+    font-size: 150%;
+   }
+}
+
+@media screen and (max-width: 680px) {
     #header {
         display: none;
     }

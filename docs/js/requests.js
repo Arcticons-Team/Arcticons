@@ -316,7 +316,7 @@ function renderTable(data) {
         cell4.innerHTML = entry.playStoreDownloads;
         cell5.innerHTML = entry.requestedInfo;
         cell6.innerHTML = entry.lastRequestedTime;
-        cell7.innerHTML = `<button class="green-button" id="copy-button" onclick="copyToClipboard(${index})">Copy</button>`;
+        cell7.innerHTML = `<button class="green-button" id="copy-button" onclick="copyToClipboard(${index})"><img class="copy-icon" src="img/requests/copy.svg" alt="Copy"><span class="copy-text">Copy</span></button>`;
     });
 
     // Add event listeners to the icon previews

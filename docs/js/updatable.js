@@ -40,7 +40,7 @@ fetch(`assets/updatable.txt`)
             const packageName = appfilter.split('ComponentInfo{')[1].split('/')[0].trim();
             const drawable = extractDrawable(appfilter);
             const appIconPath = drawable ? `extracted_png/${drawable}.webp` : 'img/requests/default.svg'; // Adjust path accordingly
-            const appIcon = `<img src="${appIconPath}" alt="App Icon" style="width:50px;height:50px;">`;
+            const appIcon = `<img src="${appIconPath}" alt="App Icon">`;
 
             appEntriesData.push({
                 appName,
@@ -75,7 +75,7 @@ fetch(`assets/updatable.txt`)
                 const filteredData = filterAppfilter(appEntriesData, appfilterContent);
                 appEntriesData = filteredData;
                 appEntriesDataGlobal = filteredData;
-                updateHeaderText(`${appEntriesData.length} Possible Appfilter Updates`);
+                updateHeaderText(`${appEntriesData.length} Updates Available`);
                 const table = document.querySelector('table');
                 const headers = table.querySelectorAll('thead th');
                 // headers[sortingColumnIndex].classList.add(sortingDirection);
@@ -136,6 +136,7 @@ function parseAppfilter(appfilterContent) {
 function updateHeaderText(newHeader) {
     header = newHeader;
     document.getElementById('header').innerText = newHeader;
+    document.getElementById('smallheader').innerText = newHeader;
 }
 
 function lazyLoadAndRender() {
@@ -176,7 +177,7 @@ function renderTable(data) {
         cell2.innerHTML = `<a href="#" class="icon-preview" data-index="${index}">${entry.appIcon}</a>`;
         cell3.innerHTML = `<div class="package-name"><div id="packagename">` + entry.packageName + `</div><div id="package-copy"><button class="copy-package" onclick="copyToClipboard(${index}, 'package')"><img src="img/requests/copy.svg"></button></div></div>`;
         cell4.innerHTML = entry.appfilter.replace('<', '&lt;').replace('>', '&gt;').replace(/"/g, '&quot;').trim();
-        cell5.innerHTML = `<button class="green-button" id="copy-button" onclick="copyToClipboard(${index}, 'appfilter')">Copy</button>`;
+        cell5.innerHTML = `<button class="green-button" id="copy-button" onclick="copyToClipboard(${index}, 'appfilter')"><img class="copy-icon" src="img/requests/copy.svg" alt="Copy"><span class="copy-text">Copy</span></button>`;
     });
     // Add event listeners to the icon previews
     const iconPreviews = document.querySelectorAll('.icon-preview');
