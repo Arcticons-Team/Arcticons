@@ -56,7 +56,6 @@ td:nth-child(1) {
 }
 
 td:nth-child(2) {
-    min-width: 55px;
     max-width: 60px;
 }
 
@@ -89,6 +88,11 @@ th {
 /* Quick link images*/
 .links img {
     filter: invert();
+    width: 50px;
+    height: 50px;
+}
+
+.icon-preview img{
     width: 50px;
     height: 50px;
 }
@@ -136,9 +140,18 @@ tr.row-glow {
         width: 40px;
         height: 40px;
     }
+    .icon-preview img{
+        width: 40px;
+        height: 40px;
+    }
+
 }
 @media screen and (max-width: 1100px) {
     .links img {
+        width: 30px;
+        height: 30px;
+    }
+    .icon-preview img{
         width: 30px;
         height: 30px;
     }
