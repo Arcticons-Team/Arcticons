@@ -29,7 +29,8 @@ body {
     align-items: center;
     width: 100%;
 }
-#smallheader{
+
+#smallheader {
     display: none;
 }
 
@@ -47,6 +48,14 @@ h2 {
     text-align: center;
     margin-top: 20px;
     margin-bottom: 20px;
+
+}
+
+h3 {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 30px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -70,7 +79,8 @@ h2 {
     #header {
         display: none;
     }
-    #smallheader{
+
+    #smallheader {
         display: block;
     }
 }
