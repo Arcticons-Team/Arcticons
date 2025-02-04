@@ -30,6 +30,10 @@ body {
     width: 100%;
 }
 
+#smallheader {
+    display: none;
+}
+
 h1 {
     text-align: center;
     flex-grow: 1;
@@ -44,6 +48,14 @@ h2 {
     text-align: center;
     margin-top: 20px;
     margin-bottom: 20px;
+
+}
+
+h3 {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 30px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -61,4 +73,14 @@ h2 {
         filter: none;
     }
 
+}
+
+@media screen and (max-width: 800px) {
+    #header {
+        display: none;
+    }
+
+    #smallheader {
+        display: block;
+    }
 }
