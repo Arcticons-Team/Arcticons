@@ -61,6 +61,7 @@
   /** that's the magic **/
 }
 
+/** Position of info box**/
 #copy-selected-button:before,
 #copy-selected-button:after {
   content: "";
@@ -68,7 +69,7 @@
   opacity: 0;
   position: absolute;
   top: 50%;
-  transform: translate3d(0, -50%, 0);
+  transform: translate3d(-70%, -25%, 0);
   transition: all 0.4s 0s ease;
   z-index: 2;
 }
@@ -78,13 +79,13 @@
   height: 0;
   right: -8px;
   border: 16px solid transparent;
-  border-right-color: #181818;
+  border-bottom-color: #181818;
 }
 
 #copy-selected-button:after {
   content: attr(aria-label);
   width: 120%;
-  left: calc(100% + 16px);
+  top: calc(100% + 16px);
   padding: 10px;
   background-color: #181818;
   color: #fff;
