@@ -83,7 +83,7 @@ function genImageGrid() {
     let im = document.createElement('img');
     im.className = 'lazy';
     lazyImageObserver.observe(im);
-    im.src = 'c.svg';
+    //im.src = 'c.svg';
     im.dataset.src = 'https://raw.githubusercontent.com/Donnnno/Arcticons/main/icons/black/' + i.attributes.drawable.value + '.svg';
     im.alt = i.attributes.drawable.value;
     im.title = i.attributes.drawable.value;
