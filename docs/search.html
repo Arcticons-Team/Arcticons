@@ -22,7 +22,14 @@
     <link rel="stylesheet" href="css/arcticonssearch.css" />
     <script src="js/search.js"></script>
     <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/footer.css" />
     <script src="js/arcticonssearch.js"></script>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>  
+      $(function(){
+        $("#footer").load("html/footer.html"); 
+      });
+    </script>
   </head>
   <body>
 
@@ -37,5 +44,6 @@
         </div>
       </div>
     </section>
+    <div id="footer"></div>
   </body>
 </html>

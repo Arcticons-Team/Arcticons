@@ -1,5 +1,4 @@
 footer {
-    background-color: #000;
     color: #fff;
     padding: 80px 8vw;
     font-size: 16px;
@@ -14,4 +13,13 @@ footer p {
 
 footer a {
     color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    
 }
+
+.copyleft {
+    display: inline-block;
+    transform: rotate(180deg);
+  }
