@@ -7,7 +7,7 @@ on:
     paths:
       - 'newicons/appfilter.xml'
   push:
-    branches: ['Arcticons-Pages','main']
+    branches: ['Arcticons-Pages', 'main']
     paths:
       - 'docs/**'
       - 'newicons/appfilter.xml'
@@ -41,7 +41,21 @@ on:
         type: boolean
         required: false
         default: false
-
+permissions:
+  actions: none
+  attestations: none
+  checks: none
+  contents: read
+  deployments: none
+  id-token: none
+  issues: none
+  discussions: none
+  packages: none
+  pages: none
+  pull-requests: none
+  repository-projects: none
+  security-events: none
+  statuses: none
 jobs:
   fetch_and_push_file:
     name: Fetch and Push File
@@ -56,7 +70,6 @@ jobs:
       SOURCE_BRANCH: ${{vars.MAIN_BRANCH}}
       TARGET_BRANCH: ${{vars.PAGES_BRANCH}}
       FILE_PATH: newicons/appfilter.xml
-
     steps:
       # Step 1: Checkout the repository
       - name: Checkout main Repository
@@ -64,20 +77,22 @@ jobs:
         with:
           ref: ${{vars.MAIN_BRANCH}}
           path: main
-
-      # Step 2: Checkout the 2. repository
       - name: Checkout Arcticons-Pages Repository
+        # Step 2: Checkout the 2. repository
+
         uses: actions/checkout@v4
         with:
           ref: ${{vars.PAGES_BRANCH}}
           path: pages
-      # Step 3: Fetch the file from the source branch
       - name: Copy File from main to Arcticons-Pages
+        # Step 3: Fetch the file from the source branch
+
         run: |
-            rm pages/newicons/appfilter.xml
-            cp main/newicons/appfilter.xml pages/newicons/appfilter.xml
-      # Step 4: Commit and push changes
+          rm pages/newicons/appfilter.xml
+          cp main/newicons/appfilter.xml pages/newicons/appfilter.xml
       - name: Commit and Push Changes
+        # Step 4: Commit and push changes
+
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -91,8 +106,8 @@ jobs:
     name: Check appfilter.xml from pull_request
     if: github.event_name == 'pull_request_target'
     runs-on: ubuntu-latest
-    permissions:
-      pull-requests: write # Required to comment on PRs
+    outputs:
+      CommentPRtext: ${{ steps.validate.outputs.text }}
     concurrency:
       group: ${{ github.workflow }}-${{ github.event.pull_request.user.login }}/${{ github.event.pull_request.head.ref }}
       cancel-in-progress: true
@@ -114,15 +129,25 @@ jobs:
         run: |
           if ! PARSE_OUTPUT=$(xmllint --noout newicons/appfilter.xml 2>&1) ; then
             echo "Parsing appfilter.xml failed."
-            echo -e "Parsing of 'newicons/appfilter.xml' failed. Please fix the XML syntax errors. \n \`\`\` \n $PARSE_OUTPUT \n \`\`\`" >> comment_markdown.md
+            echo -e "text=$PARSE_OUTPUT" >> "$GITHUB_OUTPUT"
             exit 1
           else
             echo "Parsing succeeded."
           fi
-      - name: Post failure comment to PR
-        if: failure()
-        run: |
-          gh pr comment ${{ github.event.pull_request.number }} --body-file comment_markdown.md
+  comment_pr_check_appfilter:
+    name: Comment on PR
+    needs: ['check_appfilter']
+    if: ${{failure()}}
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write # Required to comment on PRs
+    env:
+      PARSE_OUTPUT: ${{needs.check_appfilter.outputs.CommentPRtext}}
+    steps:
+      - name: Create Comment
+        run: echo -e "Parsing of 'newicons/appfilter.xml' failed. Please fix the XML syntax errors. \n \`\`\` \n $PARSE_OUTPUT \n \`\`\`" >> comment_markdown.md
+      - name: Make Comment
+        run: gh pr comment ${{ github.event.pull_request.number }} --body-file comment_markdown.md --repo ${{ github.repository }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   Update_Requests:
@@ -159,10 +184,7 @@ jobs:
           IMAP_SERVER: ${{ secrets.IMAP_SERVER }}
           IMAP_USERNAME: ${{ secrets.IMAP_USERNAME }}
           IMAP_PASSWORD: ${{ secrets.IMAP_PASSWORD }}
-        run: |
-          mkdir mail
-          python .github/workflows/email_parser_auto.py mail newicons/appfilter.xml docs/extracted_png docs/assets/ 
-          rm -r mail
+        run: "mkdir mail\npython .github/workflows/email_parser_auto.py mail newicons/appfilter.xml docs/extracted_png docs/assets/ \nrm -r mail\n"
       - name: Check for changes
         id: check_changes
         run: |
@@ -192,13 +214,11 @@ jobs:
 
             # You can add more checks for other directories or files here as needed
           fi
-
       - name: Commit and Push if Changes Exist
         if: ${{ steps.check_changes.outputs.changes_detected == 'true' }}
         run: |
           git commit -m "Automated Request Update"
           git push
-
   Check_FilePath:
     name: Check File Path changes
     if: ${{github.event_name == 'push' && github.ref_name == vars.PAGES_BRANCH}}
@@ -325,7 +345,7 @@ jobs:
           git push
   parse_and_combine:
     name: Parse and Combine Appfilter
-    needs: [check_appfilter, Push_Files,fetch_and_push_file,Update_Requests,Check_FilePath]
+    needs: [check_appfilter, Push_Files, fetch_and_push_file, Update_Requests, Check_FilePath]
     if: ${{(needs.Check_FilePath.result == 'success' ||needs.check_appfilter.result == 'success' || needs.Push_Files.result == 'success' || needs.fetch_and_push_file.result == 'success' ||(needs.Update_Requests.result == 'success'  && needs.Update_Requests.outputs.changes_detected == 'true' )||inputs.run_build_pages == true) && !failure()}}
     permissions:
       pages: write # Required to deploy to GitHub Pages
