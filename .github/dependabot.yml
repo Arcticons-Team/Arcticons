@@ -5,11 +5,36 @@
 
 version: 2
 updates:
-  - package-ecosystem: "github-actions" # See documentation for possible values
-    directory: ".github/workflows/" # Location of package manifests
+# Check github actions and pip on main
+  - package-ecosystem: "github-actions" 
+    directory: ".github/workflows/" 
     schedule:
       interval: "weekly"
-  - package-ecosystem: "pip" # See documentation for possible values
-    directory: ".github/workflows/" # Location of package manifests
+    target-branch: "main"  
+  - package-ecosystem: "pip" 
+    directory: ".github/workflows/" 
     schedule:
       interval: "weekly"
+    target-branch: "main" 
+# Check github actions and pip on Arcticons-Pages
+  - package-ecosystem: "github-actions" 
+    directory: ".github/workflows/"
+    schedule:
+      interval: "weekly"
+    target-branch: "Arcticons-Pages"  
+  - package-ecosystem: "pip" 
+    directory: ".github/workflows/" 
+    schedule:
+      interval: "weekly"
+    target-branch: "Arcticons-Pages"  
+#gradle dependencies on main
+  - package-ecosystem: "gradle" 
+    directory: "app/" 
+    schedule:
+      interval: "weekly"
+    target-branch: "main" 
+  - package-ecosystem: "gradle" 
+    directory: "preparehelper/" 
+    schedule:
+      interval: "weekly"
+    target-branch: "main" 
