@@ -77,8 +77,9 @@ jobs:
         with:
           ref: ${{vars.MAIN_BRANCH}}
           path: main
-      # Step 2: Checkout the 2. repository
       - name: Checkout Arcticons-Pages Repository
+        # Step 2: Checkout the 2. repository
+
         uses: actions/checkout@v4
         with:
           ref: ${{vars.PAGES_BRANCH}}
@@ -105,8 +106,9 @@ jobs:
     name: Check appfilter.xml from pull_request
     if: github.event_name == 'pull_request_target'
     runs-on: ubuntu-latest
-    permissions:
-      pull-requests: write # Required to comment on PRs
+    outputs:
+      CommentPR: ${{ steps.validate.outputs.text }}
+      CommentPRtext: ${{ steps.setcommentpr.outputs.bool }}
     concurrency:
       group: ${{ github.workflow }}-${{ github.event.pull_request.user.login }}/${{ github.event.pull_request.head.ref }}
       cancel-in-progress: true
@@ -128,17 +130,27 @@ jobs:
         run: |
           if ! PARSE_OUTPUT=$(xmllint --noout newicons/appfilter.xml 2>&1) ; then
             echo "Parsing appfilter.xml failed."
-            echo -e "Parsing of 'newicons/appfilter.xml' failed. Please fix the XML syntax errors. \n \`\`\` \n $PARSE_OUTPUT \n \`\`\`" >> comment_markdown.md
+            echo -e "text=Parsing of 'newicons/appfilter.xml' failed. Please fix the XML syntax errors. \n \`\`\` \n $PARSE_OUTPUT \n \`\`\`" >> "$GITHUB_OUTPUT"
             exit 1
           else
             echo "Parsing succeeded."
           fi
       - name: Post failure comment to PR
+        id: setcommentpr
         if: failure()
-        run: |
-          gh pr comment ${{ github.event.pull_request.number }} --body-file comment_markdown.md
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: echo "bool=true" >> "$GITHUB_OUTPUT"
+  comment_pr_check_appfilter:
+    name: Comment on PR
+    needs: ['check_appfilter']
+    if: ${{needs.check_appfilter.outputs.CommentPR == 'true'}}
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write # Required to comment on PRs
+    env:
+      OutputComment: ${{needs.check_appfilter.outputs.CommentPRtext}}
+    steps:
+      - name: Make_a_Comment
+        run: gh pr comment ${{ github.event.pull_request.number }} --body "$OutputComment"
   Update_Requests:
     if: ${{ github.repository == vars.REPOSITORY && ( inputs.run_Request_Update == true || github.event_name == 'schedule') && vars.AUTOMATIC_UPDATE == 'true' }}
     environment:
