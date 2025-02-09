@@ -64,6 +64,8 @@ jobs:
     concurrency:
       group: push
       cancel-in-progress: false
+    permissions:
+      contents: write
     environment:
       name: FileSync
     env:
@@ -308,6 +310,8 @@ jobs:
     concurrency:
       group: 'push'
       cancel-in-progress: false
+    permissions:
+      contents: write
     if: ${{(needs.Create_Colormappping.result == 'success' || needs.Create_requestjson.result == 'success') && !failure()}}
     steps:
       - name: Checkout Repository
