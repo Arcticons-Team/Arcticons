@@ -765,12 +765,18 @@
 	<item component="ComponentInfo{com.academia.academia/com.academia.ui.activities.SplashActivity}" drawable="academia"/>
 
 	<!-- aCalendar -->
-	<item component="ComponentInfo{org.withouthat.acalendar/org.withouthat.acalendar.ACalendar}" drawable="calendara"/>
-	<item component="ComponentInfo{org.withouthat.acalendar/org.withouthat.acalendar.tasks.TasksActivity}" drawable="calendara"/>
+	<item component="ComponentInfo{org.withouthat.acalendar/org.withouthat.acalendar.ACalendar}" drawable="acalendar"/>
+	<item component="ComponentInfo{org.withouthat.acalendar/org.withouthat.acalendar.tasks.TasksActivity}" drawable="acalendar"/>
 
 	<!-- aCalendar+ -->
 	<item component="ComponentInfo{org.withouthat.acalendarplus/org.withouthat.acalendar.ACalendar}" drawable="acalendar_plus"/>
 	<item component="ComponentInfo{org.withouthat.acalendarplus/org.withouthat.acalendar.tasks.TasksActivity}" drawable="acalendar_plus"/>
+
+	<!-- aCalendar Dynamic icon -->
+	<calendar component="ComponentInfo{org.withouthat.acalendarplus/org.withouthat.acalendar.ACalendar}" prefix="calendar_simple_"/>
+	<calendar component="ComponentInfo{org.withouthat.acalendarplus/org.withouthat.acalendar.tasks.TasksActivity}" prefix="calendar_simple_"/>
+	<calendar component="ComponentInfo{{org.withouthat.acalendar/org.withouthat.acalendar.ACalendar}" prefix="calendar_simple_"/>
+	<calendar component="ComponentInfo{org.withouthat.acalendar/org.withouthat.acalendar.tasks.TasksActivity}" prefix="calendar_simple_"/>
 
 	<!-- Acastus Photon -->
 	<item component="ComponentInfo{name.gdr.acastus_photon/name.gdr.acastus_photon.MainActivity}" drawable="acastusphoton"/>
