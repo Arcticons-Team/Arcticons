@@ -49,6 +49,3 @@
 ## License
   Arcticons uses the [GPL-3.0 license](https://www.gnu.org/licenses/gpl-3.0.en.html).<br>
   All icons are licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).<br>
-
-
-This project is tested with BrowserStack
