@@ -42,6 +42,8 @@
 ## Sponsored by
 <div align="center">
   <a href="https://www.gitbook.com/"><img height="80" alt="GitBook" src="github/gitbook.webp"></a>
+  <br>
+  <p style="text-align: center;">This project is tested with BrowserStack</p>
 </div>
 
 ## License
