@@ -14,9 +14,9 @@ You can modify what you send in the email:
 
 This information is solely used for the icon request and remains private. **You're also fully controlling what data you send to us via email.**
 
-All mails are securely stored on [Disroot's servers](https://disroot.org/en/privacy_policy), and are regularly deleted (usually within three months).
+All mails are securely stored with [zero-access encryption](https://proton.me/security/zero-access-encryption) via Proton Mail's servers, and are regularly deleted (usually within three months).
 
 The requested icons will be gathered and into our database. All identifiable information is stripped in the process, only the apps, icons, date of request will be visible in our publicly visible [Requests Dashboard](https://arcticons-team.github.io/Arcticons/requests.html).
 
 Last modified:
-**19 January 2025**
+**11 Juni 2024**
