@@ -4098,8 +4098,12 @@
 	<item component="ComponentInfo{com.timenotclocks.bookcase/com.timenotclocks.bookcase.MainActivity}" drawable="badreads"/>
 
 	<!-- Bagan Keyboard -->
-	<item component="ComponentInfo{com.bit.androsmart.kbinapp/com.bkb.ui.settings.setup.ActivitySelectKeyboard}" drawable="bagan_keyboard"/>
+	<item comp
+	onent="ComponentInfo{com.bit.androsmart.kbinapp/com.bkb.ui.settings.setup.ActivitySelectKeyboard}" drawable="bagan_keyboard"/>
 
+	<!-- Bagatur Chess Engine -->
+	<item component="ComponentInfo{com.bagaturchess/org.metatrans.apps.bagatur.activities.Activity_Loading_BagaturChess}" drawable="bagatur_chess_engine"/>
+	
 	<!-- Bageterie Boulevard -->
 	<item component="ComponentInfo{cz.bbdomu.app/cz.bbdomu.app.MainActivity}" drawable="bageterie_boulevard"/>
 
@@ -13470,7 +13474,8 @@
 	<item component="ComponentInfo{info.ebstudio.ebpocketfree/info.ebstudio.ebpocketfree.SplashActivity}" drawable="ebpocket_lite"/>
 
 	<!-- EBT art -->
-	<item component="ComponentInfo{com.reactiveebt/com.reactiveebt.MainActivity}" drawable="currency_euro"/>
+	<item component="ComponentInfo{com.reactiveebt/com.reactiveebt.MainActivity}" drawable="ebtart"/>
+	<item component="ComponentInfo{com.reactiveebt/com.example.ebt_art_flutter.MainActivity}" drawable="ebtart"/>
 
 	<!-- Echo -->
 	<item component="ComponentInfo{eu.mrogalski.saidit/eu.mrogalski.saidit.SaidItActivity}" drawable="echo"/>
