@@ -75,7 +75,7 @@ fetch(`assets/requests.json`)
                 `<a href="https://f-droid.org/en/packages/${componentInfo.split('/')[0]}/" class="links" id='fdroid' target="_blank"><img src="img/requests/f-droid.svg" alt="Image"></a>`,
                 `<a href="https://apt.izzysoft.de/fdroid/index/apk/${componentInfo.split('/')[0]}" class="links" id='izzy' target="_blank"><img src="img/requests/izzyondroid.svg" alt="Image"></a>`,
                 `<a href="https://galaxystore.samsung.com/detail/${componentInfo.split('/')[0]}" class="links" id='galaxy' target="_blank"><img src="img/requests/galaxystore.svg" alt="Image"></a>`,
-                `<a href="https://www.ecosia.org/search?q=c${componentInfo.split('/')[0]}" class="links" target="_blank"><img src="img/requests/search-globe.svg" alt="Image"></a>`
+                `<a href="https://www.ecosia.org/search?q=${componentInfo.split('/')[0]}" class="links" target="_blank"><img src="img/requests/search-globe.svg" alt="Image"></a>`
             ].join('\n');
             // Process each entry and store data    
 
