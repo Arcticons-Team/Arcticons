@@ -17507,6 +17507,7 @@
 	<item component="ComponentInfo{ru.gazprombank.android.mobilebank.app/launcher.main}" drawable="gazprombank"/>
 	<item component="ComponentInfo{ru.gazprombank.android.mobilebank.app/launcher.metal}" drawable="gazprombank"/>
 	<item component="ComponentInfo{ru.gazprombank.android.mobilebank.app/launcher.premium}" drawable="gazprombank"/>
+	<item component="ComponentInfo{ru.gazprombank.android.mobilebank.app/launcher.azure}" drawable="gazprombank"/>
 
 	<!-- GBA.emu -->
 	<item component="ComponentInfo{com.explusalpha.GbaEmu/com.imagine.BaseActivity}" drawable="gbaemu"/>
@@ -18736,6 +18737,7 @@
 
 	<!-- GOVMO -->
 	<item component="ComponentInfo{mo.gov.safp.portal/mo.gov.smart.common.activity.SplashActivity}" drawable="govmo"/>
+	<item component="ComponentInfo{mo.gov.safp.portal/com.alibaba.yihutong.SplashActivity}" drawable="govmo"/>
 
 	<!-- GoZayaan -->
 	<item component="ComponentInfo{com.gozayaan.app/com.gozayaan.app.view.SplashActivity}" drawable="gozayaan"/>
@@ -18799,6 +18801,7 @@
 	<item component="ComponentInfo{com.grabtaxi.passenger/com.grab.pax.newface.common.alias.DefaultLauncherAlias}" drawable="grab"/>
 	<item component="ComponentInfo{com.grabtaxi.passenger/com.grab.pax.newface.common.alias.MalaysiaLauncherAlias}" drawable="grab"/>
 	<item component="ComponentInfo{com.grabtaxi.passenger/com.grab.pax.newface.common.alias.YearEndSaleLauncherAlias}" drawable="grab"/>
+	<item component="ComponentInfo{com.grabtaxi.passenger/com.grab.pax.newface.common.alias.MegaSaleLauncherAlias}" drawable="grab"/>
 
 	<!-- Grabr -->
 	<item component="ComponentInfo{io.grabr/io.grabr.MainActivity}" drawable="grabr"/>
@@ -46157,8 +46160,37 @@
 	<!-- Tungngern -->
 	<item component="ComponentInfo{com.ktb.merchant.tungngern/com.ktb.merchant.tungngern.views.splashscreen.SplashScreenLoginActivity}" drawable="tungngern"/>
 
+	<!-- Madoka Exedra -->
+	<item component="ComponentInfo{com.aniplex.magia.exedra.en/com.google.firebase.MessagingUnityPlayerActivity}" drawable="madoka_exedra"/>
+	<item component="ComponentInfo{com.aniplex.magia.exedra.jp/com.google.firebase.MessagingUnityPlayerActivity}" drawable="madoka_exedra"/>
+
+	<!-- HubSpot -->
+	<item component="ComponentInfo{com.hubspot.android/com.hubspot.android.app.splash.SplashActivity}" drawable="hubspot"/>
+
+	<!-- CarbitLink -->
+	<item component="ComponentInfo{net.easyconn.carman.wws/net.easyconn.carman.MainActivity}" drawable="carbitlink"/>
+
+	<!-- Bell Smart Home -->
+	<item component="ComponentInfo{com.alarm.alarmmobile.android.alarmforce/com.alarm.alarmmobile.android.feature.auth.login.LoginActivity}" drawable="bell_smart_home"/>
+
+	<!-- LBB -->
+	<item component="ComponentInfo{littleblackbook.com.littleblackbook.lbbdapp.lbb/littleblackbook.com.littleblackbook.lbbdapp.lbb.UI.activity.NewSplashActivity}" drawable="lbb"/>
+
+	<!-- djay -->
+	<item component="ComponentInfo{com.algoriddim.djay_free/com.algoriddim.djay.AppActivity}" drawable="djay"/>
+
+	<!-- UV Index -->
+	<item component="ComponentInfo{dev.ipapps.uvindex/dev.ipapps.weather.MainActivity}" drawable="uv_index"/>
+
+	<!-- Prisma3D Legacy -->
+	<item component="ComponentInfo{com.prisma3D.prisma3DLegacy/com.prisma.prismaplugin.UnityPlayerActivityStatusBar}" drawable="prisma3d_legacy"/>
+
+	<!-- Ivacy -->
+	<item component="ComponentInfo{com.ivacy/com.ivacy.ui.splash.SplashActivity}" drawable="ivacy"/>
+
 	<!-- TunnelBear -->
 	<item component="ComponentInfo{com.tunnelbear.android/com.tunnelbear.android.mvvmReDesign.NavGraphActivity}" drawable="tunnelbear"/>
+	<item component="ComponentInfo{com.tunnelbear.android/com.tunnelbear.android.NavGraphActivity}" drawable="tunnelbear"/>
 
 	<!-- Turbo VPN -->
 	<item component="ComponentInfo{free.vpn.unblock.proxy.turbovpn/free.vpn.unblock.proxy.turbovpn.activity.StartupActivity}" drawable="turbo_vpn"/>
@@ -46579,12 +46611,12 @@
 	<item component="ComponentInfo{com.twitter.android/com.twitter.subscriptions.appicon.implementation.icon13}" drawable="twitter"/>
 	<item component="ComponentInfo{com.twitter.android/com.twitter.subscriptions.appicon.implementation.icon12}" drawable="twitter"/>
     <item component="ComponentInfo{com.twitter.androie/com.twitter.androie.StartActivity}" drawable="twitter"/>
-    <item component="ComponentInfo{com.twitter.androie/com.twitter.subscriptions.appicon.implementation.icon12}" drawable="twitter"/>
 	<item component="ComponentInfo{com.twitter.android/com.twitter.subscriptions.appicon.implementation.icon25}" drawable="twitter"/>
-	<item component="ComponentInfo{com.twitter.android/com.twitter.subscriptions.appicon.implementation.icon7}" drawable="x_twitter"/>
+	<item component="ComponentInfo{com.twitter.android/com.twitter.subscriptions.appicon.implementation.icon7}" drawable="twitter"/>
 	<item component="ComponentInfo{com.twitter.android.lite/com.twitter.android.lite.TwitterLiteActivity}" drawable="twitter"/>
 	<item component="ComponentInfo{com.twitter.android/com.twitter.android.StartActivity}" drawable="twitter"/>
 	<item component="ComponentInfo{com.twitter.android.lite/com.twitter.android.lite.LauncherActivity}" drawable="twitter"/>
+	<item component="ComponentInfo{com.twitter.android/com.twitter.subscriptions.appicon.implementation.icon10}" drawable="twitter"/>
 
 	<!-- Two Dots -->
 	<item component="ComponentInfo{com.weplaydots.twodotsandroid/es.socialpoint.sparta.base.SpartaActivity}" drawable="twodots"/>
@@ -46957,9 +46989,8 @@
 	<item component="ComponentInfo{com.uniqlo.de2.catalogue/com.uniqlo.ja.catalogue.MainActivity}" drawable="uniqlo"/>
 	<item component="ComponentInfo{com.uniqlo.global.catalogue/com.uniqlo.ja.catalogue.MainActivity}" drawable="uniqlo"/>
 	<item component="ComponentInfo{com.uniqlo.se.catalogue/com.uniqlo.ja.catalogue.MainActivity}" drawable="uniqlo"/>
-
-	<!-- UNIQLO -->
 	<item component="ComponentInfo{com.uniqlo.fr.catalogue/com.uniqlo.ja.catalogue.MainActivity}" drawable="uniqlo"/>
+	<item component="ComponentInfo{com.uniqlo.th.catalogue/com.uniqlo.ja.catalogue.view.mobile.startup.StartupActivity}" drawable="uniqlo"/>
 
 	<!-- Unit Converter Ultimate -->
 	<item component="ComponentInfo{com.physphil.android.unitconverterultimate/com.physphil.android.unitconverterultimate.MainActivity}" drawable="unitconverterultimate"/>
@@ -48111,6 +48142,7 @@
 
 	<!-- VoiceGPT -->
 	<item component="ComponentInfo{com.wstxda.voicegpt/com.wstxda.voicegpt.VoiceGptActivity}" drawable="voicegpt"/>
+	<item component="ComponentInfo{com.wstxda.voicegpt/com.wstxda.voicegpt.ui.VoiceGptActivity}" drawable="voicegpt"/>
 
 	<!-- Voicemail -->
 	<item component="ComponentInfo{com.samsung.vvm/com.samsung.vvm.vvmapp.VVMApplication}" drawable="voicemail"/>
@@ -49817,6 +49849,7 @@
 	<item component="ComponentInfo{com.mtelnet.watson.thailand/com.watsons.APP_ICON_DEFAULT}" drawable="watsons"/>
 	<item component="ComponentInfo{com.watsons.vn.android/com.watsons.APP_ICON_DEFAULT}" drawable="watsons"/>
 	<item component="ComponentInfo{com.mtelnet.watson.ph/com.watsons.APP_ICON_WATSONS_PH_PAYDAY_2024}" drawable="watsons"/>
+	<item component="ComponentInfo{com.mtelnet.watson.ph/com.watsons.APP_ICON_WATSONS_PH_1010_2024}" drawable="watsons"/>
 
 	<!-- WATT'S UP -->
 	<item component="ComponentInfo{com.kasikornbank.wattsup/com.kbtg.wattsup.MainActivity}" drawable="watts_up"/>
