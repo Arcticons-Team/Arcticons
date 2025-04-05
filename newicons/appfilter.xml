@@ -7385,7 +7385,6 @@
 	<item component="ComponentInfo{com.flatfish.cal.privacy/com.privacy.CalculatorG}" drawable="calculator"/>
 	<item component="ComponentInfo{com.calculator.hideu/com.calculator.hideu.SplashActivity11}" drawable="calculator"/>
 	<item component="ComponentInfo{com.calculator.hideu/com.calculator.hideu.SplashActivity10}" drawable="calculator"/>
-	<item component="ComponentInfo{ch.protonvpn.android/ch.protonvpn.android.RoutingCalculator}" drawable="calculator"/>
 	<item component="ComponentInfo{com.digitalchemy.calculator.decimal/com.digitalchemy.calculator.droidphone.PaidCalculatorPlusMainActivity}" drawable="calculator"/>
 	<item component="ComponentInfo{com.fiction.neosoft.calculator/com.fiction.neosoft.calculator.HomeActivity}" drawable="calculator"/>
 	<item component="ComponentInfo{stephenssoftware.basiccalculator/stephenssoftware.basiccalculator.CalculatorActivity}" drawable="calculator"/>
@@ -14052,10 +14051,11 @@
 	<!-- Enroute -->
 	<item component="ComponentInfo{de.akaflieg_freiburg.enroute/de.akaflieg_freiburg.enroute.MobileAdaptor}" drawable="enroute"/>
 
-	<!-- ente -->
-	<item component="ComponentInfo{io.ente.photos.fdroid/io.ente.photos.MainActivity}" drawable="ente"/>
-	<item component="ComponentInfo{io.ente.photos/io.ente.photos.MainActivity}" drawable="ente"/>
-	<item component="ComponentInfo{io.ente.photos.independent/io.ente.photos.MainActivity}" drawable="ente"/>
+	<!-- ente Photos -->
+	<item component="ComponentInfo{io.ente.photos.fdroid/io.ente.photos.MainActivity}" drawable="ente_photos"/>
+	<item component="ComponentInfo{io.ente.photos/io.ente.photos.MainActivity}" drawable="ente_photos"/>
+	<item component="ComponentInfo{io.ente.photos.independent/io.ente.photos.MainActivity}" drawable="ente_photos"/>
+	<item component="ComponentInfo{io.ente.photos/io.ente.photos.IconGreen}" drawable="ente_photos"/>
 
 	<!-- ente Authenticator -->
 	<item component="ComponentInfo{io.ente.auth/io.ente.auth.MainActivity}" drawable="ente_authenticator"/>
@@ -34824,9 +34824,16 @@
 	<item component="ComponentInfo{com.daniebeler.pfpixelix/com.daniebeler.pfpixelix.AppActivity}" drawable="pixelix"/>
 	<item component="ComponentInfo{com.daniebeler.pfpixelix/com.daniebeler.pfpixelix.Icon03}" drawable="pixelix"/>
 	<item component="ComponentInfo{com.daniebeler.pfpixelix/com.daniebeler.pfpixelix.MainActivity}" drawable="pixelix"/>
+	<item component="ComponentInfo{com.daniebeler.pfpixelix/com.daniebeler.pfpixelix.AppActivity}" drawable="pixelix"/>
 
 	<!-- PixelKnot -->
 	<item component="ComponentInfo{info.guardianproject.pixelknot/info.guardianproject.pixelknot.SendActivity}" drawable="pixelknot"/>
+
+	<!-- Pure Dating -->
+	<item component="ComponentInfo{com.getpure.pure/com.soulplatform.pure.screen.main.MainActivity}" drawable="pure_dating"/>
+
+	<!-- Kinkd -->
+	<item component="ComponentInfo{com.kinky.fetlifestyle/com.kinky.fetlifestyle.DispatcherActivity}" drawable="kinkd"/>
 
 	<!-- PixelLab-->
 	<item component="ComponentInfo{com.imaginstudio.imagetools.pixellab/com.imaginstudio.imagetools.pixellab.MainActivity}" drawable="pixellab"/>
@@ -35928,6 +35935,9 @@
 	<item component="ComponentInfo{ch.protonvpn.android/com.protonvpn.android.ui.onboarding.SplashActivity}" drawable="proton_vpn"/>
 	<item component="ComponentInfo{ch.protonvpn.android/ch.protonvpn.android.RoutingActivity}" drawable="proton_vpn"/>
 	<item component="ComponentInfo{ch.protonvpn.android/ch.protonvpn.android.RoutingDark}" drawable="proton_vpn"/>
+	<item component="ComponentInfo{ch.protonvpn.android/ch.protonvpn.android.RoutingCalculator}" drawable="calculator"/>
+	<item component="ComponentInfo{ch.protonvpn.android/ch.protonvpn.android.RoutingWeather}" drawable="weather"/>
+	<item component="ComponentInfo{ch.protonvpn.android.clone/ch.protonvpn.android.RoutingDark}" drawable="shield"/>
 
 	<!-- Proton Wallet -->
 	<item component="ComponentInfo{me.proton.wallet.android/me.proton.wallet.android.activity.MainActivity}" drawable="proton_wallet"/>
@@ -48229,7 +48239,6 @@
 	<item component="ComponentInfo{vpn.android.huawei/vpn.android.huawei.ui.SplashActivity}" drawable="shield"/>
 	<item component="ComponentInfo{com.oneonone.vpntunnel.android/com.oneone.vpntunnel.ui.splash.SplashActivity}" drawable="shield"/>
 	<item component="ComponentInfo{secure.nexis.free.vpn/com.stable.team.MainActivity}" drawable="shield"/>
-	<item component="ComponentInfo{ch.protonvpn.android.clone/ch.protonvpn.android.RoutingDark}" drawable="shield"/>
 	<item component="ComponentInfo{com.respectvpn.vpnapp/com.respectvpn.vpnapp.acts.SplashActivity}" drawable="shield"/>
 	<item component="ComponentInfo{com.vpnproxymd.mdproxyvpn/renz.javacodez.vpn.activities.MDPROXYVPNSplash}" drawable="shield"/>
 	<item component="ComponentInfo{com.szwl.crossnet/com.szwl.crossnet.ui.MainActivity}" drawable="shield"/>
@@ -49959,7 +49968,6 @@
 	<item component="ComponentInfo{com.weatherteam.rainy.forecast.radar.widgets/com.innovative.weather.app.ui.SplashActivity}" drawable="weather"/>
 	<item component="ComponentInfo{com.accurate.local.live.weather/com.nice.accurate.weather.ui.main.SplashActivity}" drawable="weather"/>
 	<item component="ComponentInfo{com.luutinhit.launcherios/com.luutinhit.weather.WeatherActivity}" drawable="weather"/>
-	<item component="ComponentInfo{ch.protonvpn.android/ch.protonvpn.android.RoutingWeather}" drawable="weather"/>
 	<item component="ComponentInfo{de.baumann.weather/de.baumann.weather.MainActivity}" drawable="weather"/>
 	<item component="ComponentInfo{de.baumann.weather/de.baumann.weather.helper.SplashActivity}" drawable="weather"/>
 	<item component="ComponentInfo{foundation.e.weather/foundation.e.weather.MainActivity}" drawable="weather"/>
