@@ -1,0 +1,60 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="description" content="A monotone line-based icon pack for Android">
+    <meta property="og:title" content="Arcticons - icon pack" />
+    <meta property="og:url" content="https://arcticons.com/" />
+    <meta property="og:description" content="A monotone line-based icon pack for Android">
+    <meta property="og:image" content="https://arcticons.com/img/arcticons/arcticonspreview.gif">
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="nl" />
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Arcticons - icon pack">
+    <meta name="twitter:image" content="https://arcticons.com/img/arcticons/arcticonspreview.gif">
+    <meta name="twitter:description" content="A monotone line-based icon pack for Android">
+
+    <title>Arcticons - Privacy Policy</title>
+
+    <link rel="icon" type="image/png" href="img/arcticons/icon.png" />
+    <link rel="stylesheet" href="css/layouts.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function () {
+            $("#header").load("html/header.html");
+            $("#footer").load("html/footer.html");
+        });
+    </script>
+</head>
+
+<body>
+    <div id="header"></div>
+    <div class="content">
+        <div class="centered-block" id="content-container">
+        </div>
+
+    </div>
+
+    <script>
+        const url = "https://raw.githubusercontent.com/Arcticons-Team/Arcticons/refs/heads/main/Privacy_Policy.md";
+
+        fetch(url)
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('content-container').innerHTML = data;
+            })
+            .catch(error => {
+                document.getElementById('content-container').innerHTML = "<p>The privacy policy is supposed to load here.</p>";
+            });
+    </script>
+
+    <div style="background-color: #000;">
+        <div id="footer"></div>
+    </div>
+</body>
+
+</html>
