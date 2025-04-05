@@ -15,7 +15,7 @@ You can modify what you send in the email:</p>
 <li>The selection of icons that you choose to send.</li>
 </ul>
 
-<p>This information is solely used for the icon request and remains private. **You're also fully controlling what data you send to us via email.**</p>
+<p>This information is solely used for the icon request and remains private. <b>You're also fully controlling what data you send to us via email.</b></p>
 
 <p>All mails are securely stored with <a href="https://proton.me/security/zero-access-encryption">zero-access encryption</a> via Proton Mail's servers, and are regularly deleted (usually within three months).</p>
 
