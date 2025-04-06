@@ -19,7 +19,7 @@ You can modify what you send in the email:</p>
 
 <p>All mails are securely stored with <a href="https://proton.me/security/zero-access-encryption">zero-access encryption</a> via Proton Mail's servers, and are regularly deleted (usually within three months).</p>
 
-<p>The requested icons will be gathered and into our database. All identifiable information is stripped in the process, only the apps, icons, date of request will be visible in our publicly visible <a href="https://arcticons.com/requests.html">Requests Dashboard</a>.</p>
+<p>The requested icons will be gathered and into our database. All identifiable information is stripped in the process, only the apps, icons, date of request will be showed in our publicly visible <a href="https://arcticons.com/requests.html">Requests Dashboard</a>.</p>
 
 <p>Last modified:
-<b>5 April 2025</b></p>
+<b><a href="https://github.com/Arcticons-Team/Arcticons/commits/main/Privacy_Policy.md">6 April 2025</b></a></p>
