@@ -1,0 +1,126 @@
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6vw;
+    margin-top: 6vw;
+
+    margin-bottom: 6vw;
+}
+
+.block-text {
+    max-width: 600px;
+}
+
+.contentdark {
+    background-color: #121212;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6vw;
+    padding-top: 6vw;
+    padding-bottom: 6vw;
+}
+
+.centered-block {
+    display: flex;
+    max-width: 800px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid-container {
+    display: grid;
+    grid: auto-flow dense / 180px 1fr;
+    gap: 1rem;
+}
+
+.grid-container-right {
+    display: grid;
+    grid: auto-flow dense / 1fr 180px;
+    gap: 1rem;
+}
+
+.grid-content-left {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    column-gap: 1em;
+    row-gap: 2em;
+    margin-left: 10rem;
+    margin-right: 10rem;
+}
+
+.grid-content-right {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    column-gap: 1em;
+    row-gap: 2em;
+    margin-left: 10rem;
+    margin-right: 10rem;
+}
+
+.grid-content-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 1em;
+    row-gap: 1em;
+}
+
+@media screen and (max-width: 1200px) {
+    .grid-content-left {
+        grid-template-columns: 1fr 1fr;
+
+    }
+
+    .grid-content-right {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* Change the order of items */
+    .grid-content-left>.align-right {
+        order: 2;
+        /* Move this item to the second position */
+    }
+
+    .grid-content-left>img.phone {
+        order: 1;
+        /* Move the image to the first position */
+    }
+}
+
+@media screen and (max-width: 800px) {
+
+    .grid-content-left {
+        grid-template-columns: 1fr;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    .grid-content-right {
+        grid-template-columns: 1fr;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    .grid-content-3 {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media screen and (max-width: 480px) {
+
+    .grid-container {
+        grid: auto-flow dense / 1fr;
+        /* Space between items */
+    }
+
+    .grid-container-right {
+        grid: auto-flow dense / 1fr;
+        /* Space between items */
+    }
+}
