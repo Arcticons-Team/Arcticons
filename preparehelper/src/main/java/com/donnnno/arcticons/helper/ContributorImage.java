@@ -6,15 +6,12 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 import java.awt.image.BufferedImage;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStreamWriter;
+import java.io.*;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
 
 import javax.imageio.ImageIO;
 import javax.xml.parsers.DocumentBuilder;
@@ -23,7 +20,6 @@ import javax.xml.parsers.DocumentBuilderFactory;
 public class ContributorImage {
 
     public static void start(String assetsDir, String contributorsXml, String xmlFilePath) throws IOException {
-
         StringBuilder output = new StringBuilder("<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<resources>\n");
         xmlFilePath = xmlFilePath + "/contributors.xml";
         extractImageUrls(output, contributorsXml, assetsDir);
@@ -31,9 +27,7 @@ public class ContributorImage {
         writeOutput(xmlFilePath, output);
     }
 
-
     public static void writeOutput(String pathXml, StringBuilder output) throws IOException {
-        // Write to drawable.xml in res directory with UTF-8 encoding
         try (BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(pathXml), StandardCharsets.UTF_8))) {
             writer.write(output.toString());
         }
@@ -41,38 +35,62 @@ public class ContributorImage {
 
     public static BufferedImage downloadImages(String imageUrl) {
         try {
-            URL url = new URI(imageUrl).toURL();
-            BufferedImage img = ImageIO.read(url);
-            if (img != null) {
-                //System.out.println("Downloaded image from: " + imageUrl);
-                return img;
+            if (imageUrl.toLowerCase().endsWith(".webp")) {
+                return null; // we handle .webp separately
             }
-        } catch (IOException e) {
-            //System.err.println("Failed to download image from: " + imageUrl + " " + e.getMessage());
+            URL url = new URI(imageUrl).toURL();
+            return ImageIO.read(url);
+        } catch (IOException | URISyntaxException e) {
             return null;
-        } catch (URISyntaxException e) {
-            throw new RuntimeException(e);
         }
-        return null;
     }
 
     public static void saveImage(BufferedImage image, String imageName, String imagePath) throws IOException {
-        // Create the directory if it doesn't exist
-        try {
-            File directory = new File(imagePath + "/" + imageName).getParentFile();
-            if (!directory.exists()) {
-                boolean good = directory.mkdirs();
-                if (!good) {
-                    throw new IOException("Failed to create directory: " + directory.getAbsolutePath());
-                }
-            }
-        } catch (SecurityException e) {
-            throw new IOException("Failed to create directory: " + e.getMessage(), e);
+        File directory = new File(imagePath + "/" + imageName).getParentFile();
+        if (!directory.exists() && !directory.mkdirs()) {
+            throw new IOException("Failed to create directory: " + directory.getAbsolutePath());
         }
+
+        File tempPng = File.createTempFile("temp_contributor", ".png");
+        ImageIO.write(image, "png", tempPng);
+
+        File webpFile = new File(imagePath + "/" + imageName);
         try {
-            ImageIO.write(image, "webp", new File(imagePath + "/" + imageName));
-        } catch (IOException e) {
-            System.out.println("Error occurred: " + e.getMessage());
+            convertPngToWebp(tempPng, webpFile);
+        } catch (Exception e) {
+            System.out.println("Error converting PNG to WebP: " + e.getMessage());
+        } finally {
+            tempPng.delete();
+        }
+    }
+
+    private static void saveWebpDirect(String imageUrl, String imageName, String imagePath) throws IOException {
+        try {
+            URL url = new URI(imageUrl).toURL();
+            InputStream in = url.openStream();
+            File outputFile = new File(imagePath + "/" + imageName);
+            File directory = outputFile.getParentFile();
+            if (!directory.exists() && !directory.mkdirs()) {
+                throw new IOException("Failed to create directory: " + directory.getAbsolutePath());
+            }
+            Files.copy(in, outputFile.toPath(), java.nio.file.StandardCopyOption.REPLACE_EXISTING);
+            in.close();
+        } catch (URISyntaxException e) {
+            throw new IOException("Invalid image URL: " + imageUrl, e);
+        }
+    }
+
+    private static void convertPngToWebp(File pngFile, File webpFile) throws IOException, InterruptedException {
+        ProcessBuilder builder = new ProcessBuilder(
+                "cwebp",
+                "-q", "50", // compress to 70% quality
+                pngFile.getAbsolutePath(),
+                "-o", webpFile.getAbsolutePath()
+        );
+        Process process = builder.start();
+        int exitCode = process.waitFor();
+        if (exitCode != 0) {
+            throw new IOException("cwebp conversion failed with exit code " + exitCode);
         }
     }
 
@@ -84,7 +102,6 @@ public class ContributorImage {
     }
 
     public static String setPlaceholderImage(int temp) {
-        //set random image to last digit of temp
         int lastDigit = Math.abs(temp % 10);
         return "assets://contributors/face_" + lastDigit + ".webp";
     }
@@ -113,18 +130,29 @@ public class ContributorImage {
                     if (imageURL.isEmpty()) {
                         imageURL = setPlaceholderImage(temp);
                         appendCategory(output, name, contribution, imageURL, link);
-                    } else if (link.startsWith("assets://")) {
+                    } else if (imageURL.startsWith("assets://")) {
                         appendCategory(output, name, contribution, imageURL, link);
                     } else {
-                        BufferedImage image = downloadImages(imageURL);
-                        if (image != null) {
-                            String imageName = "contributors/downloaded/contributor_" + temp + ".webp";
-                            imageURL = "assets://" + imageName;
-                            saveImage(image, imageName, assetsDir);
-                            appendCategory(output, name, contribution, imageURL, link);
+                        String imageName = "contributors/downloaded/contributor_" + temp + ".webp";
+                        imageURL = "assets://" + imageName;
+
+                        if (imageURL.toLowerCase().endsWith(".webp")) {
+                            try {
+                                saveWebpDirect(eElement.getAttribute("image"), imageName, assetsDir);
+                                appendCategory(output, name, contribution, imageURL, link);
+                            } catch (Exception e) {
+                                imageURL = setPlaceholderImage(temp);
+                                appendCategory(output, name, contribution, imageURL, link);
+                            }
                         } else {
-                            imageURL = setPlaceholderImage(temp);
-                            appendCategory(output, name, contribution, imageURL, link);
+                            BufferedImage image = downloadImages(eElement.getAttribute("image"));
+                            if (image != null) {
+                                saveImage(image, imageName, assetsDir);
+                                appendCategory(output, name, contribution, imageURL, link);
+                            } else {
+                                imageURL = setPlaceholderImage(temp);
+                                appendCategory(output, name, contribution, imageURL, link);
+                            }
                         }
                     }
                 }
