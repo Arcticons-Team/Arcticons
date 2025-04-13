@@ -1,6 +1,6 @@
-* 🎉 **1** new and updated icons!
-* 💡 Added support for **4** apps using existing icons.
-* 🔥 **12601** icons in total!
+* 🎉 **327** new and updated icons!
+* 💡 Added support for **1969** apps using existing icons.
+* 🔥 **12600** icons in total!
 
 🔧 No more duplicate icons while searching.
 🦋 You can now follow Arcticons on Bluesky and Telegram for project updates.
