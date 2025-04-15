@@ -40,7 +40,7 @@ tasks.register('rundayNight', JavaExec) {
 
 dependencies {
     // SDK and tools required for Android and other general tasks
-    implementation("com.android.tools:sdk-common:31.8.0")
+    implementation("com.android.tools:sdk-common:31.9.1")
 
     // XML parsing (you are using dom4j here)
     implementation("org.dom4j:dom4j:2.1.4")
@@ -49,7 +49,7 @@ dependencies {
     implementation("commons-io:commons-io:2.19.0")
 
     // For WebP image format handling (if you need it)
-    implementation("org.sejda.imageio:webp-imageio:0.1.6")
+    implementation("io.github.darkxanter:webp-imageio:0.3.3")
 
     // Add Apache Batik for SVG processing
     implementation("org.apache.xmlgraphics:batik-transcoder:1.18")   // Batik's SVG transcoder
