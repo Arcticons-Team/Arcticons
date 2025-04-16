@@ -99,7 +99,7 @@ public class SortAppfilter {
     public static String convertDocumentToString(Document doc) throws Exception {
         TransformerFactory transformerFactory = TransformerFactory.newInstance();
         Transformer transformer = transformerFactory.newTransformer();
-        transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
+        transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "no");
         transformer.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
         transformer.setOutputProperty(OutputKeys.INDENT, "yes");
         transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "0");
@@ -113,6 +113,7 @@ public class SortAppfilter {
 
     // Helper method to write XML string to a file
     public static void writeXMLToFile(String xmlString, String path) throws Exception {
+        xmlString = xmlString.replace(" standalone=\"no\"", "");  // Remove standalone="no"
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(path))) {
             writer.write(xmlString);
         }

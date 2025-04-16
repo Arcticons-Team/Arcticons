@@ -1,22 +1,25 @@
-# Arcticons privacy policy
+<h1>Arcticons privacy policy</h1>
 
-**By default, Arcticons doesn't collect any information.** The app does not have internet permissions.
+<b>By default, Arcticons doesn't collect any information.</b>
 
-## Icon Requests
+<p>Internet permissions are only used to fetch wallpapers from our wallpaper repository.</p>
 
-When you request an icon, by default some data is gathered when you send the request.
-You can modify what you send in the email:
+<h2>Icon Requests</h2>
 
-- The email address which you send the request with.
-- The manufacturer, the model, product name, screen resolution, and Android version of your phone.
-- App version & Candybar version (the app dashboard).
-- The selection of icons that you choose to send.
+<p>When you request an icon, by default some data is gathered when you send the request.<br>
+You can modify what you send in the email:</p>
+<ul>
+<li>The email address which you send the request with.</li>
+<li>The manufacturer, the model, product name, screen resolution, and Android version of your phone.</li>
+<li>App version & Candybar version (the app dashboard).</li>
+<li>The selection of icons that you choose to send.</li>
+</ul>
 
-This information is solely used for the icon request and remains private. **You're also fully controlling what data you send to us via email.**
+<p>This information is solely used for the icon request and remains private. <b>You're also fully controlling what data you send to us via email.</b></p>
 
-All mails are securely stored with [zero-access encryption](https://proton.me/security/zero-access-encryption) via Proton Mail's servers, and are regularly deleted (usually within three months).
+<p>All mails are securely stored with <a href="https://proton.me/security/zero-access-encryption">zero-access encryption</a> via Proton Mail's servers, and are regularly deleted (usually within three months).</p>
 
-The requested icons will be gathered and into our database. All identifiable information is stripped in the process, only the apps, icons, date of request will be visible in our publicly visible [Requests Dashboard](https://arcticons-team.github.io/Arcticons/requests.html).
+<p>The requested icons will be gathered and into our database. All identifiable information is stripped in the process, only the apps, icons, date of request will be showed in our publicly visible <a href="https://arcticons.com/requests.html">Requests Dashboard</a>.</p>
 
-Last modified:
-**11 Juni 2024**
+<p>Last modified:
+<b><a href="https://github.com/Arcticons-Team/Arcticons/commits/main/Privacy_Policy.md">6 April 2025</b></a></p>
