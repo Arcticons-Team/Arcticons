@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <application>
+        <activity
+            android:name=".activities.MainActivity"
+            android:exported="true">
+            <!-- ADW Launcher -->
+            <intent-filter tools:node="merge" >
+                <action android:name="org.adw.launcher.THEMES" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="org.icontheme.CHANGES_WITH_DARK_MODE" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>
