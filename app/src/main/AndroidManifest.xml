@@ -95,6 +95,8 @@
             <intent-filter>
                 <action android:name="org.adw.launcher.THEMES" />
                 <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="org.icontheme.CHANGES_WITH_MATERIAL_YOU_COLORS" />
+                <category android:name="org.icontheme.FALLBACK_TO_THEMED_ICON" />
             </intent-filter>
             <!-- ADW Launcher Custom Icon Picker -->
             <intent-filter>
