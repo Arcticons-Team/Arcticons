@@ -45676,21 +45676,26 @@
 
 	<!-- Termux -->
 	<item component="ComponentInfo{com.termux/com.termux.app.TermuxActivity}" drawable="termux"/>
-	<item component="ComponentInfo{com.termux.api/com.termux.api.activities.TermuxAPILauncherActivity}" drawable="termux"/>
-	<item component="ComponentInfo{com.termux.api/com.termux.api.activities.TermuxAPIActivity}" drawable="termux"/>
+
+	<!-- Termux:API -->
+	<item component="ComponentInfo{com.termux.api/com.termux.api.activities.TermuxAPILauncherActivity}" drawable="termux_api"/>
+	<item component="ComponentInfo{com.termux.api/com.termux.api.activities.TermuxAPIActivity}" drawable="termux_api"/>
 
 	<!-- Termux:Boot -->
-	<item component="ComponentInfo{com.termux.boot/com.termux.boot.BootActivity}" drawable="termux"/>
+	<item component="ComponentInfo{com.termux.boot/com.termux.boot.BootActivity}" drawable="termux_boot"/>
 
 	<!-- Termux:Float -->
-	<item component="ComponentInfo{com.termux.window/com.termux.window.TermuxFloatActivity}" drawable="termux"/>
+	<item component="ComponentInfo{com.termux.window/com.termux.window.TermuxFloatActivity}" drawable="termux_float"/>
+
+	<!-- Termux:GUI -->
+	<item component="ComponentInfo{com.termux.gui/com.termux.gui.GUIConfigActivity}" drawable="termux_gui"/>
 
 	<!-- Termux:Tasker -->
-	<item component="ComponentInfo{com.termux.tasker/com.termux.tasker.activities.TermuxTaskerActivity}" drawable="termux"/>
+	<item component="ComponentInfo{com.termux.tasker/com.termux.tasker.activities.TermuxTaskerActivity}" drawable="termux_tasker"/>
 
 	<!-- Termux:Widget -->
-	<item component="ComponentInfo{com.termux.widget/com.termux.widget.activities.TermuxWidgetActivity}" drawable="terminal"/>
-	<item component="ComponentInfo{com.termux.widget/com.termux.widget.activities.TermuxWidgetLauncherActivity}" drawable="terminal"/>
+	<item component="ComponentInfo{com.termux.widget/com.termux.widget.activities.TermuxWidgetActivity}" drawable="termux_widget"/>
+	<item component="ComponentInfo{com.termux.widget/com.termux.widget.activities.TermuxWidgetLauncherActivity}" drawable="termux_widget"/>
 
 	<!-- Termux:X11 -->
 	<item component="ComponentInfo{com.termux.x11/com.termux.x11.MainActivity}" drawable="termux_x11"/>
