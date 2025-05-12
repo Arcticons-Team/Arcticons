@@ -53,7 +53,7 @@ dependencies {
 
     // Add Apache Batik for SVG processing
     implementation("org.apache.xmlgraphics:batik-transcoder:1.19")   // Batik's SVG transcoder
-    implementation("org.apache.xmlgraphics:batik-dom:1.18")          // Batik's DOM utilities
+    implementation("org.apache.xmlgraphics:batik-dom:1.19")          // Batik's DOM utilities
     implementation("org.apache.xmlgraphics:batik-swing:1.19")        // Batik's swing utilities for rendering
 
     // Optional: If you want to work with BufferedImage in Java 2D
