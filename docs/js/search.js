@@ -10,41 +10,88 @@ let lazyImageObserver = new IntersectionObserver(function(entries, observer){
   });
 });
 
+let searchTimeout;
+
+function search(){
+  // Clear any existing timeout
+  clearTimeout(searchTimeout);
+  
+  // Set new timeout for 1 second delay
+  searchTimeout = setTimeout(() => {
+    document.getElementById('results').setAttribute('aria-disabled', 'false');
+    
+    // Replace spaces with underscores in search term
+    let searchTerm = this.value.toLocaleLowerCase().replace(/ /g, '_');
+    let busq = '.tab img';
+    let todos = Array.prototype.slice.call(document.querySelectorAll(busq));
+    
+    for (let i of todos){
+      if (this.value){
+        // Get icon title and normalize it for comparison
+        let iconTitle = i.title.toLocaleLowerCase();
+        // Check if search term matches either with underscores or spaces
+        let matchesSearch = iconTitle.includes(searchTerm) || 
+                           iconTitle.replace(/_/g, ' ').includes(this.value.toLocaleLowerCase());
+        
+        i.style.display = matchesSearch ? 'inline-block' : 'none';
+      } else {
+        i.style.display = 'inline-block';
+      }
+    }
+  }, 1000);
+}
+
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text).then(() => {
+    showCopyNotification();
+  });
+}
+
+function showCopyNotification() {
+  const notification = document.createElement('div');
+  notification.className = 'copy-notification';
+  notification.textContent = 'Copied to clipboard!';
+  document.body.appendChild(notification);
+  
+  setTimeout(() => {
+    notification.remove();
+  }, 2000);
+}
+
 function openPopup(){
   let fig = document.createElement('figure');
-  let title = document.createElement('figcaption');
-  title.appendChild(document.createTextNode(this.title));
   let img = document.createElement('img');
   img.src = this.src;
   img.alt = this.alt;
-  fig.addEventListener('click', closePopup); 
-  fig.appendChild(title);
+
+  // Create title with formatted icon name
+  let titleLabel = document.createElement('h2');
+  titleLabel.className = 'icon-title';
+  let formattedTitle = this.title.charAt(0).toUpperCase() + 
+                       this.title.slice(1).replace(/_/g, ' ');
+  titleLabel.textContent = formattedTitle;
+
+  let nameLabel = document.createElement('div');
+  nameLabel.className = 'icon-name';
+  nameLabel.textContent = this.title;
+  
+  fig.addEventListener('click', (e) => {
+    if (e.target === fig) {
+      closePopup();
+    } else {
+      copyToClipboard(this.title);
+    }
+  }); 
+  
   fig.appendChild(img);
+  fig.appendChild(titleLabel);
+  fig.appendChild(nameLabel); 
   document.body.appendChild(fig);
 }
 
 function closePopup(){
   let fig = document.getElementsByTagName('figure')[0];
   fig.parentNode.removeChild(fig);
-}
-
-function search(){
-  document.getElementById('results').setAttribute('aria-disabled', 'false');
-  let busq = '.tab img[title*="'+this.value.toLocaleLowerCase()+'"]';
-  let todo = '.tab img';
-  let validos = Array.prototype.slice.call(document.querySelectorAll(busq));
-  let todos = Array.prototype.slice.call(document.querySelectorAll(todo));
-  for (let i of todos){
-    if (this.value){
-      if (validos.indexOf(i) == -1){
-        i.style.display = 'none';
-      }else{
-        i.style.display = 'inline-block';
-      }
-    }else{
-      i.style.display = 'inline-block';
-    }
-  }
 }
 
 function sortIcons(a, b){

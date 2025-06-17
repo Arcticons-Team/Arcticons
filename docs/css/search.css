@@ -132,6 +132,7 @@ figure{
   margin: 0;
   display: flex;
   flex-direction: column;
+  cursor: pointer;
 }
 figure figcaption{
   margin-top: 1rem;
@@ -143,6 +144,7 @@ figure img {
   max-width: 80%;
   max-height: 80%;
   margin: 0 auto;
+  cursor: pointer;
 }
 figure button{
   background: transparent;
@@ -169,4 +171,29 @@ a:hover {
 }
 a:active {
   color: #fff;
+}
+.copy-notification {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  z-index: 1000;
+  animation: fadeInOut 2s ease-in-out;
+}
+
+.icon-name {
+  color: white;
+  margin-top: 10px;
+  font-size: 1.2em;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; }
+  20% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { opacity: 0; }
 }
