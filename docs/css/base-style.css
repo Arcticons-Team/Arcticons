@@ -1,0 +1,55 @@
+@font-face {
+  font-family: 'Inter';
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: oblique 0deg 10deg;
+  font-variation-settings: "slnt" 0deg;
+  src: url("../fonts/InterVariable.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: 'Arcticons Sans';
+  src: url("../fonts/ArcticonsSans-Regular.woff2");
+}
+
+:root {
+  --black: #000;
+  --grey-80: #1e1e1e;
+  --grey-60: #414141;
+  --grey-10: #f1f1f1;
+  --white: #ffffff;
+  --blue: #3251ff;
+
+  --background: var(--grey-80);
+  --text: var(--white);
+  --link: var(--blue);
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  color: var(--text);
+  background-color: var(--background);
+}
+
+h1 {
+  font-family: 'Arcticons Sans', sans-serif;
+  padding-top: 2vw;
+  font-size: 4vw;
+  text-align: center;
+}
+
+h2 {
+  font-family: 'Arcticons Sans', sans-serif;
+  padding-top: 1vw;
+  font-size: 2.6vw;
+}
+
+@media(max-width: 600px) {
+  h1 {
+    font-size: 12vw;
+  }
+  h2 {
+    font-size: 8vw;
+  }
+}
