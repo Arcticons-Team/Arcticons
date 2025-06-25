@@ -60,6 +60,8 @@ function showCopyNotification() {
 
 function openPopup(){
   let fig = document.createElement('figure');
+  fig.className = 'popup-figure';
+
   let img = document.createElement('img');
   img.src = this.src;
   img.alt = this.alt;
@@ -74,24 +76,51 @@ function openPopup(){
   let nameLabel = document.createElement('div');
   nameLabel.className = 'icon-name';
   nameLabel.textContent = this.title;
-  
+
+  // Create close button
+  let closeBtn = document.createElement('button');
+  closeBtn.className = 'popup-close-btn';
+  closeBtn.innerHTML = '&times;';
+  closeBtn.title = 'Close';
+  closeBtn.onclick = function(e) {
+    e.stopPropagation();
+    closePopup();
+  };
+
+  // Escape key handler
+  function escHandler(e) {
+    if (e.key === "Escape") {
+      closePopup();
+    }
+  }
+  document.addEventListener('keydown', escHandler);
+
+  // Store handler for removal
+  fig._escHandler = escHandler;
+
   fig.addEventListener('click', (e) => {
     if (e.target === fig) {
       closePopup();
-    } else {
+    } else if (e.target !== closeBtn) {
       copyToClipboard(this.title);
     }
-  }); 
-  
+  });
+
+  fig.appendChild(closeBtn);
   fig.appendChild(img);
   fig.appendChild(titleLabel);
-  fig.appendChild(nameLabel); 
+  fig.appendChild(nameLabel);
   document.body.appendChild(fig);
 }
 
 function closePopup(){
   let fig = document.getElementsByTagName('figure')[0];
-  fig.parentNode.removeChild(fig);
+  if (fig && fig._escHandler) {
+    document.removeEventListener('keydown', fig._escHandler);
+  }
+  if (fig && fig.parentNode) {
+    fig.parentNode.removeChild(fig);
+  }
 }
 
 function sortIcons(a, b){
@@ -140,3 +169,8 @@ document.addEventListener("DOMContentLoaded", function(){
   a.onload = genImageGrid;
   a.send();
 });
+
+// Add some minimal CSS for the close button (add to your CSS file)
+/*
+
+*/
