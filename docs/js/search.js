@@ -134,20 +134,7 @@ function sortIcons(a, b){
 function genImageGrid(){
   let parse = new DOMParser();
   let xmldoc = parse.parseFromString(this.responseText, 'application/xml');
-  // Generate carrousel
   let docs = Array.prototype.slice.call(xmldoc.querySelectorAll('item'));
-  let latest = docs.slice(-8);
-  let carrousel = document.createElement('section');
-  carrousel.id = 'carrousel';
-  carrousel.innerHTML = '<h2>Latest icons</h2><div class="latest content"></div>';
-  for (let i of latest){
-    let im = document.createElement('img');
-    im.src = 'https://raw.githubusercontent.com/Donnnno/Arcticons/main/icons/white/' + i.attributes.drawable.value + '.svg';
-    im.addEventListener('error', function(){this.src = this.src.replace('icons/white', 'todo');});
-    im.alt = i.attributes.drawable.value;
-    im.title = i.attributes.drawable.value;
-    carrousel.children[1].appendChild(im);
-  }
 
   for (let i of docs.sort(sortIcons)){
     let im = document.createElement('img');
@@ -169,8 +156,3 @@ document.addEventListener("DOMContentLoaded", function(){
   a.onload = genImageGrid;
   a.send();
 });
-
-// Add some minimal CSS for the close button (add to your CSS file)
-/*
-
-*/
