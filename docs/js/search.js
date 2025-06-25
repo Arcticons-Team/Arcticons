@@ -60,6 +60,8 @@ function showCopyNotification() {
 
 function openPopup(){
   let fig = document.createElement('figure');
+  fig.className = 'popup-figure';
+
   let img = document.createElement('img');
   img.src = this.src;
   img.alt = this.alt;
@@ -74,24 +76,51 @@ function openPopup(){
   let nameLabel = document.createElement('div');
   nameLabel.className = 'icon-name';
   nameLabel.textContent = this.title;
-  
+
+  // Create close button
+  let closeBtn = document.createElement('button');
+  closeBtn.className = 'popup-close-btn';
+  closeBtn.innerHTML = '&times;';
+  closeBtn.title = 'Close';
+  closeBtn.onclick = function(e) {
+    e.stopPropagation();
+    closePopup();
+  };
+
+  // Escape key handler
+  function escHandler(e) {
+    if (e.key === "Escape") {
+      closePopup();
+    }
+  }
+  document.addEventListener('keydown', escHandler);
+
+  // Store handler for removal
+  fig._escHandler = escHandler;
+
   fig.addEventListener('click', (e) => {
     if (e.target === fig) {
       closePopup();
-    } else {
+    } else if (e.target !== closeBtn) {
       copyToClipboard(this.title);
     }
-  }); 
-  
+  });
+
+  fig.appendChild(closeBtn);
   fig.appendChild(img);
   fig.appendChild(titleLabel);
-  fig.appendChild(nameLabel); 
+  fig.appendChild(nameLabel);
   document.body.appendChild(fig);
 }
 
 function closePopup(){
   let fig = document.getElementsByTagName('figure')[0];
-  fig.parentNode.removeChild(fig);
+  if (fig && fig._escHandler) {
+    document.removeEventListener('keydown', fig._escHandler);
+  }
+  if (fig && fig.parentNode) {
+    fig.parentNode.removeChild(fig);
+  }
 }
 
 function sortIcons(a, b){
@@ -105,26 +134,21 @@ function sortIcons(a, b){
 function genImageGrid(){
   let parse = new DOMParser();
   let xmldoc = parse.parseFromString(this.responseText, 'application/xml');
-  // Generate carrousel
   let docs = Array.prototype.slice.call(xmldoc.querySelectorAll('item'));
-  let latest = docs.slice(-8);
-  let carrousel = document.createElement('section');
-  carrousel.id = 'carrousel';
-  carrousel.innerHTML = '<h2>Latest icons</h2><div class="latest content"></div>';
-  for (let i of latest){
-    let im = document.createElement('img');
-    im.src = 'https://raw.githubusercontent.com/Donnnno/Arcticons/main/icons/white/' + i.attributes.drawable.value + '.svg';
-    im.addEventListener('error', function(){this.src = this.src.replace('icons/white', 'todo');});
-    im.alt = i.attributes.drawable.value;
-    im.title = i.attributes.drawable.value;
-    carrousel.children[1].appendChild(im);
-  }
 
-  for (let i of docs.sort(sortIcons)){
+  // Filter out duplicates by drawable name
+  let seen = new Set();
+  let uniqueDocs = docs.filter(i => {
+    let name = i.attributes.drawable.value;
+    if (seen.has(name)) return false;
+    seen.add(name);
+    return true;
+  });
+
+  for (let i of uniqueDocs.sort(sortIcons)){
     let im = document.createElement('img');
     im.className = 'lazy';
     lazyImageObserver.observe(im);
-    im.src = 'c.svg';
     im.dataset.src = 'https://raw.githubusercontent.com/Donnnno/Arcticons/main/icons/white/' + i.attributes.drawable.value + '.svg';
     im.alt = i.attributes.drawable.value;
     im.title = i.attributes.drawable.value;
