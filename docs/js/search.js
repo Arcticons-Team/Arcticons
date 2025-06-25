@@ -136,6 +136,15 @@ function genImageGrid(){
   let xmldoc = parse.parseFromString(this.responseText, 'application/xml');
   let docs = Array.prototype.slice.call(xmldoc.querySelectorAll('item'));
 
+  // Filter out duplicates by drawable name
+  let seen = new Set();
+  let uniqueDocs = docs.filter(i => {
+    let name = i.attributes.drawable.value;
+    if (seen.has(name)) return false;
+    seen.add(name);
+    return true;
+  });
+
   for (let i of docs.sort(sortIcons)){
     let im = document.createElement('img');
     im.className = 'lazy';
