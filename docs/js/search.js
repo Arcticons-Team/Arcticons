@@ -59,6 +59,8 @@ function showCopyNotification() {
 }
 
 function openPopup(){
+  closePopup();
+
   let fig = document.createElement('figure');
   fig.className = 'popup-figure';
 

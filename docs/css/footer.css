@@ -1,25 +1,24 @@
 footer {
-    color: #fff;
+    color: var(--white);
     padding: 80px 8vw;
-    font-size: 16px;
-
+    font-family: 'Arcticons Sans', sans-serif;
+    font-size: 18px;
 }
 
 footer p {
-    color: #fff;
+    color: var(--white);
     text-align: center;
-
 }
 
 footer a {
-    color: #fff;
+    color: var(--white);
     font-weight: bold;
     cursor: pointer;
     text-decoration: none;
-    
+
 }
 
 .copyleft {
     display: inline-block;
     transform: rotate(180deg);
-  }
+}

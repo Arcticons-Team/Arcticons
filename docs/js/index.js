@@ -20,7 +20,7 @@ function countDrawableEntries(xmlText) {
   // Function to update the number in the HTML content without grouping separators
   function updateIconCount(count) {
     const roundedCount = roundDownToNearest100(count);
-    const iconCountElement = document.querySelector('.grid-content-3 p b');
+    const iconCountElement = document.querySelector('.centered-block p b');
     if (iconCountElement) {
       iconCountElement.textContent = roundedCount.toLocaleString(undefined, { useGrouping: false });
     }
