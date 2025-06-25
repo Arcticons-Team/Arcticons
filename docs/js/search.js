@@ -145,11 +145,10 @@ function genImageGrid(){
     return true;
   });
 
-  for (let i of docs.sort(sortIcons)){
+  for (let i of uniqueDocs.sort(sortIcons)){
     let im = document.createElement('img');
     im.className = 'lazy';
     lazyImageObserver.observe(im);
-    im.src = 'c.svg';
     im.dataset.src = 'https://raw.githubusercontent.com/Donnnno/Arcticons/main/icons/white/' + i.attributes.drawable.value + '.svg';
     im.alt = i.attributes.drawable.value;
     im.title = i.attributes.drawable.value;
