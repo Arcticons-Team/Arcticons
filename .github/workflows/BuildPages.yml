@@ -156,6 +156,8 @@ jobs:
     if: ${{ github.repository == vars.REPOSITORY && ( inputs.run_Request_Update == true || github.event_name == 'schedule') && vars.AUTOMATIC_UPDATE == 'true' }}
     environment:
       name: Request-Update
+    permissions:
+      contents: write
     concurrency:
       group: 'push'
       cancel-in-progress: false
