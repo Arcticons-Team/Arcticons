@@ -186,7 +186,10 @@ jobs:
           IMAP_SERVER: ${{ secrets.IMAP_SERVER }}
           IMAP_USERNAME: ${{ secrets.IMAP_USERNAME }}
           IMAP_PASSWORD: ${{ secrets.IMAP_PASSWORD }}
-        run: "mkdir mail\npython .github/workflows/email_parser_auto.py mail newicons/appfilter.xml docs/extracted_png docs/assets/ \nrm -r mail\n"
+        run: |
+          mkdir mail
+          python .github/workflows/email_parser_auto.py mail newicons/appfilter.xml docs/extracted_png docs/assets/ 
+          rm -r mail\n"
       - name: Check for changes
         id: check_changes
         run: |
