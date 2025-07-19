@@ -189,7 +189,7 @@ jobs:
         run: |
           mkdir mail
           python .github/workflows/email_parser_auto.py mail newicons/appfilter.xml docs/extracted_png docs/assets/ 
-          rm -r mail\n"
+          rm -r mail
       - name: Check for changes
         id: check_changes
         run: |
