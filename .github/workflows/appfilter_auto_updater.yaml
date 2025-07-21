@@ -19,16 +19,22 @@ jobs:
   check-pr:
     runs-on: ubuntu-latest
     outputs:
-      exists: ${{ steps.check.outputs.exists }}
+      existsnot: ${{ steps.check.outputs.existsnot }}
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ env.BASE_BRANCH }}
+          sparse-checkout: |
+            .git
 
       - name: Check if PR exists
         id: check
         run: |
           if gh pr list -H "$BRANCH" -B "$BASE_BRANCH" --json number --jq '.[].number' | grep -q '[0-9]'; then
-            echo "exists=true" >> "$GITHUB_OUTPUT"
+            echo "existsnot=false" >> "$GITHUB_OUTPUT"
           else
-            echo "exists=false" >> "$GITHUB_OUTPUT"
+            echo "existsnot=true" >> "$GITHUB_OUTPUT"
           fi
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -37,13 +43,16 @@ jobs:
 
   update-pr:
     needs: check-pr
-    if: needs.check-pr.outputs.exists != 'true'
+    if: needs.check-pr.outputs.existsnot == 'true'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
           ref: ${{ env.BASE_BRANCH }}
+          sparse-checkout: |
+            newicons/appfilter.xml
+            .github/workflows/appfilter_auto_updater/
 
       - name: Set up Git
         run: |
