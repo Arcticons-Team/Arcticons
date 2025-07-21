@@ -1,10 +1,10 @@
 name: Auto Appfilter Updater
 
 on:
-  workflow_dispatch:  # Or schedule, or push to a specific branch
+  workflow_dispatch:
 
 env:
-  UPDATEABLE_URL:  https://arcticons.com/assets/updatable.txt
+  UPDATEABLE_URL: https://arcticons.com/assets/updatable.txt
   PACKAGE_BLACKLIST_PATH: .github/workflows/appfilter_auto_updater/blacklists/packageblacklist.txt
   DRAWABLE_BLACKLIST_PATH: .github/workflows/appfilter_auto_updater/blacklists/drawableblacklist.txt
   COMPONENT_BLACKLIST_PATH: .github/workflows/appfilter_auto_updater/blacklists/componentblacklist.txt
@@ -12,17 +12,38 @@ env:
   BASE_BRANCH: AppfilterUpdateBot
   PR_TITLE: Update Appfilter.xml
   PR_BODY: Created by Github action
+  OWNER: Kaiserdragon2
+  BRANCH: auto-xml-update
 
 jobs:
+  check-pr:
+    runs-on: ubuntu-latest
+    outputs:
+      exists: ${{ steps.check.outputs.exists }}
+    steps:
+
+      - name: Check if PR exists
+        id: check
+        run: |
+          if gh pr list -H "$BRANCH" -B "$BASE_BRANCH" --json number --jq '.[].number' | grep -q '[0-9]'; then
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+          fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: ${{ env.BRANCH }}
+          BASE_BRANCH: ${{ env.BASE_BRANCH }}
+
   update-pr:
-    if: github.repository == 'Kaiserdragon2/Arcticons'
+    needs: check-pr
+    if: needs.check-pr.outputs.exists != 'true'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          ref: ${{ env.BASE_BRANCH }} 
-          #fetch-depth: 0  # Important for force-push
+          ref: ${{ env.BASE_BRANCH }}
 
       - name: Set up Git
         run: |
@@ -44,12 +65,12 @@ jobs:
 
       - name: Create or update branch
         run: |
-          BRANCH=auto-xml-update
           git fetch origin $BRANCH || true
           git branch -f $BRANCH
           git push origin $BRANCH --force
 
-      - name: Create or update pull request
-        run: gh pr create -B "$BASE_BRANCH" -H "$BRANCH" --title "$PR_TITLE" --body "$PR_BODY"
+      - name: Create pull request
+        run: |
+          gh pr create -B "$BASE_BRANCH" -H "$OWNER:$BRANCH" --title "$PR_TITLE" --body "$PR_BODY"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
