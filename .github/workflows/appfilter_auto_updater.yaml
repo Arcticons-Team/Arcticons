@@ -1,0 +1,48 @@
+name: Auto Appfilter Updater
+
+on:
+  workflow_dispatch:  # Or schedule, or push to a specific branch
+
+env:
+  UPDATEABLE_URL:  https://arcticons.com/assets/updatable.txt
+  PACKAGE_BLACKLIST_PATH: .github/workflows/appfilter_auto_updater/blacklists/packageblacklist.txt
+  DRAWABLE_BLACKLIST_PATH: .github/workflows/appfilter_auto_updater/blacklists/drawableblacklist.txt
+  COMPONENT_BLACKLIST_PATH: .github/workflows/appfilter_auto_updater/blacklists/componentblacklist.txt
+  APPFILTER_PATH: newicons/appfilter.xml
+  BASE_BRANCH: AppfilterUpdateBot
+  PR_TITLE: 'Update Appfilter.xml'
+  PR_BODY: 'Created by Github action'
+
+jobs:
+  update-pr:
+    if: github.repository == 'Kaiserdragon2/Arcticons'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ env.BASE_BRANCH }} 
+          #fetch-depth: 0  # Important for force-push
+
+      - name: Set up Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Execute Python Script
+        run: |
+          python .github/workflows/appfilter_auto_updater.py 
+          git add $APPFILTER_PATH
+          git commit -m "Update appfilter.xml" || echo "No changes to commit"
+
+      - name: Create or update branch
+        run: |
+          BRANCH=auto-xml-update
+          git fetch origin $BRANCH || true
+          git branch -f $BRANCH
+          git push origin $BRANCH --force
+
+      - name: Create or update pull request
+        run: gh pr create -B $BASE_BRANCH -H $BRANCH --title $PR_TITLE --body $PR_BODY
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
