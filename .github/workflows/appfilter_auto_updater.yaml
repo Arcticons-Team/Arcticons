@@ -29,9 +29,16 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+          cache: 'pip'
+      - run: pip install -r .github/workflows/requirements.txt
+
       - name: Execute Python Script
         run: |
-          python .github/workflows/appfilter_auto_updater.py 
+          python .github/workflows/appfilter_auto_updater/appfilter_auto_updater.py 
           git add $APPFILTER_PATH
           git commit -m "Update appfilter.xml" || echo "No changes to commit"
 
