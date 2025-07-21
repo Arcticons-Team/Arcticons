@@ -10,8 +10,8 @@ env:
   COMPONENT_BLACKLIST_PATH: .github/workflows/appfilter_auto_updater/blacklists/componentblacklist.txt
   APPFILTER_PATH: newicons/appfilter.xml
   BASE_BRANCH: AppfilterUpdateBot
-  PR_TITLE: 'Update Appfilter.xml'
-  PR_BODY: 'Created by Github action'
+  PR_TITLE: Update Appfilter.xml
+  PR_BODY: Created by Github action
 
 jobs:
   update-pr:
@@ -50,6 +50,6 @@ jobs:
           git push origin $BRANCH --force
 
       - name: Create or update pull request
-        run: gh pr create -B $BASE_BRANCH -H $BRANCH --title $PR_TITLE --body $PR_BODY
+        run: gh pr create -B "$BASE_BRANCH" -H "$BRANCH" --title "$PR_TITLE" --body "$PR_BODY"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
