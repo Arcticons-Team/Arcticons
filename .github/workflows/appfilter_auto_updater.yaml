@@ -85,5 +85,6 @@ jobs:
       - name: Create pull request
         run: |
           gh pr create -B "$BASE_BRANCH" -H "$OWNER:$BRANCH" --title "$PR_TITLE" --body "$PR_BODY"
+          gh workflow run BuildPages.yml -f run_build_pages=true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
