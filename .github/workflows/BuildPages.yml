@@ -14,6 +14,11 @@ on:
   schedule:
     # * is a special character in YAML so you have to quote this string
     - cron: '30 5 * * 0,3'
+  workflow_run:
+    workflows: [Auto Appfilter Updater]
+    types:
+      - completed
+
   workflow_dispatch:
     inputs:
       run_colormapping:
@@ -355,7 +360,7 @@ jobs:
   parse_and_combine:
     name: Parse and Combine Appfilter
     needs: [check_appfilter, Push_Files, fetch_and_push_file, Update_Requests, Check_FilePath]
-    if: ${{(needs.Check_FilePath.result == 'success' ||needs.check_appfilter.result == 'success' || needs.Push_Files.result == 'success' || needs.fetch_and_push_file.result == 'success' ||(needs.Update_Requests.result == 'success'  && needs.Update_Requests.outputs.changes_detected == 'true' )||inputs.run_build_pages == true) && !failure()}}
+    if: ${{(github.event_name == 'workflow_run' || needs.Check_FilePath.result == 'success' ||needs.check_appfilter.result == 'success' || needs.Push_Files.result == 'success' || needs.fetch_and_push_file.result == 'success' ||(needs.Update_Requests.result == 'success'  && needs.Update_Requests.outputs.changes_detected == 'true' )||inputs.run_build_pages == true) && !failure()}}
     permissions:
       pages: write # Required to deploy to GitHub Pages
       id-token: write # Required to deploy to GitHub Pages
