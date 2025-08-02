@@ -9,8 +9,8 @@ android {
         applicationId "com.donnnno.arcticons"
         minSdkVersion rootProject.ext.MinSdk
         targetSdkVersion rootProject.ext.TargetSdk
-        versionCode 1460
-        versionName '12.9.4'
+        versionCode 1470
+        versionName '13.2.4'
         multiDexEnabled true
     }
 
@@ -145,10 +145,10 @@ dependencies {
     normalPlayImplementation 'com.github.zixpo:candybar:main-SNAPSHOT'
     blackPlayImplementation 'com.github.zixpo:candybar:main-SNAPSHOT'
     youPlayImplementation 'com.github.zixpo:candybar:main-SNAPSHOT'
-    normalImplementation 'com.github.donnnno:candybar-foss:main-SNAPSHOT'
-    blackImplementation 'com.github.donnnno:candybar-foss:main-SNAPSHOT'
-    youImplementation 'com.github.donnnno:candybar-foss:main-SNAPSHOT'
-    dayNightImplementation 'com.github.donnnno:candybar-foss:main-SNAPSHOT'
+    normalImplementation 'com.github.Donnnno:candybar-foss:3.21.3'
+    blackImplementation 'com.github.Donnnno:candybar-foss:3.21.3'
+    youImplementation 'com.github.Donnnno:candybar-foss:3.21.3'
+    dayNightImplementation 'com.github.Donnnno:candybar-foss:3.21.3'
 }
 
 import com.android.tools.profgen.ArtProfileKt

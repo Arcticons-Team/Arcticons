@@ -14,6 +14,11 @@ on:
   schedule:
     # * is a special character in YAML so you have to quote this string
     - cron: '30 5 * * 0,3'
+  workflow_run:
+    workflows: [Auto Appfilter Updater]
+    types:
+      - completed
+
   workflow_dispatch:
     inputs:
       run_colormapping:
@@ -156,6 +161,8 @@ jobs:
     if: ${{ github.repository == vars.REPOSITORY && ( inputs.run_Request_Update == true || github.event_name == 'schedule') && vars.AUTOMATIC_UPDATE == 'true' }}
     environment:
       name: Request-Update
+    permissions:
+      contents: write
     concurrency:
       group: 'push'
       cancel-in-progress: false
@@ -186,7 +193,10 @@ jobs:
           IMAP_SERVER: ${{ secrets.IMAP_SERVER }}
           IMAP_USERNAME: ${{ secrets.IMAP_USERNAME }}
           IMAP_PASSWORD: ${{ secrets.IMAP_PASSWORD }}
-        run: "mkdir mail\npython .github/workflows/email_parser_auto.py mail newicons/appfilter.xml docs/extracted_png docs/assets/ \nrm -r mail\n"
+        run: |
+          mkdir mail
+          python .github/workflows/email_parser_auto.py mail newicons/appfilter.xml docs/extracted_png docs/assets/ 
+          rm -r mail
       - name: Check for changes
         id: check_changes
         run: |
@@ -350,7 +360,7 @@ jobs:
   parse_and_combine:
     name: Parse and Combine Appfilter
     needs: [check_appfilter, Push_Files, fetch_and_push_file, Update_Requests, Check_FilePath]
-    if: ${{(needs.Check_FilePath.result == 'success' ||needs.check_appfilter.result == 'success' || needs.Push_Files.result == 'success' || needs.fetch_and_push_file.result == 'success' ||(needs.Update_Requests.result == 'success'  && needs.Update_Requests.outputs.changes_detected == 'true' )||inputs.run_build_pages == true) && !failure()}}
+    if: ${{(github.event_name == 'workflow_run' || needs.Check_FilePath.result == 'success' ||needs.check_appfilter.result == 'success' || needs.Push_Files.result == 'success' || needs.fetch_and_push_file.result == 'success' ||(needs.Update_Requests.result == 'success'  && needs.Update_Requests.outputs.changes_detected == 'true' )||inputs.run_build_pages == true) && !failure()}}
     permissions:
       pages: write # Required to deploy to GitHub Pages
       id-token: write # Required to deploy to GitHub Pages
