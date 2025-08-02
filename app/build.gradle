@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 // build.gradle in the 'app' module
 
 android {
-    compileSdk rootProject.ext.CompileSdk
+    compileSdk = rootProject.ext.CompileSdk
 
     defaultConfig {
         applicationId "com.donnnno.arcticons"
@@ -11,7 +11,7 @@ android {
         targetSdkVersion rootProject.ext.TargetSdk
         versionCode 1470
         versionName '13.2.4'
-        multiDexEnabled true
+        multiDexEnabled = true
     }
 
     // Load keystore
@@ -123,12 +123,12 @@ android {
 
     buildFeatures {
         buildConfig = true
-        viewBinding true
+        viewBinding = true
     }
-    namespace 'com.donnnno.arcticons'
+    namespace = 'com.donnnno.arcticons'
     lint {
-        abortOnError false
-        checkReleaseBuilds false
+        abortOnError = false
+        checkReleaseBuilds = false
         lintConfig = file("lint.xml")
     }
 
