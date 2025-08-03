@@ -132,6 +132,15 @@
     height: 45px;
 }
 
+#show-matching-drawables-btn {
+    text-align: end;
+    height: 45px;
+}
+
+#show-matching-drawables-btn.active-toggle {
+    background-color: #888607; /* Green or any highlight */
+}
+
 #regex-search-container {
     flex: 1;
     display: flex;
