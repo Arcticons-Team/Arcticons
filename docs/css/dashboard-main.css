@@ -47,8 +47,10 @@ h1 {
 h2 {
     text-align: center;
     margin-top: 20px;
-    margin-bottom: 20px;
-
+    margin-bottom: 40px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 h3 {
@@ -76,9 +78,9 @@ h3 {
 }
 
 @media screen and (max-width: 800px) {
-   h1 {
-    font-size: 150%;
-   }
+    h1 {
+        font-size: 150%;
+    }
 }
 
 @media screen and (max-width: 680px) {

@@ -40,8 +40,8 @@ fetch(`assets/requests.json`)
             return requestDate > latest ? requestDate : latest;
         }, new Date(0));
         document.getElementById('date_header').innerText = latestRequestDate.toLocaleString(undefined, {
-   day: 'numeric', year: 'numeric', month: 'long'
-});
+            day: 'numeric', year: 'numeric', month: 'long'
+        });
 
         // Process each app entry
         Object.entries(JsonContent).forEach(([componentInfo, entry]) => {
@@ -95,7 +95,8 @@ fetch(`assets/requests.json`)
                 appfilter,
                 appIconPath,
                 appIconColor,
-                playStoreCategories
+                playStoreCategories,
+                drawable
             });
         });
         appEntriesDataGlobal = appEntriesData;
@@ -121,6 +122,28 @@ fetch(`assets/requests.json`)
                     lazyLoadAndRender();
                     return;
                 }
+
+                // 🔽 Extract all drawable values from appfilterContent
+                const parser = new DOMParser();
+                const xmlDoc = parser.parseFromString(appfilterContent, "application/xml");
+                const items = xmlDoc.querySelectorAll("item");
+
+                // Create a Set to store unique drawable names
+                const drawableSet = new Set();
+
+                items.forEach(item => {
+                    const drawable = item.getAttribute("drawable");
+                    if (drawable) {
+                        drawableSet.add(drawable);
+                    }
+                });
+
+                // Now drawableSet contains all unique drawable names
+                console.log(`Total unique drawables found: ${drawableSet.size}`);
+                console.log(drawableSet);
+                window.drawableSet = drawableSet;
+                // 🔼
+
                 const filteredData = filterAppfilter(appEntriesData, appfilterContent);
                 appEntriesData = filteredData;
                 appEntriesDataGlobal = filteredData;
@@ -155,6 +178,49 @@ function setCategory() {
     });
 
 }
+let isShowingMatches = false; // Toggle state
+
+const toggleBtn = document.getElementById('show-matching-drawables-btn');
+
+toggleBtn.addEventListener('click', () => {
+    if (!window.drawableSet || window.drawableSet.size === 0) {
+        console.warn('Drawable set not initialized or empty');
+        return;
+    }
+    if (!isShowingMatches) {
+        const matchingEntries = appEntriesData.filter(entry =>
+            window.drawableSet.has(entry.drawable)
+        );
+        console.log(`Total matches found: ${matchingEntries.length}`);
+        if (matchingEntries.length === 0) {
+            document.getElementById('search-notification').innerText = `No matching drawable entries found.`;
+            document.getElementById('search-notification').style.display = 'block';
+            setTimeout(() => {
+                document.getElementById('search-notification').style.display = 'none';
+            }, 5000);
+            updateTable([]);
+        } else {
+            document.getElementById('search-notification').style.display = 'none';
+            const filteredandsortedData = sortData(sortingDirection, sortingColumnIndex, [...matchingEntries]);
+            updateTable(filteredandsortedData);
+        }
+
+        toggleBtn.innerText = "Show All Entries";
+        toggleBtn.classList.add("active-toggle");
+        isShowingMatches = true;
+    } else {
+        // 🔁 Revert to full data
+        document.getElementById('search-notification').style.display = 'none';
+        const fullDataSorted = sortData(sortingDirection, sortingColumnIndex, [...appEntriesData]);
+        updateTable(fullDataSorted);
+
+        toggleBtn.innerText = "Show Matching Drawables";
+        toggleBtn.classList.remove("active-toggle");
+        isShowingMatches = false;
+    }
+
+});
+
 
 // Function to shuffle an array
 function shuffleArray(arr) {
