@@ -188,9 +188,11 @@ toggleBtn.addEventListener('click', () => {
         return;
     }
     if (!isShowingMatches) {
-        const matchingEntries = appEntriesData.filter(entry =>
-            window.drawableSet.has(entry.drawable)
-        );
+        const matchingEntries = appEntriesData.filter(entry => {
+            let baseDrawable = entry.drawable;
+            baseDrawable = baseDrawable.replace(/_\d+$/, '');
+            return window.drawableSet.has(entry.drawable) || window.drawableSet.has(baseDrawable);
+        });
         console.log(`Total matches found: ${matchingEntries.length}`);
         if (matchingEntries.length === 0) {
             document.getElementById('search-notification').innerText = `No matching drawable entries found.`;
