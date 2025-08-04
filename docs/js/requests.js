@@ -84,6 +84,7 @@ fetch(`assets/requests.json`)
             const requestedInfo = entry.count;
             const lastRequestedTime = new Date(parseFloat(entry.requestDate) * 1000).toLocaleString().replace(',', '');
             const appIconColor = 0;
+            const Arcticon = `<img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/refs/heads/main/icons/white/${drawable}.svg" alt="Arcticon" class="arcticon">`;
             appEntriesData.push({
                 appName,
                 appIcon,
@@ -96,7 +97,8 @@ fetch(`assets/requests.json`)
                 appIconPath,
                 appIconColor,
                 playStoreCategories,
-                drawable
+                drawable,
+                Arcticon
             });
         });
         appEntriesDataGlobal = appEntriesData;
@@ -181,6 +183,7 @@ function setCategory() {
 let isShowingMatches = false; // Toggle state
 
 const toggleBtn = document.getElementById('show-matching-drawables-btn');
+const toggleCell = document.getElementById('show-matching-drawables');
 
 toggleBtn.addEventListener('click', () => {
     if (!window.drawableSet || window.drawableSet.size === 0) {
@@ -188,6 +191,11 @@ toggleBtn.addEventListener('click', () => {
         return;
     }
     if (!isShowingMatches) {
+        toggleBtn.innerText = "Show All Entries";
+        toggleBtn.classList.add("active-toggle");
+        toggleCell.classList.add("active");
+        isShowingMatches = true;
+
         const matchingEntries = appEntriesData.filter(entry => {
             let baseDrawable = entry.drawable;
             baseDrawable = baseDrawable.replace(/_\d+$/, '');
@@ -207,20 +215,17 @@ toggleBtn.addEventListener('click', () => {
             updateTable(filteredandsortedData);
         }
 
-        toggleBtn.innerText = "Show All Entries";
-        toggleBtn.classList.add("active-toggle");
-        isShowingMatches = true;
     } else {
         // 🔁 Revert to full data
+        toggleBtn.innerText = "Show Matching Drawables";
+        toggleBtn.classList.remove("active-toggle");
+        toggleCell.classList.remove("active");
+        isShowingMatches = false;
+
         document.getElementById('search-notification').style.display = 'none';
         const fullDataSorted = sortData(sortingDirection, sortingColumnIndex, [...appEntriesData]);
         updateTable(fullDataSorted);
-
-        toggleBtn.innerText = "Show Matching Drawables";
-        toggleBtn.classList.remove("active-toggle");
-        isShowingMatches = false;
     }
-
 });
 
 
@@ -364,6 +369,7 @@ function renderTable(data) {
         let cell5 = row.insertCell(4);
         let cell6 = row.insertCell(5);
         let cell7 = row.insertCell(6);
+        let cell8 = row.insertCell(7);
         index = index + startIndex;
         // Make cell1 clickable
         cell1.textContent = entry.appName;
@@ -385,6 +391,12 @@ function renderTable(data) {
         cell5.innerHTML = entry.requestedInfo;
         cell6.innerHTML = entry.lastRequestedTime;
         cell7.innerHTML = `<button class="green-button" id="copy-button" onclick="copyToClipboard(${index})"><img class="copy-icon" src="img/requests/copy.svg" alt="Copy"><span class="copy-text">Copy</span></button>`;
+        cell8.innerHTML = `<a href="#"class="icon-preview" data-index="${index}">${entry.Arcticon}</a>`;
+
+        // Show/hide all 8th-column <td>s
+        document.querySelectorAll('td:nth-child(8)').forEach(td => {
+            td.style.display = isShowingMatches ? 'table-cell' : 'none';
+        })
     });
 
     // Add event listeners to the icon previews

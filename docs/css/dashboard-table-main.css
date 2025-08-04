@@ -77,6 +77,11 @@ td:nth-child(6) {
     ;
 }
 
+td:nth-child(8) {
+    display: none;
+    max-width: 60px;
+}
+
 tr:nth-child(even) {
     background-color: #ebebeb;
 }
@@ -119,6 +124,16 @@ tr.row-glow {
 
 .copy-text {
     display: inline;
+}
+
+#show-matching-drawables {
+    display: none;
+    /* Hide the column by default */
+}
+
+/* Show the column when the button is clicked */
+#show-matching-drawables.active {
+    display: table-cell;
 }
 
 /*Dark mode theming */
