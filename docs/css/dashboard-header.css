@@ -138,7 +138,7 @@
 }
 
 #show-matching-drawables-btn.active-toggle {
-    background-color: #888607; /* Green or any highlight */
+    background-color: #888607;
 }
 
 #regex-search-container {
@@ -186,6 +186,10 @@
     }
 
     #regex-search-container {
+        display: none;
+    }
+
+    #show-matching-drawables-btn {
         display: none;
     }
 }

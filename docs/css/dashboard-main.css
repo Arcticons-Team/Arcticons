@@ -47,7 +47,7 @@ h1 {
 h2 {
     text-align: center;
     margin-top: 20px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -90,5 +90,21 @@ h3 {
 
     #smallheader {
         display: block;
+        position: relative;
+        left: 0%;
+        transform: translateX(0%);
+        width: 100%;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    #date_header {
+        display: block;
+        position: relative;
+        left: 0%;
+        transform: translateX(0%);
+        width: 100%;
+        margin-top: 5px;
+        margin-bottom: 0px;
     }
 }
