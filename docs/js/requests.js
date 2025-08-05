@@ -197,9 +197,18 @@ toggleBtn.addEventListener('click', () => {
         isShowingMatches = true;
 
         const matchingEntries = appEntriesData.filter(entry => {
-            let baseDrawable = entry.drawable;
-            baseDrawable = baseDrawable.replace(/_\d+$/, '');
-            return window.drawableSet.has(entry.drawable) || window.drawableSet.has(baseDrawable);
+            let baseDrawable = entry.drawable.replace(/_\d+$/, '');
+
+            if (window.drawableSet.has(entry.drawable)) {
+                //entry.arcticon = entry.drawable; // exact match
+                return true;
+            } else if (window.drawableSet.has(baseDrawable)) {
+                let Arcticon = `<img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/refs/heads/main/icons/white/${baseDrawable}.svg" alt="Arcticon" class="arcticon">`;
+                entry.Arcticon = Arcticon; // matched base
+                return true;
+            }
+
+            return false;
         });
         console.log(`Total matches found: ${matchingEntries.length}`);
         if (matchingEntries.length === 0) {
