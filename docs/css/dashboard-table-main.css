@@ -60,26 +60,25 @@ td:nth-child(2) {
 }
 
 td:nth-child(3) {
+    display: none;
+    max-width: 60px;
+}
+
+td:nth-child(4) {
     width: 25%;
     min-width: 180px;
 }
 
-td:nth-child(4) {
+td:nth-child(5) {
     width: 10%;
 }
 
-td:nth-child(5) {
-    width: 15%;
-}
-
 td:nth-child(6) {
-    max-width: 100px;
-    ;
+     width: 15%;
 }
 
 td:nth-child(8) {
-    display: none;
-    max-width: 60px;
+    max-width: 100px;
 }
 
 tr:nth-child(even) {
@@ -207,7 +206,7 @@ tr.row-glow {
     #izzy{
         display: none;
     }
-    td:nth-child(3) {
+    td:nth-child(4) {
         min-width: 110px;
     }
 }
@@ -216,7 +215,7 @@ tr.row-glow {
     #fdroid{
         display: none;
     }
-    td:nth-child(3) {
+    td:nth-child(4) {
         min-width: 70px;
     }
 }

@@ -371,19 +371,19 @@ function renderTable(data) {
     const table = document.getElementById("app-entries");
     data.forEach((entry, index) => {
         let row = table.insertRow();
-        let cell1 = row.insertCell(0);
-        let cell2 = row.insertCell(1);
-        let cell3 = row.insertCell(2);
-        let cell4 = row.insertCell(3);
-        let cell5 = row.insertCell(4);
-        let cell6 = row.insertCell(5);
-        let cell7 = row.insertCell(6);
-        let cell8 = row.insertCell(7);
+        let cellAppName = row.insertCell(0);
+        let cellAppIcon = row.insertCell(1);
+        let cellArcticon = row.insertCell(2);
+        let cellLinks = row.insertCell(3);
+        let cellDownloads = row.insertCell(4);
+        let cellReqInfo = row.insertCell(5);
+        let cellReqTime = row.insertCell(6);
+        let cellCopy = row.insertCell(7);
         index = index + startIndex;
         // Make cell1 clickable
-        cell1.textContent = entry.appName;
-        cell1.style.cursor = "pointer";
-        cell1.addEventListener("click", () => {
+        cellAppName.textContent = entry.appName;
+        cellAppName.style.cursor = "pointer";
+        cellAppName.addEventListener("click", () => {
             if (selectedRows.has(index)) {
                 selectedRows.delete(index);
                 row.classList.remove("row-glow");
@@ -394,18 +394,23 @@ function renderTable(data) {
             console.log("Selected Rows:", Array.from(selectedRows));
         });
         // Render the app icon as a clickable image
-        cell2.innerHTML = `<a href="#" class="icon-preview" data-index="${index}">${entry.appIcon}</a>`;
-        cell3.innerHTML = entry.appLinks;
-        cell4.innerHTML = entry.playStoreDownloads;
-        cell5.innerHTML = entry.requestedInfo;
-        cell6.innerHTML = entry.lastRequestedTime;
-        cell7.innerHTML = `<button class="green-button" id="copy-button" onclick="copyToClipboard(${index})"><img class="copy-icon" src="img/requests/copy.svg" alt="Copy"><span class="copy-text">Copy</span></button>`;
-        cell8.innerHTML = `<a href="#"class="icon-preview" data-index="${index}">${entry.Arcticon}</a>`;
+        cellAppIcon.innerHTML = `<a href="#" class="icon-preview" data-index="${index}">${entry.appIcon}</a>`;
+        cellLinks.innerHTML = entry.appLinks;
+        cellDownloads.innerHTML = entry.playStoreDownloads;
+        cellReqInfo.innerHTML = entry.requestedInfo;
+        cellReqTime.innerHTML = entry.lastRequestedTime;
+        cellCopy.innerHTML = `<button class="green-button" id="copy-button" onclick="copyToClipboard(${index})"><img class="copy-icon" src="img/requests/copy.svg" alt="Copy"><span class="copy-text">Copy</span></button>`;
+        cellArcticon.innerHTML = `<a href="#"class="icon-preview" data-index="${index}">${entry.Arcticon}</a>`;
 
-        // Show/hide all 8th-column <td>s
-        document.querySelectorAll('td:nth-child(8)').forEach(td => {
+        // Show/hide all Arcticon cells (3rd column) and adjust other cells accordingly
+        document.querySelectorAll('td:nth-child(3)').forEach(td => {
             td.style.display = isShowingMatches ? 'table-cell' : 'none';
-        })
+        });
+        // Also update the header visibility
+        const arctIconHeader = document.querySelector('th:nth-child(3)');
+        if (arctIconHeader) {
+            arctIconHeader.style.display = isShowingMatches ? 'table-cell' : 'none';
+        }
     });
 
     // Add event listeners to the icon previews
