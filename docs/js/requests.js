@@ -401,7 +401,7 @@ function renderTable(data) {
         cellReqInfo.innerHTML = entry.requestedInfo;
         cellReqTime.innerHTML = entry.lastRequestedTime;
         cellCopy.innerHTML = `<button class="green-button" id="copy-button" onclick="copyToClipboard(${index})"><img class="copy-icon" src="img/requests/copy.svg" alt="Copy"><span class="copy-text">Copy</span></button>`;
-        cellArcticon.innerHTML = `<a href="#"class="icon-preview" data-index="${index}">${entry.Arcticon}</a>`;
+        cellArcticon.innerHTML = `<a href="#"class="arcticon-preview" data-index="${index}">${entry.Arcticon}</a>`;
 
         // Show/hide all Arcticon cells (3rd column) and adjust other cells accordingly
         document.querySelectorAll('td:nth-child(3)').forEach(td => {

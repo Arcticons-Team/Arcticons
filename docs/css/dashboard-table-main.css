@@ -99,6 +99,11 @@ th {
 .icon-preview img {
     width: 50px;
     height: 50px;
+}
+
+.arcticon-preview img {
+    width: 50px;
+    height: 50px;
     filter: invert();
 }
 
@@ -221,7 +226,7 @@ tr.row-glow {
 }
 
 @media (prefers-color-scheme: dark) {
-    .icon-preview img {
+    .arcticon-preview img {
         filter: none;
     }
 }
