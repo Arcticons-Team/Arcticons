@@ -6,7 +6,7 @@ const batchSize = 30; // Number of rows to load at a time
 let startIndex = 0; // Start index for lazy loading
 let appEntriesData = []; // Store the original data for sorting
 // Global variables to track sorting column and direction
-let sortingColumnIndex = 4;
+let sortingColumnIndex = 5;
 let sortingDirection = 'desc';
 var selectedRows = new Set();
 var AllCategories = new Set();
@@ -88,6 +88,7 @@ fetch(`assets/requests.json`)
             appEntriesData.push({
                 appName,
                 appIcon,
+                Arcticon,
                 appLinks,
                 playStoreDownloads,
                 requestedInfo,
@@ -97,8 +98,8 @@ fetch(`assets/requests.json`)
                 appIconPath,
                 appIconColor,
                 playStoreCategories,
-                drawable,
-                Arcticon
+                drawable
+                
             });
         });
         appEntriesDataGlobal = appEntriesData;
@@ -730,13 +731,13 @@ function sortTable(columnIndex) {
 
 function sortData(sortingDirection, columnIndex, sortedData) {
     sortedData.sort((a, b) => {
-        if (columnIndex === 5) { // Check if sorting the 'Last Requested' column
+        if (columnIndex === 6) { // Check if sorting the 'Last Requested' column
             const cellA = getCellValue(a, columnIndex);
             const cellB = getCellValue(b, columnIndex);
 
             // Handle dates
             return sortingDirection === 'asc' ? cellA - cellB : cellB - cellA;
-        } else if (columnIndex === 4) {
+        } else if (columnIndex === 5) {
             const cellA = getCellValue(a, columnIndex);
             const cellB = getCellValue(b, columnIndex);
 
@@ -753,7 +754,7 @@ function sortData(sortingDirection, columnIndex, sortedData) {
                 return sortingDirection === 'asc' ? cellA - cellB : cellB - cellA;
             }
 
-        } else if (columnIndex === 3) {
+        } else if (columnIndex === 4) {
             const cellA = parseDownloadValue(getCellValue(a, columnIndex), sortingDirection);
             const cellB = parseDownloadValue(getCellValue(b, columnIndex), sortingDirection);
             // Handle numerical values
