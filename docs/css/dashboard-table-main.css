@@ -95,16 +95,14 @@ th {
     width: 50px;
     height: 50px;
 }
+.arcticon {
+    filter: invert();
+
+}
 
 .icon-preview img {
     width: 50px;
     height: 50px;
-}
-
-.arcticon-preview img {
-    width: 50px;
-    height: 50px;
-    filter: invert();
 }
 
 /* Copy appfilter button*/
@@ -153,6 +151,9 @@ tr.row-glow {
     }
 
     .links img {
+        filter: none;
+    }
+    .arcticon {
         filter: none;
     }
 
@@ -222,11 +223,5 @@ tr.row-glow {
     }
     td:nth-child(4) {
         min-width: 70px;
-    }
-}
-
-@media (prefers-color-scheme: dark) {
-    .arcticon-preview img {
-        filter: none;
     }
 }
