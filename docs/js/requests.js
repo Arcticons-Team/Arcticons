@@ -85,6 +85,7 @@ fetch(`assets/requests.json`)
             const lastRequestedTime = new Date(parseFloat(entry.requestDate) * 1000).toLocaleString().replace(',', '');
             const appIconColor = 0;
             const Arcticon = `<img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/refs/heads/main/icons/white/${drawable}.svg" alt="Arcticon" class="arcticon">`;
+            const ArcticonPath = `https://raw.githubusercontent.com/Arcticons-Team/Arcticons/refs/heads/main/icons/white/${drawable}.svg`;
             appEntriesData.push({
                 appName,
                 appIcon,
@@ -98,8 +99,9 @@ fetch(`assets/requests.json`)
                 appIconPath,
                 appIconColor,
                 playStoreCategories,
-                drawable
-                
+                drawable,
+                ArcticonPath
+
             });
         });
         appEntriesDataGlobal = appEntriesData;
@@ -205,7 +207,9 @@ toggleBtn.addEventListener('click', () => {
                 return true;
             } else if (window.drawableSet.has(baseDrawable)) {
                 let Arcticon = `<img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/refs/heads/main/icons/white/${baseDrawable}.svg" alt="Arcticon" class="arcticon">`;
+                let ArcticonPath = `https://raw.githubusercontent.com/Arcticons-Team/Arcticons/refs/heads/main/icons/white/${baseDrawable}.svg`;
                 entry.Arcticon = Arcticon; // matched base
+                entry.ArcticonPath = ArcticonPath; // matched base
                 return true;
             }
 
@@ -395,14 +399,17 @@ function renderTable(data) {
             console.log("Selected Rows:", Array.from(selectedRows));
         });
         // Render the app icon as a clickable image
-        cellAppIcon.innerHTML = `<a href="#" class="icon-preview" data-index="${index}">${entry.appIcon}</a>`;
+        cellAppIcon.innerHTML = `<a href="#" class="icon-preview" data-index="${index}" column="AppIcon">${entry.appIcon}</a>`;
         cellLinks.innerHTML = entry.appLinks;
         cellDownloads.innerHTML = entry.playStoreDownloads;
         cellReqInfo.innerHTML = entry.requestedInfo;
         cellReqTime.innerHTML = entry.lastRequestedTime;
         cellCopy.innerHTML = `<button class="green-button" id="copy-button" onclick="copyToClipboard(${index})"><img class="copy-icon" src="img/requests/copy.svg" alt="Copy"><span class="copy-text">Copy</span></button>`;
-        cellArcticon.innerHTML = `<a href="#"class="icon-preview" data-index="${index}">${entry.Arcticon}</a>`;
-
+        if (isShowingMatches) {
+            cellArcticon.innerHTML = `<a href="#"class="icon-preview" data-index="${index}" column="Arcticon">${entry.Arcticon}</a>`;
+        } else {
+            cellArcticon.innerHTML = `<span class="arcticon-placeholder">No Match</span>`;
+        }
         // Show/hide all Arcticon cells (3rd column) and adjust other cells accordingly
         document.querySelectorAll('td:nth-child(3)').forEach(td => {
             td.style.display = isShowingMatches ? 'table-cell' : 'none';
@@ -420,18 +427,28 @@ function renderTable(data) {
         icon.addEventListener('click', function (event) {
             event.preventDefault();
             const index = parseInt(this.getAttribute('data-index'));
+            const column = this.getAttribute('column');
             const entry = appEntriesDataGlobal[index];
-            showIconPreview(entry.appIconPath);
+            if (column === "AppIcon") {
+                // Show the icon preview
+                showIconPreview(entry.appIconPath, column);
+            } else if (column === "Arcticon") {
+                // Show the Arcticon preview
+                showIconPreview(entry.ArcticonPath, column);
+            }
         });
     });
 }
 
-function showIconPreview(iconSrc) {
+function showIconPreview(iconSrc, column) {
     const previewOverlay = document.getElementById('preview-overlay');
     const previewImage = document.getElementById('preview-image');
 
     // Set the preview image source to the clicked icon source
     previewImage.src = iconSrc;
+    if (column === "Arcticon") {
+        previewImage.id = 'preview-arcticon'; // Set the ID for the preview image
+    }
 
     // Show the preview overlay
     previewOverlay.style.display = 'block';
@@ -439,6 +456,7 @@ function showIconPreview(iconSrc) {
     previewOverlay.addEventListener('click', function (e) {
         if (e.target === this || e.target.classList.contains('close-button-class')) {
             // Hide the preview overlay
+            previewImage.id = 'preview-image';
             this.style.display = 'none';
         }
     });

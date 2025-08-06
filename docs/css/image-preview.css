@@ -12,9 +12,13 @@
     height: 100%;
     max-height: 550px;
     /* semi-transparent black */
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(255, 255, 255, 0.8);
     z-index: 9999;
     overflow: auto;
+}
+
+#preview-arcticon {
+    filter: invert();
 }
 
 /* Style for the preview image */
@@ -29,7 +33,22 @@
     position: absolute;
     top: 20px;
     right: 20px;
-    color: white;
+    color: black;
     font-size: 30px;
     cursor: pointer;
+}
+
+@media (prefers-color-scheme: dark) {
+    .preview-overlay-class {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    #preview-arcticon {
+        filter: none;
+    }
+
+    .close-button-class {
+        color: white;
+    }
+
 }
