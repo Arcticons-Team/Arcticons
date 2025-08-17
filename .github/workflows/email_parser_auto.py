@@ -100,7 +100,11 @@ class EmailParser:
         for part in message.walk():
             if part.get_content_maintype() == 'application' and part.get_content_subtype() in ['zip', 'octet-stream']:
                 zip_data = part.get_payload(decode=True)
-                return zipfile.ZipFile(io.BytesIO(zip_data))
+                try:
+                    return zipfile.ZipFile(io.BytesIO(zip_data))
+                except zipfile.BadZipFile:
+                    print(f"Bad zip file in email from {message['From']}")
+                    continue
         return None
 
     def greedy(self, message):
