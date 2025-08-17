@@ -33,12 +33,13 @@ def parse_args():
     return parser.parse_args()
 
 class EmailParser:
-    def __init__(self, folder_path, appfilter_path, extracted_png_folder_path, requests_path=None):
+    def __init__(self, folder_path, appfilter_path, extracted_png_folder_path, requests_path=None, imap_conn=None):
         self.folder_path = Path(folder_path)
         self.appfilter_path = Path(appfilter_path)
         self.extracted_png_folder_path = Path(extracted_png_folder_path)
         self.requests_path = Path(requests_path+'/requests.txt') if requests_path else None
         self.updatable_path = Path(requests_path+'/updatable.txt') if requests_path else None
+        self.imap_conn = imap_conn
 
         self.filelist = list(self.folder_path.glob('*.eml'))
         self.data = {}
@@ -217,10 +218,64 @@ class EmailParser:
             if 'requestDate' not in self.apps[data['ComponentInfo']] or self.apps[data['ComponentInfo']]['requestDate'] < mktime(parsedate(msg['Date'])):
                 self.apps[data['ComponentInfo']]['requestDate'] = mktime(parsedate(msg['Date']))
 
+    def ensure_folder_exists(self, folder_name: str):
+        """Ensure the target IMAP folder exists, create if not."""
+        if not self.imap_conn:
+            return False
+        try:
+            status, _ = self.imap_conn.list()
+            if status != "OK":
+                print("Could not list folders")
+                return False
+
+            # check if folder already exists
+            existing_folders = [f.decode().split(' "/" ')[-1] for f in _]
+            if folder_name not in existing_folders:
+                print(f"Creating missing folder: {folder_name}")
+                self.imap_conn.create(folder_name)
+            return True
+        except Exception as e:
+            print(f"Error checking/creating folder {folder_name}: {e}")
+            return False
+
+
+    def move_mail_on_server(self, email_id, target_folder="FailedMail"):
+        if not self.imap_conn:
+            print("No IMAP connection available")
+            return
+        
+        # make sure the folder exists
+        if not self.ensure_folder_exists(target_folder):
+            return
+
+        try:
+            # Copy to new folder
+            result = self.imap_conn.copy(email_id, target_folder)
+            if result[0] != "OK":
+                print(f"Failed to copy email {email_id} to {target_folder}")
+                return
+
+            # Mark original as deleted
+            self.imap_conn.store(email_id, '+FLAGS', '\\Deleted')
+
+            print(f"Moved email {email_id} to {target_folder}")
+        except Exception as e:
+            print(f"Error moving email {email_id} to {target_folder}: {e}")
+
     def move_no_zip(self):
         for failedmail in self.no_zip:
             normalized_path = Path(self.no_zip[failedmail]).resolve()
             print(f'--- No zip file found: File moved to failedmail')
+
+            # Get IMAP email id from file name
+            email_id = normalized_path.stem  # filename without ".eml"
+            if self.imap_conn:
+                try:
+                    self.imap_conn.store(email_id, '-FLAGS', '\\Seen')
+                    print(f"Marked email ID {email_id} as unread on server")
+                    self.move_mail_on_server(email_id, "FailedMail")
+                except Exception as e:
+                    print(f"Error marking email ID {email_id} as unread: {e}")
 
             if normalized_path.exists():
                 file_name = normalized_path.name
@@ -502,7 +557,7 @@ if __name__ == "__main__":
     # Fetch emails matching the pattern
     downloader.fetch_emails_with_subject_pattern(subject_prefix, subject_suffix)    # Download with specific subject, mark as read, and process
     #downloader.fetch_emails()  # Download , mark as read, and process
-    downloader.close()
 
-    parser = EmailParser(args.folder_path, args.appfilter_path, args.extracted_png_folder_path, args.requests_path)
+    parser = EmailParser(args.folder_path, args.appfilter_path, args.extracted_png_folder_path, args.requests_path,  imap_conn=downloader.connection)
     parser.main()
+    downloader.close()
