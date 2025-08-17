@@ -104,7 +104,7 @@ class EmailParser:
                 try:
                     return zipfile.ZipFile(io.BytesIO(zip_data))
                 except zipfile.BadZipFile:
-                    print(f"Bad zip file in email from {message['From']}")
+                    print(f"Bad zip file in email")
                     continue
         return None
 
