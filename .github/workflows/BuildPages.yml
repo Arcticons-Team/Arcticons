@@ -15,7 +15,7 @@ on:
     # * is a special character in YAML so you have to quote this string
     - cron: '30 5 * * 0,3'
   workflow_run:
-    workflows: [Auto Appfilter Updater,Crowdsource Appfilter]
+    workflows: [Auto Appfilter Updater]
     types:
       - completed
 
