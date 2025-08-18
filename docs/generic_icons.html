@@ -15,11 +15,12 @@
     <meta name="twitter:image" content="https://arcticons.com/img/arcticons/arcticonspreview.gif">
     <meta name="twitter:description" content="A monotone line-based icon pack for Android">
 
-    <title>Arcticons - Icon Search</title>
+    <title>Arcticons - Generic icon list</title>
 
     <link rel="icon" type="image/png" href="img/arcticons/icon.png" />
     <link rel="stylesheet" href="css/base-style.css">
     <link rel="stylesheet" href="css/search.css" />
+    <link rel="stylesheet" href="css/generic_icons.css" />
     <script src="js/search.js"></script>
     <script src="js/jquery-3.7.1.min.js"></script>
     <script>  
@@ -32,17 +33,13 @@
   <body>
     <div id="header"></div>
 
-    <h1>Arcticons icon search</h1>
+    <div class="content">
+      <div id="icon-grid" class="icon-grid"></div>
+      <div id="copy-notification" class="copy-notification">Icon name copied!</div>
+    </div>
 
-    <section id="explorer">
-      <div class="content">
-        <div id="searchbox"><input type="search" id="search" placeholder="Search"/></div>
-        <div id="results" aria-live="assertive" aria-disabled="true">
-	        <div class="tab" id="c"></div>
-	        <div class="tab" id="mc"></div>
-        </div>
-      </div>
-    </section>
     <div id="footer"></div>
   </body>
+      <script src="js/generic_icons.js"></script>
+
 </html>
