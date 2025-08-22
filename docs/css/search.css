@@ -239,11 +239,9 @@ body {
   flex-direction: column;
   min-height: 100vh;
 }
-/* Let the main explorer section take available space so footer is pushed down */
 section#explorer {
   flex: 1 0 auto;
 }
-/* The container that gets the footer inserted should be able to auto-margin to the bottom */
 #footer {
   margin-top: auto;
 }
