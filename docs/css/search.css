@@ -178,7 +178,9 @@ aside {
   max-width: 600px;
   height: auto;
   max-height: 80vh;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.6);
+  -webkit-backdrop-filter: blur(10px) saturate(120%);
+  backdrop-filter: blur(20px) saturate(120%);
   z-index: 9999;
   display: flex;
   flex-direction: column;
@@ -187,6 +189,7 @@ aside {
   border-radius: 18px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
   padding: 2rem 1.5rem 1.5rem 1.5rem;
+  transition: opacity 160ms ease, transform 160ms ease;
 }
 
 .popup-figure img {
@@ -224,4 +227,21 @@ aside {
   100% {
     opacity: 0;
   }
+}
+
+/* Ensure footer is pinned to the bottom on pages with little content */
+html, body {
+  height: 100%;
+  min-height: 100%;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+section#explorer {
+  flex: 1 0 auto;
+}
+#footer {
+  margin-top: auto;
 }
