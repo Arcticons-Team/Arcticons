@@ -1,8 +1,19 @@
+let targetIconToOpen = null;
+
 let lazyImageObserver = new IntersectionObserver(function(entries, observer){
   entries.forEach(function(entry){
     if (entry.isIntersecting) {
       let lazyImage = entry.target;
       lazyImage.addEventListener('error', function(){this.src = this.src.replace('icons/black', 'todo').replace('icons/white', 'todo');});
+      
+      // If this is the target icon we want to open, add load listener before setting src
+      if (targetIconToOpen && lazyImage.title === targetIconToOpen) {
+        lazyImage.addEventListener('load', function() {
+          openPopup.call(this);
+          targetIconToOpen = null; // Reset after opening
+        }, { once: true });
+      }
+      
       lazyImage.src = lazyImage.dataset.src;
       lazyImage.className = '';
       lazyImageObserver.unobserve(lazyImage);
@@ -58,27 +69,28 @@ function showCopyNotification() {
   }, 2000);
 }
 
-function openPopup(){
+function openPopup(iconData) {
   closePopup();
-
+  // Support both event and direct call
+  let icon = iconData && iconData.target ? iconData.target : this;
+  // Update URL with icon name
+  if (icon.title) {
+    history.replaceState(null, '', '?icon=' + encodeURIComponent(icon.title));
+  }
   let fig = document.createElement('figure');
   fig.className = 'popup-figure';
-
   let img = document.createElement('img');
-  img.src = this.src;
-  img.alt = this.alt;
-
+  img.src = icon.src;
+  img.alt = icon.alt;
   // Create title with formatted icon name
   let titleLabel = document.createElement('h2');
   titleLabel.className = 'icon-title';
-  let formattedTitle = this.title.charAt(0).toUpperCase() + 
-                       this.title.slice(1).replace(/_/g, ' ');
+  let formattedTitle = icon.title.charAt(0).toUpperCase() + 
+                       icon.title.slice(1).replace(/_/g, ' ');
   titleLabel.textContent = formattedTitle;
-
   let nameLabel = document.createElement('div');
   nameLabel.className = 'icon-name';
-  nameLabel.textContent = this.title;
-
+  nameLabel.textContent = icon.title;
   // Create close button
   let closeBtn = document.createElement('button');
   closeBtn.className = 'popup-close-btn';
@@ -88,7 +100,6 @@ function openPopup(){
     e.stopPropagation();
     closePopup();
   };
-
   // Escape key handler
   function escHandler(e) {
     if (e.key === "Escape") {
@@ -96,18 +107,15 @@ function openPopup(){
     }
   }
   document.addEventListener('keydown', escHandler);
-
   // Store handler for removal
   fig._escHandler = escHandler;
-
   fig.addEventListener('click', (e) => {
     if (e.target === fig) {
       closePopup();
     } else if (e.target !== closeBtn) {
-      copyToClipboard(this.title);
+      copyToClipboard(icon.title);
     }
   });
-
   fig.appendChild(closeBtn);
   fig.appendChild(img);
   fig.appendChild(titleLabel);
@@ -122,6 +130,10 @@ function closePopup(){
   }
   if (fig && fig.parentNode) {
     fig.parentNode.removeChild(fig);
+  }
+  // Restore URL to default (remove ?icon)
+  if (window.location.search.includes('icon=')) {
+    history.replaceState(null, '', window.location.pathname);
   }
 }
 
@@ -147,15 +159,37 @@ function genImageGrid(){
     return true;
   });
 
+  // Set the target icon from URL params
+  const params = new URLSearchParams(window.location.search);
+  const iconFromUrl = params.get('icon');
+  if (iconFromUrl) {
+    targetIconToOpen = iconFromUrl;
+  }
+  
   for (let i of uniqueDocs.sort(sortIcons)){
     let im = document.createElement('img');
     im.className = 'lazy';
-    lazyImageObserver.observe(im);
     im.dataset.src = 'https://raw.githubusercontent.com/Donnnno/Arcticons/main/icons/white/' + i.attributes.drawable.value + '.svg';
     im.alt = i.attributes.drawable.value;
     im.title = i.attributes.drawable.value;
     im.addEventListener('click', openPopup);
+
+    // Append first so layout and selectors work
     document.getElementsByClassName('tab')[0].appendChild(im);
+
+    // If this is the icon requested via URL, load it immediately and open popup
+    if (iconFromUrl && i.attributes.drawable.value === iconFromUrl) {
+      // Start loading image immediately
+      im.src = im.dataset.src;
+      im.className = '';
+      // Ensure any lazy observer won't try to open it later
+      targetIconToOpen = null;
+      // Open popup immediately (image will render when loaded)
+      openPopup.call(im);
+    } else {
+      // Otherwise observe for lazy loading
+      lazyImageObserver.observe(im);
+    }
   }
 }
 document.addEventListener("DOMContentLoaded", function(){
