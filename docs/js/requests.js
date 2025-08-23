@@ -200,58 +200,64 @@ toggleBtn.addEventListener('click', () => {
         return;
     }
     if (!isShowingMatches) {
-        toggleBtn.innerText = "Show All Entries";
-        toggleBtn.classList.add("active-toggle");
-        toggleCell.classList.add("active");
-        isShowingMatches = true;
-
-        const matchingEntries = appEntriesData.filter(entry => {
-            let baseDrawable = entry.drawable.replace(/_\d+$/, '');
-
-            if (window.drawableSet.has(entry.drawable)) {
-                //entry.arcticon = entry.drawable; // exact match
-                return true;
-            } else if (window.drawableSet.has(baseDrawable)) {
-                let Arcticon = `<img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/refs/heads/main/icons/white/${baseDrawable}.svg" alt="Arcticon" class="arcticon">`;
-                let ArcticonPath = `https://raw.githubusercontent.com/Arcticons-Team/Arcticons/refs/heads/main/icons/white/${baseDrawable}.svg`;
-                entry.Arcticon = Arcticon; // matched base
-                entry.ArcticonPath = ArcticonPath; // matched base
-                return true;
-            }
-
-            return false;
-        });
-        console.log(`Total matches found: ${matchingEntries.length}`);
-        appEntriesDataMatched = matchingEntries;
-        if (matchingEntries.length === 0) {
-            document.getElementById('search-notification').innerText = `No matching drawable entries found.`;
-            document.getElementById('search-notification').style.display = 'block';
-            setTimeout(() => {
-                document.getElementById('search-notification').style.display = 'none';
-            }, 5000);
-            updateTable([]);
-        } else {
-            document.getElementById('search-notification').style.display = 'none';
-            const filteredandsortedData = sortData(sortingDirection, sortingColumnIndex, [...matchingEntries]);
-            updateTable(filteredandsortedData);
-            filterCategory();
-        }
-
+        showMatchingDrawables();
     } else {
         // 🔁 Revert to full data
-        toggleBtn.innerText = "Show Matching Drawables";
-        toggleBtn.classList.remove("active-toggle");
-        toggleCell.classList.remove("active");
-        isShowingMatches = false;
-
-        document.getElementById('search-notification').style.display = 'none';
-        const fullDataSorted = sortData(sortingDirection, sortingColumnIndex, [...appEntriesData]);
-        appEntriesDataMatched = fullDataSorted;
-        updateTable(fullDataSorted);
-        filterCategory();
+        revertMatchingDrawables();
     }
 });
 
+function showMatchingDrawables() {
+    toggleBtn.innerText = "Show All Entries";
+    toggleBtn.classList.add("active-toggle");
+    toggleCell.classList.add("active");
+    isShowingMatches = true;
+
+    const matchingEntries = appEntriesData.filter(entry => {
+        let baseDrawable = entry.drawable.replace(/_\d+$/, '');
+
+        if (window.drawableSet.has(entry.drawable)) {
+            //entry.arcticon = entry.drawable; // exact match
+            return true;
+        } else if (window.drawableSet.has(baseDrawable)) {
+            let Arcticon = `<img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/refs/heads/main/icons/white/${baseDrawable}.svg" alt="Arcticon" class="arcticon">`;
+            let ArcticonPath = `https://raw.githubusercontent.com/Arcticons-Team/Arcticons/refs/heads/main/icons/white/${baseDrawable}.svg`;
+            entry.Arcticon = Arcticon; // matched base
+            entry.ArcticonPath = ArcticonPath; // matched base
+            return true;
+        }
+
+        return false;
+    });
+    console.log(`Total matches found: ${matchingEntries.length}`);
+    appEntriesDataMatched = matchingEntries;
+    if (matchingEntries.length === 0) {
+        document.getElementById('search-notification').innerText = `No matching drawable entries found.`;
+        document.getElementById('search-notification').style.display = 'block';
+        setTimeout(() => {
+            document.getElementById('search-notification').style.display = 'none';
+        }, 5000);
+        updateTable([]);
+    } else {
+        document.getElementById('search-notification').style.display = 'none';
+        const filteredandsortedData = sortData(sortingDirection, sortingColumnIndex, [...matchingEntries]);
+        updateTable(filteredandsortedData);
+        filterCategory();
+    }
+}
+
+function revertMatchingDrawables() {
+    toggleBtn.innerText = "Show Matching Drawables";
+    toggleBtn.classList.remove("active-toggle");
+    toggleCell.classList.remove("active");
+    isShowingMatches = false;
+
+    document.getElementById('search-notification').style.display = 'none';
+    const fullDataSorted = sortData(sortingDirection, sortingColumnIndex, [...appEntriesData]);
+    appEntriesDataMatched = fullDataSorted;
+    updateTable(fullDataSorted);
+    filterCategory();
+}
 
 // Function to shuffle an array
 function shuffleArray(arr) {
@@ -740,13 +746,18 @@ function renameAndCopySelectedToClipboard() {
 }
 
 
-// Sort table function
-function sortTable(columnIndex) {
+// Sort table function with optional sortingDirection parameter
+function sortTable(columnIndex, localsortingDirection = null) {
     const table = document.querySelector('table');
     const headers = table.querySelectorAll('thead th');
 
-    // Determine the sorting direction
-    sortingDirection = headers[columnIndex].classList.contains('asc') ? 'desc' : 'asc';
+    // If sortingDirection is provided, use it; otherwise, determine it based on the current header class
+    if (localsortingDirection === null) {
+        sortingDirection = headers[columnIndex].classList.contains('asc') ? 'desc' : 'asc';
+    }
+    else {
+        sortingDirection = localsortingDirection;
+    }
 
     // Remove sorting indicators from all headers
     headers.forEach(header => {
@@ -986,6 +997,39 @@ function notifyMessage(message) {
         document.getElementById('search-notification').style.display = 'none';
     }, 5000);
 }
+
+const showMultipeBtn = document.getElementById('show-multiple');
+showMultipeBtn.addEventListener('click', () => {
+    if (isShowingMatches) {
+        revertMatchingDrawables();
+    }
+
+    let MultipleMode = showMultipeBtn.classList.contains('active-toggle');
+    if (MultipleMode) {
+        showMultipeBtn.innerText = "Show Matching Name";
+        showMultipeBtn.classList.remove("active-toggle");
+        appEntriesDataMatched = appEntriesData;
+        sortTable(5, 'desc')
+    } else {
+        showMultipeBtn.classList.add("active-toggle");
+        showMultipeBtn.innerText = "Show All";
+        const threshold = 2;
+        const filteredEntries = filterEntriesByAppNameFrequency(appEntriesData, threshold);
+        appEntriesDataMatched = filteredEntries;
+        sortTable(0, 'asc')
+    }
+    filterCategory();
+});
+
+function filterEntriesByAppNameFrequency(appEntriesData, minOccurrences) {
+    const appNameCount = {};
+    appEntriesData.forEach(entry => {
+        const { appName } = entry;
+        appNameCount[appName] = (appNameCount[appName] || 0) + 1;
+    });
+    return appEntriesData.filter(entry => appNameCount[entry.appName] >= minOccurrences);
+}
+
 
 // Function to parse XML and return color data as an object
 function loadColorsFromXML(xmlFilePath, callback) {
