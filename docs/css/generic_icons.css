@@ -4,6 +4,7 @@
   gap: 20px;
   padding: 20px;
 }
+
 .icon-item {
   display: flex;
   flex-direction: column;
@@ -13,19 +14,35 @@
   border-radius: 8px;
   transition: background-color 0.3s;
 }
+
+.body {
+  display: block;
+  min-height: 100vh;
+  align-items: center;
+}
+
+.content {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .icon-item:hover {
   background-color: rgba(255, 255, 255, 0.1);
 }
+
 .icon-item img {
   width: 72px;
   height: 72px;
   margin-bottom: 8px;
 }
+
 .icon-name {
   text-align: center;
   font-size: 14px;
   color: #fff;
 }
+
 .copy-notification {
   position: fixed;
   bottom: 20px;
@@ -36,4 +53,5 @@
   padding: 10px 20px;
   border-radius: 4px;
   display: none;
+  z-index: 2;
 }

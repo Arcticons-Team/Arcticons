@@ -217,7 +217,7 @@ function genImageGrid(){
   for (let i of uniqueDocs.sort(sortIcons)){
     let im = document.createElement('img');
     im.className = 'lazy';
-    im.dataset.src = 'https://raw.githubusercontent.com/Donnnno/Arcticons/main/icons/white/' + i.attributes.drawable.value + '.svg';
+    im.dataset.src = 'https://raw.githubusercontent.com/Arcticons-Team/Arcticons/main/icons/white/' + i.attributes.drawable.value + '.svg';
     im.alt = i.attributes.drawable.value;
     im.title = i.attributes.drawable.value;
     im.addEventListener('click', openPopup);
@@ -290,7 +290,7 @@ document.addEventListener("DOMContentLoaded", function(){
   document.getElementsByClassName('tab')[1].style.display = 'none';
   document.getElementById('search').oninput = search;
   let a = new XMLHttpRequest();
-  a.open('GET', 'https://raw.githubusercontent.com/Donnnno/Arcticons/main/app/src/main/assets/drawable.xml');
+  a.open('GET', 'https://raw.githubusercontent.com/Arcticons-Team/Arcticons/main/app/src/main/assets/drawable.xml');
   a.onload = genImageGrid;
   a.send();
 });
