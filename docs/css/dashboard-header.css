@@ -137,6 +137,11 @@
     height: 45px;
 }
 
+#show-multiple {
+    text-align: end;
+    height: 45px;
+}
+
 #show-matching-drawables-btn.active-toggle {
     background-color: #888607;
 }
@@ -190,6 +195,9 @@
     }
 
     #show-matching-drawables-btn {
+        display: none;
+    }
+    #show-multiple {
         display: none;
     }
 }
