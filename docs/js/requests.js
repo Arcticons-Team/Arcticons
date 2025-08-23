@@ -108,6 +108,7 @@ fetch(`assets/requests.json`)
         });
         appEntriesDataGlobal = appEntriesData;
         appEntriesDataFiltered = appEntriesData;
+        appEntriesDataMatched = appEntriesData;
         console.log("All Categories:", AllCategories);
 
 
@@ -156,6 +157,7 @@ fetch(`assets/requests.json`)
                 appEntriesData = filteredData;
                 appEntriesDataGlobal = filteredData;
                 appEntriesDataFiltered = filteredData;
+                appEntriesDataMatched = filteredData;
                 updateHeaderText(`${appEntriesData.length} Requested Apps`);
                 const table = document.querySelector('table');
                 const headers = table.querySelectorAll('thead th');
@@ -483,9 +485,9 @@ function copyToClipboard(index) {
     const entry = appEntriesDataGlobal[index];
     let copyText = ""; // Initialize copyText variable
     if (isShowingMatches) {
-    copyText = `${entry.appfilter}`;
-    }else {
-    copyText = `${entry.appNameAppfilter}\n${entry.appfilter}`;
+        copyText = `${entry.appfilter}`;
+    } else {
+        copyText = `${entry.appNameAppfilter}\n${entry.appfilter}`;
     }
     navigator.clipboard.writeText(copyText).then(() => {
         // Show the copy notification
@@ -761,7 +763,7 @@ function sortTable(columnIndex) {
 }
 
 function sortData(sortingDirection, columnIndex, sortedData) {
-        sortedData.sort((a, b) => {
+    sortedData.sort((a, b) => {
         if (columnIndex === 6) { // Check if sorting the 'Last Requested' column
             const cellA = getCellValue(a, columnIndex);
             const cellB = getCellValue(b, columnIndex);
@@ -814,30 +816,47 @@ function parseDownloadValue(value, sortingDirection) {
     return parseFloat(value); // Return the numeric value for simple numbers like "100"
 }
 
+const toggleCategoryModeBtn = document.getElementById('Category_Match');
+toggleCategoryModeBtn.addEventListener('click', () => {
+    let CategoryMode = toggleCategoryModeBtn.classList.contains('active-toggle');
+    if (!CategoryMode) {
+        toggleCategoryModeBtn.innerText = "Match One Category";
+        toggleCategoryModeBtn.classList.add("active-toggle");
+        CategoryMode = true;
+        filterCategory();
+    } else {
+        // ?? Revert to full data
+        toggleCategoryModeBtn.innerText = "Match All Categories";
+        toggleCategoryModeBtn.classList.remove("active-toggle");
+        CategoryMode = false;
+        filterCategory();
+    }
+});
 
 function filterCategory() {
     showClearCategory();
     let filteredData;
-
+    let CategoryMode = toggleCategoryModeBtn.classList.contains('active-toggle');
     // Get all the activated categories
     const activatedCategories = Array.from(
         document.querySelectorAll('#category-button[activated]')
     ).map(button => button.textContent);
 
-    // Show apps that have one of the activated categories in playStoreCategories
-    /*
-    filteredData = appEntriesData.filter(entry =>
-        entry.playStoreCategories.some(category =>
-            activatedCategories.includes(category)
-        )
-    );
-    */
-    // Show apps that have all of the activated categories in playStoreCategories
-    filteredData = appEntriesDataMatched.filter(entry =>
-        activatedCategories.every(category =>
-            entry.playStoreCategories.includes(category)
-        )
-    );
+    if (CategoryMode) {
+        // Show apps that have one of the activated categories in playStoreCategories
+        filteredData = appEntriesDataMatched.filter(entry =>
+            entry.playStoreCategories.some(category =>
+                activatedCategories.includes(category)
+            )
+        );
+    } else {
+        // Show apps that have all of the activated categories in playStoreCategories
+        filteredData = appEntriesDataMatched.filter(entry =>
+            activatedCategories.every(category =>
+                entry.playStoreCategories.includes(category)
+            )
+        );
+    }
     appEntriesDataFiltered = filteredData; // Update the global filtered data
 
     // If no results are found, show a notification
