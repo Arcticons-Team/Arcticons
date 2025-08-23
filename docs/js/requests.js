@@ -1,10 +1,12 @@
 // Array of Link Images
 const imageNames = ['img/requests/google-play-store.svg', 'img/requests/f-droid.svg', 'img/requests/izzyondroid.svg', 'img/requests/galaxystore.svg', 'img/requests/search-globe.svg'];
-var appEntriesDataGlobal = []; // Store the original data for sorting
+let appEntriesData = []; // Store the original data for sorting
+var appEntriesDataGlobal = []; // Currently displayed data
+var appEntriesDataFiltered = []; // Filtered data based on category
+var appEntriesDataMatched = []; //  Matched data based on drawable
 // Lazy loading and virtualization
 const batchSize = 30; // Number of rows to load at a time
 let startIndex = 0; // Start index for lazy loading
-let appEntriesData = []; // Store the original data for sorting
 // Global variables to track sorting column and direction
 let sortingColumnIndex = 5;
 let sortingDirection = 'desc';
@@ -105,6 +107,7 @@ fetch(`assets/requests.json`)
             });
         });
         appEntriesDataGlobal = appEntriesData;
+        appEntriesDataFiltered = appEntriesData;
         console.log("All Categories:", AllCategories);
 
 
@@ -152,6 +155,7 @@ fetch(`assets/requests.json`)
                 const filteredData = filterAppfilter(appEntriesData, appfilterContent);
                 appEntriesData = filteredData;
                 appEntriesDataGlobal = filteredData;
+                appEntriesDataFiltered = filteredData;
                 updateHeaderText(`${appEntriesData.length} Requested Apps`);
                 const table = document.querySelector('table');
                 const headers = table.querySelectorAll('thead th');
@@ -216,6 +220,7 @@ toggleBtn.addEventListener('click', () => {
             return false;
         });
         console.log(`Total matches found: ${matchingEntries.length}`);
+        appEntriesDataMatched = matchingEntries;
         if (matchingEntries.length === 0) {
             document.getElementById('search-notification').innerText = `No matching drawable entries found.`;
             document.getElementById('search-notification').style.display = 'block';
@@ -227,6 +232,7 @@ toggleBtn.addEventListener('click', () => {
             document.getElementById('search-notification').style.display = 'none';
             const filteredandsortedData = sortData(sortingDirection, sortingColumnIndex, [...matchingEntries]);
             updateTable(filteredandsortedData);
+            filterCategory();
         }
 
     } else {
@@ -238,7 +244,9 @@ toggleBtn.addEventListener('click', () => {
 
         document.getElementById('search-notification').style.display = 'none';
         const fullDataSorted = sortData(sortingDirection, sortingColumnIndex, [...appEntriesData]);
+        appEntriesDataMatched = fullDataSorted;
         updateTable(fullDataSorted);
+        filterCategory();
     }
 });
 
@@ -626,12 +634,12 @@ const filterAppEntries = debounce(() => {
         let filteredData; // Declare filteredData outside of the if-else block
         if (document.getElementById('reverse-switch').checked) {
             //Put entries that don't match into filteredData
-            filteredData = appEntriesData.filter(entry =>
+            filteredData = appEntriesDataFiltered.filter(entry =>
                 !regex.test(entry.appNameAppfilter + entry.appfilter) // Use the regex to test the appName
 
             );
         } else {
-            filteredData = appEntriesData.filter(entry =>
+            filteredData = appEntriesDataFiltered.filter(entry =>
                 regex.test(entry.appNameAppfilter + entry.appfilter) // Use the regex to test the appName
 
             );
@@ -658,7 +666,7 @@ const filterAppEntries = debounce(() => {
         }
     } else {
         const searchInput = document.getElementById('search-input').value.toLowerCase();
-        const filteredData = appEntriesData.filter(entry =>
+        const filteredData = appEntriesDataFiltered.filter(entry =>
             entry.appName.toLowerCase().includes(searchInput)
         );
         // If no results are found, show a notification
@@ -753,7 +761,7 @@ function sortTable(columnIndex) {
 }
 
 function sortData(sortingDirection, columnIndex, sortedData) {
-    sortedData.sort((a, b) => {
+        sortedData.sort((a, b) => {
         if (columnIndex === 6) { // Check if sorting the 'Last Requested' column
             const cellA = getCellValue(a, columnIndex);
             const cellB = getCellValue(b, columnIndex);
@@ -769,7 +777,7 @@ function sortData(sortingDirection, columnIndex, sortedData) {
                 return sortingDirection === 'asc' ? cellA - cellB : cellB - cellA;
             }
         } else if (columnIndex === 1) {
-            const offset = 8;
+            const offset = 9;
             const cellA = getCellValue(a, columnIndex + offset);
             const cellB = getCellValue(b, columnIndex + offset);
             // Handle numerical values
@@ -825,12 +833,12 @@ function filterCategory() {
     );
     */
     // Show apps that have all of the activated categories in playStoreCategories
-    filteredData = appEntriesData.filter(entry =>
+    filteredData = appEntriesDataMatched.filter(entry =>
         activatedCategories.every(category =>
             entry.playStoreCategories.includes(category)
         )
     );
-
+    appEntriesDataFiltered = filteredData; // Update the global filtered data
 
     // If no results are found, show a notification
     if (filteredData.length === 0) {
@@ -857,6 +865,7 @@ function filterCategory() {
 
         // Update the table with the sorted data
         updateTable(filteredAndSortedData);
+        filterAppEntries(); // Apply search filter on top of category filter
     }
 }
 
