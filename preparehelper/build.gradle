@@ -43,22 +43,22 @@ dependencies {
     implementation("com.android.tools:sdk-common:31.9.1")
 
     // XML parsing (you are using dom4j here)
-    implementation("org.dom4j:dom4j:2.1.4")
+    implementation("org.dom4j:dom4j:2.2.0")
 
     // File handling utilities
-    implementation("commons-io:commons-io:2.19.0")
+    implementation("commons-io:commons-io:2.20.0")
 
     // For WebP image format handling (if you need it)
     implementation("io.github.darkxanter:webp-imageio:0.3.3")
 
     // Add Apache Batik for SVG processing
-    implementation("org.apache.xmlgraphics:batik-transcoder:1.18")   // Batik's SVG transcoder
-    implementation("org.apache.xmlgraphics:batik-dom:1.18")          // Batik's DOM utilities
-    implementation("org.apache.xmlgraphics:batik-swing:1.18")        // Batik's swing utilities for rendering
+    implementation("org.apache.xmlgraphics:batik-transcoder:1.19")   // Batik's SVG transcoder
+    implementation("org.apache.xmlgraphics:batik-dom:1.19")          // Batik's DOM utilities
+    implementation("org.apache.xmlgraphics:batik-swing:1.19")        // Batik's swing utilities for rendering
 
     // Optional: If you want to work with BufferedImage in Java 2D
-    implementation("org.apache.xmlgraphics:batik-svggen:1.18")  // To generate image from SVGs
-    implementation("org.apache.xmlgraphics:batik-codec:1.18")
+    implementation("org.apache.xmlgraphics:batik-svggen:1.19")  // To generate image from SVGs
+    implementation("org.apache.xmlgraphics:batik-codec:1.19")
 
 }
 
