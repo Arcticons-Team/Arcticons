@@ -80,14 +80,14 @@ jobs:
     steps:
       # Step 1: Checkout the repository
       - name: Checkout main Repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           ref: ${{vars.MAIN_BRANCH}}
           path: main
       - name: Checkout Arcticons-Pages Repository
         # Step 2: Checkout the 2. repository
 
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           ref: ${{vars.PAGES_BRANCH}}
           path: pages
@@ -120,7 +120,7 @@ jobs:
       cancel-in-progress: true
     steps:
       - name: Checkout Repository ${{ github.event.pull_request.user.login }}/${{ github.event.pull_request.head.ref }}
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           ref: ${{ github.event.pull_request.head.sha }}
           sparse-checkout: |
@@ -173,7 +173,7 @@ jobs:
       image_changes: ${{ steps.check_changes.outputs.Image_changes }}
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           ref: ${{vars.PAGES_BRANCH}}
       - name: Set up Python
@@ -240,7 +240,7 @@ jobs:
       requestchange: ${{ steps.changes.outputs.requests }}
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           ref: ${{vars.PAGES_BRANCH}}
       - uses: dorny/paths-filter@de90cc6fb38fc0963ad72b210f1f284cd68cea36
@@ -262,7 +262,7 @@ jobs:
       cancel-in-progress: true
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           ref: ${{vars.PAGES_BRANCH}}
       - name: Set up Python
@@ -294,7 +294,7 @@ jobs:
       requestjson_done: ${{ steps.requestjson_done.outcome }}
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           ref: ${{vars.PAGES_BRANCH}}
       - name: Set up Python
@@ -325,7 +325,7 @@ jobs:
     if: ${{(needs.Create_Colormappping.result == 'success' || needs.Create_requestjson.result == 'success') && !failure()}}
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           ref: ${{vars.PAGES_BRANCH}}
       - name: Download Colormapping and Requestjson
@@ -373,7 +373,7 @@ jobs:
       cancel-in-progress: true
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           ref: ${{vars.PAGES_BRANCH}}
       - name: Set up Python
