@@ -27,7 +27,7 @@
 
 <div align="center">
   <br>
-  <a href="https://www.paypal.com/paypalme/onnovdd"><img height="80" alt="Donate using Paypal" src="github/paypal.webp"></a>   <a href="https://liberapay.com/Donno/donate"><img height="80" alt="Donate using Liberapay" src="github/liberapay.webp"></a>   <a href="https://Ko-fi.com/donno_"><img height="80" alt="Donate using Ko-Fi" src="github/kofi.webp"></a>
+  <a href="https://liberapay.com/Donno/donate"><img height="80" alt="Donate using Liberapay" src="github/liberapay.webp"></a>   <a href="https://Ko-fi.com/donno_"><img height="80" alt="Donate using Ko-Fi" src="github/kofi.webp"></a>
 </div>
 
 ## Matrix room
@@ -47,3 +47,4 @@
 ## License
   Arcticons uses the [GPL-3.0 license](https://www.gnu.org/licenses/gpl-3.0.en.html).<br>
   All icons are licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).<br>
+
