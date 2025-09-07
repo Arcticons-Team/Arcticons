@@ -49,6 +49,7 @@ class EmailParser:
         self.updatable = []
         self.new_apps = []
         self.keep_pngs = set()
+        self.current_icons_set = self.current_icons()
 
         self.name_pattern = re.compile(r'<!-- (?P<Name>.+) -->', re.M)
         self.component_pattern = re.compile('ComponentInfo{(?P<ComponentInfo>.+)}')
@@ -177,6 +178,10 @@ class EmailParser:
         except Exception as e:
             print(f"Error extracting WebP file: {e}")
 
+    def current_icons(self):
+        extracted_png_folder = self.extracted_png_folder_path
+        return {os.path.splitext(f)[0] for f in os.listdir(extracted_png_folder) if f.endswith('.webp')}
+
     def delete_unused_icons_webp(self):
         extracted_png_folder = self.extracted_png_folder_path
 
@@ -211,6 +216,10 @@ class EmailParser:
             data['drawable'] = child.get('drawable')
             if data['ComponentInfo'] in self.apps:
                 self.apps[data['ComponentInfo']]['count'] += 1
+                if self.apps[data['ComponentInfo']]['drawable'] not in self.current_icons_set:
+                    self.extract_webp(child,zip_file,data)
+                    self.apps[data['ComponentInfo']]['drawable'] = data['drawable']
+                    self.current_icons_set.add(data['drawable'])
             else:
                 self.extract_webp(child,zip_file,data)
                 data['count'] = 1
