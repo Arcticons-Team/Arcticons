@@ -1,0 +1,206 @@
+when:
+  pull_request_target:
+    types: [opened, synchronize, reopened]
+    branches:
+      - main
+    paths:
+      - 'newicons/appfilter.xml'
+  push:
+    branches: ['main']
+    paths:
+      - 'docs/**'
+      - 'newicons/appfilter.xml'
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    - cron: '30 5 * * 0,3'
+  workflow_run:
+    workflows: [Auto Appfilter Updater,Crowdsource Appfilter]
+    types:
+      - completed
+  workflow_dispatch:
+    inputs:
+      run_colormapping:
+        description: "Run Create_Colormappping job"
+        type: boolean
+        required: false
+        default: false
+      run_requestjson:
+        description: "Run Create_requestjson job"
+        type: boolean
+        required: false
+        default: false
+      run_Request_Update:
+        description: "Run Update_Requests job"
+        type: boolean
+        required: false
+        default: false
+      run_fetch_and_push_file:
+        description: "Run fetch_and_push_file job"
+        type: boolean
+        required: false
+        default: false
+      run_build_pages:
+        description: "Run parse_and_combine job"
+        type: boolean
+        required: false
+        default: false
+
+# Define jobs
+jobs:
+  fetch_and_push_file:
+    name: Fetch and Push File
+    image: ubuntu:latest
+    environment:
+      GITHUB_TOKEN: ${GITHUB_TOKEN}
+    steps:
+      - name: Checkout Main Repository
+        plugin: plugins/git
+        repo: ${REPOSITORY}
+        ref: ${MAIN_BRANCH}
+        path: main
+      - name: Checkout Arcticons-Pages Repository
+        plugin: plugins/git
+        repo: ${REPOSITORY}
+        ref: ${PAGES_BRANCH}
+        path: pages
+      - name: Copy File from main to Arcticons-Pages
+        commands:
+          - rm pages/newicons/appfilter.xml
+          - cp main/newicons/appfilter.xml pages/newicons/appfilter.xml
+      - name: Commit and Push Changes
+        commands:
+          - cd pages
+          - git config --global user.name 'woodpecker-ci'
+          - git config --global user.email 'woodpecker@ci.com'
+          - git add newicons/appfilter.xml
+          - git commit -m "Update newicons/appfilter.xml from $MAIN_BRANCH to $PAGES_BRANCH"
+          - git push
+
+  check_appfilter:
+    name: Check appfilter.xml from PR
+    image: ubuntu:latest
+    steps:
+      - name: Checkout Pull Request Branch
+        plugin: plugins/git
+        ref: ${PR_REF}
+        path: pr
+      - name: Install xmllint
+        commands:
+          - sudo apt update && sudo apt install -y libxml2-utils
+      - name: Validate appfilter.xml
+        commands:
+          - xmllint --noout pr/newicons/appfilter.xml || exit 1
+
+  comment_pr_check_appfilter:
+    name: Comment on PR if Validation Fails
+    image: ubuntu:latest
+    environment:
+      GITHUB_TOKEN: ${GITHUB_TOKEN}
+    steps:
+      - name: Create Comment on PR
+        commands:
+          - echo "Parsing of 'newicons/appfilter.xml' failed. Please fix the XML syntax errors." > comment.txt
+          - gh pr comment ${PR_NUMBER} --body "$(cat comment.txt)"
+
+  Update_Requests:
+    name: Update Requests
+    image: python:3.x
+    environment:
+      GITHUB_TOKEN: ${GITHUB_TOKEN}
+    steps:
+      - name: Checkout Repository
+        plugin: plugins/git
+        ref: ${PAGES_BRANCH}
+        path: repo
+      - name: Install Dependencies
+        commands:
+          - pip install -r .github/workflows/requirements.txt
+      - name: Run Update Script
+        commands:
+          - python .github/workflows/email_parser_auto.py mail newicons/appfilter.xml docs/extracted_png docs/assets/
+
+  Create_Colormappping:
+    name: Create Colormapping
+    image: python:3.x
+    steps:
+      - name: Checkout Repository
+        plugin: plugins/git
+        ref: ${PAGES_BRANCH}
+        path: repo
+      - name: Install Dependencies
+        commands:
+          - pip install -r .github/workflows/requirements.txt
+      - name: Run Colormapping Script
+        commands:
+          - python .github/workflows/create_colormapping.py
+      - name: Upload Colormapping Artifact
+        plugin: plugins/artifact
+        name: colormapping
+        path: docs/assets/image_color_counts.xml
+
+  Create_requestjson:
+    name: Create Requestjson
+    image: python:3.x
+    steps:
+      - name: Checkout Repository
+        plugin: plugins/git
+        ref: ${PAGES_BRANCH}
+        path: repo
+      - name: Install Dependencies
+        commands:
+          - pip install -r .github/workflows/requirements.txt
+      - name: Run Request JSON Script
+        commands:
+          - python .github/workflows/getGPlayData.py
+      - name: Upload Request JSON Artifact
+        plugin: plugins/artifact
+        name: requestjson
+        path: docs/assets/requests.json
+
+  Push_Files:
+    name: Push Files to Repository
+    image: ubuntu:latest
+    steps:
+      - name: Checkout Repository
+        plugin: plugins/git
+        ref: ${PAGES_BRANCH}
+        path: repo
+      - name: Download Colormapping and Requestjson Artifacts
+        plugin: plugins/artifact
+        download: true
+        paths:
+          - docs/assets/image_color_counts.xml
+          - docs/assets/requests.json
+      - name: Check for Changes
+        commands:
+          - git add -A
+          - CHANGED_FILES=$(git diff --cached --name-only)
+          - if [ -z "$CHANGED_FILES" ]; then echo "No changes detected"; exit 0; fi
+      - name: Commit and Push if Changes Exist
+        commands:
+          - git commit -m "Automated updates from Colormapping and Requestjson jobs"
+          - git push
+
+  parse_and_combine:
+    name: Parse and Combine Appfilter
+    image: python:3.x
+    environment:
+      GITHUB_TOKEN: ${GITHUB_TOKEN}
+    steps:
+      - name: Checkout Repository
+        plugin: plugins/git
+        ref: ${PAGES_BRANCH}
+        path: repo
+      - name: Install Dependencies
+        commands:
+          - pip install -r .github/workflows/requirements.txt
+      - name: Run Parse and Combine Script
+        commands:
+          - python .github/workflows/combine_appfilter.py
+      - name: Move Combined Appfilter
+        commands:
+          - mv combined_appfilter.xml docs/assets/combined_appfilter.xml
+      - name: Setup Pages Deployment
+        plugin: plugins/pages
+        deploy: true
+        path: docs
