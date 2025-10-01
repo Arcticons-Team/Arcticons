@@ -9,5 +9,4 @@ steps:
     image: docker.io/alpine
     commands:
       - ls -la
-      - echo "labubu"
       - echo $CI_COMMIT_SHA
