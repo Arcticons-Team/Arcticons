@@ -1,0 +1,11 @@
+when:
+  - event: push
+    branch: main
+
+steps:
+
+  test:
+    image: docker.io/alpine
+    commands:
+      - ls -la
+      - echo "labubu"
