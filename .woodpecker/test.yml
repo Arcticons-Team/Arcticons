@@ -10,3 +10,4 @@ steps:
     commands:
       - ls -la
       - echo "labubu"
+      - echo $CI_COMMIT_SHA
