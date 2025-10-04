@@ -38,7 +38,7 @@ jobs:
             echo "Parsing succeeded."
           fi
       - name: Post a PR comment if error is found
-        if: failure()
+        if: ${{ steps.validate.outcome }} == failure
         env: 
           PR_NUMBER: ${{ forgejo.event.pull_request.number }}
         run: |
