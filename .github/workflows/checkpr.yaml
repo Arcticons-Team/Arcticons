@@ -23,7 +23,7 @@ jobs:
         shell: bash
         run: |
           sudo apt update
-          sudo apt install -y libxml2-utils
+          sudo apt install -y libxml2-utils curl
       - name: Validate appfilter.xml
         continue-on-error: true
         id: validate
@@ -39,11 +39,25 @@ jobs:
           fi
           
       - name: Debug result
+        env: 
+          OWNER: ${{ github.event.repository.owner }}
+          NAME: ${{ github.event.repository.owner }}
+          PR_NUMBER: ${{ forgejo.event.pull_request.number }}
         run: |
-          echo ${{ forgejo.event.pull_request.number }}
-          cat checkpr-error.txt
-          test $(cat checkpr-error.txt) = ""
-          
+          if [ $(cat checkpr-error.txt) != "" ] ; then
+            
+            export COMMENT_CONTENT=$(cat checkpr-error.txt)
+            echo "Commenting on PR \#${PR_NUMBER}"
+            
+            curl -X POST "https://codeberg.org/api/v1/repos/$OWNER/$REPO/issues/$PR_NUMBER" \
+                -H "accept: application/json" \
+                -H "Authorization: token ${{ secrets.FORGEJO_TOKEN }}" \
+                -H "Content-Type: application/json" \
+                -d "{
+                      \"body\": \"${COMMENT_CONTENT}\"
+                    }"            
+          fi
+
 
   # comment_pr_check_appfilter:
   #   name: Comment on PR
@@ -62,10 +76,4 @@ jobs:
   #         REPO: ${{ github.event.repository.name }}
 
   #       run: |
-  #         curl -X POST "https://codeberg.org/api/v1/repos/${OWNER}/${REPO}/issues/3022" \
-  #           -H "accept: application/json" \
-  #           -H "Authorization: token ${FORGEJO_TOKEN}" \
-  #           -H "Content-Type: application/json" \
-  #           -d "{
-  #                 \"body\": \"${PARSE_OUTPUT}\"
-  #               }"
+  
