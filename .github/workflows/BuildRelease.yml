@@ -164,6 +164,10 @@ jobs:
     container: cimg/android:2025.10.1
     if: ${{ github.event_name == 'workflow_dispatch' && inputs.run_debug == true }}
     steps:
+      - name: Install Node.js (manual)
+        run: |
+          curl -fsSL https://deb.nodesource.com/setup_20.x | bash -
+          apt-get install -y nodejs
       - name: Checking out branch
         uses: actions/checkout@v5
       - name: Setup Java
