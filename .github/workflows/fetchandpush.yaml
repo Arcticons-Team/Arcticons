@@ -6,7 +6,8 @@ on:
       - main
     paths:
       - 'newicons/appfilter.xml'
-  workflow_dispatch:    
+  workflow_dispatch:
+    inputs:
 
 jobs:
   fetch_and_push_file:
