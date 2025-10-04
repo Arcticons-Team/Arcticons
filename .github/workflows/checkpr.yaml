@@ -24,15 +24,14 @@ jobs:
         run: |
           sudo apt update
           sudo apt install -y libxml2-utils curl
+
       - name: Validate appfilter.xml
         continue-on-error: true
         id: validate
         run: |
-          touch checkpr-error.txt
           if ! PARSE_OUTPUT=$(xmllint --noout newicons/appfilter.xml 2>&1) ; then
             echo "Parsing appfilter.xml failed."
-            echo -e "${PARSE_OUTPUT}" > checkpr-error.txt
-            cat checkpr-error.txt
+            echo -e "text=${PARSE_OUTPUT}" >> $FORGEJO_OUTPUT
             exit 1
           else
             echo "Parsing succeeded."
@@ -42,18 +41,21 @@ jobs:
         env: 
           PR_NUMBER: ${{ forgejo.event.pull_request.number }}
         run: |
-          export COMMENT_CONTENT=$(cat checkpr-error.txt)
-          echo $COMMENT_CONTENT
-          if [ -n "$COMMENT_CONTENT" ] ; then
-            
-            echo "Commenting on PR \#${PR_NUMBER}"
+          
+          echo ${{ steps.validate.outputs.text }}
 
-            curl -X POST "https://codeberg.org/api/v1/repos/${{ env.FORGEJO_REPOSITORY }}/issues/${PR_NUMBER}/comments" \
-                -H "accept: application/json" \
-                -H "Authorization: token ${{ secrets.FORGEJO_TOKEN }}" \
-                -H "Content-Type: application/json" \
-                -d "{
-                      \"body\": \"${COMMENT_CONTENT}\"
-                    }"            
-            exit 1
-          fi
+          # export COMMENT_CONTENT=$(cat checkpr-error.txt)
+          
+          # if [ -n "$COMMENT_CONTENT" ] ; then
+            
+          #   echo "Commenting on PR \#${PR_NUMBER}"
+
+          #   curl -X POST "https://codeberg.org/api/v1/repos/${{ env.FORGEJO_REPOSITORY }}/issues/${PR_NUMBER}/comments" \
+          #       -H "accept: application/json" \
+          #       -H "Authorization: token ${{ secrets.FORGEJO_TOKEN }}" \
+          #       -H "Content-Type: application/json" \
+          #       -d "{
+          #             \"body\": \"${COMMENT_CONTENT}\"
+          #           }"            
+          #   exit 1
+          # fi
