@@ -12,13 +12,13 @@ env:
   BASE_BRANCH: main                                                     # The base branch for the pull request, change if necessary
   PR_TITLE: Crowdsource Appfilter.xml                                        # The title of the pull request, change if necessary
   PR_BODY: Crowdsourced update of `appfilter.xml` via GitHub Action, applying blacklist filters.            # The body of the pull request, change if necessary
-  OWNER: Arcticons-Team                                            # The owner of the repository, change if necessary
+  OWNER: Arcticons                                           # The owner of the repository, change if necessary
   BRANCH: crowdsource                                              # This branch will be created if it does not exist
 
 jobs:
   check-pr:
     if : ${{ github.repository == vars.REPOSITORY }}
-    runs-on: ubuntu-latest
+    runs-on: codeberg-tiny
     outputs:
       existsnot: ${{ steps.check.outputs.existsnot }}
     steps:
@@ -45,7 +45,7 @@ jobs:
   update-pr:
     needs: check-pr
     if: needs.check-pr.outputs.existsnot == 'true'
-    runs-on: ubuntu-latest
+    runs-on: codeberg-tiny
     permissions:
       contents: write
       pull-requests: write
@@ -83,7 +83,22 @@ jobs:
           git push origin $BRANCH --force
 
       - name: Create pull request
-        run: |
-          gh pr create -B "$BASE_BRANCH" -H "$OWNER:$BRANCH" --title "$PR_TITLE" --body "$PR_BODY"
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITEA_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          OWNER: ${{ env.OWNER }}
+          REPO: ${{ github.event.repository.name }}
+          BRANCH: ${{ env.BRANCH }}
+          BASE_BRANCH: ${{ env.BASE_BRANCH }}
+          PR_TITLE: ${{ env.PR_TITLE }}
+          PR_BODY: ${{ env.PR_BODY }}
+        run: |
+          curl -X POST "https://codeberg.org/api/v1/repos/${OWNER}/${REPO}/pulls" \
+            -H "accept: application/json" \
+            -H "Authorization: token ${GITEA_TOKEN}" \
+            -H "Content-Type: application/json" \
+            -d "{
+                  \"head\": \"${BRANCH}\",
+                  \"base\": \"${BASE_BRANCH}\",
+                  \"title\": \"${PR_TITLE}\",
+                  \"body\": \"${PR_BODY}\"
+                }"
