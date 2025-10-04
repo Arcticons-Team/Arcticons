@@ -8,6 +8,11 @@ on:
       - 'newicons/appfilter.xml'
   workflow_dispatch:
     inputs:
+        run_fetch_and_push_file:
+            description: 'Set to true to run the fetch and push file job'
+            required: false
+            default: 'false'
+            type: boolean
 
 jobs:
   fetch_and_push_file:
