@@ -27,34 +27,30 @@ jobs:
 
       - name: Validate appfilter.xml
         continue-on-error: true
-        id: validate
         run: |
+          touch checkpr-error.txt
           if ! PARSE_OUTPUT=$(xmllint --noout newicons/appfilter.xml 2>&1) ; then
             echo "Parsing appfilter.xml failed."
-            echo 'text=${PARSE_OUTPUT}' >> $FORGEJO_OUTPUT
+            echo "${PARSE_OUTPUT}" > checkpr-error.txt
+            exit 1
           else
             echo "Parsing succeeded."
           fi
-          echo $FORGEJO_OUTPUT
       - name: Post a PR comment if error is found
         env: 
           PR_NUMBER: ${{ forgejo.event.pull_request.number }}
         run: |
-          
-          cat outputcmd.txt
 
-          # export COMMENT_CONTENT=$(cat checkpr-error.txt)
+          export COMMENT_CONTENT=$(cat checkpr-error.txt)
           
-          # if [ -n "$COMMENT_CONTENT" ] ; then
-            
-          #   echo "Commenting on PR \#${PR_NUMBER}"
-
-          #   curl -X POST "https://codeberg.org/api/v1/repos/${{ env.FORGEJO_REPOSITORY }}/issues/${PR_NUMBER}/comments" \
-          #       -H "accept: application/json" \
-          #       -H "Authorization: token ${{ secrets.FORGEJO_TOKEN }}" \
-          #       -H "Content-Type: application/json" \
-          #       -d "{
-          #             \"body\": \"${COMMENT_CONTENT}\"
-          #           }"            
-          #   exit 1
-          # fi
+          if [ -n "$COMMENT_CONTENT" ] ; then            
+            echo "Commenting on PR ${PR_NUMBER}"
+            curl -X POST "https://codeberg.org/api/v1/repos/${{ env.FORGEJO_REPOSITORY }}/issues/${PR_NUMBER}/comments" \
+                -H "accept: application/json" \
+                -H "Authorization: token ${{ secrets.FORGEJO_TOKEN }}" \
+                -H "Content-Type: application/json" \
+                -d "{
+                      \"body\": \"${COMMENT_CONTENT}\"
+                    }"            
+            exit 1
+          fi
