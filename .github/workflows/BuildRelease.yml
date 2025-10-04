@@ -161,7 +161,7 @@ jobs:
   debug:
     name: Build Arcticons Debug APK
     runs-on: codeberg-tiny
-    container: androidsdk/android-35
+    container: cimg/android
     if: ${{ github.event_name == 'workflow_dispatch' && inputs.run_debug == true }}
     steps:
       - name: Checking out branch
