@@ -1,0 +1,51 @@
+name: Sync between main and pages
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'newicons/appfilter.xml'
+  workflow_dispatch:    
+
+jobs:
+  fetch_and_push_file:
+    name: Fetch and Push File
+    if: > github.repository == vars.REPOSITORY &&((github.event_name == 'push' && github.ref_name == vars.MAIN_BRANCH) ||(github.event_name == 'workflow_dispatch' && inputs.run_fetch_and_push_file == true))
+    runs-on: ubuntu-latest
+    concurrency:
+      group: push
+      cancel-in-progress: false
+    permissions:
+      contents: write
+    environment:
+      name: FileSync
+    env:
+      SOURCE_BRANCH: ${{ vars.MAIN_BRANCH }}
+      TARGET_BRANCH: ${{ vars.PAGES_BRANCH }}
+      FILE_PATH: newicons/appfilter.xml
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v5
+        with:
+          ref: ${{ vars.MAIN_BRANCH }}
+          path: main
+      - name: Checkout pages branch
+        uses: actions/checkout@v5
+        with:
+          ref: ${{ vars.PAGES_BRANCH }}
+          path: pages
+      - name: Copy file
+        run: |
+          rm -f pages/newicons/appfilter.xml
+          cp main/newicons/appfilter.xml pages/newicons/appfilter.xml
+      - name: Commit & Push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          cd pages
+          git config user.name 'forgejo-actions[bot]'
+          git config user.email 'bot@users.noreply'
+          git add $FILE_PATH
+          git commit -m "Update $FILE_PATH from $SOURCE_BRANCH to $TARGET_BRANCH" || echo "No changes"
+          git push
