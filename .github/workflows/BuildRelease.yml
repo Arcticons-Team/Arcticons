@@ -176,7 +176,7 @@ jobs:
       - name: Set up Gradle
         uses: gradle/actions/setup-gradle@v3
       - name: Grant execute permission for gradlew
-        run: chmod +x ./gradlew
+        run: ls -la && chmod +x ./gradlew
       - name: Lint Checks
         run: |
           gradle app:lintNormalDebug
