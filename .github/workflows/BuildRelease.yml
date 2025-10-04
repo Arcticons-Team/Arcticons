@@ -162,6 +162,9 @@ jobs:
     name: Build Arcticons Debug APK
     runs-on: codeberg-tiny
     if: ${{ github.event_name == 'workflow_dispatch' && inputs.run_debug == true }}
+    env:
+      ANDROID_HOME: ${{ github.workspace }}/android-sdk
+      PATH: ${{ github.workspace }}/android-sdk/platform-tools:${{ github.workspace }}/android-sdk/cmdline-tools/latest/bin:$PATH
     steps:
       - name: Checking out branch
         uses: actions/checkout@v5
@@ -169,12 +172,16 @@ jobs:
         run: |
           add-apt-repository ppa:fdroid/fdroidserver
           apt update
-      - name: Android SDK Setup
+      - name: Install Android SDK
         run: |
-          apt install -y android-sdk sdkmanager
-          export ANDROID_HOME=/usr/lib/android-sdk
-          sdkmanager "cmdline-tools;latest"
-          echo y | sdkmanager --licenses
+          mkdir -p $HOME/android-sdk/cmdline-tools
+          cd $HOME/android-sdk/cmdline-tools
+          curl -sSL https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip -o cmdline-tools.zip
+          unzip -q cmdline-tools.zip
+          mv cmdline-tools latest
+          yes | $HOME/android-sdk/cmdline-tools/latest/bin/sdkmanager --sdk_root=$HOME/android-sdk "platform-tools" "build-tools;34.0.0" "platforms;android-34"
+        env:
+          ANDROID_HOME: ${{ github.workspace }}/android-sdk
       - name: Setup Java
         uses: actions/setup-java@v5
         with:
