@@ -50,7 +50,9 @@ jobs:
             
             echo "Commenting on PR \#${PR_NUMBER}"
             
-            curl -X POST "https://codeberg.org/api/v1/repos/$OWNER/$REPO/issues/$PR_NUMBER/comments" \
+            set -ex
+
+            curl -X POST "https://codeberg.org/api/v1/repos/${OWNER}/${REPO}/issues/${PR_NUMBER}/comments" \
                 -H "accept: application/json" \
                 -H "Authorization: token ${{ secrets.FORGEJO_TOKEN }}" \
                 -H "Content-Type: application/json" \
