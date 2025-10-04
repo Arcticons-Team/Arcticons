@@ -10,16 +10,13 @@ on:
 jobs:
   check_appfilter:
     name: Check appfilter.xml from pull_request
-    if: github.event_name == 'pull_request_target'
-    runs-on: ubuntu-latest
+    runs-on: codeberg-tiny
     outputs:
       CommentPRtext: ${{ steps.validate.outputs.text }}
-    concurrency:
-      group: ${{ github.workflow }}-${{ github.event.pull_request.user.login }}/${{ github.event.pull_request.head.ref }}
-      cancel-in-progress: true
+
     steps:
       - name: Checkout Repository ${{ github.event.pull_request.user.login }}/${{ github.event.pull_request.head.ref }}
-        uses: actions/checkout@v5
+        uses: https://code.forgejo.org/actions/checkout@v5
         with:
           ref: ${{ github.event.pull_request.head.sha }}
           sparse-checkout: |
@@ -43,16 +40,24 @@ jobs:
   comment_pr_check_appfilter:
     name: Comment on PR
     needs: ['check_appfilter']
-    if: ${{failure()}}
-    runs-on: ubuntu-latest
-    permissions:
-      pull-requests: write # Required to comment on PRs
+    if: failure()
+    runs-on: codeberg-tiny
     env:
       PARSE_OUTPUT: ${{needs.check_appfilter.outputs.CommentPRtext}}
     steps:
       - name: Create Comment
         run: echo -e "Parsing of 'newicons/appfilter.xml' failed. Please fix the XML syntax errors. \n \`\`\` \n $PARSE_OUTPUT \n \`\`\`" >> comment_markdown.md
       - name: Make Comment
-        run: gh pr comment ${{ github.event.pull_request.number }} --body-file comment_markdown.md --repo ${{ github.repository }}
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          FORGEJO_TOKEN: ${{ secrets.FORGEJO_TOKEN }}
+          OWNER: ${{ github.event.repository.owner }}
+          REPO: ${{ github.event.repository.name }}
+
+        run: |
+          curl -X POST "https://codeberg.org/api/v1/repos/${OWNER}/${REPO}/issues/3022" \
+            -H "accept: application/json" \
+            -H "Authorization: token ${FORGEJO_TOKEN}" \
+            -H "Content-Type: application/json" \
+            -d "{
+                  \"body\": \"${PARSE_OUTPUT}\"
+                }"
