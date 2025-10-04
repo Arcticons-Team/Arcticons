@@ -168,7 +168,7 @@ jobs:
       - name: Setup Java
         uses: actions/setup-java@v5
         with:
-          distribution: 'temurin'
+          distribution: 'zulu'
           java-version: 21
           cache: 'gradle'
       - name: Write sign info
