@@ -11,9 +11,6 @@ jobs:
   check_appfilter:
     name: Check appfilter.xml from Pull Request
     runs-on: codeberg-tiny
-    outputs:
-      CommentPRtext: ${{ steps.validate.outputs.text }}
-
     steps:
       - name: Checkout repository
         uses: https://code.forgejo.org/actions/checkout@v5
@@ -33,20 +30,18 @@ jobs:
         run: |
           if ! PARSE_OUTPUT=$(xmllint --noout newicons/appfilter.xml 2>&1) ; then
             echo "Parsing appfilter.xml failed."
-            echo $PARSE_OUTPUT
-            echo -e "text=$PARSE_OUTPUT" >> "$GITHUB_OUTPUT"
-            echo -e "mucho=texto" >> "$GITHUB_OUTPUT"
             exit 1
           else
             echo "Parsing succeeded."
           fi
+          echo -e $PARSE_OUTPUT >> checkpr-error.txt
       - name: Debug result
-        
         run: |
-          echo ${{ steps.validate.outputs }}
           echo ${{ forgejo.event.pull_request.number }}
-          echo ${{ steps.validate.outputs.mucho }}
-          echo ${{ steps.validate.outputs.text }}
+          ls
+          cat checkpr-error.txt
+          test $(cat checkpr-error.txt) == ""
+          
 
   # comment_pr_check_appfilter:
   #   name: Comment on PR
