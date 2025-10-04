@@ -176,9 +176,9 @@ jobs:
       - name: Set up Gradle
         run: git clone https://codeberg.org/IzzyOnDroid/gradlew.py
       - name: Grant execute permission for gradlew
-        run: ls -la && chmod +x ./gradlew.py
+        run: ls -la && chmod +x ./gradlew.py/gradlew.py
       - name: Build debug APK
-        run: ./gradlew.py app:assembleDebug
+        run: ./gradlew.py/gradlew.py app:assembleDebug
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
