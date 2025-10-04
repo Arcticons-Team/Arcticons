@@ -46,7 +46,7 @@ jobs:
         run: |
           export COMMENT_CONTENT=$(cat checkpr-error.txt)
           echo $COMMENT_CONTENT
-          if [ -z "$COMMENT_CONTENT" ] ; then
+          if [ -n "$COMMENT_CONTENT" ] ; then
             
             echo "Commenting on PR \#${PR_NUMBER}"
             
