@@ -26,7 +26,6 @@ jobs:
           sudo apt install -y libxml2-utils curl
 
       - name: Validate appfilter.xml
-        id: validate
         continue-on-error: true
         run: |
           touch checkpr-error.txt
@@ -38,7 +37,6 @@ jobs:
             echo "Parsing succeeded."
           fi
       - name: Post a PR comment (when error is found)
-        if: ${{ steps.validate.outcome }} == failure
         env: 
           PR_NUMBER: ${{ forgejo.event.pull_request.number }}
         run: |
@@ -55,7 +53,6 @@ jobs:
                 -d "{
                       \"body\": \"${COMMENT_CONTENT}\"
                     }"
+            # force an error exit for this run to be marked as failed
+            exit 1
           fi
-
-          # force an error exit for this run to be marked as failed
-          exit 1
