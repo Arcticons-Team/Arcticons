@@ -1,3 +1,6 @@
+# CHANGELOG FROM 2025-10-04 20:00 UTC
+# - remove permissions and concurrency vars as they're not used in Forgejo Actions
+
 name: Build Release
 on:
   push:
@@ -20,24 +23,7 @@ on:
         type: boolean
         required: false
         default: false
-permissions:
-  actions: none
-  attestations: none
-  checks: none
-  contents: read
-  deployments: none
-  id-token: none
-  issues: none
-  discussions: none
-  packages: none
-  pages: none
-  pull-requests: none
-  repository-projects: none
-  security-events: none
-  statuses: none
-concurrency:
-  group: 'release'
-  cancel-in-progress: false
+
 jobs:
   publishPlay:
     environment:
