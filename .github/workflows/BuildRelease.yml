@@ -167,7 +167,7 @@ jobs:
       - name: Install Node.js (manual)
         run: |
           curl -fsSL https://deb.nodesource.com/setup_20.x | bash -
-          apt-get install -y nodejs
+          sudo apt-get install -y nodejs
       - name: Checking out branch
         uses: actions/checkout@v5
       - name: Setup Java
