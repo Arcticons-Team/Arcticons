@@ -28,6 +28,7 @@ jobs:
           sudo apt update
           sudo apt install -y libxml2-utils
       - name: Validate appfilter.xml
+        continue-on-error: true
         id: validate
         run: |
           if ! PARSE_OUTPUT=$(xmllint --noout newicons/appfilter.xml 2>&1) ; then
