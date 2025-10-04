@@ -168,9 +168,9 @@ jobs:
       - name: Setup Java
         uses: actions/setup-java@v5
         with:
-          distribution: 'zulu'
+          distribution: 'temurin'
           java-version: 21
-          cache: gradle
+          cache: 'gradle'
       - name: Write sign info
         run: "echo \"Workflow manually triggered by ${{ github.actor }}\"\nif [ ! -z \"${{ secrets.KEYSTORE }}\" ]; then\n  echo storePassword='${{ secrets.KEYSTORE_PASSWORD }}' >> keystore.properties\n  echo keyAlias='${{ secrets.KEY_ALIAS }}' >> keystore.properties\n  echo keyPassword='${{ secrets.KEY_PASSWORD }}' >> keystore.properties\n  echo storeFile='${{ github.workspace }}/key.jks' >> keystore.properties\n  echo ${{ secrets.KEYSTORE }} | base64 --decode > ${{ github.workspace }}/key.jks\nfi   \n"
       - name: Get Gradle
