@@ -165,6 +165,10 @@ jobs:
     steps:
       - name: Checking out branch
         uses: actions/checkout@v5
+      - name: Update package lists
+        run: |
+          add-apt-repository ppa:fdroid/fdroidserver
+          apt update
       - name: Android SDK Setup
         run: |
           apt install -y android-sdk sdkmanager
