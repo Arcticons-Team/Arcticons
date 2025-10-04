@@ -172,12 +172,10 @@ jobs:
         uses: actions/checkout@v5
       - name: Write sign info
         run: "echo \"Workflow manually triggered by ${{ github.actor }}\"\nif [ ! -z \"${{ secrets.KEYSTORE }}\" ]; then\n  echo storePassword='${{ secrets.KEYSTORE_PASSWORD }}' >> keystore.properties\n  echo keyAlias='${{ secrets.KEY_ALIAS }}' >> keystore.properties\n  echo keyPassword='${{ secrets.KEY_PASSWORD }}' >> keystore.properties\n  echo storeFile='${{ github.workspace }}/key.jks' >> keystore.properties\n  echo ${{ secrets.KEYSTORE }} | base64 --decode > ${{ github.workspace }}/key.jks\nfi   \n"
-      - name: Set up Gradle
-        run: git clone https://codeberg.org/IzzyOnDroid/gradlew.py
       - name: Grant execute permission for gradlew
-        run: ls -la && chmod +x ./gradlew.py/gradlew.py
+        run: chmod +x ./gradlew
       - name: Build debug APK
-        run: ./gradlew.py/gradlew.py app:assembleDebug
+        run: ./gradlew app:assembleDebug
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
