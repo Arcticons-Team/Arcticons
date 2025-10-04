@@ -40,7 +40,7 @@ tasks.register('rundayNight', JavaExec) {
 
 dependencies {
     // SDK and tools required for Android and other general tasks
-    implementation("com.android.tools:sdk-common:31.9.1")
+    implementation("com.android.tools:sdk-common:31.13.0")
 
     // XML parsing (you are using dom4j here)
     implementation("org.dom4j:dom4j:2.2.0")

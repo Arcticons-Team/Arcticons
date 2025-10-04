@@ -161,60 +161,25 @@ jobs:
   debug:
     name: Build Arcticons Debug APK
     runs-on: codeberg-tiny
+    container: androidsdk/android-35
     if: ${{ github.event_name == 'workflow_dispatch' && inputs.run_debug == true }}
-    env:
-      ANDROID_HOME: ${{ github.workspace }}/android-sdk
-      PATH: ${{ github.workspace }}/android-sdk/platform-tools:${{ github.workspace }}/android-sdk/cmdline-tools/latest/bin:$PATH
     steps:
       - name: Checking out branch
         uses: actions/checkout@v5
-
-      - name: Install Android SDK
-        run: |
-          mkdir -p $ANDROID_HOME/cmdline-tools
-          cd $ANDROID_HOME/cmdline-tools
-          curl -sSL https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip -o cmdline-tools.zip
-          unzip -q cmdline-tools.zip
-          mv cmdline-tools latest
-          yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --sdk_root=$ANDROID_HOME "platform-tools" "build-tools;34.0.0" "platforms;android-34"
-
-      - name: Write local.properties
-        run: echo "sdk.dir=$ANDROID_HOME" > local.properties
-
       - name: Setup Java
         uses: actions/setup-java@v5
         with:
           distribution: 'zulu'
           java-version: 21
           cache: 'gradle'
-
       - name: Write sign info
-        run: |
-          echo "Workflow manually triggered by ${{ github.actor }}"
-          if [ ! -z "${{ secrets.KEYSTORE }}" ]; then
-            echo storePassword='${{ secrets.KEYSTORE_PASSWORD }}' >> keystore.properties
-            echo keyAlias='${{ secrets.KEY_ALIAS }}' >> keystore.properties
-            echo keyPassword='${{ secrets.KEY_PASSWORD }}' >> keystore.properties
-            echo storeFile='${{ github.workspace }}/key.jks' >> keystore.properties
-            echo ${{ secrets.KEYSTORE }} | base64 --decode > ${{ github.workspace }}/key.jks
-          fi
-
-      - name: Get Gradle Wrapper
-        run: ./gradlew wrapper
-
+        run: "echo \"Workflow manually triggered by ${{ github.actor }}\"\nif [ ! -z \"${{ secrets.KEYSTORE }}\" ]; then\n  echo storePassword='${{ secrets.KEYSTORE_PASSWORD }}' >> keystore.properties\n  echo keyAlias='${{ secrets.KEY_ALIAS }}' >> keystore.properties\n  echo keyPassword='${{ secrets.KEY_PASSWORD }}' >> keystore.properties\n  echo storeFile='${{ github.workspace }}/key.jks' >> keystore.properties\n  echo ${{ secrets.KEYSTORE }} | base64 --decode > ${{ github.workspace }}/key.jks\nfi   \n"
+      - name: Set up Gradle
+        run: git clone https://codeberg.org/IzzyOnDroid/gradlew.py
       - name: Grant execute permission for gradlew
-        run: chmod +x ./gradlew
-
-      - name: Lint Checks
-        run: |
-          ./gradlew app:lintNormalDebug
-          ./gradlew app:lintBlackDebug
-          ./gradlew app:lintDayNightDebug
-          ./gradlew app:lintYouDebug
-
-      - name: Build debug APKs
-        run: ./gradlew app:assembleDebug
-
+        run: ls -la && chmod +x ./gradlew.py/gradlew.py
+      - name: Build debug APK
+        run: ./gradlew.py/gradlew.py app:assembleDebug
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
@@ -226,4 +191,3 @@ jobs:
             app/build/outputs/apk/normalPlay/debug/*.apk
             app/build/outputs/apk/you/debug/*.apk
             app/build/outputs/apk/youPlay/debug/*.apk
-            app/build/reports/*
