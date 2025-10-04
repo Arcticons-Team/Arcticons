@@ -9,13 +9,13 @@ on:
 
 jobs:
   check_appfilter:
-    name: Check appfilter.xml from pull_request
+    name: Check appfilter.xml from Pull Request
     runs-on: codeberg-tiny
     outputs:
       CommentPRtext: ${{ steps.validate.outputs.text }}
 
     steps:
-      - name: Checkout Repository ${{ github.event.pull_request.user.login }}/${{ github.event.pull_request.head.ref }}
+      - name: Checkout repository
         uses: https://code.forgejo.org/actions/checkout@v5
         with:
           ref: ${{ github.event.pull_request.head.sha }}
@@ -40,8 +40,8 @@ jobs:
           fi
       - name: Debug result
         run: |
-          echo ${{ github.event.pull_request.head.sha }}
-          echo $PARSE_OUTPUT
+          echo ${{ github.event.pull_request.number }}
+          echo ${{ steps.check_appfilter.outputs.CommentPRtext}}
   # comment_pr_check_appfilter:
   #   name: Comment on PR
   #   needs: ['check_appfilter']
