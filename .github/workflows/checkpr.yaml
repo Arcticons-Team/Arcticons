@@ -44,9 +44,10 @@ jobs:
           NAME: ${{ github.event.repository.owner }}
           PR_NUMBER: ${{ forgejo.event.pull_request.number }}
         run: |
-          if [ $(cat checkpr-error.txt) != "" ] ; then
+          export COMMENT_CONTENT=$(cat checkpr-error.txt)
+          echo $COMMENT_CONTENT
+          if [ -n "$COMMENT_CONTENT" ] ; then
             
-            export COMMENT_CONTENT=$(cat checkpr-error.txt)
             echo "Commenting on PR \#${PR_NUMBER}"
             
             curl -X POST "https://codeberg.org/api/v1/repos/$OWNER/$REPO/issues/$PR_NUMBER" \
