@@ -37,27 +37,31 @@ jobs:
           else
             echo "Parsing succeeded."
           fi
-  comment_pr_check_appfilter:
-    name: Comment on PR
-    needs: ['check_appfilter']
-    if: failure()
-    runs-on: codeberg-tiny
-    env:
-      PARSE_OUTPUT: ${{needs.check_appfilter.outputs.CommentPRtext}}
-    steps:
-      - name: Create Comment
-        run: echo -e "Parsing of 'newicons/appfilter.xml' failed. Please fix the XML syntax errors. \n \`\`\` \n $PARSE_OUTPUT \n \`\`\`" >> comment_markdown.md
-      - name: Make Comment
-        env:
-          FORGEJO_TOKEN: ${{ secrets.FORGEJO_TOKEN }}
-          OWNER: ${{ github.event.repository.owner }}
-          REPO: ${{ github.event.repository.name }}
-
+      - name: Debug result
         run: |
-          curl -X POST "https://codeberg.org/api/v1/repos/${OWNER}/${REPO}/issues/3022" \
-            -H "accept: application/json" \
-            -H "Authorization: token ${FORGEJO_TOKEN}" \
-            -H "Content-Type: application/json" \
-            -d "{
-                  \"body\": \"${PARSE_OUTPUT}\"
-                }"
+          echo ${{ github.event.pull_request.head.sha }}
+          echo $PARSE_OUTPUT
+  # comment_pr_check_appfilter:
+  #   name: Comment on PR
+  #   needs: ['check_appfilter']
+  #   if: failure()
+  #   runs-on: codeberg-tiny
+  #   env:
+  #     PARSE_OUTPUT: ${{needs.check_appfilter.outputs.CommentPRtext}}
+  #   steps:
+  #     - name: Create Comment
+  #       run: echo -e "Parsing of 'newicons/appfilter.xml' failed. Please fix the XML syntax errors. \n \`\`\` \n $PARSE_OUTPUT \n \`\`\`" >> comment_markdown.md
+  #     - name: Make Comment
+  #       env:
+  #         FORGEJO_TOKEN: ${{ secrets.FORGEJO_TOKEN }}
+  #         OWNER: ${{ github.event.repository.owner }}
+  #         REPO: ${{ github.event.repository.name }}
+
+  #       run: |
+  #         curl -X POST "https://codeberg.org/api/v1/repos/${OWNER}/${REPO}/issues/3022" \
+  #           -H "accept: application/json" \
+  #           -H "Authorization: token ${FORGEJO_TOKEN}" \
+  #           -H "Content-Type: application/json" \
+  #           -d "{
+  #                 \"body\": \"${PARSE_OUTPUT}\"
+  #               }"
