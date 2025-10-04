@@ -11,9 +11,6 @@ jobs:
   check_appfilter:
     name: Check appfilter.xml from Pull Request
     runs-on: codeberg-tiny
-    outputs:
-      CommentPRtext: ${{ steps.validate.outputs.text }}
-
     steps:
       - name: Checkout repository
         uses: https://code.forgejo.org/actions/checkout@v5
@@ -26,23 +23,42 @@ jobs:
         shell: bash
         run: |
           sudo apt update
-          sudo apt install -y libxml2-utils
+          sudo apt install -y libxml2-utils curl
       - name: Validate appfilter.xml
         continue-on-error: true
         id: validate
         run: |
+          touch checkpr-error.txt
           if ! PARSE_OUTPUT=$(xmllint --noout newicons/appfilter.xml 2>&1) ; then
             echo "Parsing appfilter.xml failed."
-            echo -e "text=$PARSE_OUTPUT" >> "$FORGEJO_OUTPUT"
+            echo -e "${PARSE_OUTPUT}" > checkpr-error.txt
+            cat checkpr-error.txt
             exit 1
           else
             echo "Parsing succeeded."
           fi
+          
       - name: Debug result
-        if: ${{ steps.validate.outputs.text }} != ""
+        env: 
+          OWNER: ${{ github.event.repository.owner }}
+          NAME: ${{ github.event.repository.owner }}
+          PR_NUMBER: ${{ forgejo.event.pull_request.number }}
         run: |
-          echo ${{ forgejo.event.pull_request.number }}
-          echo ${{ steps.validate.outputs.text }}
+          if [ $(cat checkpr-error.txt) != "" ] ; then
+            
+            export COMMENT_CONTENT=$(cat checkpr-error.txt)
+            echo "Commenting on PR \#${PR_NUMBER}"
+            
+            curl -X POST "https://codeberg.org/api/v1/repos/$OWNER/$REPO/issues/$PR_NUMBER" \
+                -H "accept: application/json" \
+                -H "Authorization: token ${{ secrets.FORGEJO_TOKEN }}" \
+                -H "Content-Type: application/json" \
+                -d "{
+                      \"body\": \"${COMMENT_CONTENT}\"
+                    }"            
+          fi
+
+
   # comment_pr_check_appfilter:
   #   name: Comment on PR
   #   needs: ['check_appfilter']
@@ -60,10 +76,4 @@ jobs:
   #         REPO: ${{ github.event.repository.name }}
 
   #       run: |
-  #         curl -X POST "https://codeberg.org/api/v1/repos/${OWNER}/${REPO}/issues/3022" \
-  #           -H "accept: application/json" \
-  #           -H "Authorization: token ${FORGEJO_TOKEN}" \
-  #           -H "Content-Type: application/json" \
-  #           -d "{
-  #                 \"body\": \"${PARSE_OUTPUT}\"
-  #               }"
+  
