@@ -28,13 +28,15 @@ jobs:
         continue-on-error: true
         id: validate
         run: |
+          touch checkpr-error.txt
           if ! PARSE_OUTPUT=$(xmllint --noout newicons/appfilter.xml 2>&1) ; then
             echo "Parsing appfilter.xml failed."
             exit 1
+            echo -e $PARSE_OUTPUT >> checkpr-error.txt
           else
             echo "Parsing succeeded."
           fi
-          echo -e $PARSE_OUTPUT >> checkpr-error.txt
+          
       - name: Debug result
         run: |
           echo ${{ forgejo.event.pull_request.number }}
