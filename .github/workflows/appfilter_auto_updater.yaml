@@ -18,7 +18,7 @@ env:
 jobs:
   check-pr:
     if : ${{ github.repository == vars.REPOSITORY }}
-    runs-on: ubuntu-latest
+    runs-on: codeberg-tiny
     outputs:
       existsnot: ${{ steps.check.outputs.existsnot }}
     steps:
