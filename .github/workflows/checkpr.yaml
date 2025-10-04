@@ -39,9 +39,10 @@ jobs:
             echo "Parsing succeeded."
           fi
       - name: Debug result
+        if: ${{ steps.validate.outputs.text }} != ""
         run: |
           echo ${{ github.event.pull_request.number }}
-          echo ${{ steps.check_appfilter.outputs.CommentPRtext}}
+          echo ${{ steps.validate.outputs.text }}
   # comment_pr_check_appfilter:
   #   name: Comment on PR
   #   needs: ['check_appfilter']
