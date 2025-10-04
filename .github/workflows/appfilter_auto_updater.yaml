@@ -45,7 +45,7 @@ jobs:
   update-pr:
     needs: check-pr
     if: needs.check-pr.outputs.existsnot == 'true'
-    runs-on: ubuntu-latest
+    runs-on: codeberg-tiny
     permissions:
       contents: write
       pull-requests: write
