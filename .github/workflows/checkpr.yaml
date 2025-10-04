@@ -38,25 +38,26 @@ jobs:
             echo "Parsing succeeded."
           fi
           
-      - name: Debug result
+      - name: Post a PR comment if error is found
         env: 
           OWNER: ${{ github.event.repository.owner }}
           NAME: ${{ github.event.repository.owner }}
           PR_NUMBER: ${{ forgejo.event.pull_request.number }}
         run: |
-          export COMMENT_CONTENT=$(cat checkpr-error.txt)
-          echo $COMMENT_CONTENT
+          export REVIEW_CONTENT=$(cat checkpr-error.txt)
+          echo $REVIEW_CONTENT
           if [ -n "$COMMENT_CONTENT" ] ; then
             
             echo "Commenting on PR \#${PR_NUMBER}"
             
-            curl -X POST "https://codeberg.org/api/v1/repos/$OWNER/$REPO/issues/$PR_NUMBER" \
+            curl -X POST "https://codeberg.org/api/v1/repos/$OWNER/$REPO/pulls/$PR_NUMBER/reviews" \
                 -H "accept: application/json" \
                 -H "Authorization: token ${{ secrets.FORGEJO_TOKEN }}" \
                 -H "Content-Type: application/json" \
                 -d "{
-                      \"body\": \"${COMMENT_CONTENT}\"
+                      \"body\": \"${REVIEW_CONTENT}\"
                     }"            
+            exit 1
           fi
 
 
