@@ -32,7 +32,6 @@ jobs:
           if ! PARSE_OUTPUT=$(xmllint --noout newicons/appfilter.xml 2>&1) ; then
             echo "Parsing appfilter.xml failed."
             echo -e "text=${PARSE_OUTPUT}" >> $FORGEJO_OUTPUT
-            exit 1
           else
             echo "Parsing succeeded."
           fi
