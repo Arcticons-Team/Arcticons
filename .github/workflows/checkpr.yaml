@@ -41,7 +41,7 @@ jobs:
           PR_NUMBER: ${{ forgejo.event.pull_request.number }}
         run: |
 
-          echo -e $(cat checkpr-error.txt) >> $COMMENT_CONTENT
+          COMMENT_CONTENT=$(echo -e `cat checkpr-error.txt`)
           echo $COMMENT_CONTENT
           
           if [ -n "$COMMENT_CONTENT" ] ; then            
