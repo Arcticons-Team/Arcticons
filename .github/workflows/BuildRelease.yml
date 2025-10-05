@@ -155,9 +155,9 @@ jobs:
       #     curl -fsSL https://deb.nodesource.com/setup_20.x | bash -
       #     sudo apt-get install -y nodejs
       - name: Checking out branch
-        uses: actions/checkout@v5
+        uses: https://code.forgejo.org/actions/checkout@v5
       - name: Setup Java
-        uses: actions/setup-java@v5
+        uses: https://github.com/actions/setup-java@v5
         with:
           distribution: 'zulu'
           java-version: 21
