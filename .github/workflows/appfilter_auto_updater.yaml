@@ -1,6 +1,7 @@
 name: Auto Appfilter Updater
 
-# Update appfilter
+# Description: This workflow updates the appfilter to include entries from updatable.txt
+# It also check against blacklists to remove unwanted applications
 
 on:
   workflow_dispatch:
