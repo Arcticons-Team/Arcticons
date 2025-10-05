@@ -1,0 +1,212 @@
+name: Request Update
+on:
+  workflow_dispatch:
+    inputs:
+      run_Request_Update:
+        description: 'Set to true to run the Request Update'
+        required: true
+        default: true
+        type: boolean
+  schedule:
+    - cron: '0 0 * * 0'  # Runs at 00:00 every Sunday
+jobs:
+  Update_Requests:
+    if: ${{ github.repository == vars.REPOSITORY && ( inputs.run_Request_Update == true || github.event_name == 'schedule') && vars.AUTOMATIC_UPDATE == 'true' }}
+    environment:
+      name: Request-Update
+    permissions:
+      contents: write
+    concurrency:
+      group: 'push'
+      cancel-in-progress: false
+    runs-on: codeberg-small
+    outputs:
+      changes_detected: ${{ steps.check_changes.outputs.changes_detected }}
+      request_changes: ${{ steps.check_changes.outputs.Request_changes }}
+      image_changes: ${{ steps.check_changes.outputs.Image_changes }}
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v5
+        with:
+          ref: ${{vars.PAGES_BRANCH}}
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.x'
+          cache: 'pip'
+      - run: pip install -r .github/workflows/requirements.txt
+      - name: Execute Python Script
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REQUEST_LIMIT: ${{ vars.REQUEST_LIMIT }}
+          MONTHS_LIMIT: ${{ vars.MONTHS_LIMIT }}
+          MIN_REQUESTS: ${{ vars.MIN_REQUESTS }}
+          SUBJECT_PREFIX: ${{ vars.SUBJECT_PREFIX }}
+          SUBJECT_SUFFIX: ${{ vars.SUBJECT_SUFFIX }}
+          IMAP_SERVER: ${{ secrets.IMAP_SERVER }}
+          IMAP_USERNAME: ${{ secrets.IMAP_USERNAME }}
+          IMAP_PASSWORD: ${{ secrets.IMAP_PASSWORD }}
+        run: |
+          mkdir mail
+          python .github/workflows/email_parser_auto.py mail newicons/appfilter.xml docs/extracted_png docs/assets/ 
+          rm -r mail
+      - name: Check for changes
+        id: check_changes
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+
+          # Get the list of changed files
+          CHANGED_FILES=$(git diff --cached --name-only)
+
+          # Check if there are any changes
+          if [ -z "$CHANGED_FILES" ]; then
+            echo "No changes detected"
+            echo "changes_detected=false" >> $GITHUB_OUTPUT
+          else
+            echo "Changes detected"
+            echo "changes_detected=true" >> $GITHUB_OUTPUT
+
+            # Set different outputs depending on which path changed
+            if echo "$CHANGED_FILES" | grep -q "^docs/assets/requests.txt"; then
+              echo "Request_changes=true" >> $GITHUB_OUTPUT
+            fi
+
+            if echo "$CHANGED_FILES" | grep -q "^docs/extracted_png/"; then
+              echo "Image_changes=true" >> $GITHUB_OUTPUT
+            fi
+
+            # You can add more checks for other directories or files here as needed
+          fi
+      - name: Commit and Push if Changes Exist
+        if: ${{ steps.check_changes.outputs.changes_detected == 'true' }}
+        run: |
+          git commit -m "Automated Request Update"
+          git push
+  Check_FilePath:
+    name: Check File Path changes
+    if: ${{github.event_name == 'push' && github.ref_name == vars.PAGES_BRANCH}}
+    runs-on: codeberg-small
+    outputs:
+      imagechange: ${{ steps.changes.outputs.images }}
+      requestchange: ${{ steps.changes.outputs.requests }}
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v5
+        with:
+          ref: ${{vars.PAGES_BRANCH}}
+      - uses: dorny/paths-filter@de90cc6fb38fc0963ad72b210f1f284cd68cea36
+        id: changes
+        with:
+          filters: |
+            images:
+              - 'docs/extracted_png/**'
+            requests:
+              - 'docs/assets/requests.txt'
+          base: ${{vars.PAGES_BRANCH}}
+  Create_Colormappping:
+    name: Create Colormapping
+    needs: [Check_FilePath, Update_Requests]
+    if: ${{ ((needs.Check_FilePath.outputs.imagechange == 'true' && github.event_name == 'push') || (((github.event_name == 'workflow_dispatch' || github.event_name == 'schedule') && needs.Update_Requests.outputs.image_changes == 'true') || (inputs.run_colormapping == true &&  inputs.run_Request_Update == false ))) && !failure() }}
+    runs-on: codeberg-small
+    concurrency:
+      group: 'colormapping'
+      cancel-in-progress: true
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v5
+        with:
+          ref: ${{vars.PAGES_BRANCH}}
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.x'
+          cache: 'pip'
+      - run: pip install -r .github/workflows/requirements.txt
+      - name: Execute Python Script
+        id: colormapping_done
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python .github/workflows/create_colormapping.py
+      - name: Upload Colormapping
+        uses: actions/upload-artifact@v4
+        with:
+          name: colormapping
+          path: docs/assets/image_color_counts.xml
+  Create_requestjson:
+    name: Create Requestjson
+    needs: [Check_FilePath, Update_Requests]
+    if: ${{ ((needs.Check_FilePath.outputs.requestchange == 'true' && github.event_name == 'push') || (((github.event_name == 'workflow_dispatch' || github.event_name == 'schedule') && needs.Update_Requests.outputs.request_changes == 'true')  || (inputs.run_requestjson == true  &&  inputs.run_Request_Update == false ))) && !failure() }}
+    runs-on: codeberg-small
+    concurrency:
+      group: 'requestjson'
+      cancel-in-progress: true
+    outputs:
+      requestjson_done: ${{ steps.requestjson_done.outcome }}
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v5
+        with:
+          ref: ${{vars.PAGES_BRANCH}}
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.x'
+          cache: 'pip'
+      - run: pip install -r .github/workflows/requirements.txt
+      - name: Execute Python Script
+        id: requestjson_done
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python .github/workflows/getGPlayData.py
+      - name: Upload Requestjson
+        uses: actions/upload-artifact@v4
+        with:
+          name: requestjson
+          path: docs/assets/requests.json
+  Push_Files:
+    needs: [Create_Colormappping, Create_requestjson]
+    runs-on: codeberg-small
+    concurrency:
+      group: 'push'
+      cancel-in-progress: false
+    permissions:
+      contents: write
+    if: ${{(needs.Create_Colormappping.result == 'success' || needs.Create_requestjson.result == 'success') && !failure()}}
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v5
+        with:
+          ref: ${{vars.PAGES_BRANCH}}
+      - name: Download Colormapping and Requestjson
+        uses: actions/download-artifact@v5
+        with:
+          path: docs/assets
+          merge-multiple: true
+      - name: Check for changes
+        id: check_changes
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+
+          # Get the list of changed files
+          CHANGED_FILES=$(git diff --cached --name-only)
+
+
+          # Check if there are any changes
+          if [ -z "$CHANGED_FILES" ]; then
+            echo "No changes detected"
+            echo "changes_detected=false" >> $GITHUB_OUTPUT
+          else
+            echo "Changes detected"
+            echo "changes_detected=true" >> $GITHUB_OUTPUT
+          fi
+      - name: Commit and Push if Changes Exist
+        if: ${{ steps.check_changes.outputs.changes_detected == 'true' }}
+        run: |
+          git commit -m "Automated updates from Colormappping and Requestjson jobs"
+          git push
