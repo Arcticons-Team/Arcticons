@@ -1,4 +1,8 @@
 name: Check appfilter.xml in PR
+
+# DESCRIPTION: This workflow checks the newicons/appfilter.xml file of a PR to see
+# if any XML errors occur, and comment on the PR if so
+
 on:
   pull_request_target:
     types: [opened, synchronize, reopened]
