@@ -39,16 +39,21 @@ jobs:
 
       - name: Check if PR exists
         id: check
+        env:
+          GITEA_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          OWNER: ${{ env.OWNER }}
+          REPO: ${{ github.event.repository.name }}
+          BRANCH: ${{ env.BRANCH }}
+          BASE_BRANCH: ${{ env.BASE_BRANCH }}
         run: |
-          if gh pr list -H "$BRANCH" -B "$BASE_BRANCH" --json number --jq '.[].number' | grep -q '[0-9]'; then
+          response=$(curl -s -H "Authorization: token ${GITEA_TOKEN}" \
+            "https://codeberg.org/api/v1/repos/${OWNER}/${REPO}/pulls?state=open")
+
+          if echo "$response" | jq -e '.[] | select(.head.ref == "'"${BRANCH}"'" and .base.ref == "'"${BASE_BRANCH}"'")' > /dev/null; then
             echo "existsnot=false" >> "$GITHUB_OUTPUT"
           else
             echo "existsnot=true" >> "$GITHUB_OUTPUT"
           fi
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: ${{ env.BRANCH }}
-          BASE_BRANCH: ${{ env.BASE_BRANCH }}
 
   update-pr:
     needs: check-pr
