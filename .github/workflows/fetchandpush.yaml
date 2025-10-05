@@ -60,6 +60,9 @@ jobs:
         # Step 3: Fetch the file from the source branch
 
         run: |
+          ls
+          ls pages
+          ls pages/assets
           rm pages/newicons/appfilter.xml
           cp main/newicons/appfilter.xml pages/newicons/appfilter.xml
           rm pages/assets/drawable.xml
