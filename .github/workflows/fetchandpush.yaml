@@ -43,7 +43,7 @@ jobs:
           sparse-checkout: |
             ${{ env.FILE_PATH }}
             ${{ env.file_path_icons }}
-            'app/src/main/assets/drawable.xml'
+            app/src/main/assets/drawable.xml
 
       - name: Checkout Arcticons-Pages Repository
         # Step 2: Checkout the 2. repository
@@ -55,7 +55,7 @@ jobs:
           sparse-checkout: |
             ${{ env.FILE_PATH }}
             ${{ env.file_path_icons }}
-            'assets/drawable.xml'
+            assets/drawable.xml
       - name: Copy File from main to Arcticons-Pages
         # Step 3: Fetch the file from the source branch
 
