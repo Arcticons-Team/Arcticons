@@ -25,13 +25,16 @@ jobs:
           sudo apt update
           sudo apt install -y libxml2-utils curl
 
-      - name: Validate appfilter.xml
+      - id: validate
+        name: Validate appfilter.xml
         continue-on-error: true
         run: |
           touch checkpr-error.txt
           if ! PARSE_OUTPUT=$(xmllint --noout newicons/appfilter.xml 2>&1) ; then
             echo "Parsing appfilter.xml failed."
-            echo -e "${PARSE_OUTPUT}" >> checkpr-error.txt
+            echo -e "text=${PARSE_OUTPUT}" >> checkpr-error.txt
+            echo -e "text=${PARSE_OUTPUT}" >> $FORGEJO_OUTPUT
+            echo "value=value1" >> $FORGEJO_OUTPUT
             exit 1
           else
             echo "Parsing succeeded."
@@ -40,6 +43,8 @@ jobs:
         env: 
           PR_NUMBER: ${{ forgejo.event.pull_request.number }}
         run: |
+          echo ${{ steps.step1.outputs.value }}
+          cho ${{ steps.step1.outputs.text }}
 
           COMMENT_CONTENT=$(echo -e `cat checkpr-error.txt`)
           echo $COMMENT_CONTENT
