@@ -147,13 +147,10 @@ jobs:
   debug:
     name: Build Arcticons Debug APK
     runs-on: codeberg-small
-    # container: cimg/android:2025.10.1
+    container: cimg/android:2025.10.1-node
     if: ${{ github.event_name == 'workflow_dispatch' && inputs.run_debug == true }}
     steps:
-      # - name: Install Node.js (manual)
-      #   run: |
-      #     curl -fsSL https://deb.nodesource.com/setup_20.x | bash -
-      #     sudo apt-get install -y nodejs
+
       - name: Checking out branch
         uses: https://code.forgejo.org/actions/checkout@v5
       - name: Setup Java
@@ -172,8 +169,7 @@ jobs:
             echo storeFile='${{ github.workspace }}/key.jks' >> keystore.properties
             echo ${{ secrets.KEYSTORE }} | base64 --decode > ${{ github.workspace }}/key.jks
           fi
-      # - name: Get Gradle
-      #   run: gradle wrapper
+
       - name: Set up Gradle
         run: git clone https://codeberg.org/IzzyOnDroid/gradlew.py
       - name: Grant execute permission for gradlew
