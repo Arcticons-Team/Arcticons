@@ -48,7 +48,7 @@ jobs:
           IMAP_PASSWORD: ${{ secrets.IMAP_PASSWORD }}
         run: |
           mkdir mail
-          python .github/workflows/email_parser_auto.py mail newicons/appfilter.xml docs/extracted_png docs/assets/ 
+          python .github/workflows/email_parser_auto.py mail newicons/appfilter.xml extracted_png assets/ 
           rm -r mail
       - name: Check for changes
         id: check_changes
@@ -184,7 +184,7 @@ jobs:
       - name: Download Colormapping and Requestjson
         uses: actions/download-artifact@v5
         with:
-          path: docs/assets
+          path: assets
           merge-multiple: true
       - name: Check for changes
         id: check_changes
