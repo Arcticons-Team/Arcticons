@@ -62,8 +62,8 @@ jobs:
         run: |
           rm pages/newicons/appfilter.xml
           cp main/newicons/appfilter.xml pages/newicons/appfilter.xml
-          rm assets/drawable.xml
-          cp main/app/src/main/assets/drawable.xml assets/drawable.xml
+          rm pages/assets/drawable.xml
+          cp main/app/src/main/assets/drawable.xml pages/assets/drawable.xml
           rm -r pages/icons/white/
           cp -r main/icons/white/ pages/icons/white/
       - name: Commit and Push Changes
