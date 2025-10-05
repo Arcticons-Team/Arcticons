@@ -147,31 +147,47 @@ jobs:
   debug:
     name: Build Arcticons Debug APK
     runs-on: codeberg-small
-    container: cimg/android:2025.10.1
+    # container: cimg/android:2025.10.1
     if: ${{ github.event_name == 'workflow_dispatch' && inputs.run_debug == true }}
     steps:
-      - name: Install Node.js (manual)
-        run: |
-          curl -fsSL https://deb.nodesource.com/setup_20.x | bash -
-          sudo apt-get install -y nodejs
+      # - name: Install Node.js (manual)
+      #   run: |
+      #     curl -fsSL https://deb.nodesource.com/setup_20.x | bash -
+      #     sudo apt-get install -y nodejs
       - name: Checking out branch
         uses: actions/checkout@v5
-      - name: Write sign info
-        run: "echo \"Workflow manually triggered by ${{ github.actor }}\"\nif [ ! -z \"${{ secrets.KEYSTORE }}\" ]; then\n  echo storePassword='${{ secrets.KEYSTORE_PASSWORD }}' >> keystore.properties\n  echo keyAlias='${{ secrets.KEY_ALIAS }}' >> keystore.properties\n  echo keyPassword='${{ secrets.KEY_PASSWORD }}' >> keystore.properties\n  echo storeFile='${{ github.workspace }}/key.jks' >> keystore.properties\n  echo ${{ secrets.KEYSTORE }} | base64 --decode > ${{ github.workspace }}/key.jks\nfi   \n"
-      - name: Set up Gradle
-        run: git clone https://codeberg.org/IzzyOnDroid/gradlew.py
-      - name: Grant execute permission for gradlew
-        run: chmod +x ./gradlew.py/gradlew.py
-      - name: Build debug APK
-        run: ./gradlew.py/gradlew.py app:assembleBlackDebug
-      - name: Upload artifact
-        uses: actions/upload-artifact@v4
+      - name: Setup Java
+        uses: actions/setup-java@v5
         with:
-          path: |
-            app/build/outputs/apk/black/debug/*.apk
-            app/build/outputs/apk/blackPlay/debug/*.apk
-            app/build/outputs/apk/dayNight/debug/*.apk
-            app/build/outputs/apk/normal/debug/*.apk
-            app/build/outputs/apk/normalPlay/debug/*.apk
-            app/build/outputs/apk/you/debug/*.apk
-            app/build/outputs/apk/youPlay/debug/*.apk
+          distribution: 'zulu'
+          java-version: 21
+          cache: gradle
+      - name: Write sign info
+        run: |
+          echo "Workflow manually triggered by ${{ github.actor }}"
+          if [ ! -z \"${{ secrets.KEYSTORE }}\" ]; then
+            echo storePassword='${{ secrets.KEYSTORE_PASSWORD }}' >> keystore.properties
+            echo keyAlias='${{ secrets.KEY_ALIAS }}' >> keystore.properties
+            echo keyPassword='${{ secrets.KEY_PASSWORD }}' >> keystore.properties
+            echo storeFile='${{ github.workspace }}/key.jks' >> keystore.properties
+            echo ${{ secrets.KEYSTORE }} | base64 --decode > ${{ github.workspace }}/key.jks
+          fi
+      - name: Get Gradle
+        run: gradle wrapper
+      # - name: Set up Gradle
+      #   run: git clone https://codeberg.org/IzzyOnDroid/gradlew.py
+      # - name: Grant execute permission for gradlew
+      #   run: chmod +x ./gradlew.py/gradlew.py
+      # - name: Build debug APK
+      #   run: ./gradlew.py/gradlew.py app:assembleBlackDebug
+      # - name: Upload artifact
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     path: |
+      #       app/build/outputs/apk/black/debug/*.apk
+      #       app/build/outputs/apk/blackPlay/debug/*.apk
+      #       app/build/outputs/apk/dayNight/debug/*.apk
+      #       app/build/outputs/apk/normal/debug/*.apk
+      #       app/build/outputs/apk/normalPlay/debug/*.apk
+      #       app/build/outputs/apk/you/debug/*.apk
+      #       app/build/outputs/apk/youPlay/debug/*.apk
