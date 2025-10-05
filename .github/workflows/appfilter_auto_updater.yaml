@@ -83,11 +83,6 @@ jobs:
         run: |
           cp pages/assets/updatable.txt main/updatable.txt
 
-      - name: Set up Git
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-
       - name: Set up Python
         uses: actions/setup-python@v6
         with:
@@ -99,6 +94,8 @@ jobs:
         run: |
           cd main
           python .github/workflows/appfilter_auto_updater/appfilter_auto_updater.py 
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
           git add $APPFILTER_PATH
           git commit -m "Update appfilter.xml" || echo "No changes to commit"
 
