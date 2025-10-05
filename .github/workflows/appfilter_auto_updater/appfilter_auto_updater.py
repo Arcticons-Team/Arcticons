@@ -213,7 +213,7 @@ def loadBlacklist(filepath):
 def main():
     # Execute functions
     try:
-        updatableURL =os.environ.get('UPDATEABLE_URL')
+        updatablepath =os.environ.get('UPDATEABLE_PATH')
         packageBlacklistPath = os.environ.get('PACKAGE_BLACKLIST_PATH')
         drawableBlacklistPath = os.environ.get('DRAWABLE_BLACKLIST_PATH')
         componentBlacklistPath = os.environ.get('COMPONENT_BLACKLIST_PATH')
@@ -227,7 +227,7 @@ def main():
     componentBlacklist = loadBlacklist(componentBlacklistPath)
 
     components = parseappfilter(appfilterPath,packageBlacklist,componentBlacklist)
-    loadandcreateupdateablexml(updatableURL, 'updateable.xml')
+    loadandcreateupdateablexml(updatablepath, 'updateable.xml')
     remotecomponents = parseappfilter("updateable.xml",packageBlacklist,componentBlacklist)
     similar, different = compare(components, remotecomponents)
     updateabledic = recreateDic(different)
