@@ -33,30 +33,29 @@ jobs:
           if ! PARSE_OUTPUT=$(xmllint --noout newicons/appfilter.xml 2>&1) ; then
             echo "Parsing appfilter.xml failed."
             echo -e "${PARSE_OUTPUT}" >> checkpr-error.txt
-            echo "value=${PARSE_OUTPUT}" >> $FORGEJO_OUTPUT
             exit 1
           else
             echo "Parsing succeeded."
-            echo "" >> $FORGEJO_OUTPUT
           fi
+          # Note: multiline PARSE_OUTPUT seems to not work with FORGEJO_OUTPUT
+          # Writing to a file instead.
+
       - name: Post a PR comment (when error is found)
         env: 
           PR_NUMBER: ${{ forgejo.event.pull_request.number }}
         run: |
-          echo ${{ steps.validate.outputs.value }}
 
           COMMENT_CONTENT=$(echo -e `cat checkpr-error.txt`)
-          echo $COMMENT_CONTENT
           
-          # if [ -n "$COMMENT_CONTENT" ] ; then            
-          #   echo "Commenting on PR ${PR_NUMBER}"
-          #   curl -X POST "https://codeberg.org/api/v1/repos/${{ env.FORGEJO_REPOSITORY }}/issues/${PR_NUMBER}/comments" \
-          #       -H "accept: application/json" \
-          #       -H "Authorization: token ${{ secrets.FORGEJO_TOKEN }}" \
-          #       -H "Content-Type: application/json" \
-          #       -d "{
-          #             \"body\": \"${COMMENT_CONTENT}\"
-          #           }"
-          #   # force an error exit for this run to be marked as failed
-          #   exit 1
-          # fi
+          if [ -n "$COMMENT_CONTENT" ] ; then            
+            echo "Commenting on PR ${PR_NUMBER}"
+            curl -X POST "https://codeberg.org/api/v1/repos/${{ env.FORGEJO_REPOSITORY }}/issues/${PR_NUMBER}/comments" \
+                -H "accept: application/json" \
+                -H "Authorization: token ${{ secrets.FORGEJO_TOKEN }}" \
+                -H "Content-Type: application/json" \
+                -d "{
+                      \"body\": \"${COMMENT_CONTENT}\"
+                    }"
+            # force an error exit for this run to be marked as failed
+            exit 1
+          fi
