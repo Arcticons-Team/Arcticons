@@ -43,8 +43,8 @@ jobs:
         env: 
           PR_NUMBER: ${{ forgejo.event.pull_request.number }}
         run: |
-          echo ${{ steps.step1.outputs.value }}
-          cho ${{ steps.step1.outputs.text }}
+          echo ${{ steps.validate.outputs.value }}
+          echo ${{ steps.validate.outputs.text }}
 
           COMMENT_CONTENT=$(echo -e `cat checkpr-error.txt`)
           echo $COMMENT_CONTENT
