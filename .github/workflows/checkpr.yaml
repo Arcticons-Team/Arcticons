@@ -32,32 +32,32 @@ jobs:
           touch checkpr-error.txt
           if ! PARSE_OUTPUT=$(xmllint --noout newicons/appfilter.xml 2>&1) ; then
             echo "Parsing appfilter.xml failed."
-            echo -e "text=${PARSE_OUTPUT}" >> checkpr-error.txt
-            echo -e "text=${PARSE_OUTPUT}" >> $FORGEJO_OUTPUT
+            echo -e "${PARSE_OUTPUT}" >> checkpr-error.txt
             echo "value=value1" >> $FORGEJO_OUTPUT
             exit 1
           else
             echo "Parsing succeeded."
+            echo "" >> $FORGEJO_OUTPUT
           fi
       - name: Post a PR comment (when error is found)
         env: 
+          if: ${{ steps.validate.outputs.text }} != ""
           PR_NUMBER: ${{ forgejo.event.pull_request.number }}
         run: |
           echo ${{ steps.validate.outputs.value }}
-          echo ${{ steps.validate.outputs.text }}
 
           COMMENT_CONTENT=$(echo -e `cat checkpr-error.txt`)
           echo $COMMENT_CONTENT
           
-          if [ -n "$COMMENT_CONTENT" ] ; then            
-            echo "Commenting on PR ${PR_NUMBER}"
-            curl -X POST "https://codeberg.org/api/v1/repos/${{ env.FORGEJO_REPOSITORY }}/issues/${PR_NUMBER}/comments" \
-                -H "accept: application/json" \
-                -H "Authorization: token ${{ secrets.FORGEJO_TOKEN }}" \
-                -H "Content-Type: application/json" \
-                -d "{
-                      \"body\": \"${COMMENT_CONTENT}\"
-                    }"
-            # force an error exit for this run to be marked as failed
-            exit 1
-          fi
+          # if [ -n "$COMMENT_CONTENT" ] ; then            
+          #   echo "Commenting on PR ${PR_NUMBER}"
+          #   curl -X POST "https://codeberg.org/api/v1/repos/${{ env.FORGEJO_REPOSITORY }}/issues/${PR_NUMBER}/comments" \
+          #       -H "accept: application/json" \
+          #       -H "Authorization: token ${{ secrets.FORGEJO_TOKEN }}" \
+          #       -H "Content-Type: application/json" \
+          #       -d "{
+          #             \"body\": \"${COMMENT_CONTENT}\"
+          #           }"
+          #   # force an error exit for this run to be marked as failed
+          #   exit 1
+          # fi
