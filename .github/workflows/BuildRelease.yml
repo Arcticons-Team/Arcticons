@@ -170,7 +170,7 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x ./gradlew.py/gradlew.py
       - name: Build debug APK
-        run: ./gradlew.py/gradlew.py --debug app:assembleBlackDebug
+        run: ./gradlew.py/gradlew.py --info app:assembleBlackDebug
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
