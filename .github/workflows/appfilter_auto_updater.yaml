@@ -103,6 +103,7 @@ jobs:
 
       - name: Create or update branch
         run: |
+          cd main
           git fetch origin $BRANCH || true
           git branch -f $BRANCH
           git push origin $BRANCH --force
