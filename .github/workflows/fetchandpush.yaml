@@ -58,7 +58,7 @@ jobs:
 
         run: |
           rm pages/newicons/appfilter.xml
-          rm pages/icons/white/
+          rm -r pages/icons/white/
           cp main/newicons/appfilter.xml pages/newicons/appfilter.xml
           cp -r main/icons/white/ pages/icons/white/
       - name: Commit and Push Changes
