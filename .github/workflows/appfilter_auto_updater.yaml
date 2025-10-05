@@ -9,7 +9,7 @@ on:
 env:
 
   # Paths to workfiles, change if necessary
-  UPDATEABLE_URL: https://arcticons.com/assets/updatable.txt            
+  UPDATEABLE_URL: https://tests.arcticons.com/assets/updatable.txt            
   PACKAGE_BLACKLIST_PATH: .github/workflows/appfilter_auto_updater/blacklists/packageblacklist.txt      
   DRAWABLE_BLACKLIST_PATH: .github/workflows/appfilter_auto_updater/blacklists/drawableblacklist.txt
   COMPONENT_BLACKLIST_PATH: .github/workflows/appfilter_auto_updater/blacklists/componentblacklist.txt  
