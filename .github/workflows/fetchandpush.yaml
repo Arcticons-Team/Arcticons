@@ -60,9 +60,6 @@ jobs:
         # Step 3: Fetch the file from the source branch
 
         run: |
-          ls
-          ls pages
-          ls pages/assets
           rm pages/newicons/appfilter.xml
           cp main/newicons/appfilter.xml pages/newicons/appfilter.xml
           rm pages/assets/drawable.xml
@@ -80,5 +77,6 @@ jobs:
           git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add $FILE_PATH
           git add $file_path_icons
+          git add assets/drawable.xml
           git commit -m "Update $FILE_PATH from $SOURCE_BRANCH to $TARGET_BRANCH"
           git push    
