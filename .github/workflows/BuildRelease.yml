@@ -153,11 +153,6 @@ jobs:
 
       - name: Checking out branch
         uses: https://code.forgejo.org/actions/checkout@v5
-      - name: Setup Java
-        uses: https://github.com/actions/setup-java@v5
-        with:
-          distribution: 'zulu'
-          java-version: 21
 
       - name: Write sign info
         run: |
