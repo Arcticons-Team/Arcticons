@@ -26,7 +26,7 @@ env:
 jobs:
   check-pr:
     if : ${{ github.repository == vars.REPOSITORY }}
-    runs-on: codeberg-tiny
+    runs-on: codeberg-tiny-lazy
     outputs:
       existsnot: ${{ steps.check.outputs.existsnot }}
     steps:
@@ -58,7 +58,7 @@ jobs:
   update-pr:
     needs: check-pr
     if: needs.check-pr.outputs.existsnot == 'true'
-    runs-on: codeberg-tiny
+    runs-on: codeberg-tiny-lazy
     permissions:
       contents: write
       pull-requests: write
