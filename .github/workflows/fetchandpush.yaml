@@ -39,6 +39,10 @@ jobs:
         with:
           ref: ${{vars.MAIN_BRANCH}}
           path: main
+          sparse-checkout: |
+            ${{ env.FILE_PATH }}
+            ${{ env.file_path_icons }}
+
       - name: Checkout Arcticons-Pages Repository
         # Step 2: Checkout the 2. repository
 
@@ -46,6 +50,9 @@ jobs:
         with:
           ref: ${{vars.PAGES_BRANCH}}
           path: pages
+          sparse-checkout: |
+            ${{ env.FILE_PATH }}
+            ${{ env.file_path_icons }}
       - name: Copy File from main to Arcticons-Pages
         # Step 3: Fetch the file from the source branch
 
