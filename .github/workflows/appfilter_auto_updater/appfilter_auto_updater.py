@@ -94,18 +94,11 @@ def create_appfilter_entries(xmlfile, updatable_packages,drawableBlacklist):
     except Exception as e:
         print(f"❌ Error: {e}")
 
-def loadandcreateupdateablexml(url, filename):
-    """Download XML from URL and save to file wrapped in <resources>."""
+def loadandcreateupdateablexml(path, filename):
+    """file wrapped in <resources>."""
     try:
-        resp = requests.get(url)
-        resp.raise_for_status()  # Raise an error for bad HTTP status
-
-        # Save the raw content to the file
-        with open(filename, 'wb') as f:
-            f.write(resp.content)
-
         # Read the file as text and wrap it in proper XML format
-        with open(filename, "r", encoding="utf-8") as in_file:
+        with open(path, "r", encoding="utf-8") as in_file:
             lines = in_file.readlines()
 
         # Wrap the original lines with XML header and <resources> tags
