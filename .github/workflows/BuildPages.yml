@@ -324,7 +324,7 @@ jobs:
         with:
           ref: ${{vars.PAGES_BRANCH}}
       - name: Download Colormapping and Requestjson
-        uses: actions/download-artifact@v5
+        uses: actions/download-artifact@v6
         with:
           path: docs/assets
           merge-multiple: true
