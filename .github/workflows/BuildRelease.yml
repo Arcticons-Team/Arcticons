@@ -65,7 +65,7 @@ jobs:
           mkdir whatsnew
           python .github/workflows/mark2text.py
       - name: Upload artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           path: |
             app/build/outputs/bundle/normalPlayRelease/*.aab
@@ -172,7 +172,7 @@ jobs:
       - name: Build debug APK
         run: ./gradlew.py/gradlew.py --info app:assembleBlackDebug
       - name: Upload artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           path: |
             app/build/outputs/apk/black/debug/*.apk
