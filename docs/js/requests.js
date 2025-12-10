@@ -1155,8 +1155,7 @@ var click = function (e) {
     if (longpress) {
         return false;
     }
-
-    copySelectedToClipboard();
+    document.getElementById("renamer-overlay").classList.add("show");
 };
 
 var start = function (e) {
@@ -1173,7 +1172,7 @@ var start = function (e) {
 
     if (presstimer === null) {
         presstimer = setTimeout(function () {
-            document.getElementById("renamer-overlay").classList.add("show");
+            copySelectedToClipboard();
             longpress = true;
         }, 500);
     }
