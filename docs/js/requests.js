@@ -421,7 +421,7 @@ function renderTable(data) {
         cellDownloads.innerHTML = entry.playStoreDownloads;
         cellReqInfo.innerHTML = entry.requestedInfo;
         cellReqTime.innerHTML = entry.lastRequestedTime;
-        cellCopy.innerHTML = `<button class="green-button" id="copy-button" onclick="copyToClipboard(${index})"><img class="copy-icon" src="img/requests/copy.svg" alt="Copy"><span class="copy-text">Copy</span></button>`;
+        cellCopy.innerHTML = `<button class="green-button" id="copy-button" onclick="copyToClipboard(${index},false)"><img class="copy-icon" src="img/requests/copy.svg" alt="Copy"><span class="copy-text">Copy</span></button>`;
         if (isShowingMatches) {
             cellArcticon.innerHTML = `<a href="#"class="icon-preview" data-index="${index}" column="Arcticon">${entry.Arcticon}</a>`;
         } else {
@@ -488,17 +488,30 @@ function updateTable(data) {
 }
 
 // Copy to clipboard function
-function copyToClipboard(index) {
-    
+function copyToClipboard(index,rename) {
     let copyText = ""; // Initialize copyText variable
     // Todo  
+    if (rename){
+        // Get the text from the input field
+        const node = document.getElementById("drawableName-input");
+        const text = node.value; // This is the text to use for replacement
+        // Regular expression to find the part inside drawable="..."
+        const regex = new RegExp('(?<=drawable=")(.*)(?="\/>)');
+        // Hide the renamer overlay (implement the class removal as per your setup)
+        document.getElementById("renamer-overlay").classList.remove("show");
+    }
     if (index === null){
         for (const rowindex of selectedRows) {
             const entry = appEntriesDataGlobal[rowindex];
-            if (isShowingMatches)  {
-                copyText += `${entry.appfilter}`;
+            if (rename){
+                const appfiltervalue = entry.appfilter.replace(regex, text);
             } else {
-                copyText += `${entry.appNameAppfilter}\n${entry.appfilter}\n`;
+                const appfiltervalue = entry.appfilter;
+            }
+            if (isShowingMatches)  {
+                copyText += `${appfiltervalue}`;
+            } else {
+                copyText += `${entry.appNameAppfilter}\n${appfiltervalue}\n`;
             }
         }
         clearSelected();
@@ -716,7 +729,7 @@ const filterAppEntries = debounce(() => {
 
 document.getElementById('regex-switch').addEventListener('change', filterAppEntries);
 document.getElementById('closePopup').addEventListener('click', filterAppEntries);
-document.getElementById('rename-button').addEventListener('click', renameAndCopySelectedToClipboard);
+document.getElementById('rename-button').addEventListener('click', copyToClipboard(null,true));
 
 
 function renameAndCopySelectedToClipboard() {
@@ -1188,7 +1201,7 @@ var start = function (e) {
 
     if (presstimer === null) {
         presstimer = setTimeout(function () {
-            copyToClipboard(null);
+            copyToClipboard(null,false);
             longpress = true;
         }, 500);
     }
