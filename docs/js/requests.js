@@ -978,7 +978,9 @@ showMultipeBtn.addEventListener('click', () => {
     } else {
         showMultipeBtn.classList.add("active-toggle");
         showMultipeBtn.innerText = "Show All";
-        const threshold = 2;
+        const NumberInput = document.getElementById(`matching-number-input`); // Number of requests to select randomly
+        NumberInput.value = parseInt(NumberInput.value)
+        const threshold = NumberInput.value;
         const filteredEntries = filterEntriesByAppNameFrequency(appEntriesData, threshold);
         appEntriesDataMatched = filteredEntries;
         sortTable(0, 'asc')

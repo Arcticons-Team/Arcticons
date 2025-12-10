@@ -96,6 +96,20 @@
     padding: 0.8em 1.2em;
 }
 
+#matching-number-input {
+    max-width: 60px;
+    box-sizing: border-box;
+    overflow: visible;
+    background-color: #eee;
+    border: 5px solid #4caf50;
+    box-shadow: none;
+    outline: none;
+    padding: 5px 7px 5px 7px;
+    height: 45px;
+    border-bottom-right-radius: 100px;
+    border-top-right-radius: 100px;
+}
+
 #random-reset-button {
     border: 1px solid red;
     cursor: pointer;
@@ -140,6 +154,10 @@
 #show-multiple {
     text-align: end;
     height: 45px;
+    border-bottom-left-radius: 100px;
+    border-top-left-radius: 100px;
+    border-bottom-right-radius: 0px;
+    border-top-right-radius: 0px;
 }
 
 #show-matching-drawables-btn.active-toggle {
@@ -198,6 +216,9 @@
         display: none;
     }
     #show-multiple {
+        display: none;
+    }
+    #matching-number-input{
         display: none;
     }
 }
