@@ -13,6 +13,7 @@ let sortingDirection = 'desc';
 var selectedRows = new Set();
 var AllCategories = new Set();
 
+let isShowingMatches = false; // Toggle state
 
 // Debounce function for search input
 const debounce = (func, delay) => {
@@ -189,7 +190,7 @@ function setCategory() {
     });
 
 }
-let isShowingMatches = false; // Toggle state
+
 
 const toggleBtn = document.getElementById('show-matching-drawables-btn');
 const toggleCell = document.getElementById('show-matching-drawables');
@@ -488,13 +489,28 @@ function updateTable(data) {
 
 // Copy to clipboard function
 function copyToClipboard(index) {
-    const entry = appEntriesDataGlobal[index];
+    
     let copyText = ""; // Initialize copyText variable
-    if (isShowingMatches) {
-        copyText = `${entry.appfilter}`;
+    // Todo  
+    if (index == NONE){
+        for (const index of selectedRows) {
+            const entry = appEntriesDataGlobal[index];
+            if (isShowingMatches)  {
+                copyText = `${entry.appfilter}`;
+            } else {
+                copyText += `${entry.appNameAppfilter}\n${entry.appfilter}\n`;
+            }
+        }
+        clearSelected();
     } else {
-        copyText = `${entry.appNameAppfilter}\n${entry.appfilter}`;
+        const entry = appEntriesDataGlobal[index];
+        if (isShowingMatches)  {
+            copyText = `${entry.appfilter}`;
+        } else {
+            copyText = `${entry.appNameAppfilter}\n${entry.appfilter}`;
+        }
     }
+
     navigator.clipboard.writeText(copyText).then(() => {
         // Show the copy notification
         document.getElementById('copy-notification').innerText = `Copied: ${copyText}`;
@@ -508,8 +524,10 @@ function copyToClipboard(index) {
         console.error('Unable to copy to clipboard:', error);
     });
 }
-
-// Copy Selectedto clipboard function
+        setTimeout(() => {
+            document.getElementById('copy-notification').style.display = 'none';
+        }, 3000);
+// Copy Selected to clipboard function
 function copySelectedToClipboard() {
     var copyText = "";
     for (const index of selectedRows) {
@@ -1172,7 +1190,7 @@ var start = function (e) {
 
     if (presstimer === null) {
         presstimer = setTimeout(function () {
-            copySelectedToClipboard();
+            copyToClipboard();
             longpress = true;
         }, 500);
     }
