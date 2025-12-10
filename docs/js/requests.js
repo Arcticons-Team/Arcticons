@@ -729,7 +729,9 @@ const filterAppEntries = debounce(() => {
 
 document.getElementById('regex-switch').addEventListener('change', filterAppEntries);
 document.getElementById('closePopup').addEventListener('click', filterAppEntries);
-document.getElementById('rename-button').addEventListener('click', copyToClipboard(null,true));
+document.getElementById('rename-button').addEventListener('click', () => {
+    copyToClipboard(null, true);
+});
 
 
 function renameAndCopySelectedToClipboard() {
