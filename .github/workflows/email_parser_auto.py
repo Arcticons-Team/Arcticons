@@ -509,7 +509,7 @@ class EmailDownloader:
                     msg = email.message_from_bytes(response_part[1])
                     # Filter based on the complete pattern
                     subject = self.get_subject(msg)
-                    if subject and subject.startswith(subject_prefix) and subject.endswith(subject_suffix):
+                    if subject and subject.__contains__(subject_prefix) and subject.__contains__(subject_suffix):
                         self.save_email(msg, email_id)
                         # Mark the email as read
                         self.mark_as_read(email_id)
