@@ -1139,7 +1139,7 @@ var start = function (e) {
 
     if (presstimer === null) {
         presstimer = setTimeout(function () {
-            copyToClipboard(null,false);
+            copyToClipboard(null, false);
             longpress = true;
         }, 500);
     }
