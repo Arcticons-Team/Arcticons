@@ -493,8 +493,8 @@ function copyToClipboard(index) {
     let copyText = ""; // Initialize copyText variable
     // Todo  
     if (index === null){
-        for (const index of selectedRows) {
-            const entry = appEntriesDataGlobal[index];
+        for (const rowindex of selectedRows) {
+            const entry = appEntriesDataGlobal[rowindex];
             if (isShowingMatches)  {
                 copyText += `${entry.appfilter}`;
             } else {
@@ -1188,7 +1188,7 @@ var start = function (e) {
 
     if (presstimer === null) {
         presstimer = setTimeout(function () {
-            copyToClipboard();
+            copyToClipboard(null);
             longpress = true;
         }, 500);
     }
