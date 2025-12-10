@@ -488,54 +488,65 @@ function updateTable(data) {
 }
 
 // Copy to clipboard function
-function copyToClipboard(index,rename) {
-    let copyText = ""; // Initialize copyText variable
-    // Todo  
-    if (rename){
-        // Get the text from the input field
+function copyToClipboard(index, rename) {
+    let copyText = "";
+    const regex = /(?<=drawable=")[^"]+(?="\/>)/;
+    let replacementText = null;
+
+    // Handle rename mode
+    if (rename) {
         const node = document.getElementById("drawableName-input");
-        const text = node.value; // This is the text to use for replacement
-        // Regular expression to find the part inside drawable="..."
-        const regex = new RegExp('(?<=drawable=")(.*)(?="\/>)');
-        // Hide the renamer overlay (implement the class removal as per your setup)
+        replacementText = node.value;
         document.getElementById("renamer-overlay").classList.remove("show");
     }
-    if (index === null){
-        for (const rowindex of selectedRows) {
-            const entry = appEntriesDataGlobal[rowindex];
-            if (rename){
-                const appfiltervalue = entry.appfilter.replace(regex, text);
+
+    function getAppfilterValue(entry) {
+        if (!rename) return entry.appfilter;
+        return entry.appfilter.replace(regex, replacementText);
+    }
+
+    // Multi-row mode
+    if (index === null) {
+        for (const rowIndex of selectedRows) {
+            const entry = appEntriesDataGlobal[rowIndex];
+            const appfilterValue = getAppfilterValue(entry);
+
+            if (isShowingMatches) {
+                copyText += `${appfilterValue}\n`;
             } else {
-                const appfiltervalue = entry.appfilter;
-            }
-            if (isShowingMatches)  {
-                copyText += `${appfiltervalue}`;
-            } else {
-                copyText += `${entry.appNameAppfilter}\n${appfiltervalue}\n`;
+                copyText += `${entry.appNameAppfilter}\n${appfilterValue}\n\n`;
             }
         }
+
         clearSelected();
-    } else {
+    }
+
+    // Single row mode
+    else {
         const entry = appEntriesDataGlobal[index];
-        if (isShowingMatches)  {
-            copyText = `${entry.appfilter}`;
+        const appfilterValue = getAppfilterValue(entry);
+
+        if (isShowingMatches) {
+            copyText = `${appfilterValue}`;
         } else {
-            copyText = `${entry.appNameAppfilter}\n${entry.appfilter}`;
+            copyText = `${entry.appNameAppfilter}\n${appfilterValue}`;
         }
     }
 
-    navigator.clipboard.writeText(copyText).then(() => {
-        // Show the copy notification
-        document.getElementById('copy-notification').innerText = `Copied: ${copyText}`;
-        document.getElementById('copy-notification').style.display = 'block';
+    // Copy to clipboard
+    navigator.clipboard.writeText(copyText)
+        .then(() => {
+            const note = document.getElementById('copy-notification');
+            note.innerText = `Copied:\n${copyText}`;
+            note.style.display = 'block';
 
-        // Hide the notification after a few seconds
-        setTimeout(() => {
-            document.getElementById('copy-notification').style.display = 'none';
-        }, 3000);
-    }).catch(error => {
-        console.error('Unable to copy to clipboard:', error);
-    });
+            setTimeout(() => {
+                note.style.display = 'none';
+            }, 3000);
+        })
+        .catch(error => {
+            console.error('Unable to copy to clipboard:', error);
+        });
 }
 
 // Copy Selected to clipboard function
