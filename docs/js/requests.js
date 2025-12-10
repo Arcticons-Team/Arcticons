@@ -492,11 +492,11 @@ function copyToClipboard(index) {
     
     let copyText = ""; // Initialize copyText variable
     // Todo  
-    if (index == NONE){
+    if (index === null){
         for (const index of selectedRows) {
             const entry = appEntriesDataGlobal[index];
             if (isShowingMatches)  {
-                copyText = `${entry.appfilter}`;
+                copyText += `${entry.appfilter}`;
             } else {
                 copyText += `${entry.appNameAppfilter}\n${entry.appfilter}\n`;
             }
@@ -524,9 +524,7 @@ function copyToClipboard(index) {
         console.error('Unable to copy to clipboard:', error);
     });
 }
-        setTimeout(() => {
-            document.getElementById('copy-notification').style.display = 'none';
-        }, 3000);
+
 // Copy Selected to clipboard function
 function copySelectedToClipboard() {
     var copyText = "";
