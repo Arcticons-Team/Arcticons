@@ -5,7 +5,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:8.12.2'
+        classpath 'com.android.tools.build:gradle:8.13.1'
     }
 }
 
@@ -19,8 +19,8 @@ allprojects {
 
     rootProject.ext {
         MinSdk = 21
-        TargetSdk = 35
-        CompileSdk = 35
+        TargetSdk = 36
+        CompileSdk = 36
     }
 }
 

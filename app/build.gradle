@@ -3,14 +3,14 @@ apply plugin: 'com.android.application'
 // build.gradle in the 'app' module
 
 android {
-    compileSdk rootProject.ext.CompileSdk
+    compileSdk = rootProject.ext.CompileSdk
 
     defaultConfig {
         applicationId "com.donnnno.arcticons"
         minSdkVersion rootProject.ext.MinSdk
         targetSdkVersion rootProject.ext.TargetSdk
-        versionCode 1480
-        versionName '13.4.6'
+        versionCode 1490
+        versionName '13.7.5'
         multiDexEnabled true
     }
 
@@ -117,7 +117,7 @@ android {
     }
     java {
         toolchain {
-            languageVersion = JavaLanguageVersion.of(11)
+            languageVersion = JavaLanguageVersion.of(17)
         }
     }
 
@@ -145,10 +145,10 @@ dependencies {
     normalPlayImplementation 'com.github.zixpo:candybar:main-SNAPSHOT'
     blackPlayImplementation 'com.github.zixpo:candybar:main-SNAPSHOT'
     youPlayImplementation 'com.github.zixpo:candybar:main-SNAPSHOT'
-    normalImplementation 'com.github.Donnnno:candybar-foss:3.21.3'
-    blackImplementation 'com.github.Donnnno:candybar-foss:3.21.3'
-    youImplementation 'com.github.Donnnno:candybar-foss:3.21.3'
-    dayNightImplementation 'com.github.Donnnno:candybar-foss:3.21.3'
+    normalImplementation 'com.github.Donnnno:candybar-foss:3.22.2'
+    blackImplementation 'com.github.Donnnno:candybar-foss:3.22.2'
+    youImplementation 'com.github.Donnnno:candybar-foss:3.22.2'
+    dayNightImplementation 'com.github.Donnnno:candybar-foss:3.22.2'
 }
 
 import com.android.tools.profgen.ArtProfileKt
