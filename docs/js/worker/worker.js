@@ -99,12 +99,12 @@ onmessage = function(event) {
     if (state.ui.search) {
         if (state.ui.regex) {
             const re = new RegExp(state.ui.search, state.ui.regexFlags);
-            data = data.filter(e =>
+            filteredData = filteredData.filter(e =>
                 state.ui.reverse ? !re.test(e.searchText) : re.test(e.searchText)
             );
         } else {
             const s = state.ui.search.toLowerCase();
-            data = data.filter(e => e.appName.toLowerCase().includes(s));
+            filteredData = filteredData.filter(e => e.appName.toLowerCase().includes(s));
         }
     }
 
