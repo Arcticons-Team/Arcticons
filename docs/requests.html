@@ -48,7 +48,7 @@
         <!-- Search Container -->
         <div id="search-container">
             <span id="search-input-container">
-                <input class="textinput" type="text" id="search-input" oninput="filterAppEntries()"
+                <input class="textinput" type="text" id="search-input"
                     placeholder="Search">
                 <span class="clear-search" id="clear-search"
                     onclick="var input = this.previousElementSibling; input.value = ''; input.focus();">x</span>
@@ -138,7 +138,6 @@
                     <th class="sortable-header" onclick="sortTable(5)">Req. count</th>
                     <th class="sortable-header" onclick="sortTable(6)">Last Req.</th>
                     <th>Code</th>
-
                 </tr>
             </thead>
             <tbody id="app-entries"></tbody>
@@ -148,7 +147,7 @@
     <div class="category-container">
         <div class="header-container">
             <span id="search-input-container">
-                <input class="textinput" type="text" id="search-input_category" oninput="findCategory()"
+                <input class="textinput" type="text" id="search-input_category"
                     placeholder="Search Category">
                 <span class="clear-search" id="clear-search_category"
                     onclick="var input = this.previousElementSibling; input.value = ''; input.focus();">x</span>
@@ -183,7 +182,7 @@
     <!-- Search Notification -->
     <div class="notification" id="search-notification"></div>
 
-    <script src="js/requests.js"></script>
+    <script type="module" src="js/requests.js"></script>
 
     <!--
     <div id="footer"></div>
