@@ -7,6 +7,7 @@ export const state = {
 
   selectedRows: new Set(),
   allCategories: new Set(),
+  drawableSet: new Set(),
 
   ui: {
     showMatchingDrawables: false,

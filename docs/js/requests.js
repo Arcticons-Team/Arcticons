@@ -1,12 +1,9 @@
-import { filterAppfilter, shuffleArray, getAppfilterValue, buildCopyText, sortData } from './functions.js';
-import { TABLE_COLUMNS_Requests as TABLE_COLUMNS } from './const.js';
+import { filterAppfilter, shuffleArray, sortData } from './functions.js';
+import { TABLE_COLUMNS_Requests as TABLE_COLUMNS, DOM, imagepath } from './const.js';
 import { state } from './state/store.js';
-import { updateTable, lazyLoadAndRender, clearTable } from './ui/tableRenderer.js';
+import { updateTable, lazyLoadAndRender } from './ui/tableRenderer.js';
 import { copyToClipboard } from './events/button.js';
-import { renderCategories, initCategoryUI, findCategory, clearCategorySelection } from './ui/category.js';
-
-// Array of Link Images
-const imageNames = ['img/requests/google-play-store.svg', 'img/requests/f-droid.svg', 'img/requests/izzyondroid.svg', 'img/requests/galaxystore.svg', 'img/requests/search-globe.svg'];
+import { renderCategories, initCategoryUI } from './ui/category.js';
 
 const toggleBtn = document.getElementById('show-matching-drawables-btn');
 const toggleCell = document.getElementById('show-matching-drawables');
@@ -67,11 +64,11 @@ fetch(`assets/requests.json`)
 
             // Generate links (if available)
             const appLinks = [
-                `<a href="https://play.google.com/store/apps/details?id=${componentInfo.split('/')[0]}" class="links" target="_blank"><img src="img/requests/google-play-store.svg" alt="Image"></a>`,
-                `<a href="https://f-droid.org/en/packages/${componentInfo.split('/')[0]}/" class="links" id='fdroid' target="_blank"><img src="img/requests/f-droid.svg" alt="Image"></a>`,
-                `<a href="https://apt.izzysoft.de/fdroid/index/apk/${componentInfo.split('/')[0]}" class="links" id='izzy' target="_blank"><img src="img/requests/izzyondroid.svg" alt="Image"></a>`,
-                `<a href="https://galaxystore.samsung.com/detail/${componentInfo.split('/')[0]}" class="links" id='galaxy' target="_blank"><img src="img/requests/galaxystore.svg" alt="Image"></a>`,
-                `<a href="https://www.ecosia.org/search?q=${componentInfo.split('/')[0]}" class="links" target="_blank"><img src="img/requests/search-globe.svg" alt="Image"></a>`
+                `<a href="https://play.google.com/store/apps/details?id=${componentInfo.split('/')[0]}" class="links" target="_blank"><img src="${imagepath.playStore}" alt="Image"></a>`,
+                `<a href="https://f-droid.org/en/packages/${componentInfo.split('/')[0]}/" class="links" id='fdroid' target="_blank"><img src="${imagepath.fdroid}" alt="Image"></a>`,
+                `<a href="https://apt.izzysoft.de/fdroid/index/apk/${componentInfo.split('/')[0]}" class="links" id='izzy' target="_blank"><img src="${imagepath.izzyOnDroid}" alt="Image"></a>`,
+                `<a href="https://galaxystore.samsung.com/detail/${componentInfo.split('/')[0]}" class="links" id='galaxy' target="_blank"><img src="${imagepath.galaxyStore}" alt="Image"></a>`,
+                `<a href="https://www.ecosia.org/search?q=${componentInfo.split('/')[0]}" class="links" target="_blank"><img src="${imagepath.wwwSearch}" alt="Image"></a>`
             ].join('\n');
             // Process each entry and store data    
 
@@ -82,6 +79,7 @@ fetch(`assets/requests.json`)
             const appIconColor = 0;
             const Arcticon = `<img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/refs/heads/main/icons/white/${drawable}.svg" alt="Arcticon" class="arcticon">`;
             const ArcticonPath = `https://raw.githubusercontent.com/Arcticons-Team/Arcticons/refs/heads/main/icons/white/${drawable}.svg`;
+            const searchText = (appNameAppfilter + appfilter).toLowerCase();
             state.all.push({
                 appName,
                 appIcon,
@@ -96,7 +94,8 @@ fetch(`assets/requests.json`)
                 appIconColor,
                 playStoreCategories,
                 drawable,
-                ArcticonPath
+                ArcticonPath,
+                searchText
 
             });
         });
@@ -124,20 +123,12 @@ fetch(`assets/requests.json`)
                 const xmlDoc = parser.parseFromString(appfilterContent, "application/xml");
                 const items = xmlDoc.querySelectorAll("item");
 
-                // Create a Set to store unique drawable names
-                const drawableSet = new Set();
-
                 items.forEach(item => {
                     const drawable = item.getAttribute("drawable");
                     if (drawable) {
-                        drawableSet.add(drawable);
+                        state.drawableSet.add(drawable);
                     }
                 });
-
-                // Now drawableSet contains all unique drawable names
-                console.log(`Total unique drawables found: ${drawableSet.size}`);
-                console.log(drawableSet);
-                window.drawableSet = drawableSet;
 
                 const filteredData = filterAppfilter(state.all, appfilterContent);
                 state.all = filteredData;
@@ -210,7 +201,6 @@ randomNumberInput.addEventListener("keypress", function (event) {
 
 // Update header text
 function updateHeaderText(newHeader) {
-    header = newHeader;
     document.getElementById('header').innerText = newHeader;
     document.getElementById('smallheader').innerText = newHeader;
 }
@@ -224,26 +214,11 @@ tableContainer.addEventListener('scroll', () => {
     }
 });
 
-function findCategory_old() {
-    showClearSearchCategory(); // Assuming this function clears previous results or manages the UI
-    // Get the search input value and convert it to lowercase
-    const searchInput = document.getElementById('search-input_category').value.toLowerCase();
-    // Select all category buttons
-    const categoryButtons = document.querySelectorAll('#category-button');
-    // Loop through the buttons and toggle visibility based on the search input
-    categoryButtons.forEach(button => {
-        const categoryText = button.textContent.toLowerCase(); // Get the category text
-        if (categoryText.includes(searchInput)) {
-            button.style.display = 'inline-block'; // Show the button if it matches
-        } else {
-            button.style.display = 'none'; // Hide the button if it doesn't match
-        }
-    });
-}
+
 
 function showClearSearchIcon() {
     const clearSearch = document.querySelector('#clear-search');
-    if (document.getElementById('search-input').value.trim() === "") {
+    if (DOM.searchInput.value.trim() === "") {
         clearSearch.style.visibility = 'hidden'; // Hide the icon if the input is empty
     } else {
         clearSearch.style.visibility = 'visible'; // Show the icon if the input has text
@@ -257,41 +232,22 @@ function clearSearch() {
     filterAppEntries();
 }
 
-function showClearSearchCategory() {
-    const clearSearch = document.querySelector('#clear-search_category');
-    if (document.getElementById('search-input_category').value.trim() === "") {
-        clearSearch.style.visibility = 'hidden'; // Hide the icon if the input is empty
-    } else {
-        clearSearch.style.visibility = 'visible'; // Show the icon if the input has text
-    }
-}
-
-document.getElementById('clear-category').addEventListener('click', clearCategory);
-
-function clearCategory() {
-    document.querySelectorAll('#category-button').forEach(btn => {
-        btn.removeAttribute('activated');
-    });
-    state.ui.categories.clear();
-    recomputeView();
-}
-
 // Search function
 const filterAppEntries = debounce(() => {
-    state.ui.search = document.getElementById('search-input').value;
-    state.ui.regex = document.getElementById('regex-switch').checked;
-    state.ui.reverse = document.getElementById('reverse-switch').checked;
+    state.ui.search = DOM.searchInput.value;
+    state.ui.regex = DOM.regexSwitch.checked;
+    state.ui.reverse = DOM.reverseSwitch.checked;
 
     state.ui.regexFlags =
-        (document.getElementById('caseInsensitive-switch').checked ? 'i' : '') +
-        (document.getElementById('caseUnicode-switch').checked ? 'u' : '');
+        (DOM.caseInsensitive.checked ? 'i' : '') +
+        (DOM.caseUnicode.checked ? 'u' : '');
 
     recomputeView();
 }, 500);
 
-document.getElementById('regex-switch').addEventListener('change', filterAppEntries);
+DOM.regexSwitch.addEventListener('change', filterAppEntries);
 document.getElementById('closePopup').addEventListener('click', filterAppEntries);
-document.getElementById('search-input').addEventListener('input', filterAppEntries);
+DOM.searchInput.addEventListener('input', filterAppEntries);
 
 const toggleCategoryModeBtn = document.getElementById('Category_Match');
 toggleCategoryModeBtn.addEventListener('click', () => {
@@ -548,26 +504,25 @@ node.addEventListener("mouseout", cancel);
 node.addEventListener("touchend", cancel);
 node.addEventListener("touchleave", cancel);
 node.addEventListener("touchcancel", cancel);
-const clearCategoryBtn = document.querySelector('#clear-category');
 
 function recomputeView() {
     let data = state.all;
     // matching drawables
-    if (state.ui.showMatchingDrawables && window.drawableSet) {
-        data = data
-            .map(entry => {
-                const base = entry.baseDrawable || entry.drawable?.replace(/_\d+$/, '');
-                if (window.drawableSet.has(entry.drawable)) return entry;
-                if (window.drawableSet.has(base)) {
-                    return {
-                        ...entry,
-                        Arcticon: `<img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/refs/heads/main/icons/white/${base}.svg" class="arcticon">`,
-                        ArcticonPath: `https://raw.githubusercontent.com/Arcticons-Team/Arcticons/refs/heads/main/icons/white/${base}.svg`
-                    };
-                }
-                return null;
-            })
-            .filter(Boolean);
+    if (state.ui.showMatchingDrawables && state.drawableSet) {
+        data = data.reduce((acc, entry) => {
+            const base = entry.baseDrawable || entry.drawable?.replace(/_\d+$/, '');
+
+            if (state.drawableSet.has(entry.drawable)) {
+                acc.push(entry);
+            } else if (state.drawableSet.has(base)) {
+                acc.push({
+                    ...entry,
+                    Arcticon: `<img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/refs/heads/main/icons/white/${base}.svg" class="arcticon">`,
+                    ArcticonPath: `https://raw.githubusercontent.com/Arcticons-Team/Arcticons/refs/heads/main/icons/white/${base}.svg`
+                });
+            }
+            return acc;
+        }, []);
     }
     // matching names
     if (state.ui.showMatchingNames) {
@@ -578,7 +533,7 @@ function recomputeView() {
     }
     // category filter
     if (state.ui.categories.size) {
-        clearCategoryBtn.style.visibility = 'visible';
+        DOM.clearCategoryBtn.style.visibility = 'visible';
         const cats = [...state.ui.categories];
         data = data.filter(e =>
             state.ui.categoryMode === 'one'
@@ -586,7 +541,7 @@ function recomputeView() {
                 : cats.every(c => e.playStoreCategories.includes(c))
         );
     } else {
-        clearCategoryBtn.style.visibility = 'hidden';
+        DOM.clearCategoryBtn.style.visibility = 'hidden';
     }
     // search
     if (state.ui.search) {
@@ -595,8 +550,8 @@ function recomputeView() {
             const re = new RegExp(state.ui.search, state.ui.regexFlags);
             data = data.filter(e =>
                 state.ui.reverse
-                    ? !re.test(e.appNameAppfilter + e.appfilter)
-                    : re.test(e.appNameAppfilter + e.appfilter)
+                    ? !re.test(e.searchText)
+                    : re.test(e.searchText)
             );
         } else {
             const s = state.ui.search.toLowerCase();
