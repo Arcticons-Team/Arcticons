@@ -23,5 +23,7 @@ export const DOM = {
     reverseSwitch: document.getElementById('reverse-switch'),
     caseInsensitive: document.getElementById('caseInsensitive-switch'),
     caseUnicode: document.getElementById('caseUnicode-switch'),
-    clearCategoryBtn: document.getElementById('clear-category')
+    clearCategoryBtn: document.getElementById('clear-category'),
+    matchingNumberInput: document.getElementById(`matching-number-input`),
+    matchingNameBtn: document.getElementById('show-multiple')
 };

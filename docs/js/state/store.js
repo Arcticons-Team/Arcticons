@@ -12,6 +12,7 @@ export const state = {
   ui: {
     showMatchingDrawables: false,
     showMatchingNames: false,
+    matchingNameThreshold: 2,
     categories: new Set(),
     categoryMode: 'all',
     search: '',

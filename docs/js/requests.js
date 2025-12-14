@@ -1,4 +1,4 @@
-import { filterAppfilter, shuffleArray, sortData } from './functions.js';
+import { filterAppfilter, shuffleArray } from './functions.js';
 import { TABLE_COLUMNS_Requests as TABLE_COLUMNS, DOM, imagepath } from './const.js';
 import { state } from './state/store.js';
 import { updateTable, lazyLoadAndRender } from './ui/tableRenderer.js';
@@ -326,28 +326,18 @@ function notifyMessage(message) {
     }, 5000);
 }
 
-const showMultipeBtn = document.getElementById('show-multiple');
-showMultipeBtn.addEventListener('click', () => {
+DOM.matchingNameBtn.addEventListener('click', () => {
     state.ui.showMatchingNames = !state.ui.showMatchingNames;
     if (state.ui.showMatchingNames) {
         state.ui.sort.direction = 'asc';
         state.ui.sort.column = 0;
     }
-    showMultipeBtn.classList.toggle("active-toggle", state.ui.showMatchingNames);
-    showMultipeBtn.innerText = state.ui.showMatchingNames
+    DOM.matchingNameBtn.classList.toggle("active-toggle", state.ui.showMatchingNames);
+    DOM.matchingNameBtn.innerText = state.ui.showMatchingNames
         ? "Show All"
         : "Show Matching Name";
     recomputeView();
 });
-
-function filterEntriesByAppNameFrequency(appEntriesData, minOccurrences) {
-    const appNameCount = {};
-    appEntriesData.forEach(entry => {
-        const { appName } = entry;
-        appNameCount[appName] = (appNameCount[appName] || 0) + 1;
-    });
-    return appEntriesData.filter(entry => appNameCount[entry.appName] >= minOccurrences);
-}
 
 // Function to parse XML and return color data as an object
 function loadColorsFromXML(xmlFilePath, callback) {
@@ -408,7 +398,6 @@ function LoadColorData() {
         // Wait for all promises to resolve
         Promise.all(promises)
             .then(() => {
-                console.log('All app entries have been updated with colors.');
             })
             .catch(error => {
                 console.error('Error processing entries:', error);
@@ -447,7 +436,6 @@ window.addEventListener(
 var node = document.getElementById("copy-selected-button");
 var longpress = false;
 var presstimer = null;
-var longtarget = null;
 
 var cancel = function (e) {
     console.log("cancel");
@@ -505,69 +493,42 @@ node.addEventListener("touchend", cancel);
 node.addEventListener("touchleave", cancel);
 node.addEventListener("touchcancel", cancel);
 
-function recomputeView() {
-    let data = state.all;
-    // matching drawables
-    if (state.ui.showMatchingDrawables && state.drawableSet) {
-        data = data.reduce((acc, entry) => {
-            const base = entry.baseDrawable || entry.drawable?.replace(/_\d+$/, '');
+function updateUIState(state) {
+    DOM.clearCategoryBtn.style.visibility =
+        state.ui.categories.size ? 'visible' : 'hidden';
 
-            if (state.drawableSet.has(entry.drawable)) {
-                acc.push(entry);
-            } else if (state.drawableSet.has(base)) {
-                acc.push({
-                    ...entry,
-                    Arcticon: `<img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/refs/heads/main/icons/white/${base}.svg" class="arcticon">`,
-                    ArcticonPath: `https://raw.githubusercontent.com/Arcticons-Team/Arcticons/refs/heads/main/icons/white/${base}.svg`
-                });
-            }
-            return acc;
-        }, []);
-    }
-    // matching names
-    if (state.ui.showMatchingNames) {
-        const NumberInput = document.getElementById(`matching-number-input`); // Number of requests to select randomly
-        NumberInput.value = parseInt(NumberInput.value)
-        const threshold = NumberInput.value;
-        data = filterEntriesByAppNameFrequency(data, threshold);
-    }
-    // category filter
-    if (state.ui.categories.size) {
-        DOM.clearCategoryBtn.style.visibility = 'visible';
-        const cats = [...state.ui.categories];
-        data = data.filter(e =>
-            state.ui.categoryMode === 'one'
-                ? cats.some(c => e.playStoreCategories.includes(c))
-                : cats.every(c => e.playStoreCategories.includes(c))
-        );
-    } else {
-        DOM.clearCategoryBtn.style.visibility = 'hidden';
-    }
-    // search
     if (state.ui.search) {
         showClearSearchIcon();
-        if (state.ui.regex) {
-            const re = new RegExp(state.ui.search, state.ui.regexFlags);
-            data = data.filter(e =>
-                state.ui.reverse
-                    ? !re.test(e.searchText)
-                    : re.test(e.searchText)
-            );
-        } else {
-            const s = state.ui.search.toLowerCase();
-            data = data.filter(e => e.appName.toLowerCase().includes(s));
-        }
     }
-    // sort
-    data = sortData(
-        state.ui.sort.direction,
-        state.ui.sort.column,
-        [...data],
-        TABLE_COLUMNS
-    );
-    // submit
-    state.startIndex = 0;
-    state.view = data;
-    updateTable(data);
-    updateSortMarkers();
 }
+
+let computeWorker;
+
+function recomputeView() {
+    updateUIState(state);
+
+    if (!computeWorker) {
+        computeWorker = new Worker('./js/worker/worker.js');
+    }
+
+    computeWorker.postMessage({
+        data: state.all,
+        state: state,
+        TABLE_COLUMNS: TABLE_COLUMNS
+    });
+
+    computeWorker.onmessage = function (event) {
+        const filteredData = event.data;
+        state.view = filteredData;
+        updateTable(filteredData);
+        updateSortMarkers();
+    };
+}
+
+DOM.matchingNumberInput.addEventListener('input', () => {
+    const value = parseInt(DOM.matchingNumberInput.value, 10);
+    // Validate the value
+    state.ui.matchingNameThreshold = isNaN(value) || value < 1 ? 1 : value;
+    // Optionally recompute the view
+    if (state.ui.showMatchingNames) recomputeView();
+});
