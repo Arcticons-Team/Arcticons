@@ -1,5 +1,5 @@
 // worker.js
-
+import { shuffleArray } from '/js/functions.js';
 // Function to filter entries by app name frequency
 function filterEntriesByAppNameFrequency(appEntriesData, minOccurrences) {
     const appNameCount = {};
@@ -17,8 +17,8 @@ function sortData(direction, columnIndex, data, TABLE_COLUMNS) {
     const factor = direction === 'asc' ? 1 : -1;
 
     return [...data].sort((a, b) => {
-        const valA = getCellValue(a, column,direction);
-        const valB = getCellValue(b, column,direction);
+        const valA = getCellValue(a, column, direction);
+        const valB = getCellValue(b, column, direction);
 
         if (valA === null || valB === null) return 0;
         if (valA > valB) return factor;
@@ -26,7 +26,7 @@ function sortData(direction, columnIndex, data, TABLE_COLUMNS) {
         return 0;
     });
 }
-function getCellValue(row, column,direction) {
+function getCellValue(row, column, direction) {
     const value = row[column.key];
     switch (column.type) {
         case 'number':
@@ -36,7 +36,7 @@ function getCellValue(row, column,direction) {
             return new Date(value);
 
         case 'downloads':
-            return parseDownloadValue(value,direction);
+            return parseDownloadValue(value, direction);
 
         case 'string':
             return String(value).toLowerCase().trim();
@@ -58,7 +58,7 @@ function parseDownloadValue(value, sortingDirection) {
     return parseFloat(value); // Return the numeric value for simple numbers like "100"
 }
 // Compute view data
-onmessage = function(event) {
+onmessage = function (event) {
     const { data, state, TABLE_COLUMNS } = event.data;
     let filteredData = data;
 
@@ -108,6 +108,15 @@ onmessage = function(event) {
         }
     }
 
+    // Random selection
+    if (state.ui.random.active) {
+        const dataLength = filteredData.length;
+        if (state.ui.random.count != dataLength && state.ui.random.count < dataLength) {
+            const numArr = Array.from({ length: dataLength }, (_, i) => i);
+            const slicedRandomNumArr = shuffleArray(numArr).slice(0, state.ui.random.count);
+            filteredData = slicedRandomNumArr.map(index => filteredData[index]);
+        }
+    }
     // Sort
     filteredData = sortData(
         state.ui.sort.direction,

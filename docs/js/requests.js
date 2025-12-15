@@ -55,8 +55,8 @@ fetch(`assets/requests.json`)
             const drawable = entry.drawable;
             const appIconPath = drawable ? `extracted_png/${drawable}.webp` : 'img/requests/default.svg';
             const appIcon = `<img src="${appIconPath}" alt="Icon">`;
-            const playStoreDownloads = entry.PlayStore.Downloads.replace("no_data", "X");
-            const playStoreCategories = entry.PlayStore.Categories;
+            const playStoreDownloads = entry.PlayStore?.Downloads?.replace("no_data", "X") ?? "X";
+            const playStoreCategories = entry.PlayStore?.Categories ?? [];
             collectCategories(playStoreCategories);
 
             // Generate links (if available)
@@ -170,11 +170,17 @@ DOM.updatableButton.addEventListener("click", function () {
     window.location.href = updatableURL;
 });
 DOM.randomButton.addEventListener("click", function () {
-    randomIcons();
+    state.ui.random.active = true;
+    state.ui.random.count = parseInt(DOM.randomNumberInput.value, 10);
+    if (isNaN(state.ui.random.count) || state.ui.random.count <= 0) {
+        notifyMessage("Please enter a valid positive number for random selection.");
+        return;
+    }
+    recomputeView();
 });
 DOM.randomResetButton.addEventListener("click", function () {
-    DOM.randomResetButton.style.display = "none";
-    updateTable(state.all);
+    state.ui.random.active = false;
+    recomputeView();
 });
 DOM.randomNumberInput.addEventListener("keypress", function (event) {
     // If the user presses the "Enter" key on the keyboard
@@ -230,57 +236,10 @@ DOM.categoryModeBtn.addEventListener('click', () => {
     recomputeView();
 });
 
-// Runs when "I'm feelin' lucky" button is clicked on
-function randomIcons() {
-    const totalRequests = state.all.length; // Total numbers of requests
-
-    const defaultRandomCnt = 10;
-    const minRandomCnt = 1;
-
-    if (defaultRandomCnt >= totalRequests) {
-        notifyMessage(`There are TOO FEW requests! (Yay!)`);
-        return;
-    }
-
-    let randomCnt = defaultRandomCnt; // Default is used when the number in the input box is not numeric
-
-    if (!isNaN(parseInt(DOM.randomNumberInput.value)) && isFinite(DOM.randomNumberInput.value)) {
-        DOM.randomNumberInput.value = parseInt(DOM.randomNumberInput.value);
-        if (DOM.randomNumberInput.value == totalRequests) {
-            return;
-        }
-        if (DOM.randomNumberInput.value > totalRequests) {
-            notifyMessage(`There are fewer requests than ` + DOM.randomNumberInput.value);
-            DOM.randomNumberInput.value = defaultRandomCnt;
-        }
-        // If value is too low (e.g. 0, -1), set to default
-        if (DOM.randomNumberInput.value < minRandomCnt)
-            DOM.randomNumberInput.value = defaultRandomCnt;
-
-        randomCnt = DOM.randomNumberInput.value;
-    }
-    else {
-        DOM.randomNumberInput.value = defaultRandomCnt;
-    }
-
-    // Randomization part
-    const numArr = Array(totalRequests).fill().map((element, index) => index + minRandomCnt - 1); // Initialize an array of 0 to the total number of requests
-    let slicedRandomNumArr = shuffleArray(numArr).slice(0, randomCnt); // Choose the first N as the random indices
-    let randomizedEntriesData = [];
-    for (let i = 0; i < slicedRandomNumArr.length; i++) {
-        randomizedEntriesData.push(state.all[slicedRandomNumArr[i]]);
-    }
-
-    updateTable(randomizedEntriesData);
-    DOM.randomResetButton.style.display = "inline-block";
-}
-
 function showInfo() {
     DOM.infoText.classList.toggle("show");
 }
 window.showInfo = showInfo;
-
-
 
 function notifyMessage(message) {
     DOM.searchNotification.innerText = message;
@@ -479,15 +438,17 @@ function updateUIState(state) {
 
     DOM.clearSearchBtn.style.visibility =
         state.ui.search ? 'visible' : 'hidden';
+
+    DOM.randomResetButton.style.display =
+        state.ui.random.active ? "inline-block" : "none";
 }
 
 let computeWorker;
 
 function recomputeView() {
     updateUIState(state);
-
     if (!computeWorker) {
-        computeWorker = new Worker('./js/worker/worker.js');
+        computeWorker = new Worker('./js/worker/worker.js', { type: 'module' });
     }
 
     computeWorker.postMessage({

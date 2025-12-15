@@ -13,6 +13,10 @@ export const state = {
     showMatchingDrawables: false,
     showMatchingNames: false,
     matchingNameThreshold: 2,
+    random: {
+      active: false,
+      count: 0
+    },
     categories: new Set(),
     categoryMode: 'all',
     search: '',
