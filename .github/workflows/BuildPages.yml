@@ -273,7 +273,7 @@ jobs:
         run: |
           python .github/workflows/create_colormapping.py
       - name: Upload Colormapping
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         with:
           name: colormapping
           path: docs/assets/image_color_counts.xml
@@ -305,7 +305,7 @@ jobs:
         run: |
           python .github/workflows/getGPlayData.py
       - name: Upload Requestjson
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         with:
           name: requestjson
           path: docs/assets/requests.json
