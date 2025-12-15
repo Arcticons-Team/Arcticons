@@ -24,7 +24,7 @@ export const state = {
     regexFlags: '',
     reverse: false,
     sort: {
-      column: 5,
+      column: 3,
       direction: 'desc'
     }
   }

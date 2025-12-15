@@ -373,10 +373,10 @@ window.addEventListener(
 );
 
 
-var longpress = false;
-var presstimer = null;
+let longpress = false;
+let presstimer = null;
 
-var cancel = function (e) {
+const cancel = function (e) {
     console.log("cancel");
 
     if (presstimer !== null) {
@@ -387,7 +387,7 @@ var cancel = function (e) {
     this.classList.remove("longpress");
 };
 
-var click = function (e) {
+const click = function (e) {
     console.log("click");
     if (presstimer !== null) {
         clearTimeout(presstimer);
@@ -402,7 +402,7 @@ var click = function (e) {
     DOM.renameOverlay.classList.add("show");
 };
 
-var start = function (e) {
+const start = function (e) {
     console.log("start");
     console.log(e);
 
