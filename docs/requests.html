@@ -126,17 +126,17 @@
 
 
     <!-- App Entries -->
-    <div class="table-container">
-        <table id="myTable">
-            <thead>
+    <div class="table-container" id ="requests-table-container">
+        <table id="requests-table">
+            <thead id ="requests-table-head">
                 <tr>
-                    <th class="sortable-header" onclick="sortTable(0)">Name</th>
-                    <th class="sortable-header" onclick="sortTable(1)">Icon</th>
+                    <th class="sortable-header" data-sort-index="0">Name</th>
+                    <th class="sortable-header" data-sort-index="1">Icon</th>
                     <th id="show-matching-drawables">Arcticon</th>
                     <th>Links</th>
-                    <th class="sortable-header" onclick="sortTable(4)">DL</th>
-                    <th class="sortable-header" onclick="sortTable(5)">Req. count</th>
-                    <th class="sortable-header" onclick="sortTable(6)">Last Req.</th>
+                    <th class="sortable-header" data-sort-index="2">DL</th>
+                    <th class="sortable-header" data-sort-index="3">Req. count</th>
+                    <th class="sortable-header" data-sort-index="4">Last Req.</th>
                     <th>Code</th>
                 </tr>
             </thead>

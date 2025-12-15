@@ -5,9 +5,6 @@ import { updateTable, lazyLoadAndRender } from './ui/tableRenderer.js';
 import { copyToClipboard } from './events/button.js';
 import { renderCategories, initCategoryUI } from './ui/category.js';
 
-const toggleBtn = document.getElementById('show-matching-drawables-btn');
-const toggleCell = document.getElementById('show-matching-drawables');
-
 function collectCategories(playStoreCategories) {
     playStoreCategories
         .filter(c => !/^#\d* top\b/.test(c))
@@ -48,7 +45,7 @@ fetch(`assets/requests.json`)
             const requestDate = new Date(parseFloat(entry.requestDate) * 1000); // Convert to milliseconds
             return requestDate > latest ? requestDate : latest;
         }, new Date(0));
-        document.getElementById('date_header').innerText = latestRequestDate.toLocaleString(undefined, {
+        DOM.dateHeader.innerText = latestRequestDate.toLocaleString(undefined, {
             day: 'numeric', year: 'numeric', month: 'long'
         });
 
@@ -144,22 +141,20 @@ fetch(`assets/requests.json`)
     })
     .catch(error => console.error('Error fetching file:', error));
 
-toggleBtn.addEventListener('click', () => {
+DOM.matchingDrawablesBtn.addEventListener('click', () => {
     state.ui.showMatchingDrawables = !state.ui.showMatchingDrawables;
-    toggleBtn.innerText = state.ui.showMatchingDrawables
+    DOM.matchingDrawablesBtn.innerText = state.ui.showMatchingDrawables
         ? "Show All Entries"
         : "Show Matching Drawables";
 
-    toggleBtn.classList.toggle("active-toggle", state.ui.showMatchingDrawables);
-    toggleCell.classList.toggle("active", state.ui.showMatchingDrawables);
+    DOM.matchingDrawablesBtn.classList.toggle("active-toggle", state.ui.showMatchingDrawables);
+    DOM.matchingDrawableColumn.classList.toggle("active", state.ui.showMatchingDrawables);
 
     recomputeView();
 });
 
 function updateSortMarkers() {
-    const headers = document.querySelectorAll('thead th');
-
-    headers.forEach((th, index) => {
+    DOM.sortableHeaders.forEach((th, index) => {
         th.classList.remove('asc', 'desc');
 
         if (index === state.ui.sort.column) {
@@ -167,70 +162,44 @@ function updateSortMarkers() {
         }
     });
 }
-
-// Accessing the button element by its id
-const updatableButton = document.getElementById("updatable-button");
-const randomButton = document.getElementById("random-button");
-const randomResetButton = document.getElementById(`random-reset-button`);
-const randomNumberInput = document.getElementById("random-number-input");
-
 // Add an event listener to the button
-updatableButton.addEventListener("click", function () {
+DOM.updatableButton.addEventListener("click", function () {
     // Define the URL to redirect to
     const updatableURL = `updatable.html`;
     // Redirect to the specified URL
     window.location.href = updatableURL;
 });
-randomButton.addEventListener("click", function () {
+DOM.randomButton.addEventListener("click", function () {
     randomIcons();
 });
-randomResetButton.addEventListener("click", function () {
-    randomResetButton.style.display = "none";
+DOM.randomResetButton.addEventListener("click", function () {
+    DOM.randomResetButton.style.display = "none";
     updateTable(state.all);
 });
-randomNumberInput.addEventListener("keypress", function (event) {
+DOM.randomNumberInput.addEventListener("keypress", function (event) {
     // If the user presses the "Enter" key on the keyboard
     if (event.key === "Enter") {
         // Cancel the default action, if needed
         event.preventDefault();
         // Trigger the button element with a click
-        randomButton.click();
+        DOM.randomButton.click();
     }
 });
 
 
 // Update header text
 function updateHeaderText(newHeader) {
-    document.getElementById('header').innerText = newHeader;
-    document.getElementById('smallheader').innerText = newHeader;
+    DOM.header.innerText = newHeader;
+    DOM.smallheader.innerText = newHeader;
 }
 
 // Scroll event listener for lazy loading
-const tableContainer = document.querySelector('.table-container');
-tableContainer.addEventListener('scroll', () => {
-    const { scrollTop, scrollHeight, clientHeight } = tableContainer;
+DOM.requestsTableContainer.addEventListener('scroll', () => {
+    const { scrollTop, scrollHeight, clientHeight } = DOM.requestsTableContainer;
     if (scrollTop + clientHeight >= scrollHeight - 100) {
         lazyLoadAndRender();
     }
 });
-
-
-
-function showClearSearchIcon() {
-    const clearSearch = document.querySelector('#clear-search');
-    if (DOM.searchInput.value.trim() === "") {
-        clearSearch.style.visibility = 'hidden'; // Hide the icon if the input is empty
-    } else {
-        clearSearch.style.visibility = 'visible'; // Show the icon if the input has text
-    }
-}
-
-document.getElementById('clear-search').addEventListener('click', clearSearch);
-
-function clearSearch() {
-    showClearSearchIcon();
-    filterAppEntries();
-}
 
 // Search function
 const filterAppEntries = debounce(() => {
@@ -245,27 +214,24 @@ const filterAppEntries = debounce(() => {
     recomputeView();
 }, 500);
 
+DOM.clearSearchBtn.addEventListener('click', filterAppEntries);
 DOM.regexSwitch.addEventListener('change', filterAppEntries);
-document.getElementById('closePopup').addEventListener('click', filterAppEntries);
+DOM.closePopupBtn.addEventListener('click', filterAppEntries);
 DOM.searchInput.addEventListener('input', filterAppEntries);
-
-const toggleCategoryModeBtn = document.getElementById('Category_Match');
-toggleCategoryModeBtn.addEventListener('click', () => {
+DOM.categoryModeBtn.addEventListener('click', () => {
     const one = state.ui.categoryMode === 'all';
     state.ui.categoryMode = one ? 'one' : 'all';
 
-    toggleCategoryModeBtn.innerText = one
+    DOM.categoryModeBtn.innerText = one
         ? "Match One Category"
         : "Match All Categories";
 
-    toggleCategoryModeBtn.classList.toggle("active-toggle", one);
+    DOM.categoryModeBtn.classList.toggle("active-toggle", one);
     recomputeView();
 });
 
 // Runs when "I'm feelin' lucky" button is clicked on
 function randomIcons() {
-    const randomResetButton = document.getElementById(`random-reset-button`);
-    const randomNumberInput = document.getElementById(`random-number-input`); // Number of requests to select randomly
     const totalRequests = state.all.length; // Total numbers of requests
 
     const defaultRandomCnt = 10;
@@ -278,23 +244,23 @@ function randomIcons() {
 
     let randomCnt = defaultRandomCnt; // Default is used when the number in the input box is not numeric
 
-    if (!isNaN(parseInt(randomNumberInput.value)) && isFinite(randomNumberInput.value)) {
-        randomNumberInput.value = parseInt(randomNumberInput.value);
-        if (randomNumberInput.value == totalRequests) {
+    if (!isNaN(parseInt(DOM.randomNumberInput.value)) && isFinite(DOM.randomNumberInput.value)) {
+        DOM.randomNumberInput.value = parseInt(DOM.randomNumberInput.value);
+        if (DOM.randomNumberInput.value == totalRequests) {
             return;
         }
-        if (randomNumberInput.value > totalRequests) {
-            notifyMessage(`There are fewer requests than ` + randomNumberInput.value);
-            randomNumberInput.value = defaultRandomCnt;
+        if (DOM.randomNumberInput.value > totalRequests) {
+            notifyMessage(`There are fewer requests than ` + DOM.randomNumberInput.value);
+            DOM.randomNumberInput.value = defaultRandomCnt;
         }
         // If value is too low (e.g. 0, -1), set to default
-        if (randomNumberInput.value < minRandomCnt)
-            randomNumberInput.value = defaultRandomCnt;
+        if (DOM.randomNumberInput.value < minRandomCnt)
+            DOM.randomNumberInput.value = defaultRandomCnt;
 
-        randomCnt = randomNumberInput.value;
+        randomCnt = DOM.randomNumberInput.value;
     }
     else {
-        randomNumberInput.value = defaultRandomCnt;
+        DOM.randomNumberInput.value = defaultRandomCnt;
     }
 
     // Randomization part
@@ -306,23 +272,22 @@ function randomIcons() {
     }
 
     updateTable(randomizedEntriesData);
-    randomResetButton.style.display = "inline-block";
+    DOM.randomResetButton.style.display = "inline-block";
 }
 
 function showInfo() {
-    var popup = document.getElementById("infotext");
-    popup.classList.toggle("show");
+    DOM.infoText.classList.toggle("show");
 }
 window.showInfo = showInfo;
 
 
 
 function notifyMessage(message) {
-    document.getElementById('search-notification').innerText = message;
-    document.getElementById('search-notification').style.display = 'block';
+    DOM.searchNotification.innerText = message;
+    DOM.searchNotification.style.display = 'block';
     // Hide the notification after a few seconds
     setTimeout(() => {
-        document.getElementById('search-notification').style.display = 'none';
+        DOM.searchNotification.style.display = 'none';
     }, 5000);
 }
 
@@ -370,10 +335,8 @@ function loadColorsFromXML(xmlFilePath, callback) {
 
 // Sort table function with optional sortingDirection parameter
 function sortTable(columnIndex) {
-    const table = document.querySelector('table');
-    const headers = table.querySelectorAll('thead th');
     state.ui.sort.column = columnIndex;
-    state.ui.sort.direction = headers[columnIndex].classList.contains('asc') ? 'desc' : 'asc';
+    state.ui.sort.direction = DOM.sortableHeaders[columnIndex].classList.contains('asc') ? 'desc' : 'asc';
     recomputeView();
 }
 window.sortTable = sortTable;
@@ -405,16 +368,33 @@ function LoadColorData() {
     });
 }
 
-RegexSearchSettings.addEventListener(
+DOM.requeststhead.addEventListener('click', (event) => {
+    // Find the closest parent <th> element (the target header)
+    const header = event.target.closest('th');
+
+    // 1. Check if a header was clicked and if it is sortable
+    if (header && header.classList.contains('sortable-header')) {
+        // 2. Efficiently get the logical column index from the data attribute
+        const columnIndex = header.dataset.sortIndex;
+
+        // 3. Ensure the index is valid before proceeding
+        if (columnIndex !== undefined) {
+            // Pass the extracted logical index (as a number) to sortTable
+            sortTable(parseInt(columnIndex, 10));
+        }
+    }
+});
+
+DOM.regexSearchSettingsBtn.addEventListener(
     "click",
     function () {
-        myPopup.classList.add("show");
+        regexPopup.classList.add("show");
     }
 );
-closePopup.addEventListener(
+DOM.closeRegexSettingsBtn.addEventListener(
     "click",
     function () {
-        myPopup.classList.remove(
+        regexPopup.classList.remove(
             "show"
         );
     }
@@ -423,17 +403,17 @@ window.addEventListener(
     "click",
     function (event) {
         if (event.target == myPopup) {
-            myPopup.classList.remove(
+            regexPopup.classList.remove(
                 "show"
             );
         }
-        if (event.target == document.getElementById("renamer-overlay")) {
-            document.getElementById("renamer-overlay").classList.remove("show");
+        if (event.target == DOM.renameOverlay) {
+            DOM.renameOverlay.classList.remove("show");
         }
     }
 );
 
-var node = document.getElementById("copy-selected-button");
+
 var longpress = false;
 var presstimer = null;
 
@@ -460,7 +440,7 @@ var click = function (e) {
     if (longpress) {
         return false;
     }
-    document.getElementById("renamer-overlay").classList.add("show");
+    DOM.renameOverlay.classList.add("show");
 };
 
 var start = function (e) {
@@ -485,21 +465,20 @@ var start = function (e) {
     return false;
 };
 
-node.addEventListener("mousedown", start);
-node.addEventListener("touchstart", start);
-node.addEventListener("click", click);
-node.addEventListener("mouseout", cancel);
-node.addEventListener("touchend", cancel);
-node.addEventListener("touchleave", cancel);
-node.addEventListener("touchcancel", cancel);
+DOM.copySelectedBtn.addEventListener("mousedown", start);
+DOM.copySelectedBtn.addEventListener("touchstart", start);
+DOM.copySelectedBtn.addEventListener("click", click);
+DOM.copySelectedBtn.addEventListener("mouseout", cancel);
+DOM.copySelectedBtn.addEventListener("touchend", cancel);
+DOM.copySelectedBtn.addEventListener("touchleave", cancel);
+DOM.copySelectedBtn.addEventListener("touchcancel", cancel);
 
 function updateUIState(state) {
     DOM.clearCategoryBtn.style.visibility =
         state.ui.categories.size ? 'visible' : 'hidden';
 
-    if (state.ui.search) {
-        showClearSearchIcon();
-    }
+    DOM.clearSearchBtn.style.visibility =
+        state.ui.search ? 'visible' : 'hidden';
 }
 
 let computeWorker;
