@@ -22,8 +22,10 @@ export function shuffleArray(arr) {
     return arr;
 }
 export function getAppfilterValue(entry, rename, replacement) {
-    if (!rename) return entry.appfilter;
-    return entry.appfilter.replace(/(?<=drawable=")[^"]+(?="\/>)/, replacement);
+    if (!rename) {
+        replacement = entry.drawable;
+    }
+    return `<item component="ComponentInfo{${entry.componentInfo}}" drawable="${replacement}"/>`;
 }
 export function buildCopyText(entry, appfilterValue, mode) {
     return mode
@@ -48,3 +50,4 @@ export function filterAppfilter(appEntriesData, appfilterContent) {
     console.log("Filtered out entries:", filteredOutEntries);
     return filteredData;
 }
+

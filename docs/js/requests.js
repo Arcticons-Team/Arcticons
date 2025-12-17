@@ -88,6 +88,7 @@ function processRequests(JsonContent) {
 
         return {
             appName: entry.Name,
+            componentInfo,
             appIcon: `<img src="${appIconPath}" alt="Icon">`,
             Arcticon: `<img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/refs/heads/main/icons/white/${drawable}.svg" alt="Arcticon" class="arcticon">`,
             appLinks: [
