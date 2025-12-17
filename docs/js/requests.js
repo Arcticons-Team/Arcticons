@@ -106,7 +106,7 @@ function processRequests(JsonContent) {
             appIconColor: 0,
             playStoreCategories: entry.PlayStore?.Categories ?? [],
             drawable,
-            searchText: `<item component="ComponentInfo{${componentInfo}}" drawable="${drawable}"/>`.toLowerCase()
+            searchText: `<!-- ${entry.Name} --><item component="ComponentInfo{${componentInfo}}" drawable="${drawable}"/>`
         };
     });
 }
