@@ -1,22 +1,22 @@
 // js/ui/tableRenderer.js
 import { state } from '../state/store.js';
 import { copyToClipboard } from '../events/button.js';
+import { DOM } from '../const.js';
+
 
 /* ---------- Core table operations ---------- */
 
 export function clearTable() {
-    const table = document.getElementById('app-entries');
-    while (table.rows.length) {
-        table.deleteRow(0);
+    while (DOM.tableBody.rows.length) {
+        DOM.tableBody.deleteRow(0);
     }
 }
 
 export function renderTableBatch(data) {
-    const table = document.getElementById('app-entries');
 
     data.forEach((entry, i) => {
         const index = i + state.startIndex;
-        const row = table.insertRow();
+        const row = DOM.tableBody.insertRow();
 
         row.dataset.id = entry.appfilter;
         row.classList.toggle(

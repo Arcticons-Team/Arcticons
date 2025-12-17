@@ -192,7 +192,6 @@ DOM.randomNumberInput.addEventListener("keypress", function (event) {
     }
 });
 
-
 // Update header text
 function updateHeaderText(newHeader) {
     DOM.header.innerText = newHeader;
@@ -290,13 +289,13 @@ DOM.requeststhead.addEventListener('click', (event) => {
 DOM.regexSearchSettingsBtn.addEventListener(
     "click",
     function () {
-        regexPopup.classList.add("show");
+        DOM.regexPopup.classList.add("show");
     }
 );
 DOM.closeRegexSettingsBtn.addEventListener(
     "click",
     function () {
-        regexPopup.classList.remove(
+        DOM.regexPopup.classList.remove(
             "show"
         );
     }
@@ -305,7 +304,7 @@ window.addEventListener(
     "click",
     function (event) {
         if (event.target == myPopup) {
-            regexPopup.classList.remove(
+            DOM.regexPopup.classList.remove(
                 "show"
             );
         }
@@ -331,13 +330,12 @@ function bindPress(element, onClick, onLong) {
         if (!long && e.type === "click") onClick();
     };
     element.addEventListener("mousedown", start);
-    element.addEventListener("touchstart", start, {passive: true});
+    element.addEventListener("touchstart", start, { passive: true });
     ["mouseup", "mouseleave", "touchend", "click"].forEach(ev => element.addEventListener(ev, end));
 }
 
-// Usage
-bindPress(DOM.copySelectedBtn, 
-    () => DOM.renameOverlay.classList.add("show"), 
+bindPress(DOM.copySelectedBtn,
+    () => DOM.renameOverlay.classList.add("show"),
     () => copyToClipboard(null, false)
 );
 function updateUIState(state) {
@@ -376,8 +374,6 @@ function recomputeView() {
 
 DOM.matchingNumberInput.addEventListener('input', () => {
     const value = parseInt(DOM.matchingNumberInput.value, 10);
-    // Validate the value
     state.ui.matchingNameThreshold = isNaN(value) || value < 1 ? 1 : value;
-    // Optionally recompute the view
     if (state.ui.showMatchingNames) recomputeView();
 });
