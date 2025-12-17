@@ -30,116 +30,116 @@ const debounce = (func, delay) => {
         }, delay);
     };
 };
+
+async function initializeAppData() {
+    try {
+        // 1. Start all fetches at once
+        const [requestsRes, appfilterRes, colorsRes] = await Promise.all([
+            fetch('assets/requests.json'),
+            fetch('assets/combined_appfilter.xml'),
+            fetch('assets/image_color_counts.xml')
+        ]);
+
+        // 2. Check for errors
+        if (!requestsRes.ok || !appfilterRes.ok) throw new Error("Critical data failed to load");
+
+        // 3. Parse all responses in parallel
+        const [jsonContent, appfilterText, colorsXml] = await Promise.all([
+            requestsRes.json(),
+            appfilterRes.text(),
+            colorsRes.text()
+        ]);
+
+        // 4. Process Data (Sequential processing of the results)
+        processRequests(jsonContent);
+        processAppfilter(appfilterText);
+        processColors(colorsXml);
+
+        // 5. Final Render
+        state.allCategories = finalizeCategories();
+        renderCategories();
+        recomputeView();
+
+    } catch (error) {
+        console.error("Initialization error:", error);
+    }
+}
+
+initializeAppData();
 initCategoryUI(recomputeView);
-fetch(`assets/requests.json`)
-    .then(response => {
-        if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        return response.json();
-    })
-    .then(JsonContent => {
-        const iconcount = JsonContent.iconcount;
-        // Set the latest request date
-        const latestRequestDate = Object.values(JsonContent).reduce((latest, entry) => {
-            const requestDate = new Date(parseFloat(entry.requestDate) * 1000); // Convert to milliseconds
-            return requestDate > latest ? requestDate : latest;
-        }, new Date(0));
-        DOM.dateHeader.innerText = latestRequestDate.toLocaleString(undefined, {
-            day: 'numeric', year: 'numeric', month: 'long'
-        });
 
-        // Process each app entry
-        Object.entries(JsonContent).forEach(([componentInfo, entry]) => {
-            const appName = entry.Name;
-            const drawable = entry.drawable;
-            const appIconPath = drawable ? `extracted_png/${drawable}.webp` : 'img/requests/default.svg';
-            const appIcon = `<img src="${appIconPath}" alt="Icon">`;
-            const playStoreDownloads = entry.PlayStore?.Downloads?.replace("no_data", "X") ?? "X";
-            const playStoreCategories = entry.PlayStore?.Categories ?? [];
-            collectCategories(playStoreCategories);
+function processRequests(JsonContent) {
+    // Set latest date header
+    const latestDate = Object.values(JsonContent).reduce((latest, entry) => {
+        const d = new Date(parseFloat(entry.requestDate) * 1000);
+        return d > latest ? d : latest;
+    }, new Date(0));
 
-            // Generate links (if available)
-            const appLinks = [
-                `<a href="https://play.google.com/store/apps/details?id=${componentInfo.split('/')[0]}" class="links" target="_blank"><img src="${imagepath.playStore}" alt="Image"></a>`,
-                `<a href="https://f-droid.org/en/packages/${componentInfo.split('/')[0]}/" class="links" id='fdroid' target="_blank"><img src="${imagepath.fdroid}" alt="Image"></a>`,
-                `<a href="https://apt.izzysoft.de/fdroid/index/apk/${componentInfo.split('/')[0]}" class="links" id='izzy' target="_blank"><img src="${imagepath.izzyOnDroid}" alt="Image"></a>`,
-                `<a href="https://galaxystore.samsung.com/detail/${componentInfo.split('/')[0]}" class="links" id='galaxy' target="_blank"><img src="${imagepath.galaxyStore}" alt="Image"></a>`,
-                `<a href="https://www.ecosia.org/search?q=${componentInfo.split('/')[0]}" class="links" target="_blank"><img src="${imagepath.wwwSearch}" alt="Image"></a>`
-            ].join('\n');
-            // Process each entry and store data    
+    DOM.dateHeader.innerText = latestDate.toLocaleString(undefined, {
+        day: 'numeric', year: 'numeric', month: 'long'
+    });
 
-            const appNameAppfilter = `<!-- ${entry.Name} -->`;
-            const appfilter = `<item component="ComponentInfo{${componentInfo}}" drawable="${drawable}"/>`;
-            const requestedInfo = entry.count;
-            const lastRequestedTime = new Date(parseFloat(entry.requestDate) * 1000).toLocaleString().replace(',', '');
-            const appIconColor = 0;
-            const Arcticon = `<img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/refs/heads/main/icons/white/${drawable}.svg" alt="Arcticon" class="arcticon">`;
-            const ArcticonPath = `https://raw.githubusercontent.com/Arcticons-Team/Arcticons/refs/heads/main/icons/white/${drawable}.svg`;
-            const searchText = (appNameAppfilter + appfilter).toLowerCase();
-            state.all.push({
-                appName,
-                appIcon,
-                Arcticon,
-                appLinks,
-                playStoreDownloads,
-                requestedInfo,
-                lastRequestedTime,
-                appNameAppfilter,
-                appfilter,
-                appIconPath,
-                appIconColor,
-                playStoreCategories,
-                drawable,
-                ArcticonPath,
-                searchText
+    state.all = Object.entries(JsonContent).map(([componentInfo, entry]) => {
+        const pkgName = componentInfo.split('/')[0];
+        const drawable = entry.drawable;
+        const appIconPath = drawable ? `extracted_png/${drawable}.webp` : 'img/requests/default.svg';
 
-            });
-        });
+        collectCategories(entry.PlayStore?.Categories ?? []);
 
-        fetch(`assets/combined_appfilter.xml`)
-            .then(response => {
-                if (!response.ok) {
-                    // If appfilter.xml cannot be loaded, render appEntriesData as is
-                    console.error('Error fetching appfilter:', response.status);
-                    recomputeView();
-                    return;
-                }
-                return response.text();
-            })
-            .then(appfilterContent => {
-                if (!appfilterContent) {
-                    // If appfilterContent is empty, render appEntriesData as is
-                    console.error('Empty appfilter content');
-                    recomputeView();
-                    return;
-                }
+        return {
+            appName: entry.Name,
+            appIcon: `<img src="${appIconPath}" alt="Icon">`,
+            Arcticon: `<img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/refs/heads/main/icons/white/${drawable}.svg" alt="Arcticon" class="arcticon">`,
+            appLinks: [
+                `<a href="https://play.google.com/store/apps/details?id=${pkgName}" class="links" target="_blank"><img src="${imagepath.playStore}" alt="P"></a>`,
+                `<a href="https://f-droid.org/en/packages/${pkgName}/" class="links" id='fdroid' target="_blank"><img src="${imagepath.fdroid}" alt="F"></a>`,
+                `<a href="https://apt.izzysoft.de/fdroid/index/apk/${pkgName}" class="links" id='izzy' target="_blank"><img src="${imagepath.izzyOnDroid}" alt="I"></a>`,
+                `<a href="https://galaxystore.samsung.com/detail/${pkgName}" class="links" id='galaxy' target="_blank"><img src="${imagepath.galaxyStore}" alt="G"></a>`,
+                `<a href="https://www.ecosia.org/search?q=${pkgName}" class="links" target="_blank"><img src="${imagepath.wwwSearch}" alt="S"></a>`
+            ].join('\n'),
+            playStoreDownloads: entry.PlayStore?.Downloads?.replace("no_data", "X") ?? "X",
+            requestedInfo: entry.count,
+            lastRequestedTime: new Date(parseFloat(entry.requestDate) * 1000).toLocaleString().replace(',', ''),
+            appNameAppfilter: `<!-- ${entry.Name} -->`,
+            appfilter: `<item component="ComponentInfo{${componentInfo}}" drawable="${drawable}"/>`,
+            appIconPath,
+            appIconColor: 0,
+            playStoreCategories: entry.PlayStore?.Categories ?? [],
+            drawable,
+            searchText: `<item component="ComponentInfo{${componentInfo}}" drawable="${drawable}"/>`.toLowerCase()
+        };
+    });
+}
 
-                // Extract all drawable values from appfilterContent
-                const parser = new DOMParser();
-                const xmlDoc = parser.parseFromString(appfilterContent, "application/xml");
-                const items = xmlDoc.querySelectorAll("item");
+function processAppfilter(content) {
+    if (!content) return;
+    const parser = new DOMParser();
+    const xml = parser.parseFromString(content, "application/xml");
+    xml.querySelectorAll("item").forEach(item => {
+        const d = item.getAttribute("drawable");
+        if (d) state.drawableSet.add(d);
+    });
+    state.all = filterAppfilter(state.all, content);
+    updateHeaderText(`${state.all.length} Requested Apps`);
+}
 
-                items.forEach(item => {
-                    const drawable = item.getAttribute("drawable");
-                    if (drawable) {
-                        state.drawableSet.add(drawable);
-                    }
-                });
+function processColors(xmlText) {
+    const parser = new DOMParser();
+    const xmlDoc = parser.parseFromString(xmlText, "application/xml");
+    const colorData = {};
 
-                const filteredData = filterAppfilter(state.all, appfilterContent);
-                state.all = filteredData;
-                updateHeaderText(`${state.all.length} Requested Apps`);
-                LoadColorData();
-                // Initial render
-                filterAppEntries();
-                state.allCategories = finalizeCategories();
-                renderCategories();
-                //setCategory();
-            })
-            .catch(error => console.error('Error fetching or processing appfilter:', error));
-    })
-    .catch(error => console.error('Error fetching file:', error));
+    const images = xmlDoc.getElementsByTagName('image');
+    for (let i = 0; i < images.length; i++) {
+        const filename = images[i].getElementsByTagName('filename')[0].textContent;
+        const uniqueColors = images[i].getElementsByTagName('unique_colors')[0].textContent;
+        colorData[filename] = uniqueColors;
+    }
+
+    state.all.forEach(entry => {
+        const filename = entry.appIconPath.split('/').pop();
+        entry.appIconColor = colorData[filename] || 0;
+    });
+}
 
 DOM.matchingDrawablesBtn.addEventListener('click', () => {
     state.ui.showMatchingDrawables = !state.ui.showMatchingDrawables;
@@ -263,68 +263,11 @@ DOM.matchingNameBtn.addEventListener('click', () => {
     recomputeView();
 });
 
-// Function to parse XML and return color data as an object
-function loadColorsFromXML(xmlFilePath, callback) {
-    // Fetch the XML file
-    fetch(xmlFilePath)
-        .then(response => response.text())  // Get the text content of the XML file
-        .then(xmlText => {
-            // Parse the XML text into a DOM object
-            const parser = new DOMParser();
-            const xmlDoc = parser.parseFromString(xmlText, "application/xml");
-
-            const colorData = {};
-
-            // Loop through each <image> element in the XML
-            const images = xmlDoc.getElementsByTagName('image');
-            for (let i = 0; i < images.length; i++) {
-                const image = images[i];
-                const filename = image.getElementsByTagName('filename')[0].textContent;
-                const uniqueColors = image.getElementsByTagName('unique_colors')[0].textContent;
-                colorData[filename] = uniqueColors; // Store the color by filename
-            }
-
-            // Call the callback with the color data
-            callback(colorData);
-        })
-        .catch(error => {
-            console.error('Error loading XML:', error);
-        });
-}
-
 // Sort table function with optional sortingDirection parameter
 function sortTable(columnIndex) {
     state.ui.sort.column = columnIndex;
     state.ui.sort.direction = DOM.sortableHeaders[columnIndex].classList.contains('asc') ? 'desc' : 'asc';
     recomputeView();
-}
-window.sortTable = sortTable;
-
-function LoadColorData() {
-    const xmlFilePath = 'assets/image_color_counts.xml';
-    // Load the color data from the XML file
-    loadColorsFromXML(xmlFilePath, function (colorData) {
-        if (!colorData) {
-            console.error('No color data available.');
-            return;
-        }
-        const promises = state.all.map(entry => {
-            const appIconName = entry.appIconPath.split('/').pop();  // Get the filename from the path
-            const newColor = colorData[appIconName];
-            if (newColor) {
-                entry.appIconColor = newColor;
-            } else {
-                entry.appIconColor = 0; // Default to 0 if no color data found
-            }
-        });
-        // Wait for all promises to resolve
-        Promise.all(promises)
-            .then(() => {
-            })
-            .catch(error => {
-                console.error('Error processing entries:', error);
-            });
-    });
 }
 
 DOM.requeststhead.addEventListener('click', (event) => {
@@ -373,65 +316,30 @@ window.addEventListener(
 );
 
 
-let longpress = false;
-let presstimer = null;
+function bindPress(element, onClick, onLong) {
+    let timer;
+    let long = false;
+    const start = (e) => {
+        if (e.type === "mousedown" && e.button !== 0) return;
+        long = false;
+        element.classList.add("longpress");
+        timer = setTimeout(() => { onLong(); long = true; }, 500);
+    };
+    const end = (e) => {
+        clearTimeout(timer);
+        element.classList.remove("longpress");
+        if (!long && e.type === "click") onClick();
+    };
+    element.addEventListener("mousedown", start);
+    element.addEventListener("touchstart", start, {passive: true});
+    ["mouseup", "mouseleave", "touchend", "click"].forEach(ev => element.addEventListener(ev, end));
+}
 
-const cancel = function (e) {
-    console.log("cancel");
-
-    if (presstimer !== null) {
-        clearTimeout(presstimer);
-        presstimer = null;
-    }
-
-    this.classList.remove("longpress");
-};
-
-const click = function (e) {
-    console.log("click");
-    if (presstimer !== null) {
-        clearTimeout(presstimer);
-        presstimer = null;
-    }
-
-    this.classList.remove("longpress");
-
-    if (longpress) {
-        return false;
-    }
-    DOM.renameOverlay.classList.add("show");
-};
-
-const start = function (e) {
-    console.log("start");
-    console.log(e);
-
-    if (e.type === "click" && e.button !== 0) {
-        return;
-    }
-
-    longpress = false;
-
-    this.classList.add("longpress");
-
-    if (presstimer === null) {
-        presstimer = setTimeout(function () {
-            copyToClipboard(null, false);
-            longpress = true;
-        }, 500);
-    }
-
-    return false;
-};
-
-DOM.copySelectedBtn.addEventListener("mousedown", start);
-DOM.copySelectedBtn.addEventListener("touchstart", start);
-DOM.copySelectedBtn.addEventListener("click", click);
-DOM.copySelectedBtn.addEventListener("mouseout", cancel);
-DOM.copySelectedBtn.addEventListener("touchend", cancel);
-DOM.copySelectedBtn.addEventListener("touchleave", cancel);
-DOM.copySelectedBtn.addEventListener("touchcancel", cancel);
-
+// Usage
+bindPress(DOM.copySelectedBtn, 
+    () => DOM.renameOverlay.classList.add("show"), 
+    () => copyToClipboard(null, false)
+);
 function updateUIState(state) {
     DOM.clearCategoryBtn.style.visibility =
         state.ui.categories.size ? 'visible' : 'hidden';
@@ -447,9 +355,9 @@ let computeWorker;
 
 function recomputeView() {
     updateUIState(state);
-    if (!computeWorker) {
-        computeWorker = new Worker('./js/worker/worker.js', { type: 'module' });
-    }
+    if (computeWorker) computeWorker.terminate();
+
+    computeWorker = new Worker('./js/worker/worker.js', { type: 'module' });
 
     computeWorker.postMessage({
         data: state.all,
@@ -462,6 +370,7 @@ function recomputeView() {
         state.view = filteredData;
         updateTable(filteredData);
         updateSortMarkers();
+        computeWorker = null;
     };
 }
 
