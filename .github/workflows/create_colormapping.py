@@ -1,5 +1,6 @@
 import os
 from PIL import Image
+import json
 from concurrent.futures import ThreadPoolExecutor
 import xml.etree.ElementTree as ET
 
@@ -43,9 +44,23 @@ def create_xml_output(results, output_file):
     tree = ET.ElementTree(root)
     tree.write(output_file)
 
+def create_json_output(results, output_file):
+    """Create a JSON file with the results."""
+    data = [
+        {
+            "filename": filename,
+            "unique_colors": unique_colors
+        }
+        for filename, unique_colors in results
+    ]
+
+    with open(output_file, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=2)
+
 def main():
     folder_path = 'docs/extracted_png'  # Folder containing .webp images
     output_file = 'docs/assets/image_color_counts.xml'  # Output XML file name
+    json_output_file = 'docs/assets/image_color_counts.json'
     
     # Process images and get results
     results = process_images_in_folder(folder_path)
@@ -56,6 +71,8 @@ def main():
     # Create XML output
     create_xml_output(results, output_file)
     print(f"XML output saved to {output_file}")
+    create_json_output(results, json_output_file)
+    print(f"JSON output saved to {json_output_file}")
 
 if __name__ == "__main__":
     main()
