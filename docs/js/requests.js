@@ -36,29 +36,33 @@ async function initializeAppData() {
         // 1. Start all fetches at once
         const [requestsRes, appfilterRes, colorsRes] = await Promise.all([
             fetch('assets/requests.json'),
-            fetch('assets/combined_appfilter.xml'),
-            fetch('assets/image_color_counts.xml')
+            fetch('assets/combined_appfilter.json'),
+            fetch('assets/image_color_counts.json')
         ]);
 
         // 2. Check for errors
         if (!requestsRes.ok || !appfilterRes.ok) throw new Error("Critical data failed to load");
 
         // 3. Parse all responses in parallel
-        const [jsonContent, appfilterText, colorsXml] = await Promise.all([
+        const [jsonContent, appfilterJson, colorsJson] = await Promise.all([
             requestsRes.json(),
-            appfilterRes.text(),
-            colorsRes.text()
+            appfilterRes.json(),
+            colorsRes.json()
         ]);
 
         // 4. Process Data (Sequential processing of the results)
         processRequests(jsonContent);
-        processAppfilter(appfilterText);
-        processColors(colorsXml);
+        processAppfilter(appfilterJson);
+        processColors(colorsJson);
 
         // 5. Final Render
         state.allCategories = finalizeCategories();
         renderCategories();
         recomputeView();
+
+        setTimeout(() => {
+            initEventListeners();
+        }, 0);
 
     } catch (error) {
         console.error("Initialization error:", error);
@@ -112,47 +116,46 @@ function processRequests(JsonContent) {
     });
 }
 
-function processAppfilter(content) {
-    if (!content) return;
-    const parser = new DOMParser();
-    const xml = parser.parseFromString(content, "application/xml");
-    xml.querySelectorAll("item").forEach(item => {
-        const d = item.getAttribute("drawable");
-        if (d) state.drawableSet.add(d);
+function processAppfilter(appfilterJson) {
+    if (!appfilterJson || !Array.isArray(appfilterJson)) return;
+
+    // 1. Create a Set of existing components for ultra-fast filtering
+    const existingComponents = new Set();
+
+    appfilterJson.forEach(item => {
+        // Add drawable to state for global reference (if needed)
+        if (item.drawable) {
+            state.drawableSet.add(item.drawable);
+        }
+
+        // Store the component string to check against requests
+        if (item.component) {
+            // We strip "ComponentInfo{" and "}" if they exist to match your request keys
+            const cleanComponent = item.component.replace('ComponentInfo{', '').replace('}', '').trim();
+            existingComponents.add(cleanComponent);
+        }
     });
-    state.all = filterAppfilter(state.all, content);
+
+    // 2. Filter state.all: Remove apps that already exist in your appfilter
+    // This replaces the old filterAppfilter(state.all, content) function
+    state.all = state.all.filter(entry => {
+        return !existingComponents.has(entry.componentInfo);
+    });
+
     updateHeaderText(`${state.all.length} Requested Apps`);
 }
 
-function processColors(xmlText) {
-    const parser = new DOMParser();
-    const xmlDoc = parser.parseFromString(xmlText, "application/xml");
-    const colorData = {};
+function processColors(colorJson) {
+    // 1. Convert Array to Map for O(1) lookup performance
+    const colorMap = new Map();
+    colorJson.forEach(item => colorMap.set(item.filename, item.unique_colors));
 
-    const images = xmlDoc.getElementsByTagName('image');
-    for (let i = 0; i < images.length; i++) {
-        const filename = images[i].getElementsByTagName('filename')[0].textContent;
-        const uniqueColors = images[i].getElementsByTagName('unique_colors')[0].textContent;
-        colorData[filename] = uniqueColors;
-    }
-
+    // 2. Patch state.all
     state.all.forEach(entry => {
         const filename = entry.appIconPath.split('/').pop();
-        entry.appIconColor = colorData[filename] || 0;
+        entry.appIconColor = colorMap.get(filename) || 0;
     });
 }
-
-DOM.matchingDrawablesBtn.addEventListener('click', () => {
-    state.ui.showMatchingDrawables = !state.ui.showMatchingDrawables;
-    DOM.matchingDrawablesBtn.innerText = state.ui.showMatchingDrawables
-        ? "Show All Entries"
-        : "Show Matching Drawables";
-
-    DOM.matchingDrawablesBtn.classList.toggle("active-toggle", state.ui.showMatchingDrawables);
-    DOM.matchingDrawableColumn.classList.toggle("active", state.ui.showMatchingDrawables);
-
-    recomputeView();
-});
 
 function updateSortMarkers() {
     DOM.sortableHeaders.forEach((th, index) => {
@@ -163,49 +166,12 @@ function updateSortMarkers() {
         }
     });
 }
-// Add an event listener to the button
-DOM.updatableButton.addEventListener("click", function () {
-    // Define the URL to redirect to
-    const updatableURL = `updatable.html`;
-    // Redirect to the specified URL
-    window.location.href = updatableURL;
-});
-DOM.randomButton.addEventListener("click", function () {
-    state.ui.random.active = true;
-    state.ui.random.count = parseInt(DOM.randomNumberInput.value, 10);
-    if (isNaN(state.ui.random.count) || state.ui.random.count <= 0) {
-        notifyMessage("Please enter a valid positive number for random selection.");
-        return;
-    }
-    recomputeView();
-});
-DOM.randomResetButton.addEventListener("click", function () {
-    state.ui.random.active = false;
-    recomputeView();
-});
-DOM.randomNumberInput.addEventListener("keypress", function (event) {
-    // If the user presses the "Enter" key on the keyboard
-    if (event.key === "Enter") {
-        // Cancel the default action, if needed
-        event.preventDefault();
-        // Trigger the button element with a click
-        DOM.randomButton.click();
-    }
-});
 
 // Update header text
 function updateHeaderText(newHeader) {
     DOM.header.innerText = newHeader;
     DOM.smallheader.innerText = newHeader;
 }
-
-// Scroll event listener for lazy loading
-DOM.requestsTableContainer.addEventListener('scroll', () => {
-    const { scrollTop, scrollHeight, clientHeight } = DOM.requestsTableContainer;
-    if (scrollTop + clientHeight >= scrollHeight - 100) {
-        lazyLoadAndRender();
-    }
-});
 
 // Search function
 const filterAppEntries = debounce(() => {
@@ -219,22 +185,6 @@ const filterAppEntries = debounce(() => {
 
     recomputeView();
 }, 500);
-
-DOM.clearSearchBtn.addEventListener('click', filterAppEntries);
-DOM.regexSwitch.addEventListener('change', filterAppEntries);
-DOM.closePopupBtn.addEventListener('click', filterAppEntries);
-DOM.searchInput.addEventListener('input', filterAppEntries);
-DOM.categoryModeBtn.addEventListener('click', () => {
-    const one = state.ui.categoryMode === 'all';
-    state.ui.categoryMode = one ? 'one' : 'all';
-
-    DOM.categoryModeBtn.innerText = one
-        ? "Match One Category"
-        : "Match All Categories";
-
-    DOM.categoryModeBtn.classList.toggle("active-toggle", one);
-    recomputeView();
-});
 
 function showInfo() {
     DOM.infoText.classList.toggle("show");
@@ -250,71 +200,12 @@ function notifyMessage(message) {
     }, 5000);
 }
 
-DOM.matchingNameBtn.addEventListener('click', () => {
-    state.ui.showMatchingNames = !state.ui.showMatchingNames;
-    if (state.ui.showMatchingNames) {
-        state.ui.sort.direction = 'asc';
-        state.ui.sort.column = 0;
-    }
-    DOM.matchingNameBtn.classList.toggle("active-toggle", state.ui.showMatchingNames);
-    DOM.matchingNameBtn.innerText = state.ui.showMatchingNames
-        ? "Show All"
-        : "Show Matching Name";
-    recomputeView();
-});
-
 // Sort table function with optional sortingDirection parameter
 function sortTable(columnIndex) {
     state.ui.sort.column = columnIndex;
     state.ui.sort.direction = DOM.sortableHeaders[columnIndex].classList.contains('asc') ? 'desc' : 'asc';
     recomputeView();
 }
-
-DOM.requeststhead.addEventListener('click', (event) => {
-    // Find the closest parent <th> element (the target header)
-    const header = event.target.closest('th');
-
-    // 1. Check if a header was clicked and if it is sortable
-    if (header && header.classList.contains('sortable-header')) {
-        // 2. Efficiently get the logical column index from the data attribute
-        const columnIndex = header.dataset.sortIndex;
-
-        // 3. Ensure the index is valid before proceeding
-        if (columnIndex !== undefined) {
-            // Pass the extracted logical index (as a number) to sortTable
-            sortTable(parseInt(columnIndex, 10));
-        }
-    }
-});
-
-DOM.regexSearchSettingsBtn.addEventListener(
-    "click",
-    function () {
-        DOM.regexPopup.classList.add("show");
-    }
-);
-DOM.closeRegexSettingsBtn.addEventListener(
-    "click",
-    function () {
-        DOM.regexPopup.classList.remove(
-            "show"
-        );
-    }
-);
-window.addEventListener(
-    "click",
-    function (event) {
-        if (event.target == myPopup) {
-            DOM.regexPopup.classList.remove(
-                "show"
-            );
-        }
-        if (event.target == DOM.renameOverlay) {
-            DOM.renameOverlay.classList.remove("show");
-        }
-    }
-);
-
 
 function bindPress(element, onClick, onLong) {
     let timer;
@@ -335,10 +226,6 @@ function bindPress(element, onClick, onLong) {
     ["mouseup", "mouseleave", "touchend", "click"].forEach(ev => element.addEventListener(ev, end));
 }
 
-bindPress(DOM.copySelectedBtn,
-    () => DOM.renameOverlay.classList.add("show"),
-    () => copyToClipboard(null, false)
-);
 function updateUIState(state) {
     DOM.clearCategoryBtn.style.visibility =
         state.ui.categories.size ? 'visible' : 'hidden';
@@ -373,8 +260,139 @@ function recomputeView() {
     };
 }
 
-DOM.matchingNumberInput.addEventListener('input', () => {
-    const value = parseInt(DOM.matchingNumberInput.value, 10);
-    state.ui.matchingNameThreshold = isNaN(value) || value < 1 ? 1 : value;
-    if (state.ui.showMatchingNames) recomputeView();
-});
+function initEventListeners() {
+    DOM.matchingNumberInput.addEventListener('input', () => {
+        const value = parseInt(DOM.matchingNumberInput.value, 10);
+        state.ui.matchingNameThreshold = isNaN(value) || value < 1 ? 1 : value;
+        if (state.ui.showMatchingNames) recomputeView();
+    });
+
+    bindPress(DOM.copySelectedBtn,
+        () => DOM.renameOverlay.classList.add("show"),
+        () => copyToClipboard(null, false)
+    );
+
+    DOM.regexSearchSettingsBtn.addEventListener(
+        "click",
+        function () {
+            DOM.regexPopup.classList.add("show");
+        }
+    );
+    DOM.closeRegexSettingsBtn.addEventListener(
+        "click",
+        function () {
+            DOM.regexPopup.classList.remove(
+                "show"
+            );
+        }
+    );
+    window.addEventListener(
+        "click",
+        function (event) {
+            if (event.target == myPopup) {
+                DOM.regexPopup.classList.remove(
+                    "show"
+                );
+            }
+            if (event.target == DOM.renameOverlay) {
+                DOM.renameOverlay.classList.remove("show");
+            }
+        }
+    );
+
+    DOM.requeststhead.addEventListener('click', (event) => {
+        // Find the closest parent <th> element (the target header)
+        const header = event.target.closest('th');
+
+        // 1. Check if a header was clicked and if it is sortable
+        if (header && header.classList.contains('sortable-header')) {
+            // 2. Efficiently get the logical column index from the data attribute
+            const columnIndex = header.dataset.sortIndex;
+
+            // 3. Ensure the index is valid before proceeding
+            if (columnIndex !== undefined) {
+                // Pass the extracted logical index (as a number) to sortTable
+                sortTable(parseInt(columnIndex, 10));
+            }
+        }
+    });
+
+    DOM.matchingNameBtn.addEventListener('click', () => {
+        state.ui.showMatchingNames = !state.ui.showMatchingNames;
+        if (state.ui.showMatchingNames) {
+            state.ui.sort.direction = 'asc';
+            state.ui.sort.column = 0;
+        }
+        DOM.matchingNameBtn.classList.toggle("active-toggle", state.ui.showMatchingNames);
+        DOM.matchingNameBtn.innerText = state.ui.showMatchingNames
+            ? "Show All"
+            : "Show Matching Name";
+        recomputeView();
+    });
+
+    DOM.clearSearchBtn.addEventListener('click', filterAppEntries);
+    DOM.regexSwitch.addEventListener('change', filterAppEntries);
+    DOM.closePopupBtn.addEventListener('click', filterAppEntries);
+    DOM.searchInput.addEventListener('input', filterAppEntries);
+    DOM.categoryModeBtn.addEventListener('click', () => {
+        const one = state.ui.categoryMode === 'all';
+        state.ui.categoryMode = one ? 'one' : 'all';
+
+        DOM.categoryModeBtn.innerText = one
+            ? "Match One Category"
+            : "Match All Categories";
+
+        DOM.categoryModeBtn.classList.toggle("active-toggle", one);
+        recomputeView();
+    });
+
+    // Scroll event listener for lazy loading
+    DOM.requestsTableContainer.addEventListener('scroll', () => {
+        const { scrollTop, scrollHeight, clientHeight } = DOM.requestsTableContainer;
+        if (scrollTop + clientHeight >= scrollHeight - 100) {
+            lazyLoadAndRender();
+        }
+    });
+
+    // Add an event listener to the button
+    DOM.updatableButton.addEventListener("click", function () {
+        // Define the URL to redirect to
+        const updatableURL = `updatable.html`;
+        // Redirect to the specified URL
+        window.location.href = updatableURL;
+    });
+    DOM.randomButton.addEventListener("click", function () {
+        state.ui.random.active = true;
+        state.ui.random.count = parseInt(DOM.randomNumberInput.value, 10);
+        if (isNaN(state.ui.random.count) || state.ui.random.count <= 0) {
+            notifyMessage("Please enter a valid positive number for random selection.");
+            return;
+        }
+        recomputeView();
+    });
+    DOM.randomResetButton.addEventListener("click", function () {
+        state.ui.random.active = false;
+        recomputeView();
+    });
+    DOM.randomNumberInput.addEventListener("keypress", function (event) {
+        // If the user presses the "Enter" key on the keyboard
+        if (event.key === "Enter") {
+            // Cancel the default action, if needed
+            event.preventDefault();
+            // Trigger the button element with a click
+            DOM.randomButton.click();
+        }
+    });
+
+    DOM.matchingDrawablesBtn.addEventListener('click', () => {
+        state.ui.showMatchingDrawables = !state.ui.showMatchingDrawables;
+        DOM.matchingDrawablesBtn.innerText = state.ui.showMatchingDrawables
+            ? "Show All Entries"
+            : "Show Matching Drawables";
+
+        DOM.matchingDrawablesBtn.classList.toggle("active-toggle", state.ui.showMatchingDrawables);
+        DOM.matchingDrawableColumn.classList.toggle("active", state.ui.showMatchingDrawables);
+
+        recomputeView();
+    });
+}
