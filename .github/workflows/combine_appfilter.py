@@ -4,6 +4,7 @@ import xml.etree.ElementTree as ET
 import xml.dom.minidom
 import hashlib
 import requests
+import json
 
 # Change this to your Repo
 Repo = "Arcticons-Team/Arcticons"
@@ -22,10 +23,11 @@ g = Github(github_token)
 # Get the repository 
 repo = g.get_repo(Repo)
 
-def combine_xml_files(input_files, output_file):
+def combine_xml_files(input_files, output_file, json_output_file=None):
     unique_components = set()
     output_root = ET.Element('resources')  # Root element for the output XML tree
-    
+    json_items = []
+
     # Iterate through each input file
     for input_file in input_files:
         try:
@@ -36,28 +38,36 @@ def combine_xml_files(input_files, output_file):
             # Iterate through each item in the input file
             for item in root.findall('item'):
                 component = item.get('component')
+                drawable = item.get('drawable')
 
                 # Check if the component has been encountered before
                 if component not in unique_components:
                     unique_components.add(component)
                     # Append the item to the output XML tree
                     output_root.append(item)
+                    # Collect JSON data
+                    json_items.append({
+                        "component": component,
+                        "drawable": drawable
+                    })
         except Exception as e:
             print(f"Error parsing XML file: {e}")
             continue
 
-    # Sort the items before writing to the output file
-    sorted_items = sorted(output_root.findall('item'), key=lambda item: item.get('component'))
+        # Sort XML + JSON by component
+    sorted_pairs = sorted(
+        zip(output_root.findall('item'), json_items),
+        key=lambda pair: pair[0].get('component')
+    )
 
     # Clear existing items in the output root
     output_root.clear()
+    json_items.clear()
     
     # Append the sorted items to the output root
-    for item in sorted_items:
+    for item, json_item in sorted_pairs:
         output_root.append(item)
-
-    # Write the unique items to the output file
-    output_tree = ET.ElementTree(output_root)
+        json_items.append(json_item)
 
     # Use minidom to prettify the XML output and remove empty text nodes
     xml_str = xml.dom.minidom.parseString(ET.tostring(output_root)).toprettyxml()
@@ -65,6 +75,11 @@ def combine_xml_files(input_files, output_file):
 
     with open(output_file, "w", encoding="utf-8") as f:
         f.write(xml_str)
+
+    # Write JSON (if requested)
+    if json_output_file:
+        with open(json_output_file, "w", encoding="utf-8") as f:
+            json.dump(json_items, f, indent=2, ensure_ascii=False)
 
 def calculate_sha1(content):
     """
@@ -79,7 +94,7 @@ def combine_all_appfilters():
 
     # Combine the appfilter.xml files
     print(f"Combining {appfilter_files} appfilter.xml files...")
-    combine_xml_files(appfilter_files, 'combined_appfilter.xml')
+    combine_xml_files(appfilter_files, 'combined_appfilter.xml', 'combined_appfilter.json')
 
     print("Fetching open pull requests...")
     
@@ -110,7 +125,7 @@ def combine_all_appfilters():
 
                         # Combine the appfilter.xml files
                         print(f"Combining {appfilter_files} appfilter.xml files...")
-                        combine_xml_files(appfilter_files, 'combined_appfilter.xml')
+                        combine_xml_files(appfilter_files, 'combined_appfilter.xml', json_output_file='combined_appfilter.json')
 
                 except Exception as e:
                     print(f"Error downloading appfilter.xml: {e}")
