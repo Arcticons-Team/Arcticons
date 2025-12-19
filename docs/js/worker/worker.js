@@ -91,7 +91,7 @@ onmessage = function (event) {
             filteredData = filteredData.filter(e => {
                 const searchTarget = `${e.appName} ${e.componentInfo} ${e.drawable}`;
                 const matches = re.test(searchTarget);
-                return isReverse ? !matches : matches;
+                return state.ui.reverse ? !matches : matches;
             });
         } else {
             const s = state.ui.search.toLowerCase();

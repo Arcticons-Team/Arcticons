@@ -170,7 +170,7 @@ const filterAppEntries = debounce(() => {
         (DOM.caseUnicode.checked ? 'u' : '');
 
     recomputeView();
-}, 500);
+}, 200);
 
 function showInfo() {
     DOM.infoText.classList.toggle("show");
