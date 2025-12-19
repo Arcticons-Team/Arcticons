@@ -71,12 +71,10 @@ onmessage = function (event) {
             return acc;
         }, []);
     }
-    console.log(filteredData.length);
     // Matching names
     if (state.ui.showMatchingNames) {
         filteredData = filterEntriesByAppNameFrequency(filteredData, state.ui.matchingNameThreshold);
     }
-
     // Category filter
     if (state.ui.categories.size) {
         const cats = [...state.ui.categories];
@@ -86,20 +84,20 @@ onmessage = function (event) {
                 : cats.every(c => e.playStoreCategories.includes(c))
         );
     }
-
     // search
     if (state.ui.search) {
         if (state.ui.regex) {
             const re = new RegExp(state.ui.search, state.ui.regexFlags);
-            filteredData = filteredData.filter(e =>
-                state.ui.reverse ? !re.test(e.searchText) : re.test(e.searchText)
-            );
+            filteredData = filteredData.filter(e => {
+                const searchTarget = `${e.appName} ${e.componentInfo} ${e.drawable}`;
+                const matches = re.test(searchTarget);
+                return isReverse ? !matches : matches;
+            });
         } else {
             const s = state.ui.search.toLowerCase();
             filteredData = filteredData.filter(e => e.appName.toLowerCase().includes(s));
         }
     }
-
     // Random selection
     if (state.ui.random.active) {
         const dataLength = filteredData.length;

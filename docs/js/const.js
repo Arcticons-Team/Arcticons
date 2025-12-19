@@ -12,7 +12,7 @@ export const TABLE_COLUMNS_Requests = [
     { key: 'appIconColor',         type: 'number'   },
     { key: 'playStoreDownloads',   type: 'downloads' },
     { key: 'requestedInfo',        type: 'number'   },
-    { key: 'lastRequestedTime',    type: 'date'   }
+    { key: 'lastRequestedTime',    type: 'number'   }
 ];
 
 export const DOM = {
@@ -50,4 +50,5 @@ export const DOM = {
     updatableButton: document.getElementById("updatable-button"),
     imagePreviewOverlay: document.getElementById('preview-overlay'),
     imagePreview: document.getElementById('preview-image'),
+    renameBtn: document.getElementById("rename-button"),
 };

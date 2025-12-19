@@ -1,8 +1,7 @@
-import { shuffleArray } from './functions.js';
+import { shuffleArray, copyToClipboard} from './functions.js';
 import { TABLE_COLUMNS_Requests as TABLE_COLUMNS, DOM } from './const.js';
 import { state } from './state/store.js';
 import { updateTable, lazyLoadAndRender, showIconPreview } from './ui/tableRenderer.js';
-import { copyToClipboard } from './events/button.js';
 import { renderCategories, initCategoryUI } from './ui/category.js';
 
 function collectCategories(playStoreCategories) {
@@ -92,15 +91,14 @@ function processRequests(JsonContent) {
         return {
             appName: entry.Name,
             componentInfo,
-            Arcticon: entry.Name.replace(/\s+/g, '_').toLowerCase(),
+            Arcticon: entry.Name.trim().replace(/\s+/g, '_').replace(/^(\d+)/, '_$1').toLowerCase(),
             pkgName,
             playStoreDownloads: entry.PlayStore?.Downloads?.replace("no_data", "X") ?? "X",
             requestedInfo: entry.count,
-            lastRequestedTime: new Date(parseFloat(entry.requestDate) * 1000).toLocaleString().replace(',', ''),
+            lastRequestedTime: parseFloat(entry.requestDate),
             appIconColor: 0,
             playStoreCategories: entry.PlayStore?.Categories ?? [],
-            drawable,
-            searchText: `<!-- ${entry.Name} --><item component="ComponentInfo{${componentInfo}}" drawable="${drawable}"/>`
+            drawable
         };
     });
 }
@@ -202,7 +200,7 @@ function bindPress(element, onClick, onLong) {
         if (e.type === "mousedown" && e.button !== 0) return;
         long = false;
         element.classList.add("longpress");
-        timer = setTimeout(() => { onLong(); long = true; }, 500);
+        timer = setTimeout(() => { onLong(); long = true; }, 300);
     };
     const end = (e) => {
         clearTimeout(timer);
@@ -395,6 +393,10 @@ function initEventListeners() {
         }
     };
 
+    DOM.renameBtn.addEventListener('click', () => {
+        copyToClipboard(null, true);
+    });
+
     DOM.tableBody.addEventListener('click', (event) => {
         const target = event.target;
         const row = target.closest('tr');
@@ -402,7 +404,7 @@ function initEventListeners() {
 
         const index = parseInt(row.dataset.index);
         const pkg = row.dataset.pkg;
-        const appfilter = row.dataset.appfilter;
+        const componentInfo = row.dataset.componentInfo;
         const entry = state.view[index];
 
         // 1. Handle Copy Button
@@ -413,8 +415,8 @@ function initEventListeners() {
 
         // 2. Handle App Name (Row Selection)
         if (target.classList.contains('app-name-cell')) {
-            const active = state.selectedRows.has(appfilter);
-            active ? state.selectedRows.delete(appfilter) : state.selectedRows.add(appfilter);
+            const active = state.selectedRows.has(componentInfo);
+            active ? state.selectedRows.delete(componentInfo) : state.selectedRows.add(componentInfo);
             row.classList.toggle('row-glow', !active);
             return;
         }

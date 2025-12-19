@@ -15,16 +15,21 @@ export function renderTableBatch(data) {
     data.forEach((entry, i) => {
         const index = i + state.startIndex;
         const row = document.createElement('tr');
-        
+
         // Attach metadata to the row itself
         row.dataset.index = index;
-        row.dataset.appfilter = entry.appfilter;
+        row.dataset.componentInfo = entry.componentInfo;
         row.dataset.pkg = entry.pkgName;
-        
+
         if (state.selectedRows.has(entry.appfilter)) {
             row.classList.add('row-glow');
         }
-
+        const formattedDate = new Date(entry.lastRequestedTime * 1000)
+            .toLocaleDateString(undefined, {
+                day: 'numeric',
+                month: 'short',
+                year: 'numeric'
+            });
         // Generate the entire row HTML at once - Much faster than insertCell()
         row.innerHTML = `
             <td class="app-name-cell" style="cursor: pointer;">${entry.appName}</td>
@@ -32,17 +37,17 @@ export function renderTableBatch(data) {
                     <img src="extracted_png/${entry.drawable}.webp" alt="Icon">
             </td>
             <td class="arcticon-column" style="${state.ui.showMatchingDrawables ? 'display:table-cell;' : 'display:none;'}">
-                ${state.ui.showMatchingDrawables 
-                    ? `<a href="#" class="icon-preview" data-column="Arcticon">
+                ${state.ui.showMatchingDrawables
+                ? `<a href="#" class="icon-preview" data-column="Arcticon">
                     <img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/refs/heads/main/icons/white/${entry.Arcticon}.svg" alt="Arcticon" class="arcticon">
                     </a>`
-                    : '<span class="arcticon-placeholder">No Match</span>'
-                }
+                : '<span class="arcticon-placeholder">No Match</span>'
+            }
             </td>
             <td class="links-cell">${createLinksHtml()}</td>
             <td>${entry.playStoreDownloads}</td>
             <td>${entry.requestedInfo}</td>
-            <td>${entry.lastRequestedTime}</td>
+            <td>${formattedDate}</td>
             <td>
                 <button class="green-button copy-button">
                     <img class="copy-icon" src="img/requests/copy.svg">
