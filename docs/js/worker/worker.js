@@ -65,21 +65,13 @@ onmessage = function (event) {
     // Matching drawables
     if (state.ui.showMatchingDrawables && state.drawableSet) {
         filteredData = filteredData.reduce((acc, entry) => {
-            const base = entry.baseDrawable || entry.drawable?.replace(/_\d+$/, '');
-
-            if (state.drawableSet.has(entry.drawable)) {
+            if (state.drawableSet.has(entry.Arcticon)) {
                 acc.push(entry);
-            } else if (state.drawableSet.has(base)) {
-                acc.push({
-                    ...entry,
-                    Arcticon: `<img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/refs/heads/main/icons/white/${base}.svg" class="arcticon">`,
-                    ArcticonPath: `https://raw.githubusercontent.com/Arcticons-Team/Arcticons/refs/heads/main/icons/white/${base}.svg`
-                });
             }
             return acc;
         }, []);
     }
-
+    console.log(filteredData.length);
     // Matching names
     if (state.ui.showMatchingNames) {
         filteredData = filterEntriesByAppNameFrequency(filteredData, state.ui.matchingNameThreshold);

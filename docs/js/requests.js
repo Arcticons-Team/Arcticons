@@ -1,7 +1,7 @@
-import { filterAppfilter, shuffleArray } from './functions.js';
-import { TABLE_COLUMNS_Requests as TABLE_COLUMNS, DOM, imagepath } from './const.js';
+import { shuffleArray } from './functions.js';
+import { TABLE_COLUMNS_Requests as TABLE_COLUMNS, DOM } from './const.js';
 import { state } from './state/store.js';
-import { updateTable, lazyLoadAndRender } from './ui/tableRenderer.js';
+import { updateTable, lazyLoadAndRender, showIconPreview } from './ui/tableRenderer.js';
 import { copyToClipboard } from './events/button.js';
 import { renderCategories, initCategoryUI } from './ui/category.js';
 
@@ -86,28 +86,17 @@ function processRequests(JsonContent) {
     state.all = Object.entries(JsonContent).map(([componentInfo, entry]) => {
         const pkgName = componentInfo.split('/')[0];
         const drawable = entry.drawable;
-        const appIconPath = drawable ? `extracted_png/${drawable}.webp` : 'img/requests/default.svg';
 
         collectCategories(entry.PlayStore?.Categories ?? []);
 
         return {
             appName: entry.Name,
             componentInfo,
-            appIcon: `<img src="${appIconPath}" alt="Icon">`,
-            Arcticon: `<img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/refs/heads/main/icons/white/${drawable}.svg" alt="Arcticon" class="arcticon">`,
-            appLinks: [
-                `<a href="https://play.google.com/store/apps/details?id=${pkgName}" class="links" target="_blank"><img src="${imagepath.playStore}" alt="P"></a>`,
-                `<a href="https://f-droid.org/en/packages/${pkgName}/" class="links" id='fdroid' target="_blank"><img src="${imagepath.fdroid}" alt="F"></a>`,
-                `<a href="https://apt.izzysoft.de/fdroid/index/apk/${pkgName}" class="links" id='izzy' target="_blank"><img src="${imagepath.izzyOnDroid}" alt="I"></a>`,
-                `<a href="https://galaxystore.samsung.com/detail/${pkgName}" class="links" id='galaxy' target="_blank"><img src="${imagepath.galaxyStore}" alt="G"></a>`,
-                `<a href="https://www.ecosia.org/search?q=${pkgName}" class="links" target="_blank"><img src="${imagepath.wwwSearch}" alt="S"></a>`
-            ].join('\n'),
+            Arcticon: entry.Name.replace(/\s+/g, '_').toLowerCase(),
+            pkgName,
             playStoreDownloads: entry.PlayStore?.Downloads?.replace("no_data", "X") ?? "X",
             requestedInfo: entry.count,
             lastRequestedTime: new Date(parseFloat(entry.requestDate) * 1000).toLocaleString().replace(',', ''),
-            appNameAppfilter: `<!-- ${entry.Name} -->`,
-            appfilter: `<item component="ComponentInfo{${componentInfo}}" drawable="${drawable}"/>`,
-            appIconPath,
             appIconColor: 0,
             playStoreCategories: entry.PlayStore?.Categories ?? [],
             drawable,
@@ -152,8 +141,7 @@ function processColors(colorJson) {
 
     // 2. Patch state.all
     state.all.forEach(entry => {
-        const filename = entry.appIconPath.split('/').pop();
-        entry.appIconColor = colorMap.get(filename) || 0;
+        entry.appIconColor = colorMap.get(`${entry.drawable}.webp`) || 0;
     });
 }
 
@@ -235,12 +223,16 @@ function updateUIState(state) {
 
     DOM.randomResetButton.style.display =
         state.ui.random.active ? "inline-block" : "none";
+
+    DOM.matchingDrawableColumn.style.display =
+        state.ui.showMatchingDrawables ? 'table-cell' : 'none';
 }
+
 
 let computeWorker;
 
 function recomputeView() {
-    updateUIState(state);
+
     if (computeWorker) computeWorker.terminate();
 
     computeWorker = new Worker('./js/worker/worker.js', { type: 'module' });
@@ -257,6 +249,7 @@ function recomputeView() {
         updateTable(filteredData);
         updateSortMarkers();
         computeWorker = null;
+        updateUIState(state);
     };
 }
 
@@ -394,5 +387,60 @@ function initEventListeners() {
         DOM.matchingDrawableColumn.classList.toggle("active", state.ui.showMatchingDrawables);
 
         recomputeView();
+    });
+
+    DOM.imagePreviewOverlay.onclick = e => {
+        if (e.target === DOM.imagePreviewOverlay || e.target.classList.contains('close-button-class')) {
+            DOM.imagePreviewOverlay.style.display = 'none';
+        }
+    };
+
+    DOM.tableBody.addEventListener('click', (event) => {
+        const target = event.target;
+        const row = target.closest('tr');
+        if (!row) return;
+
+        const index = parseInt(row.dataset.index);
+        const pkg = row.dataset.pkg;
+        const appfilter = row.dataset.appfilter;
+        const entry = state.view[index];
+
+        // 1. Handle Copy Button
+        if (target.closest('.copy-button')) {
+            copyToClipboard(index, false);
+            return;
+        }
+
+        // 2. Handle App Name (Row Selection)
+        if (target.classList.contains('app-name-cell')) {
+            const active = state.selectedRows.has(appfilter);
+            active ? state.selectedRows.delete(appfilter) : state.selectedRows.add(appfilter);
+            row.classList.toggle('row-glow', !active);
+            return;
+        }
+
+        // 3. Handle Icon Previews
+        const previewLink = target.closest('.icon-preview');
+        if (previewLink) {
+            event.preventDefault();
+            const col = previewLink.dataset.column;
+            const path = col === "AppIcon" ? `extracted_png/${entry.drawable}.webp` : `https://raw.githubusercontent.com/Arcticons-Team/Arcticons/refs/heads/main/icons/white/${entry.Arcticon}.svg`;
+            console.log(path);
+            showIconPreview(path, col);
+            return;
+        }
+
+        // 4. Handle Store Links (On Demand)
+        if (target.classList.contains('links')) {
+            const type = target.dataset.type;
+            const urls = {
+                play: `https://play.google.com/store/apps/details?id=${pkg}`,
+                fdroid: `https://f-droid.org/en/packages/${pkg}/`,
+                izzy: `https://apt.izzysoft.de/fdroid/index/apk/${pkg}`,
+                galaxy: `https://galaxystore.samsung.com/detail/${pkg}`,
+                search: `https://www.ecosia.org/search?q=${pkg}`
+            };
+            if (urls[type]) window.open(urls[type], '_blank');
+        }
     });
 }

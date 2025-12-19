@@ -90,7 +90,8 @@ th {
 }
 
 /* Quick link images*/
-.links img {
+.links{
+    cursor: pointer;
     filter: invert();
     width: 50px;
     height: 50px;
@@ -150,7 +151,7 @@ tr.row-glow {
         background-color: #0f0f0f;
     }
 
-    .links img {
+    .links {
         filter: none;
     }
     .arcticon {
@@ -167,7 +168,7 @@ tr.row-glow {
 }
 
 @media screen and (max-width: 1300px) {
-    .links img {
+    .links {
         width: 40px;
         height: 40px;
     }
@@ -180,7 +181,7 @@ tr.row-glow {
 }
 
 @media screen and (max-width: 1100px) {
-    .links img {
+    .links {
         width: 30px;
         height: 30px;
     }

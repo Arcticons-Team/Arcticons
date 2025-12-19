@@ -48,5 +48,6 @@ export const DOM = {
     sortableHeaders: document.querySelectorAll('#requests-table thead th.sortable-header'),
     tableBody: document.getElementById("app-entries"),
     updatableButton: document.getElementById("updatable-button"),
-
+    imagePreviewOverlay: document.getElementById('preview-overlay'),
+    imagePreview: document.getElementById('preview-image'),
 };
