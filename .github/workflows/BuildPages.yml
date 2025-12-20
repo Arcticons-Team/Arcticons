@@ -276,7 +276,7 @@ jobs:
         uses: actions/upload-artifact@v6
         with:
           name: colormapping
-          path:   docs/assets/image_color_counts.json
+          path: docs/assets/image_color_counts.json
   Create_requestjson:
     name: Create Requestjson
     needs: [Check_FilePath, Update_Requests]

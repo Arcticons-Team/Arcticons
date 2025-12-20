@@ -4,12 +4,6 @@ import { state } from './state/store.js';
 import { updateTable, lazyLoadAndRender, showIconPreview } from './ui/tableRenderer.js';
 import { renderCategories, initCategoryUI } from './ui/category.js';
 
-function collectCategories(playStoreCategories) {
-    playStoreCategories
-        .filter(c => !/^#\d* top\b/.test(c))
-        .forEach(c => state.allCategories.add(c));
-}
-
 function finalizeCategories() {
     const cats = [...state.allCategories];
     const pinned = cats.filter(c => c === 'App' || c === 'Game').sort();
@@ -81,32 +75,14 @@ function processRequests(jsonResponse) {
     updateHeaderText(`${jsonResponse.stats.totalCount} Requested Apps`);
 }
 
-function processAppfilter(appfilterJson) {
-    if (!appfilterJson || !Array.isArray(appfilterJson)) return;
+function processAppfilter(appfilterData) {
+    if (!appfilterData || !appfilterData.components) return;
 
-    // 1. Create a Set of existing components for ultra-fast filtering
-    const existingComponents = new Set();
-
-    appfilterJson.forEach(item => {
-        // Add drawable to state for global reference (if needed)
-        if (item.drawable) {
-            state.drawableSet.add(item.drawable);
-        }
-
-        // Store the component string to check against requests
-        if (item.component) {
-            // We strip "ComponentInfo{" and "}" if they exist to match your request keys
-            const cleanComponent = item.component.replace('ComponentInfo{', '').replace('}', '').trim();
-            existingComponents.add(cleanComponent);
-        }
-    });
-
-    // 2. Filter state.all: Remove apps that already exist in your appfilter
-    // This replaces the old filterAppfilter(state.all, content) function
-    state.all = state.all.filter(entry => {
-        return !existingComponents.has(entry.componentInfo);
-    });
-
+    if (appfilterData.drawables) {
+        appfilterData.drawables.forEach(d => state.drawableSet.add(d));
+    }
+    const existingComponents = new Set(appfilterData.components);
+    state.all = state.all.filter(entry => !existingComponents.has(entry.componentInfo));
     updateHeaderText(`${state.all.length} Requested Apps`);
 }
 

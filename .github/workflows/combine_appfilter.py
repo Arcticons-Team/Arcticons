@@ -1,136 +1,72 @@
 import os
-from github import Github
-import xml.etree.ElementTree as ET
-import xml.dom.minidom
-import hashlib
-import requests
 import json
+import requests
+import xml.etree.ElementTree as ET
+from github import Github
 
-# Change this to your Repo
-Repo = "Arcticons-Team/Arcticons"
+# --- Configuration ---
+REPO_NAME = "Arcticons-Team/Arcticons"
+GITHUB_TOKEN = os.getenv('GITHUB_TOKEN')
 
-# Get the branch name
-# Change this to your branch name
-branchName = "main"
+g = Github(GITHUB_TOKEN)
+repo = g.get_repo(REPO_NAME)
 
+def process_xml_content(xml_text, components_set, drawables_set):
+    """Parses XML and extracts cleaned component names and drawables."""
+    try:
+        root = ET.fromstring(xml_text)
+        for item in root.findall('item'):
+            component = item.get('component')
+            drawable = item.get('drawable')
 
-# Your GitHub token Don't change this
-github_token = os.getenv('GITHUB_TOKEN')
+            if component:
+                # Clean the string immediately: remove "ComponentInfo{" and "}"
+                clean_comp = component.replace('ComponentInfo{', '').replace('}', '').strip()
+                components_set.add(clean_comp)
+            
+            if drawable:
+                drawables_set.add(drawable)
+    except Exception as e:
+        print(f"  Error parsing XML content: {e}")
 
-# Initialize the GitHub instance
-g = Github(github_token)
-
-# Get the repository 
-repo = g.get_repo(Repo)
-
-def combine_xml_files(input_files, output_file, json_output_file=None):
-    unique_components = set()
-    output_root = ET.Element('resources')  # Root element for the output XML tree
-    json_items = []
-
-    # Iterate through each input file
-    for input_file in input_files:
-        try:
-            print(f"Processing {input_file}...")
-            tree = ET.parse(input_file)
-            root = tree.getroot()
-
-            # Iterate through each item in the input file
-            for item in root.findall('item'):
-                component = item.get('component')
-                drawable = item.get('drawable')
-
-                # Check if the component has been encountered before
-                if component not in unique_components:
-                    unique_components.add(component)
-                    # Append the item to the output XML tree
-                    output_root.append(item)
-                    # Collect JSON data
-                    json_items.append({
-                        "component": component,
-                        "drawable": drawable
-                    })
-        except Exception as e:
-            print(f"Error parsing XML file: {e}")
-            continue
-
-        # Sort XML + JSON by component
-    sorted_pairs = sorted(
-        zip(output_root.findall('item'), json_items),
-        key=lambda pair: pair[0].get('component')
-    )
-
-    # Clear existing items in the output root
-    output_root.clear()
-    json_items.clear()
+def write_final_json(components_set, drawables_set, json_out):
+    """Sorts the sets and writes the final JSON to disk."""
+    json_data = {
+        "components": sorted(list(components_set)),
+        "drawables": sorted(list(drawables_set))
+    }
     
-    # Append the sorted items to the output root
-    for item, json_item in sorted_pairs:
-        output_root.append(item)
-        json_items.append(json_item)
-
-    # Use minidom to prettify the XML output and remove empty text nodes
-    xml_str = xml.dom.minidom.parseString(ET.tostring(output_root)).toprettyxml()
-    xml_str = '\n'.join([line for line in xml_str.split('\n') if line.strip()])
-
-    with open(output_file, "w", encoding="utf-8") as f:
-        f.write(xml_str)
-
-    # Write JSON (if requested)
-    if json_output_file:
-        with open(json_output_file, "w", encoding="utf-8") as f:
-            json.dump(json_items, f, indent=2, ensure_ascii=False)
-
-def calculate_sha1(content):
-    """
-    Calculate the SHA-1 hash of the content.
-    """
-    sha1 = hashlib.sha1()
-    sha1.update(content.encode())
-    return sha1.hexdigest()
+    with open(json_out, "w", encoding="utf-8") as f:
+        json.dump(json_data, f, indent=2, ensure_ascii=False)
+    
+    print(f"\n--- Process Complete ---")
 
 def combine_all_appfilters():
-    appfilter_files = ['newicons/appfilter.xml']
+    master_components = set()
+    master_drawables = set()
 
-    # Combine the appfilter.xml files
-    print(f"Combining {appfilter_files} appfilter.xml files...")
-    combine_xml_files(appfilter_files, 'combined_appfilter.xml', 'combined_appfilter.json')
+    # 1. Process Local File
+    local_path = 'newicons/appfilter.xml'
+    if os.path.exists(local_path):
+        print(f"Processing local file: {local_path}")
+        with open(local_path, 'r', encoding='utf-8') as f:
+            process_xml_content(f.read(), master_components, master_drawables)
 
+    # 2. Process Pull Requests
     print("Fetching open pull requests...")
-    
-    # Get all open pull requests
-    open_pulls = repo.get_pulls(state='open')
-    print(f"Found {open_pulls.totalCount} open pull requests.")
-    
-    for pr in open_pulls:
-        print(f"Processing pull request #{pr.number}...")
-        
-        # Get the files from the pull request
-        files = pr.get_files()
-        
-        # Check if the pull request has an appfilter.xml file
-        for file in files:
-            #print(f"File: {file.filename}")
-            if file.filename == 'newicons/appfilter.xml':
-                print(f"Found appfilter.xml: {file.filename}")
-                try:
+    try:
+        open_pulls = repo.get_pulls(state='open')
+        for pr in open_pulls:
+            for file in pr.get_files():
+                if file.filename == 'newicons/appfilter.xml':
+                    print(f"Processing PR #{pr.number}: {pr.title}")
                     response = requests.get(file.raw_url)
                     if response.status_code == 200:
-                        content = response.content.decode('utf-8')
-                        with open('newicons/new_appfilter.xml', 'w', encoding='utf-8') as f:
-                            f.write(content)
-                        print(f"Downloaded appfilter.xml: {file.filename}")
-                        appfilter_files= ['newicons/new_appfilter.xml']  # Add the appfilter.xml file to the list
-                        appfilter_files.append('combined_appfilter.xml')  # Add the combined_appfilter.xml file to the list
+                        process_xml_content(response.text, master_components, master_drawables)
+    except Exception as e:
+        print(f"Error fetching PRs: {e}")
 
-                        # Combine the appfilter.xml files
-                        print(f"Combining {appfilter_files} appfilter.xml files...")
-                        combine_xml_files(appfilter_files, 'combined_appfilter.xml', json_output_file='combined_appfilter.json')
+    write_final_json(master_components, master_drawables, 'combined_appfilter.json')
 
-                except Exception as e:
-                    print(f"Error downloading appfilter.xml: {e}")
-                    continue
-        
-    print("Combined appfilter.xml from all pull requests.")
-
-combine_all_appfilters()
+if __name__ == "__main__":
+    combine_all_appfilters()
