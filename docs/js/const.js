@@ -51,4 +51,5 @@ export const DOM = {
     imagePreviewOverlay: document.getElementById('preview-overlay'),
     imagePreview: document.getElementById('preview-image'),
     renameBtn: document.getElementById("rename-button"),
+    sentinel: document.getElementById("table-sentinel"),
 };

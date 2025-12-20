@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arcticons - Requested Apps</title>
-    <link rel="icon" type="image/png" href="img/arcticons/icon.png" />
+    <link rel="icon" type="image/webp" href="img/arcticons/icon.webp" />
     <link rel="stylesheet" href="css/dashboard-main.css" />
     <link rel="stylesheet" href="css/dashboard-header.css" />
     <link rel="stylesheet" href="css/dashboard-table-main.css" />
@@ -48,8 +48,7 @@
         <!-- Search Container -->
         <div id="search-container">
             <span id="search-input-container">
-                <input class="textinput" type="text" id="search-input"
-                    placeholder="Search">
+                <input class="textinput" type="text" id="search-input" placeholder="Search">
                 <span class="clear-search" id="clear-search"
                     onclick="var input = this.previousElementSibling; input.value = ''; input.focus();">x</span>
             </span>
@@ -110,7 +109,8 @@
         <div id="random-container">
             <button id="random-reset-button">Reset &#10006;</button>
             <!-- Number of icons to random -->
-            <input id="random-number-input" type="number" value="10" title="Number of icons to randomly select" min="1"/>
+            <input id="random-number-input" type="number" value="10" title="Number of icons to randomly select"
+                min="1" />
             <!-- Button for Random Icons -->
             <button class="green-button" id="random-button"><span class="lg-view">✨ I'm feelin' lucky ✨</span><span
                     class="sm-view">✨</span></button>
@@ -123,9 +123,9 @@
 
 
     <!-- App Entries -->
-    <div class="table-container" id ="requests-table-container">
+    <div class="table-container" id="requests-table-container">
         <table id="requests-table">
-            <thead id ="requests-table-head">
+            <thead id="requests-table-head">
                 <tr>
                     <th class="sortable-header" data-sort-index="0">Name</th>
                     <th class="sortable-header" data-sort-index="1">Icon</th>
@@ -138,14 +138,16 @@
                 </tr>
             </thead>
             <tbody id="app-entries"></tbody>
+            <tbody>
+                <tr id="table-sentinel" style="height: 1px;"></tr>
+            </tbody>
         </table>
     </div>
     <hr width="100%" size="2" class="separator" noshade>
     <div class="category-container">
         <div class="header-container">
             <span id="search-input-container">
-                <input class="textinput" type="text" id="search-input_category"
-                    placeholder="Search Category">
+                <input class="textinput" type="text" id="search-input_category" placeholder="Search Category">
                 <span class="clear-search" id="clear-search_category"
                     onclick="var input = this.previousElementSibling; input.value = ''; input.focus();">x</span>
             </span>

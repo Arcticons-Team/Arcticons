@@ -1,4 +1,4 @@
-import { shuffleArray, copyToClipboard} from './functions.js';
+import { shuffleArray, copyToClipboard } from './functions.js';
 import { TABLE_COLUMNS_Requests as TABLE_COLUMNS, DOM } from './const.js';
 import { state } from './state/store.js';
 import { updateTable, lazyLoadAndRender, showIconPreview } from './ui/tableRenderer.js';
@@ -26,36 +26,42 @@ const debounce = (func, delay) => {
 
 async function initializeAppData() {
     try {
-        // 1. Start all fetches at once
+        // --- PHASE 1: Fast Load ---
         const [requestsRes, appfilterRes, colorsRes] = await Promise.all([
             fetch('assets/requests.json'),
             fetch('assets/combined_appfilter.json'),
             fetch('assets/image_color_counts.json')
         ]);
 
-        // 2. Check for errors
-        if (!requestsRes.ok || !appfilterRes.ok) throw new Error("Critical data failed to load");
-
-        // 3. Parse all responses in parallel
         const [jsonContent, appfilterJson, colorsJson] = await Promise.all([
             requestsRes.json(),
             appfilterRes.json(),
             colorsRes.json()
         ]);
 
-        // 4. Process Data (Sequential processing of the results)
         processRequests(jsonContent);
         processAppfilter(appfilterJson);
-        processColors(colorsJson);
 
-        // 5. Final Render
+        // Initial render so user sees data immediately
         state.allCategories = finalizeCategories();
         renderCategories();
-        recomputeView();
+        recomputeView(); 
 
-        setTimeout(() => {
-            initEventListeners();
-        }, 0);
+        // --- PHASE 2: Background Color Patching ---
+        const colorWorker = new Worker('./js/worker/colorWorker.js');
+        
+        colorWorker.postMessage({
+            allEntries: state.all,
+            colorData: colorsJson
+        });
+
+        colorWorker.onmessage = function(e) {
+            console.log("Colors patched in background.");
+            state.all = e.data; // Update master list with enriched data            
+            colorWorker.terminate();
+        };
+
+        setTimeout(() => initEventListeners(), 0);
 
     } catch (error) {
         console.error("Initialization error:", error);
@@ -291,13 +297,16 @@ function initEventListeners() {
         recomputeView();
     });
 
-    // Scroll event listener for lazy loading
-    DOM.requestsTableContainer.addEventListener('scroll', () => {
-        const { scrollTop, scrollHeight, clientHeight } = DOM.requestsTableContainer;
-        if (scrollTop + clientHeight >= scrollHeight - 100) {
-            lazyLoadAndRender();
+    const observer = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+            lazyLoadAndRender(); // Load next batch
         }
+    }, {
+        root: DOM.requestsTableContainer,
+        rootMargin: '200px' // Start loading 200px before reaching the bottom
     });
+
+    observer.observe(DOM.sentinel);
 
     // Add an event listener to the button
     DOM.updatableButton.addEventListener("click", function () {

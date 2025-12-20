@@ -32,9 +32,6 @@ function getCellValue(row, column, direction) {
         case 'number':
             return Number(value) || 0;
 
-        case 'date':
-            return new Date(value);
-
         case 'downloads':
             return parseDownloadValue(value, direction);
 
@@ -48,8 +45,6 @@ function getCellValue(row, column, direction) {
 
 // Convert download string to a numeric value for sorting
 function parseDownloadValue(value, sortingDirection) {
-    console
-    if (value === "no_data") return sortingDirection === 'asc' ? 9999999999999999999999 : -1; // Assign a low value for "AppNotFound" to push it to the end
     if (value === "X") return sortingDirection === 'asc' ? 9999999999999999999999 : -1; // Assign a low value for "AppNotFound" to push it to the end
     if (value.endsWith("+")) value = value.slice(0, -1); // Remove the "+" at the end
     if (value.endsWith("K")) return parseFloat(value) * 1000; // Convert "k" to 1000

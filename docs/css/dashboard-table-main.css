@@ -120,6 +120,11 @@ tr.row-glow {
     transition: background-color 0.5s ease-in;
 }
 
+tr {
+    content-visibility: auto;
+    contain-intrinsic-size: 0 50px;
+}
+
 .copy-icon {
     display: none;
     width: 20px;

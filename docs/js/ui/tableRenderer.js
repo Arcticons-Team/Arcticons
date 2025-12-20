@@ -57,7 +57,6 @@ export function renderTableBatch(data) {
         `;
         fragment.appendChild(row);
     });
-
     DOM.tableBody.appendChild(fragment);
 }
 
