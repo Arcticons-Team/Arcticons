@@ -138,7 +138,7 @@ def main(input_file, output_file):
     # Create the multi-array structure
     output_data = {
         "stats": {
-            "lastUpdate": max([e["lastRequestedTimestamp"] for e in final_entries]),
+            "lastUpdate": max([e["lastRequestedTime"] for e in final_entries]),
             "totalCount": len(final_entries)
         },
         "categories": sorted(list(all_categories)),
