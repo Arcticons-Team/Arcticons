@@ -281,7 +281,7 @@ jobs:
         uses: actions/upload-artifact@v5
         with:
           name: colormapping
-          path: docs/assets/image_color_counts.xml
+          path: docs/assets/image_color_counts.json
   Create_requestjson:
     name: Create Requestjson
     needs: [Check_FilePath, Update_Requests]
@@ -387,7 +387,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python .github/workflows/combine_appfilter.py
       - name: Move combinded Appfilter
-        run: mv combined_appfilter.xml docs/assets/combined_appfilter.xml
+        run: mv combined_appfilter.xml docs/assets/combined_appfilter.json
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
