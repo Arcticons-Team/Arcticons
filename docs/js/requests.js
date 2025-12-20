@@ -71,36 +71,14 @@ async function initializeAppData() {
 initializeAppData();
 initCategoryUI(recomputeView);
 
-function processRequests(JsonContent) {
-    // Set latest date header
-    const latestDate = Object.values(JsonContent).reduce((latest, entry) => {
-        const d = new Date(parseFloat(entry.requestDate) * 1000);
-        return d > latest ? d : latest;
-    }, new Date(0));
-
+function processRequests(jsonResponse) {
+    const latestDate = new Date(jsonResponse.stats.lastUpdate * 1000);
     DOM.dateHeader.innerText = latestDate.toLocaleString(undefined, {
         day: 'numeric', year: 'numeric', month: 'long'
     });
-
-    state.all = Object.entries(JsonContent).map(([componentInfo, entry]) => {
-        const pkgName = componentInfo.split('/')[0];
-        const drawable = entry.drawable;
-
-        collectCategories(entry.PlayStore?.Categories ?? []);
-
-        return {
-            appName: entry.Name,
-            componentInfo,
-            Arcticon: entry.Name.trim().replace(/\s+/g, '_').replace(/^(\d+)/, '_$1').toLowerCase(),
-            pkgName,
-            playStoreDownloads: entry.PlayStore?.Downloads?.replace("no_data", "X") ?? "X",
-            requestedInfo: entry.count,
-            lastRequestedTime: parseFloat(entry.requestDate),
-            appIconColor: 0,
-            playStoreCategories: entry.PlayStore?.Categories ?? [],
-            drawable
-        };
-    });
+    jsonResponse.categories.forEach(c => state.allCategories.add(c));
+    state.all = jsonResponse.entries;
+    updateHeaderText(`${jsonResponse.stats.totalCount} Requested Apps`);
 }
 
 function processAppfilter(appfilterJson) {

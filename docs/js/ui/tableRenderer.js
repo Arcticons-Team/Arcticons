@@ -66,7 +66,6 @@ export function lazyLoadAndRender() {
         state.startIndex,
         state.startIndex + state.batchSize
     );
-
     renderTableBatch(batch);
     state.startIndex += state.batchSize;
 }
