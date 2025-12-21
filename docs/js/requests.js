@@ -13,43 +13,42 @@ function finalizeCategories() {
 
 async function initializeAppData() {
     try {
-        // --- PHASE 1: Fast Load ---
-        const [requestsRes, appfilterRes, colorsRes] = await Promise.all([
-            fetch('assets/requests.json'),
-            fetch('assets/combined_appfilter.json'),
-            fetch('assets/image_color_counts.json')
-        ]);
+        // --- PHASE 1: Fast Load with Fallbacks ---
+        // We wrap fetches in a catch-all to prevent one failure from stopping the site
+        const fetchJson = (url) => fetch(url).then(res => res.ok ? res.json() : null).catch(() => null);
 
         const [jsonContent, appfilterJson, colorsJson] = await Promise.all([
-            requestsRes.json(),
-            appfilterRes.json(),
-            colorsRes.json()
+            fetchJson('assets/requests.json'),
+            fetchJson('assets/combined_appfilter.json'),
+            fetchJson('assets/image_color_counts.json')
         ]);
-
+        // Critical Data Check: If requests.json is missing, we can't do anything.
+        if (!jsonContent) {
+            console.error("Critical error: requests.json not found.");
+            notifyMessage("Failed to load request data. Please refresh.");
+            return;
+        }
         processRequests(jsonContent);
-        processAppfilter(appfilterJson);
-
-        // Initial render so user sees data immediately
+        if (appfilterJson) {
+            processAppfilter(appfilterJson);
+        } else {
+            console.warn("appfilter.json missing: showing all entries without filtering.");
+        }
         state.allCategories = finalizeCategories();
-        renderCategories();
         recomputeView();
-
-        // --- PHASE 2: Background Color Patching ---
-        const colorWorker = new Worker('./js/worker/colorWorker.js');
-
-        colorWorker.postMessage({
-            allEntries: state.all,
-            colorData: colorsJson
-        });
-
-        colorWorker.onmessage = function (e) {
-            console.log("Colors patched in background.");
-            state.all = e.data; // Update master list with enriched data            
-            colorWorker.terminate();
-        };
-
+        renderCategories();
+        if (colorsJson) {
+            const colorWorker = new Worker('./js/worker/colorWorker.js');
+            colorWorker.postMessage({
+                allEntries: state.all,
+                colorData: colorsJson
+            });
+            colorWorker.onmessage = function (e) {
+                state.all = e.data; 
+                colorWorker.terminate();
+            };
+        }
         setTimeout(() => initEventListeners(), 0);
-
     } catch (error) {
         console.error("Initialization error:", error);
     }
