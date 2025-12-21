@@ -9,6 +9,19 @@ export function shuffleArray(arr) {
     return arr;
 }
 
+// Debounce function for search input
+export const debounce = (func, delay) => {
+    let timeoutId;
+    return (...args) => {
+        if (timeoutId) {
+            clearTimeout(timeoutId);
+        }
+        timeoutId = setTimeout(() => {
+            func.apply(null, args);
+        }, delay);
+    };
+};
+
 // Copy to clipboard function
 export function copyToClipboard(index, rename) {
     let copyText = "";

@@ -1,8 +1,8 @@
-import { shuffleArray, copyToClipboard } from './functions.js';
+import { shuffleArray, copyToClipboard, debounce } from './functions.js';
 import { TABLE_COLUMNS_Requests as TABLE_COLUMNS, DOM } from './const.js';
 import { state } from './state/store.js';
 import { updateTable, lazyLoadAndRender, showIconPreview } from './ui/tableRenderer.js';
-import { renderCategories, initCategoryUI } from './ui/category.js';
+import { renderCategories, initCategoryUI, findCategory } from './ui/category.js';
 
 function finalizeCategories() {
     const cats = [...state.allCategories];
@@ -10,19 +10,6 @@ function finalizeCategories() {
     const rest = shuffleArray(cats.filter(c => !pinned.includes(c)));
     return new Set([...pinned, ...rest]);
 }
-
-// Debounce function for search input
-const debounce = (func, delay) => {
-    let timeoutId;
-    return (...args) => {
-        if (timeoutId) {
-            clearTimeout(timeoutId);
-        }
-        timeoutId = setTimeout(() => {
-            func.apply(null, args);
-        }, delay);
-    };
-};
 
 async function initializeAppData() {
     try {
@@ -45,17 +32,17 @@ async function initializeAppData() {
         // Initial render so user sees data immediately
         state.allCategories = finalizeCategories();
         renderCategories();
-        recomputeView(); 
+        recomputeView();
 
         // --- PHASE 2: Background Color Patching ---
         const colorWorker = new Worker('./js/worker/colorWorker.js');
-        
+
         colorWorker.postMessage({
             allEntries: state.all,
             colorData: colorsJson
         });
 
-        colorWorker.onmessage = function(e) {
+        colorWorker.onmessage = function (e) {
             console.log("Colors patched in background.");
             state.all = e.data; // Update master list with enriched data            
             colorWorker.terminate();
@@ -90,17 +77,6 @@ function processAppfilter(appfilterData) {
     const existingComponents = new Set(appfilterData.components);
     state.all = state.all.filter(entry => !existingComponents.has(entry.componentInfo));
     updateHeaderText(`${state.all.length} Requested Apps`);
-}
-
-function processColors(colorJson) {
-    // 1. Convert Array to Map for O(1) lookup performance
-    const colorMap = new Map();
-    colorJson.forEach(item => colorMap.set(item.filename, item.unique_colors));
-
-    // 2. Patch state.all
-    state.all.forEach(entry => {
-        entry.appIconColor = colorMap.get(`${entry.drawable}.webp`) || 0;
-    });
 }
 
 function updateSortMarkers() {
@@ -212,6 +188,9 @@ function recomputeView() {
 }
 
 function initEventListeners() {
+    const debouncedFindCategory = debounce(findCategory, 300);
+    DOM.searchInputCategory.addEventListener('input', debouncedFindCategory);
+
     DOM.matchingNumberInput.addEventListener('input', () => {
         const value = parseInt(DOM.matchingNumberInput.value, 10);
         state.ui.matchingNameThreshold = isNaN(value) || value < 1 ? 1 : value;

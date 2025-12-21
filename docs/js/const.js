@@ -52,4 +52,8 @@ export const DOM = {
     imagePreview: document.getElementById('preview-image'),
     renameBtn: document.getElementById("rename-button"),
     sentinel: document.getElementById("table-sentinel"),
+    clearCategoryBtn: document.getElementById('clear-category'),
+    categoriesDiv: document.getElementById('categories'),
+    searchInputCategory: document.getElementById('search-input_category'),
+    clearSearchCategoryBtn: document.getElementById('clear-search_category'),
 };

@@ -1,4 +1,4 @@
-.categories {
+#categories {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
@@ -9,12 +9,16 @@
 
 }
 
-#category-button:active {
-    transform: scale(0.95);
+#categories .green-button:active {
+    transform: scale(0.90);
+}
+
+#categories .green-button.hidden {
+    display: none;
 }
 
 /* Style for activated buttons */
-#category-button[activated] {
+#categories .green-button[activated] {
     background-color: #007bff;
     color: #ffffff;
     border-color: #0056b3;
