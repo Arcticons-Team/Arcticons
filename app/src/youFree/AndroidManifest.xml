@@ -15,7 +15,7 @@
                 <category android:name="org.icontheme.CHANGES_WITH_DARK_MODE" />
             </intent-filter>
             <!-- Lawnchair Material You-->
-            <intent-filter>
+            <intent-filter tools:node="merge" >
                 <action android:name="ch.deletescape.lawnchair.ICONPACK" />
                 <action android:name="app.lawnchair.icons.THEMED_ICON" />
                 <category android:name="ch.deletescape.lawnchair.PICK_ICON" />
