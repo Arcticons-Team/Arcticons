@@ -38,7 +38,7 @@ async function initializeAppData() {
         recomputeView();
         renderCategories();
         if (colorsJson) {
-            const colorWorker = new Worker('./js/worker/colorWorker.js');
+            const colorWorker = new Worker('./js/worker/colorworker.js');
             colorWorker.postMessage({
                 allEntries: state.all,
                 colorData: colorsJson
