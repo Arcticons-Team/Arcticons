@@ -54,7 +54,7 @@ fetch(`/assets/updatable.txt`)
         appEntriesDataGlobal = appEntriesData;
         updateHeaderText(`${appEntriesData.length} Possible Appfilter Updates`);
 
-initializeAppData();
+    initializeAppData();
     })
     .catch(error => console.error('Error fetching file:', error));
 
