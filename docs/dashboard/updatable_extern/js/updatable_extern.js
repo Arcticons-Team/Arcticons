@@ -33,43 +33,43 @@ fetch('https://raw.githubusercontent.com/LawnchairLauncher/lawnicons/refs/heads/
 
 
         // Filter appEntriesData based on appfilter content
-//function filterAppfilter(appEntriesData, appfilterContent) {
-    const appfilter= new Set(parseAppfilter2(fileContent)); // Convert to Set for fast lookups
+        //function filterAppfilter(appEntriesData, appfilterContent) {
+        const appfilter = new Set(parseAppfilter2(fileContent)); // Convert to Set for fast lookups
 
 
         // Process each entry and store data
         appfilter.forEach(entry => {
-                        //console.log(entry);
-                        if (entry.startsWith('<!--') || entry.startsWith('<!--')) return; // Skip comments
-                        if (entry.startsWith('<item drawableIgnore="true"')) return; // Skip XML tags
-                    
+            //console.log(entry);
+            if (entry.startsWith('<!--') || entry.startsWith('<!--')) return; // Skip comments
             if (entry.startsWith('<item drawableIgnore="true"')) return; // Skip XML tags
 
-            try{
-            const lines = 'line';//entry.trim().split('\n');
-            var appName ="";
+            if (entry.startsWith('<item drawableIgnore="true"')) return; // Skip XML tags
+
             try {
-            appName = entry.split('name="')[1].split('"')[0].trim(); //lines[0].trim().split('--')[1].trim();
+                const lines = 'line';//entry.trim().split('\n');
+                var appName = "";
+                try {
+                    appName = entry.split('name="')[1].split('"')[0].trim(); //lines[0].trim().split('--')[1].trim();
+                } catch (error) {
+                    appName = entry.split('drawable="')[1].split('"')[0].trim(); //lines[0].trim().split('--')[1].trim();
+                }
+                const appNameAppfilter = 'Namefilter';//lines[0].trim();
+                const appfilter = entry.split('name=')[0].trim() + '/>';//appfilter;//lines[1].trim().split('\n').join(' ').trim();
+                const packageName = appfilter.split('ComponentInfo{')[1].split('/')[0].trim();
+                const drawable = extractDrawable(appfilter);
+                const appIconPath = '/img/requests/default.svg'; // Adjust path accordingly
+                const appIcon = `<img src="${appIconPath}" alt="App Icon">`;
+
+
+                appEntriesData.push({
+                    appName,
+                    appIcon,
+                    packageName,
+                    appNameAppfilter,
+                    appfilter,
+                    appIconPath
+                });
             } catch (error) {
-            appName = entry.split('drawable="')[1].split('"')[0].trim(); //lines[0].trim().split('--')[1].trim();
-            }
-            const appNameAppfilter = 'Namefilter';//lines[0].trim();
-            const appfilter = entry.split('name=')[0].trim() + '/>';//appfilter;//lines[1].trim().split('\n').join(' ').trim();
-            const packageName = appfilter.split('ComponentInfo{')[1].split('/')[0].trim();
-            const drawable = extractDrawable(appfilter);
-            const appIconPath ='/img/requests/default.svg'; // Adjust path accordingly
-            const appIcon = `<img src="${appIconPath}" alt="App Icon">`;
-
-
-            appEntriesData.push({
-                appName,
-                appIcon,
-                packageName,
-                appNameAppfilter,
-                appfilter,
-                appIconPath
-            });
-                        } catch (error) {
                 console.error('Error processing entry:', entry, error);
                 return; // Skip this entry if there's an error
             }
@@ -77,39 +77,32 @@ fetch('https://raw.githubusercontent.com/LawnchairLauncher/lawnicons/refs/heads/
         appEntriesDataGlobal = appEntriesData;
         updateHeaderText(`${appEntriesData.length} Possible Appfilter Updates`);
 
-        // Example usage:
-        fetch(`/assets/combined_appfilter.xml`)
-            .then(response => {
-                if (!response.ok) {
-                    // If appfilter.xml cannot be loaded, render appEntriesData as is
-                    console.error('Error fetching appfilter:', response.status);
-                    lazyLoadAndRender();
-                    return;
-                }
-                return response.text();
-            })
-            .then(appfilterContent => {
-                if (!appfilterContent) {
-                    // If appfilterContent is empty, render appEntriesData as is
-                    console.error('Empty appfilter content');
-                    lazyLoadAndRender();
-                    return;
-                }
-                const filteredData = filterAppfilter(appEntriesData, appfilterContent);
-                appEntriesData = filteredData;
-                appEntriesDataGlobal = filteredData;
-                updateHeaderText(`${appEntriesData.length} Updates Available`);
-                const table = document.querySelector('table');
-                const headers = table.querySelectorAll('thead th');
-                // headers[sortingColumnIndex].classList.add(sortingDirection);
-                // Initial render
-                lazyLoadAndRender();
-                // Optionally, trigger the function immediately if needed (e.g., if the page is loaded with a default state):
-                filterAppEntries();
-            })
-            .catch(error => console.error('Error fetching or processing appfilter:', error));
+        initializeAppData()
     })
     .catch(error => console.error('Error fetching file:', error));
+
+async function initializeAppData() {
+    const fetchJson = (url) => fetch(url).then(res => res.ok ? res.json() : null).catch(() => null);
+    const [appfilterJson] = await Promise.all([fetchJson('/assets/combined_appfilter.json')])
+    if (appfilterJson) {
+
+        const filteredData = filterAppfilter(appEntriesData, appfilterJson);
+        appEntriesData = filteredData;
+        appEntriesDataGlobal = filteredData;
+    } else {
+        console.warn("appfilter.json missing: showing all entries without filtering.");
+    }
+
+
+    updateHeaderText(`${appEntriesData.length} Updates Available`);
+    const table = document.querySelector('table');
+    const headers = table.querySelectorAll('thead th');
+    // headers[sortingColumnIndex].classList.add(sortingDirection);
+    // Initial render
+    lazyLoadAndRender();
+    // Optionally, trigger the function immediately if needed (e.g., if the page is loaded with a default state):
+    filterAppEntries();
+}
 
 // Function to extract the drawable attribute from appfilter
 function extractDrawable(appfilter) {
@@ -131,7 +124,7 @@ function filterAppfilter2(appEntriesData, appfilterContent) {
         const entryAppfilter = entry.appfilter.trim().split('"')[1].trim();
         if (appfilterItems.has(entryAppfilter)) { // Check membership in O(1)
             filteredOutEntries.push(entryAppfilter); // Track filtered out entries
-                return false; // Exclude from filtered data if package is in appfilter
+            return false; // Exclude from filtered data if package is in appfilter
         }
         return true; // Include in filtered data
     });
@@ -155,14 +148,14 @@ function filterAppfilter(appEntriesData, appfilterContent) {
 
 
         }
-                    if (packageItems.has(entry.packageName)) {
-                console.log(`Excluding ${packageItems} (${entry.packageName}) from filtered data as it is in appfilter`);
-                return true; // Exclude from filtered data if package is in appfilter
-            }
-            else {
-                filteredOutEntries.push(entryAppfilter); // Track filtered out entries
+        if (packageItems.has(entry.packageName)) {
+            console.log(`Excluding ${packageItems} (${entry.packageName}) from filtered data as it is in appfilter`);
+            return true; // Exclude from filtered data if package is in appfilter
+        }
+        else {
+            filteredOutEntries.push(entryAppfilter); // Track filtered out entries
             return false; // Exclude from filtered data
-            }
+        }
         return true; // Include in filtered data
     });
 
@@ -197,7 +190,7 @@ function parseAppfilterPackage(appfilterContent) {
         const component = item.getAttribute('component');
         if (component) {
             try {
-            appfilterItems.push(component.split('ComponentInfo{')[1].split('/')[0].trim());
+                appfilterItems.push(component.split('ComponentInfo{')[1].split('/')[0].trim());
             } catch (error) {
                 console.error('Error parsing component:', component, error);
             }
@@ -213,7 +206,7 @@ function parseAppfilter2(appfilterContent) {
     const items = xmlDoc.querySelectorAll('item');
     const appfilterItems = [];
     items.forEach(item => {
-appfilterItems.push(item.outerHTML.trim()); // Store the entire item as a string
+        appfilterItems.push(item.outerHTML.trim()); // Store the entire item as a string
     });
     return appfilterItems;
 }
