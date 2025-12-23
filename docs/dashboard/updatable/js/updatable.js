@@ -54,40 +54,33 @@ fetch(`/assets/updatable.txt`)
         appEntriesDataGlobal = appEntriesData;
         updateHeaderText(`${appEntriesData.length} Possible Appfilter Updates`);
 
-        // Example usage:
-        fetch(`/assets/combined_appfilter.xml`)
-            .then(response => {
-                if (!response.ok) {
-                    // If appfilter.xml cannot be loaded, render appEntriesData as is
-                    console.error('Error fetching appfilter:', response.status);
-                    lazyLoadAndRender();
-                    return;
-                }
-                return response.text();
-            })
-            .then(appfilterContent => {
-                if (!appfilterContent) {
-                    // If appfilterContent is empty, render appEntriesData as is
-                    console.error('Empty appfilter content');
-                    lazyLoadAndRender();
-                    return;
-                }
-                const filteredData = filterAppfilter(appEntriesData, appfilterContent);
-                appEntriesData = filteredData;
-                appEntriesDataGlobal = filteredData;
-                updateHeaderText(`${appEntriesData.length} Updates Available`);
-                const table = document.querySelector('table');
-                const headers = table.querySelectorAll('thead th');
-                // headers[sortingColumnIndex].classList.add(sortingDirection);
-                // Initial render
-                lazyLoadAndRender();
-                // Optionally, trigger the function immediately if needed (e.g., if the page is loaded with a default state):
-                filterAppEntries();
-            })
-            .catch(error => console.error('Error fetching or processing appfilter:', error));
+initializeAppData();
     })
     .catch(error => console.error('Error fetching file:', error));
 
+
+async function initializeAppData() {
+    const fetchJson = (url) => fetch(url).then(res => res.ok ? res.json() : null).catch(() => null);
+    const [appfilterJson] = await Promise.all([fetchJson('/assets/combined_appfilter.json')])
+    if (appfilterJson) {
+
+            const filteredData = filterAppfilter(appEntriesData, appfilterJson);
+    appEntriesData = filteredData;
+    appEntriesDataGlobal = filteredData;
+    } else {
+        console.warn("appfilter.json missing: showing all entries without filtering.");
+    }
+
+
+    updateHeaderText(`${appEntriesData.length} Updates Available`);
+    const table = document.querySelector('table');
+    const headers = table.querySelectorAll('thead th');
+    // headers[sortingColumnIndex].classList.add(sortingDirection);
+    // Initial render
+    lazyLoadAndRender();
+    // Optionally, trigger the function immediately if needed (e.g., if the page is loaded with a default state):
+    filterAppEntries();
+}
 // Function to extract the drawable attribute from appfilter
 function extractDrawable(appfilter) {
     const regex = /drawable="([^"]+)"/;
@@ -99,12 +92,15 @@ function extractDrawable(appfilter) {
 }
 
 // Filter appEntriesData based on appfilter content
-function filterAppfilter(appEntriesData, appfilterContent) {
-    const appfilterItems = new Set(parseAppfilter(appfilterContent)); // Convert to Set for fast lookups
+function filterAppfilter(appEntriesData, appfilterData) {
+    const appfilterItems = new Set(appfilterData.components);
+    console.log(appfilterItems)
+    //const appfilterItems = new Set(parseAppfilter(appfilterContent)); // Convert to Set for fast lookups
     const filteredOutEntries = [];
 
     const filteredData = appEntriesData.filter(entry => {
-        const entryAppfilter = entry.appfilter.trim().split('"')[1].trim();
+        const entryAppfilter = entry.appfilter.trim().split('{')[1].split('}')[0].trim();
+        console.log(entryAppfilter)
         if (appfilterItems.has(entryAppfilter)) { // Check membership in O(1)
             filteredOutEntries.push(entryAppfilter); // Track filtered out entries
             return false; // Exclude from filtered data
