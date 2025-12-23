@@ -1,5 +1,5 @@
 import { state } from '../state/store.js';
-import { DOM } from '../const.js';
+import { DOM } from '../../../js/const.js';
 
 /* ---------- Category UI ---------- */
 

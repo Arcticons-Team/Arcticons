@@ -57,7 +57,7 @@ fetch('https://raw.githubusercontent.com/LawnchairLauncher/lawnicons/refs/heads/
             const appfilter = entry.split('name=')[0].trim() + '/>';//appfilter;//lines[1].trim().split('\n').join(' ').trim();
             const packageName = appfilter.split('ComponentInfo{')[1].split('/')[0].trim();
             const drawable = extractDrawable(appfilter);
-            const appIconPath ='img/requests/default.svg'; // Adjust path accordingly
+            const appIconPath ='/img/requests/default.svg'; // Adjust path accordingly
             const appIcon = `<img src="${appIconPath}" alt="App Icon">`;
 
 
@@ -78,7 +78,7 @@ fetch('https://raw.githubusercontent.com/LawnchairLauncher/lawnicons/refs/heads/
         updateHeaderText(`${appEntriesData.length} Possible Appfilter Updates`);
 
         // Example usage:
-        fetch(`assets/combined_appfilter.xml`)
+        fetch(`/assets/combined_appfilter.xml`)
             .then(response => {
                 if (!response.ok) {
                     // If appfilter.xml cannot be loaded, render appEntriesData as is
@@ -262,9 +262,9 @@ function renderTable(data) {
         index = index + startIndex;
         cell1.innerHTML = entry.appName;
         cell2.innerHTML = `<a href="#" class="icon-preview" data-index="${index}">${entry.appIcon}</a>`;
-        cell3.innerHTML = `<div class="package-name"><div id="packagename">` + entry.packageName + `</div><div id="package-copy"><button class="copy-package" onclick="copyToClipboard(${index}, 'package')"><img src="img/requests/copy.svg"></button></div></div>`;
+        cell3.innerHTML = `<div class="package-name"><div id="packagename">` + entry.packageName + `</div><div id="package-copy"><button class="copy-package" onclick="copyToClipboard(${index}, 'package')"><img src="/img/requests/copy.svg"></button></div></div>`;
         cell4.innerHTML = entry.appfilter.replace('<', '&lt;').replace('>', '&gt;').replace(/"/g, '&quot;').trim();
-        cell5.innerHTML = `<button class="green-button" id="copy-button" onclick="copyToClipboard(${index}, 'appfilter')"><img class="copy-icon" src="img/requests/copy.svg" alt="Copy"><span class="copy-text">Copy</span></button>`;
+        cell5.innerHTML = `<button class="green-button" id="copy-button" onclick="copyToClipboard(${index}, 'appfilter')"><img class="copy-icon" src="/img/requests/copy.svg" alt="Copy"><span class="copy-text">Copy</span></button>`;
     });
     // Add event listeners to the icon previews
     const iconPreviews = document.querySelectorAll('.icon-preview');
@@ -336,7 +336,7 @@ const updatableButton = document.getElementById("updatable-button");
 // Add an event listener to the button
 updatableButton.addEventListener("click", function () {
     // Define the URL to redirect to
-    const updatableURL = `requests.html`;
+    const updatableURL = `/dashboard/requests`;
     // Redirect to the specified URL
     window.location.href = updatableURL;
 });

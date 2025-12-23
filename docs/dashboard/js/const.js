@@ -1,10 +1,10 @@
 // Array of Link Images
 export const imagepath = {
-    playStore: 'img/requests/google-play-store.svg',
-    fdroid: 'img/requests/f-droid.svg',
-    izzyOnDroid: 'img/requests/izzyondroid.svg', 
-    galaxyStore: 'img/requests/galaxystore.svg', 
-    wwwSearch: 'img/requests/search-globe.svg'
+    playStore: '/img/requests/google-play-store.svg',
+    fdroid: '/img/requests/f-droid.svg',
+    izzyOnDroid: '/img/requests/izzyondroid.svg', 
+    galaxyStore: '/img/requests/galaxystore.svg', 
+    wwwSearch: '/img/requests/search-globe.svg'
 };
 
 export const TABLE_COLUMNS_Requests = [

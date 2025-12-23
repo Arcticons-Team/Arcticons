@@ -1,6 +1,6 @@
 // js/ui/tableRenderer.js
 import { state } from '../state/store.js';
-import { DOM, imagepath } from '../const.js';
+import { DOM, imagepath } from '../../../js/const.js';
 
 
 /* ---------- Core table operations ---------- */
@@ -34,7 +34,7 @@ export function renderTableBatch(data) {
         row.innerHTML = `
             <td class="app-name-cell" style="cursor: pointer;">${entry.appName}</td>
             <td class="icon-preview" data-column="AppIcon">
-                    <img src="extracted_png/${entry.drawable}.webp" alt="Icon">
+                    <img src="/extracted_png/${entry.drawable}.webp" alt="Icon">
             </td>
             <td class="arcticon-column" style="${state.ui.showMatchingDrawables ? 'display:table-cell;' : 'display:none;'}">
                 ${state.ui.showMatchingDrawables
@@ -50,7 +50,7 @@ export function renderTableBatch(data) {
             <td>${formattedDate}</td>
             <td>
                 <button class="green-button copy-button">
-                    <img class="copy-icon" src="img/requests/copy.svg">
+                    <img class="copy-icon" src="/img/requests/copy.svg">
                     <span class="copy-text">Copy</span>
                 </button>
             </td>

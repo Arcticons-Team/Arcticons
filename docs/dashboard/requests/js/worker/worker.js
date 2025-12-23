@@ -1,5 +1,5 @@
 // worker.js
-import { shuffleArray } from '/js/functions.js';
+import { shuffleArray } from '../functions.js';
 // Function to filter entries by app name frequency
 function filterEntriesByAppNameFrequency(appEntriesData, minOccurrences) {
     const appNameCount = {};

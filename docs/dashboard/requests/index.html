@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arcticons - Requested Apps</title>
+    <link rel="icon" type="image/webp" href="/img/arcticons/icon.webp" />
+    <link rel="stylesheet" href="/dashboard/css/dashboard-main.css" />
+    <link rel="stylesheet" href="/dashboard/css/dashboard-header.css" />
+    <link rel="stylesheet" href="css/dashboard-table-main.css" />
+    <link rel="stylesheet" href="/dashboard/css/slider.css" />
+    <link rel="stylesheet" href="css/dashboard-popup.css" />
+    <link rel="stylesheet" href="/dashboard/css/green-button.css" />
+    <link rel="stylesheet" href="/dashboard/css/image-preview.css" />
+    <link rel="stylesheet" href="/dashboard/css/notification.css" />
+    <link rel="stylesheet" href="css/categories.css" />
+    <script src="/js/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function () {
+            $("#footer").load("/html/footer.html");
+        });
+    </script>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <div class="pagetop">
+        <a href="/"><img class="logo" src="/img/logo.svg" alt="logo" id="logo"></a>
+        <h1 id="header">Requested Apps</h1>
+        <!-- Button for Updatable Site -->
+        <button class="green-button" id="updatable-button">Potential Updates</button>
+    </div>
+    <h2 id="smallheader">Requested Apps</h2>
+    <div class="pagetop">
+        <div>
+            <button class="green-button" id="show-multiple">Show Matching Name</button><input id="matching-number-input"
+                type="number" value="2" title="Min Matches" min="2" />
+        </div>
+        <h2 id="date_header">Date</h2>
+        <button class="green-button" id="show-matching-drawables-btn">Show Matching Drawables</button>
+    </div>
+
+    <hr style="visibility: hidden;">
+    <div class="header-container">
+        <!-- Search Container -->
+        <div id="search-container">
+            <span id="search-input-container">
+                <input class="textinput" type="text" id="search-input" placeholder="Search">
+                <span class="clear-search" id="clear-search"
+                    onclick="var input = this.previousElementSibling; input.value = ''; input.focus();">x</span>
+            </span>
+            <div id="regex-search-container">
+                <button class="green-button" id="RegexSearchSettings">Regex Search</button>
+                <div id="myPopup" class="popup">
+                    <div class="popup-content">
+                        <div class="info-popup" id="info" onclick="showInfo()">i
+                            <span class="popuptext" id="infotext">
+                                <p style="font-size: 18px; font-weight: bold;">The Regex Search matches against:</p>
+                                <p>AppName ComponentInfo drawableName</p>
+                            </span>
+                        </div>
+                        <h3 style="width: 100%;">
+                            Regex Settings
+                        </h3>
+                        <div class="settings-row">
+                            <p class="Setting">Insensitive <br> Case insensitive match</p>
+                            <!-- Rounded switch -->
+                            <label class="switch">
+                                <input type="checkbox" id="caseInsensitive-switch" checked="true">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                        <hr width="100%" size="2" class="separator" noshade>
+                        <div class="settings-row">
+                            <p class="Setting">Unicode <br> Match with full unicode</p>
+                            <!-- Rounded switch -->
+                            <label class="switch">
+                                <input type="checkbox" id="caseUnicode-switch" checked="true">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                        <hr width="100%" size="2" class="separator" noshade>
+                        <div class="settings-row">
+                            <p class="Setting">Reverse Search <br> Don't match search</p>
+                            <!-- Rounded switch -->
+                            <label class="switch">
+                                <input type="checkbox" id="reverse-switch">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                        <hr width="100%" size="2" class="separator" noshade>
+                        <button class="green-button" id="closePopup">
+                            Close
+                        </button>
+                    </div>
+                </div>
+                <span>
+                    <!-- Rounded switch -->
+                    <label class="switch">
+                        <input type="checkbox" id="regex-switch">
+                        <span class="slider round"></span>
+                    </label>
+                </span>
+            </div>
+        </div>
+        <div id="random-container">
+            <button id="random-reset-button">Reset &#10006;</button>
+            <!-- Number of icons to random -->
+            <input id="random-number-input" type="number" value="10" title="Number of icons to randomly select"
+                min="1" />
+            <!-- Button for Random Icons -->
+            <button class="green-button" id="random-button"><span class="lg-view">✨ I'm feelin' lucky ✨</span><span
+                    class="sm-view">✨</span></button>
+        </div>
+        <div class="header-elements">
+            <button class="green-button" type="button" id="copy-selected-button"
+                aria-label="Long press to change drawable names"> <img src="/img/requests/copy.svg"></button>
+        </div>
+    </div>
+
+
+    <!-- App Entries -->
+    <div class="table-container" id="requests-table-container">
+        <table id="requests-table">
+            <thead id="requests-table-head">
+                <tr>
+                    <th class="sortable-header" data-sort-index="0">Name</th>
+                    <th class="sortable-header" data-sort-index="1">Icon</th>
+                    <th id="show-matching-drawables">Arcticon</th>
+                    <th>Links</th>
+                    <th class="sortable-header" data-sort-index="2">DL</th>
+                    <th class="sortable-header" data-sort-index="3">Req. count</th>
+                    <th class="sortable-header" data-sort-index="4">Last Req.</th>
+                    <th>Code</th>
+                </tr>
+            </thead>
+            <tbody id="app-entries"></tbody>
+            <tbody>
+                <tr id="table-sentinel" style="height: 1px;"></tr>
+            </tbody>
+        </table>
+    </div>
+    <hr width="100%" size="2" class="separator" noshade>
+    <div class="category-container">
+        <div class="header-container">
+            <span id="search-input-container">
+                <input class="textinput" type="text" id="search-input_category" placeholder="Search Category">
+                <span class="clear-search" id="clear-search_category"
+                    onclick="var input = this.previousElementSibling; input.value = ''; input.focus();">x</span>
+            </span>
+            <button class="green-button" id="Category_Match">Match All Categories</button>
+            <button class="green-button" id="clear-category">x</button>
+        </div>
+        <div id="categories">
+
+        </div>
+    </div>
+    <div class="preview-overlay-class" id="preview-overlay">
+        <span class="close-button-class">&times;</span>
+        <!-- Preview image will be inserted here -->
+        <img class="preview-image-class" id="preview-image" src="" alt="Preview">
+    </div>
+
+    <div class="popup" id="renamer-overlay">
+        <div class="popup-content">
+            <!-- Preview image will be inserted here -->
+            <p>Enter a new drawable name</p>
+            <input class=textinput id="drawableName-input" type="text" placeholder="drawableName"
+                title="Change drawable name  to ..." />
+            <hr width="100%" size="2" class="separator" noshade>
+            <button class="green-button" id="rename-button"> Rename drawable </button>
+        </div>
+    </div>
+
+    <!-- Copy Notification -->
+    <div class="notification" id="copy-notification"></div>
+
+    <!-- Search Notification -->
+    <div class="notification" id="search-notification"></div>
+
+    <script type="module" src="js/requests.js"></script>
+
+    <!--
+    <div id="footer"></div>
+    -->
+
+</body>
+
+</html>

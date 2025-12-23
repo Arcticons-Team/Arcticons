@@ -1,5 +1,5 @@
 import { shuffleArray, copyToClipboard, debounce } from './functions.js';
-import { TABLE_COLUMNS_Requests as TABLE_COLUMNS, DOM } from './const.js';
+import { TABLE_COLUMNS_Requests as TABLE_COLUMNS, DOM } from '../../js/const.js';
 import { state } from './state/store.js';
 import { updateTable, lazyLoadAndRender, showIconPreview } from './ui/tableRenderer.js';
 import { renderCategories, initCategoryUI, findCategory } from './ui/category.js';
@@ -18,9 +18,9 @@ async function initializeAppData() {
         const fetchJson = (url) => fetch(url).then(res => res.ok ? res.json() : null).catch(() => null);
 
         const [jsonContent, appfilterJson, colorsJson] = await Promise.all([
-            fetchJson('assets/requests.json'),
-            fetchJson('assets/combined_appfilter.json'),
-            fetchJson('assets/image_color_counts.json')
+            fetchJson('/assets/requests.json'),
+            fetchJson('/assets/combined_appfilter.json'),
+            fetchJson('/assets/image_color_counts.json')
         ]);
         // Critical Data Check: If requests.json is missing, we can't do anything.
         if (!jsonContent) {
@@ -38,7 +38,7 @@ async function initializeAppData() {
         recomputeView();
         renderCategories();
         if (colorsJson) {
-            const colorWorker = new Worker('./js/worker/colorworker.js');
+            const colorWorker = new Worker('./js/worker/colorWorker.js');
             colorWorker.postMessage({
                 allEntries: state.all,
                 colorData: colorsJson
@@ -289,7 +289,7 @@ function initEventListeners() {
     // Add an event listener to the button
     DOM.updatableButton.addEventListener("click", function () {
         // Define the URL to redirect to
-        const updatableURL = `updatable.html`;
+        const updatableURL = `/dashboard/updatable`;
         // Redirect to the specified URL
         window.location.href = updatableURL;
     });
@@ -367,8 +367,7 @@ function initEventListeners() {
         if (previewLink) {
             event.preventDefault();
             const col = previewLink.dataset.column;
-            const path = col === "AppIcon" ? `extracted_png/${entry.drawable}.webp` : `https://raw.githubusercontent.com/Arcticons-Team/Arcticons/refs/heads/main/icons/white/${entry.Arcticon}.svg`;
-            console.log(path);
+            const path = col === "AppIcon" ? `/extracted_png/${entry.drawable}.webp` : `https://raw.githubusercontent.com/Arcticons-Team/Arcticons/refs/heads/main/icons/white/${entry.Arcticon}.svg`;
             showIconPreview(path, col);
             return;
         }
