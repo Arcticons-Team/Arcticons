@@ -1,8 +1,6 @@
 async function loadIcons() {
-    const response = await fetch('assets/generic_icons.txt');
-    const text = await response.text();
-    const icons = text.split('\n').filter(line => line.trim());
-
+    const fetchJson = (url) => fetch(url).then(res => res.ok ? res.json() : null).catch(() => null);
+    const icons =await Promise.resolve(fetchJson('/assets/generic_icons.json'));
     const grid = document.getElementById('icon-grid');
     icons.forEach(iconName => {
         if (iconName) {
