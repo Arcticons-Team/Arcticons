@@ -22,8 +22,51 @@ export const debounce = (func, delay) => {
     };
 };
 
+export function sortData(direction, columnIndex, data, TABLE_COLUMNS) {
+    const column = TABLE_COLUMNS[columnIndex];
+    if (!column || column.type === 'none') return data;
+
+    const factor = direction === 'asc' ? 1 : -1;
+
+    return [...data].sort((a, b) => {
+        const valA = getCellValue(a, column, direction);
+        const valB = getCellValue(b, column, direction);
+
+        if (valA === null || valB === null) return 0;
+        if (valA > valB) return factor;
+        if (valA < valB) return -factor;
+        return 0;
+    });
+}
+function getCellValue(row, column, direction) {
+    const value = row[column.key];
+    switch (column.type) {
+        case 'number':
+            return Number(value) || 0;
+
+        case 'downloads':
+            return parseDownloadValue(value, direction);
+
+        case 'string':
+            return String(value).toLowerCase().trim();
+
+        default:
+            return null;
+    }
+}
+
+// Convert download string to a numeric value for sorting
+function parseDownloadValue(value, sortingDirection) {
+    if (value === "X") return sortingDirection === 'asc' ? 9999999999999999999999 : -1; // Assign a low value for "AppNotFound" to push it to the end
+    if (value.endsWith("+")) value = value.slice(0, -1); // Remove the "+" at the end
+    if (value.endsWith("K")) return parseFloat(value) * 1000; // Convert "k" to 1000
+    if (value.endsWith("M")) return parseFloat(value) * 1000000; // Convert "M" to 1,000,000
+    if (value.endsWith("B")) return parseFloat(value) * 1000000000; // Convert "B" to 1,000,000,000
+    return parseFloat(value); // Return the numeric value for simple numbers like "100"
+}
+
 // Copy to clipboard function
-export function copyToClipboard(index, rename) {
+export function CopyAppfilter(index, rename) {
     let copyText = "";
     const node = document.getElementById("drawableName-input");
 
@@ -36,7 +79,7 @@ export function copyToClipboard(index, rename) {
         copyText = getSelectedEntries()
             .map(entry => {
                 const appfilterValue = getAppfilterValue(entry, rename, node.value);
-                return buildCopyText(entry, appfilterValue, state.ui.showMatchingNames);
+                return buildCopyText(entry, appfilterValue, state.copy.appfilterName);
             })
             .join('\n');
 
@@ -47,9 +90,13 @@ export function copyToClipboard(index, rename) {
     else {
         const entry = state.view[index];
         const appfilterValue = getAppfilterValue(entry, rename, node.value);
-        copyText = buildCopyText(entry, appfilterValue, state.ui.showMatchingNames);
+        copyText = buildCopyText(entry, appfilterValue, state.copy.appfilterName);
     }
 
+    copyToClipboard(copyText)
+}
+
+export function copyToClipboard(copyText) {
     // Copy to clipboard
     navigator.clipboard.writeText(copyText)
         .then(() => {
@@ -87,6 +134,6 @@ function getAppfilterValue(entry, rename, replacement) {
 }
 function buildCopyText(entry, appfilterValue, mode) {
     return mode
-        ? appfilterValue
-        : `<!-- ${entry.appName} -->\n${appfilterValue}\n`;
+        ? `<!-- ${entry.appName} -->\n${appfilterValue}\n`
+        : appfilterValue;
 }

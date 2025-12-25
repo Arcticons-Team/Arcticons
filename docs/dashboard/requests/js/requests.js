@@ -1,6 +1,6 @@
-import { shuffleArray, copyToClipboard, debounce } from './functions.js';
+import { shuffleArray, CopyAppfilter, debounce } from '../../js/functions.js';
 import { TABLE_COLUMNS_Requests as TABLE_COLUMNS, DOM } from '../../js/const.js';
-import { state } from './state/store.js';
+import { state } from '../../js/state/store.js';
 import { updateTable, lazyLoadAndRender, showIconPreview } from './ui/tableRenderer.js';
 import { renderCategories, initCategoryUI, findCategory } from './ui/category.js';
 
@@ -198,7 +198,7 @@ function initEventListeners() {
 
     bindPress(DOM.copySelectedBtn,
         () => DOM.renameOverlay.classList.add("show"),
-        () => copyToClipboard(null, false)
+        () => CopyAppfilter(null, false)
     );
 
     DOM.regexSearchSettingsBtn.addEventListener(
@@ -325,6 +325,7 @@ function initEventListeners() {
         DOM.matchingDrawablesBtn.classList.toggle("active-toggle", state.ui.showMatchingDrawables);
         DOM.matchingDrawableColumn.classList.toggle("active", state.ui.showMatchingDrawables);
 
+        state.copy.appfilterName = false;
         recomputeView();
     });
 
@@ -335,7 +336,7 @@ function initEventListeners() {
     };
 
     DOM.renameBtn.addEventListener('click', () => {
-        copyToClipboard(null, true);
+        CopyAppfilter(null, true);
     });
 
     DOM.tableBody.addEventListener('click', (event) => {
@@ -350,7 +351,7 @@ function initEventListeners() {
 
         // 1. Handle Copy Button
         if (target.closest('.copy-button')) {
-            copyToClipboard(index, false);
+            CopyAppfilter(index, false);
             return;
         }
 

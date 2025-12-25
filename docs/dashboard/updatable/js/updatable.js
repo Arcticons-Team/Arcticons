@@ -1,24 +1,7 @@
-var appEntriesDataGlobal = []; // Store the original data for sorting
-// Lazy loading and virtualization
-const batchSize = 50; // Number of rows to load at a time
-let startIndex = 0; // Start index for lazy loading
-let appEntriesData = []; // Store the original data for sorting
-// Global variables to track sorting column and direction
-let sortingColumnIndex = 3;
-let sortingDirection = 'desc';
-
-// Debounce function for search input
-const debounce = (func, delay) => {
-    let timeoutId;
-    return (...args) => {
-        if (timeoutId) {
-            clearTimeout(timeoutId);
-        }
-        timeoutId = setTimeout(() => {
-            func.apply(null, args);
-        }, delay);
-    };
-};
+import { state } from "../../js/state/store.js";
+import { DOM, TABLE_COLUMNS_Updates as TABLE_COLUMNS } from "../../js/const.js"
+import { debounce, CopyAppfilter, copyToClipboard } from "../../js/functions.js";
+import { updateTable, lazyLoadAndRender } from "./ui/tableRenderer.js";
 
 // Fetch and process data
 fetch(`/assets/updatable.txt`)
@@ -36,25 +19,29 @@ fetch(`/assets/updatable.txt`)
             const lines = entry.trim().split('\n');
             const appName = lines[0].trim().split('--')[1].trim();
             const appNameAppfilter = lines[0].trim();
-            const appfilter = lines[1].trim().split('\n').join(' ').trim();
-            const packageName = appfilter.split('ComponentInfo{')[1].split('/')[0].trim();
-            const drawable = extractDrawable(appfilter);
+            const componentInfo = lines[1].trim().split('{')[1].split('}')[0]
+            const packageName = componentInfo.split('/')[0].trim();
+            const drawable = extractDrawable(lines[1]);
             const appIconPath = drawable ? `/extracted_png/${drawable}.webp` : '/img/requests/default.svg'; // Adjust path accordingly
             const appIcon = `<img src="${appIconPath}" alt="App Icon">`;
 
-            appEntriesData.push({
+            state.all.push({
                 appName,
+                drawable,
                 appIcon,
                 packageName,
                 appNameAppfilter,
-                appfilter,
+                componentInfo,
                 appIconPath
             });
         });
-        appEntriesDataGlobal = appEntriesData;
-        updateHeaderText(`${appEntriesData.length} Possible Appfilter Updates`);
-
-    initializeAppData();
+        state.view = state.all;
+        updateHeaderText(`${state.all.length} Possible Appfilter Updates`);
+        state.ui.sort.column = 0;
+        state.ui.sort.direction = 'asc'
+        state.copy.appfilterName = false;
+        initializeAppData();
+        initEventListeners();
     })
     .catch(error => console.error('Error fetching file:', error));
 
@@ -64,45 +51,37 @@ async function initializeAppData() {
     const [appfilterJson] = await Promise.all([fetchJson('/assets/combined_appfilter.json')])
     if (appfilterJson) {
 
-            const filteredData = filterAppfilter(appEntriesData, appfilterJson);
-    appEntriesData = filteredData;
-    appEntriesDataGlobal = filteredData;
+        const filteredData = filterAppfilter(appfilterJson);
+        state.all = filteredData;
+        state.view = filteredData;
     } else {
-        console.warn("appfilter.json missing: showing all entries without filtering.");
+        console.warn("componentInfo.json missing: showing all entries without filtering.");
     }
 
 
-    updateHeaderText(`${appEntriesData.length} Updates Available`);
-    const table = document.querySelector('table');
-    const headers = table.querySelectorAll('thead th');
-    // headers[sortingColumnIndex].classList.add(sortingDirection);
-    // Initial render
-    lazyLoadAndRender();
-    // Optionally, trigger the function immediately if needed (e.g., if the page is loaded with a default state):
-    filterAppEntries();
+    updateHeaderText(`${state.all.length} Updates Available`);
+
+    recomputeView();
 }
-// Function to extract the drawable attribute from appfilter
-function extractDrawable(appfilter) {
+// Function to extract the drawable attribute from componentInfo
+function extractDrawable(componentInfo) {
     const regex = /drawable="([^"]+)"/;
-    const match = appfilter.match(regex);
+    const match = componentInfo.match(regex);
     if (match && match.length > 1) {
         return match[1]; // Return the value inside the quotes
     }
     return null; // Return null if no match found
 }
 
-// Filter appEntriesData based on appfilter content
-function filterAppfilter(appEntriesData, appfilterData) {
+// Filter state.all based on componentInfo content
+function filterAppfilter(appfilterData) {
     const appfilterItems = new Set(appfilterData.components);
     console.log(appfilterItems)
     //const appfilterItems = new Set(parseAppfilter(appfilterContent)); // Convert to Set for fast lookups
     const filteredOutEntries = [];
-
-    const filteredData = appEntriesData.filter(entry => {
-        const entryAppfilter = entry.appfilter.trim().split('{')[1].split('}')[0].trim();
-        console.log(entryAppfilter)
-        if (appfilterItems.has(entryAppfilter)) { // Check membership in O(1)
-            filteredOutEntries.push(entryAppfilter); // Track filtered out entries
+    const filteredData = state.all.filter(entry => {
+        if (appfilterItems.has(entry.componentInfo)) { // Check membership in O(1)
+            filteredOutEntries.push(entry.componentInfo); // Track filtered out entries
             return false; // Exclude from filtered data
         }
         return true; // Include in filtered data
@@ -112,22 +91,6 @@ function filterAppfilter(appEntriesData, appfilterData) {
     return filteredData;
 }
 
-
-// Parse appfilter content
-function parseAppfilter(appfilterContent) {
-    const parser = new DOMParser();
-    const xmlDoc = parser.parseFromString(appfilterContent, 'text/xml');
-    const items = xmlDoc.querySelectorAll('item');
-    const appfilterItems = [];
-    items.forEach(item => {
-        const component = item.getAttribute('component');
-        if (component) {
-            appfilterItems.push(component.trim());
-        }
-    });
-    return appfilterItems;
-}
-
 // Update header text
 function updateHeaderText(newHeader) {
     header = newHeader;
@@ -135,11 +98,6 @@ function updateHeaderText(newHeader) {
     document.getElementById('smallheader').innerText = newHeader;
 }
 
-function lazyLoadAndRender() {
-    const dataBatch = appEntriesDataGlobal.slice(startIndex, startIndex + batchSize);
-    renderTable(dataBatch);
-    startIndex += batchSize;
-}
 
 // Scroll event listener for lazy loading
 const tableContainer = document.querySelector('.table-container');
@@ -149,43 +107,6 @@ tableContainer.addEventListener('scroll', () => {
         lazyLoadAndRender();
     }
 });
-
-// Function to clear existing table rows
-function clearTable() {
-    const table = document.getElementById("app-entries");
-    while (table.rows.length > 0) {
-        table.deleteRow(0);
-    }
-}
-
-// Function to render the table based on provided data
-function renderTable(data) {
-    const table = document.getElementById("app-entries");
-    data.forEach((entry, index) => {
-        let row = table.insertRow();
-        let cell1 = row.insertCell(0);
-        let cell2 = row.insertCell(1);
-        let cell3 = row.insertCell(2);
-        let cell4 = row.insertCell(3);
-        let cell5 = row.insertCell(4);
-        index = index + startIndex;
-        cell1.innerHTML = entry.appName;
-        cell2.innerHTML = `<a href="#" class="icon-preview" data-index="${index}">${entry.appIcon}</a>`;
-        cell3.innerHTML = `<div class="package-name"><div id="packagename">` + entry.packageName + `</div><div id="package-copy"><button class="copy-package" onclick="copyToClipboard(${index}, 'package')"><img src="/img/requests/copy.svg"></button></div></div>`;
-        cell4.innerHTML = entry.appfilter.replace('<', '&lt;').replace('>', '&gt;').replace(/"/g, '&quot;').trim();
-        cell5.innerHTML = `<button class="green-button" id="copy-button" onclick="copyToClipboard(${index}, 'appfilter')"><img class="copy-icon" src="/img/requests/copy.svg" alt="Copy"><span class="copy-text">Copy</span></button>`;
-    });
-    // Add event listeners to the icon previews
-    const iconPreviews = document.querySelectorAll('.icon-preview');
-    iconPreviews.forEach(icon => {
-        icon.addEventListener('click', function (event) {
-            event.preventDefault();
-            const index = parseInt(this.getAttribute('data-index'));
-            const entry = appEntriesDataGlobal[index];
-            showIconPreview(entry.appIconPath);
-        });
-    });
-}
 
 
 function showIconPreview(iconSrc) {
@@ -206,39 +127,6 @@ function showIconPreview(iconSrc) {
     });
 }
 
-// Update the table with filtered or sorted data
-function updateTable(data) {
-    startIndex = 0;
-    clearTable(); // Clear existing table rows
-    appEntriesDataGlobal = data;
-    lazyLoadAndRender();
-}
-
-// Copy to clipboard function
-function copyToClipboard(index, event) {
-    const entry = appEntriesDataGlobal[index];
-    let copyText = "";
-
-    if (event == "package") {
-        copyText = `${entry.packageName}`;
-    } else if (event == "appfilter") {
-        copyText = `${entry.appfilter}`;
-    }
-
-    navigator.clipboard.writeText(copyText).then(() => {
-        // Show the copy notification
-        document.getElementById('copy-notification').innerText = `Copied: ${copyText}`;
-        document.getElementById('copy-notification').style.display = 'block';
-
-        // Hide the notification after a few seconds
-        setTimeout(() => {
-            document.getElementById('copy-notification').style.display = 'none';
-        }, 3000);
-    }).catch(error => {
-        console.error('Unable to copy to clipboard:', error);
-    });
-}
-
 // Accessing the button element by its id
 const updatableButton = document.getElementById("updatable-button");
 
@@ -250,80 +138,145 @@ updatableButton.addEventListener("click", function () {
     window.location.href = updatableURL;
 });
 
-function showClearSearchIcon() {
-    const clearSearch = document.querySelector('#clear-search');
-    if (document.getElementById('search-input').value.trim() === "") {
-        console.log(document.getElementById('search-input').value.trim())
-        clearSearch.style.visibility = 'hidden'; // Hide the icon if the input is empty
-    } else {
-        clearSearch.style.visibility = 'visible'; // Show the icon if the input has text
-        console.log(document.getElementById('search-input').value.trim())
-    }
-}
-
-document.getElementById('clear-search').addEventListener('click', clearSearch);
-
-function clearSearch() {
-    showClearSearchIcon();
-    filterAppEntries();
-}
-
 // Search function
 const filterAppEntries = debounce(() => {
-    showClearSearchIcon();
-    const searchInput = document.getElementById('search-input').value.toLowerCase();
-    const filteredData = appEntriesData.filter(entry =>
-        entry.appName.toLowerCase().includes(searchInput)
-    );
-    // If no results are found, show a notification
-    if (filteredData.length === 0) {
-        document.getElementById('search-notification').innerText = `No results found.`;
-        document.getElementById('search-notification').style.display = 'block';
-        // Hide the notification after a few seconds
-        setTimeout(() => {
-            document.getElementById('search-notification').style.display = 'none';
-        }, 5000);
-        updateTable([]);
-    } else {
-        document.getElementById('search-notification').style.display = 'none';
-        const filteredandsortedData = sortData(sortingDirection, sortingColumnIndex, [...filteredData])
-        updateTable(filteredandsortedData);
-    }
-}, 500);
+    state.ui.search = DOM.searchInput.value;
+    recomputeView();
+}, 200);
 
-// Sort table function
+function updateSortMarkers() {
+    DOM.sortableHeaders.forEach((th, index) => {
+        th.classList.remove('asc', 'desc');
+
+        if (index === state.ui.sort.column) {
+            th.classList.add(state.ui.sort.direction);
+        }
+    });
+}
+
+function updateUIState(state) {
+    DOM.clearSearchBtn.style.visibility =
+        state.ui.search ? 'visible' : 'hidden';
+}
+
+
 function sortTable(columnIndex) {
-    const table = document.querySelector('table');
-    const headers = table.querySelectorAll('thead th');
+    state.ui.sort.column = columnIndex;
+    state.ui.sort.direction = DOM.sortableHeaders[columnIndex].classList.contains('asc') ? 'desc' : 'asc';
+    recomputeView();
+}
+let computeWorker
+function recomputeView() {
 
-    // Determine the sorting direction
-    sortingDirection = headers[columnIndex].classList.contains('asc') ? 'desc' : 'asc';
+    if (computeWorker) computeWorker.terminate();
 
-    // Remove sorting indicators from all headers
-    headers.forEach(header => {
-        header.classList.remove('asc', 'desc');
+    computeWorker = new Worker('./js/worker/worker.js', { type: 'module' });
+
+    computeWorker.postMessage({
+        data: state.all,
+        state: state,
+        TABLE_COLUMNS: TABLE_COLUMNS
     });
 
-    // Add the appropriate sorting class to the clicked header
-    headers[columnIndex].classList.add(sortingDirection);
-    sortingColumnIndex = columnIndex;
-    // Sort the data
-    const sortedData = sortData(sortingDirection, columnIndex, [...appEntriesDataGlobal]);
-
-    updateTable(sortedData);
+    computeWorker.onmessage = function (event) {
+        const filteredData = event.data;
+        state.view = filteredData;
+        updateTable(filteredData);
+        updateSortMarkers();
+        computeWorker = null;
+        updateUIState(state);
+    };
 }
 
-function sortData(sortingDirection, columnIndex, sortedData) {
-    sortedData.sort((a, b) => {
-        // Default to string comparison
-        const cellA = a[Object.keys(a)[columnIndex]].toLowerCase();
-        const cellB = b[Object.keys(b)[columnIndex]].toLowerCase();
-        return sortingDirection === 'asc' ? cellA.localeCompare(cellB) : cellB.localeCompare(cellA);
+function bindPress(element, onClick, onLong) {
+    let timer;
+    let long = false;
+    const start = (e) => {
+        if (e.type === "mousedown" && e.button !== 0) return;
+        long = false;
+        element.classList.add("longpress");
+        timer = setTimeout(() => { onLong(); long = true; }, 300);
+    };
+    const end = (e) => {
+        clearTimeout(timer);
+        element.classList.remove("longpress");
+        if (!long && e.type === "click") onClick();
+    };
+    element.addEventListener("mousedown", start);
+    element.addEventListener("touchstart", start, { passive: true });
+    ["mouseup", "mouseleave", "touchend", "click"].forEach(ev => element.addEventListener(ev, end));
+}
+
+function initEventListeners() {
+    DOM.clearSearchBtn.addEventListener('click', filterAppEntries);
+    DOM.searchInput.addEventListener('input', filterAppEntries);
+    DOM.renameBtn.addEventListener('click', () => {
+        CopyAppfilter(null, true);
     });
-    return sortedData;
+    DOM.imagePreviewOverlay.onclick = e => {
+        if (e.target === DOM.imagePreviewOverlay || e.target.classList.contains('close-button-class')) {
+            DOM.imagePreviewOverlay.style.display = 'none';
+        }
+    };
+    bindPress(DOM.copySelectedBtn,
+        () => DOM.renameOverlay.classList.add("show"),
+        () => CopyAppfilter(null, false)
+    );
+
+    DOM.requeststhead.addEventListener('click', (event) => {
+        // Find the closest parent <th> element (the target header)
+        const header = event.target.closest('th');
+
+        // 1. Check if a header was clicked and if it is sortable
+        if (header && header.classList.contains('sortable-header')) {
+            // 2. Efficiently get the logical column index from the data attribute
+            const columnIndex = header.dataset.sortIndex;
+
+            // 3. Ensure the index is valid before proceeding
+            if (columnIndex !== undefined) {
+                // Pass the extracted logical index (as a number) to sortTable
+                sortTable(parseInt(columnIndex, 10));
+            }
+        }
+    });
+
+    DOM.tableBody.addEventListener('click', (event) => {
+        const target = event.target;
+        const row = target.closest('tr');
+        if (!row) return;
+
+        const index = parseInt(row.dataset.index);
+        const pkg = row.dataset.pkg;
+        const componentInfo = row.dataset.componentInfo;
+        const entry = state.view[index];
+
+        // 1. Handle Copy Button
+        if (target.closest('.copy-button')) {
+            CopyAppfilter(index, false);
+            return;
+        }
+        if (target.closest('.copy-package')) {
+            copyToClipboard(state.view[index].packageName)
+            return;
+        }
+
+        // 2. Handle App Name (Row Selection)
+        if (target.classList.contains('app-name-cell')) {
+            const active = state.selectedRows.has(componentInfo);
+            active ? state.selectedRows.delete(componentInfo) : state.selectedRows.add(componentInfo);
+            row.classList.toggle('row-glow', !active);
+            return;
+        }
+
+        // 3. Handle Icon Previews
+        const previewLink = target.closest('.icon-preview');
+        if (previewLink) {
+            event.preventDefault();
+            const col = previewLink.dataset.column;
+            const path = col === "AppIcon" ? `/extracted_png/${entry.drawable}.webp` : `https://raw.githubusercontent.com/Arcticons-Team/Arcticons/refs/heads/main/icons/white/${entry.Arcticon}.svg`;
+            showIconPreview(path, col);
+            return;
+        }
+    });
 }
 
-// Initial table rendering
-function initializeTable() {
-    renderTable(appEntriesData);
-}

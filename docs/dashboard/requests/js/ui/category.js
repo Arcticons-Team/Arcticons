@@ -1,4 +1,4 @@
-import { state } from '../state/store.js';
+import { state } from '../../../js/state/store.js';
 import { DOM } from '../../../js/const.js';
 
 /* ---------- Category UI ---------- */

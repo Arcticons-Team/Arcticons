@@ -4,7 +4,6 @@ import { DOM, imagepath } from '../../../js/const.js';
 
 
 /* ---------- Core table operations ---------- */
-
 export function clearTable() {
     DOM.tableBody.innerHTML = ''; // Faster than deleting rows one by one
 }
@@ -36,18 +35,8 @@ export function renderTableBatch(data) {
             <td class="icon-preview" data-column="AppIcon">
                     <img src="/extracted_png/${entry.drawable}.webp" alt="Icon">
             </td>
-            <td class="arcticon-column" style="${state.ui.showMatchingDrawables ? 'display:table-cell;' : 'display:none;'}">
-                ${state.ui.showMatchingDrawables
-                ? `<a href="#" class="icon-preview" data-column="Arcticon">
-                    <img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/refs/heads/main/icons/white/${entry.Arcticon}.svg" alt="Arcticon" class="arcticon">
-                    </a>`
-                : '<span class="arcticon-placeholder">No Match</span>'
-            }
-            </td>
-            <td class="links-cell">${createLinksHtml()}</td>
-            <td>${entry.playStoreDownloads}</td>
-            <td>${entry.requestedInfo}</td>
-            <td>${formattedDate}</td>
+            <td class="links-cell"><div class="package-name"><div id="packagename">` + entry.packageName + `</div><div id="package-copy"><button class="copy-package"><img src="/img/requests/copy.svg"></button></div></div></td>
+            <td>${entry.componentInfo}</td>
             <td>
                 <button class="green-button copy-button">
                     <img class="copy-icon" src="/img/requests/copy.svg">

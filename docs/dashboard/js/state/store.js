@@ -27,5 +27,8 @@ export const state = {
       column: 3,
       direction: 'desc'
     }
+  },
+  copy: {
+    appfilterName: true
   }
 };
