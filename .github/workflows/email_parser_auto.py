@@ -14,6 +14,7 @@ from PIL import Image
 import imaplib
 import email
 from email.header import decode_header
+import json
 
 config = {
     "request_limit": int(os.getenv('REQUEST_LIMIT')), #1000,
@@ -39,6 +40,8 @@ class EmailParser:
         self.extracted_png_folder_path = Path(extracted_png_folder_path)
         self.requests_path = Path(requests_path+'/requests.txt') if requests_path else None
         self.updatable_path = Path(requests_path+'/updatable.txt') if requests_path else None
+        self.requests_json_path = Path(requests_path + '/requestspre.json') if requests_path else None
+        self.updatable_json_path = Path(requests_path + '/updatable.json') if requests_path else None
         self.imap_conn = imap_conn
 
         self.filelist = list(self.folder_path.glob('*.eml'))
@@ -47,7 +50,9 @@ class EmailParser:
         self.email_count = Counter()
         self.no_zip = {}
         self.updatable = []
+        self.updatable_data = []
         self.new_apps = []
+        self.new_apps_data = []
         self.keep_pngs = set()
         self.current_icons_set = self.current_icons()
 
@@ -351,6 +356,21 @@ Last requested {reqDate}
                         count=values["count"],
                         reqDate=values["requestDate"],
                     )) 
+                    # NEW: Build the specific JSON structure
+                    arc_name = re.sub(r'\s+', '_', values["Name"].strip()).lower()
+                    arc_name = re.sub(r'^(\d+)', r'_\1', arc_name)
+                    self.new_apps_data.append({
+                        "appName": values["Name"],
+                        "componentInfo": values["ComponentInfo"],
+                        "Arcticon": arc_name,
+                        "pkgName": PackageName,
+                        "playStoreDownloads": "X",
+                        "requestedInfo": str(values["count"]),
+                        "lastRequestedTime": float(values.get("requestDate", 0)),
+                        "appIconColor": 0,
+                        "playStoreCategories": [],
+                        "drawable": values["drawable"]
+                    })
                     self.keep_pngs.add(values["drawable"])
                     new_apps_set.add(values["ComponentInfo"])
                 elif (
@@ -362,6 +382,12 @@ Last requested {reqDate}
                         f'<!-- {values["Name"]} -->\n'
                         f'<item component="ComponentInfo{{{values["ComponentInfo"]}}}" drawable="{values["drawable"]}"/>\n\n'
                     )
+                    self.updatable_data.append({
+                        "name": values["Name"],
+                        "drawable": values["drawable"],
+                        "package": PackageName,
+                        "component": values["ComponentInfo"]
+                    })
                     updatable_set.add(componentInfo)
                     self.keep_pngs.add(values["drawable"])
             except Exception as e:
@@ -382,6 +408,16 @@ Last requested {reqDate}
         if len(self.updatable):
             with open(self.updatable_path, 'w', encoding='utf-8') as file_two:
                 file_two.write(''.join(self.updatable))
+        # Write New Apps JSON
+        if len(self.new_apps_data) and self.requests_json_path:
+            with open(self.requests_json_path, 'w', encoding='utf-8') as json_file:
+                json.dump(self.new_apps_data, json_file, indent=4, ensure_ascii=False)
+            print(f"Requests JSON written to {self.requests_json_path}")
+        # NEW: Write JSON output
+        if len(self.updatable_data) and self.updatable_json_path:
+            with open(self.updatable_json_path, 'w', encoding='utf-8') as json_file:
+                json.dump(self.updatable_data, json_file, indent=4, ensure_ascii=False)
+            print(f"JSON output written to {self.updatable_json_path}")
 
     def main(self):
         if self.updatable_path:
