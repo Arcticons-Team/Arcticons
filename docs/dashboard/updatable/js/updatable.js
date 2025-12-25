@@ -18,21 +18,15 @@ fetch(`/assets/updatable.txt`)
         appEntries.slice(0).forEach(entry => {
             const lines = entry.trim().split('\n');
             const appName = lines[0].trim().split('--')[1].trim();
-            const appNameAppfilter = lines[0].trim();
             const componentInfo = lines[1].trim().split('{')[1].split('}')[0]
             const packageName = componentInfo.split('/')[0].trim();
             const drawable = extractDrawable(lines[1]);
-            const appIconPath = drawable ? `/extracted_png/${drawable}.webp` : '/img/requests/default.svg'; // Adjust path accordingly
-            const appIcon = `<img src="${appIconPath}" alt="App Icon">`;
 
             state.all.push({
                 appName,
                 drawable,
-                appIcon,
                 packageName,
-                appNameAppfilter,
                 componentInfo,
-                appIconPath
             });
         });
         state.view = state.all;
