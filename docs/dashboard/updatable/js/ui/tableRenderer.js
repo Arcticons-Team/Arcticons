@@ -35,12 +35,11 @@ export function renderTableBatch(data) {
             <td class="icon-preview" data-column="AppIcon">
                     <img src="/extracted_png/${entry.drawable}.webp" alt="Icon">
             </td>
-            <td class="links-cell"><div class="package-name"><div id="packagename">` + entry.packageName + `</div><div id="package-copy"><button class="copy-package"><img src="/img/requests/copy.svg"></button></div></div></td>
+            <td class="links-cell"><div class="package-name"><div id="packagename">` + entry.packageName + `</div><div id="package-copy"><button class="copy-package"><img src=""../../img/dashboard/icon-copy.svg"></button></div></div></td>
             <td>${entry.componentInfo}</td>
             <td>
-                <button class="green-button copy-button">
-                    <img class="copy-icon" src="/img/requests/copy.svg">
-                    <span class="copy-text">Copy</span>
+                <button class="btn">
+                    <img src="../../img/dashboard/icon-copy.svg">
                 </button>
             </td>
         `;

@@ -49,9 +49,8 @@ export function renderTableBatch(data) {
             <td>${entry.requestedInfo}</td>
             <td>${formattedDate}</td>
             <td>
-                <button class="green-button copy-button">
-                    <img class="copy-icon" src="/img/requests/copy.svg">
-                    <span class="copy-text">Copy</span>
+                <button class="btn">
+                    <img src="../../img/dashboard/icon-copy.svg">
                 </button>
             </td>
         `;

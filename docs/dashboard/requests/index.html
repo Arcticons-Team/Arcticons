@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="css/dashboard-table-main.css" />
     <link rel="stylesheet" href="/dashboard/css/slider.css" />
     <link rel="stylesheet" href="css/dashboard-popup.css" />
-    <link rel="stylesheet" href="/dashboard/css/green-button.css" />
+    <link rel="stylesheet" href="/dashboard/css/buttons.css" />
     <link rel="stylesheet" href="/dashboard/css/image-preview.css" />
     <link rel="stylesheet" href="/dashboard/css/notification.css" />
     <link rel="stylesheet" href="css/categories.css" />
@@ -31,16 +31,16 @@
         <a href="/"><img class="logo" src="/img/logo.svg" alt="logo" id="logo"></a>
         <h1 id="header">Requested Apps</h1>
         <!-- Button for Updatable Site -->
-        <button class="green-button" id="updatable-button">Potential Updates</button>
+
+
+
     </div>
-    <h2 id="smallheader">Requested Apps</h2>
+    <p id="smallheader">Requested Apps</p>
     <div class="pagetop">
-        <div>
-            <button class="green-button" id="show-multiple">Show Matching Name</button><input id="matching-number-input"
-                type="number" value="2" title="Min Matches" min="2" />
-        </div>
+
+
         <h2 id="date_header">Date</h2>
-        <button class="green-button" id="show-matching-drawables-btn">Show Matching Drawables</button>
+
     </div>
 
     <hr style="visibility: hidden;">
@@ -52,8 +52,9 @@
                 <span class="clear-search" id="clear-search"
                     onclick="var input = this.previousElementSibling; input.value = ''; input.focus();">x</span>
             </span>
+
             <div id="regex-search-container">
-                <button class="green-button" id="RegexSearchSettings">Regex Search</button>
+                <button class="btn" id="RegexSearchSettings">Regex Search</button>
                 <div id="myPopup" class="popup">
                     <div class="popup-content">
                         <div class="info-popup" id="info" onclick="showInfo()">i
@@ -92,7 +93,7 @@
                             </label>
                         </div>
                         <hr width="100%" size="2" class="separator" noshade>
-                        <button class="green-button" id="closePopup">
+                        <button class="btn" id="closePopup">
                             Close
                         </button>
                     </div>
@@ -106,18 +107,44 @@
                 </span>
             </div>
         </div>
-        <div id="random-container">
-            <button id="random-reset-button">Reset &#10006;</button>
-            <!-- Number of icons to random -->
-            <input id="random-number-input" type="number" value="10" title="Number of icons to randomly select"
-                min="1" />
-            <!-- Button for Random Icons -->
-            <button class="green-button" id="random-button"><span class="lg-view">✨ I'm feelin' lucky ✨</span><span
-                    class="sm-view">✨</span></button>
+
+        <div class="btn-container">
+            <button class="btn-child" id="show-multiple">
+                <img src="../../img/dashboard/icon-match-name.svg">
+                Show Matching Name
+            </button>
+            <input class="btn-input" id="matching-number-input"
+                type="number" value="2" title="Min Matches" min="2" />
         </div>
+
+        <button class="btn" id="show-matching-drawables-btn">
+            <img src="../../img/dashboard/icon-match-drawable.svg">
+            Show Matching Drawables
+        </button>
+
+        <div class="btn-container" id="random-container">
+            
+            <button id="random-reset-button">Reset &#10006;</button>
+
+            <!-- Button for Random Icons -->
+            <button class="btn-child" id="random-button">
+                <img src="../../img/dashboard/icon-lucky.svg">
+                Random icon
+            </button>
+
+            <!-- Number of icons to random -->
+            <input class="btn-input" id="random-number-input" type="number" value="10" title="Number of icons to randomly select"
+                min="1" />
+        </div>
+
+        <button class="btn" id="updatable-button">
+            <img src="../../img/dashboard/icon-updates.svg">
+            Potential Updates
+        </button>
+
         <div class="header-elements">
-            <button class="green-button" type="button" id="copy-selected-button"
-                aria-label="Long press to change drawable names"> <img src="/img/requests/copy.svg"></button>
+            <button class="btn" type="button" id="copy-selected-button"
+                aria-label="Long press to change drawable names"> <img src="../../img/dashboard/icon-copy.svg"></button>
         </div>
     </div>
 
@@ -151,8 +178,8 @@
                 <span class="clear-search" id="clear-search_category"
                     onclick="var input = this.previousElementSibling; input.value = ''; input.focus();">x</span>
             </span>
-            <button class="green-button" id="Category_Match">Match All Categories</button>
-            <button class="green-button" id="clear-category">x</button>
+            <button class="btn" id="Category_Match">Match All Categories</button>
+            <button class="btn" id="clear-category">x</button>
         </div>
         <div id="categories">
 
@@ -171,7 +198,7 @@
             <input class=textinput id="drawableName-input" type="text" placeholder="drawableName"
                 title="Change drawable name  to ..." />
             <hr width="100%" size="2" class="separator" noshade>
-            <button class="green-button" id="rename-button"> Rename drawable </button>
+            <button class="btn" id="rename-button"> Rename drawable </button>
         </div>
     </div>
 

@@ -12,18 +12,27 @@
   src: url("/fonts/ArcticonsSans-Regular.woff2");
 }
 
+:root {
+    --white: #fff;
+    --black: #000;
+
+    --arctic-blue: #19215E;
+    --primary: hsl(from var(--arctic-blue)h s 30%);
+}
+
+
 body {
     font-family: 'Inter', sans-serif;
     margin-left: 4vw;
     margin-right: 4vw;
-    background-color: white;
+    background-color: var(--white);
 }
 
 .logo {
     width: 160px;
     height: 60px;
     top: -50%;
-    fill: #000;
+    fill: var(--black);
     flex-shrink: 0;
     filter: invert();
 }
@@ -70,7 +79,7 @@ h3 {
 @media (prefers-color-scheme: dark) {
     body {
         background-color: #171717;
-        color: white;
+        color: var(--white);
     }
 
     .links img {
@@ -78,7 +87,7 @@ h3 {
     }
 
     .logo {
-        fill: #fff;
+        fill: var(--white);
         filter: none;
     }
 

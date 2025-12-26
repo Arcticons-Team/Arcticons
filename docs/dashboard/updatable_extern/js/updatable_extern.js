@@ -255,9 +255,9 @@ function renderTable(data) {
         index = index + startIndex;
         cell1.innerHTML = entry.appName;
         cell2.innerHTML = `<a href="#" class="icon-preview" data-index="${index}">${entry.appIcon}</a>`;
-        cell3.innerHTML = `<div class="package-name"><div id="packagename">` + entry.packageName + `</div><div id="package-copy"><button class="copy-package" onclick="copyToClipboard(${index}, 'package')"><img src="/img/requests/copy.svg"></button></div></div>`;
+        cell3.innerHTML = `<div class="package-name"><div id="packagename">` + entry.packageName + `</div><div id="package-copy"><button class="copy-package" onclick="copyToClipboard(${index}, 'package')"><img src="/img/dashboard/icon-copy.svg"></button></div></div>`;
         cell4.innerHTML = entry.appfilter.replace('<', '&lt;').replace('>', '&gt;').replace(/"/g, '&quot;').trim();
-        cell5.innerHTML = `<button class="green-button" id="copy-button" onclick="copyToClipboard(${index}, 'appfilter')"><img class="copy-icon" src="/img/requests/copy.svg" alt="Copy"><span class="copy-text">Copy</span></button>`;
+        cell5.innerHTML = `<button class="green-button" id="copy-button" onclick="copyToClipboard(${index}, 'appfilter')"><img class="copy-icon" src="/img/dashboard/icon-copy.svg" alt="Copy"><span class="copy-text">Copy</span></button>`;
     });
     // Add event listeners to the icon previews
     const iconPreviews = document.querySelectorAll('.icon-preview');

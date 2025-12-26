@@ -32,11 +32,11 @@
 }
 
 .asc::after {
-    border-bottom: 4px solid #000000;
+    border-bottom: 4px solid var(--black);
 }
 
 .desc::after {
-    border-top: 4px solid #000000;
+    border-top: 4px solid var(--black);
 }
 
 table {
@@ -94,10 +94,17 @@ th {
 /* Quick link images*/
 .links{
     cursor: pointer;
-    filter: invert();
-    width: 50px;
-    height: 50px;
+    width: 24px;
+    height: 24px;
+    background-color: var(--primary);
+    padding: 8px;
+    border-radius: 40px;
 }
+
+.links:hover {
+    background-color: hsl(from var(--primary) h s 60%);
+}
+
 .arcticon {
     filter: invert();
 

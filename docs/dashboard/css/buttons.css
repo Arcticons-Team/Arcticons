@@ -1,0 +1,149 @@
+.btn {
+  display: flex;
+  height: 44px;
+  min-width: 60px;
+  padding: 8px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 40px;
+  cursor: pointer;
+  border: none;
+  color: var(--white);
+  background-color: var(--primary);
+}
+
+.btn img {
+  width: 24px;
+  height: 24px;
+}
+
+.btn:hover {
+  background-color: hsl(from var(--primary) h s 60%);
+}
+
+.longpress {
+  -webkit-animation: 1s longpress;
+  animation: 1s longpress;
+}
+
+@-webkit-keyframes longpress {
+
+  0%,
+  20% {
+    background: var(--primary);
+  }
+
+  100% {
+    background: hsl(from var(--primary) h s 40%);
+  }
+}
+
+@keyframes longpress {
+
+  0%,
+  20% {
+    background: var(--primary);
+  }
+
+  100% {
+    background: hsl(from var(--primary) h s 40%);
+  }
+}
+
+.btn-container {
+  display: flex;
+  height: 44px;
+  padding: 0px 8px;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+  border-radius: 40px;
+  background-color: var(--primary);
+}
+
+.btn-child {
+  display: flex;
+  height: 44px;
+  padding: 0px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 40px;
+  cursor: pointer;
+  border: none;
+  color: var(--white);
+  background-color: var(--primary);
+}
+
+.btn-child img {
+  width: 24px;
+  height: 24px;
+}
+
+.btn-input {
+  display: flex;
+  max-width: 72px;
+  height: 28px;
+  padding: 0 18px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 40px;
+  background: var(--white);
+}
+
+
+
+
+
+
+
+#copy-selected-button {
+  position: relative;
+  transition: all .4s 0s ease;
+}
+
+#copy-selected-button,
+#copy-selected-button:before,
+#copy-selected-button:after {
+  box-sizing: border-box;
+}
+
+#copy-selected-button:hover:before,
+#copy-selected-button:hover:after {
+  visibility: visible;
+  opacity: 1;
+  transition: all 0.4s 1s ease;
+  /** that's the magic **/
+}
+
+/** Position of info box**/
+#copy-selected-button:before,
+#copy-selected-button:after {
+  content: "";
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  transform: translate3d(-70%, -25%, 0);
+  transition: all 0.4s 0s ease;
+  z-index: 2;
+}
+
+#copy-selected-button:before {
+  width: 0;
+  height: 0;
+  right: -8px;
+  border: 16px solid transparent;
+  border-bottom-color: #181818;
+}
+
+#copy-selected-button:after {
+  content: attr(aria-label);
+  width: 120%;
+  top: calc(100% + 16px);
+  padding: 8px;
+  background-color: #181818;
+  color: #fff;
+  border-radius: 8px;
+}
