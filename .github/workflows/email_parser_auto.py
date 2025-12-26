@@ -122,7 +122,7 @@ class EmailParser:
                             "drawable": entry["drawable"],
                             "count": int(entry.get("requestedInfo", 1)),
                             "requestDate": float(entry.get("lastRequestedTime", mktime(date.today().timetuple()))),
-                            "appIconcolor":int(entry.get("appIconColor", 0)),
+                            "appIconColor":int(entry.get("appIconColor", 0)),
                             # Preserve existing metadata
                             "downloads": entry.get("playStoreDownloads", "X"),
                             "categories": entry.get("playStoreCategories", []),
