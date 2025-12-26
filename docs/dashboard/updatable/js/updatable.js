@@ -3,69 +3,35 @@ import { DOM, TABLE_COLUMNS_Updates as TABLE_COLUMNS } from "../../js/const.js"
 import { debounce, CopyAppfilter, copyToClipboard } from "../../js/functions.js";
 import { updateTable, lazyLoadAndRender } from "./ui/tableRenderer.js";
 
-// Fetch and process data
-fetch(`/assets/updatable.txt`)
-    .then(response => {
-        if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        return response.text();
-    })
-    .then(fileContent => {
-        const appEntries = fileContent.split(/(?=<!--[^]*?-->)/).filter(entry => entry.trim() !== '');
-
-        // Process each entry and store data
-        appEntries.slice(0).forEach(entry => {
-            const lines = entry.trim().split('\n');
-            const appName = lines[0].trim().split('--')[1].trim();
-            const componentInfo = lines[1].trim().split('{')[1].split('}')[0]
-            const packageName = componentInfo.split('/')[0].trim();
-            const drawable = extractDrawable(lines[1]);
-
-            state.all.push({
-                appName,
-                drawable,
-                packageName,
-                componentInfo,
-            });
-        });
-        state.view = state.all;
-        updateHeaderText(`${state.all.length} Possible Appfilter Updates`);
-        state.ui.sort.column = 0;
-        state.ui.sort.direction = 'asc'
-        state.copy.appfilterName = false;
-        initializeAppData();
-        initEventListeners();
-    })
-    .catch(error => console.error('Error fetching file:', error));
-
-
 async function initializeAppData() {
     const fetchJson = (url) => fetch(url).then(res => res.ok ? res.json() : null).catch(() => null);
-    const [appfilterJson] = await Promise.all([fetchJson('/assets/combined_appfilter.json')])
-    if (appfilterJson) {
+    const [updatableJson, appfilterJson] = await Promise.all([
+        fetchJson('/assets/updatable.json'),
+        fetchJson('/assets/combined_appfilter.json')
+    ])
+    if (!updatableJson) {
+        console.error("Critical error: updatable.json not found")
+        notifyMessage("Failed to load updatable data. Please refresh.");
+        return;
+    }
+    state.all = updatableJson;
 
+    if (appfilterJson) {
         const filteredData = filterAppfilter(appfilterJson);
         state.all = filteredData;
-        state.view = filteredData;
     } else {
         console.warn("componentInfo.json missing: showing all entries without filtering.");
     }
 
-
     updateHeaderText(`${state.all.length} Updates Available`);
-
+    state.view = state.all;
+    state.ui.sort.column = 0;
+    state.ui.sort.direction = 'asc'
+    state.copy.appfilterName = false;
     recomputeView();
+    initEventListeners();
 }
-// Function to extract the drawable attribute from componentInfo
-function extractDrawable(componentInfo) {
-    const regex = /drawable="([^"]+)"/;
-    const match = componentInfo.match(regex);
-    if (match && match.length > 1) {
-        return match[1]; // Return the value inside the quotes
-    }
-    return null; // Return null if no match found
-}
+initializeAppData();
 
 // Filter state.all based on componentInfo content
 function filterAppfilter(appfilterData) {
@@ -87,11 +53,9 @@ function filterAppfilter(appfilterData) {
 
 // Update header text
 function updateHeaderText(newHeader) {
-    header = newHeader;
     document.getElementById('header').innerText = newHeader;
     document.getElementById('smallheader').innerText = newHeader;
 }
-
 
 // Scroll event listener for lazy loading
 const tableContainer = document.querySelector('.table-container');
@@ -101,7 +65,6 @@ tableContainer.addEventListener('scroll', () => {
         lazyLoadAndRender();
     }
 });
-
 
 function showIconPreview(iconSrc) {
     const previewOverlay = document.getElementById('preview-overlay');
@@ -120,17 +83,6 @@ function showIconPreview(iconSrc) {
         }
     });
 }
-
-// Accessing the button element by its id
-const updatableButton = document.getElementById("updatable-button");
-
-// Add an event listener to the button
-updatableButton.addEventListener("click", function () {
-    // Define the URL to redirect to
-    const updatableURL = `/dashboard/requests`;
-    // Redirect to the specified URL
-    window.location.href = updatableURL;
-});
 
 // Search function
 const filterAppEntries = debounce(() => {
@@ -152,7 +104,6 @@ function updateUIState(state) {
     DOM.clearSearchBtn.style.visibility =
         state.ui.search ? 'visible' : 'hidden';
 }
-
 
 function sortTable(columnIndex) {
     state.ui.sort.column = columnIndex;
@@ -217,6 +168,11 @@ function initEventListeners() {
         () => CopyAppfilter(null, false)
     );
 
+    DOM.updatableButton.addEventListener("click", function () {
+        const updatableURL = `/dashboard/requests`;
+        window.location.href = updatableURL;
+    });
+
     DOM.requeststhead.addEventListener('click', (event) => {
         // Find the closest parent <th> element (the target header)
         const header = event.target.closest('th');
@@ -250,7 +206,7 @@ function initEventListeners() {
             return;
         }
         if (target.closest('.copy-package')) {
-            copyToClipboard(state.view[index].packageName)
+            copyToClipboard(state.view[index].pkgName)
             return;
         }
 
@@ -273,4 +229,3 @@ function initEventListeners() {
         }
     });
 }
-
