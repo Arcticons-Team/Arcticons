@@ -67,6 +67,9 @@ class EmailParser:
         self.requests_path = (
             Path(requests_path + "/requests.json") if requests_path else None
         )
+        self.requests_path_old = (
+            Path(requests_path + "/requests.txt") if requests_path else None
+        )
         self.updatable_path = (
             Path(requests_path + "/updatable.json") if requests_path else None
         )
@@ -497,11 +500,8 @@ Last requested {reqDate}
         )
         new_list += "".join(self.new_apps)
 
-        with open(self.requests_path, "w", encoding="utf-8") as file:
+        with open(self.requests_path_old, "w", encoding="utf-8") as file:
             file.write(new_list)
-        if len(self.updatable):
-            with open(self.updatable_path, "w", encoding="utf-8") as file_two:
-                file_two.write("".join(self.updatable))
         # --- New JSON structure matching Scraper Script ---
         if self.new_apps_data and self.requests_json_path:
             # Extract unique categories (even if mostly defaults)
