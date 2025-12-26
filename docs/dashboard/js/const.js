@@ -17,7 +17,7 @@ export const TABLE_COLUMNS_Requests = [
 
 export const TABLE_COLUMNS_Updates = [
     { key: 'appName', type: 'string' },
-    { key: 'packageName', type: 'string' },
+    { key: 'pkgName', type: 'string' },
     { key: 'componentInfo', type: 'string' }
 ];
 
