@@ -457,7 +457,7 @@ Last requested {reqDate}
                             "requestedInfo": str(values["count"]),
                             "lastRequestedTime": float(values.get("requestDate", 0)),
                             "appIconColor": values["appIconColor"],
-                            "playStoreCategories": [values["categories"]],
+                            "playStoreCategories": values["categories"],
                             "drawable": values["drawable"],
                         }
                     )
