@@ -48,7 +48,8 @@
     z-index: 2;
     background-color: white;
     margin: 250px auto;
-    padding: 20px;
+    padding: 24px;
+    border-radius: 20px;
     border: 1px solid #888888;
     width: 310px;
 }
@@ -117,8 +118,8 @@
 /* Toggle this class - hide and show the popup */
 .info-popup .show {
     visibility: visible;
-    -webkit-animation: fadeIn 1s;
-    animation: fadeIn 1s;
+    -webkit-animation: fadeIn .2s;
+    animation: fadeIn .2s;
 }
 
 /* Add animation (fade in the popup) */
