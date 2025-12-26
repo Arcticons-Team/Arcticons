@@ -383,10 +383,10 @@ Last requested {reqDate}
                         f'<item component="ComponentInfo{{{values["ComponentInfo"]}}}" drawable="{values["drawable"]}"/>\n\n'
                     )
                     self.updatable_data.append({
-                        "name": values["Name"],
-                        "drawable": values["drawable"],
-                        "package": PackageName,
-                        "component": values["ComponentInfo"]
+                        "appName": values["Name"],
+                        "componentInfo": values["ComponentInfo"],
+                        "pkgName": PackageName,
+                        "drawable": values["drawable"]
                     })
                     updatable_set.add(componentInfo)
                     self.keep_pngs.add(values["drawable"])
