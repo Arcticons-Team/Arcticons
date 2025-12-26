@@ -64,48 +64,6 @@
     text-align: center;
 }
 
-#rename-button {
-    height: 45px;
-    font-size: 16px;
-}
-
-/* I'm feeling lucky container */
-#random-container {
-    flex: 1;
-    display: flex;
-    gap: 10px;
-}
-
-#random-button {
-    flex: 1;
-    width: 100%;
-}
-
-#random-number-input {
-    max-width: 66px;
-    box-sizing: border-box !important;
-    overflow: visible;
-    border-radius: 100px;
-    background-color: #eee;
-    border: 1.5px solid #171717;
-    box-shadow: none;
-    outline: none;
-    padding: 0.8em 1.2em;
-}
-
-#matching-number-input {
-    max-width: 60px;
-    box-sizing: border-box;
-    overflow: visible;
-    background-color: #eee;
-    border: 5px solid var(--primary);
-    box-shadow: none;
-    outline: none;
-    padding: 5px 7px 5px 7px;
-    height: 45px;
-    border-bottom-right-radius: 100px;
-    border-top-right-radius: 100px;
-}
 
 #random-reset-button {
     border: 1px solid red;
@@ -159,20 +117,6 @@
 
 #show-matching-drawables-btn.active-toggle {
     background-color: var(--primary);
-}
-
-#regex-search-container {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    /* Aligns the label and switch vertically */
-    width: 100%;
-    border: none;
-    color: white;
-    background-color: var(--primary);
-    border-radius: 100px;
-    padding: 5px 10px 5px 5px;
-    text-decoration: none;
 }
 
 .header-elements {

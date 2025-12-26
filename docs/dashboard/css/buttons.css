@@ -1,8 +1,12 @@
+:root{
+  --btn-height: 44px;
+}
+
 .btn {
   display: flex;
-  height: 44px;
+  height: var(--btn-height);
   min-width: 60px;
-  padding: 8px 16px;
+  padding: 0px 16px;
   justify-content: center;
   align-items: center;
   gap: 8px;
@@ -53,8 +57,8 @@
 
 .btn-container {
   display: flex;
-  height: 44px;
-  padding: 0px 8px;
+  height: var(--btn-height);
+  padding: 0px 16px;
   justify-content: center;
   align-items: center;
   gap: 0px;
@@ -62,9 +66,12 @@
   background-color: var(--primary);
 }
 
+.btn-container:hover {
+  background-color: hsl(from var(--primary) h s 60%);
+}
+
 .btn-child {
   display: flex;
-  height: 44px;
   padding: 0px;
   justify-content: center;
   align-items: center;
@@ -73,7 +80,7 @@
   cursor: pointer;
   border: none;
   color: var(--white);
-  background-color: var(--primary);
+  background-color: #00000000;
 }
 
 .btn-child img {
@@ -83,17 +90,21 @@
 
 .btn-input {
   display: flex;
-  max-width: 72px;
+  max-width: 80px;
   height: 28px;
   padding: 0 18px;
   justify-content: center;
   align-items: center;
   border-radius: 40px;
   background: var(--white);
+  box-sizing: border-box !important;
+  overflow: visible;
+  box-shadow: none;
+  border: none;
+  outline: none;
+  padding: 0.8em 1.2em;
+
 }
-
-
-
 
 
 
