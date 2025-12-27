@@ -6,7 +6,8 @@ import json
 from pathlib import Path
 from bs4 import BeautifulSoup
 from aiohttp import ClientTimeout
-from datetime import datetime
+from datetime import date, datetime
+from time import mktime
 
 # Regular expression for parsing blocks
 request_block_query = re.compile(
@@ -16,16 +17,37 @@ request_block_query = re.compile(
     re.M,
 )
 
-def parse_existing(block_query, path):
-    path = Path(path)
-    if not path.exists():
-        print(f"The file '{path}' does not exist.")
-        return []
+def parse_existing(path_json):
+    path_json = Path(path_json)
+    if not path_json.exists():
+        print(f"File {path_json} not found.")
+        return [], 0
 
-    with open(path, "r", encoding="utf8") as existing_file:
-        contents = existing_file.read()
-        existing_requests = re.finditer(block_query, contents)
-        return [req.groupdict() for req in existing_requests]
+    with open(path_json, "r", encoding="utf8") as f:
+        try:
+            data = json.load(f)
+            stats = data.get("stats", {})
+            # Capture the last time we successfully scraped the Play Store
+            last_play_scrape = stats.get("lastPlayScrape", 0)
+            entries = data.get("entries", [])
+            
+            print(f"Loaded {len(entries)} entries. Last Play Store scrape was: {datetime.fromtimestamp(last_play_scrape)}")
+            
+            mapped_entries = [{
+                "Name": e["appName"],
+                "ComponentInfo": e["componentInfo"],
+                "drawable": e["drawable"],
+                "count": e["requestedInfo"],
+                "requestDate": e["lastRequestedTime"],
+                "appIconColor": e.get("appIconColor", 0),
+                "existingDownloads": e.get("playStoreDownloads"),
+                "existingCategories": e.get("playStoreCategories", [])
+            } for e in entries]
+            
+            return mapped_entries, last_play_scrape
+        except Exception as e:
+            print(f"JSON load failed: {e}")
+            return [], 0
 
 def extract_spans_below_div(page_content, parent_class, target_class):
     try:
@@ -83,12 +105,17 @@ async def fetch_app_data(app_id, session, retries=3, delay=1):
             return await fetch_app_data(app_id, session, retries - 1, delay * 2)
         return {"Downloads": "X", "Categories": []}
 
-async def fetch_all_app_data(app_list, concurrency=10):
+async def fetch_all_app_data(app_list, last_scrape_time, concurrency=10):
     timeout = ClientTimeout(total=60)
     semaphore = asyncio.Semaphore(concurrency)
     async with aiohttp.ClientSession(timeout=timeout) as session:
         async def sem_task(app):
             async with semaphore:
+                if float(app.get("requestDate", 0)) < last_scrape_time:
+                    return {
+                        "Downloads": app["existingDownloads"], 
+                        "Categories": app.get("existingCategories", [])
+                    }
                 app_id = app["ComponentInfo"].split("/")[0]
                 return await fetch_app_data(app_id, session)
         tasks = [sem_task(app) for app in app_list]
@@ -119,10 +146,10 @@ def format_for_js(app, play_data):
     }
 
 def main(input_file, output_file):
-    app_list = parse_existing(request_block_query, input_file)
+    app_list, last_scrape_time = parse_existing(input_file)
     if not app_list: return
 
-    results = asyncio.run(fetch_all_app_data(app_list))
+    results = asyncio.run(fetch_all_app_data(app_list, last_scrape_time))
 
     final_entries = []
     all_categories = set()
@@ -138,8 +165,9 @@ def main(input_file, output_file):
     # Create the multi-array structure
     output_data = {
         "stats": {
-            "lastUpdate": max([e["lastRequestedTime"] for e in final_entries]),
-            "totalCount": len(final_entries)
+            "lastUpdate": max([e["lastRequestedTime"] for e in final_entries]) if final_entries else 0,
+            "totalCount": len(final_entries),
+            "lastPlayScrape": mktime(date.today().timetuple()),
         },
         "categories": sorted(list(all_categories)),
         "entries": final_entries
@@ -148,6 +176,6 @@ def main(input_file, output_file):
         json.dump(output_data, json_file, ensure_ascii=False, indent=4)
 
 if __name__ == "__main__":
-    input_file = "docs/assets/requests.txt"
+    input_file = "docs/assets/requestspre.json"
     output_file = "docs/assets/requests.json"
     main(input_file, output_file)

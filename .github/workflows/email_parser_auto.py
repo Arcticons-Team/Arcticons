@@ -67,22 +67,14 @@ class EmailParser:
         self.requests_path = (
             Path(requests_path + "/requests.json") if requests_path else None
         )
-        self.requests_path_old = (
-            Path(requests_path + "/requests.txt") if requests_path else None
-        )
         self.updatable_path = (
-            Path(requests_path + "/updatable.json") if requests_path else None
-        )
-        self.requests_json_path = (
-            Path(requests_path + "/requestspre.json") if requests_path else None
-        )
-        self.updatable_json_path = (
             Path(requests_path + "/updatable.json") if requests_path else None
         )
         self.imap_conn = imap_conn
 
         self.filelist = list(self.folder_path.glob("*.eml"))
         self.data = {}
+        self.last_scrape_time = 0
         self.apps = defaultdict(dict)
         self.email_count = Counter()
         self.no_zip = {}
@@ -96,23 +88,30 @@ class EmailParser:
         self.name_pattern = re.compile(r"<!-- (?P<Name>.+) -->", re.M)
         self.component_pattern = re.compile("ComponentInfo{(?P<ComponentInfo>.+)}")
         self.package_name_pattern = re.compile(r"(?P<PackageName>[\w\.]+)/")
-        self.request_block_query = re.compile(
-            r"<!-- (?P<Name>.+) -->\s<item component=\"ComponentInfo{(?P<ComponentInfo>.+)}\" drawable=\"(?P<drawable>.+|)\"(/>| />)\s(https:\/\/play.google.com\/store\/apps\/details\?id=.+\shttps:\/\/f-droid\.org\/en\/packages\/.+\shttps:\/\/apt.izzysoft.de\/fdroid\/index\/apk\/.+\shttps:\/\/galaxystore.samsung.com\/detail\/.+\shttps:\/\/www.ecosia.org\/search\?q\=.+\s)Requested (?P<count>\d+) times\s?(Last requested (?P<requestDate>\d+\.?\d+?))?",
-            re.M,
-        )
-        self.update_block_query = re.compile(
-            r"<!-- (?P<Name>.+) -->\s<item component=\"ComponentInfo{(?P<ComponentInfo>.+)}\" drawable=\"(?P<drawable>.+|)\"(/>| />)",
-            re.M,
-        )
 
-    def parse_existing(self, block_query, path):
+    def parse_existing(self, path):
         if not path.exists():
             print(f"The file '{path}' does not exist.")
             return
         with open(path, "r", encoding="utf8") as f:
                 try:
                     raw_data = json.load(f)
-                    entries = raw_data.get("entries", raw_data) if isinstance(raw_data, dict) else raw_data
+                    # 1. Determine if we are looking at a Dict or List
+                    if isinstance(raw_data, dict):
+                        # It's the new structure: {"stats": ..., "entries": [...]}
+                        stats = raw_data.get("stats", {})
+                        # Only update last_scrape_time if it's actually in this specific file
+                        file_scrape_time = stats.get("lastPlayScrape", 0)
+                        if file_scrape_time > 0:
+                            self.last_scrape_time = file_scrape_time
+                        
+                        entries = raw_data.get("entries", [])
+                    elif isinstance(raw_data, list):
+                        # It's the old structure: [...]
+                        entries = raw_data
+                    else:
+                        print(f"Unknown JSON format in {path.name}")
+                        return
                     
                     for entry in entries:
                         comp = entry["componentInfo"]
@@ -390,17 +389,6 @@ class EmailParser:
                 print(f"Error: File not found: {normalized_path}")
 
     def separate_updatable(self):
-        object_block = """
-<!-- {name} -->
-<item component="ComponentInfo{{{component}}}" drawable="{appname}"/>
-https://play.google.com/store/apps/details?id={packageName}
-https://f-droid.org/en/packages/{packageName}/
-https://apt.izzysoft.de/fdroid/index/apk/{packageName}
-https://galaxystore.samsung.com/detail/{packageName}
-https://www.ecosia.org/search?q={packageName}
-Requested {count} times
-Last requested {reqDate}
-    """
         appfilter_tree = ET.parse(self.appfilter_path)
         root = appfilter_tree.getroot()
         items = root.findall(".//item")
@@ -432,19 +420,6 @@ Last requested {reqDate}
                     and componentInfo not in new_apps_set
                     and PackageName not in packageName_set
                 ):
-                    self.new_apps.append(
-                        object_block.format(
-                            name=values["Name"],
-                            component=values["ComponentInfo"],
-                            appname=values["drawable"],
-                            packageName=values["ComponentInfo"][
-                                : values["ComponentInfo"].index("/")
-                            ],
-                            count=values["count"],
-                            reqDate=values["requestDate"],
-                        )
-                    )
-                    # NEW: Build the specific JSON structure
                     arc_name = re.sub(r"\s+", "_", values["Name"].strip()).lower()
                     arc_name = re.sub(r"^(\d+)", r"_\1", arc_name)
                     self.new_apps_data.append(
@@ -453,11 +428,11 @@ Last requested {reqDate}
                             "componentInfo": values["ComponentInfo"],
                             "Arcticon": arc_name,
                             "pkgName": PackageName,
-                            "playStoreDownloads": values["downloads"],
+                            "playStoreDownloads": values.get("downloads", "X"),
                             "requestedInfo": str(values["count"]),
                             "lastRequestedTime": float(values.get("requestDate", 0)),
                             "appIconColor": values["appIconColor"],
-                            "playStoreCategories": values["categories"],
+                            "playStoreCategories": values.get("categories", []),
                             "drawable": values["drawable"],
                         }
                     )
@@ -468,10 +443,6 @@ Last requested {reqDate}
                     and componentInfo not in updatable_set
                     and componentInfo not in appfilter_set
                 ):
-                    self.updatable.append(
-                        f'<!-- {values["Name"]} -->\n'
-                        f'<item component="ComponentInfo{{{values["ComponentInfo"]}}}" drawable="{values["drawable"]}"/>\n\n'
-                    )
                     self.updatable_data.append(
                         {
                             "appName": values["Name"],
@@ -487,24 +458,8 @@ Last requested {reqDate}
                 print(f"Error: {e}")
 
     def write_output(self):
-        new_list_header = """-------------------------------------------------------
-{total_count} Requested Apps Pending (Updated {date})
--------------------------------------------------------
-"""
-        new_list = new_list_header.format(
-            total_count=len(self.new_apps),
-            date=date.today()
-            .strftime(config["date_format"])
-            .replace("X0", "X")
-            .replace("X", ""),
-        )
-        new_list += "".join(self.new_apps)
-
-        with open(self.requests_path_old, "w", encoding="utf-8") as file:
-            file.write(new_list)
-        # --- New JSON structure matching Scraper Script ---
-        if self.new_apps_data and self.requests_json_path:
-            # Extract unique categories (even if mostly defaults)
+        if self.new_apps_data and self.requests_path:
+            # Extract unique categories
             all_categories = set()
             for entry in self.new_apps_data:
                 for cat in entry["playStoreCategories"]:
@@ -518,27 +473,27 @@ Last requested {reqDate}
                         else 0
                     ),
                     "totalCount": len(self.new_apps_data),
+                    "lastPlayScrape": self.last_scrape_time
                 },
                 "categories": sorted(list(all_categories)),
                 "entries": self.new_apps_data,
             }
 
-            with open(self.requests_json_path, "w", encoding="utf-8") as json_file:
+            with open(self.requests_path, "w", encoding="utf-8") as json_file:
                 json.dump(output_data, json_file, indent=4, ensure_ascii=False)
-            print(f"JSON output written to {self.requests_json_path}")
-        # NEW: Write JSON output
-        if len(self.updatable_data) and self.updatable_json_path:
-            with open(self.updatable_json_path, "w", encoding="utf-8") as json_file:
+            print(f"JSON output written to {self.requests_path}")
+        if len(self.updatable_data) and self.updatable_path:
+            with open(self.updatable_path, "w", encoding="utf-8") as json_file:
                 json.dump(self.updatable_data, json_file, indent=4, ensure_ascii=False)
-            print(f"JSON output written to {self.updatable_json_path}")
+            print(f"JSON output written to {self.updatable_path}")
 
     def main(self):
         if self.updatable_path:
             print("parse Existing Updatable")
-            self.parse_existing(self.update_block_query, self.updatable_path)
+            self.parse_existing(self.updatable_path)
         if self.requests_path:
             print("parse Existing Requests")
-            self.parse_existing(self.request_block_query, self.requests_path)
+            self.parse_existing(self.requests_path)
         print("Filter Old")
         self.filter_old()
         print("Parse Mail")

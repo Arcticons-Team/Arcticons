@@ -59,7 +59,7 @@ def create_json_output(results, output_file):
 
 def main():
     folder_path = 'docs/extracted_png'  # Folder containing .webp images
-    output_file = 'docs/assets/image_color_counts.xml'  # Output XML file name
+    #output_file = 'docs/assets/image_color_counts.xml'  # Output XML file name
     json_output_file = 'docs/assets/image_color_counts.json'
     
     # Process images and get results
@@ -69,8 +69,8 @@ def main():
     results.sort(key=lambda x: x[0])  # Sort by the filename (first element of the tuple)
     
     # Create XML output
-    create_xml_output(results, output_file)
-    print(f"XML output saved to {output_file}")
+    #create_xml_output(results, output_file)
+    #print(f"XML output saved to {output_file}")
     create_json_output(results, json_output_file)
     print(f"JSON output saved to {json_output_file}")
 
