@@ -15,10 +15,16 @@
 :root {
     --white: #fff;
     --black: #000;
+    --grey-90: #141314;
+    --grey-80: #211f21;
+    --grey-60: #474247;
+    --grey-20: #e6e1e3;
+    --grey-10: #fff9f9;
 
-    --background: var(--white);
-    --arctic-blue: #19215E;
-    --primary: hsl(from var(--arctic-blue)h s 30%);
+    --background: var(--grey-10);
+    --blue-60: #19215E;
+
+    --primary: hsl(from var(--blue-60)h s 30%);
 }
 
 
@@ -82,7 +88,7 @@ h3 {
 
 @media (prefers-color-scheme: dark) {
     body {
-        background-color: #171717;
+        background-color: var(--grey-90);
         color: var(--white);
     }
 

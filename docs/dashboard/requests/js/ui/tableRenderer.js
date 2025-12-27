@@ -35,7 +35,6 @@ export function renderTableBatch(data) {
             <td class="icon-preview" data-column="AppIcon">
                     <img src="/extracted_png/${entry.drawable}.webp" alt="Icon">
             </td>
-            <td class="app-name-cell" style="cursor: pointer;">${entry.appName}</td>
             <td class="arcticon-column" style="${state.ui.showMatchingDrawables ? 'display:table-cell;' : 'display:none;'}">
                 ${state.ui.showMatchingDrawables
                 ? `<a href="#" class="icon-preview" data-column="Arcticon">
@@ -44,6 +43,7 @@ export function renderTableBatch(data) {
                 : '<span class="arcticon-placeholder">No Match</span>'
             }
             </td>
+            <td class="app-name-cell" style="cursor: pointer;">${entry.appName}</td>
             <td class="links-cell">${createLinksHtml()}</td>
             <td>${entry.playStoreDownloads}</td>
             <td>${entry.requestedInfo}</td>
