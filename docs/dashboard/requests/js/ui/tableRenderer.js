@@ -32,10 +32,10 @@ export function renderTableBatch(data) {
             });
         // Generate the entire row HTML at once - Much faster than insertCell()
         row.innerHTML = `
-            <td class="app-name-cell" style="cursor: pointer;">${entry.appName}</td>
             <td class="icon-preview" data-column="AppIcon">
                     <img src="/extracted_png/${entry.drawable}.webp" alt="Icon">
             </td>
+            <td class="app-name-cell" style="cursor: pointer;">${entry.appName}</td>
             <td class="arcticon-column" style="${state.ui.showMatchingDrawables ? 'display:table-cell;' : 'display:none;'}">
                 ${state.ui.showMatchingDrawables
                 ? `<a href="#" class="icon-preview" data-column="Arcticon">
@@ -77,10 +77,8 @@ export function updateTable(data = state.view) {
 
 function createLinksHtml() {
     return `
-        <img src="${imagepath.playStore}" data-type="play" class="links" alt="P">
+        <img src="${imagepath.playStore}" data-type="play" class="links" alt="Play Store">
         <img src="${imagepath.fdroid}" data-type="fdroid" class="links" alt="F">
-        <img src="${imagepath.izzyOnDroid}" data-type="izzy" class="links" alt="I">
-        <img src="${imagepath.galaxyStore}" data-type="galaxy" class="links" alt="G">
         <img src="${imagepath.wwwSearch}" data-type="search" class="links" alt="A">
     `;
 }

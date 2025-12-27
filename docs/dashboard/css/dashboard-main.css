@@ -16,6 +16,7 @@
     --white: #fff;
     --black: #000;
 
+    --background: var(--white);
     --arctic-blue: #19215E;
     --primary: hsl(from var(--arctic-blue)h s 30%);
 }
@@ -23,9 +24,12 @@
 
 body {
     font-family: 'Inter', sans-serif;
-    margin-left: 4vw;
-    margin-right: 4vw;
     background-color: var(--white);
+}
+
+.content {
+    margin-left: 8vw;
+    margin-right: 8vw;
 }
 
 .logo {

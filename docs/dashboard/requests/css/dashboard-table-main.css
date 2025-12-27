@@ -46,19 +46,25 @@ table {
 
 th{
     padding: 8px;
-    text-align: center;
+    text-align: left;
+    border-bottom: solid 2px var(--primary);
+    background-color: var(--background);
+
+
 }
 td {
     padding-top: 4px;
-    text-align: center;
+    text-align: left;
+    border-bottom: solid 1px var(--primary);
 }
 
 td:nth-child(1) {
-    width: 20%;
+    max-width: 44px;
+    
 }
 
 td:nth-child(2) {
-    max-width: 60px;
+    width: 30%;
 }
 
 td:nth-child(3) {
@@ -68,7 +74,7 @@ td:nth-child(3) {
 
 td:nth-child(4) {
     width: 25%;
-    min-width: 180px;
+    min-width: 60px;
 }
 
 td:nth-child(5) {
@@ -76,19 +82,11 @@ td:nth-child(5) {
 }
 
 td:nth-child(6) {
-     width: 15%;
+     width: 10%;
 }
 
 td:nth-child(8) {
     max-width: 100px;
-}
-
-tr:nth-child(even) {
-    background-color: #ebebeb;
-}
-
-th {
-    background-color: #f2f2f2;
 }
 
 /* Quick link images*/
