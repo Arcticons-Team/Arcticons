@@ -113,9 +113,22 @@ class EmailParser:
         with open(path, "r", encoding="utf8") as f:
                 try:
                     raw_data = json.load(f)
-                    stats = raw_data.get("stats",{})
-                    self.last_scrape_time = stats.get("lastPlayScrape",0)
-                    entries = raw_data.get("entries", raw_data) if isinstance(raw_data, dict) else raw_data
+                    # 1. Determine if we are looking at a Dict or List
+                    if isinstance(raw_data, dict):
+                        # It's the new structure: {"stats": ..., "entries": [...]}
+                        stats = raw_data.get("stats", {})
+                        # Only update last_scrape_time if it's actually in this specific file
+                        file_scrape_time = stats.get("lastPlayScrape", 0)
+                        if file_scrape_time > 0:
+                            self.last_scrape_time = file_scrape_time
+                        
+                        entries = raw_data.get("entries", [])
+                    elif isinstance(raw_data, list):
+                        # It's the old structure: [...]
+                        entries = raw_data
+                    else:
+                        print(f"Unknown JSON format in {path.name}")
+                        return
                     
                     for entry in entries:
                         comp = entry["componentInfo"]
