@@ -1,15 +1,17 @@
 // Array of Link Images
 export const imagepath = {
-    playStore: '/img/requests/google-play-store.svg',
-    fdroid: '/img/requests/f-droid.svg',
-    izzyOnDroid: '/img/requests/izzyondroid.svg',
-    galaxyStore: '/img/requests/galaxystore.svg',
-    wwwSearch: '/img/requests/search-globe.svg'
+    playStore: '/img/dashboard/icon-play.svg',
+    fdroid: '/img/dashboard/icon-fdroid.svg',
+    izzyOnDroid: '/img/dashboard/icon-izzy.svg',
+    galaxyStore: '/img/dashboard/icon-galaxy.svg',
+    wwwSearch: '/img/dashboard/icon-web.svg',
+    download: '/img/dashboard/icon-download.svg',
+    copy: '/img/dashboard/icon-copy.svg'
 };
 
 export const TABLE_COLUMNS_Requests = [
-    { key: 'appName', type: 'string' },
     { key: 'appIconColor', type: 'number' },
+    { key: 'appName', type: 'string' },
     { key: 'playStoreDownloads', type: 'downloads' },
     { key: 'requestedInfo', type: 'number' },
     { key: 'lastRequestedTime', type: 'number' }

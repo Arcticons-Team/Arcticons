@@ -32,7 +32,6 @@ export function renderTableBatch(data) {
             });
         // Generate the entire row HTML at once - Much faster than insertCell()
         row.innerHTML = `
-            <td class="app-name-cell" style="cursor: pointer;">${entry.appName}</td>
             <td class="icon-preview" data-column="AppIcon">
                     <img src="/extracted_png/${entry.drawable}.webp" alt="Icon">
             </td>
@@ -44,15 +43,14 @@ export function renderTableBatch(data) {
                 : '<span class="arcticon-placeholder">No Match</span>'
             }
             </td>
+            <td class="app-name-cell" style="cursor: pointer;">${entry.appName}</td>
             <td class="links-cell">${createLinksHtml()}</td>
             <td>${entry.playStoreDownloads}</td>
             <td>${entry.requestedInfo}</td>
             <td>${formattedDate}</td>
             <td>
-                <button class="green-button copy-button">
-                    <img class="copy-icon" src="/img/requests/copy.svg">
-                    <span class="copy-text">Copy</span>
-                </button>
+                <img src="${imagepath.copy}" data-type="copy" class="links" alt="Copy">
+                <img src="${imagepath.download}" data-type="download" class="links" alt="Download">
             </td>
         `;
         fragment.appendChild(row);
@@ -78,11 +76,9 @@ export function updateTable(data = state.view) {
 
 function createLinksHtml() {
     return `
-        <img src="${imagepath.playStore}" data-type="play" class="links" alt="P">
-        <img src="${imagepath.fdroid}" data-type="fdroid" class="links" alt="F">
-        <img src="${imagepath.izzyOnDroid}" data-type="izzy" class="links" alt="I">
-        <img src="${imagepath.galaxyStore}" data-type="galaxy" class="links" alt="G">
-        <img src="${imagepath.wwwSearch}" data-type="search" class="links" alt="A">
+        <img src="${imagepath.playStore}" data-type="play" class="links" alt="Play Store">
+        <img src="${imagepath.fdroid}" data-type="fdroid" class="links" alt="F-Droid">
+        <img src="${imagepath.wwwSearch}" data-type="search" class="links" alt="Websearch">
     `;
 }
 

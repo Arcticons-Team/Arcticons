@@ -32,11 +32,11 @@
 }
 
 .asc::after {
-    border-bottom: 4px solid #000000;
+    border-bottom: 4px solid var(--black);
 }
 
 .desc::after {
-    border-top: 4px solid #000000;
+    border-top: 4px solid var(--black);
 }
 
 table {
@@ -46,29 +46,33 @@ table {
 
 th{
     padding: 8px;
-    text-align: center;
+    text-align: left;
+    border-bottom: solid 2px var(--grey-60);
+    background-color: var(--background);
 }
+
 td {
     padding-top: 4px;
-    text-align: center;
+    text-align: left;
+    border-bottom: solid 1px var(--grey-60);
 }
 
 td:nth-child(1) {
-    width: 20%;
+    max-width: 52px;    
 }
 
 td:nth-child(2) {
-    max-width: 60px;
+    max-width: 52px;    
+    display: none;
 }
 
 td:nth-child(3) {
-    display: none;
-    max-width: 60px;
+   width: 30%;
 }
 
 td:nth-child(4) {
-    width: 25%;
-    min-width: 180px;
+    width: 15%;
+    min-width: 60px;
 }
 
 td:nth-child(5) {
@@ -76,36 +80,36 @@ td:nth-child(5) {
 }
 
 td:nth-child(6) {
-     width: 15%;
+     width: 10%;
 }
 
 td:nth-child(8) {
-    max-width: 100px;
-}
-
-tr:nth-child(even) {
-    background-color: #ebebeb;
-}
-
-th {
-    background-color: #f2f2f2;
+    max-width: 10%;
+    
 }
 
 /* Quick link images*/
 .links{
     cursor: pointer;
-    filter: invert();
-    width: 50px;
-    height: 50px;
+    width: 24px;
+    height: 24px;
+    background-color: var(--primary);
+    padding: 8px;
+    border-radius: 40px;
 }
+
+.links:hover {
+    background-color: hsl(from var(--primary) h s 60%);
+}
+
 .arcticon {
     filter: invert();
 
 }
 
 .icon-preview img {
-    width: 50px;
-    height: 50px;
+    width: 44px;
+    height: 44px;
     cursor: pointer;
 }
 
@@ -118,9 +122,8 @@ th {
 
 /* Row Glow Persistent Effect */
 tr.row-glow {
-    background-color: #5a975c !important;
-    /* Green glow color */
-    transition: background-color 0.5s ease-in;
+    background-color: hsl(from var(--primary) h s 60%) !important;
+    transition: background-color 0.2s ease;
 }
 
 tr {
@@ -152,11 +155,11 @@ tr {
 @media (prefers-color-scheme: dark) {
 
     tr:nth-child(even) {
-        background-color: rgb(37, 37, 37);
+        background-color: var(--grey-80);
     }
 
     th {
-        background-color: #0f0f0f;
+        background-color: var(--grey-90);
     }
 
     .links {

@@ -1,4 +1,4 @@
-import { shuffleArray, CopyAppfilter, debounce } from '../../js/functions.js';
+import { shuffleArray, CopyAppfilter, debounce, downloadImage } from '../../js/functions.js';
 import { TABLE_COLUMNS_Requests as TABLE_COLUMNS, DOM } from '../../js/const.js';
 import { state } from '../../js/state/store.js';
 import { updateTable, lazyLoadAndRender, showIconPreview } from './ui/tableRenderer.js';
@@ -44,7 +44,7 @@ async function initializeAppData() {
                 colorData: colorsJson
             });
             colorWorker.onmessage = function (e) {
-                state.all = e.data; 
+                state.all = e.data;
                 colorWorker.terminate();
             };
         }
@@ -250,7 +250,7 @@ function initEventListeners() {
         state.ui.showMatchingNames = !state.ui.showMatchingNames;
         if (state.ui.showMatchingNames) {
             state.ui.sort.direction = 'asc';
-            state.ui.sort.column = 0;
+            state.ui.sort.column = 1;
         }
         DOM.matchingNameBtn.classList.toggle("active-toggle", state.ui.showMatchingNames);
         DOM.matchingNameBtn.innerText = state.ui.showMatchingNames
@@ -350,8 +350,17 @@ function initEventListeners() {
         const entry = state.view[index];
 
         // 1. Handle Copy Button
-        if (target.closest('.copy-button')) {
-            CopyAppfilter(index, false);
+        if (target.closest('img.links')) {
+            switch (target.dataset.type) {
+                case "copy":
+                    CopyAppfilter(index, false);
+                    break;
+                case "download":
+                    downloadImage(`/extracted_png/${state.view[index]}.webp`)
+                    break;
+                default:
+                    console.log("unknown Action")
+            }
             return;
         }
 

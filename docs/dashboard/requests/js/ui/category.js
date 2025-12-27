@@ -10,7 +10,7 @@ export function initCategoryUI(recomputeCallback) {
 
     // ONE listener for all buttons (past, present, and future)
     DOM.categoriesDiv.addEventListener('click', (event) => {
-        const button = event.target.closest('.green-button');
+        const button = event.target.closest('.btn');
         if (!button) return;
 
         const category = button.textContent;
@@ -42,7 +42,7 @@ export function renderCategories() {
         const button = document.createElement('button');
         button.textContent = category;
         button.dataset.name = category.toLowerCase();
-        button.className = 'green-button';
+        button.className = 'btn';
         if (state.ui.categories.has(category)) {
             button.setAttribute('activated', 'true');
         }
