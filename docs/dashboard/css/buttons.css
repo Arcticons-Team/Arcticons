@@ -1,29 +1,67 @@
-:root{
+:root {
   --btn-height: 44px;
 }
 
-.btn {
+.btn-container,
+.btn,
+.btn-child {
   display: flex;
-  height: var(--btn-height);
-  min-width: 60px;
-  padding: 0px 16px;
   justify-content: center;
   align-items: center;
   gap: 8px;
-  border-radius: 40px;
   cursor: pointer;
   border: none;
+  border-radius: 40px;
   color: var(--white);
+}
+
+.btn {
+  height: var(--btn-height);
+  min-width: 60px;
+  padding: 0px 16px;
   background-color: var(--primary);
 }
 
-.btn-container img, .btn img, .btn-child img {
+.btn-container {
+  height: var(--btn-height);
+  padding: 0px 16px;
+  border-radius: 40px;
+  background-color: var(--primary);
+}
+
+.btn-container:hover,
+.btn:hover {
+  background-color: hsl(from var(--primary) h s 60%);
+}
+
+.btn-child {
+  padding: 0px;
+  background-color: #00000000;
+}
+
+.btn-container img,
+.btn img,
+.btn-child img {
   width: 24px;
   height: 24px;
 }
 
-.btn:hover {
-  background-color: hsl(from var(--primary) h s 60%);
+.btn-input {
+  display: flex;
+  max-width: 80px;
+  height: 28px;
+  padding: 0 18px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 40px;
+  background: var(--white);
+  box-sizing: border-box !important;
+  overflow: visible;
+  box-shadow: none;
+  border: none;
+  outline: none;
+  padding: 0.8em 1.2em;
+
 }
 
 .longpress {
@@ -54,59 +92,6 @@
     background: hsl(from var(--primary) h s 40%);
   }
 }
-
-.btn-container {
-  display: flex;
-  height: var(--btn-height);
-  padding: 0px 16px;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  border-radius: 40px;
-  background-color: var(--primary);
-}
-
-.btn-container:hover {
-  background-color: hsl(from var(--primary) h s 60%);
-}
-
-.btn-child {
-  display: flex;
-  padding: 0px;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  border-radius: 40px;
-  cursor: pointer;
-  border: none;
-  color: var(--white);
-  background-color: #00000000;
-}
-
-.btn-child img {
-  width: 24px;
-  height: 24px;
-}
-
-.btn-input {
-  display: flex;
-  max-width: 80px;
-  height: 28px;
-  padding: 0 18px;
-  justify-content: center;
-  align-items: center;
-  border-radius: 40px;
-  background: var(--white);
-  box-sizing: border-box !important;
-  overflow: visible;
-  box-shadow: none;
-  border: none;
-  outline: none;
-  padding: 0.8em 1.2em;
-
-}
-
-
 
 
 #copy-selected-button {

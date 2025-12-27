@@ -122,9 +122,8 @@ td:nth-child(8) {
 
 /* Row Glow Persistent Effect */
 tr.row-glow {
-    background-color: #5a975c !important;
-    /* Green glow color */
-    transition: background-color 0.5s ease-in;
+    background-color: hsl(from var(--primary) h s 60%) !important;
+    transition: background-color 0.2s ease;
 }
 
 tr {
