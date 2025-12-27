@@ -4,7 +4,9 @@ export const imagepath = {
     fdroid: '/img/dashboard/icon-fdroid.svg',
     izzyOnDroid: '/img/dashboard/icon-izzy.svg',
     galaxyStore: '/img/dashboard/icon-galaxy.svg',
-    wwwSearch: '/img/dashboard/icon-web.svg'
+    wwwSearch: '/img/dashboard/icon-web.svg',
+    download: '/img/dashboard/icon-download.svg',
+    copy: '/img/dashboard/icon-copy.svg'
 };
 
 export const TABLE_COLUMNS_Requests = [
