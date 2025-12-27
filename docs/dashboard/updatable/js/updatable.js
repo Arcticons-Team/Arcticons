@@ -201,7 +201,7 @@ function initEventListeners() {
         const entry = state.view[index];
 
         // 1. Handle Copy Button
-        if (target.closest('.copy-button')) {
+        if (target.closest('.copy-btn')) {
             CopyAppfilter(index, false);
             return;
         }
