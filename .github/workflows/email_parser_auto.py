@@ -83,6 +83,7 @@ class EmailParser:
 
         self.filelist = list(self.folder_path.glob("*.eml"))
         self.data = {}
+        self.last_scrape_time = 0
         self.apps = defaultdict(dict)
         self.email_count = Counter()
         self.no_zip = {}
@@ -112,6 +113,8 @@ class EmailParser:
         with open(path, "r", encoding="utf8") as f:
                 try:
                     raw_data = json.load(f)
+                    stats = raw_data.get("stats",{})
+                    self.last_scrape_time = stats.get("lastPlayScrape",0)
                     entries = raw_data.get("entries", raw_data) if isinstance(raw_data, dict) else raw_data
                     
                     for entry in entries:
@@ -518,6 +521,7 @@ Last requested {reqDate}
                         else 0
                     ),
                     "totalCount": len(self.new_apps_data),
+                    "lastPlayScrape": self.last_scrape_time
                 },
                 "categories": sorted(list(all_categories)),
                 "entries": self.new_apps_data,
