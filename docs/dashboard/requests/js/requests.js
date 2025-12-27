@@ -250,7 +250,7 @@ function initEventListeners() {
         state.ui.showMatchingNames = !state.ui.showMatchingNames;
         if (state.ui.showMatchingNames) {
             state.ui.sort.direction = 'asc';
-            state.ui.sort.column = 0;
+            state.ui.sort.column = 1;
         }
         DOM.matchingNameBtn.classList.toggle("active-toggle", state.ui.showMatchingNames);
         DOM.matchingNameBtn.innerText = state.ui.showMatchingNames

@@ -8,8 +8,8 @@ export const imagepath = {
 };
 
 export const TABLE_COLUMNS_Requests = [
-    { key: 'appName', type: 'string' },
     { key: 'appIconColor', type: 'number' },
+    { key: 'appName', type: 'string' },
     { key: 'playStoreDownloads', type: 'downloads' },
     { key: 'requestedInfo', type: 'number' },
     { key: 'lastRequestedTime', type: 'number' }
