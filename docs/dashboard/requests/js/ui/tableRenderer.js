@@ -49,9 +49,8 @@ export function renderTableBatch(data) {
             <td>${entry.requestedInfo}</td>
             <td>${formattedDate}</td>
             <td>
-                <button class="btn copy-btn">
-                    <img src="../../img/dashboard/icon-copy.svg">
-                </button>
+                <img src="${imagepath.copy}" data-type="copy" class="links" alt="Copy">
+                <img src="${imagepath.download}" data-type="download" class="links" alt="Download">
             </td>
         `;
         fragment.appendChild(row);
@@ -78,8 +77,8 @@ export function updateTable(data = state.view) {
 function createLinksHtml() {
     return `
         <img src="${imagepath.playStore}" data-type="play" class="links" alt="Play Store">
-        <img src="${imagepath.fdroid}" data-type="fdroid" class="links" alt="F">
-        <img src="${imagepath.wwwSearch}" data-type="search" class="links" alt="A">
+        <img src="${imagepath.fdroid}" data-type="fdroid" class="links" alt="F-Droid">
+        <img src="${imagepath.wwwSearch}" data-type="search" class="links" alt="Websearch">
     `;
 }
 

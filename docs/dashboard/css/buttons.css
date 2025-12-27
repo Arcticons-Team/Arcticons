@@ -17,7 +17,7 @@
   background-color: var(--primary);
 }
 
-.btn img {
+.btn-container img, .btn img, .btn-child img {
   width: 24px;
   height: 24px;
 }
@@ -61,7 +61,7 @@
   padding: 0px 16px;
   justify-content: center;
   align-items: center;
-  gap: 0px;
+  gap: 8px;
   border-radius: 40px;
   background-color: var(--primary);
 }
