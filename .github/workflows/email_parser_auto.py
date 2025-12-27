@@ -469,11 +469,11 @@ Last requested {reqDate}
                             "componentInfo": values["ComponentInfo"],
                             "Arcticon": arc_name,
                             "pkgName": PackageName,
-                            "playStoreDownloads": values["downloads"],
+                            "playStoreDownloads": values.get("downloads", "X"),
                             "requestedInfo": str(values["count"]),
                             "lastRequestedTime": float(values.get("requestDate", 0)),
                             "appIconColor": values["appIconColor"],
-                            "playStoreCategories": values["categories"],
+                            "playStoreCategories": values.get("categories", []),
                             "drawable": values["drawable"],
                         }
                     )
