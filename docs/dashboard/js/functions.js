@@ -138,24 +138,21 @@ function buildCopyText(entry, appfilterValue, mode) {
         : appfilterValue;
 }
 
+export async function downloadImage(imageSrc, nameOfDownload) {
+    const response = await fetch(imageSrc);
+    const blobImage = await response.blob();
+    const href = URL.createObjectURL(blobImage);
 
-export async function downloadImage(
-    imageSrc,
-    nameOfDownload = 'my-image.png',
-) {
-    const response = await fetch(imageSrc);
+    const anchorElement = document.createElement('a');
+    anchorElement.href = href;
+    anchorElement.download = nameOfDownload;
+    anchorElement.target = '_self'; 
 
-    const blobImage = await response.blob();
+    document.body.appendChild(anchorElement);
+    anchorElement.click();
 
-    const href = URL.createObjectURL(blobImage);
-
-    const anchorElement = document.createElement('a');
-    anchorElement.href = href;
-    anchorElement.download = nameOfDownload;
-
-    document.body.appendChild(anchorElement);
-    anchorElement.click();
-
-    document.body.removeChild(anchorElement);
-    window.URL.revokeObjectURL(href);
+    setTimeout(() => {
+        document.body.removeChild(anchorElement);
+        window.URL.revokeObjectURL(href);
+    }, 100);
 }

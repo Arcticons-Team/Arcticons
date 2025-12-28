@@ -49,8 +49,8 @@ export function renderTableBatch(data) {
             <td>${entry.requestedInfo}</td>
             <td>${formattedDate}</td>
             <td>
-                <img src="${imagepath.copy}" data-type="copy" class="links" alt="Copy">
-                <img src="${imagepath.download}" data-type="download" class="links" alt="Download">
+                <img src="${imagepath.copy}" title="Copy Appfilter" data-type="copy" class="links" alt="Copy">
+                <img src="${imagepath.download}" title="Download Icon" data-type="download" data-drawable="${entry.drawable}.webp" data-downloadpath="/extracted_png/${entry.drawable}.webp" class="links" alt="Download">
             </td>
         `;
         fragment.appendChild(row);

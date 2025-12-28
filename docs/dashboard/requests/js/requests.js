@@ -356,7 +356,7 @@ function initEventListeners() {
                     CopyAppfilter(index, false);
                     break;
                 case "download":
-                    downloadImage(`/extracted_png/${state.view[index]}.webp`)
+                    downloadImage(target.dataset.downloadpath,target.dataset.drawable)
                     break;
                 default:
                     console.log("unknown Action")
