@@ -211,7 +211,7 @@ jobs:
             echo "changes_detected=true" >> $GITHUB_OUTPUT
 
             # Set different outputs depending on which path changed
-            if echo "$CHANGED_FILES" | grep -q "^docs/assets/requests.txt"; then
+            if echo "$CHANGED_FILES" | grep -q "^docs/assets/requests.json"; then
               echo "Request_changes=true" >> $GITHUB_OUTPUT
             fi
 
