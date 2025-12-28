@@ -4,7 +4,8 @@
 
 .btn-container,
 .btn,
-.btn-child {
+.btn-child,
+.btn-round {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -36,7 +37,8 @@
 
 .btn-container img,
 .btn img,
-.btn-child img {
+.btn-child img,
+.btn-round img {
   width: 24px;
   height: 24px;
 }
@@ -56,6 +58,13 @@
   border: none;
   outline: none;
 
+}
+
+.btn-round {
+  height: var(--btn-height);
+  width: var(--btn-height);
+  border-radius: 40px;
+  background-color: var(--primary);
 }
 
 .btn-small {
