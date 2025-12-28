@@ -245,7 +245,7 @@ jobs:
             images:
               - 'docs/extracted_png/**'
             requests:
-              - 'docs/assets/requests.txt'
+              - 'docs/assets/requests.json'
           base: ${{vars.PAGES_BRANCH}}
   Create_Colormappping:
     name: Create Colormapping
