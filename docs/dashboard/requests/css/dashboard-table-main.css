@@ -54,7 +54,7 @@ th{
 td {
     padding-top: 4px;
     text-align: left;
-    border-bottom: solid 1px var(--grey-60);
+    border-bottom: solid 1px var(--grey-20);
 }
 
 td:nth-child(1) {
@@ -132,7 +132,7 @@ tr {
 }
 
 tr:nth-child(even) {
-    background-color: var(--grey-20);
+    background-color: var(--grey-10);
 }
 
 
@@ -159,6 +159,10 @@ tr:nth-child(even) {
 
     th {
         background-color: var(--grey-90);
+    }
+
+    td {
+        border-bottom: solid 1px var(--grey-60);
     }
 
     .links {
