@@ -176,6 +176,6 @@ def main(input_file, output_file):
         json.dump(output_data, json_file, ensure_ascii=False, indent=4)
 
 if __name__ == "__main__":
-    input_file = "docs/assets/requestspre.json"
+    input_file = "docs/assets/requests.json"
     output_file = "docs/assets/requests.json"
     main(input_file, output_file)
