@@ -58,11 +58,11 @@ td {
 }
 
 td:nth-child(1) {
-    max-width: 52px;
+    width: 52px;
 }
 
 td:nth-child(2) {
-    max-width: 52px;
+    width: 52px;
     display: none;
 }
 
@@ -166,19 +166,10 @@ tr:hover {
 
 @media screen and (max-width: 1300px) {
 
-    .icon-preview img {
-        width: 40px;
-        height: 40px;
-    }
 
 }
 
 @media screen and (max-width: 1100px) {
-
-    .icon-preview img {
-        width: 30px;
-        height: 30px;
-    }
 
     .copy-text {
         display: none;
