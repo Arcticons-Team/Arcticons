@@ -350,7 +350,7 @@ function initEventListeners() {
         const entry = state.view[index];
 
         // 1. Handle Copy Button
-        if (target.closest('img.links')) {
+        if (target.closest('img.btn-small')) {
             switch (target.dataset.type) {
                 case "copy":
                     CopyAppfilter(index, false);
@@ -383,7 +383,7 @@ function initEventListeners() {
         }
 
         // 4. Handle Store Links (On Demand)
-        if (target.classList.contains('links')) {
+        if (target.classList.contains('btn-small')) {
             const type = target.dataset.type;
             const urls = {
                 play: `https://play.google.com/store/apps/details?id=${pkg}`,

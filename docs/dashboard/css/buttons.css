@@ -60,6 +60,21 @@
 
 }
 
+.btn-small {
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  background-color: var(--primary);
+  padding: 8px;
+  border-radius: 16px;
+}
+
+.btn-small:hover {
+  background-color: hsl(from var(--primary) h s 60%);
+}
+
+
+
 .longpress {
   -webkit-animation: 1s longpress;
   animation: 1s longpress;
@@ -138,4 +153,14 @@
   background-color: #181818;
   color: #fff;
   border-radius: 8px;
+}
+
+
+
+/*Dark mode theming */
+@media (prefers-color-scheme: dark) {
+
+  .btn-small {
+    filter: none;
+  }
 }

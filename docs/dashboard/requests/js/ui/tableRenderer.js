@@ -49,8 +49,8 @@ export function renderTableBatch(data) {
             <td>${entry.requestedInfo}</td>
             <td>${formattedDate}</td>
             <td>
-                <img src="${imagepath.copy}" title="Copy Appfilter" data-type="copy" class="links" alt="Copy">
-                <img src="${imagepath.download}" title="Download Icon" data-type="download" data-drawable="${entry.drawable}.webp" data-downloadpath="/extracted_png/${entry.drawable}.webp" class="links" alt="Download">
+                <img src="${imagepath.copy}" title="Copy Appfilter" data-type="copy" class="btn-small" alt="Copy">
+                <img src="${imagepath.download}" title="Download Icon" data-type="download" data-drawable="${entry.drawable}.webp" data-downloadpath="/extracted_png/${entry.drawable}.webp" class="btn-small" alt="Download">
             </td>
         `;
         fragment.appendChild(row);
@@ -76,9 +76,9 @@ export function updateTable(data = state.view) {
 
 function createLinksHtml() {
     return `
-        <img src="${imagepath.playStore}" data-type="play" class="links" alt="Play Store">
-        <img src="${imagepath.fdroid}" data-type="fdroid" class="links" alt="F-Droid">
-        <img src="${imagepath.wwwSearch}" data-type="search" class="links" alt="Websearch">
+        <img src="${imagepath.playStore}" data-type="play" class="btn-small" alt="Play Store">
+        <img src="${imagepath.fdroid}" data-type="fdroid" class="btn-small" alt="F-Droid">
+        <img src="${imagepath.wwwSearch}" data-type="search" class="btn-small" alt="Websearch">
     `;
 }
 

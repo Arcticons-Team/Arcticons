@@ -44,7 +44,7 @@ table {
     border-collapse: collapse;
 }
 
-th{
+th {
     padding: 8px;
     text-align: left;
     border-bottom: solid 2px var(--grey-60);
@@ -58,16 +58,16 @@ td {
 }
 
 td:nth-child(1) {
-    max-width: 52px;    
+    max-width: 52px;
 }
 
 td:nth-child(2) {
-    max-width: 52px;    
+    max-width: 52px;
     display: none;
 }
 
 td:nth-child(3) {
-   width: 30%;
+    width: 30%;
 }
 
 td:nth-child(4) {
@@ -80,26 +80,12 @@ td:nth-child(5) {
 }
 
 td:nth-child(6) {
-     width: 10%;
+    width: 10%;
 }
 
 td:nth-child(8) {
     max-width: 10%;
-    
-}
 
-/* Quick link images*/
-.links{
-    cursor: pointer;
-    width: 24px;
-    height: 24px;
-    background-color: var(--primary);
-    padding: 8px;
-    border-radius: 40px;
-}
-
-.links:hover {
-    background-color: hsl(from var(--primary) h s 60%);
 }
 
 .arcticon {
@@ -131,8 +117,8 @@ tr {
     contain-intrinsic-size: 0 50px;
 }
 
-tr:nth-child(even) {
-    background-color: var(--grey-10);
+tr:hover {
+    background-color: var(--grey-40);
 }
 
 
@@ -153,10 +139,6 @@ tr:nth-child(even) {
 /*Dark mode theming */
 @media (prefers-color-scheme: dark) {
 
-    tr:nth-child(even) {
-        background-color: var(--grey-80);
-    }
-
     th {
         background-color: var(--grey-90);
     }
@@ -165,9 +147,10 @@ tr:nth-child(even) {
         border-bottom: solid 1px var(--grey-60);
     }
 
-    .links {
-        filter: none;
+    tr:hover {
+        background-color: var(--grey-60);
     }
+
     .arcticon {
         filter: none;
     }
@@ -182,10 +165,6 @@ tr:nth-child(even) {
 }
 
 @media screen and (max-width: 1300px) {
-    .links {
-        width: 40px;
-        height: 40px;
-    }
 
     .icon-preview img {
         width: 40px;
@@ -195,18 +174,10 @@ tr:nth-child(even) {
 }
 
 @media screen and (max-width: 1100px) {
-    .links {
-        width: 30px;
-        height: 30px;
-    }
 
     .icon-preview img {
         width: 30px;
         height: 30px;
-    }
-
-    .copy-icon {
-        display: inline;
     }
 
     .copy-text {
@@ -215,27 +186,30 @@ tr:nth-child(even) {
 }
 
 @media screen and (max-width: 770px) {
-    #galaxy{
+    #galaxy {
         display: none;
     }
+
     td:nth-child(3) {
         min-width: 150px;
     }
 }
 
 @media screen and (max-width: 730px) {
-    #izzy{
+    #izzy {
         display: none;
     }
+
     td:nth-child(4) {
         min-width: 110px;
     }
 }
 
 @media screen and (max-width: 700px) {
-    #fdroid{
+    #fdroid {
         display: none;
     }
+
     td:nth-child(4) {
         min-width: 70px;
     }
