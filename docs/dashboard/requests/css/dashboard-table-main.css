@@ -15,14 +15,13 @@
 
 .sortable-header {
     cursor: pointer;
-    /* Add cursor style for sorting */
     position: relative;
 }
 
 .sortable-header::after {
     content: '';
     position: absolute;
-    right: 8px;
+    right: 12px;
     top: 50%;
     transform: translateY(-50%);
     width: 0;
@@ -45,10 +44,11 @@ table {
 }
 
 th {
-    padding: 8px;
+    padding: 8px 0px;
     text-align: left;
     border-bottom: solid 2px var(--grey-60);
     background-color: var(--background);
+    white-space: nowrap;
 }
 
 td {
