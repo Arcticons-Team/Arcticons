@@ -131,11 +131,10 @@ tr {
     contain-intrinsic-size: 0 50px;
 }
 
-.copy-icon {
-    display: none;
-    width: 20px;
-    height: 20px;
+tr:nth-child(even) {
+    background-color: var(--grey-20);
 }
+
 
 .copy-text {
     display: inline;
