@@ -40,17 +40,26 @@
         <div class="header-container">
             <!-- Search Container -->
             <div id="search-container">
-                <span id="search-input-container">
+                <div id="search-input-container">
                     <input class="textinput" type="text" id="search-input" placeholder="Search">
                     <span class="clear-search" id="clear-search"
                         onclick="var input = this.previousElementSibling; input.value = ''; input.focus();">x</span>
-                </span>
+                </div>
 
                 <div id="regex-search-container" class="btn-container">
                     <button class="btn-child" id="RegexSearchSettings">
                         <img src="../../img/dashboard/icon-regex.svg">
                         Regex Search
                     </button>
+                    
+                    <span>
+                        <!-- Rounded switch -->
+                        <label class="switch">
+                            <input type="checkbox" id="regex-switch">
+                            <span class="slider round"></span>
+                        </label>
+                    </span>
+
                     <div id="myPopup" class="popup">
                         <div class="popup-content">
                             <div class="info-popup" id="info" onclick="showInfo()">i
@@ -94,14 +103,9 @@
                             </button>
                         </div>
                     </div>
-                    <span>
-                        <!-- Rounded switch -->
-                        <label class="switch">
-                            <input type="checkbox" id="regex-switch">
-                            <span class="slider round"></span>
-                        </label>
-                    </span>
+                
                 </div>
+
             </div>
 
             <div class="btn-container">

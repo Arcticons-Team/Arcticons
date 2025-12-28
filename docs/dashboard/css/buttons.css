@@ -11,22 +11,19 @@
   gap: 8px;
   cursor: pointer;
   border: none;
-  border-radius: 40px;
   color: var(--white);
+  text-overflow: ellipsis;
+  text-align: left;
 }
 
+
+.btn-container,
 .btn {
-  height: var(--btn-height);
-  min-width: 60px;
-  padding: 0px 16px;
-  background-color: var(--primary);
-}
-
-.btn-container {
-  height: var(--btn-height);
-  padding: 0px 16px;
   border-radius: 40px;
+  height: var(--btn-height);
   background-color: var(--primary);
+  padding: 0px 16px;
+  min-width: 60px;
 }
 
 .btn-container:hover,
@@ -48,19 +45,18 @@
 
 .btn-input {
   display: flex;
-  max-width: 80px;
+  max-width: 56px;
   height: 28px;
-  padding: 0 18px;
+  padding: 0 12px;
   justify-content: center;
   align-items: center;
-  border-radius: 40px;
+  border-radius: 20px;
   background: var(--white);
   box-sizing: border-box !important;
   overflow: visible;
   box-shadow: none;
   border: none;
   outline: none;
-  padding: 0.8em 1.2em;
 
 }
 

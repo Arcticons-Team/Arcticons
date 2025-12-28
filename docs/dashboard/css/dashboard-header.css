@@ -12,19 +12,18 @@
 /* Searchbar container */
 #search-container {
     display: flex;
-    flex: 2;
     position: relative;
-    /*display: inline-flex;*/
     align-items: center;
+    flex: 1 0 0;
+    gap: 8px;
 }
 
 /* Searchbar container */
 #search-input-container {
     display: flex;
-    flex: 3\2;
+    min-width: 140px;
+    width: 100%;
     position: relative;
-    padding-right: 5px;
-    /*display: inline-flex;*/
     align-items: center;
 }
 
@@ -35,7 +34,7 @@
     width: 25px;
     height: 25px;
     border-radius: 50%;
-    color: #fff;
+    color: var(--white);
     background-color: #8b1708;
     font: 22px monospace;
     text-align: center;
@@ -51,7 +50,7 @@
 .textinput {
     box-sizing: border-box !important;
     overflow: visible;
-    border-radius: 100px;
+    border-radius: 40px;
     background-color: #eee;
     border: 1.5px solid #171717;
     box-shadow: none;
