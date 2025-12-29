@@ -187,8 +187,10 @@
             <div class="popup-content">
                 <!-- Preview image will be inserted here -->
                 <p>Enter a new drawable name</p>
-                <input class=textinput id="drawableName-input" type="text" placeholder="drawableName"
-                    title="Change drawable name  to ..." />
+                <div class="search-container">
+                    <input class=textinput id="drawableName-input" type="text" placeholder="drawableName"
+                        title="Change drawable name  to ..." />
+                </div>
                 <hr width="100%" size="2" class="separator" noshade>
                 <button class="btn" id="rename-button"> Rename drawable </button>
             </div>
@@ -203,14 +205,15 @@
 
     </div>
 
-        <div class="floating">
-            <div>
-                <button class="btn" type="button" id="copy-selected-button" aria-label="Long press to change drawable names"> 
-                    <img src="../../img/dashboard/icon-copy.svg">
-                    Copy selected apps
-                </button>
-            </div>
+    <div class="floating">
+        <div>
+            <button class="btn" type="button" id="copy-selected-button"
+                aria-label="Long press to change drawable names">
+                <img src="../../img/dashboard/icon-copy.svg">
+                Copy selected apps
+            </button>
         </div>
+    </div>
 
     <script type="module" src="js/requests.js"></script>
 

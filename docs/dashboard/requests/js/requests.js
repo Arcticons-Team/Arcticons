@@ -212,6 +212,14 @@ function initEventListeners() {
             );
         }
     );
+
+    document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape" || e.key === "Esc" || e.keyCode === 27) {
+            if (DOM.regexPopup.classList.contains("show")) {
+                DOM.regexPopup.classList.remove("show");
+            }
+        }
+    });
     window.addEventListener(
         "click",
         function (event) {
@@ -225,6 +233,14 @@ function initEventListeners() {
             }
         }
     );
+
+    document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape" || e.key === "Esc" || e.keyCode === 27) {
+            if (DOM.renameOverlay.classList.contains("show")) {
+                DOM.renameOverlay.classList.remove("show");
+            }
+        }
+    });
 
     DOM.requeststhead.addEventListener('click', (event) => {
         // Find the closest parent <th> element (the target header)
