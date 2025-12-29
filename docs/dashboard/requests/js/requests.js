@@ -214,7 +214,7 @@ function initEventListeners() {
     );
 
     document.addEventListener("keydown", function (e) {
-        if (e.key === "Escape" || e.key === "Esc" || e.keyCode === 27) {
+        if (e.key === "Escape" || e.key === "Esc") {
             if (DOM.regexPopup.classList.contains("show")) {
                 DOM.regexPopup.classList.remove("show");
             }
@@ -235,7 +235,7 @@ function initEventListeners() {
     );
 
     document.addEventListener("keydown", function (e) {
-        if (e.key === "Escape" || e.key === "Esc" || e.keyCode === 27) {
+        if (e.key === "Escape" || e.key === "Esc") {
             if (DOM.renameOverlay.classList.contains("show")) {
                 DOM.renameOverlay.classList.remove("show");
             }
