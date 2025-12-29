@@ -114,17 +114,15 @@
 .floating {
   max-width: 200;
   position: fixed;
-  left: 50%;
-  bottom: 20px;
+  left: 50%; 
+  bottom: 40px;
   border-radius: 40px;
   z-index: 99;
-  background-color: var(--white);
   box-shadow: 0px 5px 10px #00000040;
 }
 
 
 #copy-selected-button {
-  position: sticky;
   transition: all .4s 0s ease;
 }
 
