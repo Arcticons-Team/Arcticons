@@ -54,7 +54,7 @@ export function renderCategories() {
 }
 
 export function findCategory() {
-    showClearSearchCategory();
+    //showClearSearchCategory();
     const search = DOM.searchInputCategory.value.toLowerCase();
     categoryButtons.forEach(button => {
         const matches = button.dataset.name.includes(search);
@@ -71,7 +71,7 @@ export function showClearSearchCategory() {
 // Clear category search input
 export function clearSearchCategory() {
     DOM.searchInputCategory.value = '';
-    showClearSearchCategory();
+    //showClearSearchCategory();
     findCategory();
 }
 
