@@ -112,7 +112,6 @@
 }
 
 .floating {
-  max-width: 200;
   position: fixed;
   left: 50%; 
   bottom: 40px;
@@ -120,7 +119,6 @@
   z-index: 99;
   box-shadow: 0px 5px 10px #00000040;
 }
-
 
 #copy-selected-button {
   transition: all .4s 0s ease;
@@ -171,12 +169,17 @@
   border-radius: 8px;
 }
 
-
-
 /*Dark mode theming */
 @media (prefers-color-scheme: dark) {
 
   .btn-small {
     filter: none;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+
+  .btn-container {
+    min-width: 20px;
   }
 }

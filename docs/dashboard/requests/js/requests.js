@@ -91,7 +91,6 @@ function updateSortMarkers() {
 // Update header text
 function updateHeaderText(newHeader) {
     DOM.header.innerText = newHeader;
-    DOM.smallheader.innerText = newHeader;
 }
 
 // Search function

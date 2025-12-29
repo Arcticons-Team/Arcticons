@@ -130,6 +130,19 @@
         display: inline-block;
     }
 
+    #random-container p {
+        display: none;
+
+    }
+
+    #btn-match-name p {
+        display: none;
+    }
+
+    #btn-match-drawable p {
+        display: none;
+    }
+
 }
 
 @media screen and (max-width: 800px) {
@@ -139,6 +152,14 @@
         display: flex;
         margin-bottom: 20px;
         gap: 10px;
+    }
+
+    #btn-match-name {
+        display: none;
+    }
+
+    #btn-match-drawable {
+        display: none;
     }
 
     #random-container {

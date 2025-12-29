@@ -52,7 +52,6 @@ export const DOM = {
     reverseSwitch: document.getElementById('reverse-switch'),
     searchInput: document.getElementById('search-input'),
     searchNotification: document.getElementById("search-notification"),
-    smallheader: document.getElementById("smallheader"),
     sortableHeaders: document.querySelectorAll('#requests-table thead th.sortable-header'),
     tableBody: document.getElementById("app-entries"),
     updatableButton: document.getElementById("updatable-button"),
