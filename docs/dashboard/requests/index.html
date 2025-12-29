@@ -39,10 +39,10 @@
         <hr style="visibility: hidden;">
         <div class="header-container">
             <!-- Search Container -->
-            <div id="search-container">
-                <div id="search-input-container">
+            <div class="search-container" id="search-container">
+                <div class="search-input-container" id="search-input-container">
 
-                    <input type="text" id="search-input" placeholder="Search">
+                    <input class="textinput" type="text" id="search-input" placeholder="Search">
                     <button id="regex-btn" title="Enable regex search">
                         <img src="../../img/dashboard/icon-regex.svg">
                     </button>
@@ -167,13 +167,17 @@
         <hr width="100%" size="2" class="separator" noshade>
         <div class="category-container">
             <div class="header-container">
-                <span id="search-input-container">
-                    <input class="textinput" type="text" id="search-input_category" placeholder="Search Category">
-                    <span class="clear-search" id="clear-search_category"
-                        onclick="var input = this.previousElementSibling; input.value = ''; input.focus();">x</span>
-                </span>
+
+                <div class="search-container">
+                    <div class="search-input-container" id="search-input-container">
+                        <input class="textinput" type="text" id="search-input_category" placeholder="Search Category">
+                    </div>
+                </div>
+
                 <button class="btn" id="Category_Match">Match All Categories</button>
-                <button class="btn" id="clear-category">x</button>
+                <button class="btn" id="clear-category" title="Clear categories ">
+                    <img src="../../img/dashboard/icon-close.svg">
+                </button>
             </div>
             <div id="categories">
 

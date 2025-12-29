@@ -148,11 +148,8 @@ function bindPress(element, onClick, onLong) {
 }
 
 function updateUIState(state) {
-    DOM.clearCategoryBtn.style.visibility =
-        state.ui.categories.size ? 'visible' : 'hidden';
-
-    DOM.clearSearchBtn.style.visibility =
-        state.ui.search ? 'visible' : 'hidden';
+    DOM.clearCategoryBtn.style.display =
+        state.ui.categories.size ? 'flex' : 'none';
 
     DOM.randomResetButton.style.display =
         state.ui.random.active ? "inline-block" : "none";
@@ -259,8 +256,7 @@ function initEventListeners() {
         recomputeView();
     });
 
-    DOM.clearSearchBtn.addEventListener('click', filterAppEntries);
-    DOM.regexSwitch.addEventListener('change', filterAppEntries);
+    DOM.regexSwitch.addEventListener('click', filterAppEntries);
     DOM.closePopupBtn.addEventListener('click', filterAppEntries);
     DOM.searchInput.addEventListener('input', filterAppEntries);
     DOM.categoryModeBtn.addEventListener('click', () => {

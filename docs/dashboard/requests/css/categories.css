@@ -9,19 +9,18 @@
 
 }
 
-#categories .green-button:active {
+#categories .btn:active {
     transform: scale(0.90);
 }
 
-#categories .green-button.hidden {
+#categories .btn.hidden {
     display: none;
 }
 
 /* Style for activated buttons */
-#categories .green-button[activated] {
-    background-color: #007bff;
+#categories .btn[activated] {
+    background-color: hsl(from var(--primary) h s 60%);
     color: #ffffff;
-    border-color: #0056b3;
     font-weight: bold;
 }
 
@@ -30,13 +29,10 @@
 }
 
 #clear-category{
-    background-color: #8b1708;
-    visibility: hidden;
-    right: 10px;
-    aspect-ratio: 1 / 1;
+    background-color: var(--red);
 }
 
 #clear-category:hover{
-    background-color: #be1d07;
+    background-color: hsl(from var(--red) h s 60%);
 }
 

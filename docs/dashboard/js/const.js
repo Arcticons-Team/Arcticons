@@ -44,7 +44,7 @@ export const DOM = {
     randomResetButton: document.getElementById(`random-reset-button`),
     regexPopup: document.getElementById("myPopup"),
     regexSearchSettingsBtn: document.getElementById("RegexSearchSettings"),
-    regexSwitch: document.getElementById('regex-switch'),
+    regexSwitch: document.getElementById('regex-btn'),
     renameOverlay: document.getElementById("renamer-overlay"),
     requestsTable: document.getElementById("requests-table"),
     requestsTableContainer: document.getElementById("requests-table-container"),
@@ -60,8 +60,6 @@ export const DOM = {
     imagePreview: document.getElementById('preview-image'),
     renameBtn: document.getElementById("rename-button"),
     sentinel: document.getElementById("table-sentinel"),
-    clearCategoryBtn: document.getElementById('clear-category'),
     categoriesDiv: document.getElementById('categories'),
     searchInputCategory: document.getElementById('search-input_category'),
-    clearSearchCategoryBtn: document.getElementById('clear-search_category'),
 };

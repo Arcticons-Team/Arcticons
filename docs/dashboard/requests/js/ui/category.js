@@ -18,7 +18,6 @@ export function initCategoryUI(recomputeCallback) {
     });
 
     renderCategories();
-    DOM.clearSearchCategoryBtn.addEventListener('click', clearSearchCategory);
     DOM.clearCategoryBtn.addEventListener('click', clearCategorySelection);
 }
 
@@ -65,8 +64,8 @@ export function findCategory() {
 
 // Show/hide clear icon
 export function showClearSearchCategory() {
-    DOM.clearSearchCategoryBtn.style.visibility =
-        DOM.searchInputCategory.value.trim() === '' ? 'hidden' : 'visible';
+    DOM.clearSearchCategoryBtn.style.display =
+        DOM.searchInputCategory.value.trim() === '' ? 'none' : '';
 }
 
 // Clear category search input
