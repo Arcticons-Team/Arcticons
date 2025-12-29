@@ -346,7 +346,7 @@ function initEventListeners() {
         const entry = state.view[index];
 
         // 1. Handle Copy Button
-        if (target.closest('img.btn-small')) {
+        if (target.closest('td:nth-child(8) img.btn-small')) {
             switch (target.dataset.type) {
                 case "copy":
                     CopyAppfilter(index, false);
