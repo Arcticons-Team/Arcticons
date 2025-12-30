@@ -59,7 +59,7 @@
     transform: scale(0.90);
 }
 
-#regex-btn img[activated] {
+#regex-btn.active img {
     filter: brightness(0) saturate(100%) invert(42%) sepia(75%) saturate(900%) hue-rotate(206deg) brightness(87%) contrast(89%);
 
 }

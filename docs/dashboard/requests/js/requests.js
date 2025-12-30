@@ -96,14 +96,12 @@ function updateHeaderText(newHeader) {
 // Search function
 const filterAppEntries = debounce(() => {
     state.ui.search = DOM.searchInput.value;
-    state.ui.regex = DOM.regexSwitch.checked;
     state.ui.reverse = DOM.reverseSwitch.checked;
-
     state.ui.regexFlags =
         (DOM.caseInsensitive.checked ? 'i' : '') +
         (DOM.caseUnicode.checked ? 'u' : '');
 
-    recomputeView();
+    if (state.ui.search) recomputeView();
 }, 200);
 
 function showInfo() {
@@ -264,14 +262,18 @@ function initEventListeners() {
             state.ui.sort.direction = 'asc';
             state.ui.sort.column = 1;
         }
-        DOM.matchingNameBtn.classList.toggle("active-toggle", state.ui.showMatchingNames);
+        DOM.matchingNameBtn.classList.toggle("active", state.ui.showMatchingNames);
         DOM.matchingNameBtn.innerText = state.ui.showMatchingNames
             ? "Show All"
             : "Show Matching Name";
         recomputeView();
     });
 
-    DOM.regexSwitch.addEventListener('click', filterAppEntries);
+    DOM.regexSwitch.addEventListener('click', () => {
+        state.ui.regex = state.ui.regex ? false : true;
+        DOM.regexSwitch.classList.toggle("active", state.ui.regex);
+        filterAppEntries()
+    });
     DOM.closePopupBtn.addEventListener('click', filterAppEntries);
     DOM.searchInput.addEventListener('input', filterAppEntries);
     DOM.categoryModeBtn.addEventListener('click', () => {
@@ -367,7 +369,7 @@ function initEventListeners() {
                     CopyAppfilter(index, false);
                     break;
                 case "download":
-                    downloadImage(target.dataset.downloadpath,target.dataset.drawable)
+                    downloadImage(target.dataset.downloadpath, target.dataset.drawable)
                     break;
                 default:
                     console.log("unknown Action")
