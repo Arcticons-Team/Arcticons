@@ -82,8 +82,9 @@ function createLinksHtml() {
     `;
 }
 
-export function showIconPreview(iconSrc, column) {
+export function showIconPreview(iconSrc, Name, column) {
     DOM.imagePreview.src = iconSrc;
+    DOM.imagePreviewTitle.textContent = Name
     DOM.imagePreview.classList.toggle('preview-arcticon', column === "Arcticon");
     DOM.imagePreviewOverlay.style.display = 'block';
 }

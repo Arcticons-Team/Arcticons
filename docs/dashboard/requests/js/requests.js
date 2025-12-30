@@ -403,7 +403,7 @@ function initEventListeners() {
             event.preventDefault();
             const col = previewLink.dataset.column;
             const path = col === "AppIcon" ? `/extracted_png/${entry.drawable}.webp` : `https://raw.githubusercontent.com/Arcticons-Team/Arcticons/refs/heads/main/icons/white/${entry.Arcticon}.svg`;
-            showIconPreview(path, col);
+            showIconPreview(path, entry.appName, col);
             return;
         }
     });
