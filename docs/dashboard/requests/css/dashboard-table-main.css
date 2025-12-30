@@ -67,12 +67,12 @@ td:nth-child(2) {
 }
 
 td:nth-child(3) {
-    width: 30%;
+    width: auto;
 }
 
 td:nth-child(4) {
     width: 15%;
-    min-width: 60px;
+    min-width: 140px;
 }
 
 td:nth-child(5) {
@@ -82,10 +82,14 @@ td:nth-child(5) {
 td:nth-child(6) {
     width: 10%;
 }
+td:nth-child(7){
+    min-width: 110px;
+    width: 10%;
+}
 
 td:nth-child(8) {
-    max-width: 10%;
-
+    min-width: 85px;
+    width: 95px;
 }
 
 .arcticon {
