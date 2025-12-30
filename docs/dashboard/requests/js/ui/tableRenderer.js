@@ -76,9 +76,9 @@ export function updateTable(data = state.view) {
 
 function createLinksHtml() {
     return `
-        <img src="${imagepath.playStore}" data-type="play" class="btn-small" alt="Play Store">
-        <img src="${imagepath.fdroid}" data-type="fdroid" class="btn-small" alt="F-Droid">
-        <img src="${imagepath.wwwSearch}" data-type="search" class="btn-small" alt="Websearch">
+        <img src="${imagepath.playStore}" data-linktype="play" data-type="link" class="btn-small" alt="Play Store">
+        <img src="${imagepath.fdroid}" data-linktype="fdroid" data-type="link" class="btn-small" alt="F-Droid">
+        <img src="${imagepath.wwwSearch}" data-linktype="search" data-type="link" class="btn-small" alt="Websearch">
     `;
 }
 

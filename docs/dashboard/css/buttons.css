@@ -122,6 +122,7 @@
 
 #copy-selected-button {
   transition: all .4s 0s ease;
+  display: none;
 }
 
 #copy-selected-button,
@@ -168,6 +169,11 @@
   color: #fff;
   border-radius: 8px;
 }
+
+#copy-selected-button.active{
+  display: flex;
+}
+
 
 /*Dark mode theming */
 @media (prefers-color-scheme: dark) {

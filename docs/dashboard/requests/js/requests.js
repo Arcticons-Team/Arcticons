@@ -362,8 +362,8 @@ function initEventListeners() {
         const componentInfo = row.dataset.componentInfo;
         const entry = state.view[index];
 
-        // 1. Handle Copy Button
-        if (target.closest('td:nth-child(8) img.btn-small')) {
+        // 1. Handle Button
+        if (target.closest('img.btn-small')) {
             switch (target.dataset.type) {
                 case "copy":
                     CopyAppfilter(index, false);
@@ -371,8 +371,19 @@ function initEventListeners() {
                 case "download":
                     downloadImage(target.dataset.downloadpath, target.dataset.drawable)
                     break;
+                case "link":
+                    const type = target.dataset.linktype;
+                    const urls = {
+                        play: `https://play.google.com/store/apps/details?id=${pkg}`,
+                        fdroid: `https://f-droid.org/en/packages/${pkg}/`,
+                        izzy: `https://apt.izzysoft.de/fdroid/index/apk/${pkg}`,
+                        galaxy: `https://galaxystore.samsung.com/detail/${pkg}`,
+                        search: `https://www.ecosia.org/search?q=${pkg}`
+                    };
+                    if (urls[type]) window.open(urls[type], '_blank');
+                    break;
                 default:
-                    console.log("unknown Action")
+                    console.log("unknown Action:", target.dataset.type)
             }
             return;
         }
@@ -382,6 +393,7 @@ function initEventListeners() {
             const active = state.selectedRows.has(componentInfo);
             active ? state.selectedRows.delete(componentInfo) : state.selectedRows.add(componentInfo);
             row.classList.toggle('row-glow', !active);
+            DOM.copySelectedBtn.classList.toggle("active", state.selectedRows.size)
             return;
         }
 
@@ -393,19 +405,6 @@ function initEventListeners() {
             const path = col === "AppIcon" ? `/extracted_png/${entry.drawable}.webp` : `https://raw.githubusercontent.com/Arcticons-Team/Arcticons/refs/heads/main/icons/white/${entry.Arcticon}.svg`;
             showIconPreview(path, col);
             return;
-        }
-
-        // 4. Handle Store Links (On Demand)
-        if (target.classList.contains('btn-small')) {
-            const type = target.dataset.type;
-            const urls = {
-                play: `https://play.google.com/store/apps/details?id=${pkg}`,
-                fdroid: `https://f-droid.org/en/packages/${pkg}/`,
-                izzy: `https://apt.izzysoft.de/fdroid/index/apk/${pkg}`,
-                galaxy: `https://galaxystore.samsung.com/detail/${pkg}`,
-                search: `https://www.ecosia.org/search?q=${pkg}`
-            };
-            if (urls[type]) window.open(urls[type], '_blank');
         }
     });
 }
