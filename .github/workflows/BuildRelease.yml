@@ -10,6 +10,11 @@ on:
         type: boolean
         required: false
         default: false
+      run_debugSigned:
+        description: "Run Build Signed"
+        type: boolean
+        required: false
+        default: false
       run_play:
         description: "Run Build Play"
         type: boolean
@@ -197,3 +202,38 @@ jobs:
             app/build/outputs/apk/you/debug/*.apk
             app/build/outputs/apk/youPlay/debug/*.apk
             app/build/reports/*
+  buildSigned:
+    name: Build Arcticons APK for Debugging(Signed)
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'workflow_dispatch' && inputs.run_debugSigned == true }}
+    steps:
+      - name: Checking out branch
+        uses: actions/checkout@v6
+      - name: Setup Java
+        uses: actions/setup-java@v5
+        with:
+          distribution: 'zulu'
+          java-version: 21
+          cache: gradle
+      - name: Write sign info
+        run: "echo \"Workflow manually triggered by ${{ github.actor }}\"\nif [ ! -z \"${{ secrets.KEYSTORE }}\" ]; then\n  echo storePassword='${{ secrets.KEYSTORE_PASSWORD }}' >> keystore.properties\n  echo keyAlias='${{ secrets.KEY_ALIAS }}' >> keystore.properties\n  echo keyPassword='${{ secrets.KEY_PASSWORD }}' >> keystore.properties\n  echo storeFile='${{ github.workspace }}/key.jks' >> keystore.properties\n  echo ${{ secrets.KEYSTORE }} | base64 --decode > ${{ github.workspace }}/key.jks\nfi   \n"
+      - name: Get Gradle
+        run: gradle wrapper
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+      - name: Build Normal APK
+        run: ./gradlew app:assemblenormalRelease
+      - name: Build Black APK
+        run: ./gradlew app:assembleblackRelease
+      - name: Build You APK
+        run: ./gradlew app:assembleyouRelease
+      - name: Build Day&Night
+        run: ./gradlew app:assembledayNightRelease
+      - name: Upload artifact
+        uses: actions/upload-artifact@v6
+        with:
+          path: |
+            app/build/outputs/apk/normal/release/*.apk 
+            app/build/outputs/apk/black/release/*.apk 
+            app/build/outputs/apk/dayNight/release/*.apk 
+            app/build/outputs/apk/you/release/*.apk
