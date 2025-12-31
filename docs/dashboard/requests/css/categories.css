@@ -5,7 +5,7 @@
     margin-top: 20px;
 }
 .category-container{
-    height: 600px;
+    height: 100%;
 
 }
 
@@ -36,3 +36,37 @@
     background-color: hsl(from var(--red) h s 60%);
 }
 
+.accordion {
+    width: 100%;
+}
+
+details {
+  border-bottom: 1px solid #ddd;
+}
+
+summary {
+  padding: 20px 16px;
+  text-align: center;
+  background-color: var(--grey-20);
+  margin-top: 20px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  list-style: none;
+  border-radius: 40px;
+}
+
+summary:hover {
+  background-color: hsl(from var(--primary) h s 60%);
+}
+
+@media (prefers-color-scheme: dark) {
+
+    summary {
+        background-color: var(--grey-80);      
+    }
+
+    summary:hover {
+        background-color: var(--grey-60);
+    }
+}

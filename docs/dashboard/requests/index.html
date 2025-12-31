@@ -158,24 +158,31 @@
             </table>
         </div>
         <hr width="100%" size="2" class="separator" noshade>
-        <div class="category-container">
-            <div class="header-container">
+        <div class="accordion">
+            <details>
+                <summary>Show categories</summary>
+                <div class="category-container">
+                    <div class="header-container">
 
-                <div class="search-container">
-                    <div class="search-input-container" id="search-input-container">
-                        <input class="textinput" type="text" id="search-input_category" placeholder="Search Category">
+                        <div class="search-container">
+                            <div class="search-input-container" id="search-input-container">
+                                <input class="textinput" type="text" id="search-input_category"
+                                    placeholder="Search Category">
+                            </div>
+                        </div>
+
+                        <button class="btn" id="Category_Match">Match All Categories</button>
+                        <button class="btn" id="clear-category" title="Clear categories ">
+                            <img src="../../img/dashboard/icon-close.svg">
+                        </button>
+                    </div>
+                    <div id="categories">
+
                     </div>
                 </div>
-
-                <button class="btn" id="Category_Match">Match All Categories</button>
-                <button class="btn" id="clear-category" title="Clear categories ">
-                    <img src="../../img/dashboard/icon-close.svg">
-                </button>
-            </div>
-            <div id="categories">
-
-            </div>
+            </details>
         </div>
+
         <div class="preview-overlay-class" id="preview-overlay">
             <span class="close-button-class">&times;</span>
             <!-- Preview image will be inserted here -->
@@ -217,9 +224,7 @@
 
     <script type="module" src="js/requests.js"></script>
 
-    <!--
     <div id="footer"></div>
-    -->
 
 </body>
 
