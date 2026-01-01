@@ -24,70 +24,88 @@
 
 <body>
 
-    <!-- Header -->
-    <div class="pagetop">
-        <a href="/"><img class="logo" src="/img/logo.svg" alt="logo" id="logo"></a>
-        <h1 id="header">Possible Appfilter Updates</h1>
-    </div>
-    <h2 id="smallheader">Possible Appfilter Updates</h2>
+    <div class="content">
 
-    <div class="header-container">
-        <!-- Search Container -->
-        <span id="search-container">
-            <input class=textinput type="text" id="search-input" placeholder="Search">
-            <span class="clear-search" id="clear-search"
-                onclick="var input = this.previousElementSibling; input.value = ''; input.focus();">x</span>
-        </span>
+        <!-- Header -->
+        <div class="pagetop">
+            <a href="/"><img class="logo" src="/img/logo.svg" alt="logo" id="logo"></a>
+            <h1 id="header">Possible Appfilter Updates</h1>
+            <p id="date_header">Date</p>
+        </div>
 
-        <button class="btn" id="updatable-button">Request Dashboard</button>
+        <hr style="visibility: hidden;">
+        <div class="header-container">
+            <!-- Search Container -->
+            <div class="search-container" id="search-container">
+                <div class="search-input-container" id="search-input-container">
+                    <input class="textinput" type="text" id="search-input" placeholder="Search">
+                </div>
+            </div>
 
-        <button class="btn" type="button" id="copy-selected-button" aria-label="Long press to change drawable names">
-            <img src="../../img/dashboard/icon-copy.svg">
-        </button>
-    </div>
+            <button class="btn" id="updatable-button">Request Dashboard</button>
 
-    <!-- App Entries -->
-    <div class="table-container" id="requests-table-container">
-        <table id="requests-table">
-            <thead id="requests-table-head">
-                <tr>
-                    <th class="sortable-header" data-sort-index="0">App
-                        Name</th>
-                    <th>Icon</th>
-                    <th class="sortable-header" data-sort-index="1">Package Name</th>
-                    <th class="sortable-header" data-sort-index="2">CoponentInfo</th>
-                    <th>Appfilter</th>
-                </tr>
-            </thead>
-            <tbody id="app-entries"></tbody>
-        </table>
-    </div>
+            <button class="btn" type="button" id="copy-selected-button"
+                aria-label="Long press to change drawable names">
+                <img src="../img/icon-copy.svg">
+            </button>
+        </div>
 
-    <div class="preview-overlay-class" id="preview-overlay">
-        <span class="close-button-class">&times;</span>
-        <!-- Preview image will be inserted here -->
-        <img class="preview-image-class" id="preview-image" src="" alt="Preview">
-    </div>
+        <!-- App Entries -->
+        <div class="table-container" id="requests-table-container">
+            <table id="requests-table">
+                <thead id="requests-table-head">
+                    <tr>
+                        <th>Icon</th>
+                        <th class="sortable-header" data-sort-index="0">App Name</th>
+                        <th class="sortable-header" data-sort-index="1">Package Name</th>
+                        <th class="sortable-header" data-sort-index="2">CoponentInfo</th>
+                        <th>Appfilter</th>
+                    </tr>
+                </thead>
+                <tbody id="app-entries"></tbody>
+            </table>
+        </div>
 
-    <div class="popup" id="renamer-overlay">
-        <div class="popup-content">
+        <div class="preview-overlay-class" id="preview-overlay">
+            <span class="close-button-class">&times;</span>
             <!-- Preview image will be inserted here -->
-            <p>Enter a new drawable name</p>
-            <input class=textinput id="drawableName-input" type="text" placeholder="drawableName"
-                title="Change drawable name  to ..." />
-            <hr width="100%" size="2" class="separator" noshade>
-            <button class="btn" id="rename-button"> Rename drawable </button>
+            <img class="preview-image-class" id="preview-image" src="" alt="Preview">
+        </div>
+
+        <div class="popup" id="renamer-overlay">
+            <div class="popup-content">
+                <!-- Preview image will be inserted here -->
+                <p>Enter a new drawable name</p>
+                <input class=textinput id="drawableName-input" type="text" placeholder="drawableName"
+                    title="Change drawable name  to ..." />
+                <hr width="100%" size="2" class="separator" noshade>
+                <button class="btn" id="rename-button"> Rename drawable </button>
+            </div>
+        </div>
+
+        <!-- Copy Notification -->
+        <div class="notification" id="copy-notification"></div>
+
+        <!-- Search Notification -->
+        <div class="notification" id="search-notification"></div>
+
+
+    </div>
+
+    <div class="floating">
+        <div>
+            <button class="btn" type="button" id="copy-selected-button"
+                aria-label="Long press to change drawable names">
+                <img src="../img/icon-copy.svg">
+                Copy selected apps
+            </button>
         </div>
     </div>
 
-    <!-- Copy Notification -->
-    <div class="notification" id="copy-notification"></div>
-
-    <!-- Search Notification -->
-    <div class="notification" id="search-notification"></div>
+    <script type="module" src="js/updatable.js"></script>
 
     <div id="footer"></div>
-    <script type="module" src="js/updatable.js"></script>
+
 </body>
 
 </html>
