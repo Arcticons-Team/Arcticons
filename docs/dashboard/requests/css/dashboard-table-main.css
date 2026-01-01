@@ -66,6 +66,12 @@ td:nth-child(2) {
 
 td:nth-child(3) {
     width: auto;
+    max-width: 70px;
+    min-width: 270px;
+    overflow-wrap: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 td:nth-child(4) {
@@ -80,7 +86,8 @@ td:nth-child(5) {
 td:nth-child(6) {
     width: 10%;
 }
-td:nth-child(7){
+
+td:nth-child(7) {
     min-width: 110px;
     width: 10%;
 }
@@ -99,6 +106,11 @@ td:nth-child(8) {
     width: 44px;
     height: 44px;
     cursor: pointer;
+}
+
+.componentinfo {
+    font-size: 11px;
+    color: var(--grey-20);
 }
 
 /* Copy appfilter button*/
@@ -175,6 +187,7 @@ tr:hover {
     th:nth-child(7) {
         display: none;
     }
+
     td:nth-child(7) {
         display: none;
     }

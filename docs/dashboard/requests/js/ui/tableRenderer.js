@@ -43,7 +43,7 @@ export function renderTableBatch(data) {
                 : '<span class="arcticon-placeholder">No Match</span>'
             }
             </td>
-            <td class="app-name-cell" style="cursor: pointer;">${entry.appName}</td>
+            <td class="app-name-cell" style="cursor: pointer;">${entry.appName}</br><span class="componentinfo">${entry.componentInfo}</span></td>
             <td class="links-cell">${createLinksHtml()}</td>
             <td>${entry.playStoreDownloads}</td>
             <td>${entry.requestedInfo}</td>
