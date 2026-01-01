@@ -68,18 +68,14 @@
     text-align: center;
 }
 
-
 #random-reset-button {
-    border: 1px solid var(--white);
-    cursor: pointer;
-    background-color: rgba(0, 0, 0, 0);
-    color: var(--white);
-    padding: 5px 15px;
-    text-align: center;
-    display: none;
-    text-decoration: none;
-    border-radius: 100px;
+    background-color: var(--red);
 }
+
+#random-reset-button:hover {
+    background-color: hsl(from var(--red) h s 60%);
+}
+
 
 /* Span text for the I'm feeling lucky button*/
 .lg-view {

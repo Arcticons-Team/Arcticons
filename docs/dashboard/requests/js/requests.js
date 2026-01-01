@@ -149,7 +149,7 @@ function updateUIState(state) {
         state.ui.categories.size ? 'flex' : 'none';
 
     DOM.randomResetButton.style.display =
-        state.ui.random.active ? "inline-block" : "none";
+        state.ui.random.active ? "flex" : "none";
 
     DOM.matchingDrawableColumn.style.display =
         state.ui.showMatchingDrawables ? 'table-cell' : 'none';
