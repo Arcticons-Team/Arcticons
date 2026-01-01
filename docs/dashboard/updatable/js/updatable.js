@@ -5,9 +5,10 @@ import { updateTable, lazyLoadAndRender } from "./ui/tableRenderer.js";
 
 async function initializeAppData() {
     const fetchJson = (url) => fetch(url).then(res => res.ok ? res.json() : null).catch(() => null);
-    const [updatableJson, appfilterJson] = await Promise.all([
+    const [updatableJson, appfilterJson, requestsJson] = await Promise.all([
         fetchJson('/assets/updatable.json'),
-        fetchJson('/assets/combined_appfilter.json')
+        fetchJson('/assets/combined_appfilter.json'),
+        fetchJson('/assets/requests.json')
     ])
     if (!updatableJson) {
         console.error("Critical error: updatable.json not found")
@@ -21,6 +22,13 @@ async function initializeAppData() {
         state.all = filteredData;
     } else {
         console.warn("componentInfo.json missing: showing all entries without filtering.");
+    }
+
+    if (requestsJson) {
+        const latestDate = new Date(requestsJson.stats.lastUpdate * 1000);
+        DOM.dateHeader.innerText = latestDate.toLocaleString(undefined, {
+            day: 'numeric', year: 'numeric', month: 'long'
+        });
     }
 
     updateHeaderText(`${state.all.length} Updates Available`);
