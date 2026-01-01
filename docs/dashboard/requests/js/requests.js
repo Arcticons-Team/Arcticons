@@ -64,7 +64,7 @@ function processRequests(jsonResponse) {
     });
     jsonResponse.categories.forEach(c => state.allCategories.add(c));
     state.all = jsonResponse.entries;
-    updateHeaderText(`${jsonResponse.stats.totalCount} Requested Apps`);
+    updateHeaderText(`${jsonResponse.stats.totalCount} requested apps`);
 }
 
 function processAppfilter(appfilterData) {
@@ -75,7 +75,7 @@ function processAppfilter(appfilterData) {
     }
     const existingComponents = new Set(appfilterData.components);
     state.all = state.all.filter(entry => !existingComponents.has(entry.componentInfo));
-    updateHeaderText(`${state.all.length} Requested Apps`);
+    updateHeaderText(`${state.all.length} requested apps`);
 }
 
 function updateSortMarkers() {
@@ -264,8 +264,8 @@ function initEventListeners() {
         }
         DOM.matchingNameBtn.classList.toggle("active", state.ui.showMatchingNames);
         DOM.matchingNameBtn.innerText = state.ui.showMatchingNames
-            ? "Show All"
-            : "Show Matching Name";
+            ? "Show all"
+            : "Show matching name";
         recomputeView();
     });
 
@@ -281,8 +281,8 @@ function initEventListeners() {
         state.ui.categoryMode = one ? 'one' : 'all';
 
         DOM.categoryModeBtn.innerText = one
-            ? "Match One Category"
-            : "Match All Categories";
+            ? "Match one category"
+            : "Match all categories";
 
         DOM.categoryModeBtn.classList.toggle("active-toggle", one);
         recomputeView();
@@ -332,8 +332,8 @@ function initEventListeners() {
     DOM.matchingDrawablesBtn.addEventListener('click', () => {
         state.ui.showMatchingDrawables = !state.ui.showMatchingDrawables;
         DOM.matchingDrawablesBtn.innerText = state.ui.showMatchingDrawables
-            ? "Show All Entries"
-            : "Show Matching Drawables";
+            ? "Show all"
+            : "Show matching drawables";
 
         DOM.matchingDrawablesBtn.classList.toggle("active-toggle", state.ui.showMatchingDrawables);
         DOM.matchingDrawableColumn.classList.toggle("active", state.ui.showMatchingDrawables);
