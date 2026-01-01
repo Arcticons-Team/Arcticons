@@ -54,7 +54,6 @@ function filterAppfilter(appfilterData) {
 // Update header text
 function updateHeaderText(newHeader) {
     document.getElementById('header').innerText = newHeader;
-    document.getElementById('smallheader').innerText = newHeader;
 }
 
 // Scroll event listener for lazy loading
@@ -100,11 +99,6 @@ function updateSortMarkers() {
     });
 }
 
-function updateUIState(state) {
-    DOM.clearSearchBtn.style.visibility =
-        state.ui.search ? 'visible' : 'hidden';
-}
-
 function sortTable(columnIndex) {
     state.ui.sort.column = columnIndex;
     state.ui.sort.direction = DOM.sortableHeaders[columnIndex].classList.contains('asc') ? 'desc' : 'asc';
@@ -129,7 +123,6 @@ function recomputeView() {
         updateTable(filteredData);
         updateSortMarkers();
         computeWorker = null;
-        updateUIState(state);
     };
 }
 
@@ -153,7 +146,6 @@ function bindPress(element, onClick, onLong) {
 }
 
 function initEventListeners() {
-    DOM.clearSearchBtn.addEventListener('click', filterAppEntries);
     DOM.searchInput.addEventListener('input', filterAppEntries);
     DOM.renameBtn.addEventListener('click', () => {
         CopyAppfilter(null, true);

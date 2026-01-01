@@ -31,15 +31,22 @@ export function renderTableBatch(data) {
             });
         // Generate the entire row HTML at once - Much faster than insertCell()
         row.innerHTML = `
-            <td class="app-name-cell" style="cursor: pointer;">${entry.appName}</td>
             <td class="icon-preview" data-column="AppIcon">
                     <img src="/extracted_png/${entry.drawable}.webp" alt="Icon">
             </td>
-            <td class="links-cell"><div class="package-name"><div id="packagename">` + entry.pkgName + `</div><div id="package-copy"><button class="copy-package"><img src="../../img/dashboard/icon-copy.svg"></button></div></div></td>
+            <td class="app-name-cell" style="cursor: pointer;">${entry.appName}</td>
+            <td class="links-cell">
+                <div class="package-name">
+                    <div id="packagename">` + entry.pkgName + `</div>
+                    <div id="package-copy">
+                        <button class="btn"><img src="${imagepath.copy}"></button>
+                    </div>
+                </div>
+            </td>
             <td>${entry.componentInfo}</td>
             <td>
                 <button class="btn copy-btn">
-                    <img src="../../img/dashboard/icon-copy.svg">
+                    <img src="${imagepath.copy}">
                 </button>
             </td>
         `;

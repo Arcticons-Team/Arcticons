@@ -1,30 +1,24 @@
 .table-container {
-    width: 100%;
     max-height: 1200px;
-    /* Set maximum height for scrollable area */
     overflow-y: auto;
     overflow-x: auto;
     overflow-wrap: anywhere;
-    /* Enable vertical scrolling */
 }
 
 .table-container thead th {
     position: sticky;
-    /* make the table heads sticky */
     top: 0px;
-    /* table head will be placed from the top of the table and sticks to it */
+    z-index: 1;
 }
 
 .sortable-header {
     cursor: pointer;
-    /* Add cursor style for sorting */
-    position: relative;
 }
 
 .sortable-header::after {
     content: '';
     position: absolute;
-    right: 8px;
+    right: 12px;
     top: 50%;
     transform: translateY(-50%);
     width: 0;
@@ -34,11 +28,11 @@
 }
 
 .asc::after {
-    border-bottom: 4px solid #000000;
+    border-bottom: 4px solid var(--black);
 }
 
 .desc::after {
-    border-top: 4px solid #000000;
+    border-top: 4px solid var(--black);
 }
 
 table {
@@ -46,18 +40,38 @@ table {
     border-collapse: collapse;
 }
 
-th{
-    padding: 8px;
-    text-align: center;
+/* Row Glow Persistent Effect */
+tr.row-glow {
+    background-color: hsl(from var(--primary) h s 60%) !important;
+    transition: background-color 0.2s ease;
 }
+
+tr {
+    content-visibility: auto;
+    contain-intrinsic-size: 0 50px;
+}
+
+tr:hover {
+    background-color: var(--grey-20);
+}
+
+th {
+    padding: 8px 0px;
+    text-align: left;
+    border-bottom: solid 2px var(--grey-60);
+    background-color: var(--background);
+    white-space: nowrap;
+}
+
 td {
     padding-top: 4px;
-    text-align: center;
+    padding-right: 40px;
+    text-align: left;
+    border-bottom: solid 1px var(--grey-20);
 }
 
 td:nth-child(1) {
-    width: 10%;
-    overflow-wrap: normal;
+    width: 52px;
 }
 
 td:nth-child(2) {
@@ -67,15 +81,12 @@ td:nth-child(2) {
 }
 
 td:nth-child(3) {
-    min-width: 300px;
-    width: 20%;
-    overflow-wrap: anywhere;
+    width: auto;
 }
 
 td:nth-child(4) {
-    min-width: 300px;
-    width: 50%;
-    overflow-wrap: anywhere;
+    width: auto;
+
 }
 
 td:nth-child(5) {
@@ -84,44 +95,10 @@ td:nth-child(5) {
     overflow-wrap: normal;
 }
 
-tr:nth-child(even) {
-    background-color: #ebebeb;
-}
-
-th {
-    background-color: #f2f2f2;
-}
-
-@media (prefers-color-scheme: dark) {
-
-    tr:nth-child(even) {
-        background-color: rgb(37, 37, 37);
-    }
-
-    th {
-        background-color: #0f0f0f;
-    }
-
-    .asc::after {
-        border-bottom: 4px solid white;
-    }
-
-    .desc::after {
-        border-top: 4px solid white;
-    }
-}
-
 .icon-preview img {
     width: 44px;
     height: 44px;
     cursor: pointer;
-}
-
-/* Row Glow Persistent Effect */
-tr.row-glow {
-    background-color: #5a975c !important;
-    /* Green glow color */
-    transition: background-color 0.5s ease-in;
 }
 
 #copy-button {
@@ -135,7 +112,6 @@ tr.row-glow {
     background: none;
     border: none;
     padding: 2px 10px;
-    text-align: center;
     text-decoration: none;
     display: flex;
 }
@@ -153,15 +129,14 @@ tr.row-glow {
     width: 100%;
     margin: 0 auto;
     align-items: center;
-    justify-content: center;
-    padding-left: 34px;
+    justify-content: left;
 }
 
 .package-name {
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: left;
 }
 
 .copy-icon {
@@ -174,13 +149,32 @@ tr.row-glow {
     display: inline;
 }
 
-@media screen and (max-width: 1300px) {
+/*Dark mode theming */
+@media (prefers-color-scheme: dark) {
 
-    .icon-preview img {
-        width: 40px;
-        height: 40px;
+    th {
+        background-color: var(--grey-90);
     }
 
+    td {
+        border-bottom: solid 1px var(--grey-60);
+    }
+
+    tr:hover {
+        background-color: var(--grey-60);
+    }
+
+    .arcticon {
+        filter: none;
+    }
+
+    .asc::after {
+        border-bottom: 4px solid white;
+    }
+
+    .desc::after {
+        border-top: 4px solid white;
+    }
 }
 
 @media screen and (max-width: 1100px) {
@@ -188,15 +182,6 @@ tr.row-glow {
     th:nth-child(4),
     td:nth-child(4) {
         display: none;
-    }
-
-    .icon-preview img {
-        width: 30px;
-        height: 30px;
-    }
-
-    .copy-icon {
-        display: inline;
     }
 
     .copy-text {
