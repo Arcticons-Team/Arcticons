@@ -197,10 +197,6 @@ function initEventListeners() {
             CopyAppfilter(index, false);
             return;
         }
-        if (target.closest('.copy-package')) {
-            copyToClipboard(state.view[index].pkgName)
-            return;
-        }
 
         // 2. Handle App Name (Row Selection)
         if (target.classList.contains('app-name-cell')) {

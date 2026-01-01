@@ -34,16 +34,7 @@ export function renderTableBatch(data) {
             <td class="icon-preview" data-column="AppIcon">
                     <img src="/extracted_png/${entry.drawable}.webp" alt="Icon">
             </td>
-            <td class="app-name-cell" style="cursor: pointer;">${entry.appName}</td>
-            <td class="links-cell">
-                <div class="package-name">
-                    <div id="packagename">` + entry.pkgName + `</div>
-                    <div id="package-copy">
-                        <button class="btn"><img src="${imagepath.copy}"></button>
-                    </div>
-                </div>
-            </td>
-            <td>${entry.componentInfo}</td>
+            <td class="app-name-cell" style="cursor: pointer;">${entry.appName}</br><span class="componentinfo">${entry.componentInfo}</span></td>
             <td>
                 <button class="btn copy-btn">
                     <img src="${imagepath.copy}">
@@ -69,16 +60,6 @@ export function updateTable(data = state.view) {
     state.view = data;
     clearTable();
     lazyLoadAndRender();
-}
-
-function createLinksHtml() {
-    return `
-        <img src="${imagepath.playStore}" data-type="play" class="links" alt="P">
-        <img src="${imagepath.fdroid}" data-type="fdroid" class="links" alt="F">
-        <img src="${imagepath.izzyOnDroid}" data-type="izzy" class="links" alt="I">
-        <img src="${imagepath.galaxyStore}" data-type="galaxy" class="links" alt="G">
-        <img src="${imagepath.wwwSearch}" data-type="search" class="links" alt="A">
-    `;
 }
 
 export function showIconPreview(iconSrc, column) {
