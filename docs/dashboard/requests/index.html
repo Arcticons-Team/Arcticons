@@ -32,7 +32,7 @@
         <div class="pagetop">
             <a href="/"><img class="logo" src="/img/logo.svg" alt="logo" id="logo"></a>
             <h1 id="header">Requested Apps</h1>
-            <p id="date_header">Date</hp>
+            <p id="date_header">Date</p>
         </div>
 
         <hr style="visibility: hidden;">
@@ -55,42 +55,37 @@
 
                 <div id="myPopup" class="popup">
                     <div class="popup-content">
-                        <div class="info-popup" id="info" onclick="showInfo()">i
-                            <span class="popuptext" id="infotext">
-                                <p style="font-size: 18px; font-weight: bold;">The Regex Search matches against:</p>
-                                <p>AppName ComponentInfo drawableName</p>
-                            </span>
-                        </div>
-                        <h3 style="width: 100%;">
+                        <h3>
                             Regex Settings
                         </h3>
+                        <p>Matches against:<br><strong>AppName, ComponentInfo, drawableName</strong></p>
                         <div class="settings-row">
-                            <p class="Setting">Insensitive <br> Case insensitive match</p>
+                            <p class="Setting">Case insensitive match</p>
                             <!-- Rounded switch -->
                             <label class="switch">
                                 <input type="checkbox" id="caseInsensitive-switch" checked="true">
                                 <span class="slider round"></span>
                             </label>
                         </div>
-                        <hr width="100%" size="2" class="separator" noshade>
+                        <hr class="separator">
                         <div class="settings-row">
-                            <p class="Setting">Unicode <br> Match with full unicode</p>
+                            <p class="Setting">Match with full unicode</p>
                             <!-- Rounded switch -->
                             <label class="switch">
                                 <input type="checkbox" id="caseUnicode-switch" checked="true">
                                 <span class="slider round"></span>
                             </label>
                         </div>
-                        <hr width="100%" size="2" class="separator" noshade>
+                        <hr class="separator">
                         <div class="settings-row">
-                            <p class="Setting">Reverse Search <br> Don't match search</p>
+                            <p class="Setting">Reverse Search</p>
                             <!-- Rounded switch -->
                             <label class="switch">
                                 <input type="checkbox" id="reverse-switch">
                                 <span class="slider round"></span>
                             </label>
                         </div>
-                        <hr width="100%" size="2" class="separator" noshade>
+                        <hr class="separator">
                         <button class="btn" id="closePopup">
                             Close
                         </button>

@@ -61,7 +61,7 @@
 
 .show {
     display: block;
-    color: black;
+    color: var(--black);
 }
 
 .Setting {
@@ -76,13 +76,8 @@
     column-gap: 50px;
 }
 
-#closePopup {
+.separator {
     width: 100%;
-}
-
-#seperator {
-    width: 100%;
-    color: #888888;
 }
 
 /* The actual popup */
