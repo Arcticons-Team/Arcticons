@@ -4,7 +4,8 @@
     gap: 10px;
     margin-top: 20px;
 }
-.category-container{
+
+.category-container {
     height: 100%;
 
 }
@@ -28,11 +29,11 @@
     width: 100%;
 }
 
-#clear-category{
+#clear-category {
     background-color: var(--red);
 }
 
-#clear-category:hover{
+#clear-category:hover {
     background-color: hsl(from var(--red) h s 60%);
 }
 
@@ -40,30 +41,46 @@
     width: 100%;
 }
 
-details {
-  border-bottom: 1px solid #ddd;
-}
-
 summary {
-  padding: 20px 16px;
-  text-align: center;
-  background-color: var(--grey-20);
-  margin-top: 20px;
-  margin-bottom: 20px;
-  cursor: pointer;
-  font-weight: 600;
-  list-style: none;
-  border-radius: 40px;
+    padding: 20px 16px;
+    text-align: center;
+    background-color: var(--grey-20);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    list-style: none;
+    border-radius: 40px;
 }
 
 summary:hover {
-  background-color: hsl(from var(--primary) h s 60%);
+    background-color: hsl(from var(--primary) h s 60%);
+}
+
+details>summary::after {
+    content: "Show categrories";
+}
+
+details[open]>summary::after {
+    content: "Hide categrories";
+}
+
+details .category-container {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .2s ease, opacity 0.2s ease;
+    opacity: 0;
+}
+
+details[open] .category-container {
+  max-height: 100%;
+  opacity: 1;
 }
 
 @media (prefers-color-scheme: dark) {
 
     summary {
-        background-color: var(--grey-80);      
+        background-color: var(--grey-80);
     }
 
     summary:hover {
