@@ -21,7 +21,7 @@
 /* Style for activated buttons */
 #categories .btn[activated] {
     background-color: hsl(from var(--primary) h s 60%);
-    color: #ffffff;
+    color: var(--white);
     font-weight: bold;
 }
 
@@ -44,7 +44,7 @@
 summary {
     padding: 20px 16px;
     text-align: center;
-    background-color: var(--grey-20);
+    background-color: var(--blue-20);
     margin-top: 20px;
     margin-bottom: 20px;
     cursor: pointer;
@@ -80,10 +80,10 @@ details[open] .category-container {
 @media (prefers-color-scheme: dark) {
 
     summary {
-        background-color: var(--grey-80);
+        background-color: var(--blue-80);
     }
 
     summary:hover {
-        background-color: var(--grey-60);
+        background-color: var(--blue-70);
     }
 }

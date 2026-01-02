@@ -11,16 +11,16 @@
 }
 
 .floating-container {
-  display: flex;
-  position: absolute;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
-  height: 76vh;
-  z-index: 10;
-  top: 52%; right: 50%;
-  transform: translate(50%,-50%);
-  pointer-events: none;
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    height: 76vh;
+    z-index: 10;
+    top: 52%; right: 50%;
+    transform: translate(50%,-50%);
+    pointer-events: none;
 }
 
 .sortable-header {
@@ -56,7 +56,7 @@ table {
 th {
     padding: 8px 0px;
     text-align: left;
-    border-bottom: solid 2px var(--grey-60);
+    border-bottom: solid 2px var(--blue-80);
     background-color: var(--background);
     white-space: nowrap;
 }
@@ -64,7 +64,7 @@ th {
 td {
     padding-top: 4px;
     text-align: left;
-    border-bottom: solid 1px var(--grey-20);
+    border-bottom: solid 1px var(--blue-20);
 }
 
 td:nth-child(1) {
@@ -121,7 +121,7 @@ td:nth-child(8) {
 
 .componentinfo {
     font-size: 11px;
-    color: var(--grey-80);
+    color: var(--blue-90);
 }
 
 /* Copy appfilter button*/
@@ -133,7 +133,7 @@ td:nth-child(8) {
 
 /* Row Glow Persistent Effect */
 tr.row-glow {
-    background-color: hsl(from var(--primary) h s 60%) !important;
+    background-color: var(--blue-30) !important;
     transition: background-color 0.2s ease;
 }
 
@@ -143,7 +143,7 @@ tr {
 }
 
 tr:hover {
-    background-color: var(--grey-20);
+    background-color: var(--blue-20);
 }
 
 
@@ -165,19 +165,19 @@ tr:hover {
 @media (prefers-color-scheme: dark) {
 
     th {
-        background-color: var(--grey-90);
+        background-color: var(--background-dark);
     }
 
     td {
-        border-bottom: solid 1px var(--grey-60);
+        border-bottom: solid 1px var(--blue-80);
     }
 
     tr:hover {
-        background-color: var(--grey-60);
+        background-color: var(--blue-80);
     }
 
     .componentinfo {
-        color: var(--grey-20);
+        color: var(--blue-5);
     }
 
     .arcticon {
