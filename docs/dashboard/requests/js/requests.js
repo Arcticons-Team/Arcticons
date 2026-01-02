@@ -1,7 +1,7 @@
 import { shuffleArray, CopyAppfilter, debounce, downloadImage } from '../../js/functions.js';
 import { TABLE_COLUMNS_Requests as TABLE_COLUMNS, DOM } from '../../js/const.js';
 import { state } from '../../js/state/store.js';
-import { updateTable, lazyLoadAndRender, showIconPreview } from './ui/tableRenderer.js';
+import { updateTable, lazyLoadAndRender, showIconPreview, getrowMenu } from './ui/tableRenderer.js';
 import { renderCategories, initCategoryUI, findCategory } from './ui/category.js';
 
 function finalizeCategories() {
@@ -379,6 +379,9 @@ function initEventListeners() {
                     if (urls[type]) window.open(urls[type], '_blank');
                     break;
                 default:
+                    const rowMenu = document.getElementById('rowMenu');
+                    rowMenu.innerHTML = getrowMenu(pkg);
+                    rowMenu.showPopover();
                     console.log("unknown Action:", target.dataset.type)
             }
             return;

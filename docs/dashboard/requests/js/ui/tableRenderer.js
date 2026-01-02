@@ -1,6 +1,6 @@
 // js/ui/tableRenderer.js
 import { state } from '../../../js/state/store.js';
-import { DOM, imagepath } from '../../../js/const.js';
+import { DOM, imagepath, urls } from '../../../js/const.js';
 
 
 /* ---------- Core table operations ---------- */
@@ -44,7 +44,6 @@ export function renderTableBatch(data) {
             }
             </td>
             <td class="app-name-cell" style="cursor: pointer;">${entry.appName}</br><span class="componentinfo">${entry.componentInfo}</span></td>
-            <td class="links-cell">${createLinksHtml()}</td>
             <td>${entry.playStoreDownloads}</td>
             <td>${entry.requestedInfo}</td>
             <td>${formattedDate}</td>
@@ -88,4 +87,29 @@ export function showIconPreview(iconSrc, Name, column) {
     DOM.imagePreviewTitle.textContent = Name
     DOM.imagePreview.classList.toggle('preview-arcticon', column === "Arcticon");
     DOM.imagePreviewOverlay.style.display = 'block';
+}
+
+export function getrowMenu(pkg) {
+    return `
+      <div class="btn-container" tabindex="0" role="menuitem"
+        onclick="window.open('${urls.playStore}${pkg}')">
+        <img src="${imagepath.playStore}"> <span>Play Store</span>
+      </div>
+      <div class="btn-container" tabindex="0" role="menuitem"
+        onclick="window.open('${urls.fdroid}${pkg}')">
+        <img src="${imagepath.fdroid}"> <span>F-Droid</span>
+      </div>
+      <div class="btn-container"tabindex="0" role="menuitem"
+        onclick="window.open('${urls.izzyOnDroid}${pkg}')">
+        <img src="${imagepath.izzyOnDroid}"> <span>IzzyOnDroid</span>
+      </div>
+      <div class="btn-container" tabindex="0" role="menuitem"
+        onclick="window.open('${urls.galaxyStore}${pkg}')">
+        <img src="${imagepath.galaxyStore}"> <span>Galaxy Store</span>
+      </div>
+      <div class="btn-container" tabindex="0" role="menuitem"
+        onclick="window.open('${urls.wwwSearch}${pkg}')">
+        <img src="${imagepath.wwwSearch}"> <span>Search</span>
+      </div>
+    `;
 }

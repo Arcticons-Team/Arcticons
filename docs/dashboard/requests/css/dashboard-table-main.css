@@ -87,24 +87,21 @@ td:nth-child(3) {
 }
 
 td:nth-child(4) {
-    width: 15%;
-    min-width: 140px;
+    min-width: 90px;
+    width: 5%;
 }
 
 td:nth-child(5) {
-    width: 10%;
+    min-width: 100px;
+    width: 5%;
 }
 
 td:nth-child(6) {
-    width: 10%;
-}
-
-td:nth-child(7) {
     min-width: 110px;
     width: 10%;
 }
 
-td:nth-child(8) {
+td:nth-child(7) {
     min-width: 105px;
     width: 110px;
 }
@@ -159,6 +156,39 @@ tr:hover {
 /* Show the column when the button is clicked */
 #show-matching-drawables.active {
     display: table-cell;
+}
+
+/* Context Menus */
+.context-menu {
+  margin: 0;
+  border: none;
+  padding: 8px 0;
+  background: var(--grey-80);
+  color: var(--on-secondary-container);
+  border-radius: 4px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  min-width: 240px;
+  display: flex;
+  flex-direction: column;
+}
+
+.row-style {
+  position: fixed;
+  opacity: 0;
+  transform: scale(0.9);
+  z-index: 1000;
+  transition: opacity 0.1s ease-out, transform 0.1s ease-out,
+    display 0.1s allow-discrete;
+}
+.row-style:popover-open {
+  opacity: 1;
+  transform: scale(1);
+}
+@starting-style {
+  .row-style:popover-open {
+    opacity: 0;
+    transform: scale(0.9);
+  }
 }
 
 /*Dark mode theming */

@@ -10,6 +10,14 @@ export const imagepath = {
     more: '/dashboard/img/icon-more.svg'
 };
 
+export const urls = {
+    playStore: 'https://play.google.com/store/apps/details?id=',
+    fdroid: `https://f-droid.org/en/packages/`,
+    izzyOnDroid: 'https://apt.izzysoft.de/fdroid/index/apk/',
+    galaxyStore: 'https://galaxystore.samsung.com/detail/',
+    wwwSearch: 'https://www.ecosia.org/search?q=',
+}
+
 export const TABLE_COLUMNS_Requests = [
     { key: 'appIconColor', type: 'number' },
     { key: 'appName', type: 'string' },
