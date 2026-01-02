@@ -36,7 +36,7 @@ export function renderTableBatch(data) {
             </td>
             <td class="app-name-cell" style="cursor: pointer;">${entry.appName}</br><span class="componentinfo">${entry.componentInfo}</span></td>
             <td>
-                <button class="btn copy-btn">
+                <button class="btn copy-btn" title="Copy appfilter">
                     <img src="${imagepath.copy}">
                 </button>
             </td>

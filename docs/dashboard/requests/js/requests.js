@@ -256,18 +256,34 @@ function initEventListeners() {
         }
     });
 
-    DOM.matchingNameBtn.addEventListener('click', () => {
+    function toggleMatchingNames() {
         state.ui.showMatchingNames = !state.ui.showMatchingNames;
         if (state.ui.showMatchingNames) {
             state.ui.sort.direction = 'asc';
             state.ui.sort.column = 1;
         }
         DOM.matchingNameBtn.classList.toggle("active", state.ui.showMatchingNames);
-        DOM.matchingNameBtn.innerText = state.ui.showMatchingNames
-            ? "Show all"
-            : "Show matching name";
+        const labelEl = DOM.matchingNameBtn.querySelector('#show-multiple p') || DOM.matchingNameBtn.querySelector('.btn-child p');
+        if (labelEl) labelEl.innerText = state.ui.showMatchingNames ? "Show all" : "Matching names";
         recomputeView();
+    }
+    DOM.matchingNameBtn.addEventListener('click', (e) => {
+        const fromInput = e.target && (e.target.closest && e.target.closest('#matching-number-input') || e.target.classList && e.target.classList.contains('btn-input'));
+        if (fromInput) return;
+        toggleMatchingNames();
     });
+
+    if (DOM.matchingNumberInput) {
+        ['click', 'mousedown', 'pointerdown'].forEach(ev => DOM.matchingNumberInput.addEventListener(ev, (e) => e.stopPropagation()));
+    }
+
+    if (DOM.matchingNameImg) {
+        DOM.matchingNameImg.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            toggleMatchingNames();
+        });
+    }
 
     DOM.regexSwitch.addEventListener('click', () => {
         state.ui.regex = state.ui.regex ? false : true;
@@ -329,18 +345,28 @@ function initEventListeners() {
         }
     });
 
-    DOM.matchingDrawablesBtn.addEventListener('click', () => {
+    function toggleMatchingDrawables() {
         state.ui.showMatchingDrawables = !state.ui.showMatchingDrawables;
-        DOM.matchingDrawablesBtn.innerText = state.ui.showMatchingDrawables
-            ? "Show all"
-            : "Show matching drawables";
-
+        const labelEl = DOM.matchingDrawablesBtn.querySelector('p') || DOM.matchingDrawablesBtn.querySelector('.btn-child p');
+        if (labelEl) labelEl.innerText = state.ui.showMatchingDrawables ? "Show all" : "Matching drawables";
         DOM.matchingDrawablesBtn.classList.toggle("active-toggle", state.ui.showMatchingDrawables);
         DOM.matchingDrawableColumn.classList.toggle("active", state.ui.showMatchingDrawables);
 
         state.copy.appfilterName = false;
         recomputeView();
+    }
+
+    DOM.matchingDrawablesBtn.addEventListener('click', (e) => {
+        toggleMatchingDrawables();
     });
+
+    if (DOM.matchingDrawablesImg) {
+        DOM.matchingDrawablesImg.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            toggleMatchingDrawables();
+        });
+    }
 
     DOM.imagePreviewOverlay.onclick = e => {
         if (e.target === DOM.imagePreviewOverlay || e.target.classList.contains('close-button-class')) {
