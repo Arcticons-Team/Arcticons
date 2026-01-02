@@ -76,10 +76,6 @@
     column-gap: 50px;
 }
 
-.separator {
-    width: 100%;
-}
-
 /* The actual popup */
 .info-popup .popuptext {
     visibility: hidden;
@@ -141,7 +137,7 @@
 /*Dark mode theming */
 @media (prefers-color-scheme: dark) {
     .popup-content {
-        background-color: #0f0f0f;
+        background-color: var(--background-dark);
         color: white
     }
 

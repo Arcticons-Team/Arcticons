@@ -180,6 +180,10 @@ background-color: hsl(from var(--primary) h s 50%);
   .btn-small {
     filter: none;
   }
+
+  .btn-small:hover {
+    filter: brightness(0) saturate(100%) invert(73%) sepia(42%) saturate(422%) hue-rotate(198deg) brightness(93%) contrast(96%);
+  }
 }
 
 @media screen and (max-width: 1200px) {
