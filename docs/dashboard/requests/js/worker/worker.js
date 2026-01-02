@@ -41,13 +41,16 @@ onmessage = function (event) {
         if (state.ui.regex) {
             const re = new RegExp(state.ui.search, state.ui.regexFlags);
             filteredData = filteredData.filter(e => {
-                const searchTarget = `${e.appName} ${e.componentInfo} ${e.drawable}`;
+                const searchTarget = `${e.appName} ${e.componentInfo}`;
                 const matches = re.test(searchTarget);
                 return state.ui.reverse ? !matches : matches;
             });
         } else {
             const s = state.ui.search.toLowerCase();
-            filteredData = filteredData.filter(e => e.appName.toLowerCase().includes(s));
+            filteredData = filteredData.filter(e => {
+                const searchTarget = `${e.appName} ${e.componentInfo}`;
+                return searchTarget.toLowerCase().includes(s);
+            });
         }
     }
     // Random selection
