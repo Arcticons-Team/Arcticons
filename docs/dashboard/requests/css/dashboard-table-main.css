@@ -2,13 +2,25 @@
     height: 80vh;
     width: 100%;
     overflow-y: auto;
-    position: relative;
 }
 
 .table-container thead th {
     position: sticky;
     top: 0px;
     z-index: 1;
+}
+
+.floating-container {
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  height: 76vh;
+  z-index: 10;
+  top: 52%; right: 50%;
+  transform: translate(50%,-50%);
+  pointer-events: none;
 }
 
 .sortable-header {
