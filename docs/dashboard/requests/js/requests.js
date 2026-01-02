@@ -381,6 +381,14 @@ function initEventListeners() {
                 case "more":
                     const rowMenu = document.getElementById('rowMenu');
                     rowMenu.innerHTML = getrowMenu(pkg);
+                    const w = 260, h = 270;
+                    let x = event.clientX + 2, y = event.clientY + 2;
+                    if (x + w > window.innerWidth) x -= (w + 4);
+                    if (y + h > window.innerHeight) y -= (h + 4);
+
+                    rowMenu.style.left = `${x}px`;
+                    rowMenu.style.top = `${y}px`;
+                    rowMenu.style.transformOrigin = "top left";
                     rowMenu.showPopover();
                     rowMenu.addEventListener("toggle", (e) => {
                         if (e.newState === "closed") {
