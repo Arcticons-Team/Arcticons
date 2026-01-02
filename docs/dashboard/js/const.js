@@ -6,7 +6,8 @@ export const imagepath = {
     galaxyStore: '/dashboard/img/icon-galaxy.svg',
     wwwSearch: '/dashboard/img/icon-web.svg',
     download: '/dashboard/img/icon-download.svg',
-    copy: '/dashboard/img/icon-copy.svg'
+    copy: '/dashboard/img/icon-copy.svg',
+    more: '/dashboard/img/icon-more.svg'
 };
 
 export const TABLE_COLUMNS_Requests = [

@@ -51,7 +51,8 @@ export function renderTableBatch(data) {
             <td>
                 <img src="${imagepath.copy}" title="Copy Appfilter" data-type="copy" class="btn-small" alt="Copy">
                 <img src="${imagepath.download}" title="Download Icon" data-type="download" data-drawable="${entry.drawable}.webp" data-downloadpath="/extracted_png/${entry.drawable}.webp" class="btn-small" alt="Download">
-            </td>
+            <img src="${imagepath.more}" title="More" data-type="more" class="btn-small" alt="More">
+                </td>
         `;
         fragment.appendChild(row);
     });
