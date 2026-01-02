@@ -130,6 +130,15 @@
 
         <!-- App Entries -->
         <div class="table-container" id="requests-table-container">
+
+            <div class="floating-container">
+                <button class="btn" type="button" id="copy-selected-button"
+                    aria-label="Long press to change drawable names">
+                    <img src="../img/icon-copy.svg">
+                    Copy selected apps
+                </button>
+            </div>
+            
             <table id="requests-table">
                 <thead id="requests-table-head">
                     <tr>
@@ -202,16 +211,6 @@
         <div class="notification" id="search-notification"></div>
 
 
-    </div>
-
-    <div class="floating">
-        <div>
-            <button class="btn" type="button" id="copy-selected-button"
-                aria-label="Long press to change drawable names">
-                <img src="../img/icon-copy.svg">
-                Copy selected apps
-            </button>
-        </div>
     </div>
 
     <script type="module" src="js/requests.js"></script>
