@@ -84,6 +84,10 @@
   transform: scale(0.90);
 }
 
+.btn-container.active {
+background-color: hsl(from var(--primary) h s 50%);
+}
+
 .longpress {
   -webkit-animation: 1s longpress;
   animation: 1s longpress;
