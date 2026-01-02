@@ -162,14 +162,15 @@ tr:hover {
 .context-menu {
   margin: 0;
   border: none;
-  padding: 8px 0;
+  padding: 8px;
   background: var(--grey-80);
   color: var(--on-secondary-container);
-  border-radius: 4px;
+  border-radius: 16px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
   min-width: 240px;
   display: flex;
   flex-direction: column;
+  gap:8px
 }
 
 .row-style {
