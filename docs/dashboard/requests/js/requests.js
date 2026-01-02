@@ -378,10 +378,18 @@ function initEventListeners() {
                     };
                     if (urls[type]) window.open(urls[type], '_blank');
                     break;
-                default:
+                case "more":
                     const rowMenu = document.getElementById('rowMenu');
                     rowMenu.innerHTML = getrowMenu(pkg);
                     rowMenu.showPopover();
+                    rowMenu.addEventListener("toggle", (e) => {
+                        if (e.newState === "closed") {
+                            // Wait for CSS transition
+                            setTimeout(() => rowMenu.innerHTML = "", 200);
+                        }
+                    });
+                    break;
+                default:
                     console.log("unknown Action:", target.dataset.type)
             }
             return;
