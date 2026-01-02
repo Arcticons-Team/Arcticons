@@ -99,7 +99,6 @@ td:nth-child(8) {
 
 .arcticon {
     filter: invert();
-
 }
 
 .icon-preview img {
@@ -110,7 +109,7 @@ td:nth-child(8) {
 
 .componentinfo {
     font-size: 11px;
-    color: var(--grey-20);
+    color: var(--grey-80);
 }
 
 /* Copy appfilter button*/
@@ -163,6 +162,10 @@ tr:hover {
 
     tr:hover {
         background-color: var(--grey-60);
+    }
+
+    .componentinfo {
+        color: var(--grey-20);
     }
 
     .arcticon {
