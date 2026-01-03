@@ -1,5 +1,5 @@
 import { shuffleArray, CopyAppfilter, debounce, downloadImage } from '../../js/functions.js';
-import { TABLE_COLUMNS_Requests as TABLE_COLUMNS, DOM } from '../../js/const.js';
+import { TABLE_COLUMNS_Requests as TABLE_COLUMNS, DOM, urls} from '../../js/const.js';
 import { state } from '../../js/state/store.js';
 import { updateTable, lazyLoadAndRender, showIconPreview, getrowMenu } from './ui/tableRenderer.js';
 import { renderCategories, initCategoryUI, findCategory } from './ui/category.js';
@@ -367,21 +367,13 @@ function initEventListeners() {
                 case "download":
                     downloadImage(target.dataset.downloadpath, target.dataset.drawable)
                     break;
-                case "link":
-                    const type = target.dataset.linktype;
-                    const urls = {
-                        play: `https://play.google.com/store/apps/details?id=${pkg}`,
-                        fdroid: `https://f-droid.org/en/packages/${pkg}/`,
-                        izzy: `https://apt.izzysoft.de/fdroid/index/apk/${pkg}`,
-                        galaxy: `https://galaxystore.samsung.com/detail/${pkg}`,
-                        search: `https://www.ecosia.org/search?q=${pkg}`
-                    };
-                    if (urls[type]) window.open(urls[type], '_blank');
+                case "play":
+                    window.open(`${urls.playStore}${pkg}`);
                     break;
                 case "more":
                     const rowMenu = document.getElementById('rowMenu');
                     rowMenu.innerHTML = getrowMenu(pkg);
-                    const w = 260, h = 270;
+                    const w = 255, h = 215;
                     let x = event.clientX + 2, y = event.clientY + 2;
                     if (x + w > window.innerWidth) x -= (w + 4);
                     if (y + h > window.innerHeight) y -= (h + 4);
@@ -396,6 +388,8 @@ function initEventListeners() {
                             setTimeout(() => rowMenu.innerHTML = "", 200);
                         }
                     });
+                    const firstItem = rowMenu.querySelector('.btn-container')
+                    firstItem.focus(); //todo focus on first item
                     break;
                 default:
                     console.log("unknown Action:", target.dataset.type)

@@ -50,7 +50,8 @@ export function renderTableBatch(data) {
             <td>
                 <img src="${imagepath.copy}" title="Copy Appfilter" data-type="copy" class="btn-small" alt="Copy">
                 <img src="${imagepath.download}" title="Download Icon" data-type="download" data-drawable="${entry.drawable}.webp" data-downloadpath="/extracted_png/${entry.drawable}.webp" class="btn-small" alt="Download">
-            <img src="${imagepath.more}" title="More" data-type="more" class="btn-small" alt="More">
+                <img src="${imagepath.playStore}" title="Play Store" data-type="play" class="btn-small" alt="Play Store">
+                <img src="${imagepath.more}" title="More" data-type="more" class="btn-small" alt="More">
                 </td>
         `;
         fragment.appendChild(row);
@@ -91,10 +92,6 @@ export function showIconPreview(iconSrc, Name, column) {
 
 export function getrowMenu(pkg) {
     return `
-      <div class="btn-container" tabindex="0" role="menuitem"
-        onclick="window.open('${urls.playStore}${pkg}')">
-        <img src="${imagepath.playStore}"> <span>Play Store</span>
-      </div>
       <div class="btn-container" tabindex="0" role="menuitem"
         onclick="window.open('${urls.fdroid}${pkg}')">
         <img src="${imagepath.fdroid}"> <span>F-Droid</span>
