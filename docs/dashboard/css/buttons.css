@@ -12,7 +12,7 @@
   gap: 8px;
   cursor: pointer;
   border: none;
-  color: var(--white);
+  color: var(--text);
   text-align: left;
 }
 
@@ -28,7 +28,7 @@
 .btn-container:hover,
 .btn:hover,
 .btn-round:hover {
-  background-color: hsl(from var(--primary) h s 60%);
+  background-color: var(--hover);
 }
 
 .btn-child {
@@ -165,7 +165,7 @@ background-color: hsl(from var(--primary) h s 50%);
   top: calc(100% + 16px);
   padding: 8px;
   background-color: #181818;
-  color: #fff;
+  color: var(--white);
   border-radius: 8px;
 }
 

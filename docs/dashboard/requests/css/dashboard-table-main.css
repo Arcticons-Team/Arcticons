@@ -18,8 +18,9 @@
     align-items: center;
     height: 76vh;
     z-index: 10;
-    top: 52%; right: 50%;
-    transform: translate(50%,-50%);
+    top: 52%;
+    right: 50%;
+    transform: translate(50%, -50%);
     pointer-events: none;
 }
 
@@ -56,7 +57,7 @@ table {
 th {
     padding: 8px 0px;
     text-align: left;
-    border-bottom: solid 2px var(--blue-80);
+    border-bottom: solid 2px var(--hover);
     background-color: var(--background);
     white-space: nowrap;
 }
@@ -64,7 +65,7 @@ th {
 td {
     padding-top: 4px;
     text-align: left;
-    border-bottom: solid 1px var(--blue-20);
+    border-bottom: solid 1px var(--hover);
 }
 
 td:nth-child(1) {
@@ -118,7 +119,7 @@ td:nth-child(7) {
 
 .componentinfo {
     font-size: 11px;
-    color: var(--blue-90);
+    color: var(--secondary-text);
 }
 
 /* Copy appfilter button*/
@@ -130,7 +131,7 @@ td:nth-child(7) {
 
 /* Row Glow Persistent Effect */
 tr.row-glow {
-    background-color: var(--blue-30) !important;
+    background-color: var(--secondary) !important;
     transition: background-color 0.2s ease;
 }
 
@@ -140,7 +141,7 @@ tr {
 }
 
 tr:hover {
-    background-color: var(--blue-20);
+    background-color: var(--hover);
 }
 
 
@@ -160,36 +161,38 @@ tr:hover {
 
 /* Context Menus */
 .context-menu {
-  margin: 0;
-  border: none;
-  padding: 8px;
-  background: var(--grey-80);
-  color: var(--on-secondary-container);
-  border-radius: 16px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
-  min-width: 240px;
-  display: flex;
-  flex-direction: column;
-  gap:8px
+    margin: 0;
+    border: none;
+    padding: 8px;
+    background: hsl(from var(--background) h s 95%);
+    color: var(--on-secondary-container);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    min-width: 240px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px
 }
 
 .row-style {
-  position: fixed;
-  opacity: 0;
-  transform: scale(0.9);
-  z-index: 1000;
-  transition: opacity 0.1s ease-out, transform 0.1s ease-out,
-    display 0.1s allow-discrete;
-}
-.row-style:popover-open {
-  opacity: 1;
-  transform: scale(1);
-}
-@starting-style {
-  .row-style:popover-open {
+    position: fixed;
     opacity: 0;
     transform: scale(0.9);
-  }
+    z-index: 1000;
+    transition: opacity 0.1s ease-out, transform 0.1s ease-out,
+        display 0.1s allow-discrete;
+}
+
+.row-style:popover-open {
+    opacity: 1;
+    transform: scale(1);
+}
+
+@starting-style {
+    .row-style:popover-open {
+        opacity: 0;
+        transform: scale(0.9);
+    }
 }
 
 /*Dark mode theming */
@@ -200,27 +203,36 @@ tr:hover {
     }
 
     td {
-        border-bottom: solid 1px var(--blue-80);
+        border-bottom: solid 1px var(--hover-dark);
     }
 
     tr:hover {
-        background-color: var(--blue-80);
+        background-color: var(--hover-dark);
+    }
+
+    tr.row-glow {
+        background-color: var(--secondary-dark) !important;
     }
 
     .componentinfo {
-        color: var(--blue-5);
+        color: var(--secondary-text-dark);
     }
+
+    .context-menu {
+        background: hsl(from var(--background-dark) h s 15%);
+    }
+
 
     .arcticon {
         filter: none;
     }
 
     .asc::after {
-        border-bottom: 4px solid white;
+        border-bottom: 4px solid var(--white);
     }
 
     .desc::after {
-        border-top: 4px solid white;
+        border-top: 4px solid var(--white);
     }
 }
 

@@ -30,11 +30,11 @@
 }
 
 #clear-category {
-    background-color: var(--red);
+    background-color: var(--warn);
 }
 
 #clear-category:hover {
-    background-color: hsl(from var(--red) h s 60%);
+    background-color: hsl(from var(--warn) h s 60%);
 }
 
 .accordion {
@@ -44,7 +44,7 @@
 summary {
     padding: 20px 16px;
     text-align: center;
-    background-color: var(--blue-20);
+    background-color: var(--hover);
     margin-top: 20px;
     margin-bottom: 20px;
     cursor: pointer;
@@ -54,7 +54,7 @@ summary {
 }
 
 summary:hover {
-    background-color: hsl(from var(--primary) h s 60%);
+    background-color: var(--secondary);
 }
 
 details>summary::after {
@@ -80,10 +80,10 @@ details[open] .category-container {
 @media (prefers-color-scheme: dark) {
 
     summary {
-        background-color: var(--blue-80);
+        background-color: var(--hover-dark);
     }
 
     summary:hover {
-        background-color: var(--blue-70);
+        background-color: var(--secodary-dark);
     }
 }

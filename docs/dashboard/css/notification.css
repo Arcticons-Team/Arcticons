@@ -7,15 +7,15 @@
 
 #copy-notification {
     background-color: var(--primary);
-    color: white;
+    color: var(--text);
     bottom: 10px;
     right: 10px;
     z-index: 1;
 }
 
 #search-notification {
-    background-color: #8b1708;
-    color: white;
+    background-color: var(--warn);
+    color: var(--text);
     top: 20px;
     right: 10px;
 }
