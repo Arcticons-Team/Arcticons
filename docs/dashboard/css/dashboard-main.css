@@ -90,6 +90,7 @@ h1 {
     font-family: var(--main-font);
     text-align: center;
     line-height: 100%;
+    margin: 0;
 }
 
 h2 {
@@ -140,5 +141,9 @@ h3 {
 
     .pagetop {
         flex-direction: column;
+    }
+
+    h1 {
+        font-size: x-large;
     }
 }
