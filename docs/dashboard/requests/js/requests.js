@@ -1,5 +1,5 @@
 import { shuffleArray, CopyAppfilter, debounce, downloadImage } from '../../js/functions.js';
-import { TABLE_COLUMNS_Requests as TABLE_COLUMNS, DOM, urls} from '../../js/const.js';
+import { TABLE_COLUMNS_Requests as TABLE_COLUMNS, DOM, urls } from '../../js/const.js';
 import { state } from '../../js/state/store.js';
 import { updateTable, lazyLoadAndRender, showIconPreview, getrowMenu } from './ui/tableRenderer.js';
 import { renderCategories, initCategoryUI, findCategory } from './ui/category.js';
@@ -215,6 +215,12 @@ function initEventListeners() {
             if (DOM.regexPopup.classList.contains("show")) {
                 DOM.regexPopup.classList.remove("show");
             }
+            if (DOM.renameOverlay.classList.contains("show")) {
+                DOM.renameOverlay.classList.remove("show");
+            }
+            if (DOM.imagePreviewOverlay.classList.contains("show")){
+                DOM.imagePreviewOverlay.classList.remove("show");
+            }
         }
     });
     window.addEventListener(
@@ -230,14 +236,6 @@ function initEventListeners() {
             }
         }
     );
-
-    document.addEventListener("keydown", function (e) {
-        if (e.key === "Escape" || e.key === "Esc") {
-            if (DOM.renameOverlay.classList.contains("show")) {
-                DOM.renameOverlay.classList.remove("show");
-            }
-        }
-    });
 
     DOM.requeststhead.addEventListener('click', (event) => {
         // Find the closest parent <th> element (the target header)

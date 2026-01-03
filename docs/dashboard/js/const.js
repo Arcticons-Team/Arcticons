@@ -73,5 +73,6 @@ export const DOM = {
     categoriesDiv: document.getElementById('categories'),
     searchInputCategory: document.getElementById('search-input_category'),
     imagePreviewTitle: document.getElementById('preview-image-name'),
-    floatingBtnContainer: document.getElementById('floating-action-btn')
+    floatingBtnContainer: document.getElementById('floating-action-btn'),
+    downloadSelectedBtn: document.getElementById('download-selected-btn')
 };
