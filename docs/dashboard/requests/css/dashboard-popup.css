@@ -1,29 +1,3 @@
-#RegexSearchSettings {
-    width: 100%;
-}
-
-#info {
-    position: fixed;
-    z-index: 4;
-    text-align: center;
-    margin-top: -5px;
-    margin-left: 290px;
-    display: block;
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    color: rgb(0, 0, 0);
-    background-color: rgba(255, 255, 255, 0);
-    border: rgb(0, 0, 0) solid 3px;
-    font-size: 22px;
-    line-height: 1.1em;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-
 #popup-header {
     display: flex;
     align-items: center;
@@ -64,7 +38,7 @@
     color: var(--black);
 }
 
-.Setting {
+.setting {
     align-items: center;
     width: 190px;
     margin: 5px 0px 5px 0px;
@@ -76,63 +50,6 @@
     column-gap: 50px;
 }
 
-/* The actual popup */
-.info-popup .popuptext {
-    visibility: hidden;
-    width: 700px;
-    background-color: #e7e7e7;
-    color: #000000;
-    text-align: center;
-    font-size: 12px;
-    border-radius: 6px;
-    padding: 8px 0;
-    position: absolute;
-    z-index: 1;
-    bottom: 125%;
-    left: 50%;
-    margin-left: -500px;
-    cursor: default;
-}
-
-/* Popup arrow */
-.info-popup .popuptext::after {
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: 71.43%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: #e7e7e7 transparent transparent transparent;
-}
-
-/* Toggle this class - hide and show the popup */
-.info-popup .show {
-    visibility: visible;
-    -webkit-animation: fadeIn .2s;
-    animation: fadeIn .2s;
-}
-
-/* Add animation (fade in the popup) */
-@-webkit-keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
 
 /*Dark mode theming */
 @media (prefers-color-scheme: dark) {
@@ -141,18 +58,12 @@
         color: white
     }
 
-    .info-popup .popuptext {
+    .popuptext {
         background-color: #555;
-        color: #fff;
+        color: var(text-dark);
     }
 
-    #info {
-        color: white;
-        background-color: rgba(255, 255, 255, 0);
-        border: white solid 3px;
-    }
-
-    .info-popup .popuptext::after {
+    .popuptext::after {
         border-color: #555 transparent transparent transparent;
     }
 }
