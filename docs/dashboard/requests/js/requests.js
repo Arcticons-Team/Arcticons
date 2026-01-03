@@ -101,7 +101,7 @@ const filterAppEntries = debounce(() => {
         (DOM.caseInsensitive.checked ? 'i' : '') +
         (DOM.caseUnicode.checked ? 'u' : '');
 
-    if (state.ui.search) recomputeView();
+    recomputeView();
 }, 200);
 
 function showInfo() {
