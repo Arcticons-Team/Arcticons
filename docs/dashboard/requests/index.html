@@ -131,11 +131,14 @@
         <!-- App Entries -->
         <div class="table-container" id="requests-table-container">
 
-            <div class="floating-container">
+            <div class="floating-container" id="floating-action-btn">
                 <button class="btn" type="button" id="copy-selected-button"
                     aria-label="Tap to rename & copy, hold to copy only">
                     <img src="../img/icon-copy.svg">
                     Copy selected apps
+                </button>
+                <button class="btn-round" type="buqtton">
+                    <img src="../img/icon-more.svg">
                 </button>
             </div>
             
@@ -153,7 +156,7 @@
                 </thead>
                 <tbody id="app-entries"></tbody>
                 <tbody>
-                    <tr id="table-sentinel" style="height: 1px;"></tr>
+                    <tr id="table-sentinel" style="height: 216px;"></tr>
                 </tbody>
             </table>
         </div>

@@ -72,5 +72,6 @@ export const DOM = {
     sentinel: document.getElementById("table-sentinel"),
     categoriesDiv: document.getElementById('categories'),
     searchInputCategory: document.getElementById('search-input_category'),
-    imagePreviewTitle: document.getElementById('preview-image-name')
+    imagePreviewTitle: document.getElementById('preview-image-name'),
+    floatingBtnContainer: document.getElementById('floating-action-btn')
 };

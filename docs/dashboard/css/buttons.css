@@ -120,7 +120,7 @@ background-color: hsl(from var(--primary) h s 50%);
 #copy-selected-button {
   transition: all .4s 0s ease;
   pointer-events: all;
-  display: none;
+  display: flex;
 }
 
 #copy-selected-button:hover:after {
@@ -144,10 +144,6 @@ background-color: hsl(from var(--primary) h s 50%);
   transform: translate3d(-0%, -25%, 0);
   transition: all 0.4s 0s ease;
   z-index: 2;
-}
-
-#copy-selected-button.active {
-  display: flex;
 }
 
 /*Dark mode theming */

@@ -294,7 +294,8 @@ function initEventListeners() {
         }
     }, {
         root: DOM.requestsTableContainer,
-        rootMargin: '200px' // Start loading 200px before reaching the bottom
+        rootMargin: '200px', // Start loading 200px before reaching the bottom
+        threshold: 0.1
     });
 
     observer.observe(DOM.sentinel);
@@ -396,7 +397,7 @@ function initEventListeners() {
             }
             return;
         }
-        //Handle links
+        //Handle Image Preview Popup
         const previewLink = target.closest('.icon-preview');
         if (previewLink) {
             event.preventDefault();
@@ -410,7 +411,7 @@ function initEventListeners() {
             const active = state.selectedRows.has(componentInfo);
             active ? state.selectedRows.delete(componentInfo) : state.selectedRows.add(componentInfo);
             row.classList.toggle('row-glow', !active);
-            DOM.copySelectedBtn.classList.toggle("active", state.selectedRows.size)
+            DOM.floatingBtnContainer.classList.toggle("active", state.selectedRows.size)
             return;
         }
     });

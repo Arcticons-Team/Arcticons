@@ -66,6 +66,15 @@ export function lazyLoadAndRender() {
     );
     renderTableBatch(batch);
     state.startIndex += state.batchSize;
+    const sentinelRect = DOM.sentinel.getBoundingClientRect();
+    const containerRect = DOM.requestsTableContainer.getBoundingClientRect();
+    if (sentinelRect.top  < containerRect.bottom + 300 && state.startIndex < state.view.length) {
+        // Use setTimeout to allow the browser to breathe and 
+        // prevent "too much recursion" error
+        setTimeout(() => {
+            lazyLoadAndRender();
+        }, 50); 
+    }
 }
 
 export function updateTable(data = state.view) {

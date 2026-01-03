@@ -1,5 +1,5 @@
 .table-container {
-    height: 80vh;
+    height: 75vh;
     width: 100%;
     overflow-y: auto;
 }
@@ -11,17 +11,22 @@
 }
 
 .floating-container {
-    display: flex;
+    display: none;
     position: absolute;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: flex-end;
     align-items: center;
-    height: 76vh;
+    height: 0vh;
     z-index: 10;
-    top: 52%;
+    top: 81.5%;
     right: 50%;
     transform: translate(50%, -50%);
     pointer-events: none;
+    gap: 8px;
+}
+
+.floating-container.active{
+    display: flex;
 }
 
 .sortable-header {
