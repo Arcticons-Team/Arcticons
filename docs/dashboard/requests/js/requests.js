@@ -220,7 +220,7 @@ function initEventListeners() {
     window.addEventListener(
         "click",
         function (event) {
-            if (event.target == myPopup) {
+            if (event.target == SettingsPopup) {
                 DOM.regexPopup.classList.remove(
                     "show"
                 );

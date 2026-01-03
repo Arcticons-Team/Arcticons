@@ -49,47 +49,7 @@
             </div>
 
             <div id="regex-search-container" class="btn-round">
-
                 <img src=" ../img/icon-settings.svg" id="RegexSearchSettings" title="Regex settings">
-
-                <div id="myPopup" class="popup">
-                    <div class="popup-content">
-                        <h3>
-                            Regex settings
-                        </h3>
-                        <p>Matches against:<br><strong>AppName ComponentInfo</strong></p>
-                        <div class="settings-row">
-                            <p class="Setting">Case insensitive match</p>
-                            <!-- Rounded switch -->
-                            <label class="switch">
-                                <input type="checkbox" id="caseInsensitive-switch" checked="true">
-                                <span class="slider round"></span>
-                            </label>
-                        </div>
-                        <hr class="separator">
-                        <div class="settings-row">
-                            <p class="Setting">Match with full unicode</p>
-                            <!-- Rounded switch -->
-                            <label class="switch">
-                                <input type="checkbox" id="caseUnicode-switch" checked="true">
-                                <span class="slider round"></span>
-                            </label>
-                        </div>
-                        <hr class="separator">
-                        <div class="settings-row">
-                            <p class="Setting">Reverse search</p>
-                            <!-- Rounded switch -->
-                            <label class="switch">
-                                <input type="checkbox" id="reverse-switch">
-                                <span class="slider round"></span>
-                            </label>
-                        </div>
-                        <hr class="separator">
-                        <button class="btn" id="closePopup">
-                            Close
-                        </button>
-                    </div>
-                </div>
             </div>
 
             <button class="btn-container" id="btn-match-name" title="Show matching names">
@@ -141,7 +101,7 @@
                     <img src="../img/icon-more.svg">
                 </button>
             </div>
-            
+
             <table id="requests-table">
                 <thead id="requests-table-head">
                     <tr>
@@ -206,14 +166,52 @@
             </div>
         </div>
 
+        <div id="SettingsPopup" class="popup">
+            <div class="popup-content">
+                <h3>Regex settings</h3>
+                <p>Matches against:<br><strong>AppName ComponentInfo</strong></p>
+                <div class="settings-row">
+                    <p class="Setting">Case insensitive match</p>
+                    <!-- Rounded switch -->
+                    <label class="switch">
+                        <input type="checkbox" id="caseInsensitive-switch" checked="true">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <hr class="separator">
+                <div class="settings-row">
+                    <p class="Setting">Match with full unicode</p>
+                    <!-- Rounded switch -->
+                    <label class="switch">
+                        <input type="checkbox" id="caseUnicode-switch" checked="true">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <hr class="separator">
+                <div class="settings-row">
+                    <p class="Setting">Reverse search</p>
+                    <!-- Rounded switch -->
+                    <label class="switch">
+                        <input type="checkbox" id="reverse-switch">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <hr class="separator">
+                <button class="btn" id="closePopup">
+                    Close
+                </button>
+            </div>
+        </div>
+
         <!-- Copy Notification -->
         <div class="notification" id="copy-notification"></div>
 
         <!-- Search Notification -->
         <div class="notification" id="search-notification"></div>
 
-        <div id="rowMenu" popover="auto" tabindex="0" role="menu" class="context-menu row-style" style="left: 1368px; top: 320px; transform-origin: left top 0px;">
-    </div>
+        <div id="rowMenu" popover="auto" tabindex="0" role="menu" class="context-menu row-style"
+            style="left: 1368px; top: 320px; transform-origin: left top 0px;">
+        </div>
 
     </div>
 

@@ -53,7 +53,7 @@ export const DOM = {
     randomButton: document.getElementById("random-button"),
     randomNumberInput: document.getElementById("random-number-input"),
     randomResetButton: document.getElementById(`random-reset-button`),
-    regexPopup: document.getElementById("myPopup"),
+    regexPopup: document.getElementById("SettingsPopup"),
     regexSearchSettingsBtn: document.getElementById("RegexSearchSettings"),
     regexSwitch: document.getElementById('regex-btn'),
     renameOverlay: document.getElementById("renamer-overlay"),
