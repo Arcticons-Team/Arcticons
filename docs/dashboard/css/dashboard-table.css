@@ -1,0 +1,142 @@
+.table-container {
+    height: 75vh;
+    width: 100%;
+    overflow-y: auto;
+}
+
+.table-container thead th {
+    position: sticky;
+    top: 0px;
+    z-index: 1;
+}
+
+.floating-container {
+    display: none;
+    position: absolute;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    height: 0vh;
+    z-index: 10;
+    top: 81.5%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    pointer-events: none;
+    gap: 8px;
+}
+
+.floating-container.active{
+    display: flex;
+}
+
+.sortable-header {
+    cursor: pointer;
+    position: relative;
+}
+
+.sortable-header::after {
+    content: '';
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+}
+
+.asc::after {
+    border-bottom: 4px solid var(--black);
+}
+
+.desc::after {
+    border-top: 4px solid var(--black);
+}
+
+table {
+    width: 99.5%;
+    border-collapse: collapse;
+}
+
+th {
+    padding: 8px 0px;
+    text-align: left;
+    border-bottom: solid 2px var(--hover);
+    background-color: var(--background);
+    white-space: nowrap;
+}
+
+td {
+    padding-top: 4px;
+    text-align: left;
+    border-bottom: solid 1px var(--hover);
+}
+
+
+tr {
+    content-visibility: auto;
+    contain-intrinsic-size: 0 50px;
+}
+
+tr:hover {
+    background-color: var(--hover);
+}
+
+/* Row Glow Persistent Effect */
+tr.row-glow {
+    background-color: var(--secondary) !important;
+    transition: background-color 0.2s ease;
+}
+
+
+.icon-preview img {
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+}
+
+.componentinfo {
+    font-size: 11px;
+    color: var(--secondary-text);
+}
+
+/*Dark mode theming */
+@media (prefers-color-scheme: dark) {
+
+    th {
+        background-color: var(--background-dark);
+    }
+
+    td {
+        border-bottom: solid 1px var(--hover-dark);
+    }
+
+    tr:hover {
+        background-color: var(--hover-dark);
+    }
+
+    tr.row-glow {
+        background-color: var(--secondary-dark) !important;
+    }
+
+    .componentinfo {
+        color: var(--secondary-text-dark);
+    }
+
+    .context-menu {
+        background: hsl(from var(--background-dark) h s 15%);
+    }
+
+    .arcticon {
+        filter: none;
+    }
+
+    .asc::after {
+        border-bottom: 4px solid var(--white);
+    }
+
+    .desc::after {
+        border-top: 4px solid var(--white);
+    }
+}
