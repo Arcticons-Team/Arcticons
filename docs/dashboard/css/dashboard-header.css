@@ -76,38 +76,6 @@
     background-color: hsl(from var(--warn) h s 60%);
 }
 
-
-/* Span text for the I'm feeling lucky button*/
-.lg-view {
-    display: inline-block;
-}
-
-.sm-view {
-    display: none;
-}
-
-/* Potential updates container */
-
-#updatable-container {
-    flex: 1;
-    display: flex;
-    justify-content: stretch;
-
-}
-
-#show-multiple {
-    text-align: end;
-    height: 45px;
-    border-bottom-left-radius: 100px;
-    border-top-left-radius: 100px;
-    border-bottom-right-radius: 0px;
-    border-top-right-radius: 0px;
-}
-
-.header-elements {
-    display: flex;
-}
-
 /*Dark mode theming */
 @media (prefers-color-scheme: dark) {
     #search-container {
