@@ -1,7 +1,7 @@
 import { state } from "../../js/state/store.js";
 import { DOM, TABLE_COLUMNS_Updates as TABLE_COLUMNS } from "../../js/const.js"
 import { debounce, CopyAppfilter, copyToClipboard } from "../../js/functions.js";
-import { updateTable, lazyLoadAndRender } from "./ui/tableRenderer.js";
+import { updateTable, lazyLoadAndRender, showIconPreview } from "./ui/tableRenderer.js";
 
 async function initializeAppData() {
     const fetchJson = (url) => fetch(url).then(res => res.ok ? res.json() : null).catch(() => null);
@@ -72,24 +72,6 @@ tableContainer.addEventListener('scroll', () => {
         lazyLoadAndRender();
     }
 });
-
-function showIconPreview(iconSrc) {
-    const previewOverlay = document.getElementById('preview-overlay');
-    const previewImage = document.getElementById('preview-image');
-
-    // Set the preview image source to the clicked icon source
-    previewImage.src = iconSrc;
-
-    // Show the preview overlay
-    previewOverlay.style.display = 'block';
-    // Add click event listener to hide the preview when clicked on the overlay or close button
-    previewOverlay.addEventListener('click', function (e) {
-        if (e.target === this || e.target.classList.contains('close-button-class')) {
-            // Hide the preview overlay
-            this.style.display = 'none';
-        }
-    });
-}
 
 // Search function
 const filterAppEntries = debounce(() => {
@@ -172,6 +154,14 @@ function initEventListeners() {
     DOM.updatableButton.addEventListener("click", function () {
         const updatableURL = `/dashboard/requests`;
         window.location.href = updatableURL;
+    });
+
+    document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape" || e.key === "Esc") {
+            if (DOM.imagePreviewOverlay.classList.contains("show")) {
+                DOM.imagePreviewOverlay.classList.remove("show");
+            }
+        }
     });
 
     DOM.requeststhead.addEventListener('click', (event) => {
