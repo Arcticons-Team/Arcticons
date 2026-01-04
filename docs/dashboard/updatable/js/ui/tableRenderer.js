@@ -65,5 +65,5 @@ export function updateTable(data = state.view) {
 export function showIconPreview(iconSrc, column) {
     DOM.imagePreview.src = iconSrc;
     DOM.imagePreview.classList.toggle('preview-arcticon', column === "Arcticon");
-    DOM.imagePreviewOverlay.style.display = 'block';
+    DOM.imagePreviewOverlay.classList.add('show');
 }

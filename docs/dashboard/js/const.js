@@ -74,5 +74,6 @@ export const DOM = {
     searchInputCategory: document.getElementById('search-input_category'),
     imagePreviewTitle: document.getElementById('preview-image-name'),
     floatingBtnContainer: document.getElementById('floating-action-btn'),
-    downloadSelectedBtn: document.getElementById('download-selected-btn')
+    downloadSelectedBtn: document.getElementById('download-selected-btn'),
+    closePreview: document.getElementById('close-preview')
 };

@@ -233,17 +233,12 @@ function initEventListeners() {
     window.addEventListener(
         "click",
         function (event) {
-            if (event.target == SettingsPopup) {
-                DOM.regexPopup.classList.remove(
-                    "show"
-                );
-            }
-            if (event.target == DOM.renameOverlay) {
-                DOM.renameOverlay.classList.remove("show");
+            if (event.target.classList.contains('popup')) {
+                event.target.classList.remove("show");
             }
         }
     );
-
+    DOM.closePreview.addEventListener('click', function () {DOM.imagePreviewOverlay.classList.remove('show')});
     DOM.requeststhead.addEventListener('click', (event) => {
         // Find the closest parent <th> element (the target header)
         const header = event.target.closest('th');
@@ -343,12 +338,6 @@ function initEventListeners() {
         state.copy.appfilterName = false;
         recomputeView();
     });
-
-    DOM.imagePreviewOverlay.onclick = e => {
-        if (e.target === DOM.imagePreviewOverlay || e.target.classList.contains('close-button-class')) {
-            DOM.imagePreviewOverlay.style.display = 'none';
-        }
-    };
 
     DOM.renameBtn.addEventListener('click', () => {
         CopyAppfilter(null, true);

@@ -96,7 +96,7 @@ export function showIconPreview(iconSrc, Name, column) {
     DOM.imagePreview.src = iconSrc;
     DOM.imagePreviewTitle.textContent = Name
     DOM.imagePreview.classList.toggle('preview-arcticon', column === "Arcticon");
-    DOM.imagePreviewOverlay.style.display = 'block';
+    DOM.imagePreviewOverlay.classList.add('show')
 }
 
 export function getrowMenu(pkg) {

@@ -159,8 +159,9 @@ function initEventListeners() {
         CopyAppfilter(null, true);
     });
     DOM.imagePreviewOverlay.onclick = e => {
+        console.log(e);
         if (e.target === DOM.imagePreviewOverlay || e.target.classList.contains('close-button-class')) {
-            DOM.imagePreviewOverlay.style.display = 'none';
+            DOM.imagePreviewOverlay.classList.remove("show");
         }
     };
     bindPress(DOM.copySelectedBtn,
