@@ -117,12 +117,6 @@ background-color: hsl(from var(--primary) h s 50%);
   }
 }
 
-#copy-selected-button {
-  transition: all .4s 0s ease;
-  pointer-events: all;
-  display: flex;
-}
-
 #copy-selected-button:hover:after {
   visibility: visible;
   opacity: 1;

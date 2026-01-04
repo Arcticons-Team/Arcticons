@@ -1,4 +1,4 @@
-import { shuffleArray, CopyAppfilter, debounce, downloadImage } from '../../js/functions.js';
+import { shuffleArray, CopyAppfilter, debounce, downloadImage, downloadImageMulti } from '../../js/functions.js';
 import { TABLE_COLUMNS_Requests as TABLE_COLUMNS, DOM, urls } from '../../js/const.js';
 import { state } from '../../js/state/store.js';
 import { updateTable, lazyLoadAndRender, showIconPreview, getrowMenu } from './ui/tableRenderer.js';
@@ -193,6 +193,13 @@ function initEventListeners() {
     bindPress(DOM.copySelectedBtn,
         () => DOM.renameOverlay.classList.add("show"),
         () => CopyAppfilter(null, false)
+    );
+
+    DOM.downloadSelectedBtn.addEventListener(
+        "click",
+        function () {
+            downloadImageMulti();
+        }
     );
 
     DOM.regexSearchSettingsBtn.addEventListener(

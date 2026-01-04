@@ -156,3 +156,11 @@ export async function downloadImage(imageSrc, nameOfDownload) {
         window.URL.revokeObjectURL(href);
     }, 100);
 }
+
+export async function downloadImageMulti(){
+    const entries = getSelectedEntries()   
+    entries.forEach(
+        entry => downloadImage(`/extracted_png/${entry.drawable}.webp`,`${entry.drawable}.webp`)
+    )
+    
+}
