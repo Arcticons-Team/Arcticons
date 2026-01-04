@@ -9,7 +9,7 @@
     <link rel="icon" type="image/webp" href="/img/arcticons/icon.webp" />
     <link rel="stylesheet" href="/dashboard/css/dashboard-main.css" />
     <link rel="stylesheet" href="/dashboard/css/dashboard-header.css" />
-    <link rel="stylesheet" href="/dashboard/css/dashboard-table.css" />    
+    <link rel="stylesheet" href="/dashboard/css/dashboard-table.css" />
     <link rel="stylesheet" href="css/dashboard-table-updates.css" />
     <link rel="stylesheet" href="/dashboard/css/buttons.css" />
     <link rel="stylesheet" href="/dashboard/css/image-preview.css" />
@@ -42,17 +42,18 @@
                     <input class="textinput" type="text" id="search-input" placeholder="Search">
                 </div>
             </div>
-
             <button class="btn" id="updatable-button">Request Dashboard</button>
-
-            <button class="btn" type="button" id="copy-selected-button"
-                aria-label="Long press to change drawable names">
-                <img src="../img/icon-copy.svg">
-            </button>
         </div>
 
         <!-- App Entries -->
         <div class="table-container" id="requests-table-container">
+            <div class="floating-container" id="floating-action-btn">
+                <button class="btn" type="button" id="copy-selected-button"
+                    aria-label="Tap to rename & copy, hold to copy only">
+                    <img src="../img/icon-copy.svg">
+                    Copy selected apps
+                </button>
+            </div>
             <table id="requests-table">
                 <thead id="requests-table-head">
                     <tr>
@@ -89,17 +90,6 @@
         <!-- Search Notification -->
         <div class="notification" id="search-notification"></div>
 
-
-    </div>
-
-    <div class="floating">
-        <div>
-            <button class="btn" type="button" id="copy-selected-button"
-                aria-label="Long press to change drawable names">
-                <img src="../img/icon-copy.svg">
-                Copy selected apps
-            </button>
-        </div>
     </div>
 
     <script type="module" src="js/updatable.js"></script>

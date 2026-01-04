@@ -196,22 +196,21 @@ function initEventListeners() {
             CopyAppfilter(index, false);
             return;
         }
-
-        // 2. Handle App Name (Row Selection)
-        if (target.classList.contains('app-name-cell')) {
-            const active = state.selectedRows.has(componentInfo);
-            active ? state.selectedRows.delete(componentInfo) : state.selectedRows.add(componentInfo);
-            row.classList.toggle('row-glow', !active);
-            return;
-        }
-
-        // 3. Handle Icon Previews
+        //Handle Icon Previews
         const previewLink = target.closest('.icon-preview');
         if (previewLink) {
             event.preventDefault();
             const col = previewLink.dataset.column;
             const path = col === "AppIcon" ? `/extracted_png/${entry.drawable}.webp` : `https://raw.githubusercontent.com/Arcticons-Team/Arcticons/refs/heads/main/icons/white/${entry.Arcticon}.svg`;
             showIconPreview(path, col);
+            return;
+        }
+        // Handle Row Selection (Needs to come last)
+        if (target.closest('tr')) {
+            const active = state.selectedRows.has(componentInfo);
+            active ? state.selectedRows.delete(componentInfo) : state.selectedRows.add(componentInfo);
+            row.classList.toggle('row-glow', !active);
+            DOM.floatingBtnContainer.classList.toggle("active", state.selectedRows.size)
             return;
         }
     });
