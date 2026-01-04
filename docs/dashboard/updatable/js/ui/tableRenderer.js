@@ -34,6 +34,9 @@ export function renderTableBatch(data) {
             <td class="icon-preview" data-column="AppIcon">
                     <img src="/extracted_png/${entry.drawable}.webp" alt="Icon">
             </td>
+            <td class="icon-preview" data-column="Arcticon">
+                    <img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/refs/heads/main/icons/white/${entry.drawable}.svg" alt="Arcticon" class="arcticon">
+            </td>
             <td class="app-name-cell" style="cursor: pointer;">${entry.appName}</br><span class="componentinfo">${entry.componentInfo}</span></td>
             <td>
                 <button class="btn copy-btn" title="Copy appfilter">

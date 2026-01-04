@@ -19,9 +19,12 @@ async function initializeAppData() {
 
     if (appfilterJson) {
         const filteredData = filterAppfilter(appfilterJson);
-        state.all = filteredData;
+        //state.all = filteredData;
+        if (appfilterJson.drawables) {
+            appfilterJson.drawables.forEach(d => state.drawableSet.add(d));
+        }
     } else {
-        console.warn("componentInfo.json missing: showing all entries without filtering.");
+        console.warn("combined_appfilter.json missing: showing all entries without filtering.");
     }
 
     if (requestsJson) {
