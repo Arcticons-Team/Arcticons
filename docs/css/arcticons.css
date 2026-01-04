@@ -79,6 +79,16 @@ a {
   cursor: pointer;
 }
 
+.social {
+  filter: invert();
+  height: 48px;
+  margin: 0px 8px 0px;
+}
+
+.social:hover {
+  filter: invert() drop-shadow(0 0 4px rgba(58, 49, 49, 0.3));
+}
+
 .actions {
   margin: 0 auto;
 }
@@ -104,9 +114,10 @@ a>button {
   font-family: 'Inter', sans-serif;
   display: inline-block;
   background-color: #eee;
-  border-radius: 40px;
-  width: 140px;
-  height: 50px;
+  border-radius: 24px;
+  width: 148px;
+  height: 48px;
+  gap: 8px;
 }
 
 a>button:hover {
@@ -120,10 +131,8 @@ a>button.dark {
   justify-content: left;
   align-items: center;
   display: inline-flex;
-  gap: 12px;
-  width: 180px;
-  padding-left: 22px;
-  height: 45;
+  width: 184px;
+  padding: 8px 16px 8px;
 }
 
 a>button.light {
@@ -132,11 +141,13 @@ a>button.light {
   justify-content: left;
   align-items: center;
   display: inline-flex;
-  gap: 12px;
-  width: 180px;
-  padding-left: 22px;
-  height: 45;
+  width: 184px;
+  padding: 8px 16px 8px;
   filter: invert();
+}
+
+a>button>img {
+  height: 100%;
 }
 
 .button:hover {
@@ -144,7 +155,6 @@ a>button.light {
   border-radius: 100px;
   background-color: #b1b1b1;
 }
-
 
 .align-right {
   text-align: right;
