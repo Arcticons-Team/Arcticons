@@ -19,7 +19,7 @@ async function initializeAppData() {
 
     if (appfilterJson) {
         const filteredData = filterAppfilter(appfilterJson);
-        //state.all = filteredData;
+        state.all = filteredData;
         if (appfilterJson.drawables) {
             appfilterJson.drawables.forEach(d => state.drawableSet.add(d));
         }
