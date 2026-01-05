@@ -5,10 +5,11 @@ import { updateTable, lazyLoadAndRender, showIconPreview } from "./ui/tableRende
 
 async function initializeAppData() {
     const fetchJson = (url) => fetch(url).then(res => res.ok ? res.json() : null).catch(() => null);
-    const [updatableJson, appfilterJson, requestsJson] = await Promise.all([
+    const [updatableJson, appfilterJson, requestsJson, packageMapJson] = await Promise.all([
         fetchJson('/assets/updatable.json'),
         fetchJson('/assets/combined_appfilter.json'),
-        fetchJson('/assets/requests.json')
+        fetchJson('/assets/requests.json'),
+        fetchJson('/assets/package_map.json')
     ])
     if (!updatableJson) {
         console.error("Critical error: updatable.json not found")
@@ -25,6 +26,15 @@ async function initializeAppData() {
         }
     } else {
         console.warn("combined_appfilter.json missing: showing all entries without filtering.");
+    }
+
+    // 3. Enrich the remaining data with the "Arcticon" key from package_map
+    if (packageMapJson) {
+        state.ui.showMatchingDrawables = true;
+        state.all = enrichWithArcticons(state.all, packageMapJson);
+    } else {
+        DOM.matchingDrawableColumn.style.display = "none";
+        console.warn("package_map.json missing: disabling arcticon column");
     }
 
     if (requestsJson) {
@@ -60,6 +70,58 @@ function filterAppfilter(appfilterData) {
 
     console.log("Filtered out entries:", filteredOutEntries);
     return filteredData;
+}
+
+function getSimilarity(s1, s2) {
+    if (!s1 || !s2) return 0;
+    s1 = s1.toLowerCase().replace(/_\d+$/, ''); // Suffix removal like Python
+    s2 = s2.toLowerCase().replace(/_\d+$/, '');
+    if (s1 === s2) return 1;
+    
+    const pairs = (str) => {
+        const set = new Set();
+        for (let i = 0; i < str.length - 1; i++) set.add(str.substring(i, i + 2));
+        return set;
+    };
+    
+    const pairs1 = pairs(s1);
+    const pairs2 = pairs(s2);
+    let intersection = 0;
+    for (const p of pairs1) if (pairs2.has(p)) intersection++;
+    
+    return (2.0 * intersection) / (pairs1.size + pairs2.size);
+}
+
+function enrichWithArcticons(updatableData, packageMap) {
+    return updatableData.map(entry => {
+        const pkg = entry.pkgName;
+        const updatableActivity = entry.componentInfo.split('/')[1] || "";
+        
+        // If package exists in our map
+        if (packageMap[pkg]) {
+            let bestMatch = null;
+            let highestScore = -1;
+
+            // Iterate through all components known for this package
+            packageMap[pkg].forEach(mappedItem => {
+                const mappedActivity = mappedItem.component.split('/')[1] || "";
+                
+                // Compare activity names (like your Python similarity_percentage)
+                const score = getSimilarity(updatableActivity, mappedActivity);
+                
+                if (score > highestScore) {
+                    highestScore = score;
+                    bestMatch = mappedItem.drawable;
+                }
+            });
+
+            // If we found a reasonable match (threshold > 0.3 or similar)
+            // Add the 'Arcticon' key to the entry
+            return { ...entry, Arcticon: bestMatch || "" };
+        }
+        
+        return { ...entry, Arcticon: "" };
+    });
 }
 
 // Update header text
