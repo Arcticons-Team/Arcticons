@@ -75,5 +75,6 @@ export const DOM = {
     imagePreviewTitle: document.getElementById('preview-image-name'),
     floatingBtnContainer: document.getElementById('floating-action-btn'),
     downloadSelectedBtn: document.getElementById('download-selected-btn'),
-    closePreview: document.getElementById('close-preview')
+    closePreview: document.getElementById('close-preview'),
+    keepBtn: document.getElementById('keep-button')
 };

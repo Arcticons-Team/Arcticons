@@ -65,8 +65,9 @@ export function updateTable(data = state.view) {
     lazyLoadAndRender();
 }
 
-export function showIconPreview(iconSrc, column) {
+export function showIconPreview(iconSrc, Name, column) {
     DOM.imagePreview.src = iconSrc;
+    DOM.imagePreviewTitle.textContent = Name
     DOM.imagePreview.classList.toggle('preview-arcticon', column === "Arcticon");
-    DOM.imagePreviewOverlay.classList.add('show');
+    DOM.imagePreviewOverlay.classList.add('show')
 }

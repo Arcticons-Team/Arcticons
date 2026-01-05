@@ -70,10 +70,6 @@ export function CopyAppfilter(index, rename) {
     let copyText = "";
     const node = document.getElementById("drawableName-input");
 
-    // Handle rename mode
-    if (rename) {
-        document.getElementById("renamer-overlay").classList.remove("show");
-    }
     // Multi-row mode
     if (index === null) {
         copyText = getSelectedEntries()

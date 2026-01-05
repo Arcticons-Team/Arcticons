@@ -77,18 +77,18 @@ function getSimilarity(s1, s2) {
     s1 = s1.toLowerCase().replace(/_\d+$/, ''); // Suffix removal like Python
     s2 = s2.toLowerCase().replace(/_\d+$/, '');
     if (s1 === s2) return 1;
-    
+
     const pairs = (str) => {
         const set = new Set();
         for (let i = 0; i < str.length - 1; i++) set.add(str.substring(i, i + 2));
         return set;
     };
-    
+
     const pairs1 = pairs(s1);
     const pairs2 = pairs(s2);
     let intersection = 0;
     for (const p of pairs1) if (pairs2.has(p)) intersection++;
-    
+
     return (2.0 * intersection) / (pairs1.size + pairs2.size);
 }
 
@@ -96,7 +96,7 @@ function enrichWithArcticons(updatableData, packageMap) {
     return updatableData.map(entry => {
         const pkg = entry.pkgName;
         const updatableActivity = entry.componentInfo.split('/')[1] || "";
-        
+
         // If package exists in our map
         if (packageMap[pkg]) {
             let bestMatch = null;
@@ -105,10 +105,10 @@ function enrichWithArcticons(updatableData, packageMap) {
             // Iterate through all components known for this package
             packageMap[pkg].forEach(mappedItem => {
                 const mappedActivity = mappedItem.component.split('/')[1] || "";
-                
+
                 // Compare activity names (like your Python similarity_percentage)
                 const score = getSimilarity(updatableActivity, mappedActivity);
-                
+
                 if (score > highestScore) {
                     highestScore = score;
                     bestMatch = mappedItem.drawable;
@@ -119,7 +119,7 @@ function enrichWithArcticons(updatableData, packageMap) {
             // Add the 'Arcticon' key to the entry
             return { ...entry, Arcticon: bestMatch || "" };
         }
-        
+
         return { ...entry, Arcticon: "" };
     });
 }
@@ -204,6 +204,13 @@ function initEventListeners() {
     DOM.searchInput.addEventListener('input', filterAppEntries);
     DOM.renameBtn.addEventListener('click', () => {
         CopyAppfilter(null, true);
+        DOM.renameOverlay.classList.remove("show")
+        DOM.floatingBtnContainer.classList.toggle("active", state.selectedRows.size)
+    });
+    DOM.keepBtn.addEventListener('click', () => {
+        CopyAppfilter(null, false);
+        DOM.renameOverlay.classList.remove("show")
+        DOM.floatingBtnContainer.classList.toggle("active", state.selectedRows.size)
     });
     DOM.imagePreviewOverlay.onclick = e => {
         console.log(e);
@@ -267,7 +274,7 @@ function initEventListeners() {
             event.preventDefault();
             const col = previewLink.dataset.column;
             const path = col === "AppIcon" ? `/extracted_png/${entry.drawable}.webp` : `https://raw.githubusercontent.com/Arcticons-Team/Arcticons/refs/heads/main/icons/white/${entry.Arcticon}.svg`;
-            showIconPreview(path, col);
+            showIconPreview(path,entry.appName, col);
             return;
         }
         // Handle Row Selection (Needs to come last)

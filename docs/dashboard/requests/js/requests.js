@@ -341,6 +341,13 @@ function initEventListeners() {
 
     DOM.renameBtn.addEventListener('click', () => {
         CopyAppfilter(null, true);
+        DOM.renameOverlay.classList.remove("show")
+        DOM.floatingBtnContainer.classList.toggle("active", state.selectedRows.size)
+    });
+    DOM.keepBtn.addEventListener('click', () => {
+        CopyAppfilter(null, false);
+        DOM.renameOverlay.classList.remove("show")
+        DOM.floatingBtnContainer.classList.toggle("active", state.selectedRows.size)
     });
 
     DOM.tableBody.addEventListener('click', (event) => {
