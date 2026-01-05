@@ -1,8 +1,4 @@
-#popup-header {
-    display: flex;
-    align-items: center;
-}
-
+/* Grey out Background */
 .popup {
     position: fixed;
     z-index: 2;
@@ -17,6 +13,12 @@
             0.4);
     display: none;
 }
+
+.popup.show {
+    display: block;
+}
+/* ---------------------------------- */
+
 
 .popup-content {
     z-index: 2;
@@ -33,11 +35,9 @@
     margin: 0 auto;
 }
 
-.show {
-    display: block;
-    color: var(--black);
-}
 
+
+/* Settings Specific */
 .setting {
     align-items: center;
     width: 190px;
@@ -50,6 +50,7 @@
     justify-content: space-between;
     column-gap: 50px;
 }
+/* ---------------------------------- */
 
 
 /*Dark mode theming */
