@@ -36,13 +36,13 @@
   width: 34px;
   left: -1px;
   bottom: -7px;
-  background-color: var(--grey-80);
+  background-color: var(--primary);
   -webkit-transition: .2s;
   transition: .2s;
 }
 
 input:checked+.slider {
-  background-color: hsl(from var(--blue-60)h s 80%);
+  background-color: var(--hover);
 }
 
 input:focus+.slider {
@@ -62,4 +62,12 @@ input:checked+.slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+@media (prefers-color-scheme: dark) {
+
+  .slider {
+    text-decoration: none;
+    background-color: var(--grey-20);
+  }
 }
