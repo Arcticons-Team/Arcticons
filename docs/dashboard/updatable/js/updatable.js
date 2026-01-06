@@ -230,6 +230,9 @@ function initEventListeners() {
 
     document.addEventListener("keydown", function (e) {
         if (e.key === "Escape" || e.key === "Esc") {
+            if (DOM.renameOverlay.classList.contains("show")) {
+                DOM.renameOverlay.classList.remove("show");
+            }
             if (DOM.imagePreviewOverlay.classList.contains("show")) {
                 DOM.imagePreviewOverlay.classList.remove("show");
             }
@@ -274,7 +277,7 @@ function initEventListeners() {
             event.preventDefault();
             const col = previewLink.dataset.column;
             const path = col === "AppIcon" ? `/extracted_png/${entry.drawable}.webp` : `https://raw.githubusercontent.com/Arcticons-Team/Arcticons/refs/heads/main/icons/white/${entry.Arcticon}.svg`;
-            showIconPreview(path,entry.appName, col);
+            showIconPreview(path, entry.appName, col);
             return;
         }
         // Handle Row Selection (Needs to come last)
