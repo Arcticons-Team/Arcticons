@@ -40,7 +40,7 @@ export const DOM = {
     clearSearchBtn: document.getElementById("clear-search"),
     closePopupBtn: document.getElementById("closePopup"),
     closeRegexSettingsBtn: document.getElementById("closePopup"),
-    copySelectedBtn: document.getElementById("copy-selected-button"),
+    copySelectedBtn: document.getElementById("btn-copy-selected"),
     dateHeader: document.getElementById("date_header"),
     header: document.getElementById("header"),
     infoText: document.getElementById("infotext"),
@@ -73,8 +73,8 @@ export const DOM = {
     categoriesDiv: document.getElementById('categories'),
     searchInputCategory: document.getElementById('search-input_category'),
     imagePreviewTitle: document.getElementById('preview-image-name'),
-    floatingBtnContainer: document.getElementById('floating-action-btn'),
-    downloadSelectedBtn: document.getElementById('download-selected-btn'),
+    floatingBtnContainer: document.getElementById('btn-floating-action'),
+    downloadSelectedBtn: document.getElementById('btn-download-selected'),
     closePreview: document.getElementById('close-preview'),
     keepBtn: document.getElementById('keep-button')
 };
