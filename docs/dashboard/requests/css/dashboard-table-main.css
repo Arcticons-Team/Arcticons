@@ -91,16 +91,11 @@ td:nth-child(7) {
 }
 
 @media screen and (max-width: 1100px) {
-
-    .copy-text {
+    th:nth-child(6) {
         display: none;
     }
 
-    th:nth-child(7) {
-        display: none;
-    }
-
-    td:nth-child(7) {
+    td:nth-child(6) {
         display: none;
     }
 }
