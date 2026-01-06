@@ -1,7 +1,3 @@
-:root {
-  --btn-height: 44px;
-}
-
 .btn-container,
 .btn,
 .btn-child,
@@ -18,7 +14,7 @@
 
 .btn-container,
 .btn {
-  border-radius: 40px;
+  border-radius: var(--btn-radius);
   height: var(--btn-height);
   background-color: var(--primary);
   padding: 0px 16px;
@@ -51,7 +47,7 @@
   padding: 0 12px;
   justify-content: center;
   align-items: center;
-  border-radius: 20px;
+  border-radius: var(--btn-radius);
   background: var(--white);
   box-sizing: border-box !important;
   overflow: visible;
@@ -63,7 +59,7 @@
 .btn-round {
   height: var(--btn-height);
   width: var(--btn-height);
-  border-radius: 40px;
+  border-radius: var(--btn-radius);
   background-color: var(--primary);
 }
 
@@ -72,7 +68,7 @@
   width: 24px;
   height: 24px;
   padding: 4px;
-  border-radius: 16px;
+  border-radius: var(--btn-radius);
   filter: invert();
 }
 
@@ -137,7 +133,7 @@ background-color: hsl(from var(--primary) h s 50%);
   text-align: center;
   top: calc(100% + 35px);
   padding: 8px;
-  background-color: #181818;
+  background-color: var(--grey-90);
   color: var(--white);
   border-radius: 8px;
   opacity: 0;

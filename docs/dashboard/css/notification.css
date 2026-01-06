@@ -19,3 +19,13 @@
     top: 20px;
     right: 10px;
 }
+
+@media (prefers-color-scheme: dark) {
+    #copy-notification {
+        color: var(--text-dark);
+    }
+
+    #search-notification {
+        color: var(--text-dark);
+    }
+}
