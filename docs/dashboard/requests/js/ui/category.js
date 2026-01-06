@@ -10,7 +10,7 @@ export function initCategoryUI(recomputeCallback) {
 
     // ONE listener for all buttons (past, present, and future)
     DOM.categoriesDiv.addEventListener('click', (event) => {
-        const button = event.target.closest('.green-button');
+        const button = event.target.closest('.btn');
         if (!button) return;
 
         const category = button.textContent;
@@ -18,7 +18,6 @@ export function initCategoryUI(recomputeCallback) {
     });
 
     renderCategories();
-    DOM.clearSearchCategoryBtn.addEventListener('click', clearSearchCategory);
     DOM.clearCategoryBtn.addEventListener('click', clearCategorySelection);
 }
 
@@ -42,7 +41,7 @@ export function renderCategories() {
         const button = document.createElement('button');
         button.textContent = category;
         button.dataset.name = category.toLowerCase();
-        button.className = 'green-button';
+        button.className = 'btn';
         if (state.ui.categories.has(category)) {
             button.setAttribute('activated', 'true');
         }
@@ -55,7 +54,7 @@ export function renderCategories() {
 }
 
 export function findCategory() {
-    showClearSearchCategory();
+    //showClearSearchCategory();
     const search = DOM.searchInputCategory.value.toLowerCase();
     categoryButtons.forEach(button => {
         const matches = button.dataset.name.includes(search);
@@ -65,14 +64,14 @@ export function findCategory() {
 
 // Show/hide clear icon
 export function showClearSearchCategory() {
-    DOM.clearSearchCategoryBtn.style.visibility =
-        DOM.searchInputCategory.value.trim() === '' ? 'hidden' : 'visible';
+    DOM.clearSearchCategoryBtn.style.display =
+        DOM.searchInputCategory.value.trim() === '' ? 'none' : '';
 }
 
 // Clear category search input
 export function clearSearchCategory() {
     DOM.searchInputCategory.value = '';
-    showClearSearchCategory();
+    //showClearSearchCategory();
     findCategory();
 }
 

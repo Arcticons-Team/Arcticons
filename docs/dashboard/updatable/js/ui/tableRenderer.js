@@ -31,16 +31,16 @@ export function renderTableBatch(data) {
             });
         // Generate the entire row HTML at once - Much faster than insertCell()
         row.innerHTML = `
-            <td class="app-name-cell" style="cursor: pointer;">${entry.appName}</td>
             <td class="icon-preview" data-column="AppIcon">
                     <img src="/extracted_png/${entry.drawable}.webp" alt="Icon">
             </td>
-            <td class="links-cell"><div class="package-name"><div id="packagename">` + entry.pkgName + `</div><div id="package-copy"><button class="copy-package"><img src="/img/requests/copy.svg"></button></div></div></td>
-            <td>${entry.componentInfo}</td>
+            <td class="icon-preview" data-column="Arcticon" style="${state.ui.showMatchingDrawables ? 'display:table-cell;' : 'display:none;'}">
+                    <img src="https://raw.githubusercontent.com/Arcticons-Team/Arcticons/refs/heads/main/icons/white/${entry.Arcticon}.svg" alt="Arcticon" class="arcticon">
+            </td>
+            <td class="app-name-cell" style="cursor: pointer;">${entry.appName}</br><span class="componentinfo">${entry.componentInfo}</span></td>
             <td>
-                <button class="green-button copy-button">
-                    <img class="copy-icon" src="/img/requests/copy.svg">
-                    <span class="copy-text">Copy</span>
+                <button class="btn copy-btn" title="Copy appfilter">
+                    <img src="${imagepath.copy}">
                 </button>
             </td>
         `;
@@ -65,18 +65,9 @@ export function updateTable(data = state.view) {
     lazyLoadAndRender();
 }
 
-function createLinksHtml() {
-    return `
-        <img src="${imagepath.playStore}" data-type="play" class="links" alt="P">
-        <img src="${imagepath.fdroid}" data-type="fdroid" class="links" alt="F">
-        <img src="${imagepath.izzyOnDroid}" data-type="izzy" class="links" alt="I">
-        <img src="${imagepath.galaxyStore}" data-type="galaxy" class="links" alt="G">
-        <img src="${imagepath.wwwSearch}" data-type="search" class="links" alt="A">
-    `;
-}
-
-export function showIconPreview(iconSrc, column) {
+export function showIconPreview(iconSrc, Name, column) {
     DOM.imagePreview.src = iconSrc;
+    DOM.imagePreviewTitle.textContent = Name
     DOM.imagePreview.classList.toggle('preview-arcticon', column === "Arcticon");
-    DOM.imagePreviewOverlay.style.display = 'block';
+    DOM.imagePreviewOverlay.classList.add('show')
 }

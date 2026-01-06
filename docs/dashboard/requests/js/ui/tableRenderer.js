@@ -1,6 +1,6 @@
 // js/ui/tableRenderer.js
 import { state } from '../../../js/state/store.js';
-import { DOM, imagepath } from '../../../js/const.js';
+import { DOM, imagepath, urls } from '../../../js/const.js';
 
 
 /* ---------- Core table operations ---------- */
@@ -32,7 +32,6 @@ export function renderTableBatch(data) {
             });
         // Generate the entire row HTML at once - Much faster than insertCell()
         row.innerHTML = `
-            <td class="app-name-cell" style="cursor: pointer;">${entry.appName}</td>
             <td class="icon-preview" data-column="AppIcon">
                     <img src="/extracted_png/${entry.drawable}.webp" alt="Icon">
             </td>
@@ -44,16 +43,16 @@ export function renderTableBatch(data) {
                 : '<span class="arcticon-placeholder">No Match</span>'
             }
             </td>
-            <td class="links-cell">${createLinksHtml()}</td>
+            <td class="app-name-cell" style="cursor: pointer;">${entry.appName}</br><span class="componentinfo">${entry.componentInfo}</span></td>
             <td>${entry.playStoreDownloads}</td>
             <td>${entry.requestedInfo}</td>
             <td>${formattedDate}</td>
             <td>
-                <button class="green-button copy-button">
-                    <img class="copy-icon" src="/img/requests/copy.svg">
-                    <span class="copy-text">Copy</span>
-                </button>
-            </td>
+                <img src="${imagepath.copy}" title="Copy Appfilter" data-type="copy" class="btn-small" alt="Copy">
+                <img src="${imagepath.download}" title="Download Icon" data-type="download" data-drawable="${entry.drawable}.webp" data-downloadpath="/extracted_png/${entry.drawable}.webp" class="btn-small" alt="Download">
+                <img src="${imagepath.playStore}" title="Play Store" data-type="play" class="btn-small" alt="Play Store">
+                <img src="${imagepath.more}" title="More" data-type="more" class="btn-small" alt="More">
+                </td>
         `;
         fragment.appendChild(row);
     });
@@ -67,6 +66,15 @@ export function lazyLoadAndRender() {
     );
     renderTableBatch(batch);
     state.startIndex += state.batchSize;
+    const sentinelRect = DOM.sentinel.getBoundingClientRect();
+    const containerRect = DOM.requestsTableContainer.getBoundingClientRect();
+    if (sentinelRect.top  < containerRect.bottom + 300 && state.startIndex < state.view.length) {
+        // Use setTimeout to allow the browser to breathe and 
+        // prevent "too much recursion" error
+        setTimeout(() => {
+            lazyLoadAndRender();
+        }, 50); 
+    }
 }
 
 export function updateTable(data = state.view) {
@@ -78,16 +86,36 @@ export function updateTable(data = state.view) {
 
 function createLinksHtml() {
     return `
-        <img src="${imagepath.playStore}" data-type="play" class="links" alt="P">
-        <img src="${imagepath.fdroid}" data-type="fdroid" class="links" alt="F">
-        <img src="${imagepath.izzyOnDroid}" data-type="izzy" class="links" alt="I">
-        <img src="${imagepath.galaxyStore}" data-type="galaxy" class="links" alt="G">
-        <img src="${imagepath.wwwSearch}" data-type="search" class="links" alt="A">
+        <img src="${imagepath.playStore}" data-linktype="play" data-type="link" class="btn-small" alt="Play Store">
+        <img src="${imagepath.fdroid}" data-linktype="fdroid" data-type="link" class="btn-small" alt="F-Droid">
+        <img src="${imagepath.wwwSearch}" data-linktype="search" data-type="link" class="btn-small" alt="Websearch">
     `;
 }
 
-export function showIconPreview(iconSrc, column) {
+export function showIconPreview(iconSrc, Name, column) {
     DOM.imagePreview.src = iconSrc;
+    DOM.imagePreviewTitle.textContent = Name
     DOM.imagePreview.classList.toggle('preview-arcticon', column === "Arcticon");
-    DOM.imagePreviewOverlay.style.display = 'block';
+    DOM.imagePreviewOverlay.classList.add('show')
+}
+
+export function getrowMenu(pkg) {
+    return `
+      <div class="btn-container" tabindex="0" role="menuitem"
+        onclick="window.open('${urls.fdroid}${pkg}')">
+        <img src="${imagepath.fdroid}"> <span>F-Droid</span>
+      </div>
+      <div class="btn-container"tabindex="0" role="menuitem"
+        onclick="window.open('${urls.izzyOnDroid}${pkg}')">
+        <img src="${imagepath.izzyOnDroid}"> <span>IzzyOnDroid</span>
+      </div>
+      <div class="btn-container" tabindex="0" role="menuitem"
+        onclick="window.open('${urls.galaxyStore}${pkg}')">
+        <img src="${imagepath.galaxyStore}"> <span>Galaxy Store</span>
+      </div>
+      <div class="btn-container" tabindex="0" role="menuitem"
+        onclick="window.open('${urls.wwwSearch}${pkg}')">
+        <img src="${imagepath.wwwSearch}"> <span>Search</span>
+      </div>
+    `;
 }

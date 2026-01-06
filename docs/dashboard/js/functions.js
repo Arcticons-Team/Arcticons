@@ -70,10 +70,6 @@ export function CopyAppfilter(index, rename) {
     let copyText = "";
     const node = document.getElementById("drawableName-input");
 
-    // Handle rename mode
-    if (rename) {
-        document.getElementById("renamer-overlay").classList.remove("show");
-    }
     // Multi-row mode
     if (index === null) {
         copyText = getSelectedEntries()
@@ -136,4 +132,31 @@ function buildCopyText(entry, appfilterValue, mode) {
     return mode
         ? `<!-- ${entry.appName} -->\n${appfilterValue}\n`
         : appfilterValue;
+}
+
+export async function downloadImage(imageSrc, nameOfDownload) {
+    const response = await fetch(imageSrc);
+    const blobImage = await response.blob();
+    const href = URL.createObjectURL(blobImage);
+
+    const anchorElement = document.createElement('a');
+    anchorElement.href = href;
+    anchorElement.download = nameOfDownload;
+    anchorElement.target = '_self'; 
+
+    document.body.appendChild(anchorElement);
+    anchorElement.click();
+
+    setTimeout(() => {
+        document.body.removeChild(anchorElement);
+        window.URL.revokeObjectURL(href);
+    }, 100);
+}
+
+export async function downloadImageMulti(){
+    const entries = getSelectedEntries()   
+    entries.forEach(
+        entry => downloadImage(`/extracted_png/${entry.drawable}.webp`,`${entry.drawable}.webp`)
+    )
+    
 }

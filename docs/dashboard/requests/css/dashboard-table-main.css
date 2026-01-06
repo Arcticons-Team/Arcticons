@@ -1,141 +1,40 @@
-.table-container {
-    max-height: 1200px;
-    /* Set maximum height for scrollable area */
-    overflow-y: auto;
-    /* Enable vertical scrolling */
-}
-
-.table-container thead th {
-    position: sticky;
-    /* make the table heads sticky */
-    top: 0px;
-    z-index: 1;
-    /* table head will be placed from the top of the table and sticks to it */
-}
-
-.sortable-header {
-    cursor: pointer;
-    /* Add cursor style for sorting */
-    position: relative;
-}
-
-.sortable-header::after {
-    content: '';
-    position: absolute;
-    right: 8px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 0;
-    height: 0;
-    border-left: 4px solid transparent;
-    border-right: 4px solid transparent;
-}
-
-.asc::after {
-    border-bottom: 4px solid #000000;
-}
-
-.desc::after {
-    border-top: 4px solid #000000;
-}
-
-table {
-    width: 99.5%;
-    border-collapse: collapse;
-}
-
-th{
-    padding: 8px;
-    text-align: center;
-}
-td {
-    padding-top: 4px;
-    text-align: center;
-}
-
 td:nth-child(1) {
-    width: 20%;
+    width: 52px;
 }
 
 td:nth-child(2) {
-    max-width: 60px;
+    width: 52px;
+    display: none;
 }
 
 td:nth-child(3) {
-    display: none;
-    max-width: 60px;
+    width: auto;
+    max-width: 70px;
+    min-width: 270px;
+    overflow-wrap: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 td:nth-child(4) {
-    width: 25%;
-    min-width: 180px;
+    min-width: 90px;
+    width: 5%;
 }
 
 td:nth-child(5) {
-    width: 10%;
+    min-width: 100px;
+    width: 5%;
 }
 
 td:nth-child(6) {
-     width: 15%;
+    min-width: 110px;
+    width: 10%;
 }
 
-td:nth-child(8) {
-    max-width: 100px;
-}
-
-tr:nth-child(even) {
-    background-color: #ebebeb;
-}
-
-th {
-    background-color: #f2f2f2;
-}
-
-/* Quick link images*/
-.links{
-    cursor: pointer;
-    filter: invert();
-    width: 50px;
-    height: 50px;
-}
-.arcticon {
-    filter: invert();
-
-}
-
-.icon-preview img {
-    width: 50px;
-    height: 50px;
-    cursor: pointer;
-}
-
-/* Copy appfilter button*/
-.copy-button {
-    display: inline-block;
-    font-size: 16px;
-    margin-bottom: 10px;
-}
-
-/* Row Glow Persistent Effect */
-tr.row-glow {
-    background-color: #5a975c !important;
-    /* Green glow color */
-    transition: background-color 0.5s ease-in;
-}
-
-tr {
-    content-visibility: auto;
-    contain-intrinsic-size: 0 50px;
-}
-
-.copy-icon {
-    display: none;
-    width: 20px;
-    height: 20px;
-}
-
-.copy-text {
-    display: inline;
+td:nth-child(7) {
+    min-width: 145px;
+    width: 150px;
 }
 
 #show-matching-drawables {
@@ -148,89 +47,60 @@ tr {
     display: table-cell;
 }
 
+/* Context Menus */
+.context-menu {
+    margin: 0;
+    border: none;
+    padding: 8px;
+    background: hsl(from var(--background) h s 95%);
+    color: var(--on-secondary-container);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    min-width: 240px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px
+}
+
+.row-style {
+    position: fixed;
+    opacity: 0;
+    transform: scale(0.9);
+    z-index: 1000;
+    transition: opacity 0.1s ease-out, transform 0.1s ease-out,
+        display 0.1s allow-discrete;
+}
+
+.row-style:popover-open {
+    opacity: 1;
+    transform: scale(1);
+}
+
+@starting-style {
+    .row-style:popover-open {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+}
+
 /*Dark mode theming */
 @media (prefers-color-scheme: dark) {
-
-    tr:nth-child(even) {
-        background-color: rgb(37, 37, 37);
-    }
-
-    th {
-        background-color: #0f0f0f;
-    }
-
-    .links {
-        filter: none;
-    }
     .arcticon {
         filter: none;
     }
-
-    .asc::after {
-        border-bottom: 4px solid white;
-    }
-
-    .desc::after {
-        border-top: 4px solid white;
-    }
-}
-
-@media screen and (max-width: 1300px) {
-    .links {
-        width: 40px;
-        height: 40px;
-    }
-
-    .icon-preview img {
-        width: 40px;
-        height: 40px;
-    }
-
 }
 
 @media screen and (max-width: 1100px) {
-    .links {
-        width: 30px;
-        height: 30px;
-    }
-
-    .icon-preview img {
-        width: 30px;
-        height: 30px;
-    }
-
-    .copy-icon {
-        display: inline;
-    }
 
     .copy-text {
         display: none;
     }
-}
 
-@media screen and (max-width: 770px) {
-    #galaxy{
+    th:nth-child(7) {
         display: none;
     }
-    td:nth-child(3) {
-        min-width: 150px;
-    }
-}
 
-@media screen and (max-width: 730px) {
-    #izzy{
+    td:nth-child(7) {
         display: none;
-    }
-    td:nth-child(4) {
-        min-width: 110px;
-    }
-}
-
-@media screen and (max-width: 700px) {
-    #fdroid{
-        display: none;
-    }
-    td:nth-child(4) {
-        min-width: 70px;
     }
 }

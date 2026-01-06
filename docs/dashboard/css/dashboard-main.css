@@ -1,29 +1,77 @@
 @font-face {
-  font-family: 'Inter';
-  font-weight: 100 900;
-  font-display: swap;
-  font-style: oblique 0deg 10deg;
-  font-variation-settings: "slnt" 0deg;
-  src: url("/fonts/InterVariable.woff2") format("woff2");
+    font-family: 'Inter';
+    font-weight: 100 900;
+    font-display: swap;
+    font-style: oblique 0deg 10deg;
+    font-variation-settings: "slnt" 0deg;
+    src: url("/fonts/InterVariable.woff2") format("woff2");
 }
 
 @font-face {
-  font-family: 'Arcticons Sans';
-  src: url("/fonts/ArcticonsSans-Regular.woff2");
+    font-family: 'Arcticons Sans';
+    font-weight: 600;
+    src: url("/fonts/ArcticonsSans-Regular.woff2");
+}
+
+:root {
+    /* Customize these colors for differnt theming */
+    --white: #fff;
+    --black: #000;
+    --grey-90: #141314;
+    --grey-80: #211f21;
+    --grey-60: #474247;
+    --grey-40: #706c70;
+    --grey-20: #e6e1e3;
+    --grey-15: #ece8e8;
+    --grey-10: #fff9f9;
+
+    --blue-95: #050714;
+    --blue-90: #0B0E28;
+    --blue-80: #151C51;
+    --blue-70: #202A79;
+    --blue-60: #2B38A1;
+    --blue-50: #3546CA;
+    --blue-40: #5E6BD4;
+    --blue-30: #8690DF;
+    --blue-20: #AEB5EA;
+    --blue-10: #D7DAF4;
+    --blue-5: #EFF0FB;
+
+    --red: #8b1708;
+
+    --text: var(--black);
+    --secondary-text: var(--blue-80);
+    --background: var(--blue-5);
+    --primary: var(--blue-70);
+    --secondary: var(--blue-30);
+    --hover: var(--blue-20);
+    --warn: var(--red);
+
+    --text-dark: var(--white);
+    --secondary-text-dark: var(--blue-10);
+    --background-dark: var(--blue-95);
+    --secondary-dark: var(--blue-70);
+    --hover-dark: var(--blue-80);
+    --main-font: "Arcticons Sans", sans-serif;
+    --secondary-font: "Inter", sans-serif;
 }
 
 body {
-    font-family: 'Inter', sans-serif;
-    margin-left: 4vw;
-    margin-right: 4vw;
-    background-color: white;
+    font-family: var(--secondary-font);
+    background-color: var(--background);
+    color: var(--text);
+}
+
+.content {
+    margin-left: 8vw;
+    margin-right: 8vw;
 }
 
 .logo {
     width: 160px;
     height: 60px;
     top: -50%;
-    fill: #000;
+    fill: var(--black);
     flex-shrink: 0;
     filter: invert();
 }
@@ -33,25 +81,20 @@ body {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-}
-
-#smallheader {
-    display: none;
+    padding: 0px;
+    margin: 0px;
+    line-height: 100%;
 }
 
 h1 {
-    font-family: 'Arcticons Sans', sans-serif;
+    font-family: var(--main-font);
     text-align: center;
-    flex-grow: 1;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    line-height: 100%;
+    margin: 0;
 }
 
 h2 {
-    font-family: 'Arcticons Sans', sans-serif;
+    font-family: var(--main-font);
     text-align: center;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -67,10 +110,16 @@ h3 {
     font-size: 30px;
 }
 
+
+.separator {
+    width: 100%;
+    border: 1px solid var(--hover);
+}
+
 @media (prefers-color-scheme: dark) {
     body {
-        background-color: #171717;
-        color: white;
+        background-color: var(--background-dark);
+        color: var(--text-dark);
     }
 
     .links img {
@@ -78,40 +127,23 @@ h3 {
     }
 
     .logo {
-        fill: #fff;
+        fill: var(--white);
         filter: none;
+    }
+
+    .separator {
+        border: 1px solid var(--hover-dark);
     }
 
 }
 
 @media screen and (max-width: 800px) {
+
+    .pagetop {
+        flex-direction: column;
+    }
+
     h1 {
-        font-size: 150%;
-    }
-}
-
-@media screen and (max-width: 680px) {
-    #header {
-        display: none;
-    }
-
-    #smallheader {
-        display: block;
-        position: relative;
-        left: 0%;
-        transform: translateX(0%);
-        width: 100%;
-        margin-top: 5px;
-        margin-bottom: 5px;
-    }
-
-    #date_header {
-        display: block;
-        position: relative;
-        left: 0%;
-        transform: translateX(0%);
-        width: 100%;
-        margin-top: 5px;
-        margin-bottom: 0px;
+        font-size: x-large;
     }
 }

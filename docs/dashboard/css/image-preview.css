@@ -1,6 +1,6 @@
 /* Style for the preview overlay */
 .preview-overlay-class {
-    display: none;
+    display: block;
     align-content: center;
     text-align: center;
     position: absolute;
@@ -10,11 +10,12 @@
     width: 100%;
     max-width: 550px;
     height: 100%;
-    max-height: 550px;
+    max-height: 650px;
     /* semi-transparent black */
     background-color: rgba(255, 255, 255, 0.8);
     z-index: 9999;
     overflow: auto;
+    border-radius: 20px;
 }
 
 .preview-arcticon {
@@ -26,6 +27,7 @@
     max-width: 80%;
     max-height: 80%;
     min-width: 200px;
+    padding: 10px;
 }
 
 /* Style for the close button */
@@ -33,7 +35,7 @@
     position: absolute;
     top: 20px;
     right: 20px;
-    color: black;
+    color: var(--black);
     font-size: 30px;
     cursor: pointer;
 }
@@ -48,7 +50,7 @@
     }
 
     .close-button-class {
-        color: white;
+        color: var(--white);
     }
 
 }

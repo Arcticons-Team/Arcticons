@@ -1,7 +1,7 @@
-import { shuffleArray, CopyAppfilter, debounce } from '../../js/functions.js';
-import { TABLE_COLUMNS_Requests as TABLE_COLUMNS, DOM } from '../../js/const.js';
+import { shuffleArray, CopyAppfilter, debounce, downloadImage, downloadImageMulti } from '../../js/functions.js';
+import { TABLE_COLUMNS_Requests as TABLE_COLUMNS, DOM, urls } from '../../js/const.js';
 import { state } from '../../js/state/store.js';
-import { updateTable, lazyLoadAndRender, showIconPreview } from './ui/tableRenderer.js';
+import { updateTable, lazyLoadAndRender, showIconPreview, getrowMenu } from './ui/tableRenderer.js';
 import { renderCategories, initCategoryUI, findCategory } from './ui/category.js';
 
 function finalizeCategories() {
@@ -44,7 +44,7 @@ async function initializeAppData() {
                 colorData: colorsJson
             });
             colorWorker.onmessage = function (e) {
-                state.all = e.data; 
+                state.all = e.data;
                 colorWorker.terminate();
             };
         }
@@ -64,7 +64,7 @@ function processRequests(jsonResponse) {
     });
     jsonResponse.categories.forEach(c => state.allCategories.add(c));
     state.all = jsonResponse.entries;
-    updateHeaderText(`${jsonResponse.stats.totalCount} Requested Apps`);
+    updateHeaderText(`${jsonResponse.stats.totalCount} requested apps`);
 }
 
 function processAppfilter(appfilterData) {
@@ -75,7 +75,7 @@ function processAppfilter(appfilterData) {
     }
     const existingComponents = new Set(appfilterData.components);
     state.all = state.all.filter(entry => !existingComponents.has(entry.componentInfo));
-    updateHeaderText(`${state.all.length} Requested Apps`);
+    updateHeaderText(`${state.all.length} requested apps`);
 }
 
 function updateSortMarkers() {
@@ -91,15 +91,12 @@ function updateSortMarkers() {
 // Update header text
 function updateHeaderText(newHeader) {
     DOM.header.innerText = newHeader;
-    DOM.smallheader.innerText = newHeader;
 }
 
 // Search function
 const filterAppEntries = debounce(() => {
     state.ui.search = DOM.searchInput.value;
-    state.ui.regex = DOM.regexSwitch.checked;
     state.ui.reverse = DOM.reverseSwitch.checked;
-
     state.ui.regexFlags =
         (DOM.caseInsensitive.checked ? 'i' : '') +
         (DOM.caseUnicode.checked ? 'u' : '');
@@ -148,14 +145,11 @@ function bindPress(element, onClick, onLong) {
 }
 
 function updateUIState(state) {
-    DOM.clearCategoryBtn.style.visibility =
-        state.ui.categories.size ? 'visible' : 'hidden';
-
-    DOM.clearSearchBtn.style.visibility =
-        state.ui.search ? 'visible' : 'hidden';
+    DOM.clearCategoryBtn.style.display =
+        state.ui.categories.size ? 'flex' : 'none';
 
     DOM.randomResetButton.style.display =
-        state.ui.random.active ? "inline-block" : "none";
+        state.ui.random.active ? "flex" : "none";
 
     DOM.matchingDrawableColumn.style.display =
         state.ui.showMatchingDrawables ? 'table-cell' : 'none';
@@ -201,6 +195,13 @@ function initEventListeners() {
         () => CopyAppfilter(null, false)
     );
 
+    DOM.downloadSelectedBtn.addEventListener(
+        "click",
+        function () {
+            downloadImageMulti();
+        }
+    );
+
     DOM.regexSearchSettingsBtn.addEventListener(
         "click",
         function () {
@@ -215,20 +216,29 @@ function initEventListeners() {
             );
         }
     );
+
+    document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape" || e.key === "Esc") {
+            if (DOM.regexPopup.classList.contains("show")) {
+                DOM.regexPopup.classList.remove("show");
+            }
+            if (DOM.renameOverlay.classList.contains("show")) {
+                DOM.renameOverlay.classList.remove("show");
+            }
+            if (DOM.imagePreviewOverlay.classList.contains("show")){
+                DOM.imagePreviewOverlay.classList.remove("show");
+            }
+        }
+    });
     window.addEventListener(
         "click",
         function (event) {
-            if (event.target == myPopup) {
-                DOM.regexPopup.classList.remove(
-                    "show"
-                );
-            }
-            if (event.target == DOM.renameOverlay) {
-                DOM.renameOverlay.classList.remove("show");
+            if (event.target.classList.contains('popup')) {
+                event.target.classList.remove("show");
             }
         }
     );
-
+    DOM.closePreview.addEventListener('click', function () {DOM.imagePreviewOverlay.classList.remove('show')});
     DOM.requeststhead.addEventListener('click', (event) => {
         // Find the closest parent <th> element (the target header)
         const header = event.target.closest('th');
@@ -246,21 +256,24 @@ function initEventListeners() {
         }
     });
 
-    DOM.matchingNameBtn.addEventListener('click', () => {
+    DOM.matchingNameBtn.addEventListener('click', (e) => {
+        console.log(e.target)
+        if (e.target.closest('#matching-number-input')) return;
         state.ui.showMatchingNames = !state.ui.showMatchingNames;
         if (state.ui.showMatchingNames) {
             state.ui.sort.direction = 'asc';
-            state.ui.sort.column = 0;
+            state.ui.sort.column = 1;
         }
-        DOM.matchingNameBtn.classList.toggle("active-toggle", state.ui.showMatchingNames);
-        DOM.matchingNameBtn.innerText = state.ui.showMatchingNames
-            ? "Show All"
-            : "Show Matching Name";
+        DOM.matchingNameBtn.classList.toggle("active", state.ui.showMatchingNames);
+        DOM.matchingNameBtnTxt.innerText = state.ui.showMatchingNames ? "Show all" : "Matching names";
         recomputeView();
     });
 
-    DOM.clearSearchBtn.addEventListener('click', filterAppEntries);
-    DOM.regexSwitch.addEventListener('change', filterAppEntries);
+    DOM.regexSwitch.addEventListener('click', () => {
+        state.ui.regex = state.ui.regex ? false : true;
+        DOM.regexSwitch.classList.toggle("active", state.ui.regex);
+        filterAppEntries()
+    });
     DOM.closePopupBtn.addEventListener('click', filterAppEntries);
     DOM.searchInput.addEventListener('input', filterAppEntries);
     DOM.categoryModeBtn.addEventListener('click', () => {
@@ -268,8 +281,8 @@ function initEventListeners() {
         state.ui.categoryMode = one ? 'one' : 'all';
 
         DOM.categoryModeBtn.innerText = one
-            ? "Match One Category"
-            : "Match All Categories";
+            ? "Match one category"
+            : "Match all categories";
 
         DOM.categoryModeBtn.classList.toggle("active-toggle", one);
         recomputeView();
@@ -281,7 +294,8 @@ function initEventListeners() {
         }
     }, {
         root: DOM.requestsTableContainer,
-        rootMargin: '200px' // Start loading 200px before reaching the bottom
+        rootMargin: '200px', // Start loading 200px before reaching the bottom
+        threshold: 0.1
     });
 
     observer.observe(DOM.sentinel);
@@ -316,27 +330,24 @@ function initEventListeners() {
         }
     });
 
-    DOM.matchingDrawablesBtn.addEventListener('click', () => {
+    DOM.matchingDrawablesBtn.addEventListener('click', (e) => {
         state.ui.showMatchingDrawables = !state.ui.showMatchingDrawables;
-        DOM.matchingDrawablesBtn.innerText = state.ui.showMatchingDrawables
-            ? "Show All Entries"
-            : "Show Matching Drawables";
-
-        DOM.matchingDrawablesBtn.classList.toggle("active-toggle", state.ui.showMatchingDrawables);
+        DOM.matchingDrawablesBtnTxt.innerText = state.ui.showMatchingDrawables ? "Show all" : "Matching drawables";
+        DOM.matchingDrawablesBtn.classList.toggle("active", state.ui.showMatchingDrawables);
         DOM.matchingDrawableColumn.classList.toggle("active", state.ui.showMatchingDrawables);
-
         state.copy.appfilterName = false;
         recomputeView();
     });
 
-    DOM.imagePreviewOverlay.onclick = e => {
-        if (e.target === DOM.imagePreviewOverlay || e.target.classList.contains('close-button-class')) {
-            DOM.imagePreviewOverlay.style.display = 'none';
-        }
-    };
-
     DOM.renameBtn.addEventListener('click', () => {
         CopyAppfilter(null, true);
+        DOM.renameOverlay.classList.remove("show")
+        DOM.floatingBtnContainer.classList.toggle("active", state.selectedRows.size)
+    });
+    DOM.keepBtn.addEventListener('click', () => {
+        CopyAppfilter(null, false);
+        DOM.renameOverlay.classList.remove("show")
+        DOM.floatingBtnContainer.classList.toggle("active", state.selectedRows.size)
     });
 
     DOM.tableBody.addEventListener('click', (event) => {
@@ -349,41 +360,60 @@ function initEventListeners() {
         const componentInfo = row.dataset.componentInfo;
         const entry = state.view[index];
 
-        // 1. Handle Copy Button
-        if (target.closest('.copy-button')) {
-            CopyAppfilter(index, false);
+        // 1. Handle Button
+        if (target.closest('img.btn-small')) {
+            switch (target.dataset.type) {
+                case "copy":
+                    CopyAppfilter(index, false);
+                    break;
+                case "download":
+                    downloadImage(target.dataset.downloadpath, target.dataset.drawable)
+                    break;
+                case "play":
+                    window.open(`${urls.playStore}${pkg}`);
+                    break;
+                case "more":
+                    const rowMenu = document.getElementById('rowMenu');
+                    rowMenu.innerHTML = getrowMenu(pkg);
+                    const w = 255, h = 215;
+                    let x = event.clientX + 2, y = event.clientY + 2;
+                    if (x + w > window.innerWidth) x -= (w + 4);
+                    if (y + h > window.innerHeight) y -= (h + 4);
+
+                    rowMenu.style.left = `${x}px`;
+                    rowMenu.style.top = `${y}px`;
+                    rowMenu.style.transformOrigin = "top left";
+                    rowMenu.showPopover();
+                    rowMenu.addEventListener("toggle", (e) => {
+                        if (e.newState === "closed") {
+                            // Wait for CSS transition
+                            setTimeout(() => rowMenu.innerHTML = "", 200);
+                        }
+                    });
+                    const firstItem = rowMenu.querySelector('.btn-container')
+                    firstItem.focus(); //todo focus on first item
+                    break;
+                default:
+                    console.log("unknown Action:", target.dataset.type)
+            }
             return;
         }
-
-        // 2. Handle App Name (Row Selection)
-        if (target.classList.contains('app-name-cell')) {
-            const active = state.selectedRows.has(componentInfo);
-            active ? state.selectedRows.delete(componentInfo) : state.selectedRows.add(componentInfo);
-            row.classList.toggle('row-glow', !active);
-            return;
-        }
-
-        // 3. Handle Icon Previews
+        //Handle Image Preview Popup
         const previewLink = target.closest('.icon-preview');
         if (previewLink) {
             event.preventDefault();
             const col = previewLink.dataset.column;
             const path = col === "AppIcon" ? `/extracted_png/${entry.drawable}.webp` : `https://raw.githubusercontent.com/Arcticons-Team/Arcticons/refs/heads/main/icons/white/${entry.Arcticon}.svg`;
-            showIconPreview(path, col);
+            showIconPreview(path, entry.appName, col);
             return;
         }
-
-        // 4. Handle Store Links (On Demand)
-        if (target.classList.contains('links')) {
-            const type = target.dataset.type;
-            const urls = {
-                play: `https://play.google.com/store/apps/details?id=${pkg}`,
-                fdroid: `https://f-droid.org/en/packages/${pkg}/`,
-                izzy: `https://apt.izzysoft.de/fdroid/index/apk/${pkg}`,
-                galaxy: `https://galaxystore.samsung.com/detail/${pkg}`,
-                search: `https://www.ecosia.org/search?q=${pkg}`
-            };
-            if (urls[type]) window.open(urls[type], '_blank');
+        // Handle Row Selection (Needs to come last)
+        if (target.closest('tr')) {
+            const active = state.selectedRows.has(componentInfo);
+            active ? state.selectedRows.delete(componentInfo) : state.selectedRows.add(componentInfo);
+            row.classList.toggle('row-glow', !active);
+            DOM.floatingBtnContainer.classList.toggle("active", state.selectedRows.size)
+            return;
         }
     });
 }

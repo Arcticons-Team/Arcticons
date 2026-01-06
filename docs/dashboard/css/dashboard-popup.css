@@ -1,0 +1,71 @@
+/* Grey out Background */
+.popup {
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,
+            0,
+            0,
+            0.4);
+    display: none;
+}
+
+.popup.show {
+    display: block;
+}
+/* ---------------------------------- */
+
+
+.popup-content {
+    z-index: 2;
+    background-color: white;
+    margin: 250px auto;
+    padding: 24px;
+    border-radius: 20px;
+    border: 1px solid #888888;
+    width: 310px;
+}
+
+.popup-content button {
+    display: block;
+    margin: 0 auto;
+}
+
+
+
+/* Settings Specific */
+.setting {
+    align-items: center;
+    width: 190px;
+    margin: 5px 0px 5px 0px;
+}
+
+.settings-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 50px;
+}
+/* ---------------------------------- */
+
+
+/*Dark mode theming */
+@media (prefers-color-scheme: dark) {
+    .popup-content {
+        background-color: var(--background-dark);
+        color: white
+    }
+
+    .popuptext {
+        background-color: #555;
+        color: var(text-dark);
+    }
+
+    .popuptext::after {
+        border-color: #555 transparent transparent transparent;
+    }
+}

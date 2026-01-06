@@ -1,24 +1,13 @@
-footer {
-    color: var(--white);
-    padding: 80px 8vw;
-    font-family: 'Arcticons Sans', sans-serif;
-    font-size: 18px;
-}
-
 footer p {
-    color: var(--white);
+    color: var(--text);
+    padding: 80px 8vw;
+    font-family: var(--main-font);
+    font-size: 18px;
     text-align: center;
 }
 
-footer a {
-    color: var(--white);
-    font-weight: bold;
-    cursor: pointer;
-    text-decoration: none;
-
-}
-
-.copyleft {
-    display: inline-block;
-    transform: rotate(180deg);
+@media (prefers-color-scheme: dark) {
+    footer p {
+        color: var(--text-dark);
+    }
 }
