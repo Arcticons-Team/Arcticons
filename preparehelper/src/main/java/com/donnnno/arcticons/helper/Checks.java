@@ -96,9 +96,9 @@ public class Checks {
             if (!defect.isEmpty()) {
                 System.err.println("\n\n______ Found defect appfilter entries ______\n\n");
                 for (String defectLine : defect) {
-                    System.out.println(defectLine);
+                    System.err.println(defectLine);
                 }
-                System.out.println("\n\n____ Please check these first before proceeding ____\n\n");
+                System.err.println("\n\n____ Please check these first before proceeding ____\n\n");
                 return true;
             }
 
@@ -146,9 +146,9 @@ public class Checks {
             if (!duplicates.isEmpty()) {
                 System.err.println("\n\n______ Found duplicate appfilter entries ______\n\n");
                 for (String duplicate : duplicates) {
-                    System.out.println("\t" + duplicate);
+                    System.err.println("\t" + duplicate);
                 }
-                System.out.println("\n\n____ Please check these first before proceeding ____\n\n");
+                System.err.println("\n\n____ Please check these first before proceeding ____\n\n");
                 return true;
             }
 
@@ -190,13 +190,13 @@ public class Checks {
             // Print missing drawables if any
             if (!missingDrawables.isEmpty()) {
                 System.err.println("\n\n______ Found non existent drawables ______\n");
-                System.out.println("Possible causes are typos or completely different naming of the icon\n\n");
+                System.err.println("Possible causes are typos or completely different naming of the icon\n\n");
                 for (Element item : missingDrawables) {
                     // Convert the element to a string and print it
                     String itemString = convertElementToString(item);
-                    System.out.println(itemString);
+                    System.err.println(itemString);
                 }
-                System.out.println("\n\n____ Please check these first before proceeding ____\n\n");
+                System.err.println("\n\n____ Please check these first before proceeding ____\n\n");
                 return true;
             }
 
@@ -265,12 +265,12 @@ public class Checks {
             if (!strokeAttr.isEmpty()) {
                 System.err.println("\n\n______ Found SVG with wrong line attributes ______\n");
                 for (String svg : strokeAttr.keySet()) {
-                    System.out.println("\n" + svg + ":");
+                    System.err.println("\n" + svg + ":");
                     for (String attr : strokeAttr.get(svg)) {
-                        System.out.println("\t" + attr);
+                        System.err.println("\t" + attr);
                     }
                 }
-                System.out.println("\n\n____ Please check these first before proceeding ____\n\n");
+                System.err.println("\n\n____ Please check these first before proceeding ____\n\n");
                 return true;
             }
 
