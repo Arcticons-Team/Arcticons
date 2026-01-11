@@ -7,13 +7,8 @@ import static com.donnnno.arcticons.helper.NewDrawableXmlCreator.createNewDrawab
 import static com.donnnno.arcticons.helper.SortAppfilter.sortXML;
 import static com.donnnno.arcticons.helper.WebpCreator.createWebpIcons;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 public class PrepareRelease {
 

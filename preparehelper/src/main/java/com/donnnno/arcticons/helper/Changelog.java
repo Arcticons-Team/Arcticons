@@ -8,11 +8,7 @@ import org.w3c.dom.NodeList;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -170,11 +166,12 @@ public class Changelog {
     }
 
     public static void createChangelogXML(int countTotal, int countNew, int countReused, String changelogXml,String generatedDir){
-        StringBuilder output = new StringBuilder("<?xml version=\"1.0\" encoding=\"utf-8\"?>\n" +
-                "<resources>\n" +
-                "\n" +
-                "    <!-- Leave empty if you don't want to show changelog date -->\n" +
-                "    <string name=\"changelog_date\">");
+        StringBuilder output = new StringBuilder("""
+                <?xml version="1.0" encoding="utf-8"?>
+                <resources>
+                
+                    <!-- Leave empty if you don't want to show changelog date -->
+                    <string name="changelog_date">""");
         output.append(currentDate());
         output.append("</string>\n\n");
         output.append("    <!-- Changelog support html formatting\n");

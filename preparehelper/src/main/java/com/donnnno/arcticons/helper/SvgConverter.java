@@ -25,14 +25,14 @@ public class SvgConverter {
     private static Path sourceSvgPath;
     private static Path destinationVectorPath;
     private static String flavor;
-    private static FileVisitor<Path> fileVisitor = new SimpleFileVisitor<Path>() {
+    private static final FileVisitor<Path> fileVisitor = new SimpleFileVisitor<>() {
         @Override
-        public FileVisitResult postVisitDirectory(Path dir, IOException exc) throws IOException {
+        public FileVisitResult postVisitDirectory(Path dir, IOException exc) {
             return FileVisitResult.CONTINUE;
         }
 
         @Override
-        public FileVisitResult preVisitDirectory(Path dir, BasicFileAttributes attrs) throws IOException {
+        public FileVisitResult preVisitDirectory(Path dir, BasicFileAttributes attrs) {
             // Skip folder which is processing svgs to xml
             if (dir.equals(destinationVectorPath)) {
                 return FileVisitResult.SKIP_SUBTREE;
@@ -41,22 +41,22 @@ public class SvgConverter {
             try {
                 Files.createDirectories(newDirectory);
             } catch (FileAlreadyExistsException e) {
-                e.printStackTrace();
+                System.out.println("Directory already exists");
             } catch (IOException e) {
-                e.printStackTrace();
+                System.out.println("Error creating directory");
                 return FileVisitResult.SKIP_SUBTREE;
             }
             return FileVisitResult.CONTINUE;
         }
 
         @Override
-        public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
+        public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) {
             convertToVector(file, destinationVectorPath.resolve(sourceSvgPath.relativize(file)));
             return FileVisitResult.CONTINUE;
         }
 
         @Override
-        public FileVisitResult visitFileFailed(Path file, IOException exc) throws IOException {
+        public FileVisitResult visitFileFailed(Path file, IOException exc) {
             System.out.println("File visit failed");
             return FileVisitResult.CONTINUE;
         }
@@ -75,7 +75,7 @@ public class SvgConverter {
                 System.out.println("source not a directory");
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("Error processing files" + e.getMessage());
         }
     }
 
@@ -95,7 +95,7 @@ public class SvgConverter {
                     createDrawable(byteArrayOutputStream, String.valueOf(targetFile), "@color/icon_color");
                 }
             } catch (Exception e) {
-                e.printStackTrace();
+                System.out.println("Error converting file " + svgSource.getFileName());
             }
         } else {
             System.out.println("Skipping file as it's not an svg " + svgSource.getFileName());
@@ -103,7 +103,7 @@ public class SvgConverter {
     }
     private static void createDrawable(ByteArrayOutputStream byteArrayOutputStream, String resPath, String color) throws Exception {
         String px = "1";
-        String XmlContent = new String(byteArrayOutputStream.toByteArray(), StandardCharsets.UTF_8);
+        String XmlContent = byteArrayOutputStream.toString(StandardCharsets.UTF_8);
         Document document = DocumentHelper.parseText(XmlContent);
         updateXmlPath(document, "android:strokeColor", color);
         updateXmlPath(document, "android:fillColor", color);
@@ -116,7 +116,7 @@ public class SvgConverter {
         String fg = "@color/icon_color";
         String bg = "@color/icon_background_color";
         String px = "1.2";
-        String foregroundXmlContent = new String(byteArrayOutputStream.toByteArray(), StandardCharsets.UTF_8);
+        String foregroundXmlContent = byteArrayOutputStream.toString(StandardCharsets.UTF_8);
         Document foregroundDocument = DocumentHelper.parseText(foregroundXmlContent);
         Element rootElement = foregroundDocument.getRootElement();
 
@@ -136,7 +136,7 @@ public class SvgConverter {
     }
 
 
-    private static void updateRootElement(Document aDocument, String key, String value) throws Exception {
+    private static void updateRootElement(Document aDocument, String key, String value) {
 
         String keyWithoutNameSpace = key.substring(key.indexOf(":") + 1);
         org.dom4j.Attribute attr = aDocument.getRootElement().attribute(keyWithoutNameSpace);
@@ -157,8 +157,7 @@ public class SvgConverter {
         String keyWithoutNameSpace = searchKey.substring(searchKey.indexOf(":") + 1);
 
         for (Object e : parentElement.elements()) {
-            if (e instanceof Element) {
-                Element element = (Element) e;
+            if (e instanceof Element element) {
                 if ("path".equals(element.getName())) {
                     org.dom4j.Attribute attr = element.attribute(keyWithoutNameSpace);
                     if (attr != null && !attr.getValue().equals("#00000000")) {

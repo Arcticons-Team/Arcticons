@@ -7,15 +7,11 @@ import java.nio.file.*;
 import java.util.regex.*;
 import org.apache.batik.transcoder.TranscoderInput;
 import org.apache.batik.transcoder.TranscoderOutput;
-import org.apache.batik.transcoder.TranscodingHints;
-import org.apache.batik.transcoder.image.ImageTranscoder;
 import org.apache.batik.transcoder.image.PNGTranscoder;
 import org.apache.batik.transcoder.TranscoderException;
 
 
 import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.util.List;
 import javax.imageio.ImageIO;
@@ -85,7 +81,7 @@ public class WebpCreator {
         System.out.println("Working on " + mode);
 
         try {
-            Files.walkFileTree(Paths.get(dir), new SimpleFileVisitor<Path>() {
+            Files.walkFileTree(Paths.get(dir), new SimpleFileVisitor<>() {
                 @Override
                 public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
                     if (file.toString().endsWith(".svg")) {
@@ -107,9 +103,9 @@ public class WebpCreator {
 
                                 // Save as WebP using WebPImageIO
                                 try {
-                                    ImageIO.write(image, "webp",webpFile);
+                                    ImageIO.write(image, "webp", webpFile);
                                 } catch (IOException e) {
-                                    System.out.println("Error occurred: " + e.getMessage());
+                                    System.err.println("Error occurred: " + e.getMessage());
                                 }
 
                             } catch (Exception e) {

@@ -21,15 +21,14 @@ public class Start {
         String xmlDir = rootDir+"/app/src/main/res/xml";
         String generatedDir = rootDir+"/generated";
         String assetsDir = rootDir + "/app/src/main/assets";
-        String appFilter = rootDir + "/newicons/appfilter.xml";;
+        String appFilter = rootDir + "/newicons/appfilter.xml";
         String valuesDir = rootDir+"/app/src/main/res/values";
-        //System.out.println("root Dir: " + rootPath);
-        //System.out.println("root Dir Name: " + rootDirName);
+
         if (args.length > 0) {
             String flavor = args[0];
             // Use the flavor as needed
             System.out.println("Processing with flavor: " + flavor);
-            //String appFilterFile = rootDir + "/app/assets/appfilter.xml";
+
             switch (flavor) {
                 case "you" -> {
                     resDir = rootDir + "/app/src/you/res";

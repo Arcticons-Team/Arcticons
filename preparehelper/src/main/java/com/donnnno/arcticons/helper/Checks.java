@@ -1,9 +1,5 @@
 package com.donnnno.arcticons.helper;
 
-import static java.lang.System.exit;
-import static java.lang.System.getProperty;
-import static java.lang.System.out;
-
 import org.apache.commons.io.FileUtils;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -46,7 +42,7 @@ public class Checks {
 
     public static void main(String[] args) {
         //String
-        String rootDir = getProperty("user.dir");
+        String rootDir = System.getProperty("user.dir");
         // Get the path of the root directory
         Path rootPath = Paths.get(rootDir);
         // Get the name of the root directory
@@ -69,7 +65,7 @@ public class Checks {
         // Check if check is not 0, then exit
         if (check != 0) {
             System.out.printf("Exiting program because %d checks failed.%n", check);
-            exit(0);  // Exit the program with status 0 (normal termination)
+            System.exit(0);  // Exit the program with status 0 (normal termination)
         }
     }
 
@@ -81,8 +77,8 @@ public class Checks {
         check = check + (checkSVG(newIconsDir) ? 1 : 0);
         // Check if check is not 0, then exit
         if (check != 0) {
-            System.out.printf("Exiting program because %d checks failed.%n", check);
-            exit(0);  // Exit the program with status 0 (normal termination)
+            System.err.printf("Exiting program because %d checks failed.%n", check);
+            System.exit(0);  // Exit the program with status 0 (normal termination)
         }
     }
 
@@ -98,16 +94,16 @@ public class Checks {
                 }
             }
             if (!defect.isEmpty()) {
-                out.println("\n\n______ Found defect appfilter entries ______\n\n");
+                System.err.println("\n\n______ Found defect appfilter entries ______\n\n");
                 for (String defectLine : defect) {
-                    out.println(defectLine);
+                    System.out.println(defectLine);
                 }
-                out.println("\n\n____ Please check these first before proceeding ____\n\n");
+                System.out.println("\n\n____ Please check these first before proceeding ____\n\n");
                 return true;
             }
 
         } catch (IOException e) {
-            out.println("Error reading file: " + e.getMessage());
+            System.err.println("Error reading file: " + e.getMessage());
         }
         return false;
     }
@@ -148,16 +144,16 @@ public class Checks {
 
             // Print the duplicates if any
             if (!duplicates.isEmpty()) {
-                out.println("\n\n______ Found duplicate appfilter entries ______\n\n");
+                System.err.println("\n\n______ Found duplicate appfilter entries ______\n\n");
                 for (String duplicate : duplicates) {
-                    out.println("\t" + duplicate);
+                    System.out.println("\t" + duplicate);
                 }
-                out.println("\n\n____ Please check these first before proceeding ____\n\n");
+                System.out.println("\n\n____ Please check these first before proceeding ____\n\n");
                 return true;
             }
 
         } catch (Exception e) {
-            e.printStackTrace();
+            System.err.println("Error occurred: " + e.getMessage());
         }
         return false;
     }
@@ -193,19 +189,19 @@ public class Checks {
 
             // Print missing drawables if any
             if (!missingDrawables.isEmpty()) {
-                out.println("\n\n______ Found non existent drawables ______\n");
-                out.println("Possible causes are typos or completely different naming of the icon\n\n");
+                System.err.println("\n\n______ Found non existent drawables ______\n");
+                System.out.println("Possible causes are typos or completely different naming of the icon\n\n");
                 for (Element item : missingDrawables) {
                     // Convert the element to a string and print it
                     String itemString = convertElementToString(item);
-                    out.println(itemString);
+                    System.out.println(itemString);
                 }
-                out.println("\n\n____ Please check these first before proceeding ____\n\n");
+                System.out.println("\n\n____ Please check these first before proceeding ____\n\n");
                 return true;
             }
 
         } catch (Exception e) {
-            out.println("Error occurred: " + e.getMessage());
+            System.err.println("Error occurred: " + e.getMessage());
         }
         return false;
     }
@@ -220,7 +216,7 @@ public class Checks {
             transformer.transform(new DOMSource(element), new StreamResult(writer));
             return writer.toString();
         } catch (Exception e) {
-            out.println("Error occurred: " + e.getMessage());
+            System.err.println("Error occurred: " + e.getMessage());
             return "";
         }
     }
@@ -267,19 +263,19 @@ public class Checks {
 
             // Print any findings
             if (!strokeAttr.isEmpty()) {
-                out.println("\n\n______ Found SVG with wrong line attributes ______\n");
+                System.err.println("\n\n______ Found SVG with wrong line attributes ______\n");
                 for (String svg : strokeAttr.keySet()) {
-                    out.println("\n" + svg + ":");
+                    System.out.println("\n" + svg + ":");
                     for (String attr : strokeAttr.get(svg)) {
-                        out.println("\t" + attr);
+                        System.out.println("\t" + attr);
                     }
                 }
-                out.println("\n\n____ Please check these first before proceeding ____\n\n");
+                System.out.println("\n\n____ Please check these first before proceeding ____\n\n");
                 return true;
             }
 
         } catch (IOException e) {
-            e.printStackTrace();
+            System.err.println("Error occurred: " + e.getMessage());
         }
         return false;
     }

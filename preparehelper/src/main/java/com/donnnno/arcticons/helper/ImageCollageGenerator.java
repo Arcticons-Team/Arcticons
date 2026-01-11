@@ -1,11 +1,9 @@
 package com.donnnno.arcticons.helper;
 
 import org.apache.batik.anim.dom.SVGDOMImplementation;
-import org.apache.batik.dom.GenericDOMImplementation;
 import org.apache.batik.transcoder.TranscoderException;
 import org.apache.batik.transcoder.TranscodingHints;
 import org.apache.batik.transcoder.image.ImageTranscoder;
-import org.apache.batik.transcoder.image.PNGTranscoder;
 import org.apache.batik.transcoder.TranscoderInput;
 import org.apache.batik.transcoder.TranscoderOutput;
 
@@ -19,7 +17,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.batik.util.SVGConstants;
-import org.apache.commons.io.FileUtils;
 import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;
 
@@ -97,7 +94,7 @@ public class ImageCollageGenerator {
             for (int i = 0; i < images.size(); i++) {
                 BufferedImage img = images.get(i);
                 g2d.drawImage(img, xOffset, yOffset, iconSize, iconSize, null);
-                xOffset += iconSize + iconSpacing;;
+                xOffset += iconSize + iconSpacing;
 
                 // Move to the next row if the current row is filled
                 if ((i + 1) % iconsPerRow == 0) {
@@ -153,8 +150,7 @@ public class ImageCollageGenerator {
             }
 
             @Override
-            public void writeImage(BufferedImage image, TranscoderOutput out)
-                    throws TranscoderException {
+            public void writeImage(BufferedImage image, TranscoderOutput out) {
                 imagePointer[0] = image;
             }
         };

@@ -5,7 +5,6 @@ import org.dom4j.io.OutputFormat;
 import org.dom4j.io.SAXReader;
 import org.dom4j.io.XMLWriter;
 
-import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -29,7 +28,7 @@ public class XMLhelper {
         int index = svgFilePath.lastIndexOf(".");
         StringBuilder result = new StringBuilder();
         if (index != -1) {
-            result.append(svgFilePath.substring(0, index));
+            result.append(svgFilePath, 0, index);
         }
         result.append('.').append("xml");
         return result.toString();

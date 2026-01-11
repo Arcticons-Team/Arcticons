@@ -13,8 +13,8 @@ allprojects {
     repositories {
         mavenCentral()
         google()
-        maven { url 'https://jitpack.io' }
-        maven { url 'https://maven.google.com' }
+        maven { url = 'https://jitpack.io' } // Use = here
+        maven { url = 'https://maven.google.com' } // Use = here
     }
 
     rootProject.ext {
@@ -26,10 +26,11 @@ allprojects {
 
 tasks.register('clean', Delete) {
     delete rootProject.layout.buildDirectory
-    delete fileTree(dir: 'app/src/you/res/drawable-anydpi')
-    delete fileTree(dir: 'app/src/light/res/drawable-anydpi')
-    delete fileTree(dir: 'app/src/dark/res/drawable-anydpi')
-    delete fileTree(dir: 'app/src/dayNight/res/drawable-anydpi')
+    // Use the explicit file paths for your generated drawables
+    delete 'app/src/you/res/drawable-anydpi'
+    delete 'app/src/light/res/drawable-anydpi'
+    delete 'app/src/dark/res/drawable-anydpi'
+    delete 'app/src/dayNight/res/drawable-anydpi'
 }
 
 //F-DROID REPRODUCIBLE BUILDS

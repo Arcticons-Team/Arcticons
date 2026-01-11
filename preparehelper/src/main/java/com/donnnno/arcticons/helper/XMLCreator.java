@@ -12,7 +12,6 @@ import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -31,7 +30,7 @@ public class XMLCreator {
     private static List<String> letters = new ArrayList<>();
     private static List<String> symbols = new ArrayList<>();
     private static List<String> number = new ArrayList<>();
-    private static HashSet<String> allIcons = new HashSet<>();
+    private static final HashSet<String> allIcons = new HashSet<>();
 
     private static final Pattern drawablePattern = Pattern.compile("drawable=\"([\\w_]+)\"");
 

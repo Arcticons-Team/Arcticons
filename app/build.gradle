@@ -6,27 +6,27 @@ android {
     compileSdk = rootProject.ext.CompileSdk
 
     defaultConfig {
-        applicationId "com.donnnno.arcticons"
-        minSdkVersion rootProject.ext.MinSdk
-        targetSdkVersion rootProject.ext.TargetSdk
-        versionCode 1500
-        versionName '14.0.0'
-        multiDexEnabled true
+        applicationId = "com.donnnno.arcticons"
+        minSdk = rootProject.ext.MinSdk
+        targetSdk = rootProject.ext.TargetSdk
+        versionCode = 1500
+        versionName = '14.0.0'
+        multiDexEnabled = true
     }
 
     // Load keystore
-    def keystorePropertiesFile = rootProject.file("keystore.properties");
-    def releaseSigning;
+    def keystorePropertiesFile = rootProject.file("keystore.properties")
+    def releaseSigning
     if (keystorePropertiesFile.exists()){
         def keystoreProperties = new Properties()
         keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
         releaseSigning = signingConfigs.create("release", signingConfig -> {
-            signingConfig.setKeyAlias(keystoreProperties.getProperty("keyAlias"));
-            signingConfig.setKeyPassword(keystoreProperties.getProperty("keyPassword"));
-            signingConfig.setStoreFile(rootProject.file(keystoreProperties.getProperty("storeFile")));
-            signingConfig.setStorePassword(keystoreProperties.getProperty("storePassword"));
-        });
-    } else {releaseSigning = signingConfigs.getByName("debug"); // Use getByName for safety
+            signingConfig.setKeyAlias(keystoreProperties.getProperty("keyAlias"))
+            signingConfig.setKeyPassword(keystoreProperties.getProperty("keyPassword"))
+            signingConfig.setStoreFile(rootProject.file(keystoreProperties.getProperty("storeFile")))
+            signingConfig.setStorePassword(keystoreProperties.getProperty("storePassword"))
+        })
+    } else {releaseSigning = signingConfigs.getByName("debug") // Use getByName for safety
 }
 
     buildFeatures {
@@ -38,10 +38,10 @@ android {
             signingConfig = releaseSigning
         }
         release {
-            minifyEnabled false
+            minifyEnabled = false
         }
         debug {
-            applicationIdSuffix '.debug'
+            applicationIdSuffix = '.debug'
         }
 
 
@@ -63,40 +63,40 @@ android {
     flavorDimensions += "variant"
     productFlavors {
         normal {
-            dimension "variant"
-            resValue "string", "app_name", "Arcticons"
+            dimension = "variant"
+            resValue  "string", "app_name", "Arcticons"
         }
         normalPlay {
-            dimension "variant"
+            dimension = "variant"
             resValue "string", "app_name", "Arcticons"
         }
         black {
-            dimension "variant"
+            dimension = "variant"
             //noinspection GradlePath
-            applicationIdSuffix '.light'
+            applicationIdSuffix = '.light'
             resValue "string", "app_name", "Arcticons Black"
         }
         blackPlay {
-            dimension "variant"
-            applicationIdSuffix '.light'
+            dimension = "variant"
+            applicationIdSuffix = '.light'
             resValue "string", "app_name", "Arcticons Black"
         }
         you {
-            dimension "variant"
-            minSdkVersion "26"
-            applicationIdSuffix '.you'
+            dimension = "variant"
+            minSdk = 26
+            applicationIdSuffix = '.you'
             resValue "string", "app_name", "Arcticons Material You"
         }
         youPlay {
-            dimension "variant"
-            minSdkVersion "26"
-            applicationIdSuffix '.you.play'
+            dimension = "variant"
+            minSdk = 26
+            applicationIdSuffix = '.you.play'
             resValue "string", "app_name", "Arcticons Material You"
         }
         dayNight {
-            dimension "variant"
-            minSdkVersion "29"
-            applicationIdSuffix '.daynight'
+            dimension = "variant"
+            minSdk = 29
+            applicationIdSuffix = '.daynight'
             resValue "string", "app_name", "Arcticons Day & Night"
         }
     }
@@ -118,18 +118,18 @@ android {
     }
     java {
         toolchain {
-            languageVersion = JavaLanguageVersion.of(17)
+            languageVersion = JavaLanguageVersion.of(21)
         }
     }
 
     buildFeatures {
         buildConfig = true
-        viewBinding true
+        viewBinding = true
     }
-    namespace 'com.donnnno.arcticons'
+    namespace = 'com.donnnno.arcticons'
     lint {
-        abortOnError false
-        checkReleaseBuilds false
+        abortOnError = false
+        checkReleaseBuilds = false
         lintConfig = file("lint.xml")
     }
 
