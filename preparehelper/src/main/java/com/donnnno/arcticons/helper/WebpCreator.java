@@ -1,7 +1,5 @@
 package com.donnnno.arcticons.helper;
 
-import static java.lang.System.getProperty;
-
 import java.io.*;
 import java.nio.file.*;
 import java.util.regex.*;
