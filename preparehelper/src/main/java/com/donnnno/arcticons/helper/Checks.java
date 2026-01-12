@@ -1,399 +1,233 @@
 package com.donnnno.arcticons.helper;
 
-import org.apache.commons.io.FileUtils;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
-import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.StringWriter;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.regex.MatchResult;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.transform.OutputKeys;
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.dom.DOMSource;
-import javax.xml.transform.stream.StreamResult;
-
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 public class Checks {
 
-    private static MatchResult matchResult;
+    // --- REGEX PATTERNS ---
+    private static final Pattern XML_PATTERN = Pattern.compile("((<!--.*-->)|(<(item|calendar) component=\"(ComponentInfo\\{.*/.*}|:[A-Z_]*)\" (drawable|prefix)=\".*\"\\s?/>)|(^\\s*$)|(</?resources>)|(<\\?xml version=\"1.0\" encoding=\"UTF-8\"\\?>))");
+    private static final Pattern STROKE_STRING_PATTERN = Pattern.compile("(?<strokestr>stroke-width(?:=\"|: ?))(?<number>\\d*(?:.\\d+)?)(?=[p\"; }/])");
+    private static final Pattern STROKE_COLOR_PATTERN = Pattern.compile("stroke(?:=\"|:)(?:rgb[^a]|#).*?(?=[\"; ])");
+    private static final Pattern FILL_COLOR_PATTERN = Pattern.compile("fill(?:=\"|:)(?:rgb[^a]|#).*?(?=[\"; ])");
+    private static final Pattern STROKE_OPACITY_PATTERN = Pattern.compile("stroke-opacity(?:=\"|:).*?(?=[\"; ])");
+    private static final Pattern FILL_OPACITY_PATTERN = Pattern.compile("fill-opacity(?:=\"|:).*?(?=[\"; ])");
+    private static final Pattern STROKE_RGBA_PATTERN = Pattern.compile("stroke(?:=\"|:)rgba.*?(?=[\"; ])");
+    private static final Pattern FILL_RGBA_PATTERN = Pattern.compile("fill(?:=\"|:)rgba.*?(?=[\"; ])");
+    private static final Pattern STROKE_WIDTH_PATTERN = Pattern.compile("stroke-width(?:=\"|:) ?.*?(?=[\"; ])");
+    private static final Pattern LINE_CAP_PATTERN = Pattern.compile("stroke-linecap(?:=\"|:).*?(?=[\";}])");
+    private static final Pattern LINE_JOIN_PATTERN = Pattern.compile("stroke-linejoin(?:=\"|:).*?(?=[\";}])");
+
+    // --- VALIDATION SETS ---
+    private static final Set<String> validColors = Set.of("stroke:#ffffff", "stroke:#fff", "stroke:#FFFFFF", "stroke=\"#ffffff", "stroke=\"#fff", "stroke=\"#FFFFFF", "stroke=\"white", "fill:#ffffff", "fill:#fff", "fill:#FFFFFF", "fill=\"#ffffff", "fill=\"#fff", "fill=\"#FFFFFF");
+    private static final Set<String> validOpacities = Set.of("stroke-opacity=\"0", "stroke-opacity=\"0%", "stroke-opacity=\"1", "stroke-opacity=\"100%", "stroke-opacity:1", "stroke-opacity:0", "fill-opacity=\"0", "fill-opacity=\"0%", "fill-opacity=\"1", "fill-opacity=\"100%", "fill-opacity:1", "fill-opacity:0");
+    private static final Set<String> validStrokeWidth = Set.of("stroke-width:1", "stroke-width:1px", "stroke-width:0px", "stroke-width:0", "stroke-width=\"1", "stroke-width=\"0", "stroke-width: 0px", "stroke-width: 1px");
+    private static final Set<String> validLineJoinCap = Set.of("stroke-linejoin:round", "stroke-linejoin=\"round", "stroke-linejoin: round", "stroke-linecap:round", "stroke-linecap=\"round", "stroke-linecap: round");
+
+    private static final Map<Pattern, Set<String>> ATTRIBUTE_VALIDATION_MAP = Map.of(
+            STROKE_COLOR_PATTERN, validColors,
+            FILL_COLOR_PATTERN, validColors,
+            STROKE_OPACITY_PATTERN, validOpacities,
+            FILL_OPACITY_PATTERN, validOpacities,
+            STROKE_WIDTH_PATTERN, validStrokeWidth,
+            LINE_CAP_PATTERN, validLineJoinCap,
+            LINE_JOIN_PATTERN, validLineJoinCap
+    );
+
+    private static final List<Pattern> RGBA_PATTERNS = List.of(STROKE_RGBA_PATTERN, FILL_RGBA_PATTERN);
+
+    // --- CENTRALIZED VIOLATION LOG ---
+    private static final List<Violation> violations = Collections.synchronizedList(new ArrayList<>());
+
+    public record Violation(String category, String source, String detail) {
+    }
 
     public static void main(String[] args) {
-        //String
         String rootDir = System.getProperty("user.dir");
-        // Get the path of the root directory
-        Path rootPath = Paths.get(rootDir);
-        // Get the name of the root directory
-        String rootDirName = rootPath.getFileName().toString();
-        if (rootDirName.equals("preparehelper")) {
-            rootDir = "..";
-        }
-        String valuesDir = rootDir + "/app/src/main/res/values";
-        String appFilter = rootDir + "/newicons/appfilter.xml";
-        String changelogXml = valuesDir + "/changelog.xml";
-        String generatedDir = rootDir + "/generated";
+        if (Paths.get(rootDir).getFileName().toString().equals("preparehelper")) rootDir = "..";
+
         String sourceDir = rootDir + "/icons/white";
+        String appFilter = rootDir + "/newicons/appfilter.xml";
         String newIconsDir = rootDir + "/newicons";
 
-        int check = 0;
-        check = check + (checkXml(appFilter) ? 1 : 0);
-        check = check + (missingDrawable(appFilter, sourceDir, newIconsDir) ? 1 : 0);
-        check = check + (duplicateEntry(appFilter) ? 1 : 0);
-        check = check + (checkSVG(sourceDir) ? 1 : 0);
-        // Check if check is not 0, then exit
-        if (check != 0) {
-            System.out.printf("Exiting program because %d checks failed.%n", check);
-            System.exit(0);  // Exit the program with status 0 (normal termination)
-        }
+        startChecks(appFilter, sourceDir, newIconsDir);
     }
 
     public static void startChecks(String appFilter, String sourceDir, String newIconsDir) {
-        int check = 0;
-        check = check + (checkXml(appFilter) ? 1 : 0);
-        check = check + (missingDrawable(appFilter, sourceDir, newIconsDir) ? 1 : 0);
-        check = check + (duplicateEntry(appFilter) ? 1 : 0);
-        check = check + (checkSVG(newIconsDir) ? 1 : 0);
-        // Check if check is not 0, then exit
-        if (check != 0) {
-            System.err.printf("Exiting program because %d checks failed.%n", check);
-            System.exit(0);  // Exit the program with status 0 (normal termination)
+        violations.clear();
+        Document appFilterDoc = parseXml(appFilter);
+
+        checkXml(appFilter);
+        if (appFilterDoc != null) {
+            checkDuplicateEntries(appFilterDoc);
+            checkMissingDrawables(appFilterDoc, sourceDir, newIconsDir);
+        }
+        checkSVGFiles(newIconsDir);
+
+        if (!violations.isEmpty()) {
+            reportViolations();
+            System.exit(1);
+        } else {
+            System.out.println("No violations found. All checks passed!");
         }
     }
 
-    public static boolean checkXml(String path) {
-        List<String> defect = new ArrayList<>();
-        try (BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(path), StandardCharsets.UTF_8))) {
-            String line;
-            Pattern pattern = Pattern.compile("((<!--.*-->)|(<(item|calendar) component=\"(ComponentInfo\\{.*/.*}|:[A-Z_]*)\" (drawable|prefix)=\".*\"\\s?/>)|(^\\s*$)|(</?resources>)|(<\\?xml version=\"1.0\" encoding=\"UTF-8\"\\?>))");
-            while ((line = br.readLine()) != null) {
-                Matcher matcher = pattern.matcher(line);
-                if (!matcher.find()) {
-                    defect.add(line);
-                }
-            }
-            if (!defect.isEmpty()) {
-                System.err.println("\n\n______ Found defect appfilter entries ______\n\n");
-                for (String defectLine : defect) {
-                    System.err.println(defectLine);
-                }
-                System.err.println("\n\n____ Please check these first before proceeding ____\n\n");
-                return true;
-            }
+    private static void reportViolations() {
+        System.err.println("\n" + "=".repeat(60));
+        System.err.println(" BUILD FAILED: VIOLATIONS DETECTED");
+        System.err.println("=".repeat(60));
 
+        violations.stream()
+                .collect(Collectors.groupingBy(Violation::category))
+                .forEach((category, list) -> {
+                    System.err.println("\n[ " + category.toUpperCase() + " ]");
+                    list.forEach(v -> System.err.println("  -> " + v.source() + ": " + v.detail()));
+                });
+
+        System.err.println("\n" + "=".repeat(60));
+        System.err.printf("Total Failures: %d\n", violations.size());
+    }
+
+    // --- CHECK LOGIC ---
+
+    private static void checkXml(String path) {
+        try (var lines = Files.lines(Paths.get(path))) {
+            lines.filter(line -> !line.isBlank() && !XML_PATTERN.matcher(line).find())
+                    .forEach(line -> violations.add(new Violation("XML Syntax", path, "Invalid line format: " + line.trim())));
         } catch (IOException e) {
-            System.err.println("Error reading file: " + e.getMessage());
+            violations.add(new Violation("System", path, "Could not read XML file"));
         }
-        return false;
     }
 
-    public static boolean duplicateEntry(String path) {
-        List<String> components = new ArrayList<>();
-
-        try {
-            // Set up XML parsing
-            File inputFile = new File(path);
-            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
-            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-            Document doc = dBuilder.parse(inputFile);
-            doc.getDocumentElement().normalize();
-
-            // Iterate through all <item> elements
-            NodeList nodeList = doc.getElementsByTagName("item");
-            for (int i = 0; i < nodeList.getLength(); i++) {
-                Node node = nodeList.item(i);
-                if (node.getNodeType() == Node.ELEMENT_NODE) {
-                    Element item = (Element) node;
-                    // Check if 'prefix' attribute exists
-                    if (item.getAttribute("prefix").isEmpty()) {
-                        String component = item.getAttribute("component");
-                        components.add(component); // Add component to the list
-                    }
+    private static void checkDuplicateEntries(Document doc) {
+        Set<String> seen = new HashSet<>();
+        NodeList nodeList = doc.getElementsByTagName("item");
+        for (int i = 0; i < nodeList.getLength(); i++) {
+            Element item = (Element) nodeList.item(i);
+            if (item.getAttribute("prefix").isEmpty()) {
+                String component = item.getAttribute("component");
+                if (!seen.add(component)) {
+                    violations.add(new Violation("Duplicate Entry", "appfilter.xml", component));
                 }
             }
-
-            // Check for duplicates in the components list
-            Set<String> duplicates = new HashSet<>();
-            Set<String> seen = new HashSet<>();
-            for (String component : components) {
-                if (!seen.add(component)) { // If the component was already seen, it's a duplicate
-                    duplicates.add(component);
-                }
-            }
-
-            // Print the duplicates if any
-            if (!duplicates.isEmpty()) {
-                System.err.println("\n\n______ Found duplicate appfilter entries ______\n\n");
-                for (String duplicate : duplicates) {
-                    System.err.println("\t" + duplicate);
-                }
-                System.err.println("\n\n____ Please check these first before proceeding ____\n\n");
-                return true;
-            }
-
-        } catch (Exception e) {
-            System.err.println("Error occurred: " + e.getMessage());
         }
-        return false;
     }
 
-    public static boolean missingDrawable(String appfilterPath, String whiteDir, String otherDir) {
-        List<Element> missingDrawables = new ArrayList<>();
-        try {
-            // Set up XML parsing
-            File inputFile = new File(appfilterPath);
-            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
-            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-            Document doc = dBuilder.parse(inputFile);
-            doc.getDocumentElement().normalize();
+    private static void checkMissingDrawables(Document doc, String whiteDir, String otherDir) {
+        NodeList nodeList = doc.getElementsByTagName("item");
+        for (int i = 0; i < nodeList.getLength(); i++) {
+            Element item = (Element) nodeList.item(i);
+            if (item.getAttribute("prefix").isEmpty()) {
+                String drawable = item.getAttribute("drawable");
+                boolean existsInWhite = Files.exists(Paths.get(whiteDir, drawable + ".svg"));
+                boolean existsInOther = Files.exists(Paths.get(otherDir, drawable + ".svg"));
 
-            // Iterate through all <item> elements
-            NodeList nodeList = doc.getElementsByTagName("item");
-            for (int i = 0; i < nodeList.getLength(); i++) {
-                Node node = nodeList.item(i);
-                if (node.getNodeType() == Node.ELEMENT_NODE) {
-                    Element item = (Element) node;
-                    // Check if 'prefix' attribute exists
-                    if (item.getAttribute("prefix").isEmpty()) {
-                        String drawable = item.getAttribute("drawable");
-                        // Check if the drawable file exists in the specified directories
-                        Path whitePath = Paths.get(whiteDir, drawable + ".svg");
-                        Path otherPath = Paths.get(otherDir, drawable + ".svg");
-                        if (!Files.exists(whitePath) && !Files.exists(otherPath)) {
-                            missingDrawables.add(item); // Add item to the list if missing
+                if (!existsInWhite && !existsInOther) {
+                    violations.add(new Violation("Missing Drawable", item.getAttribute("component"), drawable + ".svg"));
+                }
+            }
+        }
+    }
+
+    private static void checkSVGFiles(String dir) {
+        Path folder = Paths.get(dir);
+        try (var stream = Files.list(folder)) {
+            stream.filter(path -> path.toString().endsWith(".svg"))
+                    .parallel()
+                    .forEach(entry -> {
+                        try {
+                            String fileName = entry.getFileName().toString();
+                            String content = Files.readString(entry);
+
+                            // Auto-fix stroke widths
+                            String updatedContent = applyAutoFixes(content);
+
+                            // Validate remaining attributes
+                            validateAttributes(fileName, updatedContent);
+
+                            if (!content.equals(updatedContent)) {
+                                Files.writeString(entry, updatedContent);
+                            }
+                        } catch (IOException e) {
+                            violations.add(new Violation("IO Error", entry.toString(), "Failed to process SVG"));
                         }
-                    }
-                }
-            }
-
-            // Print missing drawables if any
-            if (!missingDrawables.isEmpty()) {
-                System.err.println("\n\n______ Found non existent drawables ______\n");
-                System.err.println("Possible causes are typos or completely different naming of the icon\n\n");
-                for (Element item : missingDrawables) {
-                    // Convert the element to a string and print it
-                    String itemString = convertElementToString(item);
-                    System.err.println(itemString);
-                }
-                System.err.println("\n\n____ Please check these first before proceeding ____\n\n");
-                return true;
-            }
-
-        } catch (Exception e) {
-            System.err.println("Error occurred: " + e.getMessage());
-        }
-        return false;
-    }
-
-    // Helper method to convert Element to String
-    private static String convertElementToString(Element element) {
-        try {
-            StringWriter writer = new StringWriter();
-            TransformerFactory transformerFactory = TransformerFactory.newInstance();
-            Transformer transformer = transformerFactory.newTransformer();
-            transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
-            transformer.transform(new DOMSource(element), new StreamResult(writer));
-            return writer.toString();
-        } catch (Exception e) {
-            System.err.println("Error occurred: " + e.getMessage());
-            return "";
-        }
-    }
-
-    public static boolean checkSVG(String dir) {
-        Map<String, List<String>> strokeAttr = new HashMap<>();
-
-        try {
-            // Get all SVG files in the specified directory
-            File folder = new File(dir);
-            File[] files = folder.listFiles((dir1, name) -> name.endsWith(".svg"));
-            if (files != null) {
-                for (File file : files) {
-                    String fileName = file.getName();
-                    String name = fileName.substring(0, fileName.length() - 4); // Remove .svg extension
-                    String content = FileUtils.readFileToString(file, "UTF-8");
-                    Pattern pattern = Pattern.compile("(?<strokestr>stroke-width(?:=\"|: ?))(?<number>\\d*(?:.\\d+)?)(?=[p\"; }/])");
-                    Matcher matcher = pattern.matcher(content);
-
-                    // StringBuffer to accumulate the modified content
-                    StringBuilder result = new StringBuilder();
-
-                    while (matcher.find()) {
-                        // Get the stroke width value from the match
-                        String matchedStrokeWidth = matcher.group("number");
-                        // Process the match through replaceStroke
-                        String replacement = replaceStroke(matcher);
-                        // Append the replacement to the result
-                        matcher.appendReplacement(result, Matcher.quoteReplacement(replacement));
-                    }
-
-                    // Append the remaining part of the string
-                    matcher.appendTail(result);
-
-                    // Convert result to string
-                    content = result.toString();
-                    // Perform regex checks on the SVG content
-                    checkAttributes(fileName, content, strokeAttr);
-                    // Write the updated content back to the file
-                    FileUtils.write(file, content, "UTF-8");
-
-                }
-            }
-
-            // Print any findings
-            if (!strokeAttr.isEmpty()) {
-                System.err.println("\n\n______ Found SVG with wrong line attributes ______\n");
-                for (String svg : strokeAttr.keySet()) {
-                    System.err.println("\n" + svg + ":");
-                    for (String attr : strokeAttr.get(svg)) {
-                        System.err.println("\t" + attr);
-                    }
-                }
-                System.err.println("\n\n____ Please check these first before proceeding ____\n\n");
-                return true;
-            }
-
+                    });
         } catch (IOException e) {
-            System.err.println("Error occurred: " + e.getMessage());
+            violations.add(new Violation("System", dir, "Could not access SVG directory"));
         }
-        return false;
     }
 
-    private static void checkAttributes(String file, String content, Map<String, List<String>> strokeAttr) {
-        // Regex patterns for various attributes
-        Pattern strokeColorPattern = Pattern.compile("stroke(?:=\"|:)(?:rgb[^a]|#).*?(?=[\"; ])");
-        Pattern fillColorPattern = Pattern.compile("fill(?:=\"|:)(?:rgb[^a]|#).*?(?=[\"; ])");
-        Pattern strokeOpacityPattern = Pattern.compile("stroke-opacity(?:=\"|:).*?(?=[\"; ])");
-        Pattern fillOpacityPattern = Pattern.compile("fill-opacity(?:=\"|:).*?(?=[\"; ])");
-        Pattern strokeRGBAPattern = Pattern.compile("stroke(?:=\"|:)rgba.*?(?=[\"; ])");
-        Pattern fillRGBAPattern = Pattern.compile("fill(?:=\"|:)rgba.*?(?=[\"; ])");
-        Pattern strokeWidthPattern = Pattern.compile("stroke-width(?:=\"|:) ?.*?(?=[\"; ])");
-        Pattern lineCapPattern = Pattern.compile("stroke-linecap(?:=\"|:).*?(?=[\";}])");
-        Pattern lineJoinPattern = Pattern.compile("stroke-linejoin(?:=\"|:).*?(?=[\";}])");
-
-        // Find matching attributes
-        Matcher strokeColorMatcher = strokeColorPattern.matcher(content);
-        Matcher fillColorMatcher = fillColorPattern.matcher(content);
-        Matcher strokeOpacityMatcher = strokeOpacityPattern.matcher(content);
-        Matcher fillOpacityMatcher = fillOpacityPattern.matcher(content);
-        Matcher strokeRGBAMatcher = strokeRGBAPattern.matcher(content);
-        Matcher fillRGBAMatcher = fillRGBAPattern.matcher(content);
-        Matcher strokeWidthMatcher = strokeWidthPattern.matcher(content);
-        Matcher lineCapMatcher = lineCapPattern.matcher(content);
-        Matcher lineJoinMatcher = lineJoinPattern.matcher(content);
-
-        List<String> validColors = Arrays.asList(
-                "stroke:#ffffff", "stroke:#fff", "stroke:#FFFFFF",
-                "stroke=\"#ffffff", "stroke=\"#fff", "stroke=\"#FFFFFF",
-                "stroke=\"white",
-                "fill:#ffffff", "fill:#fff", "fill:#FFFFFF",
-                "fill=\"#ffffff", "fill=\"#fff", "fill=\"#FFFFFF"
-        );
-        List<String> validOpacities = Arrays.asList(
-                "stroke-opacity=\"0", "stroke-opacity=\"0%", "stroke-opacity=\"1",
-                "stroke-opacity=\"100%", "stroke-opacity:1", "stroke-opacity:0",
-                "fill-opacity=\"0", "fill-opacity=\"0%", "fill-opacity=\"1",
-                "fill-opacity=\"100%", "fill-opacity:1", "fill-opacity:0"
-        );
-        List<String> validStrokeWidth = Arrays.asList(
-                "stroke-width:1","stroke-width:1px","stroke-width:0px",
-                "stroke-width:0","stroke-width=\"1","stroke-width=\"0",
-                "stroke-width: 0px", "stroke-width: 1px"
-        );
-        List<String> validLineJoinCap = Arrays.asList(
-                "stroke-linejoin:round","stroke-linejoin=\"round","stroke-linejoin: round",
-                "stroke-linecap:round","stroke-linecap=\"round","stroke-linecap: round"
-        );
-
-        // Check for stroke and fill colors
-        checkAttributes(file, strokeColorMatcher, strokeAttr,validColors);
-        checkAttributes(file, fillColorMatcher, strokeAttr,validColors);
-        checkAttributes(file, strokeOpacityMatcher, strokeAttr,validOpacities);
-        checkAttributes(file, fillOpacityMatcher, strokeAttr,validOpacities);
-
-        checkAttributes(file, strokeWidthMatcher, strokeAttr,validStrokeWidth);
-        checkAttributes(file, lineCapMatcher, strokeAttr,validLineJoinCap);
-        checkAttributes(file, lineJoinMatcher, strokeAttr,validLineJoinCap);
-
-        checkRGBAAttributes(file, strokeRGBAMatcher, strokeAttr);
-        checkRGBAAttributes(file, fillRGBAMatcher, strokeAttr);
-
-    }
-
-    // Helper method to check color attributes
-    private static void checkAttributes(String file, Matcher matcher, Map<String, List<String>> strokeAttr,List <String> validAttributes) {
+    private static String applyAutoFixes(String content) {
+        Matcher matcher = STROKE_STRING_PATTERN.matcher(content);
+        StringBuilder result = new StringBuilder();
         while (matcher.find()) {
-            String attr = matcher.group();
-            if (!validAttributes.contains(attr.trim())) {
-                addToStrokeAttr(file, attr, strokeAttr);
+            matcher.appendReplacement(result, Matcher.quoteReplacement(replaceStroke(matcher)));
+        }
+        matcher.appendTail(result);
+        return result.toString();
+    }
+
+    private static void validateAttributes(String fileName, String content) {
+        ATTRIBUTE_VALIDATION_MAP.forEach((pattern, validSet) -> {
+            Matcher matcher = pattern.matcher(content);
+            while (matcher.find()) {
+                String attr = matcher.group().trim();
+                if (!validSet.contains(attr)) {
+                    violations.add(new Violation("SVG Attribute", fileName, "Invalid value: " + attr));
+                }
+            }
+        });
+
+        for (Pattern rgbaPattern : RGBA_PATTERNS) {
+            Matcher matcher = rgbaPattern.matcher(content);
+            while (matcher.find()) {
+                String rgba = matcher.group();
+                if (!isValidRGBA(rgba)) {
+                    violations.add(new Violation("SVG RGBA", fileName, "Invalid color: " + rgba));
+                }
             }
         }
     }
 
-    // Helper method to check rgba attributes
-    private static void checkRGBAAttributes(String file, Matcher matcher, Map<String, List<String>> strokeAttr) {
-        while (matcher.find()) {
-            String rgba = matcher.group();
-            if (!isValidRGBA(rgba)) {
-                addToStrokeAttr(file, rgba, strokeAttr);
-            }
-        }
-    }
-
-    // Check if the RGBA is valid (specific checks for rgba(255,255,255) or opacity of 0 or 1)
     private static boolean isValidRGBA(String rgba) {
-        return !(rgba.contains("rgba(255,255,255") || rgba.endsWith(",0)") || rgba.endsWith(",1)"));
+        String clean = rgba.replaceAll("\\s", "");
+        return clean.contains("rgba(255,255,255,1)") || clean.contains(",0)") || clean.contains(",0.0)");
     }
 
-    // Check if the attribute is valid (stroke-width, linecap, etc.)
-    private static boolean isValidAttribute(String attribute, String attributeName) {
-        if ("stroke-width".equals(attributeName)) {
-            return !attribute.equals("stroke-width:1") && !attribute.equals("stroke-width=0");
-        } else if ("stroke-linecap".equals(attributeName) || "stroke-linejoin".equals(attributeName)) {
-            return attribute.equals("stroke-linecap: round") || attribute.equals("stroke-linejoin: round") ||attribute.equals("stroke-linecap:round") || attribute.equals("stroke-linejoin:round");
-        }
-        return true;
-    }
-
-    // Add attribute to strokeAttr map
-    private static void addToStrokeAttr(String file, String attribute, Map<String, List<String>> strokeAttr) {
-        strokeAttr.computeIfAbsent(file, k -> new ArrayList<>()).add(attribute);
-    }
-
-    // Helper method to replace stroke-width values
     private static String replaceStroke(Matcher matcher) {
         String strokeStr = matcher.group("strokestr");
-        double strokeWidth = Double.parseDouble(matcher.group("number"));
-
-
-        if (strokeWidth > 0.9 && strokeWidth < 1.2) {
-            return strokeStr + "1";  // Append '1' to the stroke width
-        } else if (strokeWidth >= 0 && strokeWidth < 0.3) {
-            return strokeStr +"0";  // Append '0' to the stroke width
-        } else {
-            return strokeStr + matcher.group("number");  // No change to the stroke width
+        try {
+            double strokeWidth = Double.parseDouble(matcher.group("number"));
+            if (strokeWidth > 0.9 && strokeWidth < 1.2) return strokeStr + "1";
+            if (strokeWidth >= 0 && strokeWidth < 0.3) return strokeStr + "0";
+        } catch (NumberFormatException ignored) {
         }
+        return strokeStr + matcher.group("number");
     }
 
+    private static Document parseXml(String path) {
+        try {
+            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+            Document doc = dBuilder.parse(new File(path));
+            doc.getDocumentElement().normalize();
+            return doc;
+        } catch (Exception e) {
+            violations.add(new Violation("XML Parse", path, "Malformed XML structure"));
+            return null;
+        }
+    }
 }
