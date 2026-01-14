@@ -1,91 +1,80 @@
 package com.donnnno.arcticons.helper;
 
-import static java.lang.System.getProperty;
-
-import java.io.*;
+import java.io.IOException;
 import java.nio.file.*;
 import java.util.*;
-import java.util.regex.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.util.stream.Stream;
 
 public class NewDrawableXmlCreator {
 
+    private static final Pattern DRAWABLE_PATTERN = Pattern.compile("drawable=\"([\\w_]+)\"");
+    private static final Locale LOCALE = Locale.ROOT;
+
     public static void main(String[] args) {
+        String rootDir = System.getProperty("user.dir");
+        if (Paths.get(rootDir).getFileName().toString().equals("preparehelper")) {
+            rootDir = "..";
+        }
+
+        String generatedDir = rootDir + "/generated";
+        String newIconsDir = rootDir + "/newicons";
+
         try {
-            //String
-            String rootDir = getProperty("user.dir");
-            // Get the path of the root directory
-            Path rootPath = Paths.get(rootDir);
-            // Get the name of the root directory
-            String rootDirName = rootPath.getFileName().toString();
-            if (rootDirName.equals("preparehelper")) {
-                rootDir = "..";
-            }
-            String valuesDir = rootDir + "/app/src/main/res/values";
-            String appFilter = rootDir + "/newicons/appfilter.xml";
-            String changelogXml = valuesDir + "/changelog.xml";
-            String generatedDir = rootDir + "/generated";
-            String sourceDir = rootDir + "/icons/white";
-            String newIconsDir = rootDir + "/newicons";
-
-            createNewDrawables(newIconsDir, generatedDir+"/newDrawables.xml", true);
+            createNewDrawables(newIconsDir, generatedDir + "/newdrawables.xml", true);
         } catch (IOException e) {
-            System.out.println("Error occurred: " + e.getMessage());
+            System.err.println("Failed to create new drawables XML: " + e.getMessage());
         }
     }
 
-    public static void createNewDrawables(String svgDir, String newDrawablesPath, Boolean newRelease) throws IOException {
-        // Regex for matching drawable="..." in XML files
-        Pattern drawablePattern = Pattern.compile("drawable=\"([\\w_]+)\"");
+    public static void createNewDrawables(String svgDir, String outputPath, boolean isNewRelease) throws IOException {
+        // 1. Use a TreeSet to keep names unique and automatically sorted (A-Z)
+        Set<String> newDrawables = new TreeSet<>();
 
-        // Set to hold new drawables
-        Set<String> newDrawables = new HashSet<>();
+        Path outPath = Paths.get(outputPath);
 
-        if (!newRelease) {
-            // Read existing drawables from the newDrawables file if it exists
-            File newDrawablesFile = new File(newDrawablesPath);
-            if (newDrawablesFile.exists()) {
-                try (BufferedReader reader = new BufferedReader(new FileReader(newDrawablesPath))) {
-                    String line;
-                    while ((line = reader.readLine()) != null) {
-                        Matcher matcher = drawablePattern.matcher(line);
-                        if (matcher.find()) {
-                            newDrawables.add(matcher.group(1));
-                        }
-                    }
+        // 2. If not a fresh release, load current "new" icons first
+        if (!isNewRelease && Files.exists(outPath)) {
+            try {
+                String existingContent = Files.readString(outPath);
+                Matcher matcher = DRAWABLE_PATTERN.matcher(existingContent);
+                while (matcher.find()) {
+                    newDrawables.add(matcher.group(1));
                 }
+            } catch (IOException e) {
+                System.err.println("Warning: Could not read existing newDrawables.xml");
             }
         }
 
-
-        // Add drawables from SVG files in the specified directory
-        try (Stream<Path> paths = Files.walk(Paths.get(svgDir))) {
-            paths.filter(path -> path.toString().endsWith(".svg"))
-                    .forEach(path -> {
-                        String fileName = path.getFileName().toString();
-                        String nameWithoutExtension = fileName.substring(0, fileName.length() - 4);
-                        newDrawables.add(nameWithoutExtension);
-                    });
-        }
-
-
-        // Sort the drawables
-        List<String> sortedNewDrawables = new ArrayList<>(newDrawables);
-        Collections.sort(sortedNewDrawables);
-
-        // Write the new drawables to the XML file
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(newDrawablesPath))) {
-            writer.write("<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<resources>\n\t<version>1</version>\n\t<category title=\"New\" />\n");
-            String drawablePre = "\t<item drawable=\"";
-            String drawableSuf = "\" />\n";
-            for (String drawable : sortedNewDrawables) {
-                writer.write(drawablePre + drawable + drawableSuf);
+        // 3. Scan the newicons directory for SVG files
+        Path svgPath = Paths.get(svgDir);
+        if (Files.exists(svgPath)) {
+            try (Stream<Path> paths = Files.walk(svgPath)) {
+                paths.filter(path -> path.toString().toLowerCase(LOCALE).endsWith(".svg"))
+                        .forEach(path -> {
+                            String fileName = path.getFileName().toString();
+                            // Better extension removal
+                            String name = fileName.substring(0, fileName.lastIndexOf('.'));
+                            newDrawables.add(name);
+                        });
             }
-            writer.write("</resources>\n");
         }
 
-        // Print the number of new icons
-        System.out.println("There are " + newDrawables.size() + " new icons");
+        // 4. Generate the XML output
+        StringBuilder xml = new StringBuilder();
+        xml.append("<?xml version=\"1.0\" encoding=\"utf-8\"?>\n");
+        xml.append("<resources>\n\t<version>1</version>\n\t<category title=\"New\" />\n");
+
+        for (String drawable : newDrawables) {
+            xml.append(String.format(LOCALE, "\t<item drawable=\"%s\" />\n", drawable));
+        }
+        xml.append("</resources>\n");
+
+        // 5. Ensure parent directories exist and write file
+        Files.createDirectories(outPath.getParent());
+        Files.writeString(outPath, xml.toString());
+
+        System.out.printf(LOCALE, "Successfully processed %d new icons.%n", newDrawables.size());
     }
-
 }
