@@ -49,7 +49,7 @@ public class PrepareRelease {
                     startChecks(appFilter, sourceDir, newIconsDir);
                     createNewDrawables(newIconsDir, generatedDir+"/newDrawables.xml", false);
                     createWebpIcons(newIconsDir,sourceDir, blackDir, exportWhiteDir, exportBlackDir);
-                    sortXML(appFilter);
+                    sortXML(Paths.get(appFilter));
                     try {
                         ContributorImage.start(assetsDir, contributorsXml, xmlDir);
                         System.out.println("Contributor Image task completed");
@@ -69,7 +69,7 @@ public class PrepareRelease {
                     startChecks(appFilter, sourceDir, newIconsDir);
                     createNewDrawables(newIconsDir, generatedDir+"/newDrawables.xml", true);
                     createWebpIcons(newIconsDir,sourceDir, blackDir, exportWhiteDir, exportBlackDir);
-                    sortXML(appFilter);
+                    sortXML(Paths.get(appFilter));
                     try {
                         ContributorImage.start(assetsDir, contributorsXml, xmlDir);
                         System.out.println("Contributor Image task completed");
