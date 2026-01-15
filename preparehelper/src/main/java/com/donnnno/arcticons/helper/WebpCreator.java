@@ -1,164 +1,146 @@
 package com.donnnno.arcticons.helper;
 
-import java.io.*;
-import java.nio.file.*;
-import java.util.regex.*;
+import org.apache.batik.transcoder.TranscoderException;
 import org.apache.batik.transcoder.TranscoderInput;
 import org.apache.batik.transcoder.TranscoderOutput;
 import org.apache.batik.transcoder.image.PNGTranscoder;
-import org.apache.batik.transcoder.TranscoderException;
 
-
-import java.awt.image.BufferedImage;
-import java.nio.file.attribute.BasicFileAttributes;
-import java.util.List;
 import javax.imageio.ImageIO;
-
+import java.awt.image.BufferedImage;
+import java.io.*;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.*;
+import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.regex.Pattern;
+import java.util.stream.Stream;
 
 public class WebpCreator {
 
-    public static void createWebpIcons(String newIconsDir, String whiteDir, String blackDir, String exportWhiteDir, String exportBlackDir){
-        try {
-        // Define original color matching patterns
-        final String ORIGINAL_STROKE = "stroke\\s*:\\s*(#FFFFFF|#ffffff|#fff|white|rgb\\(255,255,255\\)|rgba\\(255,255,255,1\\.\\d*\\))";
-        final String ORIGINAL_STROKE_ALT = "stroke\\s*=\"\\s*(#FFFFFF|#ffffff|#fff|white|rgb\\(255,255,255\\)|rgba\\(255,255,255,1\\.\\d*\\))\"";
-        final String ORIGINAL_FILL = "fill\\s*:\\s*(#FFFFFF|#ffffff|#fff|white|rgb\\(255,255,255\\)|rgba\\(255,255,255,1\\.\\d*\\))";
-        final String ORIGINAL_FILL_ALT = "fill\\s*=\"\\s*(#FFFFFF|#ffffff|#fff|white|rgb\\(255,255,255\\)|rgba\\(255,255,255,1\\.\\d*\\))\"";
+    // 1. Capture the opening quote (if any) into Group 1 using ("?)
+    // 2. Use \\1 at the end to ensure we only match a closing quote if we found an opening one.
+    private static final String COLOR_REGEX = "(#FFFFFF|#ffffff|#fff|white|rgb\\(255,255,255\\)|rgba\\(255,255,255,1\\.\\d*\\))";
 
-        // Define replacement strings
-        final String REPLACE_STROKE_WHITE = "stroke:#fff";
-        final String REPLACE_STROKE_WHITE_ALT = "stroke=\"#fff\"";
-        final String REPLACE_FILL_WHITE = "fill:#fff";
-        final String REPLACE_FILL_WHITE_ALT = "fill=\"#fff\"";
-        final String REPLACE_STROKE_BLACK = "stroke:#000";
-        final String REPLACE_STROKE_BLACK_ALT = "stroke=\"#000\"";
-        final String REPLACE_FILL_BLACK = "fill:#000";
-        final String REPLACE_FILL_BLACK_ALT = "fill=\"#000\"";
+    // Pattern:  attribute  separator  (quote?)   color    (matching quote)
+    private static final Pattern STROKE_PATTERN = Pattern.compile("stroke\\s*[:=]\\s*(\"?)\\s*" + COLOR_REGEX + "\\1", Pattern.CASE_INSENSITIVE);
+    private static final Pattern FILL_PATTERN   = Pattern.compile("fill\\s*[:=]\\s*(\"?)\\s*" + COLOR_REGEX + "\\1", Pattern.CASE_INSENSITIVE);
 
-        final List<Integer> SIZES = List.of(256);
+    public static void createWebpIcons(String newIconsDir, String whiteDir, String blackDir, String exportWhiteDir, String exportBlackDir) {
+        Path sourceDir = Path.of(newIconsDir);
 
-        svgColors(newIconsDir, ORIGINAL_STROKE, ORIGINAL_FILL, ORIGINAL_STROKE_ALT, ORIGINAL_FILL_ALT, REPLACE_STROKE_WHITE, REPLACE_FILL_WHITE, REPLACE_STROKE_WHITE_ALT, REPLACE_FILL_WHITE_ALT);
-        createIcons(SIZES, newIconsDir, exportWhiteDir, whiteDir, "White");
-        svgColors(newIconsDir, ORIGINAL_STROKE, ORIGINAL_FILL, ORIGINAL_STROKE_ALT, ORIGINAL_FILL_ALT, REPLACE_STROKE_BLACK, REPLACE_FILL_BLACK, REPLACE_STROKE_BLACK_ALT, REPLACE_FILL_BLACK_ALT);
-        createIcons(SIZES, newIconsDir, exportBlackDir, blackDir, "Black");
-        removeSvg(newIconsDir);
-        } catch (IOException e) {
-            System.out.println("Error occurred: " + e.getMessage());
-        }
-    }
+        try (Stream<Path> files = Files.list(sourceDir)) {
+            List<Path> svgFiles = files
+                    .filter(p -> p.toString().endsWith(".svg"))
+                    .toList();
 
-
-
-    public static void svgColors(String dir, String stroke, String fill, String strokeAlt, String fillAlt,
-                                 String replaceStroke, String replaceFill, String replaceStrokeAlt, String replaceFillAlt) throws IOException {
-
-        // Define regex patterns to match the colors (stroke and fill)
-        Pattern strokePattern = Pattern.compile(stroke, Pattern.CASE_INSENSITIVE);
-        Pattern fillPattern = Pattern.compile(fill, Pattern.CASE_INSENSITIVE);
-        Pattern strokeAltPattern = Pattern.compile(strokeAlt, Pattern.CASE_INSENSITIVE);
-        Pattern fillAltPattern = Pattern.compile(fillAlt, Pattern.CASE_INSENSITIVE);
-
-        // Iterate through all SVG files in the directory
-        try (DirectoryStream<Path> stream = Files.newDirectoryStream(Paths.get(dir), "*.svg")) {
-            for (Path path : stream) {
-                String content = Files.readString(path);
-
-                // Replace colors based on the provided rules
-                content = strokePattern.matcher(content).replaceAll(replaceStroke);
-                content = fillPattern.matcher(content).replaceAll(replaceFill);
-                content = strokeAltPattern.matcher(content).replaceAll(replaceStrokeAlt);
-                content = fillAltPattern.matcher(content).replaceAll(replaceFillAlt);
-
-                // Write the updated content back to the file
-                Files.writeString(path, content);
+            if (svgFiles.isEmpty()) {
+                System.out.println("No SVG files found in " + newIconsDir);
+                return;
             }
-        }
-    }
 
-    public static void createIcons(List<Integer> sizes, String dir, String exportDir, String iconDir, String mode) {
-        System.out.println("Working on " + mode);
+            System.out.println("Processing " + svgFiles.size() + " icons in Parallel...");
+            AtomicInteger counter = new AtomicInteger(0);
 
-        try {
-            Files.walkFileTree(Paths.get(dir), new SimpleFileVisitor<>() {
-                @Override
-                public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
-                    if (file.toString().endsWith(".svg")) {
-                        String fileName = file.getFileName().toString();
-                        String name = fileName.substring(0, fileName.length() - 4);  // Remove '.svg'
+            // Parallel stream handles both White and Black conversions simultaneously
+            svgFiles.parallelStream().forEach(path -> {
+                try {
+                    String originalXml = Files.readString(path);
+                    String fileName = path.getFileName().toString();
+                    String nameWithoutExt = fileName.replace(".svg", "");
 
-                        // Copy the file to iconDir
-                        Path destinationPath = Paths.get(iconDir, fileName);
-                        Files.copy(file, destinationPath, StandardCopyOption.REPLACE_EXISTING);
+                    // 1. Process White Variant
+                    processVariant(originalXml, "White",
+                            Path.of(whiteDir, fileName),
+                            Path.of(exportWhiteDir, nameWithoutExt + ".webp"));
 
-                        for (Integer size : sizes) {
-                            try {
-                                // Convert the SVG directly to WebP
-                                File svgFile = file.toFile();
-                                File webpFile = new File(exportDir + "/" + name + ".webp");
+                    // 2. Process Black Variant
+                    processVariant(originalXml, "Black",
+                            Path.of(blackDir, fileName),
+                            Path.of(exportBlackDir, nameWithoutExt + ".webp"));
 
-                                // Transcode SVG to BufferedImage (with specified size)
-                                BufferedImage image = convertSvgToImage(svgFile, size, size);
+                    // Progress update
+                    int c = counter.incrementAndGet();
+                    if (c % 10 == 0) System.out.print("\rProcessed: " + c + "/" + svgFiles.size());
 
-                                // Save as WebP using WebPImageIO
-                                try {
-                                    ImageIO.write(image, "webp", webpFile);
-                                } catch (IOException e) {
-                                    System.err.println("Error occurred: " + e.getMessage());
-                                }
+                    // Cleanup original SVG
+                    Files.deleteIfExists(path);
 
-                            } catch (Exception e) {
-                                System.err.println("Error processing " + file + ": " + e.getMessage());
-                            }
-                        }
-                    }
-                    return FileVisitResult.CONTINUE;
+                } catch (IOException e) {
+                    System.err.println("Failed to process " + path + ": " + e.getMessage());
                 }
             });
+
+            System.out.println("\nCompleted.");
+
         } catch (IOException e) {
-            System.err.println("Error occurred: " + e.getMessage());
+            System.err.println("Error listing files: " + e.getMessage());
         }
     }
 
-    private static BufferedImage convertSvgToImage(File svgFile, int width, int height) throws IOException, TranscoderException {
-        // Initialize Batik's PNGTranscoder to handle SVG to PNG conversion
-        PNGTranscoder transcoder = new PNGTranscoder();
+    private static void processVariant(String xmlContent, String mode, Path svgDest, Path webpDest) {
+        try {
+            // Apply color transformation in memory
+            String modifiedXml = switch (mode) {
+                case "White" -> applyColors(xmlContent, "#fff");
+                case "Black" -> applyColors(xmlContent, "#000");
+                default -> xmlContent;
+            };
 
-        // Set the transcoder input (SVG file)
-        TranscoderInput input = new TranscoderInput(svgFile.toURI().toString());
-        // Set the output size (width and height)
-        transcoder.addTranscodingHint(PNGTranscoder.KEY_WIDTH, (float) width);
-        transcoder.addTranscodingHint(PNGTranscoder.KEY_HEIGHT, (float) height);
+            // Save modified SVG to its specific directory (e.g. /white/icon.svg)
+            Files.writeString(svgDest, modifiedXml, StandardCharsets.UTF_8);
 
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        // Use the image's graphics context to draw the resulting image
-        TranscoderOutput output = new TranscoderOutput(baos);
+            // Convert in-memory XML directly to WebP (no need to read the file we just wrote)
+            convertSvgStringToWebp(modifiedXml, webpDest);
 
-        // Convert SVG to BufferedImage
-        transcoder.transcode(input,output);
-        return ImageIO.read(new ByteArrayInputStream(baos.toByteArray()));
+        } catch (Exception e) {
+            System.err.println("Error processing " + mode + " variant: " + e.getMessage());
+        }
     }
 
-    public static void removeSvg(String dir) {
-        File directory = new File(dir);
+    private static String applyColors(String content, String hexColor) {
+        // Prepare replacement strings
+        String cssStyle = "fill:" + hexColor;      // for style="fill:..."
+        String xmlAttr  = "fill=\"" + hexColor + "\""; // for fill="..."
 
-        // Check if the directory exists and is actually a directory
-        if (directory.exists() && directory.isDirectory()) {
-            // Get all files in the directory
-            File[] files = directory.listFiles((dir1, name) -> name.endsWith(".svg"));
+        // 1. Replace Fill
+        content = FILL_PATTERN.matcher(content).replaceAll(matchResult -> {
+            // If the match contains '=', it was likely an XML attribute (fill="#fff")
+            // Otherwise, it was CSS inside a style tag (fill:#fff)
+            return matchResult.group().contains("=") ? xmlAttr : cssStyle;
+        });
 
-            // Iterate through the files and delete each one
-            if (files != null) {
-                for (File file : files) {
-                    if (file.delete()) {
-                        System.out.println("Deleted: " + file.getName());
-                    } else {
-                        System.out.println("Failed to delete: " + file.getName());
-                    }
+        // 2. Replace Stroke (Update strings for stroke)
+        String cssStroke = "stroke:" + hexColor;
+        String xmlStroke = "stroke=\"" + hexColor + "\"";
+
+        content = STROKE_PATTERN.matcher(content).replaceAll(matchResult -> {
+            return matchResult.group().contains("=") ? xmlStroke : cssStroke;
+        });
+
+        return content;
+    }
+
+    private static void convertSvgStringToWebp(String svgXml, Path outputPath) throws IOException, TranscoderException {
+        // Use Batik Transcoder
+        PNGTranscoder transcoder = new PNGTranscoder();
+        transcoder.addTranscodingHint(PNGTranscoder.KEY_WIDTH, 256f);
+        transcoder.addTranscodingHint(PNGTranscoder.KEY_HEIGHT, 256f);
+
+        // Feed XML string directly to Transcoder (avoiding disk I/O)
+        try (Reader reader = new StringReader(svgXml);
+             ByteArrayOutputStream pngStream = new ByteArrayOutputStream()) {
+
+            TranscoderInput input = new TranscoderInput(reader);
+            TranscoderOutput output = new TranscoderOutput(pngStream);
+            transcoder.transcode(input, output);
+
+            // Convert PNG stream to BufferedImage
+            try (ByteArrayInputStream bais = new ByteArrayInputStream(pngStream.toByteArray())) {
+                BufferedImage image = ImageIO.read(bais);
+                if (image != null) {
+                    ImageIO.write(image, "webp", outputPath.toFile());
                 }
             }
-        } else {
-            System.out.println("Directory not found or not a directory.");
         }
     }
-
 }

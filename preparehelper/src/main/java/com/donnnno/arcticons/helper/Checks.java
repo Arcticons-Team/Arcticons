@@ -30,6 +30,7 @@ public class Checks {
     private static final Pattern STROKE_WIDTH_PATTERN = Pattern.compile("stroke-width(?:=\"|:) ?.*?(?=[\"; ])");
     private static final Pattern LINE_CAP_PATTERN = Pattern.compile("stroke-linecap(?:=\"|:).*?(?=[\";}])");
     private static final Pattern LINE_JOIN_PATTERN = Pattern.compile("stroke-linejoin(?:=\"|:).*?(?=[\";}])");
+    private static final Pattern EMPTY_MARKER_PATTERN = Pattern.compile("marker-(?:start|mid|end)\\s*=\\s*\"\\s*\"");
 
     // --- VALIDATION SETS ---
     private static final Set<String> validColors = Set.of("stroke:#ffffff", "stroke:#fff", "stroke:#FFFFFF", "stroke=\"#ffffff", "stroke=\"#fff", "stroke=\"#FFFFFF", "stroke=\"white", "fill:#ffffff", "fill:#fff", "fill:#FFFFFF", "fill=\"#ffffff", "fill=\"#fff", "fill=\"#FFFFFF");
@@ -190,6 +191,10 @@ public class Checks {
                 }
             }
         });
+        Matcher markerMatcher = EMPTY_MARKER_PATTERN.matcher(content);
+        if (markerMatcher.find()) {
+            violations.add(new Violation("SVG Quality", fileName, "Empty marker attribute found (e.g., marker-end=\"\"). Please remove it."));
+        }
 
         for (Pattern rgbaPattern : RGBA_PATTERNS) {
             Matcher matcher = rgbaPattern.matcher(content);
