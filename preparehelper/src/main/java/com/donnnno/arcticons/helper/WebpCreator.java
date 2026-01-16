@@ -17,11 +17,7 @@ import java.util.stream.Stream;
 
 public class WebpCreator {
 
-    // 1. Capture the opening quote (if any) into Group 1 using ("?)
-    // 2. Use \\1 at the end to ensure we only match a closing quote if we found an opening one.
     private static final String COLOR_REGEX = "(#FFFFFF|#ffffff|#fff|white|rgb\\(255,255,255\\)|rgba\\(255,255,255,1\\.\\d*\\))";
-
-    // Pattern:  attribute  separator  (quote?)   color    (matching quote)
     private static final Pattern STROKE_PATTERN = Pattern.compile("stroke\\s*[:=]\\s*(\"?)\\s*" + COLOR_REGEX + "\\1", Pattern.CASE_INSENSITIVE);
     private static final Pattern FILL_PATTERN   = Pattern.compile("fill\\s*[:=]\\s*(\"?)\\s*" + COLOR_REGEX + "\\1", Pattern.CASE_INSENSITIVE);
 
