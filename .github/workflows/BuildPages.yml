@@ -250,7 +250,7 @@ jobs:
             images:
               - 'docs/extracted_png/**'
             requests:
-              - 'docs/assets/requests.txt'
+              - 'docs/assets/requests.json'
           base: ${{vars.PAGES_BRANCH}}
   Create_Colormappping:
     name: Create Colormapping
@@ -387,7 +387,9 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python .github/workflows/combine_appfilter.py
       - name: Move combinded Appfilter
-        run: mv combined_appfilter.json docs/assets/combined_appfilter.json
+        run: |
+          mv combined_appfilter.json docs/assets/combined_appfilter.json
+          mv package_map.json docs/assets/package_map.json
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact

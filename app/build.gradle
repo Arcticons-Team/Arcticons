@@ -107,7 +107,8 @@ android {
         black { res.srcDirs = ['src/blackFree/res/', 'src/black/res'] }
         blackPlay { res.srcDirs = ['src/blackPlay/res/', 'src/black/res'] }
 		you { res.srcDirs = ['src/youFree/res/', 'src/you/res'] }
-        youPlay { res.srcDirs = ['src/youPlay/res/', 'src/you/res'] }
+        youPlay { res.srcDirs = ['src/youPlay/res/', 'src/you/res']
+                manifest.srcFile 'src/you/AndroidManifest.xml'}
         dayNight { res.srcDirs = ['src/dayNightFree/res/', 'src/dayNight/res'] }
     }
 
