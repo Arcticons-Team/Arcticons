@@ -369,6 +369,8 @@ jobs:
       # Run if icons change on main branch, or if triggered manually
       if: ${{github.repository == vars.REPOSITORY && ((github.event_name == 'push' && contains(github.event.commits.*.modified, 'icons/')) ||(github.event_name == 'workflow_dispatch' && inputs.run_codeberg_sync == true))}}
       runs-on: ubuntu-latest
+      environment:
+        name: Codeberg Icon Sync
       steps:
         - name: Checkout Repository
           uses: actions/checkout@v6
