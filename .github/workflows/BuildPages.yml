@@ -381,7 +381,11 @@ jobs:
           uses: shimataro/ssh-key-action@v2
           with:
             key: ${{ secrets.SSH_KEY }}
-            known_hosts: "codeberg.org ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIn9uS7L079E3zGfInJmXjW5mYV7pG3L8zW8L+2Tz/4D"
+            known_hosts: |
+                codeberg.org ssh-ed25519 mIlxA9k46MmM6qdJOdMnAQpzGxF4WIVVL+fj+wZbw0g
+                codeberg.org ssh-ecdsa T9FYDEHELhVkulEKKwge5aVhVTbqCW0MIRwAfpARs/E
+                codeberg.org ssh-rsa 6QQmYi4ppFS4/+zSZ5S4IU+4sa6rwvQ4PbhCtPEBekQ
+
             if_key_exists: fail
 
         - name: Push Subtree
