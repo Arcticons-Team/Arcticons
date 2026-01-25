@@ -390,7 +390,7 @@ jobs:
 
         - name: Push Subtree
           run: |
-            git subtree push \
+            git -c diff.renames=false subtree push \
               --prefix=icons \
               git@codeberg.org:Arcticons/Icons.git \
               main
