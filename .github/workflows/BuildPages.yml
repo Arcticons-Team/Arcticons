@@ -11,6 +11,7 @@ on:
     paths:
       - 'docs/**'
       - 'newicons/appfilter.xml'
+      - 'icons/**'
   schedule:
     # * is a special character in YAML so you have to quote this string
     - cron: '30 5 * * 0,3'
@@ -43,6 +44,11 @@ on:
         default: false
       run_build_pages:
         description: "Run parse_and_combine job"
+        type: boolean
+        required: false
+        default: false
+      run_codeberg_sync:
+        description: "Sync icons/ to Codeberg"
         type: boolean
         required: false
         default: false
@@ -357,6 +363,31 @@ jobs:
         run: |
           git commit -m "Automated updates from Colormappping and Requestjson jobs"
           git push
+
+  Sync_to_Codeberg:
+      name: Sync icons subtree to Codeberg
+      # Run if icons change on main branch, or if triggered manually
+      if: ${{github.repository == vars.REPOSITORY && ((github.event_name == 'push' && contains(github.event.commits.*.modified, 'icons/')) ||(github.event_name == 'workflow_dispatch' && inputs.run_codeberg_sync == true))}}
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout Repository
+          uses: actions/checkout@v6
+          with:
+            fetch-depth: 0 # Subtree requires full history
+
+        - name: Install SSH Key
+          uses: shimataro/ssh-key-action@v2
+          with:
+            key: ${{ secrets.CODEBERG_SSH_KEY }}
+            known_hosts: "codeberg.org ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIn9uS7L079E3zGfInJmXjW5mYV7pG3L8zW8L+2Tz/4D"
+            if_key_exists: fail
+
+        - name: Push Subtree
+          run: |
+            git subtree push \
+              --prefix=icons \
+              git@codeberg.org:Arcticons/Icons.git \
+              main
   parse_and_combine:
     name: Parse and Combine Appfilter
     needs: [check_appfilter, Push_Files, fetch_and_push_file, Update_Requests, Check_FilePath]
