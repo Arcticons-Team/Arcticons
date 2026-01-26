@@ -23,7 +23,7 @@ jobs:
       existsnot: ${{ steps.check.outputs.existsnot }}
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           ref: ${{ env.BASE_BRANCH }}
           sparse-checkout: |
@@ -51,7 +51,7 @@ jobs:
       pull-requests: write
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           ref: ${{ env.BASE_BRANCH }}
           sparse-checkout: |
@@ -64,7 +64,7 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: '3.x'
           cache: 'pip'
