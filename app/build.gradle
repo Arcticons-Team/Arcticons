@@ -26,11 +26,8 @@ android {
             signingConfig.setStoreFile(rootProject.file(keystoreProperties.getProperty("storeFile")))
             signingConfig.setStorePassword(keystoreProperties.getProperty("storePassword"))
         })
-    } else {releaseSigning = signingConfigs.getByName("debug") // Use getByName for safety
-}
-
-    buildFeatures {
-        buildConfig = true
+    } else {
+        releaseSigning = signingConfigs.getByName("debug") // Use getByName for safety
     }
 
     buildTypes {
