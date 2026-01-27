@@ -1,4 +1,6 @@
-apply plugin: 'com.android.application'
+plugins {
+    id 'com.android.application'
+}
 
 // build.gradle in the 'app' module
 
@@ -14,46 +16,37 @@ android {
         multiDexEnabled = true
     }
 
-    // Load keystore
+    signingConfigs {
+        release
+    }
+
     def keystorePropertiesFile = rootProject.file("keystore.properties")
-    def releaseSigning
-    if (keystorePropertiesFile.exists()){
+    if (keystorePropertiesFile.exists()) {
         def keystoreProperties = new Properties()
         keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
-        releaseSigning = signingConfigs.create("release", signingConfig -> {
-            signingConfig.setKeyAlias(keystoreProperties.getProperty("keyAlias"))
-            signingConfig.setKeyPassword(keystoreProperties.getProperty("keyPassword"))
-            signingConfig.setStoreFile(rootProject.file(keystoreProperties.getProperty("storeFile")))
-            signingConfig.setStorePassword(keystoreProperties.getProperty("storePassword"))
-        })
+
+        signingConfigs.named("release") {
+            keyAlias keystoreProperties["keyAlias"]
+            keyPassword keystoreProperties["keyPassword"]
+            storeFile rootProject.file(keystoreProperties["storeFile"])
+            storePassword keystoreProperties["storePassword"]
+        }
     } else {
-        releaseSigning = signingConfigs.getByName("debug") // Use getByName for safety
+        signingConfigs.named("release") {
+            initWith(signingConfigs.debug)
+        }
     }
+
 
     buildTypes {
         configureEach {
-            signingConfig = releaseSigning
+            signingConfig = signingConfigs.getByName("release")
         }
         release {
             minifyEnabled = false
         }
         debug {
             applicationIdSuffix = '.debug'
-        }
-
-
-        applicationVariants.all { variant ->
-
-            if (variant.flavorName == "you" || variant.flavorName == "youPlay") {
-                variant.preBuildProvider.get().dependsOn(":preparehelper:runyou")
-            } else if (variant.flavorName == "black" || variant.flavorName == "blackPlay") {
-                variant.preBuildProvider.get().dependsOn(":preparehelper:runblack")
-            }else if (variant.flavorName == "normal" || variant.flavorName == "normalPlay") {
-                variant.preBuildProvider.get().dependsOn(":preparehelper:runnormal")
-            }else if (variant.flavorName == "dayNight") {
-            variant.preBuildProvider.get().dependsOn(":preparehelper:rundayNight")
-        }
-            // Add more conditions for additional flavors
         }
     }
 
@@ -139,6 +132,29 @@ android {
     }
 }
 
+androidComponents {
+    onVariants(selector().all()) { variant ->
+        def flavor = variant.flavorName
+        def helperTaskName = null
+
+        if (flavor.contains("you")) {
+            helperTaskName = "runyou"
+        } else if (flavor.contains("black")) {
+            helperTaskName = "runblack"
+        } else if (flavor.contains("normal")) {
+            helperTaskName = "runnormal"
+        } else if (flavor.contains("dayNight")) {
+            helperTaskName = "rundayNight"
+        }
+
+        if (helperTaskName != null) {
+            tasks.named("preBuild") {
+                dependsOn(":preparehelper:${helperTaskName}")
+            }
+        }
+    }
+}
+
 dependencies {
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     normalPlayImplementation 'com.github.zixpo:candybar:main-SNAPSHOT'
@@ -156,24 +172,22 @@ import com.android.tools.profgen.DexFile
 
 // F-Droid Reproducible Build tasks
 
-project.afterEvaluate {
-    tasks.each { task ->
-        if (task.name.startsWith("compile") && task.name.endsWith("ReleaseArtProfile")) {
-            task.doLast {
-                outputs.files.each { file ->
-                    if (file.name.endsWith(".profm")) {
-                        println("Sorting ${file} ...")
-                        def version = ArtProfileSerializer.valueOf("METADATA_0_0_2")
-                        def profile = ArtProfileKt.ArtProfile(file)
-                        def keys = new ArrayList(profile.profileData.keySet())
-                        def sortedData = new LinkedHashMap()
-                        Collections.sort keys, new DexFile.Companion()
-                        keys.each { key -> sortedData[key] = profile.profileData[key] }
-                        new FileOutputStream(file).with {
-                            write(version.magicBytes$profgen)
-                            write(version.versionBytes$profgen)
-                            version.write$profgen(it, sortedData, "")
-                        }
+tasks.configureEach { task ->
+    if (task.name.startsWith("compile") && task.name.endsWith("ReleaseArtProfile")) {
+        task.doLast {
+            outputs.files.each { file ->
+                if (file.name.endsWith(".profm")) {
+                    println("Sorting ${file} ...")
+                    def version = ArtProfileSerializer.valueOf("METADATA_0_0_2")
+                    def profile = ArtProfileKt.ArtProfile(file)
+                    def keys = new ArrayList(profile.profileData.keySet())
+                    def sortedData = new LinkedHashMap()
+                    Collections.sort(keys, new DexFile.Companion())
+                    keys.each { key -> sortedData[key] = profile.profileData[key] }
+                    new FileOutputStream(file).with {
+                        write(version.magicBytes$profgen)
+                        write(version.versionBytes$profgen)
+                        version.write$profgen(it, sortedData, "")
                     }
                 }
             }

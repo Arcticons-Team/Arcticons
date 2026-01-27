@@ -10,6 +10,7 @@ tasks.register('runyou', JavaExec) {
     // Configure the task as needed
     mainClass = 'com.donnnno.arcticons.helper.Start'
     classpath = sourceSets.main.runtimeClasspath
+    workingDir = rootProject.projectDir
     // Other configurations...
     args = ['you']
     inputs.dir("../icons/white")
@@ -19,6 +20,7 @@ tasks.register('runblack', JavaExec) {
     // Configure the task as needed
     mainClass = 'com.donnnno.arcticons.helper.Start'
     classpath = sourceSets.main.runtimeClasspath
+    workingDir = rootProject.projectDir
     // Other configurations...
     args = ['black']
 }
@@ -26,6 +28,7 @@ tasks.register('runnormal', JavaExec) {
     // Configure the task as needed
     mainClass = 'com.donnnno.arcticons.helper.Start'
     classpath = sourceSets.main.runtimeClasspath
+    workingDir = rootProject.projectDir
     // Other configurations...
     args = ['normal']
 }
@@ -33,6 +36,7 @@ tasks.register('rundayNight', JavaExec) {
     // Configure the task as needed
     mainClass = 'com.donnnno.arcticons.helper.Start'
     classpath = sourceSets.main.runtimeClasspath
+    workingDir = rootProject.projectDir
     // Other configurations...
     args = ['dayNight']
     inputs.dir("../icons/white")
