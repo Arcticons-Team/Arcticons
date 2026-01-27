@@ -134,22 +134,25 @@ android {
 
 androidComponents {
     onVariants(selector().all()) { variant ->
-        def flavor = variant.flavorName
-        def helperTaskName = null
+        project.afterEvaluate {
 
-        if (flavor.contains("you")) {
-            helperTaskName = "runyou"
-        } else if (flavor.contains("black")) {
-            helperTaskName = "runblack"
-        } else if (flavor.contains("normal")) {
-            helperTaskName = "runnormal"
-        } else if (flavor.contains("dayNight")) {
-            helperTaskName = "rundayNight"
-        }
+            def flavor = variant.flavorName
+            def helperTaskName = null
 
-        if (helperTaskName != null) {
-            tasks.named("preBuild") {
-                dependsOn(":preparehelper:${helperTaskName}")
+            if (flavor.contains("you")) {
+                helperTaskName = "runyou"
+            } else if (flavor.contains("black")) {
+                helperTaskName = "runblack"
+            } else if (flavor.contains("normal")) {
+                helperTaskName = "runnormal"
+            } else if (flavor.contains("dayNight")) {
+                helperTaskName = "rundayNight"
+            }
+
+            if (helperTaskName != null) {
+                tasks.named("pre${variant.name.capitalize()}Build") {
+                    dependsOn(":preparehelper:${helperTaskName}")
+                }
             }
         }
     }
