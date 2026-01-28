@@ -6,6 +6,7 @@ import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class XMLCreator {
     private static final Pattern DRAWABLE_PATTERN = Pattern.compile("drawable=\"([\\w_]+)\"");
@@ -13,6 +14,18 @@ public class XMLCreator {
 
     public static void mergeNewDrawables(String valuesDir, String generatedDir, String assetPath, String iconsDir,
                                          String xmlDir, String appFilterPath) throws IOException {
+
+        // 1. Load all available icon names from the directory first
+        Set<String> availableIcons = new HashSet<>();
+        Path iconsPath = Paths.get(iconsDir);
+        if (Files.exists(iconsPath)) {
+            try (Stream<Path> stream = Files.list(iconsPath)) {
+                stream.map(p -> p.getFileName().toString())
+                        .filter(name -> name.contains("."))
+                        .map(name -> name.substring(0, name.lastIndexOf('.')))
+                        .forEach(availableIcons::add);
+            }
+        }
 
         Set<String> newDrawables = new TreeSet<>();
         Set<String> games = new TreeSet<>();
@@ -33,23 +46,17 @@ public class XMLCreator {
         categories.put("0-9", new TreeSet<>());
         categories.put("A-Z", new TreeSet<>());
 
-        // Load existing data
-        loadDrawablesFromXml(Paths.get(generatedDir, "newdrawables.xml"), newDrawables);
-        Path pathGames = Paths.get(generatedDir, "games.xml");
-        loadLinesToSet(pathGames, games);
-        Path pathSystem = Paths.get(generatedDir, "system.xml");
-        loadLinesToSet(pathSystem, system);
+        // 2. Load existing data, strictly filtering against availableIcons
+        loadDrawablesFromXml(Paths.get(generatedDir, "newdrawables.xml"), newDrawables, availableIcons);
 
-        // Classify all icons from the directory
-        Path iconsPath = Paths.get(iconsDir);
-        if (Files.exists(iconsPath)) {
-            try (var stream = Files.list(iconsPath)) {
-                stream.map(p -> p.getFileName().toString())
-                        .filter(name -> name.contains("."))
-                        .map(name -> name.substring(0, name.lastIndexOf('.')))
-                        .forEach(name -> classify(name, categories));
-            }
-        }
+        Path pathGames = Paths.get(generatedDir, "games.xml");
+        loadLinesToSet(pathGames, games, availableIcons);
+
+        Path pathSystem = Paths.get(generatedDir, "system.xml");
+        loadLinesToSet(pathSystem, system, availableIcons);
+
+        // 3. Classify all icons (using the already loaded set)
+        availableIcons.forEach(name -> classify(name, categories));
 
         // Save total count
         int totalIcons = categories.values().stream()
@@ -59,6 +66,7 @@ public class XMLCreator {
 
         createCustomIconCountFile(Paths.get(valuesDir, "custom_icon_count.xml"), totalIcons);
 
+        // Note: We write back the filtered lists. This cleans up the source files if items were deleted.
         Files.write(pathGames, games);
         Files.write(pathSystem, system);
 
@@ -97,19 +105,27 @@ public class XMLCreator {
         else categories.get("A-Z").add(name);
     }
 
-    private static void loadDrawablesFromXml(Path path, Set<String> target) {
+    private static void loadDrawablesFromXml(Path path, Set<String> target, Set<String> validIcons) {
         if (!Files.exists(path)) return;
         try {
             String content = Files.readString(path);
             Matcher m = DRAWABLE_PATTERN.matcher(content);
-            while (m.find()) target.add(m.group(1));
+            while (m.find()) {
+                String drawableName = m.group(1);
+                // Only add if it actually exists in the validIcons set
+                if (validIcons.contains(drawableName)) {
+                    target.add(drawableName);
+                }
+            }
         } catch (IOException ignored) {}
     }
 
-    private static void loadLinesToSet(Path path, Set<String> target) {
+    private static void loadLinesToSet(Path path, Set<String> target, Set<String> validIcons) {
         if (!Files.exists(path)) return;
-        try (var lines = Files.lines(path)) {
-            lines.filter(l -> !l.isBlank()).forEach(target::add);
+        try (Stream<String> lines = Files.lines(path)) {
+            lines.filter(l -> !l.isBlank())
+                    .filter(validIcons::contains) // Only add if it exists
+                    .forEach(target::add);
         } catch (IOException ignored) {}
     }
 
