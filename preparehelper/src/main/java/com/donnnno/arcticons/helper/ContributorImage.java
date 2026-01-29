@@ -6,131 +6,99 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 import java.awt.image.BufferedImage;
-import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.OutputStreamWriter;
 import java.net.URI;
-import java.net.URISyntaxException;
-import java.net.URL;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.Locale;
 
 import javax.imageio.ImageIO;
-import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
 public class ContributorImage {
 
-    public static void start(String assetsDir, String contributorsXml, String xmlFilePath) throws IOException {
+    private static final String WEBP = "webp";
+    private static final String PREFIX_ASSETS = "assets://";
 
+    public static void start(String assetsDir, String contributorsXml, String xmlOutputDir) throws IOException {
         StringBuilder output = new StringBuilder("<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<resources>\n");
-        xmlFilePath = xmlFilePath + "/contributors.xml";
-        extractImageUrls(output, contributorsXml, assetsDir);
+
+        // Ensure directory existence
+        Path outputPath = Paths.get(xmlOutputDir, "contributors.xml");
+        Files.createDirectories(outputPath.getParent());
+
+        processContributors(output, contributorsXml, assetsDir);
+
         output.append("\n</resources>");
-        writeOutput(xmlFilePath, output);
+        Files.writeString(outputPath, output.toString(), StandardCharsets.UTF_8);
     }
 
-
-    public static void writeOutput(String pathXml, StringBuilder output) throws IOException {
-        // Write to drawable.xml in res directory with UTF-8 encoding
-        try (BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(pathXml), StandardCharsets.UTF_8))) {
-            writer.write(output.toString());
-        }
-    }
-
-    public static BufferedImage downloadImages(String imageUrl) {
+    private static void processContributors(StringBuilder output, String contributorsXml, String assetsDir) {
         try {
-            URL url = new URI(imageUrl).toURL();
-            BufferedImage img = ImageIO.read(url);
-            if (img != null) {
-                //System.out.println("Downloaded image from: " + imageUrl);
-                return img;
-            }
-        } catch (IOException e) {
-            //System.err.println("Failed to download image from: " + imageUrl + " " + e.getMessage());
-            return null;
-        } catch (URISyntaxException e) {
-            throw new RuntimeException(e);
-        }
-        return null;
-    }
-
-    public static void saveImage(BufferedImage image, String imageName, String imagePath) throws IOException {
-        // Create the directory if it doesn't exist
-        try {
-            File directory = new File(imagePath + "/" + imageName).getParentFile();
-            if (!directory.exists()) {
-                boolean good = directory.mkdirs();
-                if (!good) {
-                    throw new IOException("Failed to create directory: " + directory.getAbsolutePath());
-                }
-            }
-        } catch (SecurityException e) {
-            throw new IOException("Failed to create directory: " + e.getMessage(), e);
-        }
-        try {
-            ImageIO.write(image, "webp", new File(imagePath + "/" + imageName));
-        } catch (IOException e) {
-            System.out.println("Error occurred: " + e.getMessage());
-        }
-    }
-
-    private static void appendCategory(StringBuilder output, String name, String contribution, String image, String link) {
-        output.append("\n\t<contributor\n\t\tname=\"").append(name)
-                .append("\"\n\t\tcontribution=\"").append(contribution)
-                .append("\"\n\t\timage=\"").append(image)
-                .append("\"\n\t\tlink=\"").append(link).append("\" />");
-    }
-
-    public static String setPlaceholderImage(int temp) {
-        //set random image to last digit of temp
-        int lastDigit = Math.abs(temp % 10);
-        return "assets://contributors/face_" + lastDigit + ".webp";
-    }
-
-    public static void extractImageUrls(StringBuilder output, String contributorsXml, String assetsDir) {
-        try {
-            File inputFile = new File(contributorsXml);
-            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
-            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-            Document doc = dBuilder.parse(inputFile);
+            Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(new File(contributorsXml));
             doc.getDocumentElement().normalize();
-
             NodeList nList = doc.getElementsByTagName("contributor");
 
-            for (int temp = 0; temp < nList.getLength(); temp++) {
-                Node nNode = nList.item(temp);
-                if (nNode.getNodeType() == Node.ELEMENT_NODE) {
-                    Element eElement = (Element) nNode;
-                    String name = eElement.getAttribute("name");
-                    String contribution = eElement.getAttribute("contribution");
-                    String imageURL = eElement.getAttribute("image");
-                    String link = eElement.getAttribute("link");
-                    if (link.startsWith("https://github.com/") && imageURL.isEmpty()) {
+            for (int i = 0; i < nList.getLength(); i++) {
+                Node node = nList.item(i);
+                if (node.getNodeType() == Node.ELEMENT_NODE) {
+                    Element el = (Element) node;
+
+                    String name = el.getAttribute("name");
+                    String contribution = el.getAttribute("contribution");
+                    String link = el.getAttribute("link");
+                    String imageURL = el.getAttribute("image");
+
+                    // 1. Auto-generate GitHub avatar link if image is missing
+                    if (imageURL.isEmpty() && link.startsWith("https://github.com/")) {
                         imageURL = link + ".png";
                     }
+
+                    // 2. Determine final image path
+                    String finalImagePath;
                     if (imageURL.isEmpty()) {
-                        imageURL = setPlaceholderImage(temp);
-                        appendCategory(output, name, contribution, imageURL, link);
-                    } else if (link.startsWith("assets://")) {
-                        appendCategory(output, name, contribution, imageURL, link);
+                        finalImagePath = getPlaceholderImage(i);
+                    } else if (imageURL.startsWith(PREFIX_ASSETS)) {
+                        finalImagePath = imageURL;
                     } else {
-                        BufferedImage image = downloadImages(imageURL);
-                        if (image != null) {
-                            String imageName = "contributors/downloaded/contributor_" + temp + ".webp";
-                            imageURL = "assets://" + imageName;
-                            saveImage(image, imageName, assetsDir);
-                            appendCategory(output, name, contribution, imageURL, link);
-                        } else {
-                            imageURL = setPlaceholderImage(temp);
-                            appendCategory(output, name, contribution, imageURL, link);
-                        }
+                        // 3. Download and convert external images
+                        String localName = String.format(Locale.ROOT, "contributors/downloaded/contributor_%d.webp", i);
+                        boolean success = downloadAndSave(imageURL, assetsDir, localName);
+                        finalImagePath = success ? PREFIX_ASSETS + localName : getPlaceholderImage(i);
                     }
+
+                    appendContributorTag(output, name, contribution, finalImagePath, link);
                 }
             }
         } catch (Exception e) {
-            System.out.println("Error occurred: " + e.getMessage());
+            System.err.println("Error processing contributors: " + e.getMessage());
         }
+    }
+
+    private static boolean downloadAndSave(String urlStr, String assetsDir, String localName) {
+        try {
+            BufferedImage image = ImageIO.read(URI.create(urlStr).toURL());
+            if (image == null) return false;
+
+            Path destination = Paths.get(assetsDir, localName);
+            Files.createDirectories(destination.getParent());
+
+            return ImageIO.write(image, WEBP, destination.toFile());
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    private static String getPlaceholderImage(int index) {
+        return String.format(Locale.ROOT, "assets://contributors/face_%d.webp", Math.abs(index % 10));
+    }
+
+    private static void appendContributorTag(StringBuilder sb, String name, String contribution, String image, String link) {
+        sb.append(String.format(Locale.ROOT,
+                "\n\t<contributor\n\t\tname=\"%s\"\n\t\tcontribution=\"%s\"\n\t\timage=\"%s\"\n\t\tlink=\"%s\" />",
+                name, contribution, image, link));
     }
 }

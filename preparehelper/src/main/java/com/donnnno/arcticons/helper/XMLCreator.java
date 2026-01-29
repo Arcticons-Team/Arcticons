@@ -1,203 +1,147 @@
 package com.donnnno.arcticons.helper;
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.FileWriter;
+
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.StandardCopyOption;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.List;
+import java.nio.file.*;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class XMLCreator {
-    private static List<String> newDrawables = new ArrayList<>();
-    private static List<String> games = new ArrayList<>();
-    private static List<String> system = new ArrayList<>();
-    private static List<String> drawables = new ArrayList<>();
-    private static List<String> folder = new ArrayList<>();
-    private static List<String> calendar = new ArrayList<>();
-    private static List<String> google = new ArrayList<>();
-    private static List<String> microsoft = new ArrayList<>();
-    private static List<String> emoji = new ArrayList<>();
-    private static List<String> numbers = new ArrayList<>();
-    private static List<String> letters = new ArrayList<>();
-    private static List<String> symbols = new ArrayList<>();
-    private static List<String> number = new ArrayList<>();
-    private static HashSet<String> allIcons = new HashSet<>();
+    private static final Pattern DRAWABLE_PATTERN = Pattern.compile("drawable=\"([\\w_]+)\"");
+    private static final Locale LOCALE = Locale.ROOT;
 
-    private static final Pattern drawablePattern = Pattern.compile("drawable=\"([\\w_]+)\"");
-
-    public static void mergeNewDrawables(String valuesDir,String generatedDir, String assetPath, String iconsDir,
+    public static void mergeNewDrawables(String valuesDir, String generatedDir, String assetPath, String iconsDir,
                                          String xmlDir, String appFilterPath) throws IOException {
-        //Read new drawables from File and add to list
-        try (BufferedReader reader = new BufferedReader(new FileReader(generatedDir+"/newdrawables.xml"))) {
-            String line;
-            while ((line = reader.readLine()) != null) {
-                Matcher matcher = drawablePattern.matcher(line);
-                if (matcher.find()) {
-                    newDrawables.add(matcher.group(1));
+
+        // 1. Load all available icon names from the directory first
+        Set<String> availableIcons = new HashSet<>();
+        Path iconsPath = Paths.get(iconsDir);
+        if (Files.exists(iconsPath)) {
+            try (Stream<Path> stream = Files.list(iconsPath)) {
+                stream.map(p -> p.getFileName().toString())
+                        .filter(name -> name.contains("."))
+                        .map(name -> name.substring(0, name.lastIndexOf('.')))
+                        .forEach(availableIcons::add);
+            }
+        }
+
+        Set<String> newDrawables = new TreeSet<>();
+        Set<String> games = new TreeSet<>();
+        Set<String> system = new TreeSet<>();
+
+        Map<String, Set<String>> categories = new LinkedHashMap<>();
+        categories.put("New", newDrawables);
+        categories.put("Folders", new TreeSet<>());
+        categories.put("Calendar", new TreeSet<>());
+        categories.put("Google", new TreeSet<>());
+        categories.put("Microsoft", new TreeSet<>());
+        categories.put("Games", games);
+        categories.put("System", system);
+        categories.put("Emoji", new TreeSet<>());
+        categories.put("Symbols", new TreeSet<>());
+        categories.put("Numbers", new TreeSet<>());
+        categories.put("Letters", new TreeSet<>());
+        categories.put("0-9", new TreeSet<>());
+        categories.put("A-Z", new TreeSet<>());
+
+        // 2. Load existing data, strictly filtering against availableIcons
+        loadDrawablesFromXml(Paths.get(generatedDir, "newdrawables.xml"), newDrawables, availableIcons);
+
+        Path pathGames = Paths.get(generatedDir, "games.xml");
+        loadLinesToSet(pathGames, games, availableIcons);
+
+        Path pathSystem = Paths.get(generatedDir, "system.xml");
+        loadLinesToSet(pathSystem, system, availableIcons);
+
+        // 3. Classify all icons (using the already loaded set)
+        availableIcons.forEach(name -> classify(name, categories));
+
+        // Save total count
+        int totalIcons = categories.values().stream()
+                .flatMap(Set::stream)
+                .collect(Collectors.toSet())
+                .size();
+
+        createCustomIconCountFile(Paths.get(valuesDir, "custom_icon_count.xml"), totalIcons);
+
+        // Note: We write back the filtered lists. This cleans up the source files if items were deleted.
+        Files.write(pathGames, games);
+        Files.write(pathSystem, system);
+
+        // Build XML Output
+        StringBuilder xml = new StringBuilder("<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<resources>\n<version>1</version>\n");
+        categories.forEach((title, items) -> {
+            if (!items.isEmpty()) {
+                xml.append(String.format(LOCALE, "\n\t<category title=\"%s\" />\n", title));
+                for (String item : items) {
+                    xml.append(String.format(LOCALE, "\t<item drawable=\"%s\" />\n", item));
                 }
             }
-        }catch(FileNotFoundException e){
-            System.out.println("XML file: newdrawables.xml not found");
-        }
-        //Read games from File and add to list
-        try (BufferedReader reader = new BufferedReader(new FileReader(generatedDir+"/games.xml"))) {
-            String line;
-            while ((line = reader.readLine()) != null) {
-                games.add(line);
+        });
+        xml.append("</resources>");
+
+        // Write and sync files
+        Path drawableXml = Paths.get(xmlDir, "drawable.xml");
+        Files.writeString(drawableXml, xml.toString());
+
+        syncFiles(drawableXml, Path.of(assetPath, "drawable.xml"));
+        syncFiles(Path.of(appFilterPath), Path.of(assetPath, "appfilter.xml"),
+                Path.of(xmlDir, "appfilter.xml"), Path.of(assetPath, "icon_config.xml"),
+                Path.of(xmlDir, "icon_config.xml"));
+    }
+
+    private static void classify(String name, Map<String, Set<String>> categories) {
+        if (name.startsWith("folder_")) categories.get("Folders").add(name);
+        else if (name.startsWith("calendar_")) categories.get("Calendar").add(name);
+        else if (name.startsWith("google_")) categories.get("Google").add(name);
+        else if (name.startsWith("microsoft_") || name.startsWith("xbox")) categories.get("Microsoft").add(name);
+        else if (name.startsWith("emoji_")) categories.get("Emoji").add(name);
+        else if (name.startsWith("letter_")) categories.get("Letters").add(name);
+        else if (name.startsWith("currency_") || name.startsWith("symbol_")) categories.get("Symbols").add(name);
+        else if (name.startsWith("number_")) categories.get("Numbers").add(name);
+        else if (name.startsWith("_")) categories.get("0-9").add(name);
+        else categories.get("A-Z").add(name);
+    }
+
+    private static void loadDrawablesFromXml(Path path, Set<String> target, Set<String> validIcons) {
+        if (!Files.exists(path)) return;
+        try {
+            String content = Files.readString(path);
+            Matcher m = DRAWABLE_PATTERN.matcher(content);
+            while (m.find()) {
+                String drawableName = m.group(1);
+                // Only add if it actually exists in the validIcons set
+                if (validIcons.contains(drawableName)) {
+                    target.add(drawableName);
+                }
             }
-        }catch(FileNotFoundException e){
-            System.out.println("XML file: games.xml not found");
-        }
-        //Read system from File and add to list
-        try (BufferedReader reader = new BufferedReader(new FileReader(generatedDir+"/system.xml"))) {
-            String line;
-            while ((line = reader.readLine()) != null) {
-                system.add(line);
-            }
-        }catch(FileNotFoundException e){
-            System.out.println("XML file: system.xml not found");
-        }
-
-        // Collect existing drawables
-        File iconsDirectory = new File(iconsDir);
-        File[] files = iconsDirectory.listFiles();
-
-        if (files != null) {
-            for (File file : files) {
-                String fileName = file.getName();
-                String IconDrawable = fileName.substring(0, fileName.lastIndexOf('.'));
-                allIcons.add(IconDrawable);
-                classifyDrawable(IconDrawable);
-            }
-        }
-
-        // Create custom_icons_count.xml
-        createCustomIconCountFile(valuesDir+"/custom_icon_count.xml", allIcons.size());
-
-        // Remove duplicates and sort
-        newDrawables = new ArrayList<>(new HashSet<>(newDrawables));
-        Collections.sort(newDrawables);
-        games = new ArrayList<>(new HashSet<>(games));
-        Collections.sort(games);
-        system = new ArrayList<>(new HashSet<>(system));
-        Collections.sort(system);
-        drawables = new ArrayList<>(new HashSet<>(drawables));
-        Collections.sort(drawables);
-        folder = new ArrayList<>(new HashSet<>(folder));
-        Collections.sort(folder);
-        calendar = new ArrayList<>(new HashSet<>(calendar));
-        Collections.sort(calendar);
-        google = new ArrayList<>(new HashSet<>(google));
-        Collections.sort(google);
-        microsoft = new ArrayList<>(new HashSet<>(microsoft));
-        Collections.sort(microsoft);
-        symbols = new ArrayList<>(new HashSet<>(symbols));
-        Collections.sort(symbols);
-        numbers = new ArrayList<>(new HashSet<>(numbers));
-        Collections.sort(numbers);
-        letters = new ArrayList<>(new HashSet<>(letters));
-        Collections.sort(letters);
-        number = new ArrayList<>(new HashSet<>(number));
-        Collections.sort(number);
-        emoji = new ArrayList<>(new HashSet<>(emoji));
-        Collections.sort(emoji);
-
-
-        writeSortedCategory(generatedDir+"/games.xml", games);
-        writeSortedCategory(generatedDir+"/system.xml", system);
-        // Build output
-        StringBuilder output = new StringBuilder("<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<resources>\n<version>1</version>\n");
-
-        appendCategory(output, "New", newDrawables);
-        appendCategory(output, "Folders", folder);
-        appendCategory(output, "Calendar", calendar);
-        appendCategory(output, "Google", google);
-        appendCategory(output, "Microsoft", microsoft);
-        appendCategory(output, "Games", games);
-        appendCategory(output, "System", system);
-        appendCategory(output, "Emoji", emoji);
-        appendCategory(output, "Symbols", symbols);
-        appendCategory(output, "Numbers", numbers);
-        appendCategory(output, "Letters", letters);
-        appendCategory(output, "0-9", number);
-        appendCategory(output, "A-Z", drawables);
-
-        output.append("\n</resources>");
-        
-        // Write to drawable.xml in res directory
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(xmlDir+"/drawable.xml"))) {
-            writer.write(output.toString());
-        }
-
-        // Copy files
-        copyFile(xmlDir+"/drawable.xml", assetPath+"/drawable.xml");
-        copyFile(appFilterPath, assetPath+"/appfilter.xml");
-        copyFile(appFilterPath, xmlDir+"/appfilter.xml");
-        copyFile(appFilterPath, assetPath+"/icon_config.xml");
-        copyFile(appFilterPath, xmlDir+"/icon_config.xml");
+        } catch (IOException ignored) {}
     }
 
-    private static void appendCategory(StringBuilder output, String title, List<String> entries) {
-        output.append("\n\t<category title=\"").append(title).append("\" />\n\t");
-        for (String entry : entries) {
-            output.append("<item drawable=\"").append(entry).append("\" />\n\t");
-        }
+    private static void loadLinesToSet(Path path, Set<String> target, Set<String> validIcons) {
+        if (!Files.exists(path)) return;
+        try (Stream<String> lines = Files.lines(path)) {
+            lines.filter(l -> !l.isBlank())
+                    .filter(validIcons::contains) // Only add if it exists
+                    .forEach(target::add);
+        } catch (IOException ignored) {}
     }
 
-    private static void copyFile(String sourcePath, String destinationPath) throws IOException {
-        Path source = Path.of(sourcePath);
-        Path destination = Path.of(destinationPath);
-        Files.copy(source, destination, StandardCopyOption.REPLACE_EXISTING);
+    private static void createCustomIconCountFile(Path path, int count) throws IOException {
+        String xml = String.format(LOCALE, """
+                <?xml version="1.0" encoding="utf-8"?>
+                <resources>
+                   <integer name="custom_icons_count">%d</integer>
+                </resources>""", count);
+        Files.writeString(path, xml);
     }
 
-    private static void classifyDrawable(String newDrawable) {
-        if (newDrawable.startsWith("folder_")) {
-            folder.add(newDrawable);
-        } else if (newDrawable.startsWith("calendar_")) {
-            calendar.add(newDrawable);
-        } else if (newDrawable.startsWith("google_")) {
-            google.add(newDrawable);
-        } else if (newDrawable.startsWith("microsoft_") || newDrawable.startsWith("xbox")) {
-            microsoft.add(newDrawable);
-        } else if (newDrawable.startsWith("emoji_")) {
-            emoji.add(newDrawable);
-        } else if (newDrawable.startsWith("letter_")){
-            letters.add(newDrawable);
-        } else if (newDrawable.startsWith("currency_") || newDrawable.startsWith("symbol_")) {
-            symbols.add(newDrawable);
-        } else if (newDrawable.startsWith("number_")){
-            numbers.add(newDrawable);
-        } else if (newDrawable.startsWith("_")) {
-            number.add(newDrawable);
-        } else {
-            drawables.add(newDrawable);
-        }
-    }
-    private static void createCustomIconCountFile(String path, int count) throws IOException {
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(path))) {
-            writer.write("<?xml version=\"1.0\" encoding=\"utf-8\"?>\n" +
-                    "<resources>\n" +
-                    "   <integer name=\"custom_icons_count\">" + count + "</integer>\n" +
-                    "</resources>"
-            );
-        }
-    }
-
-    private static void writeSortedCategory(String path, List<String> list) throws IOException {
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(path))) {
-            for (String item : list) {
-                writer.write(item + "\n");
-            }
+    private static void syncFiles(Path source, Path... destinations) throws IOException {
+        for (Path dest : destinations) {
+            Files.createDirectories(dest.getParent());
+            Files.copy(source, dest, StandardCopyOption.REPLACE_EXISTING);
         }
     }
 }
