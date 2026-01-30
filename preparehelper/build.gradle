@@ -3,20 +3,24 @@ plugins {
 }
 
 application {
-    mainClass.set("com.donnnno.arcticons.helper.Start")
+    mainClass ="com.donnnno.arcticons.helper.Start"
 }
 
 tasks.register('runyou', JavaExec) {
     // Configure the task as needed
     mainClass = 'com.donnnno.arcticons.helper.Start'
     classpath = sourceSets.main.runtimeClasspath
+    workingDir = rootProject.projectDir
     // Other configurations...
     args = ['you']
+    inputs.dir("../icons/white")
+    outputs.dir("../app/src/you/res/drawable-anydpi")
 }
 tasks.register('runblack', JavaExec) {
     // Configure the task as needed
     mainClass = 'com.donnnno.arcticons.helper.Start'
     classpath = sourceSets.main.runtimeClasspath
+    workingDir = rootProject.projectDir
     // Other configurations...
     args = ['black']
 }
@@ -24,6 +28,7 @@ tasks.register('runnormal', JavaExec) {
     // Configure the task as needed
     mainClass = 'com.donnnno.arcticons.helper.Start'
     classpath = sourceSets.main.runtimeClasspath
+    workingDir = rootProject.projectDir
     // Other configurations...
     args = ['normal']
 }
@@ -31,8 +36,11 @@ tasks.register('rundayNight', JavaExec) {
     // Configure the task as needed
     mainClass = 'com.donnnno.arcticons.helper.Start'
     classpath = sourceSets.main.runtimeClasspath
+    workingDir = rootProject.projectDir
     // Other configurations...
     args = ['dayNight']
+    inputs.dir("../icons/white")
+    outputs.dir("../app/src/dayNight/res/drawable-anydpi")
 }
 
 
@@ -40,7 +48,7 @@ tasks.register('rundayNight', JavaExec) {
 
 dependencies {
     // SDK and tools required for Android and other general tasks
-    implementation("com.android.tools:sdk-common:31.9.1")
+    implementation("com.android.tools:sdk-common:31.13.2")
 
     // XML parsing (you are using dom4j here)
     implementation("org.dom4j:dom4j:2.2.0")
@@ -63,6 +71,6 @@ dependencies {
 }
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_14
-    targetCompatibility = JavaVersion.VERSION_14
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
 }
