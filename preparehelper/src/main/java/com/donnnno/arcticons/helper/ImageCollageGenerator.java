@@ -1,166 +1,137 @@
 package com.donnnno.arcticons.helper;
 
 import org.apache.batik.anim.dom.SVGDOMImplementation;
-import org.apache.batik.dom.GenericDOMImplementation;
 import org.apache.batik.transcoder.TranscoderException;
 import org.apache.batik.transcoder.TranscodingHints;
 import org.apache.batik.transcoder.image.ImageTranscoder;
-import org.apache.batik.transcoder.image.PNGTranscoder;
 import org.apache.batik.transcoder.TranscoderInput;
 import org.apache.batik.transcoder.TranscoderOutput;
-
-import javax.imageio.ImageIO;
-import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.io.*;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.List;
-
 import org.apache.batik.util.SVGConstants;
-import org.apache.commons.io.FileUtils;
 import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;
 
-import javax.xml.parsers.DocumentBuilder;
+import javax.imageio.ImageIO;
 import javax.xml.parsers.DocumentBuilderFactory;
+import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.*;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
 
 public class ImageCollageGenerator {
+
+    private static final int ICON_SIZE = 256;
+    private static final int SPACING = 10;
+    private static final int PADDING = 100;
+    private static final Color BG_COLOR = Color.decode("#111111");
+
     public static void main(String[] args) {
-        //String
         String rootDir = System.getProperty("user.dir");
-        // Get the path of the root directory
-        Path rootPath = Paths.get(rootDir);
-        // Get the name of the root directory
-        String rootDirName = rootPath.getFileName().toString();
-        if (rootDirName.equals("preparehelper")) {
-            rootDir = "..";
-        }
-        String valuesDir = rootDir+"/app/src/main/res/values";
-        String appFilter = rootDir + "/newicons/appfilter.xml";
-        String changelogXml = valuesDir +"/changelog.xml";
-        String generatedDir = rootDir +"/generated";
-        String IconsPath = rootDir+"/icons/white";       // Path to your icons folder
-        // Assume there are 5 new icons in the XML
-        generateReleaseImage( generatedDir + "/newdrawables.xml", IconsPath, generatedDir + "/releaseImage.webp");
+        if (Paths.get(rootDir).getFileName().toString().equals("preparehelper")) rootDir = "..";
+
+        String generatedDir = rootDir + "/generated";
+        String iconsPath = rootDir + "/icons/white";
+
+        generateReleaseImage(generatedDir + "/newdrawables.xml", iconsPath, generatedDir + "/releaseImage.webp");
     }
 
-    public static void generateReleaseImage(String newIconsXml, String IconsPath, String releaseImagePath) {
+    public static void generateReleaseImage(String newIconsXml, String iconsPath, String outputPath) {
         try {
-            // Step 1: Parse the XML to extract icon names/paths
-            File xmlFile = new File(newIconsXml);
-            DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-            DocumentBuilder builder = factory.newDocumentBuilder();
-            Document doc = builder.parse(xmlFile);
-
-            // Assume that the XML contains <icon> elements with paths to the icons
+            // 1. Parse XML
+            Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(new File(newIconsXml));
             NodeList itemNodes = doc.getElementsByTagName("item");
             List<String> iconNames = new ArrayList<>();
-
             for (int i = 0; i < itemNodes.getLength(); i++) {
-                String drawable = itemNodes.item(i).getAttributes().getNamedItem("drawable").getNodeValue();
-                iconNames.add(drawable); // Collect icon names
+                iconNames.add(itemNodes.item(i).getAttributes().getNamedItem("drawable").getNodeValue());
             }
 
+            if (iconNames.isEmpty()) {
+                System.out.println("No new icons found for collage.");
+                return;
+            }
 
-
-            // Step 2: Load SVG icons and calculate collage dimensions
+            // 2. Rasterize SVGs (Using a set size for high quality)
             List<BufferedImage> images = new ArrayList<>();
-            int iconSize = 256; // Size for each icon, adjust as needed
-            for (String iconName : iconNames) {
-                File iconFile = new File(IconsPath + "/" + iconName + ".svg");
-                BufferedImage iconImage = rasterize(iconFile);
-                // Transcoding the SVG to a BufferedImage
-                images.add(iconImage);
+            for (String name : iconNames) {
+                File file = new File(iconsPath, name + ".svg");
+                if (file.exists()) {
+                    images.add(rasterize(file, ICON_SIZE));
+                }
             }
 
-            int iconSpacing = 10; // Spacing between icons, adjust as needed
-            int pageSpacing = 200;
-            int countNew = images.size();
+            // 3. Calculate Grid
+            int count = images.size();
+            int columns = (int) Math.ceil(Math.sqrt(count));
+            int rows = (int) Math.ceil((double) count / columns);
 
-            // Step 3: Create a collage image with black background (square-like size)
-            int collageWidth = pageSpacing + (iconSize + iconSpacing ) * (int) Math.ceil(Math.sqrt(countNew)); // Square-like width
-            int collageHeight =pageSpacing + (iconSize + iconSpacing ) * (int) Math.round(Math.sqrt(countNew)); // Square-like height
-            BufferedImage collageImage = new BufferedImage(collageWidth, collageHeight, BufferedImage.TYPE_INT_ARGB);
-            Graphics2D g2d = collageImage.createGraphics();
+            int width = (columns * ICON_SIZE) + ((columns - 1) * SPACING) + (PADDING * 2);
+            int height = (rows * ICON_SIZE) + ((rows - 1) * SPACING) + (PADDING * 2);
 
-            // Set background color to black
-            g2d.setColor(Color.decode("#111111")); // Sets the color to dark gray (#111111)
-            g2d.fillRect(0, 0, collageWidth, collageHeight);
+            // 4. Draw Collage
+            BufferedImage collage = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
+            Graphics2D g2d = collage.createGraphics();
 
-            // Step 4: Place images in the collage
-            int xOffset = pageSpacing/2;
-            int yOffset = pageSpacing/2;
-            int iconsPerRow = (int) Math.ceil(Math.sqrt(countNew));
+            // Quality hints
+            g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+            g2d.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BICUBIC);
+
+            g2d.setColor(BG_COLOR);
+            g2d.fillRect(0, 0, width, height);
+
+            int x = PADDING;
+            int y = PADDING;
 
             for (int i = 0; i < images.size(); i++) {
-                BufferedImage img = images.get(i);
-                g2d.drawImage(img, xOffset, yOffset, iconSize, iconSize, null);
-                xOffset += iconSize + iconSpacing;;
+                g2d.drawImage(images.get(i), x, y, ICON_SIZE, ICON_SIZE, null);
 
-                // Move to the next row if the current row is filled
-                if ((i + 1) % iconsPerRow == 0) {
-                    xOffset = pageSpacing/2;
-                    yOffset += iconSize + iconSpacing;
+                if ((i + 1) % columns == 0) {
+                    x = PADDING;
+                    y += ICON_SIZE + SPACING;
+                } else {
+                    x += ICON_SIZE + SPACING;
                 }
             }
 
             g2d.dispose();
 
-            // Step 5: Save the collage as a PNG
-            File outputFile = new File(releaseImagePath);
-            ImageIO.write(collageImage, "webp", outputFile);
+            // 5. Save
+            ImageIO.write(collage, "webp", new File(outputPath));
+            System.out.printf(Locale.ROOT, "Generated collage with %d icons at: %s%n", count, outputPath);
 
-            System.out.println("Collage saved to: " + releaseImagePath);
         } catch (Exception e) {
-            System.err.println("Error occurred: " + e.getMessage());
+            System.err.println("Collage Error: " + e.getMessage());
         }
     }
 
-    public static BufferedImage rasterize(File svgFile) throws IOException {
-
+    public static BufferedImage rasterize(File svgFile, int size) throws IOException {
         final BufferedImage[] imagePointer = new BufferedImage[1];
 
-        TranscodingHints transcoderHints = new TranscodingHints();
-        transcoderHints.put(ImageTranscoder.KEY_XML_PARSER_VALIDATING, Boolean.FALSE);
-        transcoderHints.put(ImageTranscoder.KEY_DOM_IMPLEMENTATION,
-                SVGDOMImplementation.getDOMImplementation());
-        transcoderHints.put(ImageTranscoder.KEY_DOCUMENT_ELEMENT_NAMESPACE_URI,
-                SVGConstants.SVG_NAMESPACE_URI);
-        transcoderHints.put(ImageTranscoder.KEY_DOCUMENT_ELEMENT, "svg");
+        TranscodingHints hints = new TranscodingHints();
+        hints.put(ImageTranscoder.KEY_WIDTH, (float) size);
+        hints.put(ImageTranscoder.KEY_HEIGHT, (float) size);
+        hints.put(ImageTranscoder.KEY_DOM_IMPLEMENTATION, SVGDOMImplementation.getDOMImplementation());
+        hints.put(ImageTranscoder.KEY_DOCUMENT_ELEMENT_NAMESPACE_URI, SVGConstants.SVG_NAMESPACE_URI);
+        hints.put(ImageTranscoder.KEY_DOCUMENT_ELEMENT, "svg");
 
-        try {
-            TranscoderInput input = new TranscoderInput(new FileInputStream(svgFile));
-
-            ImageTranscoder t = getImageTranscoder(imagePointer, transcoderHints);
+        try (InputStream is = new FileInputStream(svgFile)) {
+            TranscoderInput input = new TranscoderInput(is);
+            ImageTranscoder t = new ImageTranscoder() {
+                @Override
+                public BufferedImage createImage(int w, int h) {
+                    return new BufferedImage(w, h, BufferedImage.TYPE_INT_ARGB);
+                }
+                @Override
+                public void writeImage(BufferedImage image, TranscoderOutput out) {
+                    imagePointer[0] = image;
+                }
+            };
+            t.setTranscodingHints(hints);
             t.transcode(input, null);
-        }
-        catch (TranscoderException ex) {
-            // Requires Java 6
-            System.err.println("Couldn't convert " + svgFile);
-            throw new IOException("Couldn't convert " + svgFile);
+        } catch (TranscoderException e) {
+            throw new IOException("Batik error: " + svgFile.getName(), e);
         }
         return imagePointer[0];
     }
-
-    private static ImageTranscoder getImageTranscoder(BufferedImage[] imagePointer, TranscodingHints transcoderHints) {
-        ImageTranscoder t = new ImageTranscoder() {
-
-            @Override
-            public BufferedImage createImage(int w, int h) {
-                return new BufferedImage(w, h, BufferedImage.TYPE_INT_ARGB);
-            }
-
-            @Override
-            public void writeImage(BufferedImage image, TranscoderOutput out)
-                    throws TranscoderException {
-                imagePointer[0] = image;
-            }
-        };
-        t.setTranscodingHints(transcoderHints);
-        return t;
-    }
-
-
 }

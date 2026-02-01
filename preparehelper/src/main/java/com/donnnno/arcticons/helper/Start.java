@@ -2,73 +2,70 @@ package com.donnnno.arcticons.helper;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.Executors;
 
 public class Start {
 
     public static void main(String[] args) {
-        //String
-        String rootDir = System.getProperty("user.dir");
-        // Get the path of the root directory
-        Path rootPath = Paths.get(rootDir);
-        // Get the name of the root directory
-        String rootDirName = rootPath.getFileName().toString();
-        if (rootDirName.equals("preparehelper")) {
-            rootDir = "..";
+        if (args.length == 0) {
+            System.err.println("No flavor specified. (you, black, normal, dayNight)");
+            return;
         }
-        String sourceDir = rootDir + "/icons/white";
-        String resDir;
-        String destDir;
-        String xmlDir = rootDir+"/app/src/main/res/xml";
-        String generatedDir = rootDir+"/generated";
-        String assetsDir = rootDir + "/app/src/main/assets";
-        String appFilter = rootDir + "/newicons/appfilter.xml";;
-        String valuesDir = rootDir+"/app/src/main/res/values";
-        //System.out.println("root Dir: " + rootPath);
-        //System.out.println("root Dir Name: " + rootDirName);
-        if (args.length > 0) {
-            String flavor = args[0];
-            // Use the flavor as needed
-            System.out.println("Processing with flavor: " + flavor);
-            //String appFilterFile = rootDir + "/app/assets/appfilter.xml";
-            switch (flavor) {
-                case "you" -> {
-                    resDir = rootDir + "/app/src/you/res";
-                    destDir = resDir + "/drawable-anydpi";
-                    // Convert svg to drawable in runtime
-                    SvgConverter.process(sourceDir, destDir, flavor);
-                }
-                case "black" -> {
-                    if (false) {
-                        resDir = rootDir + "/app/src/light/res";
-                        destDir = resDir + "/drawable-anydpi";
-                        // Convert svg to drawable in runtime
-                        SvgConverter.process(sourceDir, destDir, flavor);
-                    }
-                }
-                case "normal" -> {
-                    if (false) {
-                        resDir = rootDir + "/app/src/dark/res";
-                        destDir = resDir + "/drawable-anydpi";
-                        // Convert svg to drawable in runtime
-                        SvgConverter.process(sourceDir, destDir, flavor);
-                    }
-                }
-                case "dayNight" -> {
-                    resDir = rootDir + "/app/src/dayNight/res";
-                    destDir = resDir + "/drawable-anydpi";
-                    // Convert svg to drawable in runtime
-                    SvgConverter.process(sourceDir, destDir, flavor);
-                }
-            }
-            System.out.println("SvgToVector task completed");
 
-            // Read appfilter xml and create icon, drawable xml file.
-            try {
-                XMLCreator.mergeNewDrawables(valuesDir,generatedDir,assetsDir,sourceDir,xmlDir,appFilter);
-                System.out.println("XML task completed");
-            } catch (Exception e) {
-                System.out.println("Error occurred: " + e.getMessage());
-            }
+        final Path currentPath = Paths.get(System.getProperty("user.dir"));
+        final String rootDir = currentPath.getFileName().toString().equals("preparehelper") ? ".." : ".";
+        final Path root = Paths.get(rootDir);
+
+        final String sourceDir = root.resolve("icons/white").toString();
+        final String xmlDir = root.resolve("app/src/main/res/xml").toString();
+        final String generatedDir = root.resolve("generated").toString();
+        final String assetsDir = root.resolve("app/src/main/assets").toString();
+        final String appFilter = root.resolve("newicons/appfilter.xml").toString();
+        final String valuesDir = root.resolve("app/src/main/res/values").toString();
+
+        final String flavor = args[0];
+        System.out.println("Processing flavor: " + flavor);
+
+        final String destDir = switch (flavor) {
+            case "you"      -> root.resolve("app/src/you/res/drawable-anydpi").toString();
+            case "dayNight" -> root.resolve("app/src/dayNight/res/drawable-anydpi").toString();
+            case "black"    -> root.resolve("app/src/light/res/drawable-anydpi").toString();
+            case "normal"   -> root.resolve("app/src/dark/res/drawable-anydpi").toString();
+            default         -> null;
+        };
+
+        if (destDir == null) {
+            System.err.println("Unknown flavor: " + flavor);
+            return;
         }
+
+        try (var executor = Executors.newVirtualThreadPerTaskExecutor()) {
+
+            var svgTask = CompletableFuture.runAsync(() -> {
+                runTimedTask("SvgToVector", () -> SvgConverter.process(sourceDir, destDir, flavor));
+            }, executor);
+
+            var xmlTask = CompletableFuture.runAsync(() -> {
+                runTimedTask("XML Merger", () ->
+                        XMLCreator.mergeNewDrawables(valuesDir, generatedDir, assetsDir, sourceDir, xmlDir, appFilter));
+            }, executor);
+
+            CompletableFuture.allOf(svgTask, xmlTask).join();
+        }
+    }
+
+    private static void runTimedTask(String name, TaskRunnable runnable) {
+        try {
+            runnable.run();
+            System.out.println(name + " task completed ");
+        } catch (Exception e) {
+            System.err.println("Error in " + name + ": " + e.getMessage());
+        }
+    }
+
+    @FunctionalInterface
+    interface TaskRunnable {
+        void run() throws Exception;
     }
 }
