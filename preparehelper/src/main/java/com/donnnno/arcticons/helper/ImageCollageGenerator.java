@@ -40,7 +40,7 @@ public class ImageCollageGenerator {
         String iconsPath = rootDir + "/icons/white";
         String gradlePath = rootDir + "/app/build.gradle";
 
-        generateReleaseImage(gradlePath, generatedDir + "/newdrawables.xml", iconsPath, generatedDir + "/releaseImage.webp");
+        generateReleaseImage(gradlePath, generatedDir + "/ArcticonsSans-Regular.otf", generatedDir + "/newdrawables.xml", iconsPath, generatedDir + "/releaseImage.webp");
     }
 
     private static String getVersionName(String gradlePath) {
@@ -60,7 +60,7 @@ public class ImageCollageGenerator {
         return "";
     }
 
-    public static void generateReleaseImage(String gradlePath,String newIconsXml, String iconsPath, String outputPath) {
+    public static void generateReleaseImage(String gradlePath,String font, String newIconsXml, String iconsPath, String outputPath) {
         try {
             String versionName = getVersionName(gradlePath);
             // 1. Parse XML
@@ -111,7 +111,7 @@ public class ImageCollageGenerator {
 
             try {
                 // Adjust the path to where your .otf file is located
-                File fontFile = new File("/home/bastian/Documents/GitHub/Arcticons/preparehelper/src/main/assets/ArcticonsSans-Regular.otf");
+                File fontFile = new File(font);
                 releaseFont = Font.createFont(Font.TRUETYPE_FONT, fontFile).deriveFont(Font.BOLD, calculatedFontSize);
                 GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
                 ge.registerFont(releaseFont);
