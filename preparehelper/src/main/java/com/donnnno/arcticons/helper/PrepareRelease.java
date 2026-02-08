@@ -40,6 +40,7 @@ public class PrepareRelease {
         final String exportWhiteDir = root.resolve("app/src/normal/res/drawable-nodpi").toString();
         final String exportBlackDir = root.resolve("app/src/black/res/drawable-nodpi").toString();
         final String contributorsXml = root.resolve("generated/contributors.xml").toString();
+        String gradlePath = root.resolve("/app/build.gradle").toString();
         final String rootString = root.toString();
 
         final String task = args[0];
@@ -63,7 +64,7 @@ public class PrepareRelease {
                         runTask("Sort Appfilter", () -> sortXML(Paths.get(appFilter)));
                         runTask("XML Merger", () -> XMLCreator.mergeNewDrawables(valuesDir, generatedDir, assetsDir, sourceDir, xmlDir, appFilter));
                         runTask("Create Changelogs", () -> generateChangelogs(generatedDir, valuesDir + "/custom_icon_count.xml", appFilter, changelogXml, rootString, isNewRelease));
-                        runTask("New Release Image", () -> generateReleaseImage(generatedDir + "/newDrawables.xml", sourceDir, generatedDir + "/releaseImage.webp"));
+                        runTask("New Release Image", () -> generateReleaseImage(gradlePath,generatedDir + "/ArcticonsSans-Regular.otf", generatedDir + "/newDrawables.xml", sourceDir, generatedDir + "/releaseImage.webp"));
                     }, executor);
 
                     CompletableFuture.allOf(task1, task2).join();

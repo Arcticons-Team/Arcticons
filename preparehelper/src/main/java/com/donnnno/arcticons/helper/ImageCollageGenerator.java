@@ -15,17 +15,22 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.*;
+import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class ImageCollageGenerator {
 
     private static final int ICON_SIZE = 256;
     private static final int SPACING = 10;
     private static final int PADDING = 100;
-    private static final Color BG_COLOR = Color.decode("#111111");
+    private static final int TITLE_HEIGHT = 300;
+    private static final Color BG_COLOR = Color.decode("#050714");
+    private static final Color TEXT_COLOR = Color.WHITE;
 
     public static void main(String[] args) {
         String rootDir = System.getProperty("user.dir");
@@ -33,12 +38,31 @@ public class ImageCollageGenerator {
 
         String generatedDir = rootDir + "/generated";
         String iconsPath = rootDir + "/icons/white";
+        String gradlePath = rootDir + "/app/build.gradle";
 
-        generateReleaseImage(generatedDir + "/newdrawables.xml", iconsPath, generatedDir + "/releaseImage.webp");
+        generateReleaseImage(gradlePath, generatedDir + "/ArcticonsSans-Regular.otf", generatedDir + "/newdrawables.xml", iconsPath, generatedDir + "/releaseImage.webp");
     }
 
-    public static void generateReleaseImage(String newIconsXml, String iconsPath, String outputPath) {
+    private static String getVersionName(String gradlePath) {
         try {
+            List<String> lines = Files.readAllLines(Paths.get(gradlePath));
+            Pattern pattern = Pattern.compile("versionName += +[\"']([^\"']+)[\"']");
+
+            for (String line : lines) {
+                Matcher matcher = pattern.matcher(line);
+                if (matcher.find()) {
+                    return matcher.group(1);
+                }
+            }
+        } catch (IOException e) {
+            System.err.println("Could not read build.gradle: " + e.getMessage());
+        }
+        return "";
+    }
+
+    public static void generateReleaseImage(String gradlePath,String font, String newIconsXml, String iconsPath, String outputPath) {
+        try {
+            String versionName = getVersionName(gradlePath);
             // 1. Parse XML
             Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(new File(newIconsXml));
             NodeList itemNodes = doc.getElementsByTagName("item");
@@ -67,7 +91,7 @@ public class ImageCollageGenerator {
             int rows = (int) Math.ceil((double) count / columns);
 
             int width = (columns * ICON_SIZE) + ((columns - 1) * SPACING) + (PADDING * 2);
-            int height = (rows * ICON_SIZE) + ((rows - 1) * SPACING) + (PADDING * 2);
+            int height = (rows * ICON_SIZE) + ((rows - 1) * SPACING) + (PADDING * 2) + TITLE_HEIGHT;
 
             // 4. Draw Collage
             BufferedImage collage = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
@@ -75,13 +99,37 @@ public class ImageCollageGenerator {
 
             // Quality hints
             g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+            g2d.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
             g2d.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BICUBIC);
 
             g2d.setColor(BG_COLOR);
             g2d.fillRect(0, 0, width, height);
 
+            String title = String.format("Arcticons %s - %d new icons", versionName,count);
+            Font releaseFont;
+            float calculatedFontSize = (float) Math.max(48, Math.min(width / 20, 120));
+
+            try {
+                // Adjust the path to where your .otf file is located
+                File fontFile = new File(font);
+                releaseFont = Font.createFont(Font.TRUETYPE_FONT, fontFile).deriveFont(Font.BOLD, calculatedFontSize);
+                GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+                ge.registerFont(releaseFont);
+            } catch (Exception e) {
+                System.err.println("Could not load custom font, falling back to SansSerif. Error: " + e.getMessage());
+                releaseFont = new Font("SansSerif", Font.BOLD, (int)calculatedFontSize);
+            }
+
+            g2d.setFont(releaseFont);
+            g2d.setColor(TEXT_COLOR);
+
+            FontMetrics metrics = g2d.getFontMetrics();
+            int titleX = (width - metrics.stringWidth(title)) / 2;
+            int titleY = PADDING + ((TITLE_HEIGHT - metrics.getHeight()) / 2) + metrics.getAscent();
+            g2d.drawString(title, titleX, titleY);
+
             int x = PADDING;
-            int y = PADDING;
+            int y = PADDING + TITLE_HEIGHT;
 
             for (int i = 0; i < images.size(); i++) {
                 g2d.drawImage(images.get(i), x, y, ICON_SIZE, ICON_SIZE, null);
