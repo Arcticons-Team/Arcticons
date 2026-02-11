@@ -431,7 +431,7 @@ class EmailParser:
                             "playStoreDownloads": values.get("downloads", "X"),
                             "requestedInfo": str(values["count"]),
                             "lastRequestedTime": float(values.get("requestDate", 0)),
-                            "appIconColor": values["appIconColor"],
+                            "appIconColor": int(values.get("appIconColor", 0)),
                             "playStoreCategories": values.get("categories", []),
                             "drawable": values["drawable"],
                         }
