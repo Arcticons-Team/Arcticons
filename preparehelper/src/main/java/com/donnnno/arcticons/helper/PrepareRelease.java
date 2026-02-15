@@ -40,7 +40,7 @@ public class PrepareRelease {
         final String exportWhiteDir = root.resolve("app/src/normal/res/drawable-nodpi").toString();
         final String exportBlackDir = root.resolve("app/src/black/res/drawable-nodpi").toString();
         final String contributorsXml = root.resolve("generated/contributors.xml").toString();
-        String gradlePath = root.resolve("/app/build.gradle").toString();
+        final String gradlePath = root.resolve("app/build.gradle").toString();
         final String rootString = root.toString();
 
         final String task = args[0];
