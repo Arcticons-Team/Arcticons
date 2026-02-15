@@ -1,4 +1,4 @@
-* 🎉 **256** new and updated icons!
-* 💡 Added support for **1447** apps using existing icons.
-* 🔥 **14241** icons in total!
-* 🐋 Fixed Material You colors not refreshing properly on certain launchers.
+* 🎉 **106** new and updated icons!
+* 💡 Added support for **449** apps using existing icons.
+* 🔥 **14332** icons in total!
+* 🫶 Consider donating to the project, if you like using Arcticons.
