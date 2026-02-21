@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 env:
-  UPDATEABLE_URL: https://arcticons.com/assets/updatable.txt            # The URL to the updatable.txt file, change if necessary
+  UPDATEABLE_URL: https://arcticons.com/assets/updatable.json           # The URL to the updatable.txt file, change if necessary
   PACKAGE_BLACKLIST_PATH: .github/workflows/appfilter_auto_updater/blacklists/packageblacklist.txt      # The path to the package blacklist file, change if necessary
   DRAWABLE_BLACKLIST_PATH: .github/workflows/appfilter_auto_updater/blacklists/drawableblacklist.txt    # The path to the drawable blacklist file, change if necessary
   COMPONENT_BLACKLIST_PATH: .github/workflows/appfilter_auto_updater/blacklists/componentblacklist.txt  # The path to the component blacklist file, change if necessary
@@ -23,7 +23,7 @@ jobs:
       existsnot: ${{ steps.check.outputs.existsnot }}
     steps:
       - name: Checkout code
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           ref: ${{ env.BASE_BRANCH }}
           sparse-checkout: |
@@ -51,7 +51,7 @@ jobs:
       pull-requests: write
     steps:
       - name: Checkout code
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           ref: ${{ env.BASE_BRANCH }}
           sparse-checkout: |

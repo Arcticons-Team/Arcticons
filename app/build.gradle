@@ -1,102 +1,92 @@
-apply plugin: 'com.android.application'
+plugins {
+    id 'com.android.application'
+}
 
 // build.gradle in the 'app' module
 
 android {
-    compileSdk rootProject.ext.CompileSdk
+    compileSdk = rootProject.ext.CompileSdk
 
     defaultConfig {
-        applicationId "com.donnnno.arcticons"
-        minSdkVersion rootProject.ext.MinSdk
-        targetSdkVersion rootProject.ext.TargetSdk
-        versionCode 1480
-        versionName '13.4.6'
-        multiDexEnabled true
+        applicationId = "com.donnnno.arcticons"
+        minSdk = rootProject.ext.MinSdk
+        targetSdk = rootProject.ext.TargetSdk
+        versionCode = 1520
+        versionName = '14.3.3'
+        multiDexEnabled = true
     }
 
-    // Load keystore
-    def keystorePropertiesFile = rootProject.file("keystore.properties");
-    def releaseSigning;
-    if (keystorePropertiesFile.exists()){
+    signingConfigs {
+        release
+    }
+
+    def keystorePropertiesFile = rootProject.file("keystore.properties")
+    if (keystorePropertiesFile.exists()) {
         def keystoreProperties = new Properties()
         keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
-        releaseSigning = signingConfigs.create("release", signingConfig -> {
-            signingConfig.setKeyAlias(keystoreProperties.getProperty("keyAlias"));
-            signingConfig.setKeyPassword(keystoreProperties.getProperty("keyPassword"));
-            signingConfig.setStoreFile(rootProject.file(keystoreProperties.getProperty("storeFile")));
-            signingConfig.setStorePassword(keystoreProperties.getProperty("storePassword"));
-        });
-    } else {releaseSigning = signingConfigs.getByName("debug"); // Use getByName for safety
-}
 
-    buildFeatures {
-        buildConfig = true
+        signingConfigs.named("release") {
+            keyAlias keystoreProperties["keyAlias"]
+            keyPassword keystoreProperties["keyPassword"]
+            storeFile rootProject.file(keystoreProperties["storeFile"])
+            storePassword keystoreProperties["storePassword"]
+        }
+    } else {
+        signingConfigs.named("release") {
+            initWith(signingConfigs.debug)
+        }
     }
+
 
     buildTypes {
         configureEach {
-            signingConfig = releaseSigning
+            signingConfig = signingConfigs.getByName("release")
         }
         release {
-            minifyEnabled false
+            minifyEnabled = false
         }
         debug {
-            applicationIdSuffix '.debug'
-        }
-
-
-        applicationVariants.all { variant ->
-
-            if (variant.flavorName == "you" || variant.flavorName == "youPlay") {
-                variant.preBuildProvider.get().dependsOn(":preparehelper:runyou")
-            } else if (variant.flavorName == "black" || variant.flavorName == "blackPlay") {
-                variant.preBuildProvider.get().dependsOn(":preparehelper:runblack")
-            }else if (variant.flavorName == "normal" || variant.flavorName == "normalPlay") {
-                variant.preBuildProvider.get().dependsOn(":preparehelper:runnormal")
-            }else if (variant.flavorName == "dayNight") {
-            variant.preBuildProvider.get().dependsOn(":preparehelper:rundayNight")
-        }
-            // Add more conditions for additional flavors
+            applicationIdSuffix = '.debug'
         }
     }
 
     flavorDimensions += "variant"
     productFlavors {
         normal {
-            dimension "variant"
-            resValue "string", "app_name", "Arcticons"
+            dimension = "variant"
+            resValue  "string", "app_name", "Arcticons"
         }
         normalPlay {
-            dimension "variant"
+            dimension = "variant"
             resValue "string", "app_name", "Arcticons"
         }
         black {
-            dimension "variant"
+            dimension = "variant"
             //noinspection GradlePath
-            applicationIdSuffix '.light'
+            applicationIdSuffix = '.light'
             resValue "string", "app_name", "Arcticons Black"
         }
         blackPlay {
-            dimension "variant"
-            applicationIdSuffix '.light'
+            dimension = "variant"
+            applicationIdSuffix = '.light'
             resValue "string", "app_name", "Arcticons Black"
         }
         you {
-            dimension "variant"
-            minSdkVersion "26"
-            applicationIdSuffix '.you'
+            dimension = "variant"
+            minSdk = 26
+            applicationIdSuffix = '.you'
             resValue "string", "app_name", "Arcticons Material You"
         }
         youPlay {
-            dimension "variant"
-            minSdkVersion "26"
-            applicationIdSuffix '.you.play'
+            dimension = "variant"
+            minSdk = 26
+            applicationIdSuffix = '.you.play'
             resValue "string", "app_name", "Arcticons Material You"
         }
         dayNight {
-            dimension "variant"
-            minSdkVersion "29"
-            applicationIdSuffix '.daynight'
+            dimension = "variant"
+            minSdk = 29
+            applicationIdSuffix = '.daynight'
             resValue "string", "app_name", "Arcticons Day & Night"
         }
     }
@@ -107,7 +97,8 @@ android {
         black { res.srcDirs = ['src/blackFree/res/', 'src/black/res'] }
         blackPlay { res.srcDirs = ['src/blackPlay/res/', 'src/black/res'] }
 		you { res.srcDirs = ['src/youFree/res/', 'src/you/res'] }
-        youPlay { res.srcDirs = ['src/youPlay/res/', 'src/you/res'] }
+        youPlay { res.srcDirs = ['src/youPlay/res/', 'src/you/res']
+                manifest.srcFile 'src/you/AndroidManifest.xml'}
         dayNight { res.srcDirs = ['src/dayNightFree/res/', 'src/dayNight/res'] }
     }
 
@@ -117,18 +108,19 @@ android {
     }
     java {
         toolchain {
-            languageVersion = JavaLanguageVersion.of(11)
+            languageVersion = JavaLanguageVersion.of(21)
         }
     }
 
     buildFeatures {
+        resValues = true
         buildConfig = true
-        viewBinding true
+        viewBinding = true
     }
-    namespace 'com.donnnno.arcticons'
+    namespace = 'com.donnnno.arcticons'
     lint {
-        abortOnError false
-        checkReleaseBuilds false
+        abortOnError = false
+        checkReleaseBuilds = false
         lintConfig = file("lint.xml")
     }
 
@@ -140,15 +132,41 @@ android {
     }
 }
 
+androidComponents {
+    onVariants(selector().all()) { variant ->
+        project.afterEvaluate {
+
+            def flavor = variant.flavorName
+            def helperTaskName = null
+
+            if (flavor.contains("you")) {
+                helperTaskName = "runyou"
+            } else if (flavor.contains("black")) {
+                helperTaskName = "runblack"
+            } else if (flavor.contains("normal")) {
+                helperTaskName = "runnormal"
+            } else if (flavor.contains("dayNight")) {
+                helperTaskName = "rundayNight"
+            }
+
+            if (helperTaskName != null) {
+                tasks.named("pre${variant.name.capitalize()}Build") {
+                    dependsOn(":preparehelper:${helperTaskName}")
+                }
+            }
+        }
+    }
+}
+
 dependencies {
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     normalPlayImplementation 'com.github.zixpo:candybar:main-SNAPSHOT'
     blackPlayImplementation 'com.github.zixpo:candybar:main-SNAPSHOT'
     youPlayImplementation 'com.github.zixpo:candybar:main-SNAPSHOT'
-    normalImplementation 'com.github.Donnnno:candybar-foss:3.21.3'
-    blackImplementation 'com.github.Donnnno:candybar-foss:3.21.3'
-    youImplementation 'com.github.Donnnno:candybar-foss:3.21.3'
-    dayNightImplementation 'com.github.Donnnno:candybar-foss:3.21.3'
+    normalImplementation 'com.github.Donnnno:candybar-foss:3.22.2'
+    blackImplementation 'com.github.Donnnno:candybar-foss:3.22.2'
+    youImplementation 'com.github.Donnnno:candybar-foss:3.22.2'
+    dayNightImplementation 'com.github.Donnnno:candybar-foss:3.22.2'
 }
 
 import com.android.tools.profgen.ArtProfileKt
@@ -157,24 +175,22 @@ import com.android.tools.profgen.DexFile
 
 // F-Droid Reproducible Build tasks
 
-project.afterEvaluate {
-    tasks.each { task ->
-        if (task.name.startsWith("compile") && task.name.endsWith("ReleaseArtProfile")) {
-            task.doLast {
-                outputs.files.each { file ->
-                    if (file.name.endsWith(".profm")) {
-                        println("Sorting ${file} ...")
-                        def version = ArtProfileSerializer.valueOf("METADATA_0_0_2")
-                        def profile = ArtProfileKt.ArtProfile(file)
-                        def keys = new ArrayList(profile.profileData.keySet())
-                        def sortedData = new LinkedHashMap()
-                        Collections.sort keys, new DexFile.Companion()
-                        keys.each { key -> sortedData[key] = profile.profileData[key] }
-                        new FileOutputStream(file).with {
-                            write(version.magicBytes$profgen)
-                            write(version.versionBytes$profgen)
-                            version.write$profgen(it, sortedData, "")
-                        }
+tasks.configureEach { task ->
+    if (task.name.startsWith("compile") && task.name.endsWith("ReleaseArtProfile")) {
+        task.doLast {
+            outputs.files.each { file ->
+                if (file.name.endsWith(".profm")) {
+                    println("Sorting ${file} ...")
+                    def version = ArtProfileSerializer.valueOf("METADATA_0_0_2")
+                    def profile = ArtProfileKt.ArtProfile(file)
+                    def keys = new ArrayList(profile.profileData.keySet())
+                    def sortedData = new LinkedHashMap()
+                    Collections.sort(keys, new DexFile.Companion())
+                    keys.each { key -> sortedData[key] = profile.profileData[key] }
+                    new FileOutputStream(file).with {
+                        write(version.magicBytes$profgen)
+                        write(version.versionBytes$profgen)
+                        version.write$profgen(it, sortedData, "")
                     }
                 }
             }

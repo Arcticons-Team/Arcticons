@@ -1,5 +1,4 @@
-* 🎉 **226** new and updated icons!
-* 💡 Added support for **640** apps using existing icons.
-* 🔥 **13460** icons in total!
-
-⛰️ We are planning on moving away from GitHub to Codeberg!
+* 🎉 **106** new and updated icons!
+* 💡 Added support for **449** apps using existing icons.
+* 🔥 **14332** icons in total!
+* 🫶 Consider donating to the project, if you like using Arcticons.
