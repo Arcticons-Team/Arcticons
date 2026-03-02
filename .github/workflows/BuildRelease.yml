@@ -84,7 +84,7 @@ jobs:
           mkdir whatsnew
           python .github/workflows/mark2text.py
       - name: Upload artifact
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           path: |
             app/build/outputs/bundle/normalPlayRelease/*.aab
@@ -191,7 +191,7 @@ jobs:
       - name: Build debug APK
         run: ./gradlew app:assembleDebug
       - name: Upload artifact
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           path: |
             app/build/outputs/apk/black/debug/*.apk
@@ -230,7 +230,7 @@ jobs:
       - name: Build Day&Night
         run: ./gradlew app:assembledayNightRelease
       - name: Upload artifact
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           path: |
             app/build/outputs/apk/normal/release/*.apk 
