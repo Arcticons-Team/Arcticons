@@ -391,7 +391,7 @@ jobs:
           mv combined_appfilter.json docs/assets/combined_appfilter.json
           mv package_map.json docs/assets/package_map.json
       - name: Setup Pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v6
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
         with:
