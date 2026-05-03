@@ -206,21 +206,12 @@ def remove_svg(dir:str):
 ###### Checks ######
 
 def check_xml(path:str):
-    with open(path, 'r', encoding='utf-8') as f:
-        content = f.read()
-    matches = re.findall(
-        r'(<!--[\s\S]*?>)'
-        r'|(<(item|calendar)\s+'
-        r'component="(ComponentInfo{.*/.*}|:[A-Z_]*)"\s+'
-        r'(drawable|prefix)=".*"\s?/>)'
-        r'|(\n\s*\n)'
-        r'|(</?resources>)',
-        content,
-        re.DOTALL
-    )
-    defect = [line for line in content.splitlines(keepends=True)
-
-              if not any(line.strip() in m for m in matches)]
+    defect = []
+    with open (path,'r', encoding='utf-8') as f:
+        for line in f:
+            match = re.findall(r'((<!--.*-->)|(<(item|calendar) component=\"(ComponentInfo{.*/.*}|:[A-Z_]*)\" (drawable|prefix)=\".*\"\s?/>)|(^\s*$)|(</?resources>))',line)
+            if not (match):
+                defect.append(line)
     if len(defect) > 0:
         print('\n\n______ Found defect appfilter entries ______\n\n')
         for line in defect:
