@@ -47,10 +47,21 @@ class EmailParser:
         self.new_apps = []
         self.keep_pngs = set()
 
-        self.name_pattern = re.compile(r'<!-- (?P<Name>.+) -->', re.M)
+        self.name_pattern = re.compile(r'<!--\s*(?P<Name>[\s\S]+?)\s*-->')
         self.component_pattern = re.compile('ComponentInfo{(?P<ComponentInfo>.+)}')
         self.package_name_pattern = re.compile(r'(?P<PackageName>[\w\.]+)/')
-        self.request_block_query = re.compile(r'<!-- (?P<Name>.+) -->\s<item component=\"ComponentInfo{(?P<ComponentInfo>.+)}\" drawable=\"(?P<drawable>.+|)\"(/>| />)\s(https:\/\/play.google.com\/store\/apps\/details\?id=.+\shttps:\/\/f-droid\.org\/en\/packages\/.+\shttps:\/\/apt.izzysoft.de\/fdroid\/index\/apk\/.+\shttps:\/\/galaxystore.samsung.com\/detail\/.+\shttps:\/\/www.ecosia.org\/search\?q\=.+\s)Requested (?P<count>\d+) times\s?(Last requested (?P<requestDate>\d+\.?\d+?))?', re.M)
+        self.request_block_query = re.compile(
+            r'<!-- (?P<Name>.+) -->\s'
+            r'<item component=\"ComponentInfo{(?P<ComponentInfo>.+)}\" drawable=\"(?P<drawable>.+|)\"(/>| />)\s'
+            r'(https:\/\/play\.google\.com\/store\/apps\/details\?id=.+'
+            r'\shttps:\/\/f-droid\.org\/en\/packages\/.+'
+            r'\shttps:\/\/apt\.izzysoft\.de\/fdroid\/index\/apk\/.+'
+            r'\shttps:\/\/galaxystore\.samsung\.com\/detail\/.+'
+            r'\shttps:\/\/www\.ecosia\.org\/search\?q\=.+\s)'
+            r'Requested (?P<count>\d+) times\s?'
+            r'(Last requested (?P<requestDate>\d+\.?\d+?))?',
+            re.M
+        )
         self.update_block_query = re.compile(r'<!-- (?P<Name>.+) -->\s<item component=\"ComponentInfo{(?P<ComponentInfo>.+)}\" drawable=\"(?P<drawable>.+|)\"(/>| />)', re.M)
     
     def parse_existing(self,block_query,path):  

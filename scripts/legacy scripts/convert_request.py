@@ -38,12 +38,20 @@ class EmailParser:
         self.updatable = []
         self.new_apps = []
 
-        self.name_pattern = re.compile(r'<!-- (?P<Name>.+) -->', re.M)
+        self.name_pattern = re.compile(r'<!--\s*(?P<Name>[\s\S]+?)\s*-->')
         self.component_pattern = re.compile('ComponentInfo{(?P<ComponentInfo>.+)}')
         self.package_name_pattern = re.compile(r'(?P<PackageName>[\w\.]+)/')
 
     def parse_existing(self):
-        request_block_query = re.compile(r'<!-- (?P<Name>.+) -->\s<item component=\"ComponentInfo{(?P<ComponentInfo>.+)}\" drawable=\"(?P<drawable>.+|)\"(/>| />)\s(https:\/\/play.google.com\/store\/apps\/details\?id=.+\shttps:\/\/f-droid\.org\/en\/packages\/.+\s)Requested (?P<count>\d+) times\s?(Last requested (?P<requestDate>\d+\.?\d+?))?', re.M)
+        request_block_query = re.compile(
+            r'<!-- (?P<Name>.+) -->\s'
+            r'<item component=\"ComponentInfo{(?P<ComponentInfo>.+)}\" drawable=\"(?P<drawable>.+|)\"(/>| />)\s'
+            r'(https:\/\/play\.google\.com\/store\/apps\/details\?id=.+'
+            r'\shttps:\/\/f-droid\.org\/en\/packages\/.+\s)'
+            r'Requested (?P<count>\d+) times\s?'
+            r'(Last requested (?P<requestDate>\d+\.?\d+?))?',
+            re.M
+        )
         if not self.requests_path:
             return
         with open(self.requests_path, 'r', encoding="utf8") as existing_file:
