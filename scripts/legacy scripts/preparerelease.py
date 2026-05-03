@@ -210,8 +210,15 @@ def check_xml(path:str):
     defect = []
     with open (path,'r', encoding='utf-8') as f:
         for line in f:
-            match = re.findall(r'((<!--.*-->)|(<(item|calendar) component=\"(ComponentInfo{.*/.*}|:[A-Z_]*)\" (drawable|prefix)=\".*\"\s?/>)|(^\s*$)|(</?resources>))',line)
-            if not (match):
+        match = re.findall(
+            r'((<!--[\s\S]*?>)'
+            r'|(<(item|calendar) component=\"(ComponentInfo{.*/.*}|:[A-Z_]*)\" (drawable|prefix)=\".*\"\s?/>)'
+            r'|(^\s*$)'
+            r'|(</?resources>))',
+            line,
+            re.DOTALL | re.MULTILINE
+        )
+    if not (match):
                 defect.append(line)
     if len(defect) > 0:
         print('\n\n______ Found defect appfilter entries ______\n\n')
