@@ -93,7 +93,7 @@ jobs:
       - name: Upload Normal to Google Play
         # Step: Upload APK/AAB to Google Play
 
-        uses: r0adkll/upload-google-play@935ef9c68bb393a8e6116b1575626a7f5be3a7fb
+        uses: r0adkll/upload-google-play@e738b9dd8f2476ea806d921b64aacd24f34515a5
         with:
           serviceAccountJsonPlainText: ${{ secrets.GOOGLE_PLAY_SERVICE_ACCOUNT }}
           packageName: 'com.donnnno.arcticons' # Replace with your app's package name
@@ -102,7 +102,7 @@ jobs:
           status: completed # Options: draft, inProgress, halted, completed
           whatsNewDirectory: whatsnew
       - name: Upload Black to Google Play
-        uses: r0adkll/upload-google-play@935ef9c68bb393a8e6116b1575626a7f5be3a7fb
+        uses: r0adkll/upload-google-play@e738b9dd8f2476ea806d921b64aacd24f34515a5
         with:
           serviceAccountJsonPlainText: ${{ secrets.GOOGLE_PLAY_SERVICE_ACCOUNT }}
           packageName: 'com.donnnno.arcticons.light' # Replace with your app's package name
@@ -111,7 +111,7 @@ jobs:
           status: completed # Options: draft, inProgress, halted, completed
           whatsNewDirectory: whatsnew
       - name: Upload You to Google Play
-        uses: r0adkll/upload-google-play@935ef9c68bb393a8e6116b1575626a7f5be3a7fb
+        uses: r0adkll/upload-google-play@e738b9dd8f2476ea806d921b64aacd24f34515a5
         with:
           serviceAccountJsonPlainText: ${{ secrets.GOOGLE_PLAY_SERVICE_ACCOUNT }}
           packageName: 'com.donnnno.arcticons.you.play' # Replace with your app's package name
