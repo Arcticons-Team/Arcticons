@@ -126,7 +126,7 @@ jobs:
       cancel-in-progress: true
     steps:
       - name: Checkout Repository ${{ github.event.pull_request.user.login }}/${{ github.event.pull_request.head.ref }}
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           ref: ${{ github.event.pull_request.head.sha }}
           allow-unsafe-pr-checkout: true
