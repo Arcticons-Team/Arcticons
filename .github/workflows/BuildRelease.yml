@@ -52,7 +52,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checking out branch
-        uses: actions/checkout@v7
+        uses: actions/checkout@v6
       - name: Setup Java
         uses: actions/setup-java@v5
         with:
@@ -130,7 +130,7 @@ jobs:
       discussions: write
     steps:
       - name: Checking out branch
-        uses: actions/checkout@v7
+        uses: actions/checkout@v6
       - name: Setup Java
         uses: actions/setup-java@v5
         with:
@@ -169,7 +169,7 @@ jobs:
     if: ${{ github.event_name == 'workflow_dispatch' && inputs.run_debug == true }}
     steps:
       - name: Checking out branch
-        uses: actions/checkout@v7
+        uses: actions/checkout@v6
       - name: Setup Java
         uses: actions/setup-java@v5
         with:
@@ -208,7 +208,7 @@ jobs:
     if: ${{ github.event_name == 'workflow_dispatch' && inputs.run_debugSigned == true }}
     steps:
       - name: Checking out branch
-        uses: actions/checkout@v7
+        uses: actions/checkout@v6
       - name: Setup Java
         uses: actions/setup-java@v5
         with:
