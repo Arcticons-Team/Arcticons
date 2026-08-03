@@ -1,0 +1,28 @@
+# Syncs commits to the the Codeberg mirror
+name: Sync to Codeberg
+
+on:
+  push:
+    branches:
+        - "main"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+    sync-to-codeberg:
+      runs-on: ubuntu-latest
+      steps:
+      - name: Checking out branch
+        uses: actions/checkout@v7
+        with:
+            fetch-depth: 0
+      - name: Syncing
+        uses: yesolutions/mirror-action@v0.7.0
+        with:
+            REMOTE_NAME: "Codeberg"
+            REMOTE: 'https://codeberg.org/Arcticons/Arcticons-Android.git'
+            GIT_USERNAME: ${{ vars.CODEBERG_USERNAME }}
+            GIT_PASSWORD: ${{ secrets.CODEBERG_TOKEN }}
+            DEBUG: "true"
