@@ -1,4 +1,6 @@
-* 🎉 **204** new and updated icons!
-* 💡 Added support for **1358** apps using existing icons.
-* 🔥 **14913** icons in total!
+* 🎉 **152** new and updated icons!
+* 💡 Added support for **615** apps using existing icons.
+* 🔥 **15057** icons in total!
+* 💡 Various fixes for wrongly mapped or bugged icons.
+* 🕑 Fix the Clock icon not working on Moto Launcher.
 * 🫶 Consider donating to the project, if you like using Arcticons.
