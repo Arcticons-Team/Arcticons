@@ -4,6 +4,7 @@
   [<img alt="Google Play" src="https://img.shields.io/endpoint?color=green&logo=google-play&logoColor=green&url=https%3A%2F%2Fplay.cuzi.workers.dev%2Fplay%3Fi%3Dcom.donnnno.arcticons%26l%3DGoogle%2520Play%26m%3D%24version">](https://play.google.com/store/apps/details?id=com.donnnno.arcticons)
   [<img alt="GitHub" src="https://img.shields.io/github/downloads/donnnno/arcticons/total?label=github%20downloads">](https://github.com/Arcticons-Team/Arcticons/releases/latest) 
   [<img alt="GitHub" src="https://img.shields.io/github/downloads/donnnno/arcticons/latest/total">](https://github.com/Arcticons-Team/Arcticons/releases/latest) 
+  [![Sync to Codeberg](https://github.com/kitters-kat/Arcticons/actions/workflows/sync_to_codeberg.yml/badge.svg)](https://github.com/kitters-kat/Arcticons/actions/workflows/sync_to_codeberg.yml)
   
   ![Arcticons icon](github/arcticons.png)
 </div>
