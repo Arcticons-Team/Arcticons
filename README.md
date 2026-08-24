@@ -5,6 +5,8 @@
   [<img alt="GitHub" src="https://img.shields.io/github/downloads/donnnno/arcticons/total?label=github%20downloads">](https://github.com/Arcticons-Team/Arcticons/releases/latest) 
   [<img alt="GitHub" src="https://img.shields.io/github/downloads/donnnno/arcticons/latest/total">](https://github.com/Arcticons-Team/Arcticons/releases/latest) 
   [![Sync to Codeberg](https://github.com/Arcticons-Team/Arcticons/actions/workflows/sync_to_codeberg.yml/badge.svg)](https://github.com/Arcticons-Team/Arcticons/actions/workflows/sync_to_codeberg.yml)
+
+  [![Build Nightly](https://github.com/Arcticons-Team/Arcticons/actions/workflows/BuildNightly.yml/badge.svg)](https://github.com/Arcticons-Team/Arcticons/actions/workflows/BuildNightly.yml)
   
   ![Arcticons icon](github/arcticons.png)
 </div>
