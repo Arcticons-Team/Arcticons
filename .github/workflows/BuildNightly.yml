@@ -54,7 +54,7 @@ jobs:
         uses: actions/upload-artifact@v7
         with:
           path: |
-            app/build/outputs/apk/normal/nightly/*.apk
-            app/build/outputs/apk/black/nightly/*.apk
-            app/build/outputs/apk/dayNight/nightly/*.apk
-            app/build/outputs/apk/you/nightly/*.apk
+            app/build/outputs/apk/normal/release/*.apk 
+            app/build/outputs/apk/black/release/*.apk 
+            app/build/outputs/apk/dayNight/release/*.apk 
+            app/build/outputs/apk/you/release/*.apk
