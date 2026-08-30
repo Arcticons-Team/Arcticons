@@ -94,7 +94,8 @@ public class SvgConverter {
 
         root.addElement("background").addAttribute("android:drawable", "@color/icon_background_color");
 
-        Element inset = root.addElement("foreground").addElement("inset")
+        Element inset = root.addElement("foreground").addElement("layer-list").addElement("item")
+                .addElement("inset")
                 .addAttribute("android:inset", "25%");
 
         inset.add(svgRoot.createCopy());
