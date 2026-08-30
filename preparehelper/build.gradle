@@ -42,6 +42,13 @@ tasks.register('rundayNight', JavaExec) {
     inputs.dir("../icons/white")
     outputs.dir("../app/src/dayNight/res/drawable-anydpi")
 }
+tasks.register('preparerelasenew', JavaExec) {
+    mainClass = 'com.donnnno.arcticons.helper.PrepareRelease'
+    classpath = sourceSets.main.runtimeClasspath
+    workingDir = rootProject.projectDir
+    args = ['newrelease']
+    jvmArgs += ['--enable-native-access=ALL-UNNAMED']
+}
 
 
 
