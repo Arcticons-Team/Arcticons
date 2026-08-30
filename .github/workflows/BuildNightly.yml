@@ -42,31 +42,19 @@ jobs:
         run: gradle wrapper
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
+      - name: Prepare Release Helper
+        run: ./gradlew :preparehelper:preparerelasenew
       - name: Build Normal APK
-        run: ./gradlew app:assemblenormalRelease
+        run: ./gradlew app:assemblenormalRelease # TODO app:assemblenormalNightly?
       - name: Build Black APK
         run: ./gradlew app:assembleblackRelease
       - name: Build You APK
         run: ./gradlew app:assembleyouRelease
       - name: Build Day&Night
         run: ./gradlew app:assembledayNightRelease
-      - name: Upload artifact
-        uses: actions/upload-artifact@v7
+      - name: Make Prerelease
+        uses: ncipollo/release-action@v1.21.0 # alternatively, softprops/action-gh-release
         with:
-          path: app/build/outputs/apk/normal/release/*.apk 
-          archive: false
-      - name: Upload artifact
-        uses: actions/upload-artifact@v7
-        with:
-          path: app/build/outputs/apk/black/release/*.apk 
-          archive: false
-      - name: Upload artifact
-        uses: actions/upload-artifact@v7
-        with:
-          path: app/build/outputs/apk/dayNight/release/*.apk 
-          archive: false
-      - name: Upload artifact
-        uses: actions/upload-artifact@v7
-        with:
-          path: app/build/outputs/apk/you/release/*.apk
-          archive: false
+          artifacts: app/build/outputs/apk/normal/release/*.apk, app/build/outputs/apk/black/release/*.apk, app/build/outputs/apk/dayNight/release/*.apk, app/build/outputs/apk/you/release/*.apk
+          prerelease: true
+          body: "Nightly"
