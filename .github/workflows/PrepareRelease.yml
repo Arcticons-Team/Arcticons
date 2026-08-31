@@ -1,0 +1,31 @@
+name: Prepare Release
+on:
+  workflow_dispatch:
+
+jobs:
+  prepare-release-helper:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checking out branch
+      uses: actions/checkout@v7
+    - name: Setup Java
+      uses: actions/setup-java@v5
+      with:
+        distribution: 'temurin'
+        java-version: 21
+        cache: gradle
+    - name: Get Gradle
+      run: gradle wrapper
+    - name: Grant execute permission for gradlew
+      run: chmod +x gradlew
+    - name: Prepare Release Helper
+      run: ./gradlew :preparehelper:preparerelasenew
+    - name: Push
+      run: |
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
+        git add -A
+        git commit -m "Prepare Release Helper"
+        git push
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

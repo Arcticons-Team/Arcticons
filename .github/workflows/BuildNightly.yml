@@ -45,16 +45,14 @@ jobs:
       - name: Prepare Release Helper
         run: ./gradlew :preparehelper:preparerelasenew
       - name: Build Normal APK
-        run: ./gradlew app:assemblenormalRelease # TODO app:assemblenormalNightly?
+        run: ./gradlew app:assemblenormalNightly
       - name: Build Black APK
-        run: ./gradlew app:assembleblackRelease
+        run: ./gradlew app:assembleblackNightly
       - name: Build You APK
-        run: ./gradlew app:assembleyouRelease
+        run: ./gradlew app:assembleyouNightly
       - name: Build Day&Night
-        run: ./gradlew app:assembledayNightRelease
+        run: ./gradlew app:assembledayNightNightly
       - name: Make Prerelease
-        uses: ncipollo/release-action@v1.21.0 # alternatively, softprops/action-gh-release
-        with:
-          artifacts: app/build/outputs/apk/normal/release/*.apk, app/build/outputs/apk/black/release/*.apk, app/build/outputs/apk/dayNight/release/*.apk, app/build/outputs/apk/you/release/*.apk
-          prerelease: true
-          body: "Nightly"
+        run: "gh release create \"$TAG_NAME\" --prerelease --generate-notes --fail-on-no-commits --title \"$GITHUB_REF_NAME Prerelease\" --notes \"This is an automatically generated nightly prelease to help try out changes since the last main release.\" --target \"$GITHUB_SHA\" app/build/outputs/apk/normal/nightly/*.apk app/build/outputs/apk/black/nightly/*.apk app/build/outputs/apk/dayNight/nightly/*.apk app/build/outputs/apk/you/nightly/*.apk"
+        env:
+          GH_TOKEN: ${{ github.token }}
