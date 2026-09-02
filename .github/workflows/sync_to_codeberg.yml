@@ -19,11 +19,10 @@ jobs:
         uses: actions/checkout@v7
         with:
             fetch-depth: 0
-      - name: Syncing
-        uses: yesolutions/mirror-action@v0.7.0
-        with:
-            REMOTE_NAME: "Codeberg"
-            REMOTE: 'https://codeberg.org/Arcticons/Arcticons-Android.git'
-            GIT_USERNAME: ${{ vars.CODEBERG_USERNAME }}
-            GIT_PASSWORD: ${{ secrets.CODEBERG_TOKEN }}
-            DEBUG: "true"
+      - name: Push to Codeberg
+        env:
+          CODEBERG_TOKEN: ${{ secrets.CODEBERG_TOKEN }}
+          CODEBERG_USERNAME: ${{ vars.CODEBERG_USERNAME }}
+        run: |
+          git remote add codeberg https://${CODEBERG_USERNAME}:${CODEBERG_TOKEN}@codeberg.org/Arcticons/Arcticons-Android.git
+          git push codeberg --tags --force --prune 'refs/heads/*:refs/heads/*'
