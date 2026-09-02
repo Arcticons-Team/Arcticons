@@ -60,6 +60,8 @@ jobs:
           gh release delete "$TAG_NAME" --yes --cleanup-tag || true
           git push origin --delete "$TAG_NAME" || true
       - name: Make Prerelease
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           TAG_NAME="nightly"
           NAME="$GITHUB_REF_NAME Prerelease"
