@@ -1,0 +1,57 @@
+name: Combine Appfilter
+
+on:
+  pull_request_target:
+    types: [opened, synchronize, reopened]
+    branches:
+      - main
+    paths:
+      - 'newicons/appfilter.xml'
+  push:
+    branches:
+      - main
+    paths:
+      - 'newicons/appfilter.xml'
+  workflow_dispatch:
+    inputs:
+      run_combine_appfilter:
+        description: 'Set to true to run the combine appfilter job'
+        required: false
+        default: true
+        type: boolean
+
+jobs:
+  combine_appfilter:
+    name: Combine Appfilter
+    if: ${{ github.repository == vars.REPOSITORY && ((github.event_name == 'push' && github.ref_name == vars.MAIN_BRANCH) || (github.event_name == 'pull_request_target' && github.base_ref == vars.MAIN_BRANCH) || (github.event_name == 'workflow_dispatch' && inputs.run_combine_appfilter == true)) }}
+    runs-on: codeberg-small
+    concurrency:
+      group: 'pages'
+      cancel-in-progress: true
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v5
+        with:
+          ref: ${{vars.PAGES_BRANCH}}
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.x'
+          cache: 'pip'
+      - run: pip install -r .github/workflows/requirements.txt
+      - name: Execute Python Script
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python .github/workflows/combine_appfilter.py
+      - name: Move combinded Appfilter
+        run: mv combined_appfilter.xml assets/combined_appfilter.xml
+      - name: Commit and Push Changes
+        # Step 4: Commit and push changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add assets/combined_appfilter.xml
+          git commit -m "Update Combined Appfilter"
+          git push    

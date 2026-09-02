@@ -1,0 +1,82 @@
+name: Sync between main and pages
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'newicons/appfilter.xml'
+      - 'icons/white/**'
+      - 'app/src/main/assets/drawable.xml'
+  workflow_dispatch:
+    inputs:
+        run_fetch_and_push_file:
+            description: 'Set to true to run the fetch and push file job'
+            required: false
+            default: true
+            type: boolean
+
+jobs:
+  fetch_and_push_file:
+    name: Fetch and Push File
+    if: ${{ github.repository == vars.REPOSITORY && ((github.event_name == 'push' && github.ref_name == vars.MAIN_BRANCH) || (github.event_name == 'workflow_dispatch' && inputs.run_fetch_and_push_file == true)) }}
+    runs-on: codeberg-tiny
+    concurrency:
+      group: push
+      cancel-in-progress: false
+    permissions:
+      contents: write
+    environment:
+      name: FileSync
+    env:
+      SOURCE_BRANCH: ${{vars.MAIN_BRANCH}}
+      TARGET_BRANCH: ${{vars.PAGES_BRANCH}}
+      FILE_PATH: newicons/appfilter.xml
+      file_path_icons: icons/white/
+    steps:
+      # Step 1: Checkout the repository
+      - name: Checkout main Repository
+        uses: actions/checkout@v5
+        with:
+          ref: ${{vars.MAIN_BRANCH}}
+          path: main
+          sparse-checkout: |
+            ${{ env.FILE_PATH }}
+            ${{ env.file_path_icons }}
+            app/src/main/assets/drawable.xml
+
+      - name: Checkout Arcticons-Pages Repository
+        # Step 2: Checkout the 2. repository
+
+        uses: actions/checkout@v5
+        with:
+          ref: ${{vars.PAGES_BRANCH}}
+          path: pages
+          sparse-checkout: |
+            ${{ env.FILE_PATH }}
+            ${{ env.file_path_icons }}
+            assets/drawable.xml
+      - name: Copy File from main to Arcticons-Pages
+        # Step 3: Fetch the file from the source branch
+
+        run: |
+          rm pages/newicons/appfilter.xml
+          cp main/newicons/appfilter.xml pages/newicons/appfilter.xml
+          rm pages/assets/drawable.xml
+          cp main/app/src/main/assets/drawable.xml pages/assets/drawable.xml
+          rm -r pages/icons/white/
+          cp -r main/icons/white/ pages/icons/white/
+      - name: Commit and Push Changes
+        # Step 4: Commit and push changes
+
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          cd pages
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add $FILE_PATH
+          git add $file_path_icons
+          git add assets/drawable.xml
+          git commit -m "Update $FILE_PATH from $SOURCE_BRANCH to $TARGET_BRANCH"
+          git push    
