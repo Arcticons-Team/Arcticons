@@ -64,4 +64,4 @@ jobs:
           TAG_NAME="nightly"
           NAME="$GITHUB_REF_NAME Prerelease"
           NOTES="This is an automatically generated nightly prelease to help try out changes since the last main release."
-          "gh release create $TAG_NAME --prerelease --generate-notes --fail-on-no-commits --title "$NAME" --notes "$NOTES" --target "$GITHUB_SHA" app/build/outputs/apk/normal/nightly/*.apk app/build/outputs/apk/black/nightly/*.apk app/build/outputs/apk/dayNight/nightly/*.apk app/build/outputs/apk/you/nightly/*.apk
+          gh release create $TAG_NAME --prerelease --generate-notes --fail-on-no-commits --title "$NAME" --notes "$NOTES" --target "$GITHUB_SHA" app/build/outputs/apk/normal/nightly/*.apk app/build/outputs/apk/black/nightly/*.apk app/build/outputs/apk/dayNight/nightly/*.apk app/build/outputs/apk/you/nightly/*.apk
