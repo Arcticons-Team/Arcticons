@@ -12,6 +12,7 @@ permissions:
 
 jobs:
     sync-to-codeberg:
+      if: ${{ github.repository == vars.REPOSITORY }}
       runs-on: ubuntu-latest
       steps:
       - name: Checking out branch
