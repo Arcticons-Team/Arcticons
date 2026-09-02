@@ -2,7 +2,6 @@ name: Build Nightly
 on:
   schedule:
     - cron: '00 12 * * 6'
-      timezone: "Europe/Amsterdam"
   workflow_dispatch:
 
 permissions:
