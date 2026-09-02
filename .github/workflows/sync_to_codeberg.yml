@@ -23,6 +23,6 @@ jobs:
         with:
             REMOTE_NAME: "Codeberg"
             REMOTE: 'https://codeberg.org/Arcticons/Arcticons-Android.git'
-            GIT_USERNAME: ${{ secrets.CODEBERG_USERNAME }}
+            GIT_USERNAME: ${{ vars.CODEBERG_USERNAME }}
             GIT_PASSWORD: ${{ secrets.CODEBERG_TOKEN }}
             DEBUG: "true"
