@@ -182,6 +182,11 @@ jobs:
         run: gradle wrapper
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
+      - name: Upload artifact
+        uses: actions/upload-artifact@v7
+        with:
+          path: |
+            *
       - name: Run checks
         id: validate
         run: |
