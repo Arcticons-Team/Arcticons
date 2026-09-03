@@ -169,7 +169,9 @@ jobs:
           ref: ${{ github.event.pull_request.head.sha }}
           allow-unsafe-pr-checkout: true
           sparse-checkout: |
-            newicons
+            appfilter.xml
+            *.svg
+            newicons/
           sparse-checkout-cone-mode: false
           path: newicons
       - name: Setup Java
