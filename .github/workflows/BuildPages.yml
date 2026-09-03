@@ -150,7 +150,7 @@ jobs:
             echo "Parsing succeeded."
           fi
   check_appfilter_and_icons:
-    name: Check appfilter.xml from pull_request
+    name: Run Checks
     if: github.event_name == 'pull_request_target'
     runs-on: ubuntu-latest
     outputs:
@@ -185,12 +185,12 @@ jobs:
       - name: Run checks
         id: validate
         run: |
-          if ! PARSE_OUTPUT=$(./gradlew checkonly 2>&1) ; then
-            echo "Parsing appfilter.xml failed."
+          if ! PARSE_OUTPUT=$(./gradlew checkonly > /dev/null) ; then
+            echo "Checks failed."
             echo -e "text=$PARSE_OUTPUT" >> "$GITHUB_OUTPUT"
             exit 1
           else
-            echo "Parsing succeeded."
+            echo "Checks succeeded."
           fi
   comment_pr_check_appfilter:
     name: Comment on PR
@@ -442,7 +442,7 @@ jobs:
               main
   parse_and_combine:
     name: Parse and Combine Appfilter
-    needs: [check_appfilter, Push_Files, fetch_and_push_file, Update_Requests, Check_FilePath]
+    needs: [check_appfilter, Push_Files, fetch_and_push_file, Update_Requests, Check_FilePath,check_appfilter_and_icons]
     if: ${{(github.event_name == 'workflow_run' || needs.Check_FilePath.result == 'success' ||needs.check_appfilter.result == 'success' || needs.Push_Files.result == 'success' || needs.fetch_and_push_file.result == 'success' ||(needs.Update_Requests.result == 'success'  && needs.Update_Requests.outputs.changes_detected == 'true' )||inputs.run_build_pages == true) && !failure()}}
     permissions:
       pages: write # Required to deploy to GitHub Pages
