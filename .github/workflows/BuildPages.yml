@@ -172,7 +172,13 @@ jobs:
             newicons/appfilter.xml
             newicons/*svg
           sparse-checkout-cone-mode: false
-          path: newicons
+          path: temp-pr
+      - name: Populate newicons folder
+        run: |
+          rm -rf newicons
+          mkdir newicons
+          cp -r temp-pr/newicons/. newicons/
+          rm -rf temp-pr
       - name: Setup Java
         uses: actions/setup-java@v6
         with:
