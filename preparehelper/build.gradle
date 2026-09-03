@@ -49,6 +49,13 @@ tasks.register('preparerelasenew', JavaExec) {
     args = ['newrelease']
     jvmArgs += ['--enable-native-access=ALL-UNNAMED']
 }
+tasks.register('checkonly', JavaExec) {
+    mainClass = 'com.donnnno.arcticons.helper.PrepareRelease'
+    classpath = sourceSets.main.runtimeClasspath
+    workingDir = rootProject.projectDir
+    args = ['checkonly']
+    jvmArgs += ['--enable-native-access=ALL-UNNAMED']
+}
 
 
 
