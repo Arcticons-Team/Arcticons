@@ -2,14 +2,13 @@ name: Build Nightly
 on:
   schedule:
     - cron: '00 12 * * 6'
-      timezone: "Europe/Amsterdam"
   workflow_dispatch:
 
 permissions:
   actions: none
   attestations: none
   checks: none
-  contents: read
+  contents: write
   deployments: none
   id-token: none
   issues: none
@@ -31,7 +30,7 @@ jobs:
       - name: Checking out branch
         uses: actions/checkout@v7
       - name: Setup Java
-        uses: actions/setup-java@v5
+        uses: actions/setup-java@v6
         with:
           distribution: 'temurin'
           java-version: 21
@@ -42,31 +41,37 @@ jobs:
         run: gradle wrapper
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
+      - name: Prepare Release Helper
+        run: ./gradlew :preparehelper:preparerelasenew
       - name: Build Normal APK
-        run: ./gradlew app:assemblenormalRelease
+        run: ./gradlew app:assemblenormalNightly
       - name: Build Black APK
-        run: ./gradlew app:assembleblackRelease
+        run: ./gradlew app:assembleblackNightly
       - name: Build You APK
-        run: ./gradlew app:assembleyouRelease
+        run: ./gradlew app:assembleyouNightly
       - name: Build Day&Night
-        run: ./gradlew app:assembledayNightRelease
-      - name: Upload artifact
-        uses: actions/upload-artifact@v7
-        with:
-          path: app/build/outputs/apk/normal/release/*.apk 
-          archive: false
-      - name: Upload artifact
-        uses: actions/upload-artifact@v7
-        with:
-          path: app/build/outputs/apk/black/release/*.apk 
-          archive: false
-      - name: Upload artifact
-        uses: actions/upload-artifact@v7
-        with:
-          path: app/build/outputs/apk/dayNight/release/*.apk 
-          archive: false
-      - name: Upload artifact
-        uses: actions/upload-artifact@v7
-        with:
-          path: app/build/outputs/apk/you/release/*.apk
-          archive: false
+        run: ./gradlew app:assembledayNightNightly
+      - name: Delete old nightly release and tag
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TAG_NAME="nightly"
+          # Delete the release and the associated tag if they exist
+          gh release delete "$TAG_NAME" --yes --cleanup-tag || true
+          git push origin --delete "$TAG_NAME" || true
+      - name: Make Prerelease
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TAG_NAME="nightly"
+          NAME="Automated Prerelease"
+          image="![releaseImage](https://github.com/Arcticons-Team/Arcticons/releases/download/nightly/releaseImage.webp)"
+          changelog=$(< ./generated/changelog.md)
+          changelog="$changelog
+
+          $image"
+          NOTES="This is an automatically generated nightly prelease to help try out changes since the last main release.
+          
+          $changelog
+          "
+          gh release create $TAG_NAME --prerelease --generate-notes --fail-on-no-commits --title "$NAME" --notes "$NOTES" --target "$GITHUB_SHA" app/build/outputs/apk/normal/nightly/*.apk app/build/outputs/apk/black/nightly/*.apk app/build/outputs/apk/dayNight/nightly/*.apk app/build/outputs/apk/you/nightly/*.apk generated/releaseImage.webp

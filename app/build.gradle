@@ -48,6 +48,9 @@ android {
         debug {
             applicationIdSuffix = '.debug'
         }
+        nightly {
+            applicationIdSuffix = '.nightly'
+        }
     }
 
     flavorDimensions += "variant"
