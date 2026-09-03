@@ -148,18 +148,62 @@ jobs:
           else
             echo "Parsing succeeded."
           fi
+  check_appfilter_and_icons:
+    name: Check appfilter.xml from pull_request
+    if: github.event_name == 'pull_request_target'
+    runs-on: ubuntu-latest
+    outputs:
+      CommentPRtext: ${{ steps.validate.outputs.text }}
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.event.pull_request.user.login }}/${{ github.event.pull_request.head.ref }}
+      cancel-in-progress: true
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v7
+        with:
+          ref: ${{vars.MAIN_BRANCH}}
+      - name: Checkout Repository ${{ github.event.pull_request.user.login }}/${{ github.event.pull_request.head.ref }}
+        uses: actions/checkout@v7
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          allow-unsafe-pr-checkout: true
+          sparse-checkout: |
+            newicons
+          sparse-checkout-cone-mode: false
+          path: newicons
+      - name: Setup Java
+        uses: actions/setup-java@v6
+        with:
+          distribution: 'temurin'
+          java-version: 21
+          cache: gradle
+      - name: Get Gradle
+        run: gradle wrapper
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+      - name: Run checks
+        id: validate
+        run: |
+          if ! PARSE_OUTPUT=$(./gradlew checkonly 2>&1) ; then
+            echo "Parsing appfilter.xml failed."
+            echo -e "text=$PARSE_OUTPUT" >> "$GITHUB_OUTPUT"
+            exit 1
+          else
+            echo "Parsing succeeded."
+          fi
   comment_pr_check_appfilter:
     name: Comment on PR
-    needs: ['check_appfilter']
+    needs: ['check_appfilter','check_appfilter_and_icons']
     if: ${{failure()}}
     runs-on: ubuntu-latest
     permissions:
       pull-requests: write # Required to comment on PRs
     env:
       PARSE_OUTPUT: ${{needs.check_appfilter.outputs.CommentPRtext}}
+      CHECK_OUTPUT: ${{needs.check_appfilter_and_icons.outputs.CommentPRtext}}
     steps:
       - name: Create Comment
-        run: echo -e "Parsing of 'newicons/appfilter.xml' failed. Please fix the XML syntax errors. \n \`\`\` \n $PARSE_OUTPUT \n \`\`\`" >> comment_markdown.md
+        run: echo -e "Parsing of 'newicons/appfilter.xml' failed. Please fix the XML syntax errors. \n \`\`\` \n $PARSE_OUTPUT \n \`\`\` \n \`\`\` \n $CHECK_OUTPUT \n \`\`\`" >> comment_markdown.md
       - name: Make Comment
         run: gh pr comment ${{ github.event.pull_request.number }} --body-file comment_markdown.md --repo ${{ github.repository }}
         env:
