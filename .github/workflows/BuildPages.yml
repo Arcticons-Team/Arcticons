@@ -156,7 +156,7 @@ jobs:
     outputs:
       CommentPRtext: ${{ steps.validate.outputs.text }}
     concurrency:
-      group: ${{ github.workflow }}-${{ github.event.pull_request.user.login }}/${{ github.event.pull_request.head.ref }}
+      group: ${{ github.workflow }}-${{ github.event.pull_request.user.login }}/${{ github.event.pull_request.head.ref }}-check
       cancel-in-progress: true
     steps:
       - name: Checkout Repository
