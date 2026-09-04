@@ -142,7 +142,7 @@ jobs:
       - name: Validate appfilter.xml
         id: validate
         run: |
-          if ! PARSE_OUTPUT=$(xmllint --noout newicons/appfilter.xml 2>&1); then
+          if ! PARSE_OUTPUT=$(xmllint --noout newicons/appfilter.xml 2>&1 >/dev/null); then
             echo "Parsing appfilter.xml failed."
             echo "text<<EOF" >> "$GITHUB_OUTPUT"
             echo "$PARSE_OUTPUT" >> "$GITHUB_OUTPUT"
@@ -191,18 +191,14 @@ jobs:
         run: gradle wrapper
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
-      - name: Upload artifact
-        uses: actions/upload-artifact@v7
-        with:
-          path: |
-            *
       - name: Run checks
         id: validate
         run: |
           if ! PARSE_OUTPUT=$(./gradlew checkonly 2>&1 >/dev/null) ; then
             echo "Checks failed."
+            FILTERED_OUTPUT=$(echo "$PARSE_OUTPUT" | sed -n '/============================================================/,/Total Failures:/p')
             echo "text<<EOF" >> "$GITHUB_OUTPUT"
-            echo "$PARSE_OUTPUT" >> "$GITHUB_OUTPUT"
+            echo "$FILTERED_OUTPUT" >> "$GITHUB_OUTPUT"
             echo "EOF" >> "$GITHUB_OUTPUT"
             exit 1
           else
