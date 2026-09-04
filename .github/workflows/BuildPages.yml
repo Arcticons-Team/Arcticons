@@ -142,9 +142,11 @@ jobs:
       - name: Validate appfilter.xml
         id: validate
         run: |
-          if ! PARSE_OUTPUT=$(xmllint --noout newicons/appfilter.xml 2>&1) ; then
+          if ! PARSE_OUTPUT=$(xmllint --noout newicons/appfilter.xml 2>&1); then
             echo "Parsing appfilter.xml failed."
-            echo -e "text=$PARSE_OUTPUT" >> "$GITHUB_OUTPUT"
+            echo "text<<EOF" >> "$GITHUB_OUTPUT"
+            echo "$PARSE_OUTPUT" >> "$GITHUB_OUTPUT"
+            echo "EOF" >> "$GITHUB_OUTPUT"
             exit 1
           else
             echo "Parsing succeeded."
@@ -199,7 +201,9 @@ jobs:
         run: |
           if ! PARSE_OUTPUT=$(./gradlew checkonly > /dev/null) ; then
             echo "Checks failed."
-            echo -e "text=$PARSE_OUTPUT" >> "$GITHUB_OUTPUT"
+            echo "text<<EOF" >> "$GITHUB_OUTPUT"
+            echo "$PARSE_OUTPUT" >> "$GITHUB_OUTPUT"
+            echo "EOF" >> "$GITHUB_OUTPUT"
             exit 1
           else
             echo "Checks succeeded."
@@ -216,7 +220,20 @@ jobs:
       CHECK_OUTPUT: ${{needs.check_appfilter_and_icons.outputs.CommentPRtext}}
     steps:
       - name: Create Comment
-        run: echo -e "Parsing of 'newicons/appfilter.xml' failed. Please fix the XML syntax errors. \n \`\`\` \n $PARSE_OUTPUT \n \`\`\` \n \`\`\` \n $CHECK_OUTPUT \n \`\`\`" >> comment_markdown.md
+        run: |
+          touch comment_markdown.md
+          if [ -n "$PARSE_OUTPUT" ]; then
+            echo "Parsing of 'newicons/appfilter.xml' failed. Please fix the XML syntax errors." >> comment_markdown.md
+            echo '```' >> comment_markdown.md
+            echo "$PARSE_OUTPUT" >> comment_markdown.md
+            echo '```' >> comment_markdown.md
+          fi
+          if [ -n "$CHECK_OUTPUT" ]; then
+            echo "Gradle checks failed." >> comment_markdown.md
+            echo '```' >> comment_markdown.md
+            echo "$CHECK_OUTPUT" >> comment_markdown.md
+            echo '```' >> comment_markdown.md
+          fi
       - name: Make Comment
         run: gh pr comment ${{ github.event.pull_request.number }} --body-file comment_markdown.md --repo ${{ github.repository }}
         env:
