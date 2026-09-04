@@ -225,7 +225,7 @@ jobs:
             echo '```' >> comment_markdown.md
           fi
           if [ -n "$CHECK_OUTPUT" ]; then
-            echo "Gradle checks failed." >> comment_markdown.md
+            echo "Checks failed." >> comment_markdown.md
             echo '```' >> comment_markdown.md
             echo "$CHECK_OUTPUT" >> comment_markdown.md
             echo '```' >> comment_markdown.md
