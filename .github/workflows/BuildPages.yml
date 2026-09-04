@@ -199,7 +199,7 @@ jobs:
       - name: Run checks
         id: validate
         run: |
-          if ! PARSE_OUTPUT=$(./gradlew checkonly 2>&1) ; then
+          if ! PARSE_OUTPUT=$(./gradlew checkonly 2>&1 >/dev/null) ; then
             echo "Checks failed."
             echo "text<<EOF" >> "$GITHUB_OUTPUT"
             echo "$PARSE_OUTPUT" >> "$GITHUB_OUTPUT"
