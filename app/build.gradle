@@ -43,13 +43,18 @@ android {
             signingConfig = signingConfigs.getByName("release")
         }
         release {
-            minifyEnabled = false
+            optimization {
+                enable = true
+            }
         }
         debug {
             applicationIdSuffix = '.debug'
         }
         nightly {
             applicationIdSuffix = '.nightly'
+            optimization {
+                enable = true
+            }
         }
     }
 
