@@ -41,6 +41,7 @@ android {
     buildTypes {
         configureEach {
             signingConfig = signingConfigs.getByName("release")
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
         release {
             optimization {
@@ -49,6 +50,9 @@ android {
         }
         debug {
             applicationIdSuffix = '.debug'
+            optimization {
+                enable = true
+            }
         }
         nightly {
             applicationIdSuffix = '.nightly'
