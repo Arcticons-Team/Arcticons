@@ -22,6 +22,7 @@ public class Checks {
     private static final Pattern XML_PATTERN = Pattern.compile("((<!--.*-->)|(<(item|calendar) component=\"(ComponentInfo\\{.*/.*}|:[A-Z_]*)\" (drawable|prefix)=\".*\"\\s?/>)|(^\\s*$)|(</?resources>)|(<\\?xml version=\"1.0\" encoding=\"UTF-8\"\\?>))");
     private static final Pattern STROKE_STRING_PATTERN = Pattern.compile("(?<strokestr>stroke-width(?:=\"|: ?))(?<number>\\d*(?:.\\d+)?)(?=[p\"; }/])");
     private static final Pattern FORBIDDEN_TAGS_PATTERN = Pattern.compile("<(?:linearGradient|mask)\\b");
+    private static final Pattern TRANSFORM_PATTERN = Pattern.compile("transform=\"matrix\\(.*?\\)");
     private static final Pattern STROKE_COLOR_PATTERN = Pattern.compile("stroke(?:=\"|:)(?:rgb[^a]|#).*?(?=[\"; ])");
     private static final Pattern FILL_COLOR_PATTERN = Pattern.compile("fill(?:=\"|:)(?:rgb[^a]|#).*?(?=[\"; ])");
     private static final Pattern STROKE_OPACITY_PATTERN = Pattern.compile("stroke-opacity(?:=\"|:).*?(?=[\"; ])");
@@ -184,6 +185,14 @@ public class Checks {
 
     private static void validateAttributes(String fileName, String content) {
         // --- Check for forbidden tags ---
+        Matcher TransformMatcher = TRANSFORM_PATTERN.matcher(content);
+        while (TransformMatcher.find()) {
+            violations.add(new Violation(
+                    "Forbidden Transform element",
+                    fileName,
+                    "Contains disallowed element: " + TransformMatcher.group()
+            ));
+        }
         Matcher forbiddenMatcher = FORBIDDEN_TAGS_PATTERN.matcher(content);
         while (forbiddenMatcher.find()) {
             violations.add(new Violation(
