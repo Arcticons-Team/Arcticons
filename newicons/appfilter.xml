@@ -155,6 +155,7 @@
 
 	<!-- material_reading -->
 	<item component="ComponentInfo{io.legato.kazusa/io.legado.app.ui.main.MainActivity}" drawable="material_reading" />
+	<item component="ComponentInfo{io.legato.kazusa/io.legado.app.ui.main.Launcher5}" drawable="material_reading"/>
 
 	<!-- phira -->
 	<item component="ComponentInfo{org.flos.phira/org.flos.phira.MainActivity}" drawable="phira" />
@@ -16386,6 +16387,7 @@
 
 	<!-- Esselunga -->
 	<item component="ComponentInfo{it.esselunga.mobile/it.esselunga.mobile.activity.EsselungaActivity}" drawable="esselunga"/>
+	<item component="ComponentInfo{it.esselunga.mobile/it.esselunga.mobile.activity.EsselungaSplashActivity}" drawable="esselunga"/>
 
 	<!-- IdleOutpost -->
 	<item component="ComponentInfo{com.rockbite.zombieoutpost/com.rockbite.engine.AndroidLauncher}" drawable="idleoutpost"/>
@@ -16416,6 +16418,7 @@
 
 	<!-- Nuvio -->
 	<item component="ComponentInfo{com.nuvio.app/com.nuvio.app.MainActivity}" drawable="nuvio"/>
+	<item component="ComponentInfo{com.nuvio.app/com.nuvio.app.launcher.AppIconRoseGold}" drawable="nuvio"/>
 	<item component="ComponentInfo{com.nuvio.app/com.nuvio.app.launcher.AppIconDefault}" drawable="nuvio"/>
 	<item component="ComponentInfo{com.nuvio.app/com.nuvio.app.launcher.AppIconGraphite}" drawable="nuvio"/>
 	<item component="ComponentInfo{com.nuvio.app/com.nuvio.app.launcher.AppIconArcticBlue}" drawable="nuvio"/>
@@ -16425,6 +16428,7 @@
 
 	<!-- Gadget Toolbox -->
 	<item component="ComponentInfo{com.byyoung.setting/com.byyoung.setting.Welcome}" drawable="gadget_toolbox"/>
+	<item component="ComponentInfo{com.byyoung.setting/com.byyoung.setting.LauncherActivity}" drawable="gadget_toolbox"/>
 
 	<!-- OTTplay -->
 	<item component="ComponentInfo{com.ht.ottplay/com.ht.ottplay.MainActivityic_launcher}" drawable="ottplay"/>
@@ -16437,6 +16441,7 @@
 
 	<!-- Simplified Icon Pack -->
 	<item component="ComponentInfo{com.simplified.reborn/com.simplified.reborn.activities.MainActivity}" drawable="simplified_icon_pack"/>
+	<item component="ComponentInfo{com.simplified.reborn/com.simplified.reborn.activities.SplashActivity}" drawable="simplified_icon_pack"/>
 
 	<!-- Alive App -->
 	<item component="ComponentInfo{com.bootiq2.gtsisic/app.futured.aliveapp.AppActivity}" drawable="alive_app"/>
@@ -16461,6 +16466,8 @@
 	<item component="ComponentInfo{website.leifs.delta/website.leifs.delta.activities.SplashActivity}" drawable="delta_icon_pack"/>
 	<item component="ComponentInfo{website.leifs.delta.foss/website.leifs.delta.activities.SplashActivity}" drawable="delta_icon_pack"/>
 	<item component="ComponentInfo{website.leifs.delta.fossdc/website.leifs.delta.activities.MainActivity}" drawable="delta_icon_pack" />
+	<item component="ComponentInfo{website.leifs.delta.fossdc/website.leifs.delta.activities.SplashActivity}" drawable="delta_icon_pack"/>
+	<item component="ComponentInfo{website.leifs.delta.fossdc/website.leifs.delta.activities.StartActivity}" drawable="delta_icon_pack"/>
 
 	<!-- Delta Chat -->
 	<item component="ComponentInfo{com.b44t.messenger/org.thoughtcrime.securesms.RoutingActivity}" drawable="delta_chat"/>
@@ -54188,6 +54195,7 @@
 	<item component="ComponentInfo{ai.qwenlm.chat.android/ai.qwenlm.chat.android.MainActivity}" drawable="qwen"/>
 	<item component="ComponentInfo{com.tongyi.intl/com.ucpro.MainActivity}" drawable="qwen"/>
 	<item component="ComponentInfo{com.aliyun.tongyi/com.ucpro.MainActivity}" drawable="qwen"/>
+	<item component="ComponentInfo{com.aliyun.tongyi/com.aliyun.tongyi.MainActivity}" drawable="qwen"/>
 
 	<!-- QxBroker Marketview -->
 	<item component="ComponentInfo{io.quotex.pk/io.quotex.webview.MainActivity}" drawable="qxbroker_marketview"/>
@@ -63141,6 +63149,7 @@
 	<item component="ComponentInfo{au.com.subcard.app/crc643f56eb19e392e7ef.MainActivity}" drawable="subway"/>
 	<item component="ComponentInfo{au.com.subcard.app/crc643a5d7573d6311bd7.MainActivity}" drawable="subway"/>
 	<item component="ComponentInfo{com.subway.mobile.emea.germany/com.subway.mobile.subwayapp03.ui.SplashActivity}" drawable="subway"/>
+	<item component="ComponentInfo{com.subway.mobile.emea.germany/com.subway.mobile.emea.germany.MainActivity}" drawable="subway"/>
 	<item component="ComponentInfo{nz.co.subcard.app/crc643f56eb19e392e7ef.MainActivity}" drawable="subway"/>
 	<item component="ComponentInfo{com.loyaltyplant.partner.subway/crc64eb65ea6159fb1028.RootActivity}" drawable="subway"/>
 	<item component="ComponentInfo{com.urbanpiper.subwayindia/com.urbanpiper.whitelabel.MainActivity}" drawable="subway"/>
@@ -68049,6 +68058,8 @@
 
 	<!-- Flybuys -->
 	<item component="ComponentInfo{com.coles.android.flybuys.release/au.com.flybuys.mobile.pages.welcome.ui.WelcomeActivity}" drawable="flybuys"/>
+	<item component="ComponentInfo{com.coles.android.flybuys.release/com.coles.android.flybuys.presentation.startup.BranchLauncherActivity}" drawable="flybuys"/>
+	<item component="ComponentInfo{com.coles.android.flybuys.release/com.coles.android.flybuys.presentation.startup.SplashActivity}" drawable="flybuys"/>
 
 	<!-- Space Agency -->
 	<item component="ComponentInfo{com.nooleus.android.spaceagency/com.nooleus.android.spaceagency.MainActivity}" drawable="space_agency" />
@@ -78446,6 +78457,7 @@
 
 	<!-- Number Match -->
 	<item component="ComponentInfo{com.easybrain.number.puzzle.game/com.easybrain.number.puzzle.game.SplashActivity}" drawable="number_match"/>
+	<item component="ComponentInfo{com.easybrain.number.puzzle.game/com.easybrain.template.SplashActivity}" drawable="number_match"/>
 
 	<!-- Cursed Greasure -->
 	<item component="ComponentInfo{ru.iriysoft.cursedtreasure2/ru.iriysoft.cursedtreasure2.MainActivity}" drawable="cursed_treasure" />
