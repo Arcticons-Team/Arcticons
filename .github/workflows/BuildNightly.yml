@@ -74,4 +74,4 @@ jobs:
           
           $changelog
           "
-          gh release create $TAG_NAME --prerelease --generate-notes --fail-on-no-commits --title "$NAME" --notes "$NOTES" --target "$GITHUB_SHA" app/build/outputs/apk/normal/nightly/*.apk app/build/outputs/apk/black/nightly/*.apk app/build/outputs/apk/dayNight/nightly/*.apk app/build/outputs/apk/you/nightly/*.apk generated/releaseImage.webp
+          gh release create $TAG_NAME --prerelease --fail-on-no-commits --title "$NAME" --notes "$NOTES" --target "$GITHUB_SHA" app/build/outputs/apk/normal/nightly/*.apk app/build/outputs/apk/black/nightly/*.apk app/build/outputs/apk/dayNight/nightly/*.apk app/build/outputs/apk/you/nightly/*.apk generated/releaseImage.webp
