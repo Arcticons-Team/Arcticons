@@ -98,7 +98,7 @@ jobs:
           serviceAccountJsonPlainText: ${{ secrets.GOOGLE_PLAY_SERVICE_ACCOUNT }}
           packageName: 'com.donnnno.arcticons' # Replace with your app's package name
           releaseFiles: app/build/outputs/bundle/normalPlayRelease/*.aab # Path to your APK/AAB
-          track: production # Options: production, beta, alpha, internal
+          tracks: production # Options: production, beta, alpha, internal
           status: completed # Options: draft, inProgress, halted, completed
           whatsNewDirectory: whatsnew
       - name: Upload Black to Google Play
@@ -107,7 +107,7 @@ jobs:
           serviceAccountJsonPlainText: ${{ secrets.GOOGLE_PLAY_SERVICE_ACCOUNT }}
           packageName: 'com.donnnno.arcticons.light' # Replace with your app's package name
           releaseFiles: app/build/outputs/bundle/blackPlayRelease/*.aab # Path to your APK/AAB
-          track: production # Options: production, beta, alpha, internal
+          tracks: production # Options: production, beta, alpha, internal
           status: completed # Options: draft, inProgress, halted, completed
           whatsNewDirectory: whatsnew
       - name: Upload You to Google Play
@@ -116,7 +116,7 @@ jobs:
           serviceAccountJsonPlainText: ${{ secrets.GOOGLE_PLAY_SERVICE_ACCOUNT }}
           packageName: 'com.donnnno.arcticons.you.play' # Replace with your app's package name
           releaseFiles: app/build/outputs/bundle/youPlayRelease/*.aab # Path to your APK/AAB
-          track: production # Options: production, beta, alpha, internal
+          tracks: production # Options: production, beta, alpha, internal
           status: completed # Options: draft, inProgress, halted, completed
           whatsNewDirectory: whatsnew
   build:
