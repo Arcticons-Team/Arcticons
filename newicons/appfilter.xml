@@ -1680,12 +1680,15 @@
 	<item component="ComponentInfo{com.aftership.AfterShip/com.aftership.AfterShip.view.SplashActivity.SplashActivity}" drawable="aftership"/>
 	<item component="ComponentInfo{com.aftership.AfterShip/com.aftership.AfterShip.views.SplashActivityViews.SplashActivityView}" drawable="aftership"/>
 
-	<!-- Afvalapp Groningen -->
-	<item component="ComponentInfo{nl.qubz21.burgerportaal.groningen.prod/nl.qubz21.burgerportaal.MainActivity}" drawable="afvalwijzer"/>
-
 	<!-- AfvalWijzer -->
 	<item component="ComponentInfo{nl.addcomm.afvalwijzer/nl.iprox.afvalwijzer.MainActivity}" drawable="afvalwijzer"/>
 	<item component="ComponentInfo{nl.addcomm.afvalwijzer/nl.addcomm.afvalwijzer.DeviceSelector}" drawable="afvalwijzer"/>
+    <item component="ComponentInfo{nl.qubz21.burgerportaal.tilburg.prod/nl.qubz21.burgerportaal.MainActivity}" drawable="afvalwijzer"/>
+    <item component="ComponentInfo{nl.opzet.zcalendar.buch/nl.opzet.zcalendar.buch.MainActivity}" drawable="afvalwijzer"/>
+	<item component="ComponentInfo{nl.qubz21.burgerportaal.groningen.prod/nl.qubz21.burgerportaal.MainActivity}" drawable="afvalwijzer"/>
+
+	<!-- De Telegraaf -->
+    <item component="ComponentInfo{nl.telegraaf/be.mediahuis.one.ui.MainActivity}" drawable="de_telegraaf"/>
 
 	<!-- AfWall -->
 	<item component="ComponentInfo{dev.ukanth.ufirewall/dev.ukanth.ufirewall.MainActivity}" drawable="afwall"/>
@@ -10109,8 +10112,23 @@
 	<!-- BYU -->
 	<item component="ComponentInfo{edu.byu.suite/edu.byu.suite.mainScreen.SplashScreen}" drawable="byu"/>
 
-	<!-- BZ E-Paper -->
+	<!-- Emoji Newspaper -->
 	<item component="ComponentInfo{de.bzv.bz/de.cmp.CSSplashScreen}" drawable="emoji_newspaper"/>
+    <item component="ComponentInfo{com.and96.aggregator_news/com.and96.aggregator_news.MainActivity}" drawable="emoji_newspaper"/>
+    <item component="ComponentInfo{com.osinit.newsaggregatorwidget/com.osinit.newsaggregatorwidget.presentation.app.modules.main.MainActivity}" drawable="emoji_newspaper"/>
+    <item component="ComponentInfo{com.newsmedialists.bangla_news/com.newsmedialists.bangla_news.MainActivity}" drawable="emoji_newspaper"/>
+    <item component="ComponentInfo{net.w2news.bangla_newspapers/net.w2news.news_app.views.MainActivity}" drawable="emoji_newspaper"/>
+    <item component="ComponentInfo{com.empezar.noadsnewspaper/com.empezar.noadsnewspaper.application.MainActivity}" drawable="emoji_newspaper"/>
+    <item component="ComponentInfo{mobi.eup.jpnews/mobi.eup.jpnews.activity.MainActivity}" drawable="emoji_newspaper"/>
+    <item component="ComponentInfo{app.morphe.android.magazines/com.google.apps.dots.android.app.activity.CurrentsStartActivity}" drawable="emoji_newspaper"/>
+    <item component="ComponentInfo{com.nothing.news/com.nothing.news.ui.AllNewsActivity}" drawable="emoji_newspaper"/>
+    <item component="ComponentInfo{com.divum.ibn/com.divum.ibn.ui.splashscreen.views.SplashActivity}" drawable="emoji_newspaper"/>
+    <item component="ComponentInfo{com.team.newspresso/com.team.newspresso.MainActivity}" drawable="emoji_newspaper"/>
+    <item component="ComponentInfo{mobi.eup.jpnews/mobi.eup.jpnews.activity.SplashScreenActivity}" drawable="emoji_newspaper"/>
+    <item component="ComponentInfo{va.news.thepopeapp/va.news.thepopeapp.MainActivity}" drawable="emoji_newspaper"/>
+    <item component="ComponentInfo{sun.way2sms.hyd.com/sun.way2sms.hyd.com.way2news.activities.SplashActivity}" drawable="emoji_newspaper"/>
+    <item component="ComponentInfo{com.merpower.worldnewsreader/com.merpower.worldnewsreader.MainActivity}" drawable="emoji_newspaper"/>
+    <item component="ComponentInfo{com.barisefe.russianewspapers/com.barisefe.russianewspapers.MainActivity}" drawable="emoji_newspaper"/>
 
 	<!-- Báo Thanh Niên -->
 	<item component="ComponentInfo{vcc.mobilenewsreader.thanhniennews/com.news.thanhnien.presentation.activity.splash.SplashActivity}" drawable="bao_thanh_nien"/>
@@ -78757,6 +78775,34 @@
 
 	<!-- Destiny Rising -->
 	<item component="ComponentInfo{com.netease.g108na/com.netease.ntunisdk.external.protocol.ProtocolLauncher}" drawable="destiny_rising"/>
+
+    <!-- NBC News -->
+    <item component="ComponentInfo{com.cnbc.client/com.cnbc.client.activities.SplashActivity}" drawable="nbc_news"/>
+    <item component="ComponentInfo{com.nbcuni.nbc/com.nbc.commonui.components.ui.main.view.MainActivity}" drawable="nbc_news"/>
+    <item component="ComponentInfo{com.nbcuni.nbcots.nbcchicago.android/com.nbc.news.home.activity.SplashActivity}" drawable="nbc_news"/>
+    <item component="ComponentInfo{com.zumobi.msnbc/com.nbc.activities.MainActivity}" drawable="nbc_news"/>
+    <item component="ComponentInfo{com.gannett.local.library.news.kusa/com.tegna.na.android.MainActivity}" drawable="nbc_news"/>
+
+    <!-- Het Parool -->
+    <item component="ComponentInfo{be.persgroep.android.news.mobilepa/nl.persgroep.edition.ui.main.MainActivity}" drawable="het_parool"/>
+
+    <!-- Trouw -->
+    <item component="ComponentInfo{be.persgroep.android.news.mobiletr/nl.persgroep.edition.ui.main.MainActivity}" drawable="trouw"/>
+
+    <!-- VTMgo -->
+    <item component="ComponentInfo{be.vmma.vtm.zenderapp/be.persgroep.vtmgo.VtmGoMainActivity}" drawable="vtmgo"/>
+
+    <!-- VRT Sporza -->
+    <item component="ComponentInfo{com.fwc2014.vrt.and/com.fwc2014.vrt.and.activity.MainActivity}" drawable="vrt_sporza"/>
+
+    <!-- Dumpert -->
+    <item component="ComponentInfo{nl.dumpert/nl.livewall.dumpert.MainActivity}" drawable="dumpert"/>
+
+    <!-- Nieuwsblad -->
+    <item component="ComponentInfo{com.twipemobile.nbmobile/be.mediahuis.one.ui.MainActivity}" drawable="nieuwsblad"/>
+
+    <!-- DS Nieuws -->
+    <item component="ComponentInfo{com.twipemobile.dsmobile/be.mediahuis.one.ui.MainActivity}" drawable="ds_nieuws"/>
 
 	<!-- Splash -->
 	<item component="ComponentInfo{app.cranberry.splash/app.cranberry.splash.MainActivity}" drawable="splash"/>
