@@ -52,6 +52,20 @@ public class Checks {
 
     private static final List<Pattern> RGBA_PATTERNS = List.of(STROKE_RGBA_PATTERN, FILL_RGBA_PATTERN);
 
+    // --- CATEGORIES ---
+    private static final String CATEGORY_TRANSFORM = "Forbidden Transform element";
+
+    // --- TRANSFORM HINTS ---
+    private static final Map<String, String> TRANSFORM_HINTS = Map.of(
+            CATEGORY_TRANSFORM, """
+                    How to remove the transform elements, if you're using Inkscape:
+                      1. Edit -> XML Editor -> select the group -> delete the transform element
+                      2. Ungroup everything
+                      3. Object -> Transform -> check "Apply to each object separately"
+                      4. Rescale everything
+                      5. Check if stroke-width is set correctly."""
+    );
+
     // --- CENTRALIZED VIOLATION LOG ---
     private static final List<Violation> violations = Collections.synchronizedList(new ArrayList<>());
 
@@ -98,6 +112,12 @@ public class Checks {
                 .forEach((category, list) -> {
                     System.err.println("\n[ " + category.toUpperCase() + " ]");
                     list.forEach(v -> System.err.println("  -> " + v.source() + ": " + v.detail()));
+
+                    String hint = TRANSFORM_HINTS.get(category);
+                    if (hint != null) {
+                        System.err.println();
+                        hint.lines().forEach(line -> System.err.println("  " + line));
+                    }
                 });
 
         System.err.println("\n" + "=".repeat(60));
@@ -188,7 +208,7 @@ public class Checks {
         Matcher TransformMatcher = TRANSFORM_PATTERN.matcher(content);
         while (TransformMatcher.find()) {
             violations.add(new Violation(
-                    "Forbidden Transform element",
+                    CATEGORY_TRANSFORM,
                     fileName,
                     "Contains disallowed element: " + TransformMatcher.group()
             ));
