@@ -74,13 +74,13 @@ dependencies {
     implementation("io.github.darkxanter:webp-imageio:0.3.3")
 
     // Add Apache Batik for SVG processing
-    implementation("org.apache.xmlgraphics:batik-transcoder:1.19")   // Batik's SVG transcoder
-    implementation("org.apache.xmlgraphics:batik-dom:1.19")          // Batik's DOM utilities
-    implementation("org.apache.xmlgraphics:batik-swing:1.19")        // Batik's swing utilities for rendering
+    implementation("org.apache.xmlgraphics:batik-transcoder:1.20")   // Batik's SVG transcoder
+    implementation("org.apache.xmlgraphics:batik-dom:1.20")          // Batik's DOM utilities
+    implementation("org.apache.xmlgraphics:batik-swing:1.20")        // Batik's swing utilities for rendering
 
     // Optional: If you want to work with BufferedImage in Java 2D
-    implementation("org.apache.xmlgraphics:batik-svggen:1.19")  // To generate image from SVGs
-    implementation("org.apache.xmlgraphics:batik-codec:1.19")
+    implementation("org.apache.xmlgraphics:batik-svggen:1.20")  // To generate image from SVGs
+    implementation("org.apache.xmlgraphics:batik-codec:1.20")
 
 }
 
