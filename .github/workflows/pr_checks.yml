@@ -139,7 +139,11 @@ jobs:
           else
             echo "HasChanges=false" >> "$GITHUB_OUTPUT"
           fi
-
+      - name: Upload repo
+        uses: actions/upload-artifact@v7
+        with:
+          name: testing
+          path: /
       - name: Setup Java
         uses: actions/setup-java@v6
         with:
