@@ -58,6 +58,7 @@ jobs:
     outputs:
       CommentPRtext: ${{ steps.validate.outputs.text }}
       CommentPRwarntext: ${{ steps.validate.outputs.warntext }}
+      CommentPRnewiconsduplicates: ${{ steps.populate.outputs.changes }}
     concurrency:
       group: ${{ github.workflow }}-${{ github.event.pull_request.user.login }}/${{ github.event.pull_request.head.ref }}-check
       cancel-in-progress: true
@@ -79,12 +80,66 @@ jobs:
           sparse-checkout-cone-mode: false
           path: temp-pr
       - name: Populate newicons folder
+        id: populate
         shell: bash
         run: |
-          rm -rf newicons
+          CHANGES_LIST=""
+          
+          # Ensure target newicons directory exists
           mkdir -p newicons
-          find temp-pr/newicons -maxdepth 1 -type f \( -name 'appfilter.xml' -o -name '*.svg' \) -exec cp -- {} newicons/ \;
+          
+          # Iterate through files in temp-pr/newicons
+          if [ -d "temp-pr/newicons" ]; then
+            cd temp-pr/newicons
+            find . -type f \( -name 'appfilter.xml' -o -name '*.svg' \) | while read -r file; do
+              # Remove leading ./
+              file="${file#./}"
+              
+              main_file="../../newicons/$file"
+              pr_file="$file"
+              
+              # Always copy appfilter.xml unconditionally
+              if [ "$file" = "appfilter.xml" ]; then
+                echo "Always copying appfilter.xml"
+                mkdir -p "$(dirname "$main_file")"
+                cp "$pr_file" "$main_file"
+              elif [ ! -f "$main_file" ]; then
+                echo "New file detected: $file"
+                CHANGES_LIST+="- $file (New)"$'\n'
+                mkdir -p "$(dirname "$main_file")"
+                cp "$pr_file" "$main_file"
+              else
+                # Compare SHA-256 hashes for .svg files with the same name
+                main_sha=$(sha256sum "$main_file" | awk '{print $1}')
+                pr_sha=$(sha256sum "$pr_file" | awk '{print $1}')
+                
+                if [ "$main_sha" != "$pr_sha" ]; then
+                  echo "Modified file detected: $file"
+                  CHANGES_LIST+="- $file (Modified)"$'\n'
+                  cp "$pr_file" "$main_file"
+                else
+                  # SHAs match: Delete the file from the main branch folder
+                  echo "Matching SHA found for $file. Deleting from main branch folder."
+                  rm -f "$main_file"
+                fi
+              fi
+            done
+            cd ../..
+          fi
+          
+          # Cleanup temporary PR folder
           rm -rf temp-pr
+          
+          # Add changes list to GitHub output if any changes were found
+          if [ -n "$CHANGES_LIST" ]; then
+            echo "changes<<EOF" >> "$GITHUB_OUTPUT"
+            echo "$CHANGES_LIST" >> "$GITHUB_OUTPUT"
+            echo "EOF" >> "$GITHUB_OUTPUT"
+            echo "HasChanges=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "HasChanges=false" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Setup Java
         uses: actions/setup-java@v6
         with:
