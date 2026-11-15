@@ -34,6 +34,9 @@ public class Checks {
     private static final Pattern LINE_JOIN_PATTERN = Pattern.compile("stroke-linejoin(?:=\"|:).*?(?=[\";}])");
     private static final Pattern EMPTY_MARKER_PATTERN = Pattern.compile("marker-(?:start|mid|end)\\s*=\\s*\"\\s*\"");
 
+    // Strict filename pattern: only lowercase a-z, 0-9, or underscore, cannot start with a number, ending with .svg
+    private static final Pattern ICON_FILENAME_PATTERN = Pattern.compile("^[a-z_][a-z0-9_]*\\.svg$");
+
     // --- VALIDATION SETS ---
     private static final Set<String> validColors = Set.of("stroke:#ffffff", "stroke:#fff", "stroke:#FFFFFF", "stroke=\"#ffffff", "stroke=\"#fff", "stroke=\"#FFFFFF", "stroke=\"white", "fill:#ffffff", "fill:#fff", "fill:#FFFFFF", "fill=\"#ffffff", "fill=\"#fff", "fill=\"#FFFFFF");
     private static final Set<String> validOpacities = Set.of("stroke-opacity=\"0", "stroke-opacity=\"0%", "stroke-opacity=\"1", "stroke-opacity=\"100%", "stroke-opacity:1", "stroke-opacity:0", "fill-opacity=\"0", "fill-opacity=\"0%", "fill-opacity=\"1", "fill-opacity=\"100%", "fill-opacity:1", "fill-opacity:0");
@@ -126,6 +129,13 @@ public class Checks {
 
     // --- CHECK LOGIC ---
 
+    private static boolean isValidIconFileName(String fileName) {
+        if (fileName == null) {
+            return false;
+        }
+        return ICON_FILENAME_PATTERN.matcher(fileName).matches();
+    }
+
     private static void checkXml(String path) {
         try (var lines = Files.lines(Paths.get(path))) {
             lines.filter(line -> !line.isBlank() && !XML_PATTERN.matcher(line).find())
@@ -155,11 +165,17 @@ public class Checks {
             Element item = (Element) nodeList.item(i);
             if (item.getAttribute("prefix").isEmpty()) {
                 String drawable = item.getAttribute("drawable");
-                boolean existsInWhite = Files.exists(Paths.get(whiteDir, drawable + ".svg"));
-                boolean existsInOther = Files.exists(Paths.get(otherDir, drawable + ".svg"));
+                String svgName = drawable + ".svg";
+
+                if (!isValidIconFileName(svgName)) {
+                    violations.add(new Violation("File Name", svgName, "Drawable filename must contain only lowercase a-z, 0-9, or underscores and cannot start with a number."));
+                }
+
+                boolean existsInWhite = Files.exists(Paths.get(whiteDir, svgName));
+                boolean existsInOther = Files.exists(Paths.get(otherDir, svgName));
 
                 if (!existsInWhite && !existsInOther) {
-                    violations.add(new Violation("Missing Drawable", item.getAttribute("component"), drawable + ".svg"));
+                    violations.add(new Violation("Missing Drawable", item.getAttribute("component"), svgName));
                 }
             }
         }
@@ -173,6 +189,11 @@ public class Checks {
                     .forEach(entry -> {
                         try {
                             String fileName = entry.getFileName().toString();
+
+                            if (!isValidIconFileName(fileName)) {
+                                violations.add(new Violation("File Name", fileName, "Filename must contain only lowercase a-z, 0-9, or underscores and cannot start with a number."));
+                            }
+
                             String content = Files.readString(entry);
 
                             // Auto-fix stroke widths
