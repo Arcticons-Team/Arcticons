@@ -57,6 +57,7 @@ jobs:
       contents: read
     outputs:
       CommentPRtext: ${{ steps.validate.outputs.text }}
+      CommentPRwarntext: ${{ steps.validate.outputs.warntext }}
     concurrency:
       group: ${{ github.workflow }}-${{ github.event.pull_request.user.login }}/${{ github.event.pull_request.head.ref }}-check
       cancel-in-progress: true
@@ -101,9 +102,17 @@ jobs:
           if ! PARSE_OUTPUT=$(./gradlew checkonly --no-build-cache --no-configuration-cache --no-daemon 2>&1 >/dev/null) ; then
             echo "Checks failed."
             FILTERED_OUTPUT=$(echo "$PARSE_OUTPUT" | sed -n '/============================================================/,/Total Failures:/p')
-            echo "text<<EOF" >> "$GITHUB_OUTPUT"
-            echo "$FILTERED_OUTPUT" >> "$GITHUB_OUTPUT"
-            echo "EOF" >> "$GITHUB_OUTPUT"
+            if [ -n "$FILTERED_OUTPUT" ]; then
+              echo "text<<EOF" >> "$GITHUB_OUTPUT"
+              echo "$FILTERED_OUTPUT" >> "$GITHUB_OUTPUT"
+              echo "EOF" >> "$GITHUB_OUTPUT"
+            fi
+            SECOND_OUTPUT=$(echo "$PARSE_OUTPUT" | sed -n '/-\{60\}/,/Total Warnings:/p')
+            if [ -n "$SECOND_OUTPUT" ]; then
+              echo "warntext<<EOF" >> "$GITHUB_OUTPUT"
+              echo "$SECOND_OUTPUT" >> "$GITHUB_OUTPUT"
+              echo "EOF" >> "$GITHUB_OUTPUT"
+            fi
             exit 1
           else
             echo "Checks succeeded."
@@ -119,6 +128,7 @@ jobs:
     env:
       PARSE_OUTPUT: ${{needs.check_appfilter.outputs.CommentPRtext}}
       CHECK_OUTPUT: ${{needs.check_appfilter_and_icons.outputs.CommentPRtext}}
+      WARN_OUTPUT:  ${{needs.check_appfilter_and_icons.outputs.CommentPRwarntext}}
     steps:
       - name: Create Comment File
         run: |
@@ -130,11 +140,18 @@ jobs:
             echo '```' >> comment_markdown.md
           fi
           if [ -n "$CHECK_OUTPUT" ]; then
-            echo "Checks failed." >> comment_markdown.md
+            echo ":x: Checks failed." >> comment_markdown.md
             echo '```' >> comment_markdown.md
             echo "$CHECK_OUTPUT" >> comment_markdown.md
             echo '```' >> comment_markdown.md
           fi
+          if [ -n "$WARN_OUTPUT" ]; then
+            echo ":warning: Warnings occurred" >> comment_markdown.md
+            echo '```' >> comment_markdown.md
+            echo "$WARN_OUTPUT" >> comment_markdown.md
+            echo '```' >> comment_markdown.md
+          fi
+
       - name: Upload Artifact
         uses: actions/upload-artifact@v7
         with:

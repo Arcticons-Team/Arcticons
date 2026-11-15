@@ -57,6 +57,7 @@ public class Checks {
 
     // --- CATEGORIES ---
     private static final String CATEGORY_TRANSFORM = "Forbidden Transform element";
+    private static final String CATEGORY_DUPLICATE_FILE = "Duplicate File Warning";
 
     // --- TRANSFORM HINTS ---
     private static final Map<String, String> TRANSFORM_HINTS = Map.of(
@@ -66,11 +67,17 @@ public class Checks {
                       2. Ungroup everything
                       3. Object -> Transform -> check "Apply to each object separately"
                       4. Rescale everything
-                      5. Check if stroke-width is set correctly."""
+                      5. Check if stroke-width is set correctly.""",
+            CATEGORY_DUPLICATE_FILE, """
+                    Be sure you want to overwrite the existing file in the icons directory.
+                    If you want to keep the file as an alternative variant append `_alt`,_alt_1, _alt_2 and so on
+                    If it clashes with another apps name try to add something descriptive to the name.
+                    """
     );
 
     // --- CENTRALIZED VIOLATION LOG ---
     private static final List<Violation> violations = Collections.synchronizedList(new ArrayList<>());
+    private static final List<Violation> warnings = Collections.synchronizedList(new ArrayList<>());
 
     public record Violation(String category, String source, String detail) {
     }
@@ -88,6 +95,7 @@ public class Checks {
 
     public static void startChecks(String appFilter, String sourceDir, String newIconsDir) {
         violations.clear();
+        warnings.clear();
         Document appFilterDoc = parseXml(appFilter);
 
         checkXml(appFilter);
@@ -95,7 +103,9 @@ public class Checks {
             checkDuplicateEntries(appFilterDoc);
             checkMissingDrawables(appFilterDoc, sourceDir, newIconsDir);
         }
-        checkSVGFiles(newIconsDir);
+        checkSVGFiles(newIconsDir, sourceDir);
+
+        reportWarnings();
 
         if (!violations.isEmpty()) {
             reportViolations();
@@ -103,6 +113,28 @@ public class Checks {
         } else {
             System.out.println("No violations found. All checks passed!");
         }
+    }
+
+    private static void reportWarnings() {
+        if (warnings.isEmpty()) return;
+        System.err.println("\n" + "-".repeat(60));
+        System.err.println(" WARNINGS DETECTED");
+        System.err.println("-".repeat(60));
+
+        warnings.stream()
+                .collect(Collectors.groupingBy(Violation::category))
+                .forEach((category, list) -> {
+                    System.err.println("\n[ " + category.toUpperCase() + " ]");
+                    list.forEach(w -> System.err.println("  -> " + w.source() + ": " + w.detail()));
+                    String hint = TRANSFORM_HINTS.get(category);
+                    if (hint != null) {
+                        System.err.println();
+                        hint.lines().forEach(line -> System.err.println("  " + line));
+                    }
+                });
+
+        System.err.println("\n" + "-".repeat(60));
+        System.err.printf("Total Warnings: %d\n", warnings.size());
     }
 
     private static void reportViolations() {
@@ -181,7 +213,7 @@ public class Checks {
         }
     }
 
-    private static void checkSVGFiles(String dir) {
+    private static void checkSVGFiles(String dir, String whiteDir) {
         Path folder = Paths.get(dir);
         try (var stream = Files.list(folder)) {
             stream.filter(path -> path.toString().endsWith(".svg"))
@@ -192,6 +224,11 @@ public class Checks {
 
                             if (!isValidIconFileName(fileName)) {
                                 violations.add(new Violation("File Name", fileName, "Filename must contain only lowercase a-z, 0-9, or underscores and cannot start with a number."));
+                            }
+
+                            // Check if file already exists in source (whiteDir) as a warning
+                            if (Files.exists(Paths.get(whiteDir, fileName))) {
+                                warnings.add(new Violation(CATEGORY_DUPLICATE_FILE, fileName, "Icon already exists in the source directory ('icons/white')."));
                             }
 
                             String content = Files.readString(entry);
