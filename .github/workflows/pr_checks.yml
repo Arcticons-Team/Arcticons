@@ -105,10 +105,10 @@ jobs:
                 
                 if [ "$main_sha" != "$pr_sha" ]; then
                   echo "Modified file detected: $file"
+                  CHANGES_LIST+="- $file"$'\n'
                   cp "$pr_file" "$main_file"
                 else
                   echo "Matching SHA found for $file. Duplicate detected."
-                  CHANGES_LIST+="- $file (Already exists in main with matching SHA)"$'\n'
                   rm -f "$main_file"
                 fi
               fi
