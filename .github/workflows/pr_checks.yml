@@ -184,6 +184,7 @@ jobs:
       PARSE_OUTPUT: ${{needs.check_appfilter.outputs.CommentPRtext}}
       CHECK_OUTPUT: ${{needs.check_appfilter_and_icons.outputs.CommentPRtext}}
       WARN_OUTPUT:  ${{needs.check_appfilter_and_icons.outputs.CommentPRwarntext}}
+      DUP_OUTPUT: ${{needs.check_appfilter_and_icons.outputs.CommentPRnewiconsduplicates}}
     steps:
       - name: Create Comment File
         run: |
@@ -204,6 +205,12 @@ jobs:
             echo ":warning: Warnings occurred" >> comment_markdown.md
             echo '```' >> comment_markdown.md
             echo "$WARN_OUTPUT" >> comment_markdown.md
+            echo '```' >> comment_markdown.md
+          fi
+          if [ -n "$DUP_OUTPUT" ]; then
+            echo ":warning: Warnings occurred :exclamation: Icon already exist in newicons folder possible duplicate" >> comment_markdown.md
+            echo '```' >> comment_markdown.md
+            echo "$DUP_OUTPUT" >> comment_markdown.md
             echo '```' >> comment_markdown.md
           fi
 
