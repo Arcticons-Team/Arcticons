@@ -84,13 +84,12 @@ jobs:
         shell: bash
         run: |
           CHANGES_LIST=""
+          MATCHED_FILES=""
           mkdir -p newicons
-          
           if [ -d "temp-pr/newicons" ]; then
             while IFS= read -r -d '' pr_file; do
               file="${pr_file#temp-pr/newicons/}"
               main_file="newicons/$file"
-              
               if [ "$file" = "appfilter.xml" ]; then
                 echo "Always copying appfilter.xml"
                 mkdir -p "$(dirname "$main_file")"
@@ -102,29 +101,35 @@ jobs:
               else
                 main_sha=$(sha256sum "$main_file" | awk '{print $1}')
                 pr_sha=$(sha256sum "$pr_file" | awk '{print $1}')
-                
                 if [ "$main_sha" != "$pr_sha" ]; then
                   echo "Modified file detected: $file"
                   CHANGES_LIST+="- $file"$'\n'
                   cp "$pr_file" "$main_file"
                 else
                   echo "Matching SHA found for $file. Duplicate detected."
+                  MATCHED_FILES+="$file"$'\n'
                   rm -f "$main_file"
                 fi
               fi
             done < <(find temp-pr/newicons -type f \( -name 'appfilter.xml' -o -name '*.svg' \) -print0)
           fi
-          
           rm -rf temp-pr
-          
           if [ -n "$CHANGES_LIST" ]; then
-            echo "changes<<EOF" >> "$GITHUB_OUTPUT"
-            printf "%s" "$CHANGES_LIST" >> "$GITHUB_OUTPUT"
-            echo "EOF" >> "$GITHUB_OUTPUT"
-            echo "HasChanges=true" >> "$GITHUB_OUTPUT"
+            {
+              echo "changes<<EOF"
+              printf "%s" "$CHANGES_LIST"
+              echo "EOF"
+              echo "HasChanges=true"
+            } >> "$GITHUB_OUTPUT"
           else
             echo "HasChanges=false" >> "$GITHUB_OUTPUT"
           fi
+
+          {
+            echo "matched_files<<EOF"
+            printf "%s" "$MATCHED_FILES"
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
       - name: Upload repo
         uses: actions/upload-artifact@v7
         with:
