@@ -96,12 +96,13 @@ public class Checks {
     public static void startChecks(String appFilter, String sourceDir, String newIconsDir) {
         violations.clear();
         warnings.clear();
+        Set<String> matchedFiles = loadMatchedFiles(System.getenv("MATCHED_FILES"));
         Document appFilterDoc = parseXml(appFilter);
 
         checkXml(appFilter);
         if (appFilterDoc != null) {
             checkDuplicateEntries(appFilterDoc);
-            checkMissingDrawables(appFilterDoc, sourceDir, newIconsDir);
+            checkMissingDrawables(appFilterDoc, sourceDir, newIconsDir,matchedFiles);
         }
         checkSVGFiles(newIconsDir, sourceDir);
 
@@ -113,6 +114,25 @@ public class Checks {
         } else {
             System.out.println("No violations found. All checks passed!");
         }
+    }
+
+    private static Set<String> loadMatchedFiles(String rawMatchedFiles) {
+        if (rawMatchedFiles == null || rawMatchedFiles.isBlank()) {
+            return Set.of();
+        }
+        Set<String> files = new HashSet<>();
+        rawMatchedFiles.lines()
+                .map(String::trim)
+                .filter(line -> !line.isEmpty())
+                .forEach(entry -> {
+                    String normalized = entry.replace('\\', '/');
+                    files.add(normalized);
+                    Path p = Paths.get(normalized);
+                    if (p.getFileName() != null) {
+                        files.add(p.getFileName().toString());
+                    }
+                });
+        return files;
     }
 
     private static void reportWarnings() {
@@ -191,7 +211,7 @@ public class Checks {
         }
     }
 
-    private static void checkMissingDrawables(Document doc, String whiteDir, String otherDir) {
+    private static void checkMissingDrawables(Document doc, String whiteDir, String otherDir,Set<String> matchedFiles) {
         NodeList nodeList = doc.getElementsByTagName("item");
         for (int i = 0; i < nodeList.getLength(); i++) {
             Element item = (Element) nodeList.item(i);
@@ -205,8 +225,9 @@ public class Checks {
 
                 boolean existsInWhite = Files.exists(Paths.get(whiteDir, svgName));
                 boolean existsInOther = Files.exists(Paths.get(otherDir, svgName));
+                boolean inMatchedFiles = matchedFiles.contains(svgName);
 
-                if (!existsInWhite && !existsInOther) {
+                if (!existsInWhite && !existsInOther && !inMatchedFiles) {
                     violations.add(new Violation("Missing Drawable", item.getAttribute("component"), svgName));
                 }
             }
