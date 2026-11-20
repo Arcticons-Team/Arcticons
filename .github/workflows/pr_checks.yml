@@ -148,6 +148,8 @@ jobs:
       - name: Run checks
         id: validate
         shell: bash
+        env:
+          MATCHED_FILES: ${{steps.populate.outputs.matched_files}}
         run: |
           if ! PARSE_OUTPUT=$(./gradlew checkonly --no-build-cache --no-configuration-cache --no-daemon 2>&1 >/dev/null) ; then
             echo "Checks failed."
