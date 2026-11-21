@@ -19,6 +19,9 @@ jobs:
   check-pr:
     if : ${{ github.repository == vars.REPOSITORY }}
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: read
     outputs:
       existsnot: ${{ steps.check.outputs.existsnot }}
     steps:

@@ -34,6 +34,9 @@ public class Checks {
     private static final Pattern LINE_JOIN_PATTERN = Pattern.compile("stroke-linejoin(?:=\"|:).*?(?=[\";}])");
     private static final Pattern EMPTY_MARKER_PATTERN = Pattern.compile("marker-(?:start|mid|end)\\s*=\\s*\"\\s*\"");
 
+    // Strict filename pattern: only lowercase a-z, 0-9, or underscore, cannot start with a number, ending with .svg
+    private static final Pattern ICON_FILENAME_PATTERN = Pattern.compile("^[a-z_][a-z0-9_]*\\.svg$");
+
     // --- VALIDATION SETS ---
     private static final Set<String> validColors = Set.of("stroke:#ffffff", "stroke:#fff", "stroke:#FFFFFF", "stroke=\"#ffffff", "stroke=\"#fff", "stroke=\"#FFFFFF", "stroke=\"white", "fill:#ffffff", "fill:#fff", "fill:#FFFFFF", "fill=\"#ffffff", "fill=\"#fff", "fill=\"#FFFFFF");
     private static final Set<String> validOpacities = Set.of("stroke-opacity=\"0", "stroke-opacity=\"0%", "stroke-opacity=\"1", "stroke-opacity=\"100%", "stroke-opacity:1", "stroke-opacity:0", "fill-opacity=\"0", "fill-opacity=\"0%", "fill-opacity=\"1", "fill-opacity=\"100%", "fill-opacity:1", "fill-opacity:0");
@@ -54,6 +57,7 @@ public class Checks {
 
     // --- CATEGORIES ---
     private static final String CATEGORY_TRANSFORM = "Forbidden Transform element";
+    private static final String CATEGORY_DUPLICATE_FILE = "Duplicate File Warning";
 
     // --- TRANSFORM HINTS ---
     private static final Map<String, String> TRANSFORM_HINTS = Map.of(
@@ -63,11 +67,17 @@ public class Checks {
                       2. Ungroup everything
                       3. Object -> Transform -> check "Apply to each object separately"
                       4. Rescale everything
-                      5. Check if stroke-width is set correctly."""
+                      5. Check if stroke-width is set correctly.""",
+            CATEGORY_DUPLICATE_FILE, """
+                    Be sure you want to overwrite the existing file in the icons directory.
+                    If you want to keep the file as an alternative variant append `_alt`,_alt_1, _alt_2 and so on
+                    If it clashes with another apps name try to add something descriptive to the name.
+                    """
     );
 
     // --- CENTRALIZED VIOLATION LOG ---
     private static final List<Violation> violations = Collections.synchronizedList(new ArrayList<>());
+    private static final List<Violation> warnings = Collections.synchronizedList(new ArrayList<>());
 
     public record Violation(String category, String source, String detail) {
     }
@@ -85,14 +95,18 @@ public class Checks {
 
     public static void startChecks(String appFilter, String sourceDir, String newIconsDir) {
         violations.clear();
+        warnings.clear();
+        Set<String> matchedFiles = loadMatchedFiles(System.getenv("MATCHED_FILES"));
         Document appFilterDoc = parseXml(appFilter);
 
         checkXml(appFilter);
         if (appFilterDoc != null) {
             checkDuplicateEntries(appFilterDoc);
-            checkMissingDrawables(appFilterDoc, sourceDir, newIconsDir);
+            checkMissingDrawables(appFilterDoc, sourceDir, newIconsDir,matchedFiles);
         }
-        checkSVGFiles(newIconsDir);
+        checkSVGFiles(newIconsDir, sourceDir);
+
+        reportWarnings();
 
         if (!violations.isEmpty()) {
             reportViolations();
@@ -100,6 +114,47 @@ public class Checks {
         } else {
             System.out.println("No violations found. All checks passed!");
         }
+    }
+
+    private static Set<String> loadMatchedFiles(String rawMatchedFiles) {
+        if (rawMatchedFiles == null || rawMatchedFiles.isBlank()) {
+            return Set.of();
+        }
+        Set<String> files = new HashSet<>();
+        rawMatchedFiles.lines()
+                .map(String::trim)
+                .filter(line -> !line.isEmpty())
+                .forEach(entry -> {
+                    String normalized = entry.replace('\\', '/');
+                    files.add(normalized);
+                    Path p = Paths.get(normalized);
+                    if (p.getFileName() != null) {
+                        files.add(p.getFileName().toString());
+                    }
+                });
+        return files;
+    }
+
+    private static void reportWarnings() {
+        if (warnings.isEmpty()) return;
+        System.err.println("\n" + "-".repeat(60));
+        System.err.println(" WARNINGS DETECTED");
+        System.err.println("-".repeat(60));
+
+        warnings.stream()
+                .collect(Collectors.groupingBy(Violation::category))
+                .forEach((category, list) -> {
+                    System.err.println("\n[ " + category.toUpperCase() + " ]");
+                    list.forEach(w -> System.err.println("  -> " + w.source() + ": " + w.detail()));
+                    String hint = TRANSFORM_HINTS.get(category);
+                    if (hint != null) {
+                        System.err.println();
+                        hint.lines().forEach(line -> System.err.println("  " + line));
+                    }
+                });
+
+        System.err.println("\n" + "-".repeat(60));
+        System.err.printf("Total Warnings: %d\n", warnings.size());
     }
 
     private static void reportViolations() {
@@ -126,6 +181,13 @@ public class Checks {
 
     // --- CHECK LOGIC ---
 
+    private static boolean isValidIconFileName(String fileName) {
+        if (fileName == null) {
+            return false;
+        }
+        return ICON_FILENAME_PATTERN.matcher(fileName).matches();
+    }
+
     private static void checkXml(String path) {
         try (var lines = Files.lines(Paths.get(path))) {
             lines.filter(line -> !line.isBlank() && !XML_PATTERN.matcher(line).find())
@@ -149,23 +211,30 @@ public class Checks {
         }
     }
 
-    private static void checkMissingDrawables(Document doc, String whiteDir, String otherDir) {
+    private static void checkMissingDrawables(Document doc, String whiteDir, String otherDir,Set<String> matchedFiles) {
         NodeList nodeList = doc.getElementsByTagName("item");
         for (int i = 0; i < nodeList.getLength(); i++) {
             Element item = (Element) nodeList.item(i);
             if (item.getAttribute("prefix").isEmpty()) {
                 String drawable = item.getAttribute("drawable");
-                boolean existsInWhite = Files.exists(Paths.get(whiteDir, drawable + ".svg"));
-                boolean existsInOther = Files.exists(Paths.get(otherDir, drawable + ".svg"));
+                String svgName = drawable + ".svg";
 
-                if (!existsInWhite && !existsInOther) {
-                    violations.add(new Violation("Missing Drawable", item.getAttribute("component"), drawable + ".svg"));
+                if (!isValidIconFileName(svgName)) {
+                    violations.add(new Violation("File Name", svgName, "Drawable filename must contain only lowercase a-z, 0-9, or underscores and cannot start with a number."));
+                }
+
+                boolean existsInWhite = Files.exists(Paths.get(whiteDir, svgName));
+                boolean existsInOther = Files.exists(Paths.get(otherDir, svgName));
+                boolean inMatchedFiles = matchedFiles.contains(svgName);
+
+                if (!existsInWhite && !existsInOther && !inMatchedFiles) {
+                    violations.add(new Violation("Missing Drawable", item.getAttribute("component"), svgName));
                 }
             }
         }
     }
 
-    private static void checkSVGFiles(String dir) {
+    private static void checkSVGFiles(String dir, String whiteDir) {
         Path folder = Paths.get(dir);
         try (var stream = Files.list(folder)) {
             stream.filter(path -> path.toString().endsWith(".svg"))
@@ -173,6 +242,16 @@ public class Checks {
                     .forEach(entry -> {
                         try {
                             String fileName = entry.getFileName().toString();
+
+                            if (!isValidIconFileName(fileName)) {
+                                violations.add(new Violation("File Name", fileName, "Filename must contain only lowercase a-z, 0-9, or underscores and cannot start with a number."));
+                            }
+
+                            // Check if file already exists in source (whiteDir) as a warning
+                            if (Files.exists(Paths.get(whiteDir, fileName))) {
+                                warnings.add(new Violation(CATEGORY_DUPLICATE_FILE, fileName, "Icon already exists in the source directory ('icons/white')."));
+                            }
+
                             String content = Files.readString(entry);
 
                             // Auto-fix stroke widths

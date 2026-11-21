@@ -1,0 +1,218 @@
+name: PR Checks
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches:
+      - main
+    paths:
+      - 'newicons/appfilter.xml'
+      - 'newicons/**.svg'
+
+permissions:
+  contents: read
+
+jobs:
+  check_appfilter:
+    name: Check appfilter.xml from pull_request
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    outputs:
+      CommentPRtext: ${{ steps.validate.outputs.text }}
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.event.pull_request.user.login }}/${{ github.event.pull_request.head.ref }}
+      cancel-in-progress: true
+    steps:
+      - name: Checkout Repository ${{ github.event.pull_request.user.login }}/${{ github.event.pull_request.head.ref }}
+        uses: actions/checkout@v7
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+          sparse-checkout: |
+            newicons/appfilter.xml
+          sparse-checkout-cone-mode: false
+      - name: Install xmllint
+        shell: bash
+        run: |
+          sudo apt update
+          sudo apt install -y libxml2-utils
+      - name: Validate appfilter.xml
+        id: validate
+        run: |
+          if ! PARSE_OUTPUT=$(xmllint --noout newicons/appfilter.xml 2>&1 >/dev/null); then
+            echo "Parsing appfilter.xml failed."
+            echo "text<<EOF" >> "$GITHUB_OUTPUT"
+            echo "$PARSE_OUTPUT" >> "$GITHUB_OUTPUT"
+            echo "EOF" >> "$GITHUB_OUTPUT"
+            exit 1
+          else
+            echo "Parsing succeeded."
+          fi
+
+  check_appfilter_and_icons:
+    name: Run Checks
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    outputs:
+      CommentPRtext: ${{ steps.validate.outputs.text }}
+      CommentPRwarntext: ${{ steps.validate.outputs.warntext }}
+      CommentPRnewiconsduplicates: ${{ steps.populate.outputs.changes }}
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.event.pull_request.user.login }}/${{ github.event.pull_request.head.ref }}-check
+      cancel-in-progress: true
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v7
+        with:
+          ref: main
+          persist-credentials: false
+      - name: Checkout Repository ${{ github.event.pull_request.user.login }}/${{ github.event.pull_request.head.ref }}
+        uses: actions/checkout@v7
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          allow-unsafe-pr-checkout: true
+          persist-credentials: false
+          sparse-checkout: |
+            newicons/appfilter.xml
+            newicons/*.svg
+          sparse-checkout-cone-mode: false
+          path: temp-pr
+      - name: Populate newicons folder
+        id: populate
+        shell: bash
+        run: |
+          CHANGES_LIST=""
+          MATCHED_FILES=""
+          mkdir -p newicons
+          if [ -d "temp-pr/newicons" ]; then
+            while IFS= read -r -d '' pr_file; do
+              file="${pr_file#temp-pr/newicons/}"
+              main_file="newicons/$file"
+              if [ "$file" = "appfilter.xml" ]; then
+                echo "Always copying appfilter.xml"
+                mkdir -p "$(dirname "$main_file")"
+                cp "$pr_file" "$main_file"
+              elif [ ! -f "$main_file" ]; then
+                echo "New file detected: $file"
+                mkdir -p "$(dirname "$main_file")"
+                cp "$pr_file" "$main_file"
+              else
+                main_sha=$(sha256sum "$main_file" | awk '{print $1}')
+                pr_sha=$(sha256sum "$pr_file" | awk '{print $1}')
+                if [ "$main_sha" != "$pr_sha" ]; then
+                  echo "Modified file detected: $file"
+                  CHANGES_LIST+="- $file"$'\n'
+                  cp "$pr_file" "$main_file"
+                else
+                  echo "Matching SHA found for $file. Duplicate detected."
+                  MATCHED_FILES+="$file"$'\n'
+                  rm -f "$main_file"
+                fi
+              fi
+            done < <(find temp-pr/newicons -type f \( -name 'appfilter.xml' -o -name '*.svg' \) -print0)
+          fi
+          rm -rf temp-pr
+          if [ -n "$CHANGES_LIST" ]; then
+            {
+              echo "changes<<EOF"
+              printf "%s" "$CHANGES_LIST"
+              echo "EOF"
+              echo "HasChanges=true"
+            } >> "$GITHUB_OUTPUT"
+          else
+            echo "HasChanges=false" >> "$GITHUB_OUTPUT"
+          fi
+
+          {
+            echo "matched_files<<EOF"
+            printf "%s" "$MATCHED_FILES"
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
+      - name: Upload repo
+        uses: actions/upload-artifact@v7
+        with:
+          name: testing
+          path: .
+      - name: Setup Java
+        uses: actions/setup-java@v6
+        with:
+          distribution: 'temurin'
+          java-version: 21
+
+      - name: Get Gradle
+        run: gradle wrapper
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+      - name: Run checks
+        id: validate
+        shell: bash
+        env:
+          MATCHED_FILES: ${{steps.populate.outputs.matched_files}}
+        run: |
+          if ! PARSE_OUTPUT=$(./gradlew checkonly --no-build-cache --no-configuration-cache --no-daemon 2>&1 >/dev/null) ; then
+            echo "Checks failed."
+            FILTERED_OUTPUT=$(echo "$PARSE_OUTPUT" | sed -n '/============================================================/,/Total Failures:/p')
+            if [ -n "$FILTERED_OUTPUT" ]; then
+              echo "text<<EOF" >> "$GITHUB_OUTPUT"
+              echo "$FILTERED_OUTPUT" >> "$GITHUB_OUTPUT"
+              echo "EOF" >> "$GITHUB_OUTPUT"
+            fi
+            SECOND_OUTPUT=$(echo "$PARSE_OUTPUT" | sed -n '/-\{60\}/,/Total Warnings:/p')
+            if [ -n "$SECOND_OUTPUT" ]; then
+              echo "warntext<<EOF" >> "$GITHUB_OUTPUT"
+              echo "$SECOND_OUTPUT" >> "$GITHUB_OUTPUT"
+              echo "EOF" >> "$GITHUB_OUTPUT"
+            fi
+            exit 1
+          else
+            echo "Checks succeeded."
+          fi
+
+  comment_pr_check_appfilter:
+    name: Comment on PR
+    needs: ['check_appfilter','check_appfilter_and_icons']
+    if: ${{ failure() }}
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+    env:
+      PARSE_OUTPUT: ${{needs.check_appfilter.outputs.CommentPRtext}}
+      CHECK_OUTPUT: ${{needs.check_appfilter_and_icons.outputs.CommentPRtext}}
+      WARN_OUTPUT:  ${{needs.check_appfilter_and_icons.outputs.CommentPRwarntext}}
+      DUP_OUTPUT: ${{needs.check_appfilter_and_icons.outputs.CommentPRnewiconsduplicates}}
+    steps:
+      - name: Create Comment File
+        run: |
+          touch comment_markdown.md
+          if [ -n "$PARSE_OUTPUT" ]; then
+            echo "Parsing of 'newicons/appfilter.xml' failed. Please fix the XML syntax errors." >> comment_markdown.md
+            echo '```' >> comment_markdown.md
+            echo "$PARSE_OUTPUT" >> comment_markdown.md
+            echo '```' >> comment_markdown.md
+          fi
+          if [ -n "$CHECK_OUTPUT" ]; then
+            echo ":x: Checks failed." >> comment_markdown.md
+            echo '```' >> comment_markdown.md
+            echo "$CHECK_OUTPUT" >> comment_markdown.md
+            echo '```' >> comment_markdown.md
+          fi
+          if [ -n "$WARN_OUTPUT" ]; then
+            echo ":warning: Warnings occurred" >> comment_markdown.md
+            echo '```' >> comment_markdown.md
+            echo "$WARN_OUTPUT" >> comment_markdown.md
+            echo '```' >> comment_markdown.md
+          fi
+          if [ -n "$DUP_OUTPUT" ]; then
+            echo ":warning: Warnings occurred :exclamation: Icon already exist in newicons folder possible duplicate" >> comment_markdown.md
+            echo '```' >> comment_markdown.md
+            echo "$DUP_OUTPUT" >> comment_markdown.md
+            echo '```' >> comment_markdown.md
+          fi
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: pr-check-failure
+          path: comment_markdown.md
