@@ -19,7 +19,7 @@ You can modify what you send in the email:</p>
 
 <p>All mails are securely stored on <a href="https://www.infomaniak.com/en/legal/confidentiality-policy">Infomaniak's servers</a>, and are deleted after they are processed.</p>
 
-<p>The requested icons will be gathered and into our database. All identifiable information is stripped in the process. Only the apps, icons, date of request will be showed in our publicly visible <a href="https://arcticons.com/requests.html">Requests Dashboard</a>.</p>
+<p>The requested icons will be gathered into our database. All identifiable information is stripped in the process. Only the apps, icons, date of request will be showed in our publicly visible <a href="https://arcticons.com/requests.html">Requests Dashboard</a>.</p>
 
 <p>Last modified:
 <b><a href="https://github.com/Arcticons-Team/Arcticons/commits/main/Privacy_Policy.md">18 July 2025</b></a></p>
